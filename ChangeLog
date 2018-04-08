@@ -1,0 +1,7 @@
+2017-10-03  Michal Hoftich  <michal.h21@gmail.com>
+
+	* tex4ht-doc.tex: added new entries to the outline
+
+2017-10-01  Michal Hoftich  <michal.h21@gmail.com>
+
+	* tex4ht-doc.tex, config.cfg, build.mk4, Makefile: Started new documentation

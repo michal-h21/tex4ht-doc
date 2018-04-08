@@ -1,0 +1,49 @@
+I've created some alternative commands to \verb|\HCode| or \verb|\Tg|. The idea is to define
+semantic names for logical elements of the document, such as titles, authors,
+sections etc. It is possible to assign HTML elements and attributes to these
+logical elements. There are commands for inline and block level elements,
+which should eliminate the need for constructs like \verb|\ifvmode\IgnorePar\fi\EndP|
+etc.
+
+I think it will be best to show some concrete examples:
+
+
+\begin{texsource}
+\NewLogicalBlock{textit}
+\SetBlockProperty{textit}{class}{textit}
+
+\NewLogicalBlock{maketitle}
+\SetTag{maketitle}{header}
+
+\NewLogicalBlock{titlehead}
+\SetTag{titlehead}{h1}
+\SetBlockProperty{titlehead}{class}{titleHead}
+
+\Configure{textit}
+{\NoFonts\InlineElementStart{textit}{}}
+{\InlineElementEnd{textit}\EndNoFonts}
+
+\Configure{maketitle}{%
+{\Configure{maketitle}{}{}{}{}%
+
+
+\Tag{TITLE+}{\@title}}
+\BlockElementStart{maketitle}{}}
+{\BlockElementEnd{maketitle}}
+{\NoFonts\BlockElementStart{titlehead}{}}
+{\BlockElementEnd{titlehead}\EndNoFonts}
+\end{texsource}
+
+
+
+The \verb|\NewLogicalBlock| creates a new logical element. The used tag is configured
+using \verb|\SetTag|, the attributes are set using \verb|\SetBlockProperty|. The blocks are
+inserted to the document using \verb|\InlineElementStart| ...  \verb|\InlineElementEnd| or
+\verb|\BlockElementStart| ... \verb|\BlockElementEnd| pairs. The start commands take two
+parameters, first is the logical block name, the second can be local
+parameters which shouldn't be used for the given logical block globally.
+
+The main idea behind this mechanism is to allow easy work with new HTML5
+elements and attributes for WAI-ARIA or Schema.org properties. I hope that
+this should allow us to make somehow more clear configurations for basic
+document building blocks.
