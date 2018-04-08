@@ -1,0 +1,17 @@
+.svn
+*.html 
+*.aux 
+*.toc
+*.log
+*.4tc
+*.4ct
+*.swp
+*.xref
+*.css
+*.dvi
+*.pdf
+*.idv
+*.lg
+*.tmp
+tags
+
