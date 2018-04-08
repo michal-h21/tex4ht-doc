@@ -1,0 +1,4 @@
+\NewConfigure{hello}{2}
+\pend:def\hello{\a:hello}
+\append:def\hello{\b:hello}
+\Hinput{sample}
