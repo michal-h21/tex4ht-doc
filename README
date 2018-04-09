@@ -2,4 +2,5 @@
 
 Clone this repository and run `make` command to get the documentation in PDF and HTMl formats.
 
+At least `make4ht` version 0.2 is necessary to compile the HTML version.
 
