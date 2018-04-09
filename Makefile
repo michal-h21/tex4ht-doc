@@ -1,4 +1,4 @@
-mode = draft
+mode = final
 engine = 
 
 ifeq (lualatex, lualatex)
