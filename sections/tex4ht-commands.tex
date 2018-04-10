@@ -1,8 +1,8 @@
-I've created some alternative commands to \verb|\HCode| or \verb|\Tg|. The idea is to define
+I've created some alternative commands to \texcommand{\HCode} or \texcommand{\Tg}. The idea is to define
 semantic names for logical elements of the document, such as titles, authors,
 sections etc. It is possible to assign HTML elements and attributes to these
 logical elements. There are commands for inline and block level elements,
-which should eliminate the need for constructs like \verb|\ifvmode\IgnorePar\fi\EndP|
+which should eliminate the need for constructs like \texcommand{\ifvmode\IgnorePar\fi\EndP}
 etc.
 
 I think it will be best to show some concrete examples:
@@ -36,10 +36,10 @@ I think it will be best to show some concrete examples:
 
 
 
-The \verb|\NewLogicalBlock| creates a new logical element. The used tag is configured
-using \verb|\SetTag|, the attributes are set using \verb|\SetBlockProperty|. The blocks are
-inserted to the document using \verb|\InlineElementStart| ...  \verb|\InlineElementEnd| or
-\verb|\BlockElementStart| ... \verb|\BlockElementEnd| pairs. The start commands take two
+The \texcommand{\NewLogicalBlock} creates a new logical element. The used tag is configured
+using \texcommand{\SetTag}, the attributes are set using \texcommand{\SetBlockProperty}. The blocks are
+inserted to the document using \texcommand{\InlineElementStart} ...  \texcommand{\InlineElementEnd} or
+\texcommand{\BlockElementStart} ... \texcommand{\BlockElementEnd} pairs. The start commands take two
 parameters, first is the logical block name, the second can be local
 parameters which shouldn't be used for the given logical block globally.
 
