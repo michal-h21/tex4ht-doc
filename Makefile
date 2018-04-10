@@ -8,15 +8,17 @@ endif
 ifeq (lualatex, xelatex)
 	engine = -x
 endif
+
+sections = sections/tex4ht-commands.tex
 	
 all: tex4ht-doc.pdf tex4ht-doc.html
 
 .PHONY: final
 
-tex4ht-doc.pdf: tex4ht-doc.tex tex4ht-styles.sty
+tex4ht-doc.pdf: tex4ht-doc.tex tex4ht-styles.sty ${sections}
 	lualatex tex4ht-doc.tex
 
-tex4ht-doc.html: tex4ht-doc.tex config.cfg tex4ht-styles.sty
+tex4ht-doc.html: tex4ht-doc.tex config.cfg tex4ht-styles.sty ${sections}
 	make4ht -um $(mode) -c config $(engine) -f html5-common_domfilters -e build.mk4  tex4ht-doc.tex
 
 # use only one LaTeX run by default, request three compilations with final rule
