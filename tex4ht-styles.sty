@@ -28,10 +28,10 @@
 % https://tex.stackexchange.com/a/45292/2891
 \NewDocumentCommand\texcommand{v}{\texttt{#1}}
 
-\lstnewenvironment{texsource}{\lstset{language=TeX,escapechar=*}}{}
-\lstnewenvironment{htmlsource}{\lstset{language=HTML,escapechar=*}}{}
-\lstnewenvironment{shellcommand}{\lstset{language=bash}}{}
-\newcommand\texinput[1]{\lstinputlisting[language=TeX]{#1}}
+\lstnewenvironment{texsource}{\lstset{language=TeX,escapechar=*,upquote=true}}{}
+\lstnewenvironment{htmlsource}{\lstset{language=HTML,escapechar=*,upquote=true}}{}
+\lstnewenvironment{shellcommand}{\lstset{language=bash,upquote=true}}{}
+\newcommand\texinput[1]{\lstinputlisting[language=TeX,upquote=true]{#1}}
 
 
 
