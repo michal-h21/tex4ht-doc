@@ -1,0 +1,374 @@
+% the list of options has been copied from the CVR's blog
+% http://cvr.cc/?p=504
+
+\subsection{Introduction}
+
+
+Following is an incomplete list of options that can be passed on to TeX4ht when
+it is run from the command line. These can also be provided as options when tex4ht
+package is loaded in a LaTeX document with the default usepackage command or to
+the \verb|\Preamble| command in the custom config file
+
+\begin{shellcommand}
+make4ht filename.tex "fn-in"
+\end{shellcommand}
+
+
+\subsection{List of options}
+
+% \begin{tabular}{>{\ttfamily}p{8em} l} 
+%   -css & to ignore CSS code, use command line option -css. \\
+%   -xtpipes & to avoid xtpipes post-processing the output. This might be useful for docbook XML output.\\
+%   0 & pagination shall be obtained through the option 0 or 1, at locations marked with PageBreak.\\
+%   1, 2, 3, 4, 5, 6, 7& for automatic sectioning pagination (to break at various section levels), use the appropriate command line option 1, 2, 3, 4, 5, 6, 7.
+\begingroup
+\catcode`\#=11 \catcode`\^=11 \catcode`\_=11
+
+
+\begin{description}
+
+\item[-css] to ignore \css\ code, use command line option \verb=-css=.
+
+\item[-xtpipes] to avoid \verb=xtpipes= post-processing the
+  output. This might be useful for docbook \xml\ output.
+
+  % \item[/bib]
+  % \item[/obeylines]
+  % \item[0.0]
+
+\item[0] pagination shall be obtained through the option \verb=0= or
+  \verb=1=, at locations marked with \verb=\PageBreak=.
+
+\item[1, 2, 3, 4, 5, 6, 7] for automatic sectioning pagination (to
+  break at various section levels), use the appropriate command line
+  option \verb=1, 2, 3, 4, 5, 6, 7=.
+
+\item[DOCTYPE] to request a \verb=DOCTYPE= declaration, use the
+  command line option \verb=DOCTYPE=.
+
+\item[Gin-dim] for key dimensions of the graphic, try this option.
+
+\item[Gin-dim+] for key dimensions when the bounding box is not
+  available.
+
+\item[NoFonts] to ignore \css\ font decoration.
+
+\item[PMath] Option to choose positioned math. Example: Example:
+  \verb=\def\({\PMath$}=; \verb=\def\){$\EndPMath}=;
+  \verb=\def\[{\PMath$$}=; \verb=\def\]{$$\EndPMath}=.
+
+\item[RL2LR] to reverse the direction of RL sentences.
+
+%\item[ShowFont]
+
+\item[TocLink] option to request links from the tables of contents.
+  
+\item[\textasciicircum 13] option for active superscript character.
+
+\item[\_13] option for active subscript character.
+
+%\item[accent-]
+
+%\item[base]
+
+\item[bib-] for degraded bibliography friendlier for conversion to
+  \verb=.doc=.
+
+\item[bibtex2] Option \verb=bibtex2= requires compilation of
+  \verb=\jobname j.aux= with bibtex.
+
+%\item[broken-index]
+
+\item[charset] for alternate character set, use the command line
+  option \verb+charset="..."+ (e.g., \verb+charset="utf8"+).
+
+%\item[core]
+
+\item[css-in] the inline \css\ code will be extracted from the input of
+  the previous compilation, so an extra compilaion might be needed for
+  this option to make it effective.
+
+\item[css2] for \css2 code.
+
+% \item[css]
+% \item[debug-]
+% \item[debug]
+% \item[draw]
+% \item[dtd]
+
+\item[early\textasciicircum] for default catcode of superscript in the
+  \verb=\Preamble=.
+
+\item[early\_] for default catcode of subscript in the
+  \verb=\Preamble=.
+
+%\item[edit]
+
+\item[endnotes] for end notes instead of footnotes, use this option.
+
+%\item[enum]
+
+\item[enumerate+] for enumerated list elements with valued data. This
+  will use the description list like \verb=<dt>...</dt>= for the list
+  counter.
+
+\item[enumerate-] for enumerated list element's \verb=<li>='s with
+  value attributes, use this command line option. This will be an
+  ordered list with the value of list counter provided as an attribute
+  namely, \verb=value= of the \verb=<li>= element.
+
+%\item[family]
+
+\item[fn-in] for inline footnotes use this option.
+
+\item[fn-out] for offline footnotes.
+
+\item[fonts] for tracing \latex\ font commands, use this command line
+  option.
+
+\item[fonts+] for marking of the base font, use this option.
+
+\item[font] for adjusted font size, use the command line option
+  \verb+font=...+ (e.g., font=-2).
+
+\item[frames-] for frames support. \verb=frames= is also valid option
+  for frames support.
+
+\item[frames-fn] for content, \chfont{TOC}\ and footnotes in
+  three frames.
+
+\item[frames] for \chfont{TOC}\ and content in two frames.
+
+%\item[fussy]
+
+\item[gif] for bitmaps of pictures in \verb=.gif= format, use this
+  option.
+
+\item[graphics-] if the included graphics are of degraded quality, try
+  the command line options \verb=graphics-num= or \verb=graphics-=.
+  The \verb=num= should provide the density of pixels in the bitmaps
+  (e.g., 110).
+
+%\item[graphics-dim]
+
+\item[hidden-ref] option to hide clickable index and bibliography
+  references.
+
+% \item[hooks++]
+% \item[hooks+]
+% \item[hooks]
+% \item[hshow]
+% \item[htm3]
+% \item[htm4]
+% \item[htm5]
+% \item[htm]
+
+\item[html+] for stricter \HTML\ code.
+
+%\item[html]
+
+\item[imgdir] for addressing images in a subdirectory, use the option
+  \verb=\imgdir:.../=.
+
+\item[image-maps] for \verb=image-maps= support.
+
+\item[index] for \emph{n}-column index, use the command line option,
+  \verb+index=n+ (e.g., index=2).
+
+\item[info-oo] for extra tracing information while generating open
+  office output.
+
+\item[info] for extra information in the \verb=\jobname.log= file.
+
+\item[java] for \verb=java=support.
+
+\item[javahelp] for \verb=JavaHelp= output format, use this command
+  line option.
+
+\item[javascript] for \verb=javascript= support.
+
+\item[jh-] for sources failing to produce \xml\ versions of \HTML, try
+  this command line option.
+
+%\item[jh1.0]
+
+\item[jpg] for bitmaps of pictures in \verb=.jpg= format, use this
+  option.
+
+\item[li-] for enumerated list elements li's with value attributes.
+
+\item[math-] option to use when sources fail to produce clean math
+  code.
+
+%\item[mathaccent-]
+
+\item[mathltx-] option to use when sources fail to produce clean
+  \verb=mathltx= code.
+
+\item[mathml-] option to use when sources fail to produce clean
+  \mathml code.
+
+\item[mathplayer] for \mathml\ on Internet Explorer + MathPlayer.
+
+\item[minitoc<] for mini tocs immediately after the header use the
+  command line option, \verb=minitoc<=.
+
+\item[mouseover] for pop ups on mouse over.
+
+%\item[new-accents]
+
+\item[next] for linear cross-links of pages, use this option.
+
+\item[nikud] for Hebrew vowels, use the command line option,
+  \verb=nikud=.
+
+\item[no-DOCTYPE] to remove \texttt{DOCTYPE}\space declaration from
+  the output.
+
+\item[no-VERSION] to remove \verb+<?xml version="..."?>+ processing
+  instruction from the output.
+
+% \item[no-align]
+% \item[no-array]
+% \item[no-bib]
+% \item[no-cases]
+% \item[no-halign]
+% \item[no-matrix]
+% \item[no-pmatrix]
+
+\item[no\textasciicircum] for non-active \verb=^= (superscript), use the option
+  \verb=no^=.
+
+\item[no\_] for non-active \verb=_= (subscript command), use the
+  command line option, \verb=no_=.
+
+\item[no\_\textasciicircum] for both non-active superscript and subscript, use the
+  option \verb=no_^=.
+
+\item[nolayers] to remove overlays of slides, use this option.
+
+\item[nominitoc] this will eliminate mini tables of contents from the
+  output.
+
+\item[notoc*] for tocs without \verb=*= entries, use this option. The
+  \verb=notoc*= option is applicable only to pages that are
+  automatically decomposed into separate web pages along section
+  divides. It shall be used when \verb=\addcontentsline= instructions
+  are present in the sources.
+
+\item[obj-toc] for frames-like object based table of contents, use the
+  command line option \verb=obj-toc=.
+
+%\item[old-longtable]
+
+\item[p-width] for width specifications of tabular \verb=p= entries,
+  use this option.
+
+\item[pic-RL] for pictorial RL.
+
+\item[pic-align] for pictorial align environment.
+
+\item[pic-array] for pictorial array.
+
+\item[pic-cases] for pictorial cases environment.
+
+\item[pic-eqalign] for pictorial equalign environment.
+
+\item[pic-eqnarray] for pictorial eqnarray.
+
+\item[pic-equation] for pictorial equations.
+
+\item[pic-fbox] for pictorial or bitmapped fbox'es.
+
+\item[pic-framebox] for bitmap fameboxes.
+
+\item[pic-longtable] for bitmapped longtable.
+
+\item[pic-m+] for pictorial \verb=$...$= and \verb=$$...$$=
+  environments with \latex alt, use the command line option
+  \verb=pic-m+= (not safe).
+
+\item[pic-m] for pictorial \verb=$...$= environments, use the command
+  line option \verb=pic-m= (not recommended).
+
+\item[pic-matrix] for pictorial matrix.
+
+% \item[pic-tabbing']
+
+% \item[pic-tabbing]
+
+% \item[pic-table]
+
+\item[pic-tabular] use this option for pictorial tabular.
+
+\item[plain-] for scaled down implimentation.
+
+% \item[pmathml-css]
+
+% \item[pmathml]
+
+% \item[postscript]
+
+\item[prog-ref] for pointers to code files from root fragments, use
+  the command line option \verb=prof-ref=. This is for debugging.
+
+\item[refcaption] for links into captions, instead of flat heads, use
+  this option.
+
+\item[rl2lr] to reverse the direction of Hebrew words, use this
+  option.
+
+\item[sec-filename] for file names derived from section titles, use
+  the command line option \verb=sec-filename=.
+
+\item[sections+] for back links to table of contents, use this option.
+
+% \item[sections-]
+% \item[settabs-]
+% \item[stackrel-]
+
+\item[svg-] for external \svg files, try this option.
+
+\item[svg-obj] same as above.
+
+\item[svg] for dvi pictures in \verb=svg= format.
+
+\item[tab-eq] for tab-based layout of equation environment, use this
+  option.
+
+%\item[th4]
+
+\item[trace-onmo] for mouseover tracing of compilation, use the
+  command line option, \verb=trace-onmo=.
+
+% \item[uni-emacspeak]
+% \item[uni-html4]
+% \item[uniaccents]
+% \item[unicode]
+
+% \item[url-]
+
+\item[url-enc] for \chfont{URL}\space encoding within href, use this
+  option.  \verb=\Configure{url-encoder}= can be used to fine tune
+  encoding.
+
+\item[url-il2-pl] for il2-pl \chfont{URL} encoding.
+
+\item[ver] for vertically stacked frames. Effective when \verb=frames=
+  option is requested.
+
+% \item[verify+]
+% \item[verify]
+
+\item[xht] for file name extension, \verb=.xht=, use this command line
+  option.
+
+\item[xhtml] for \xml\ code, use the command line option, \verb=xml= or
+  \verb=xhtml=.
+
+\item[xml] See previous entry.
+
+% \item[xmldtd]
+
+\end{description}
+\endgroup
