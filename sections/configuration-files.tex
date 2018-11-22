@@ -1,0 +1,21 @@
+
+\subsection{Configuration file management}
+
+It is possible to reuse common \texfourht\ configurations used in several
+configuration files.  They can be inserted in a custom LaTeX package, but there
+is one important thing to be aware of. The configuration hooks are inserted to
+the patched commands when the compilation reaches the  
+\texcommand{\begin{document}} command, so configurations for these hooks
+declared before the hook definition have no effect. It is necessary to include
+them in the \texcommand{\AtBeginDocument} command.
+
+Example usage:
+
+\begin{texsource}
+\ProvidesPackage{commonconfigurations}
+\AtBeginDocument{%
+\Configure{@HEAD}{\HCode{<meta name="test" content="test"/>\Hnewline}}
+}
+\end{texsource}
+
+
