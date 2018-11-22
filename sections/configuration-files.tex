@@ -9,13 +9,23 @@ the patched commands when the compilation reaches the
 declared before the hook definition have no effect. It is necessary to include
 them in the \texcommand{\AtBeginDocument} command.
 
-Example usage:
+Sample package, \file{commonconfigurations.sty}:
 
 \begin{texsource}
 \ProvidesPackage{commonconfigurations}
 \AtBeginDocument{%
 \Configure{@HEAD}{\HCode{<meta name="test" content="test"/>\Hnewline}}
 }
+\endinput
+\end{texsource}
+
+It can be requested in a configuration file using \texcommand{\RequirePackage} command.
+
+\begin{texsource}
+\Preamble{xhtml}
+\RequirePackage{commonconfigurations}
+\begin{document}
+\EndPreamble
 \end{texsource}
 
 
