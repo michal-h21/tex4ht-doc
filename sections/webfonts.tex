@@ -1,0 +1,30 @@
+
+These commands declare new font family in the CSS file
+
+
+The default font family name which should be used in the Css
+\textit{font-family} command for a declared font is \textit{rmfamily}. 
+It use the Latin Modern font installed on the viewer's system. 
+The Css font family and the local font name can be changed using
+\verb|\Configure{FontFamily}{cssfamilyname}{LocalFontName}| command.
+
+\begin{texsource}
+\Configure{FontFamily}{rmfamily}{Latin Modern}
+\end{texsource}
+
+The font shapes can be configure using \verb|\Configure{NormalFont}|, 
+\verb|\Configure{ItalicFont}|, \verb|\Configure{BoldItalicFont}| and
+\verb|Configure{BoldFont}|. The argument should be font file in the format
+supported by browsers, such as \textit{woff} or \textit{otf}.
+
+\begin{texsource}
+\Configure{NormalFont}{normal-font-file.otf}
+\Configure{BoldFont}{bold-font-file.otf}
+\Configure{BoldItalicFont}{bold-italic-font-file.otf}
+\Configure{ItalicFont}{italic-font-file.otf}
+% Add another font family
+\Configure{FontFamily}{hello}{Linux Libertine O}
+\Configure{NormalFont}{hello-font-file.otf}
+\Css{body{font-family: rmfamily, "AnotherFontFamilyName", serif;}}
+\Css{span.hello{font-family: hello, sans-serif;}}
+\end{texsource}
