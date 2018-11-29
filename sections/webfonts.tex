@@ -1,9 +1,10 @@
 
-These commands declare new font family in the CSS file
 
+The declared font family is not used automatically, it is necessary to select
+it using the \term{font-family} Css property.
 
 The default font family name which should be used in the Css
-\textit{font-family} command for a declared font is \textit{rmfamily}. 
+\term{font-family} command for a declared font is \term{rmfamily}. 
 It use the Latin Modern font installed on the viewer's system. 
 The Css font family and the local font name can be changed using
 \verb|\Configure{FontFamily}{cssfamilyname}{LocalFontName}| command.
@@ -16,6 +17,7 @@ The font shapes can be configure using \verb|\Configure{NormalFont}|,
 \verb|\Configure{ItalicFont}|, \verb|\Configure{BoldItalicFont}| and
 \verb|Configure{BoldFont}|. The argument should be font file in the format
 supported by browsers, such as \textit{woff} or \textit{otf}.
+
 
 \begin{texsource}
 \Configure{NormalFont}{normal-font-file.otf}
