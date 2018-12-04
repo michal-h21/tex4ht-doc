@@ -62,8 +62,16 @@ Animations using Animate package: \url{https://tex.stackexchange.com/a/404600/28
 \section{Pstricks}
 
 \section{Math}
-\section{MathML}
-\section{MathJax}
+\subsection{Default math handling}
+\subsection{MathML}
+\subsection{MathJax}
+
+The \term{MathJax} processing can be required using \option{mathjax} option. The address of \term{MathJax} script with its configuration string can be specified in \configuration{MathjaxSource}. The default value is
+
+\begin{texsource}
+\Configure{MathjaxSource}
+{https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML}
+\end{texsource}
 
 \section{Bibliographies}
 \section{Indexing}
