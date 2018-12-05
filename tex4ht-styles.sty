@@ -8,6 +8,11 @@
 \newcommand\term[1]{\emph{#1}}
 \newcommand\configuration[1]{\texttt{#1}}
 
+% this trick will enable us to take verbatim arguments
+% https://tex.stackexchange.com/a/45292/2891
+\NewDocumentCommand\texcommand{v}{\texttt{#1}}
+\NewDocumentCommand\shellcmd{v}{\texttt{#1}}
+
 % shortcuts 
 \newcommand\texfourht{\texttt{tex4ht}}
 \newcommand\fourhtsty{\file{tex4ht.sty}}
@@ -26,9 +31,6 @@
 % this was used by CVR in the options page
 \let\chfont\texttt
 
-% this trick will enable us to take verbatim arguments
-% https://tex.stackexchange.com/a/45292/2891
-\NewDocumentCommand\texcommand{v}{\texttt{#1}}
 
 \lstnewenvironment{texsource}{\lstset{language=TeX,escapechar=*,upquote=true}}{}
 \lstnewenvironment{htmlsource}{\lstset{language=HTML,escapechar=*,upquote=true}}{}
