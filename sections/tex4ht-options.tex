@@ -14,7 +14,7 @@ following options work only in the \HTML\ output.
 
 There are several ways how to pass the options to \texfourht. The
 non-recommended way is to pass them as options to \fourhtsty\ using
-\verb|\usepackage| command in the \TeX\ file. 
+\texcommand{\usepackage} command in the \TeX\ file. 
 
 Better ways don't require modifications of the \TeX\ files.
 It is possible to pass the options to the calling script, as an command line
@@ -29,7 +29,7 @@ make4ht filename.tex "fn-in"
 
 For more information about calling scripts see the section \ref{sec:calling-commands}.
 
-It is also possible to pass options in the \verb|\Preamble| command in a \cfgfile.
+It is also possible to pass options in the \texcommand{\Preamble} command in a \cfgfile.
 
 \begin{texsource}
 \Preamble{fn-in}
