@@ -1,20 +1,46 @@
 % the list of options has been copied from the CVR's blog
 % http://cvr.cc/?p=504
 
-\subsection{Introduction}
 
 
-Following is an incomplete list of options that can be passed on to TeX4ht when
-it is run from the command line. These can also be provided as options when tex4ht
-package is loaded in a LaTeX document with the default usepackage command or to
-the \verb|\Preamble| command in the custom config file
+Following is an incomplete list of options that can be passed to the \fourhtsty\ package.
+These options can be used to modify the compilation process, for example to
+select a \term{SVG} format for generated images, to request math environments
+to be convert as images or to split sections as separate HTML pages. 
+
+The options may be defined in the \fourhtfile\ files and may depend on the
+output format, so it is not feasible to provide their full list. Most of the
+following options work only in the \HTML\ output.
+
+There are several ways how to pass the options to \texfourht. The
+non-recommended way is to pass them as options to \fourhtsty\ using
+\verb|\usepackage| command in the \TeX\ file. 
+
+Better ways don't require modifications of the \TeX\ files.
+It is possible to pass the options to the calling script, as an command line
+argument next to the filename:
+% it is run from the command line. These can also be provided as options when \texfourht
+% package is loaded in a \LaTeX\ document with the default usepackage command or to
+% the \verb|\Preamble| command in the custom config file
 
 \begin{shellcommand}
 make4ht filename.tex "fn-in"
 \end{shellcommand}
 
+For more information about calling scripts see the section \ref{sec:calling-commands}.
 
-\subsection{List of options}
+It is also possible to pass options in the \verb|\Preamble| command in a \cfgfile.
+
+\begin{texsource}
+\Preamble{fn-in}
+...
+\begin{document}
+\EndPreamble
+\end{texsource}
+
+
+
+\section{List of options}
 
 % \begin{tabular}{>{\ttfamily}p{8em} l} 
 %   -css & to ignore CSS code, use command line option -css. \\
