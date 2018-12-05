@@ -2,4 +2,5 @@ body{max-width:50rem;margin:0 auto;}
 p.indent, p.noindent{text-indent:0}
 code{font-size:1.4em;}
 figure pre.listings{font-size: 1.4em;}
+figure.texsource, figure.shellcommand{margin:0.5em;}
 
