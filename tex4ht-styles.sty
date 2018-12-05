@@ -2,8 +2,17 @@
 \RequirePackage{listings}
 \RequirePackage{xparse}
 
+% formatting commands
+\newcommand\file[1]{\texttt{#1}}
+\newcommand\option[1]{\emph{#1}}
+\newcommand\term[1]{\emph{#1}}
+\newcommand\configuration[1]{\texttt{#1}}
+
 % shortcuts 
 \newcommand\texfourht{\texttt{tex4ht}}
+\newcommand\fourhtsty{\file{tex4ht.sty}}
+\newcommand\fourhtfile{\file{.4ht}}
+\newcomamnd\cfgfile{\term{custom configuration file}}
 \newcommand\HTML{\texttt{HTML}}
 \newcommand\HTMLV{\texttt{HTML5}}
 \newcommand\ProTeX{\texttt{ProTeX}}
@@ -14,14 +23,6 @@
 \let\latex\LaTeX
 
 
-
-
-
-% formatting commands
-\newcommand\file[1]{\texttt{#1}}
-\newcommand\option[1]{\emph{#1}}
-\newcommand\term[1]{\emph{#1}}
-\newcommand\configuration[1]{\texttt{#1}}
 % this was used by CVR in the options page
 \let\chfont\texttt
 
