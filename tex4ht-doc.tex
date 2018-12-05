@@ -6,6 +6,8 @@
 % \usepackage[T1]{fontenc}
 \usepackage{upquote}
 \usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{csquotes}
 \usepackage{tex4ht-styles}
 
 
@@ -119,7 +121,7 @@ Given following package \file{sample.sty}:
 \endinput
 \end{texsource}
 
-This simple package defines command \texcommand{\hello}, which simply prints the word \textit{hello} when used in a document.
+This simple package defines command \texcommand{\hello}, which simply prints the word \enquote{hello} when used in a document.
 
 Let's say that we want to insert some \HTML\ tags before and after the text content printed by the command.
 
@@ -173,16 +175,9 @@ The package name must be also included in \file{mktex4ht-cnf.tex}:
 \AddFile{9}{sample}
 \end{texsource}
 
-The \file{.4ht} files can be generated simply using 
-
-\begin{shellcommand}
-make
-\end{shellcommand}
-
-command.
+The \file{.4ht} files can be generated simply using the \shellcmd{make} command.
 
 The following sample \TeX\ file:
-
 
 % examples/basicpackage/hello.tex
 \begin{texsource}
