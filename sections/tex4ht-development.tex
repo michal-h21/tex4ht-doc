@@ -1,0 +1,105 @@
+
+\section{Writing basic support for a new package}
+\begin{itemize}
+  \item \url{https://tex.stackexchange.com/a/402283/2891}
+\end{itemize}
+
+\section{Two types of .4ht files}
+
+\subsection{Inserting configurable hooks for packages}
+
+\subsection{Configure the hooks in output format configuration files}
+
+\section{How to add support for a package to the \texfourht\ literate sources}
+
+To add a proper support for a new package, it is necessary to edit the 
+\texfourht\ literate sources. The configurable hooks need to be placed in the \file{tex4ht-4ht.tex},
+the configuration of these hooks must be added to the output format configuration files.
+The most common output format is \HTML, which can be configured in \file{tex4ht-html4.tex}, or 
+\file{tex4ht-html5.tex} if \HTMLV\ features are used. It is also necessary to update the
+\file{mktex4ht-cnf.tex}.
+
+\subsection{Example}
+
+Given following package \file{sample.sty}:
+
+\begin{texsource}
+\ProvidesPackage{sample}
+\newcommand\hello{world}
+\endinput
+\end{texsource}
+
+This simple package defines command \texcommand{\hello}, which simply prints the word \enquote{hello} when used in a document.
+
+Let's say that we want to insert some \HTML\ tags before and after the text content printed by the command.
+
+Basic template for \file{tex4ht-4ht.tex}
+
+% examples/basicpackage/sample.4ht
+\begin{texsource}
+\<sample.4ht\><<<
+% sample.4ht (|version), generated from |jobname.tex
+% Copyright 2017 TeX Users Group
+|<TeX4ht license text|>
+\NewConfigure{hello}{2}
+\pend:def\hello{\a:hello}
+\append:def\hello{\b:hello}
+\Hinput{sample}
+>>> \AddFile{9}{sample}
+\end{texsource}
+
+Configuration for each package must follow this basic template. The \ProTeX\ system is used as system for literate programming.
+
+The \texcommand{\<name\><<<code>>>} block defines new macro which can be then called using \texcommand{|<name|>}. The license text
+is included in the example this way. In order to generate the \file{sample.4ht} file, we need to use \texttt{sample.4ht} as a name
+in the code block and command \texcommand{\AddFile{9}{sample}} after the block definition\footnote{I have no idea what the number
+in the first parameter means.}.
+
+Each package configuration  must include \texcommand{\Hinput{packagename}}, in order to load the configurations for the package.
+
+The command \texcommand{\NewConfigure{hello}{2}} declares new configuration \texttt{hello}, with two configurable hooks. 
+These hooks are named  \texcommand{\a:hello} and \texcommand{\b:hello}. The hooks must be inserted into the 
+\texcommand{\hello}, which can be easily done using the \texcommand{\pend:def} and \texcommand{\append:def} commands. These
+commands can insert code  at the beginning, respective at the end of the redefined command.
+
+The configuration for \HTML\ must be placed in the \file{tex4ht-html4.tex} file:
+
+
+% examples/basicpackage/config.cfg
+\begin{texsource}
+\<configure html4 sample\><<<
+\Configure{hello}{\HCode{<span class="hello">}}{\HCode{</span>}}
+\Css{.hello{color:red;}}
+>>>
+\end{texsource}
+
+The configuration for a package must be placed in \texcommand{\<configure html4 packagename\>} block.
+% ToDo: write more info
+
+
+The package name must be also included in \file{mktex4ht-cnf.tex}:
+
+\begin{texsource}
+\AddFile{9}{sample}
+\end{texsource}
+
+The \file{.4ht} files can be generated simply using the \shellcmd{make} command.
+
+The following sample \TeX\ file:
+
+% examples/basicpackage/hello.tex
+\begin{texsource}
+\documentclass{article}
+\usepackage{sample}
+\begin{document}
+  \hello\ world.
+\end{document}
+\end{texsource}
+
+Produces a following \HTML\ code:
+
+\begin{htmlsource}
+<!--l. 4--><p class="noindent" >
+<span class="hello">world</span> world. 
+</p> 
+\end{htmlsource}
