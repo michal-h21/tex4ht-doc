@@ -15,7 +15,6 @@ A configuration file should take the following form for LaTeX files.
 \begin{document}
 ...insertions into the header of the html file...
 \EndPreamble
-\end{document}
 \end{texsource}
 
 It is up to the user to decide the distribution of entries between the \texcommand{\Preamble} and the htlatex-like commands.
@@ -30,7 +29,7 @@ following content.
 \begin{document} 
   \Css{body { color : red; }} 
 \EndPreamble 
-\end{document}
+\end{texsource}
 
 Notes
 
@@ -42,16 +41,18 @@ Notes
   \item Instructions defined within a source file may be redefined in a
     configuration file. Such a feature enables to keep source files intact for
     compilation to different formats by different tools.
-\end{document}
+\end{itemize}
 
 For instance, a definition of the form \texcommand{\renewcommand\mycommand{...}} within a
 configuration file provided for the following LaTeX source.
 
+\begin{texsource}
 \documentclass{...} 
 \newcommand\mycommand{...} 
 \begin{document} 
 Use \mycommand{...} 
 \end{document} 
+\end{texsource}
 
 \subsection{Configuration file management}
 
