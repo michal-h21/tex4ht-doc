@@ -13,5 +13,6 @@
 *.idv
 *.lg
 *.tmp
+*.out
 tags
 
