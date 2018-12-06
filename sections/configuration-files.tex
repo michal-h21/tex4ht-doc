@@ -1,3 +1,57 @@
+\section{Private Configuration Files}
+
+The leading entry, in the first list of options of the \shellcmd{htlatex}-like
+commands, can equal \option{html} or \option{xhtml}. If this is not the case,
+the entry is assumed to be the name of a configuration file. The extension
+‘cfg’ is assumed for names of configuration files that are listed without their
+extension.
+
+A configuration file should take the following form for LaTeX files.
+
+\begin{texsource}
+...early definitions...
+\Preamble{options}
+...definitions...
+\begin{document}
+...insertions into the header of the html file...
+\EndPreamble
+\end{document}
+\end{texsource}
+
+It is up to the user to decide the distribution of entries between the \texcommand{\Preamble} and the htlatex-like commands.
+
+Example: The command \shellcmd{htlatex myfile "mycfg,2"} requests the
+compilation of a file named \file{myfile.tex}, in the presence of a
+configuration file named \file{mycfg.cfg}. The configuration file might have the
+following content.
+
+\begin{texsource}
+\Preamble{html} 
+\begin{document} 
+  \Css{body { color : red; }} 
+\EndPreamble 
+\end{document}
+
+Notes
+
+\begin{itemize}
+  \item Notice that for a LaTeX file the \texcommand{\begin{document}}
+    instruction should be present both in the configuration file and the source
+    file.
+
+  \item Instructions defined within a source file may be redefined in a
+    configuration file. Such a feature enables to keep source files intact for
+    compilation to different formats by different tools.
+\end{document}
+
+For instance, a definition of the form \texcommand{\renewcommand\mycommand{...}} within a
+configuration file provided for the following LaTeX source.
+
+\documentclass{...} 
+\newcommand\mycommand{...} 
+\begin{document} 
+Use \mycommand{...} 
+\end{document} 
 
 \subsection{Configuration file management}
 
