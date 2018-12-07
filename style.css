@@ -41,14 +41,16 @@ Color scheme
 body{
   /* max-width:52rem; */
   /* margin:0 auto; */
-  display:grid;
-  grid-auto-rows: auto;
+  /* display:grid; */
+  /* grid-auto-rows: auto; */
 }
 
-@media screen and (min-width: 60em) {
+@media screen and (min-width: 57rem) {
   body{
-    grid-template-columns: 15rem 45rem;
+    display:grid;
+    grid-template-columns: 15rem 1fr;
   }
+  article.main-content{max-width:40rem;}
 }
 
 
