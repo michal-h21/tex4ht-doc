@@ -1,6 +1,111 @@
-body{max-width:50rem;margin:0 auto;}
-p.indent, p.noindent{text-indent:0}
-code{font-size:1.4em;}
-figure pre.listings{font-size: 1.4em;}
-figure.texsource, figure.shellcommand{margin:0.5em;}
+/* 
+Color scheme 
+#bab5a9;
+#d5e3c6 
 
+ */
+
+/* ************** */
+/* *** Fonts  *** */
+/* ************** */
+
+/* Font size tricks from https://www.madebymike.com.au/writing/precise-control-responsive-typography/ 
+ * The font size will be adjusted to the screen size.
+ * */
+:root{
+  font-size: 16px;
+}
+
+/* the min width is calculated as:
+ * font-size / ( number of viewport units / 100 )
+ * it means 16 / (1.5/100)
+ */
+@media (min-width: 1200px){
+  :root {
+    font-size: 1.5vw;
+  }
+}
+
+/* Maximal font size should be 24px, so stop font scalling at some point (24 / (1.5/100)) */
+
+@media (min-width: 1500px){
+  :root {
+    font-size: 20px;
+  }
+}
+
+/* ************** */
+/* *** Layout *** */
+/* ************** */
+
+body{
+  /* max-width:52rem; */
+  /* margin:0 auto; */
+  display:grid;
+  grid-auto-rows: auto;
+}
+
+@media screen and (min-width: 60em) {
+  body{
+    grid-template-columns: 15rem 45rem;
+  }
+}
+
+/* ****************** */
+/* *** Formatting *** */
+/* ****************** */
+
+article.main-content{
+  padding:1rem;
+}
+
+p.indent, p.noindent{text-indent:0}
+/* code{font-size:1.4rem;} */
+/* figure pre.listings{font-size: 1.4rem;} */
+figure.texsource, figure.shellcommand{
+  margin:0.5rem; 
+  padding-left:0.5rem; 
+  overflow:auto;
+}
+
+.chapterTOC, .sectionTOC, .subsectionTOC{margin:0;padding:0;}
+nav.TOC{
+  padding:0.5rem;
+  font-size:0.8rem;
+}
+
+nav.TOC span{
+  display:block;
+  margin-top:0;
+}
+
+nav.TOC a, nav.TOC a:visited{
+  text-decoration:none;
+}
+
+/* ************** */
+/* *** Colors *** */
+/* ************** */
+
+
+body{background-color:#dce8d0;}
+
+article.main-content{
+  background-color:white;
+}
+
+nav.TOC,nav.TOC a, nav.TOC a:visited{
+  background-color:#221113;
+  color:#cec1aa;
+}
+
+nav.TOC span:hover, nav.TOC span:hover *{
+  background-color:#583d37;
+}
+
+
+
+figure.texsource, figure.shellcommand{
+  border:1px solid #cec1aa; 
+  background-color:#d5e3c6;
+}
