@@ -51,6 +51,7 @@ body{
   }
 }
 
+
 /* ****************** */
 /* *** Formatting *** */
 /* ****************** */
@@ -68,15 +69,19 @@ figure.texsource, figure.shellcommand{
   overflow:auto;
 }
 
-.chapterTOC, .sectionTOC, .subsectionTOC{margin:0;padding:0;}
+.chapterToc, .sectionToc, .subsectionToc{margin:0;padding:0;}
 nav.TOC{
   padding:0.5rem;
-  font-size:0.8rem;
+  font-size:0; /* trick to remove vertical space above TOC entries */
 }
+
+ .chapterToc ~ .likesectionToc, .chapterToc ~ .sectionToc, .likechapterToc ~ .likesectionToc, .likechapterToc ~ .sectionToc {padding-left:2em;margin-left:0}
+ .chapterToc ~ .likesectionToc ~ .likesubsectionToc, .chapterToc ~ .likesectionToc ~ .subsectionToc, .chapterToc ~ .sectionToc ~ .likesubsectionToc, .chapterToc ~ .sectionToc ~ .subsectionToc, .likechapterToc ~ .likesectionToc ~ .likesubsectionToc, .likechapterToc ~ .likesectionToc ~ .subsectionToc, .likechapterToc ~ .sectionToc ~ .likesubsectionToc, .likechapterToc ~ .sectionToc ~ .subsectionToc {padding-left:4em;margin-left:0;}
 
 nav.TOC span{
   display:block;
   margin-top:0;
+  font-size:0.8rem;
 }
 
 nav.TOC a, nav.TOC a:visited{
@@ -95,12 +100,12 @@ article.main-content{
 }
 
 nav.TOC,nav.TOC a, nav.TOC a:visited{
-  background-color:#221113;
+  background-color:#22211f;
   color:#cec1aa;
 }
 
 nav.TOC span:hover, nav.TOC span:hover *{
-  background-color:#583d37;
+  background-color:#66635d;
 }
 
 
