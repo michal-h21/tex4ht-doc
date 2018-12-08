@@ -40,7 +40,8 @@ Color scheme
 
 body{
   /* max-width:52rem; */
-  /* margin:0 auto; */
+  margin:0;
+  padding:0;
   /* display:grid; */
   /* grid-auto-rows: auto; */
 }
@@ -65,7 +66,7 @@ article.main-content{
 p.indent, p.noindent{text-indent:0}
 /* code{font-size:1.4rem;} */
 /* figure pre.listings{font-size: 1.4rem;} */
-figure.texsource, figure.shellcommand{
+figure.texsource, figure.shellcommand, figure.htmlsource{
   margin:0.5rem; 
   padding-left:0.5rem; 
   overflow:auto;
@@ -112,7 +113,7 @@ nav.TOC span:hover, nav.TOC span:hover *{
 
 
 
-figure.texsource, figure.shellcommand{
+figure.texsource, figure.shellcommand, figure.htmlsource{
   border:1px solid #cec1aa; 
   background-color:#d5e3c6;
 }
