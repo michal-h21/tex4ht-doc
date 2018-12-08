@@ -34,7 +34,7 @@ local process = filter{ function(s)
     section_ids[#section_ids+1] = x:get_attribute("id")
   end
   -- we need to retrieve the first table of contents
-  local toctables = dom:query_selector("nav.TOC .tableofcontents") or {}
+  local toctables = dom:query_selector("nav.TOC") or {}
   -- process only when we got a TOC
   if #toctables > 0 then
     local tableofcontents = toctables[1]
@@ -46,8 +46,8 @@ local process = filter{ function(s)
       -- get sectioning level and id of the current TOC entry
       local name, id = get_id(el)
       -- change span to div
-      el._name = "div"
-      if name == "partToc" then
+      -- el._name = "span"
+      if name == "chapterToc" then
         remove_sections(part_elements,currentpart)
         -- resert toc list
         currentpart = false
