@@ -34,7 +34,7 @@ local process = filter{ function(s)
     section_ids[#section_ids+1] = x:get_attribute("id")
   end
   -- we need to retrieve the first table of contents
-  local toctables = dom:query_selector(".tableofcontents") or {}
+  local toctables = dom:query_selector("nav.TOC .tableofcontents") or {}
   -- process only when we got a TOC
   if #toctables > 0 then
     local tableofcontents = toctables[1]
@@ -78,4 +78,4 @@ local process = filter{ function(s)
 end }
 
 -- it removed the whole TOC. What is the issue?
--- Make:match("html$", process)
+Make:match("html$", process)
