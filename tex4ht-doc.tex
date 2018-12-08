@@ -21,7 +21,8 @@
 
 \maketitle
 
-\tableofcontents
+% Don't introduce table of contents in the HTML mode, as it introduces another page
+\ifdefined\HCode\else\tableofcontents\fi
 
 \chapter{Introduction}
 
