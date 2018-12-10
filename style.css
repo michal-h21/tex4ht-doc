@@ -52,6 +52,10 @@ body{
     grid-template-columns: 15rem 1fr;
   }
   article.main-content{max-width:40rem;}
+  nav.TOC{
+    grid-row:1;
+    min-height:100vh;
+  }
 }
 
 
@@ -96,7 +100,9 @@ nav.TOC a, nav.TOC a:visited{
 /* ************** */
 
 
-body{background-color:#dce8d0;}
+/* body{background-color:#dce8d0;} */
+/* It seems that dark background is better to my eyes */
+body{background-color:#B8CDA3;} 
 
 article.main-content{
   background-color:white;
@@ -117,3 +123,4 @@ figure.texsource, figure.shellcommand, figure.htmlsource{
   border:1px solid #cec1aa; 
   background-color:#d5e3c6;
 }
+
