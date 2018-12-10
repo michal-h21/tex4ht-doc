@@ -70,12 +70,44 @@ Animations using Animate package: \url{https://tex.stackexchange.com/a/404600/28
 \subsection{MathML}
 \subsection{MathJax}
 
-The \term{MathJax} processing can be required using \option{mathjax} option. The address of \term{MathJax} script with its configuration string can be specified in \configuration{MathjaxSource}. The default value is
+The \term{MathJax} processing can be required using \option{mathjax} option.
+The address of \term{MathJax} script with its configuration string can be
+specified in \configuration{MathjaxSource}. The default value of this configuration is:
 
 \begin{texsource}
 \Configure{MathjaxSource}
 {https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML}
 \end{texsource}
+
+By default, inline and display math, as well as math environments, are kept as
+raw LaTeX code in the \HTML\ output. \term{MathJax} then transforms this code
+and displays it. In the \term{MathML} mode, \term{MathJax} is used only for the
+rendering in browsers without \term{MathML} support. 
+
+The additional configuration for \term{MathJax} can be provided in special
+script environment in the \HTML\ page header. The following example provides
+support for some custom \LaTeX\ macros.
+
+\begin{texsource}
+\Configure{@HEAD}{\HCode{\detokenize{%
+<script type="text/x-mathjax-config">                                           
+  MathJax.Hub.Config({
+    TeX: {           
+      Macros: {     
+        sc : "\\small\\rm",
+        sl: "\\it", 
+      }        
+    },        
+    }                   
+  );                  
+</script>   
+}}}
+\end{texsource}
+
+The \texcommand{\detokenize} macro is used to avoid issues with backslash
+characters used in the macro definitions. Backslashes must be doubled in the
+JavaScript strings.
+
 
 \section{Bibliographies}
 \section{Indexing}
