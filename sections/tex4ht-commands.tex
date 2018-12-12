@@ -1,3 +1,35 @@
+\subsection{Low-level \texfourht\ Commands}
+
+\texcommand{\HCode}
+
+This command allows only for the expansion of macros, before sending its content to the output. The instruction \texcommand{\Hnewline} may be introduced there for requesting line breaks, and the command \texcommand{\#} may be used for the sharp symbol ‘\#’.
+
+\begin{texsource}
+ Two lines of text      \HCode{<br />}
+ separated by a horizontal line.
+
+ You probably don't want a '<br>'.
+\end{texsource}
+
+\texcommand{\Tg}
+
+\subsection{Hyperlinks}
+\texcommand{\Link[target-file arguments]{target-loc}{cur-loc}anchor\EndLink}
+
+This command requests an anchor that links to \verb|‘target-file#target-loc’|, and marks the current location with the name \texttt{‘cur-loc’}.
+
+The component \texttt{‘[...]’} is optional when it is empty, and the target file need not be mentioned if it is created from the current source file.
+
+
+\texcommand{\LinkCommand}
+
+\subsection{Paragraph Handling}
+
+\texcommand{\Configure{HtmlPar}}
+\texcommand{\IgnorePar}
+\texcommand{\EndP}
+etc.
+\subsection{Logical Document Structure Commands}
 I've created some alternative commands to \texcommand{\HCode} or \texcommand{\Tg}. The idea is to define
 semantic names for logical elements of the document, such as titles, authors,
 sections etc. It is possible to assign HTML elements and attributes to these
