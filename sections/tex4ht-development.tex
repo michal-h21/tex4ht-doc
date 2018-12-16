@@ -103,3 +103,60 @@ Produces a following \HTML\ code:
 <span class="hello">world</span> world. 
 </p> 
 \end{htmlsource}
+
+
+\section{ProTeX}
+
+
+The literate programming system used in the previous section is called ProTeX. We should discuss some main ideas behind this system.
+
+% copied from
+% https://www.slac.stanford.edu/comp/unix/package/tex/tex4ht/mn2.html - it
+% seems like an older version of documentation which contains some information later ommited
+
+Literate programming is a discipline that promotes the writing of programs the way one explains them to human beings. ProTeX is a literate programming system fully implemented in terms of TeX, and it is compatible with LaTeX and other TeX-base systems. TeX4ht, and ProTeX itself, are examples of applications written in ProTeX.
+
+
+\begin{texsource}
+\input ProTex.sty
+\AlProTex{extension,<<<>>>,list,title,escape-character}
+\<title\><<<
+code fragment
+>>>  
+`<title`>
+\OutputCode\<...\> 
+\end{texsource}
+
+Some explanation:
+
+\begin{texsource}
+\input ProTex.sty
+\AlProTex{extension,<<<>>>,list,title,escape-character}
+\end{texsource}
+
+The escape-character stands for `, @, |, or ?. If omitted, it stands for \verb|\|. 
+
+\begin{texsource}
+\<title\><<<
+code fragment
+>>>
+
+\end{texsource}
+
+This structure provides names to code fragments (the fragments should not be too large in size).
+
+
+\begin{texsource}
+ `<title`>
+ \end{texsource}
+
+This command acts as a place holder for the code segment associated to the title (` stands for the escape character). 
+
+\begin{texsource}
+   \OutputCode\<...\>
+ \end{texsource}
+
+This command creates a file for the code whose root node is specified.
+
+
+
