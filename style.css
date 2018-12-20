@@ -51,7 +51,7 @@ body{
     display:grid;
     grid-template-columns: 15rem 1fr;
   }
-  article.main-content{max-width:40rem;}
+  main.main-content{max-width:40rem;}
   nav.TOC{
     grid-row:1;
     min-height:100vh;
@@ -63,7 +63,7 @@ body{
 /* *** Formatting *** */
 /* ****************** */
 
-article.main-content{
+main.main-content{
   padding:1rem;
 }
 
@@ -104,7 +104,7 @@ nav.TOC a, nav.TOC a:visited{
 /* It seems that dark background is better to my eyes */
 body{background-color:#B8CDA3;} 
 
-article.main-content{
+main.main-content{
   background-color:white;
 }
 
