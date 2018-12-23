@@ -37,6 +37,8 @@
 \lstnewenvironment{shellcommand}{\lstset{language=bash,upquote=true}}{}
 \newcommand\texinput[1]{\lstinputlisting[language=TeX,upquote=true]{#1}}
 
-
+% Document \Configure commands. They have variable number of arguments, so it is necessary to process them as a list
+\def\PrintConfigures#1#2\@nil{\{#1\}\allowbreak\ifx\relax#2\relax\else\expandafter\PrintConfigures#2\@nil\fi}
+\def\DocConfigure#1#2\EndDoc{\par\bigskip\noindent\texttt{\textbf{\textbackslash Configure}\{\textit{#1}\}\PrintConfigures#2{}\@nil}}
 
 \endinput
