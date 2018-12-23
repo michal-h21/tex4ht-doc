@@ -1,4 +1,4 @@
-mode = final
+mode = draft
 engine = 
 outputdir = out
 
@@ -22,9 +22,10 @@ tex4ht-doc.pdf: tex4ht-doc.tex tex4ht-styles.sty ${sections}
 tex4ht-doc.html: tex4ht-doc.tex config.cfg tex4ht-styles.sty build.mk4 ${sections}
 	make4ht -um $(mode) -c config $(engine) -d $(outputdir) -f html5+common_domfilters -e build.mk4  tex4ht-doc.tex
 
+
 # use only one LaTeX run by default, request three compilations with final rule
-final: mode=final
-final: tex4ht-doc.html
+final: tex4ht-doc.html 
+	make4ht -um final -c config $(engine) -d $(outputdir) -f html5+common_domfilters -e build.mk4  tex4ht-doc.tex
 
 clean:
 	rm *.html *.aux *.4tc *.4ct *.xref 
