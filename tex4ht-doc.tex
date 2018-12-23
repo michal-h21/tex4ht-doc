@@ -55,7 +55,7 @@ This work was supported with a financial support from \href{https://cstug.cz/}{C
 
 The following configurations modify behaviour of cross-links between pages in a multi page document.
 
-\texcommand{\Configure{crosslinks} {left-delimiter} {right-delimiter} {next} {prev} {prev-tail} {front} {tail} {up}}
+\DocConfigure{crosslinks} {left-delimiter} {right-delimiter} {next} {prev} {prev-tail} {front} {tail} {up}\EndDoc
 
 This command configures the appearance of the cross-links between hypertext pages obtained for sectioning commands.
 
@@ -66,7 +66,7 @@ This command configures the appearance of the cross-links between hypertext page
    {}{}{}{$\scriptstyle\Uparrow$}
 \end{texsource}
 
-\texcommand{\Configure{crosslinks*}{1--7 arguments}}
+\DocConfigure{crosslinks*} {1--7 arguments}\EndDoc
 
   Links to be included and their order. Available
   options: next, prev, prevtail, tail, front, up.
@@ -81,16 +81,16 @@ This command configures the appearance of the cross-links between hypertext page
    {up}{}
 \end{texsource}
 
-\texcommand{\Configure{crosslinks+} {before-top-links} {after-top-links} {before-bottom-links} {after-bottob-links}}
+\DocConfigure{crosslinks+} {before-top-links} {after-top-links} {before-bottom-links} {after-bottob-links}\EndDoc
 
 The top cross links are omitted, if both \verb|#1| and \verb|#2| are empty.
 The bottom cross links are omitted, if both \verb|#3| and \verb|#4| are empty.
 
-\texcommand{\Configure{next}{the anchor of the next button of the front page.}}
+\DocConfigure{next} {the anchor of the next button of the front page}\EndDoc
 
 Default: The value provided in \texcommand{\Configure{crosslinks}}
 
-\texcommand{\Configure{next+}{before}{after}}
+\DocConfigure{next+}{before} {after}\EndDoc
 
 \begin{description}
   \item[\#1]  before the next button of the front page, when the `next'
@@ -111,7 +111,7 @@ Default: The value provided in \texcommand{\Configure{crosslinks}}
 
   \verb|#1| local configurations for the delimiters and hooks
 
-\texcommand{\Configure{crosslinks-}{before}{after}}
+\DocConfigure{crosslinks-}{before} {after}\EndDoc
 
 Asks to show linkless buttons with the following insertions.
 
