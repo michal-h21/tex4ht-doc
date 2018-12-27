@@ -260,7 +260,7 @@ It is also possible to pass options in the \texcommand{\Preamble} command in a \
 % \item[no-array]
 % \item[no-bib]
 % \item[no-cases]
-% \item[no-halign]
+\item[no-halign] suppress \texcommand{\halign} redefinition. It doesn't work with the \texcommand{tabular} environment.
 % \item[no-matrix]
 % \item[no-pmatrix]
 
@@ -355,11 +355,13 @@ It is also possible to pass options in the \texcommand{\Preamble} command in a \
 % \item[settabs-]
 % \item[stackrel-]
 
-\item[svg-] for external \svg files, try this option.
+\item[svg-] for external \svg\ files, try this option.
 
 \item[svg-obj] same as above.
 
 \item[svg] for dvi pictures in \verb=svg= format.
+
+\item[svg-inline] same as the \option{svg}, but the \svg\ files are included in the document body.
 
 \item[tab-eq] for tab-based layout of equation environment, use this
   option.
