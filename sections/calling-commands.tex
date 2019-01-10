@@ -1,0 +1,62 @@
+
+The translation of a LaTeX source file into HTML involves of loading tex4ht.sty
+and *.4ht style files, choosing the desirable options for the translation,
+compiling the source into dvi code with the native LaTeX engine, and
+postprocessing the outcome with the tex4ht and t4ht programs (see \nameref{sec:overview}). 
+
+
+\section{Overview of the Translation Process}\label{sec:overview}
+
+The system can be activated with a sequence of commands of the following form, typically embedded within a script.
+
+\begin{shellcommand}
+latex      x            (or ‘tex x’) 
+latex      x 
+latex      x 
+tex4ht     x 
+t4ht       x 
+\end{shellcommand}
+
+The three compilations with La(TeX) are needed to ensure proper links. The approach is illustrated in the following picture. 
+
+\begin{description}
+  \item[x.tex]
+
+This is a source TeX/LaTeX/OtherTeX file that imports the style files tex4ht.sty and *.4ht. The style files define the features for the output.
+
+\item[tex4ht]
+
+The output of \TeX{} is a standard dvi file interleaved with special
+instructions for the postprocessor \shellcmd{tex4ht} to use. The special
+instructions come from implicit and explicit requests made in the source file
+through commands of \texfourht.
+
+The utility tex4ht translates the dvi code into standard text, while obeying
+the requests it gets from the special instructions. The special instructions
+may request the creation of files, insertion of html code, filtering of
+pictures, and so forth.
+
+In the extreme case that the source code contains no commands of TeX4ht, tex4ht
+gets pure dvi code and it outputs (almost) plain text with no hypertext
+elements in it.
+
+The special (\texcommand{\special}) instructions seeded in the dvi code are not understood
+by dvi processors other than those of TeX4ht.
+
+\item[x.idv]
+
+This is a dvi file extracted from x.dvi, and it contains the pictures needed in
+the html files.
+
+\item[x.lg]
+
+This is a log file listing the pictures of x.idv, the png files that should be
+created, CSS information, and user directives introduced through the
+‘\texcommand{\Needs{...}}’ command.
+
+\item[t4ht]
+This is an interpreter for executing the requests made in the x.lg script.
+
+\end{description}
+
+
