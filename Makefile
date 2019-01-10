@@ -10,7 +10,7 @@ ifeq (lualatex, xelatex)
 	engine = -x
 endif
 
-sections = sections/tex4ht-commands.tex sections/tex4ht-options.tex sections/webfonts.tex sections/configuration-files.tex sections/tex4ht-development.tex
+sections = sections/tex4ht-commands.tex sections/tex4ht-options.tex sections/webfonts.tex sections/configuration-files.tex sections/tex4ht-development.tex sections/calling-commands.tex
 	
 all: tex4ht-doc.pdf tex4ht-doc.html
 
