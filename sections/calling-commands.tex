@@ -1,11 +1,86 @@
+The conversion process used by \texfourht\ involves several tools
+(see section \ref{sec:overview}, \nameref{sec:overview} for details). To
+simplify the process, several alternative tools are used. The traditional tool
+is the \shellcmd{htlatex} script and several other scripts working on the same
+principle. Recommended tool that supersedes them is \shellcmd{make4ht}.
+
 
 The translation of a LaTeX source file into HTML involves of loading tex4ht.sty
 and *.4ht style files, choosing the desirable options for the translation,
 compiling the source into dvi code with the native LaTeX engine, and
-postprocessing the outcome with the tex4ht and t4ht programs (see \nameref{sec:overview}). 
+post-processing the outcome with the tex4ht and t4ht programs.
+
+The conversion command loads a script which takes on itself to invoke the
+different steps of the process, without user intervention. The command assumes
+the form
+
+\begin{shellcommand}
+htlatex filename "options1" "option2" "options3" "options4"
+\end{shellcommand}
+
+where the first set of options is for the tex4ht.sty and *.4ht style files, the
+second set is for the tex4ht post-processor, the third for the t4ht
+post-processor, and the last one is for the \LaTeX\ compiler. 
+
+
+For instance:
+
+\begin{shellcommand}
+htlatex filename
+\end{shellcommand}
+
+This command requests a translation according to the default conditions, which are set to produce HTML transitional 4.0 code. 
+
+\begin{shellcommand}
+htlatex filename "html,2,info"
+\end{shellcommand}
+
+This command is equivalent to the previous one, specifying explicitly the option html for tex4ht.sty instead of doing so implicitly.
+
+In addition, the command requests a break up of the output into separate web pages, in accordance to the two top sectioning levels of the document.
+
+Moreover, it asks for a listing in the log file of the information available
+for the style files in use. That information, among other things, also
+introduces additional values available for the first list of options.
+
+\begin{shellcommand}
+htlatex filename "foo,frames" "" "-p"
+\end{shellcommand}
+
+This command requests LaTeX to load a \nameref{sec:private-configuration}, named
+foo.cfg, and to place the content and table of contents in separate frames. In
+addition, it asks t4ht not to produce bitmaps for pictures. 
+
+\begin{shellcommand}
+htlatex filename "html,charset=utf-8" "-cunihtf -utf8"
+\end{shellcommand}
+
+This command will produce HTML file in UTF 8 encoding. 
+
+
+\shellcmd{make4ht} can be used in a similar way:
+
+\begin{shellcommand}
+make4ht [make4ht options] filename "options1" "option2" "options3" "options4"
+\end{shellcommand}
+
+In contrast to \shellcmd{htlatex}, \shellcmd{make4ht} supports short options
+that can simplify the command invocation. For example the following command may
+be used for the UTF-8 output, which is preferable for most texts produced
+today:
+
+\begin{shellcommand}
+make4ht -u filename
+\end{shellcommand}
+
+The default output format used by \shellcmd{make4ht} is HTML 5, which another
+difference to \shellcmd{htlatex}. We will use only \shellcmd{make4ht} in the
+following text.
 
 
 \section{Overview of the Translation Process}\label{sec:overview}
+
+
 
 The system can be activated with a sequence of commands of the following form, typically embedded within a script.
 
