@@ -22,11 +22,11 @@
   \node (join) [empty] at ($(split right)!0.5!(split right down)$) {};
   \node (t4ht) [command,right of=join] {t4ht};
   \node (pictures) [file,right of=t4ht,node distance=35mm] {images \& CSS files};
-  \draw (xtex) to (TeX) to (xdvi) to (tex4ht) to (split) to (xidv);
-  \draw [->] (split) -> (split above) -> (html);
-  \draw [->] (split) -> (split below) -> (xlg);
+  \draw  (xtex) to (TeX) to (xdvi) to (tex4ht) to (split) to (xidv);
+  \draw  (split) -> (split above) -> (html);
+  \draw  (split) -> (split below) -> (xlg);
   \draw (xidv) -> (split right) -> (join);
-  \draw [->] (xlg) -> (split right down) -> (join)  -- (t4ht) |- (pictures);
+  \draw  (xlg) -> (split right down) -> (join)  -- (t4ht) |- (pictures);
 \end{tikzpicture}
 
 \end{document}
