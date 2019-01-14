@@ -14,5 +14,7 @@
 *.lg
 *.tmp
 *.out
+*.swo
+*.svg
 tags
 
