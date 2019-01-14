@@ -10,4 +10,4 @@ $(PDF): $(SOURCE)
 
 $(SVG): $(SOURCE)
 	latex '\def\pfgsysdriver{pgfsys-dvisvgm.def}\input{$<}'
-	dvisvgm --exact --font-format=woff,ah $(base).dvi
+	dvisvgm -c 1.5 --exact --font-format=woff,ah $(base).dvi
