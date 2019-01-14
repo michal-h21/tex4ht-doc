@@ -10,6 +10,8 @@ and *.4ht style files, choosing the desirable options for the translation,
 compiling the source into dvi code with the native LaTeX engine, and
 post-processing the outcome with the tex4ht and t4ht programs.
 
+\section{\texttt{htlatex} and other conversion scripts}
+
 The conversion command loads a script which takes on itself to invoke the
 different steps of the process, without user intervention. The command assumes
 the form
@@ -57,6 +59,7 @@ htlatex filename "html,charset=utf-8" "-cunihtf -utf8"
 
 This command will produce HTML file in UTF 8 encoding. 
 
+\section{\texttt{make4ht} build system}
 
 \shellcmd{make4ht} can be used in a similar way:
 
@@ -93,6 +96,11 @@ t4ht       x
 \end{shellcommand}
 
 The three compilations with La(TeX) are needed to ensure proper links. The approach is illustrated in the following picture. 
+
+\begin{figure}
+  \includegraphics{images/tex4ht_process/tex4ht_process}
+  \caption{\texfourht\ process overview}
+\end{figure}
 
 \begin{description}
   \item[x.tex]
