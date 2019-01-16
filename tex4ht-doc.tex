@@ -167,6 +167,44 @@ In the ODT output, different mechanism is used:
 \ConfigureEnv{arab}{\@rltrue}{\@rlfalse}{}{}
 \end{texsource}
 
+\subsection{Unicode}
+
+Generally speaking, \texfourht\ supports \term{Unicode}, but there are some
+issues to be aware of. Most complete support exists for Lua\LaTeX, thanks to
+special Lua script which is automatically loaded during the compilation. No
+additional packages are necessary.
+
+PDF\LaTeX\ doesn't support nativelly, but it is possible to emulate it using the
+\package{inputenc} and \package{fontenc} packages:
+
+\begin{texsource}
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\begin{document}
+Unicode text
+\end{document}
+\end{texsource}
+
+Xe\LaTeX\ is an Unicode format, similarly to Lua\LaTeX. The supporting
+mechanism for \texfourht\ is different in this case and full Unicode range is
+not supported out of the box. By default, only most Latin based scripts are
+supported. For other scripts, such as Greek or Cyrillic, two ways to enable
+support exists. 
+
+First option is to define new font family using \package{fontspec} \texcommand{\newfontfamily} with the \texttt{Script} option.
+
+\begin{texsource}
+\newfontfamily\greekfont{Linux Libertine O}[Script=Greek]
+\end{texsource}
+
+The second option is to load support for a script in the custom config file using the \texcommand{\xeuniuseblock}:
+
+
+\begin{texsource}
+\xeuniuseblock{Greek}
+\end{texsource}
+
 \section{Colors}
 
 Information about the \texcommand{\color} command:
