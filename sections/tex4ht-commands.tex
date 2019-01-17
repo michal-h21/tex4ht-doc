@@ -70,8 +70,19 @@ I think it will be best to show some concrete examples:
 
 The \texcommand{\NewLogicalBlock} creates a new logical element. The used tag is configured
 using \texcommand{\SetTag}, the attributes are set using \texcommand{\SetBlockProperty}. The blocks are
-inserted to the document using \texcommand{\InlineElementStart} ...  \texcommand{\InlineElementEnd} or
-\texcommand{\BlockElementStart} ... \texcommand{\BlockElementEnd} pairs. The start commands take two
+inserted to the document using 
+
+\begin{texsource}
+\InlineElementStart ... \InlineElementEnd
+\end{texsource}
+
+\noindent or
+
+\begin{texsource}
+\BlockElementStart ... \BlockElementEnd 
+\end{texsource}
+
+\noindent pairs. The start commands take two
 parameters, first is the logical block name, the second can be local
 parameters which shouldn't be used for the given logical block globally.
 

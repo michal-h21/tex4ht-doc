@@ -156,7 +156,9 @@ There is a difference in the RTL support for HTML and ODT output formats. In HTM
 Example:
 
 \begin{texsource}
-\ConfigureEnv{arab}{\Configure{LRdir}{ dir="rtl"}}{\Configure{LRdir}{}}{}{}
+\ConfigureEnv{arab}
+{\Configure{LRdir}{ dir="rtl"}}
+{\Configure{LRdir}{}}{}{}
 \end{texsource}
 
 This configuration sets the direction to \term{rtl} inside the \term{arab} environment and resets it after the environment end.

@@ -14,7 +14,7 @@ The Css font family and the local font name can be changed using
 \end{texsource}
 
 The font shapes can be configure using \verb|\Configure{NormalFont}|, 
-\verb|\Configure{ItalicFont}|, \verb|\Configure{BoldItalicFont}| and
+\texcommand{\Configure}\allowbreak\texcommand{{ItalicFont}}, \verb|\Configure{BoldItalicFont}| and
 \verb|Configure{BoldFont}|. The argument should be font file in the format
 supported by browsers, such as \textit{woff} or \textit{otf}.
 
@@ -27,6 +27,8 @@ supported by browsers, such as \textit{woff} or \textit{otf}.
 % Add another font family
 \Configure{FontFamily}{hello}{Linux Libertine O}
 \Configure{NormalFont}{hello-font-file.otf}
-\Css{body{font-family: rmfamily, "AnotherFontFamilyName", serif;}}
+\Css{body{
+  font-family: rmfamily, "AnotherFontFamilyName", serif;
+}}
 \Css{span.hello{font-family: hello, sans-serif;}}
 \end{texsource}
