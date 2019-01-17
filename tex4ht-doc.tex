@@ -188,7 +188,7 @@ Unicode text
 
 Xe\LaTeX\ is an Unicode format, similarly to Lua\LaTeX. The supporting
 mechanism for \texfourht\ is different in this case and full Unicode range is
-not supported out of the box. By default, only most Latin based scripts are
+not supported out of the box. By default, only most Latin based characters are
 supported. For other scripts, such as Greek or Cyrillic, two ways to enable
 support exists. 
 
@@ -198,12 +198,34 @@ First option is to define new font family using \package{fontspec} \texcommand{\
 \newfontfamily\greekfont{Linux Libertine O}[Script=Greek]
 \end{texsource}
 
-The second option is to load support for a script in the custom config file using the \texcommand{\xeuniuseblock}:
+
+The second option is to declare load support for a script in the custom config
+file using the \texcommand{\xeuniuseblock}:
 
 
 \begin{texsource}
 \xeuniuseblock{Greek}
 \end{texsource}
+
+The block names are based on \href{https://en.wikipedia.org/wiki/Unicode_block}{Unicode blocks}.
+
+It is also possible to declare all characters in an Unicode range. The command
+\texcommand{\xeuniregisterblockhex} takes two hexadecimal parameters with
+Unicode range to be declared.
+
+\begin{texsource}
+\xeuniregisterblockhex{0100}{017F}
+\end{texsource}
+
+Individual character can be declared using the \texcommand{\xeuniregisterchar} command:
+
+\begin{texsource}
+\xeuniregisterchar{"1F00}
+\end{texsource}
+
+In contrast to \texcommand{\xeuniregisterblockhex}, it uses decimal numbers by
+default, so it is necessary to use the \texttt{"} character in front of
+a hexadecimal number.
 
 \section{Colors}
 
