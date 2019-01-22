@@ -75,6 +75,7 @@ figure.texsource, figure.shellcommand, figure.htmlsource{
   padding-left:0.5rem; 
   overflow:auto;
 }
+figure pre.listings{font-size: 1em;}
 
 .chapterToc, .sectionToc, .subsectionToc{margin:0;padding:0;}
 nav.TOC{
