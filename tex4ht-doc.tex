@@ -47,6 +47,50 @@ This work was supported with a financial support from \href{https://cstug.cz/}{C
 \include{sections/tex4ht-commands}
 \section{Styling the Document}
 
+\texfourht\ provides several commands that can be used for changing of the
+document appearance using Cascading Style Sheets (\css). Only basic styling for
+the document is provided by default. Additional styles are added by configurations for the
+fonts, packages and commands used in the document. Full control of the document
+styling can be achieved using following commands and configurations.
+
+
+\texcommand{\Css{content}}
+
+This command sends its content to the CSS file of the document. 
+
+\texcommand{\CssFile[list-of-css-files]content\EndCssFile}
+
+The default CSS file \texfourht\ produces is initially a file consisting just
+of a single line of the form \verb|‘/* css.sty */’|. That line is later
+replaced with the code submitted by the \texcommand{\Css{...}} commands.
+
+The current command allows to specify an alternative to the initial CSS file.
+The alternative file consists of the code loaded from listed files, and of the
+content explicitly specified in its body.
+
+\begin{texsource}
+\ConfigureList{mylist} 
+{\HCode{<div class="mylist">}} {\HCode{</div>}} {* }{} 
+       
+\begin{document} 
+       
+\CssFile 
+/* css.sty */ 
+.mylist { color : red; } 
+\EndCssFile 
+\end{texsource}
+
+The names in the list of files should be separated by commas, and the rectangular brackets are optional when the list is empty.
+
+The file should include a line having the content of \verb|/* css.sty */|. If
+more than one such line is included, the content of the \texcommand{\Css{...}} commands
+replace the first occurrence of this line. Arbitrary many space characters may
+appear around the substrings ‘/*’ and ‘*/’. 
+
+\DocConfigure{AddCss} {CSS file name}\EndDoc
+
+Require external CSS file.
+
 \section{Use Webfonts}
 \include{sections/webfonts}
 \section{Use JavaScript}
