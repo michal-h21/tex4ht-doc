@@ -1,5 +1,19 @@
 \section{Private Configuration Files}\label{sec:private-configuration}
 
+It is highly recommended to leave source LaTeX and TeX files intact, and not
+introduce TeX4ht configurations there. The configurations should be introduced
+indirectly in private configuration files. Source files containing just native
+LaTeX and TeX code permit their compilation to different output formats,
+including PostScript and PDF, by TeX4ht and other tools.
+
+Packages used by the general LaTeX community typically provide better support
+than one can expect from tailoring private commands and configurations for such
+commands. It is also expected to take less effort to learn the features of
+existing packages than designing new ones. Consequently, one is advised to
+investigate available resources before committing to work on private features. 
+
+\subsection{Requesting Private Configuration Files}
+
 The leading entry, in the first list of options of the \shellcmd{htlatex}-like
 commands, can equal \option{html} or \option{xhtml}. If this is not the case,
 the entry is assumed to be the name of a configuration file. The extension
@@ -17,7 +31,8 @@ A configuration file should take the following form for LaTeX files.
 \EndPreamble
 \end{texsource}
 
-It is up to the user to decide the distribution of entries between the \texcommand{\Preamble} and the htlatex-like commands.
+It is up to the user to decide the distribution of entries between the
+\texcommand{\Preamble} and the htlatex-like commands.
 
 Example: The command \shellcmd{htlatex myfile "mycfg,2"} requests the
 compilation of a file named \file{myfile.tex}, in the presence of a
