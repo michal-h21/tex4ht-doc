@@ -20,6 +20,15 @@ the entry is assumed to be the name of a configuration file. The extension
 ‘cfg’ is assumed for names of configuration files that are listed without their
 extension.
 
+Example: The command \shellcmd{htlatex myfile "mycfg,2"} requests the
+compilation of a file named \file{myfile.tex}, in the presence of a
+configuration file named \file{mycfg.cfg}. The configuration file might have the
+following content.
+
+In \shellcmd{make4ht}, it is possible, in addition to the method described
+above, to use the \shellcmd{-c} option: \shellcmd{make4ht -c mycfg.cfg myfile "2"}.
+
+
 A configuration file should take the following form for LaTeX files.
 
 \begin{texsource}
@@ -31,22 +40,17 @@ A configuration file should take the following form for LaTeX files.
 \EndPreamble
 \end{texsource}
 
-It is up to the user to decide the distribution of entries between the
+It is up to the user to decide the distribution of options between the
 \texcommand{\Preamble} and the htlatex-like commands.
 
-Example: The command \shellcmd{htlatex myfile "mycfg,2"} requests the
-compilation of a file named \file{myfile.tex}, in the presence of a
-configuration file named \file{mycfg.cfg}. The configuration file might have the
-following content.
-
 \begin{texsource}
-\Preamble{html} 
+\Preamble{xhtml} 
 \begin{document} 
   \Css{body { color : red; }} 
 \EndPreamble 
 \end{texsource}
 
-Notes
+\paragraph{Notes}
 
 \begin{itemize}
   \item Notice that for a LaTeX file the \texcommand{\begin{document}}
