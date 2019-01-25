@@ -34,17 +34,17 @@ This work was supported with a financial support from \href{https://cstug.cz/}{C
 
 \chapter{Basic Tutorial}
 \chapter{Calling Commands}
-\include{sections/calling-commands}
+\input{sections/calling-commands}
 \label{sec:calling-commands}
 \chapter{Output Formats}
 \chapter{\texfourht\ Options}
 
-\include{sections/tex4ht-options}
+\input{sections/tex4ht-options}
 
 \chapter{Configurations}
-\include{sections/configuration-files}
+\input{sections/configuration-files}
 \section{tex4ht Commands}
-\include{sections/tex4ht-commands}
+\input{sections/tex4ht-commands}
 \section{Styling the Document}
 
 \texfourht\ provides several commands that can be used for changing of the
@@ -91,8 +91,8 @@ appear around the substrings ‘/*’ and ‘*/’.
 
 Require external CSS file.
 
-\section{Use Webfonts}
-\include{sections/webfonts}
+\section{Webfonts}
+\input{sections/webfonts}
 \section{Use JavaScript}
 \section{Document Navigation}
 
@@ -287,7 +287,7 @@ Example of extracting color information to the CSS and custom color environment 
 
 \section{Graphics and Pictures}
 
-\include{sections/graphics}
+\input{sections/graphics}
 \section{TikZ }
 
 Animations using Animate package: \url{https://tex.stackexchange.com/a/404600/2891}
@@ -304,7 +304,8 @@ specified in \configuration{MathjaxSource}. The default value of this configurat
 
 \begin{texsource}
 \Configure{MathjaxSource}
-{https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML}
+{https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/%
+latest.js?config=TeX-AMS-MML_HTMLorMML}
 \end{texsource}
 
 By default, inline and display math, as well as math environments, are kept as
@@ -341,7 +342,7 @@ JavaScript strings.
 \section{Indexing}
 
 \section{OpenDocument Format}
-\include{sections/odt}
+\input{sections/odt}
 
 \chapter{Make4ht Build Files}
 \section{Commands execution}
@@ -355,7 +356,7 @@ Some samples:
 \section{Image conversion}
 
 \chapter{For developers}
-\include{sections/tex4ht-development}
+\input{sections/tex4ht-development}
 
 \chapter{Glossary}
 \chapter{Bibliography}
