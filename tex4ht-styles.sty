@@ -32,9 +32,9 @@
 % this was used by CVR in the options page
 \let\chfont\texttt
 
-\lstset{basicstyle=\ttfamily}
+\lstset{basicstyle=\ttfamily,keywordstyle=\bfseries}
 
-\lstnewenvironment{texsource}{\lstset{language=TeX,upquote=true}}{}
+\lstnewenvironment{texsource}{\lstset{language=[LaTeX]TeX,upquote=true,texcsstyle=*\bfseries}}{}
 \lstnewenvironment{htmlsource}{\lstset{language=HTML,escapechar=*,upquote=true}}{}
 \lstnewenvironment{shellcommand}{\lstset{language=bash,upquote=true}}{}
 \newcommand\texinput[1]{\lstinputlisting[language=TeX,upquote=true]{#1}}
