@@ -1,5 +1,6 @@
 \ProvidesPackage{tex4ht-styles}
 \RequirePackage{listings}
+\usepackage{minted}
 \RequirePackage{xparse}
 
 % formatting commands
@@ -34,7 +35,9 @@
 
 \lstset{basicstyle=\ttfamily,keywordstyle=\bfseries}
 
-\lstnewenvironment{texsource}{\lstset{language=[LaTeX]TeX,upquote=true,texcsstyle=*\bfseries}}{}
+
+\newminted[texsource]{latex}{}
+% \lstnewenvironment{texsource}{\lstset{language=[LaTeX]TeX,upquote=true,texcsstyle=*\bfseries}}{}
 \lstnewenvironment{htmlsource}{\lstset{language=HTML,escapechar=*,upquote=true}}{}
 \lstnewenvironment{shellcommand}{\lstset{language=bash,upquote=true}}{}
 \newcommand\texinput[1]{\lstinputlisting[language=TeX,upquote=true]{#1}}
