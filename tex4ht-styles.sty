@@ -1,5 +1,4 @@
 \ProvidesPackage{tex4ht-styles}
-\RequirePackage{listings}
 \RequirePackage{minted}
 
 \usemintedstyle{lovelace}
@@ -35,14 +34,12 @@
 % this was used by CVR in the options page
 \let\chfont\texttt
 
-\lstset{basicstyle=\ttfamily,keywordstyle=\bfseries}
 
 
 \newminted[texsource]{latex}{}
-% \lstnewenvironment{texsource}{\lstset{language=[LaTeX]TeX,upquote=true,texcsstyle=*\bfseries}}{}
-\lstnewenvironment{htmlsource}{\lstset{language=HTML,escapechar=*,upquote=true}}{}
-\lstnewenvironment{shellcommand}{\lstset{language=bash,upquote=true}}{}
-\newcommand\texinput[1]{\lstinputlisting[language=TeX,upquote=true]{#1}}
+\newminted[htmlsource]{html}{}
+\newminted[shellcommand]{shell}{}
+\newmintedfile[texinput]{latex}{}
 
 % Document \Configure commands. They have variable number of arguments, so it is necessary to process them as a list
 \def\PrintConfigures#1#2\@nil{\{#1\}\allowbreak\ifx\relax#2\relax\else\expandafter\PrintConfigures#2\@nil\fi}
