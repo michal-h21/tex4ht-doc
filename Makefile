@@ -4,6 +4,7 @@ outputdir = out
 
 IMAGESUBDIRS := $(wildcard images/*/.)
 
+
 ifeq (lualatex, lualatex)
 	engine = -l
 endif
@@ -12,7 +13,9 @@ ifeq (lualatex, xelatex)
 	engine = -x
 endif
 
-sections = sections/tex4ht-commands.tex sections/tex4ht-options.tex sections/webfonts.tex sections/configuration-files.tex sections/tex4ht-development.tex sections/calling-commands.tex sections/graphics.tex
+# sections = sections/tex4ht-commands.tex sections/tex4ht-options.tex sections/webfonts.tex sections/configuration-files.tex sections/tex4ht-development.tex sections/calling-commands.tex sections/graphics.tex
+sections = $(wildcard sections/*.tex)
+filters = $(wildcard filters/*.lua)
 	
 all: $(IMAGESUBDIRS) tex4ht-doc.pdf tex4ht-doc.html 
 
@@ -24,7 +27,7 @@ $(IMAGESUBDIRS):
 tex4ht-doc.pdf: tex4ht-doc.tex tex4ht-styles.sty ${sections}
 	lualatex -shell-escape tex4ht-doc.tex
 
-tex4ht-doc.html: tex4ht-doc.tex config.cfg tex4ht-styles.sty build.mk4 ${sections}
+tex4ht-doc.html: tex4ht-doc.tex config.cfg tex4ht-styles.sty build.mk4 ${sections} ${filters}
 	make4ht -usm $(mode) -c config $(engine) -d $(outputdir) -f html5+common_domfilters -e build.mk4  tex4ht-doc.tex
 
 
