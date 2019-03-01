@@ -60,11 +60,11 @@ This command sends its content to the CSS file of the document.
 
 \texcommand{\CssFile[list-of-css-files]content\EndCssFile}
 
-The default CSS file \texfourht\ produces is initially a file consisting just
-of a single line of the form \verb|‘/* css.sty */’|. That line is later
+The CSS file \texfourht\ used by default initially consists just
+a single line,  \texcommand{|/* css.sty */|. This line is later
 replaced with the code submitted by the \texcommand{\Css{...}} commands.
 
-The current command allows to specify an alternative to the initial CSS file.
+The \texcommand{\CssFile} command allows to specify an alternative to the initial CSS file.
 The alternative file consists of the code loaded from listed files, and of the
 content explicitly specified in its body.
 
