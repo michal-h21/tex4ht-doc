@@ -17,4 +17,5 @@
 *.swo
 *.svg
 tags
+_minted-tex4ht-doc/
 
