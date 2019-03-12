@@ -272,6 +272,15 @@ In contrast to \texcommand{\xeuniregisterblockhex}, it uses decimal numbers by
 default, so it is necessary to use the \texttt{"} character in front of
 a hexadecimal number.
 
+\begin{warning}
+It is possible to run into issues because of the way how Xe\LaTeX\ Unicode
+support works. Common problem is filename support, for example in included
+graphics. In general, it is better to avoid such filenames. If it is not possible, try to use the \texcommand{\detokenize} command.
+\begin{texsource}
+  \includegraphics{\detokenize{háček.jpg}}
+\end{texsource}
+\end{warning}
+
 \section{Colors}
 
 Information about the \texcommand{\color} command:
