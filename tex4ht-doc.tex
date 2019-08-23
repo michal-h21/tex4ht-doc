@@ -308,6 +308,30 @@ Issues with drivers: \url{https://tex.stackexchange.com/a/471460/2891}.
 \section{Math}
 \subsection{Default math handling}
 \subsection{MathML}
+
+\mathml\ is a XML markup for the math encoding. It is supported in many
+aplications including OpenOffice Writer or Firefox web browser. 
+The advantage over use of images % Todo: write about advantages of MathML.
+
+The \mathml\ code produced by \texfourht\ may contain some issues. For example,
+one common issue may happen when the math contain unmatched delimiters:
+
+\begin{texsource}
+ Mail address: $\lparen$hello@world.com$\rparen$
+\end{texsource}
+
+In such cases, the \option{matml-} may help. 
+
+It is also advisable to always use \extension{common\_domfilters}
+\term{make4ht} extension (see section \ref{sec:make4ht-extensions} for more
+information about \term{make4ht} extensions), as it fixes some common \mathml\
+errors that cannot be easily fixed on the \TeX\ level.
+
+
+Add information about the \url{https://github.com/pshihn/math-ml} - it adds
+support for MathML in all modern web browsers with HTML 5.
+
+
 \subsection{MathJax}
 
 The \term{MathJax} processing can be required using \option{mathjax} option.
