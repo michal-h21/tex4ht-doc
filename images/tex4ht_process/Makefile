@@ -1,7 +1,7 @@
 base=tex4ht_process
 SOURCE=$(base).tex
 PDF=$(base).pdf
-SVG=$(base).svg
+SVG=$(base)-1.svg
 
 
 all: $(SOURCE) $(PDF) $(SVG)
