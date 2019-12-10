@@ -1,0 +1,503 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head><title>6 tex4ht Options</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (http://www.tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='tex4ht-doc.css' type='text/css' rel='stylesheet' /> 
+<meta content='tex4ht-doc.tex' name='src' /> 
+<link href='style.css' type='text/css' rel='stylesheet' /> 
+</head><body>
+<nav class='TOC'><span class='chapterToc'>1 <a href='Introduction.html#x2-10001'>Introduction</a></span><span class='chapterToc'>2 <a href='BasicTutorial.html#x3-30002'>Basic Tutorial</a></span><span class='chapterToc'>3 <a href='Howto.html#x4-40003'>How to</a></span><span class='chapterToc'>4 <a href='CallingCommands.html#x5-230004'>Calling Commands</a></span><span class='chapterToc'>5 <a href='OutputFormats.html#x6-280005'>Output Formats</a></span><span class='chapterToc'>6 <a href='#x7-290006'><code>tex4ht</code> Options</a></span><span class='sectionToc'>6.1 <a href='#x7-300006.1'>List of options</a></span><span class='chapterToc'>7 <a href='Configurations.html#x8-310007'>Configurations</a></span><span class='chapterToc'>8 <a href='Make4htBuildFiles.html#x9-700008'>Make4ht Build Files</a></span><span class='chapterToc'>9 <a href='FAQ.html#x10-740009'>FAQ</a></span><span class='chapterToc'>10 <a href='Fordevelopers.html#x11-7700010'>For developers</a></span><span class='chapterToc'>11 <a href='Glossary.html#x12-8700011'>Glossary</a></span><span class='chapterToc'>12 <a href='Bibliography.html#x13-8800012'>Bibliography</a></span><span class='chapterToc'>13 <a href='Index.html#x14-8900013'>Index</a></span></nav> 
+<main class='main-content'> 
+<nav class='crosslinks-top'> [<a href='OutputFormats.html'>prev</a>] [<a href='tex4ht-doc.html#texfourhtOptions.html'>up</a>] [<a href='Configurations.html'>next</a>] </nav> 
+<h2 class='chapterHead'><span class='titlemark'>Chapter 6</span><br /><a id='x7-290006'></a><code>tex4ht</code> Options</h2>
+                                                                  
+
+                                                                  
+Following is an incomplete list of options that can be passed to the
+<code>tex4ht.sty</code> package. These options can be used to modify the compilation process,
+for example to select a <span class='emph'>SVG</span> format for generated images, to request math
+environments to be convert as images or to split sections as separate HTML
+pages.
+<!-- l. 11 --><p class='indent'>   The options may be defined in the <code>.4ht</code> files and may depend on the output
+format, so it is not feasible to provide their full list. Most of the following options
+work only in the <code>HTML</code> output.
+</p><!-- l. 15 --><p class='indent'>   There are several ways how to pass the options to <code>tex4ht</code>. The non-recommended
+way is to pass them as options to <code>tex4ht.sty</code> using <code>\usepackage</code> command in the
+<span class='TEX'>T<span class='E'>E</span>X</span> file.
+</p><!-- l. 19 --><p class='indent'>   Better ways don’t require modifications of the <span class='TEX'>T<span class='E'>E</span>X</span> files. It is possible to pass
+the options to the calling script, as an command line argument next to the
+filename:
+</p>   
+<figure role='doc-example' class='shellcommand'>
+<div id='fancyvrb9' class='fancyvrb'><a id='x7-29003r1'></a><span class='rm-lmtt-10'>make4ht filename.tex </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"fn-in"</span></span></div>
+</figure>
+<!-- l. 30 --><p class='indent'>   For more information about calling scripts see the section <a href='CallingCommands.html#x5-270004.3.1'>4.3.1<!-- tex4ht:ref: sec:calling-commands  --></a>.
+</p><!-- l. 32 --><p class='indent'>   It is also possible to pass options in the <code>\Preamble</code> command in a <span class='emph'>custom
+configuration file</span>.
+</p>   
+<figure role='doc-example' class='texsource'>
+<div id='fancyvrb10' class='fancyvrb'><a id='x7-29009r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>fn-in</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x7-29011r2'></a><span class='rm-lmtt-10'>...</span><br class='fancyvrb' /><a id='x7-29013r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x7-29015r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\EndPreamble</span></span></div>
+</figure>   
+<h3 class='sectionHead'><span class='titlemark'>6.1   </span> <a id='x7-300006.1'></a>List of options</h3>
+<dl class='description'><dt class='description'>
+<span class='rm-lmbx-10'>-css</span> 
+</dt><dd class='description'>to ignore <code>CSS</code> code, use command line option <span class='obeylines-h'><code>-css</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>-xtpipes</span> 
+</dt><dd class='description'>to avoid <span class='obeylines-h'><code>xtpipes</code></span> post-processing the output. This might be useful
+for docbook <code>XML</code> output.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>0</span> 
+</dt><dd class='description'>pagination shall be obtained through the option <span class='obeylines-h'><code>0</code></span> or <span class='obeylines-h'><code>1</code></span>, at locations marked
+with <span class='obeylines-h'><code>\PageBreak</code></span>.
+                                                                  
+
+                                                                  
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>1, 2, 3, 4, 5, 6, 7</span> 
+</dt><dd class='description'>for  automatic  sectioning  pagination  (to  break  at  various
+section levels), use the appropriate command line option <span class='obeylines-h'><code>1, 2, 3, 4,</code>
+</span><span class='obeylines-h'><code>5, 6, 7</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>DOCTYPE</span> 
+</dt><dd class='description'>to request a <span class='obeylines-h'><code>DOCTYPE</code></span> declaration, use the command line option
+<span class='obeylines-h'><code>DOCTYPE</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>Gin-dim</span> 
+</dt><dd class='description'>for key dimensions of the graphic, try this option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>Gin-dim+</span> 
+</dt><dd class='description'>for key dimensions when the bounding box is not available.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>NoFonts</span> 
+</dt><dd class='description'>to ignore <code>CSS</code> font decoration.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>PMath</span> 
+</dt><dd class='description'>Option  to  choose  positioned  math.  Example:  <span class='obeylines-h'><code>\def\({\PMath$}</code></span>;
+<span class='obeylines-h'><code>\def\){$\EndPMath}</code></span>; <span class='obeylines-h'><code>\def\[{\PMath$$}</code></span>; <span class='obeylines-h'><code>\def\]{$$\EndPMath}</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>RL2LR</span> 
+</dt><dd class='description'>to reverse the direction of RL sentences.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>TocLink</span> 
+</dt><dd class='description'>option to request links from the tables of contents.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>^13</span> 
+</dt><dd class='description'>option for active superscript character.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>_13</span> 
+</dt><dd class='description'>option for active subscript character.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>accent-</span> 
+</dt><dd class='description'>This option is available only together with <span class='emph'>new-accents</span>. It produces
+pictures for some math accents.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>bib-</span> 
+</dt><dd class='description'>for degraded bibliography friendlier for conversion to <span class='obeylines-h'><code>.doc</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>bibtex2</span> 
+</dt><dd class='description'>Option <span class='obeylines-h'><code>bibtex2</code></span> requires compilation of <span class='obeylines-h'><code>\jobname j.aux</code></span> with bibtex.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>charset</span> 
+</dt><dd class='description'>for   alternate   character   set,   use   the   command   line   option
+<span class='obeylines-h'><code>charset="..."</code></span> (e.g., <span class='obeylines-h'><code>charset="utf8"</code></span>).
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>css-in</span> 
+</dt><dd class='description'>the inline <code>CSS</code> code will be extracted from the input of the previous
+compilation, so an extra compilaion might be needed for this option to
+make it effective.
+                                                                  
+
+                                                                  
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>css2</span> 
+</dt><dd class='description'>for <code>CSS</code>2 code.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>early^</span> 
+</dt><dd class='description'>for default catcode of superscript in the <span class='obeylines-h'><code>\Preamble</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>early_</span> 
+</dt><dd class='description'>for default catcode of subscript in the <span class='obeylines-h'><code>\Preamble</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>endnotes</span> 
+</dt><dd class='description'>for end notes instead of footnotes, use this option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>enumerate+</span> 
+</dt><dd class='description'>for enumerated list elements that keep the list couter value. This
+will use the description list like <span class='obeylines-h'><code>&lt;dt&gt;...&lt;/dt&gt;</code></span> for the list counter.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>enumerate-</span> 
+</dt><dd class='description'>for enumerated list element’s <span class='obeylines-h'><code>&lt;li&gt;</code></span>’s with value attributes, use
+this command line option. This will be an ordered list with the value of
+list counter provided as an attribute namely, <span class='obeylines-h'><code>value</code></span> of the <span class='obeylines-h'><code>&lt;li&gt;</code></span> element.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>fn-in</span> 
+</dt><dd class='description'>for inline footnotes use this option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>fn-out</span> 
+</dt><dd class='description'>for offline footnotes.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>fonts</span> 
+</dt><dd class='description'>for tracing L<span class='rm-lmr-7'>A</span><span class='TEX'>T<span class='E'>E</span>X</span> font commands, use this command line option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>fonts+</span> 
+</dt><dd class='description'>for marking of the base font, use this option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>font</span> 
+</dt><dd class='description'>for  adjusted  font  size,  use  the  command  line  option  <span class='obeylines-h'><code>font=...</code></span> (e.g.,
+font=-2).
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>frames-</span> 
+</dt><dd class='description'>for frames support. <span class='obeylines-h'><code>frames</code></span> is also valid option for frames support.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>frames-fn</span> 
+</dt><dd class='description'>for content, <code>TOC</code> and footnotes in three frames.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>frames</span> 
+</dt><dd class='description'>for <code>TOC</code> and content in two frames.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>gif</span> 
+</dt><dd class='description'>for bitmaps of pictures in <span class='obeylines-h'><code>.gif</code></span> format, use this option.
+                                                                  
+
+                                                                  
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>graphics-</span> 
+</dt><dd class='description'>if the included graphics are of degraded quality, try the command
+line options <span class='obeylines-h'><code>graphics-num</code></span> or <span class='obeylines-h'><code>graphics-</code></span>. The <span class='obeylines-h'><code>num</code></span> should provide the
+density of pixels in the bitmaps (e.g., 110).
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>hidden-ref</span> 
+</dt><dd class='description'>option to hide clickable index and bibliography references.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>html+</span> 
+</dt><dd class='description'>for stricter <code>HTML</code> code.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>imgdir</span> 
+</dt><dd class='description'>for addressing images in a subdirectory, use the option <span class='obeylines-h'><code>\imgdir:.../</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>image-maps</span> 
+</dt><dd class='description'>for <span class='obeylines-h'><code>image-maps</code></span> support.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>index</span> 
+</dt><dd class='description'>for  <span class='emph'>n</span>-column  index,  use  the  command  line  option,  <span class='obeylines-h'><code>index=n</code></span> (e.g.,
+index=2).
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>info-oo</span> 
+</dt><dd class='description'>for extra tracing information while generating open office output.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>info</span> 
+</dt><dd class='description'>for extra information in the <span class='obeylines-h'><code>\jobname.log</code></span> file.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>java</span> 
+</dt><dd class='description'>for <span class='obeylines-h'><code>java</code></span>support.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>javahelp</span> 
+</dt><dd class='description'>for <span class='obeylines-h'><code>JavaHelp</code></span> output format, use this command line option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>javascript</span> 
+</dt><dd class='description'>for <span class='obeylines-h'><code>javascript</code></span> support.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>jh-</span> 
+</dt><dd class='description'>for sources failing to produce <code>XML</code> versions of <code>HTML</code>, try this command line
+option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>jpg</span> 
+</dt><dd class='description'>for bitmaps of pictures in <span class='obeylines-h'><code>.jpg</code></span> format, use this option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>li-</span> 
+</dt><dd class='description'>for enumerated list elements li’s with value attributes.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>math-</span> 
+</dt><dd class='description'>option to use when sources fail to produce clean math code.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>mathjax</span> 
+</dt><dd class='description'>use <span class='emph'>MathJax</span> for the math rendering.
+                                                                  
+
+                                                                  
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>mathltx-</span> 
+</dt><dd class='description'>option to use when sources fail to produce clean <span class='obeylines-h'><code>mathltx</code></span> code.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>mathml-</span> 
+</dt><dd class='description'>option to use when sources fail to produce clean <code>MathML</code>code.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>mathplayer</span> 
+</dt><dd class='description'>for <code>MathML</code> on Internet Explorer + MathPlayer.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>minitoc&lt;</span> 
+</dt><dd class='description'>for mini tocs immediately after the header use the command line
+option, <span class='obeylines-h'><code>minitoc&lt;</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>mouseover</span> 
+</dt><dd class='description'>for pop ups on mouse over.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>new-accents</span> 
+</dt><dd class='description'>alternative configurations for accented characters.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>next</span> 
+</dt><dd class='description'>for linear cross-links of pages, use this option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>nikud</span> 
+</dt><dd class='description'>for Hebrew vowels, use the command line option, <span class='obeylines-h'><code>nikud</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>no-DOCTYPE</span> 
+</dt><dd class='description'>to remove <code>DOCTYPE</code> declaration from the output.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>no-VERSION</span> 
+</dt><dd class='description'>to  remove  <span class='obeylines-h'><code>&lt;?xml version="..."?&gt;</code></span> processing  instruction
+from the output.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>no-halign</span> 
+</dt><dd class='description'>suppress <code>\halign</code> redefinition. It doesn’t work with the <code>tabular</code>
+environment.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>no^</span> 
+</dt><dd class='description'>for non-active <span class='obeylines-h'><code>^</code></span> (superscript), use the option <span class='obeylines-h'><code>no^</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>no_</span> 
+</dt><dd class='description'>for non-active <span class='obeylines-h'><code>_</code></span> (subscript command), use the command line option, <span class='obeylines-h'><code>no_</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>no_^</span> 
+</dt><dd class='description'>for both non-active superscript and subscript, use the option <span class='obeylines-h'><code>no_^</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>nolayers</span> 
+</dt><dd class='description'>to remove overlays of slides, use this option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>nominitoc</span> 
+</dt><dd class='description'>this will eliminate mini tables of contents from the output.
+                                                                  
+
+                                                                  
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>notoc*</span> 
+</dt><dd class='description'>for  tocs  without  <span class='obeylines-h'><code>*</code></span> entries,  use  this  option.  The  <span class='obeylines-h'><code>notoc*</code></span> option  is
+applicable only to pages that are automatically decomposed into separate
+web pages along section divides. It shall be used when <span class='obeylines-h'><code>\addcontentsline</code></span>
+instructions are present in the sources.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>obj-toc</span> 
+</dt><dd class='description'>for frames-like object based table of contents, use the command line
+option <span class='obeylines-h'><code>obj-toc</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>p-width</span> 
+</dt><dd class='description'>for width specifications of tabular <span class='obeylines-h'><code>p</code></span> entries, use this option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>pic-RL</span> 
+</dt><dd class='description'>for pictorial RL.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>pic-align</span> 
+</dt><dd class='description'>for pictorial align environment.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>pic-array</span> 
+</dt><dd class='description'>for pictorial array.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>pic-cases</span> 
+</dt><dd class='description'>for pictorial cases environment.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>pic-eqalign</span> 
+</dt><dd class='description'>for pictorial equalign environment.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>pic-eqnarray</span> 
+</dt><dd class='description'>for pictorial eqnarray.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>pic-equation</span> 
+</dt><dd class='description'>for pictorial equations.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>pic-fbox</span> 
+</dt><dd class='description'>for pictorial or bitmapped fbox’es.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>pic-framebox</span> 
+</dt><dd class='description'>for bitmap fameboxes.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>pic-longtable</span> 
+</dt><dd class='description'>for bitmapped longtable.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>pic-m+</span> 
+</dt><dd class='description'>for pictorial <span class='obeylines-h'><code>$...$</code></span> and <span class='obeylines-h'><code>$$...$$</code></span> environments with L<span class='rm-lmr-7'>A</span><span class='TEX'>T<span class='E'>E</span>X</span>alt, use the
+command line option <span class='obeylines-h'><code>pic-m+</code></span> (not safe).
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>pic-m</span> 
+</dt><dd class='description'>for pictorial <span class='obeylines-h'><code>$...$</code></span> environments, use the command line option <span class='obeylines-h'><code>pic-m</code></span>
+(not recommended).
+                                                                  
+
+                                                                  
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>pic-matrix</span> 
+</dt><dd class='description'>for pictorial matrix.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>pic-tabular</span> 
+</dt><dd class='description'>use this option for pictorial tabular.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>plain-</span> 
+</dt><dd class='description'>for scaled down implimentation.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>prog-ref</span> 
+</dt><dd class='description'>for pointers to code files from root fragments, use the command line
+option <span class='obeylines-h'><code>prof-ref</code></span>. This is for debugging.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>refcaption</span> 
+</dt><dd class='description'>for links into captions, instead of flat heads, use this option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>rl2lr</span> 
+</dt><dd class='description'>to reverse the direction of Hebrew words, use this option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>sec-filename</span> 
+</dt><dd class='description'>for file names derived from section titles, use the command line
+option <span class='obeylines-h'><code>sec-filename</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>sections+</span> 
+</dt><dd class='description'>for back links to table of contents, use this option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>svg-</span> 
+</dt><dd class='description'>for external <code>SVG</code> files, try this option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>svg-obj</span> 
+</dt><dd class='description'>same as above.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>svg</span> 
+</dt><dd class='description'>for dvi pictures in <span class='obeylines-h'><code>svg</code></span> format.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>svg-inline</span> 
+</dt><dd class='description'>same as the <span class='emph'>svg</span>, but the <code>SVG</code> files are included in the document
+body.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>tab-eq</span> 
+</dt><dd class='description'>for tab-based layout of equation environment, use this option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>trace-onmo</span> 
+</dt><dd class='description'>for  mouseover  tracing  of  compilation,  use  the  command  line
+option, <span class='obeylines-h'><code>trace-onmo</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>url-enc</span> 
+</dt><dd class='description'>for                                                                                   <code>URL</code>
+encoding within href, use this option. <span class='obeylines-h'><code>\Configure{url-encoder}</code></span> can be
+used to fine tune encoding.
+                                                                  
+
+                                                                  
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>url-il2-pl</span> 
+</dt><dd class='description'>for il2-pl <code>URL</code> encoding.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>ver</span> 
+</dt><dd class='description'>for vertically stacked frames. Effective when <span class='obeylines-h'><code>frames</code></span> option is requested.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>xht</span> 
+</dt><dd class='description'>for file name extension, <span class='obeylines-h'><code>.xht</code></span>, use this command line option.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>xhtml</span> 
+</dt><dd class='description'>for <code>XML</code> code, use the command line option, <span class='obeylines-h'><code>xml</code></span> or <span class='obeylines-h'><code>xhtml</code></span>.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>xml</span> 
+</dt><dd class='description'>See previous entry.
+</dd></dl>
+                                                                  
+
+                                                                  
+<nav class='crosslinks-bottom'>[<a href='OutputFormats.html'>prev</a>] [<a href='tex4ht-doc.html#texfourhtOptions.html'>up</a>] [<a href='Configurations.html'>next</a>] </nav>  </main> 
+</body> 
+</html>

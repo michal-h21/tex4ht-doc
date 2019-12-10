@@ -1,0 +1,127 @@
+/* 
+Color scheme 
+#bab5a9;
+#d5e3c6 
+
+ */
+
+/* ************** */
+/* *** Fonts  *** */
+/* ************** */
+
+/* Font size tricks from https://www.madebymike.com.au/writing/precise-control-responsive-typography/ 
+ * The font size will be adjusted to the screen size.
+ * */
+:root{
+  font-size: 16px;
+}
+
+/* the min width is calculated as:
+ * font-size / ( number of viewport units / 100 )
+ * it means 16 / (1.5/100)
+ */
+@media (min-width: 1200px){
+  :root {
+    font-size: 1.5vw;
+  }
+}
+
+/* Maximal font size should be 24px, so stop font scalling at some point (24 / (1.5/100)) */
+
+@media (min-width: 1500px){
+  :root {
+    font-size: 20px;
+  }
+}
+
+/* ************** */
+/* *** Layout *** */
+/* ************** */
+
+body{
+  /* max-width:52rem; */
+  margin:0;
+  padding:0;
+  /* display:grid; */
+  /* grid-auto-rows: auto; */
+}
+
+@media screen and (min-width: 57rem) {
+  body{
+    display:grid;
+    grid-template-columns: 15rem 1fr;
+  }
+  main.main-content{max-width:40rem;}
+  nav.TOC{
+    grid-row:1;
+    min-height:100vh;
+  }
+}
+
+
+/* ****************** */
+/* *** Formatting *** */
+/* ****************** */
+
+main.main-content{
+  padding:1rem;
+}
+
+p.indent, p.noindent{text-indent:0}
+/* code{font-size:1.4rem;} */
+/* figure pre.listings{font-size: 1.4rem;} */
+figure.texsource, figure.shellcommand, figure.htmlsource{
+  margin:0.5rem; 
+  padding-left:0.5rem; 
+  overflow:auto;
+}
+figure pre.listings{font-size: 1em;}
+
+.chapterToc, .sectionToc, .subsectionToc{margin:0;padding:0;}
+nav.TOC{
+  padding:0.5rem;
+  font-size:0; /* trick to remove vertical space above TOC entries */
+}
+
+ .chapterToc ~ .likesectionToc, .chapterToc ~ .sectionToc, .likechapterToc ~ .likesectionToc, .likechapterToc ~ .sectionToc {padding-left:2em;margin-left:0}
+ .chapterToc ~ .likesectionToc ~ .likesubsectionToc, .chapterToc ~ .likesectionToc ~ .subsectionToc, .chapterToc ~ .sectionToc ~ .likesubsectionToc, .chapterToc ~ .sectionToc ~ .subsectionToc, .likechapterToc ~ .likesectionToc ~ .likesubsectionToc, .likechapterToc ~ .likesectionToc ~ .subsectionToc, .likechapterToc ~ .sectionToc ~ .likesubsectionToc, .likechapterToc ~ .sectionToc ~ .subsectionToc {padding-left:4em;margin-left:0;}
+
+nav.TOC span{
+  display:block;
+  margin-top:0;
+  font-size:0.8rem;
+}
+
+nav.TOC a, nav.TOC a:visited{
+  text-decoration:none;
+}
+
+/* ************** */
+/* *** Colors *** */
+/* ************** */
+
+
+/* body{background-color:#dce8d0;} */
+/* It seems that dark background is better to my eyes */
+body{background-color:#B8CDA3;} 
+
+main.main-content{
+  background-color:white;
+}
+
+nav.TOC,nav.TOC a, nav.TOC a:visited{
+  background-color:#22211f;
+  color:#cec1aa;
+}
+
+nav.TOC span:hover, nav.TOC span:hover *{
+  background-color:#66635d;
+}
+
+
+
+figure.texsource, figure.shellcommand, figure.htmlsource{
+  border:1px solid #cec1aa; 
+  background-color:#d5e3c6;
+}
+
