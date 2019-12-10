@@ -1,7 +1,7 @@
 base=tex4ht_process
 SOURCE=$(base).tex
 PDF=$(base).pdf
-SVG=$(base)-1.svg
+SVG=$(base).svg
 
 
 all: $(SOURCE) $(PDF) $(SVG)
@@ -10,4 +10,4 @@ $(PDF): $(SOURCE)
 
 $(SVG): $(SOURCE)
 	latex '\def\pfgsysdriver{pgfsys-dvisvgm.def}\input{$<}'
-	dvisvgm -c 1.5 --exact --font-format=woff,ah $(base).dvi
+	dvisvgm  -o $(SVG) -c 1.5 --exact --font-format=woff,ah $(base).dvi
