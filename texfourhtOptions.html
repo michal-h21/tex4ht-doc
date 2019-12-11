@@ -4,9 +4,9 @@
 <meta charset='utf-8' /> 
 <meta name='generator' content='TeX4ht (http://www.tug.org/tex4ht/)' /> 
 <meta name='viewport' content='width=device-width,initial-scale=1' /> 
-<link rel='stylesheet' type='text/css' href='tex4ht-doc.css' /> 
+<link type='text/css' rel='stylesheet' href='tex4ht-doc.css' /> 
 <meta name='src' content='tex4ht-doc.tex' /> 
-<link rel='stylesheet' type='text/css' href='style.css' /> 
+<link type='text/css' rel='stylesheet' href='style.css' /> 
 </head><body>
 <nav class='TOC'><span class='chapterToc'>1 <a href='Introduction.html#x2-10001'>Introduction</a></span><span class='chapterToc'>2 <a href='BasicTutorial.html#x3-30002'>Basic Tutorial</a></span><span class='chapterToc'>3 <a href='Howto.html#x4-40003'>How to</a></span><span class='chapterToc'>4 <a href='CallingCommands.html#x5-230004'>Calling Commands</a></span><span class='chapterToc'>5 <a href='OutputFormats.html#x6-280005'>Output Formats</a></span><span class='chapterToc'>6 <a href='#x7-290006'><code>tex4ht</code> Options</a></span><span class='sectionToc'>6.1 <a href='#x7-300006.1'>List of options</a></span><span class='chapterToc'>7 <a href='Configurations.html#x8-310007'>Configurations</a></span><span class='chapterToc'>8 <a href='Make4htBuildFiles.html#x9-700008'>Make4ht Build Files</a></span><span class='chapterToc'>9 <a href='FAQ.html#x10-740009'>FAQ</a></span><span class='chapterToc'>10 <a href='Fordevelopers.html#x11-7700010'>For developers</a></span><span class='chapterToc'>11 <a href='Glossary.html#x12-8700011'>Glossary</a></span><span class='chapterToc'>12 <a href='Bibliography.html#x13-8800012'>Bibliography</a></span><span class='chapterToc'>13 <a href='Index.html#x14-8900013'>Index</a></span></nav> 
 <main class='main-content'> 
@@ -31,14 +31,14 @@ the options to the calling script, as an command line argument next to the
 filename:
 </p>   
 <figure role='doc-example' class='shellcommand'>
-<div id='fancyvrb9' class='fancyvrb'><a id='x7-29003r1'></a><span class='rm-lmtt-10'>make4ht filename.tex </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"fn-in"</span></span></div>
+<div class='fancyvrb' id='fancyvrb9'><a id='x7-29003r1'></a><span class='rm-lmtt-10'>make4ht filename.tex </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"fn-in"</span></span></div>
 </figure>
 <!-- l. 30 --><p class='indent'>   For more information about calling scripts see the section <a href='CallingCommands.html#x5-270004.3.1'>4.3.1<!-- tex4ht:ref: sec:calling-commands  --></a>.
 </p><!-- l. 32 --><p class='indent'>   It is also possible to pass options in the <code>\Preamble</code> command in a <span class='emph'>custom
 configuration file</span>.
 </p>   
 <figure role='doc-example' class='texsource'>
-<div id='fancyvrb10' class='fancyvrb'><a id='x7-29009r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>fn-in</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x7-29011r2'></a><span class='rm-lmtt-10'>...</span><br class='fancyvrb' /><a id='x7-29013r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x7-29015r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\EndPreamble</span></span></div>
+<div class='fancyvrb' id='fancyvrb10'><a id='x7-29009r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>fn-in</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x7-29011r2'></a><span class='rm-lmtt-10'>...</span><br class='fancyvrb' /><a id='x7-29013r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x7-29015r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\EndPreamble</span></span></div>
 </figure>   
 <h3 class='sectionHead'><span class='titlemark'>6.1   </span> <a id='x7-300006.1'></a>List of options</h3>
 <dl class='description'><dt class='description'>
