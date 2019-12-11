@@ -12,7 +12,6 @@ jobs:
       uses: docker://michalh21/make4ht-docker:latest
       env:
         command: "make; make4ht -uslm final -a debug -c config -d out -f html5+common_domfilters -e build.mk4  tex4ht-doc.tex"
-        extra_packages: "texlive"
     - name: Publish the web pages
       uses: peaceiris/actions-gh-pages@v2.5.0
       env:
