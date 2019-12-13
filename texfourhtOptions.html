@@ -4,17 +4,14 @@
 <meta charset='utf-8' /> 
 <meta name='generator' content='TeX4ht (http://www.tug.org/tex4ht/)' /> 
 <meta name='viewport' content='width=device-width,initial-scale=1' /> 
-<link type='text/css' rel='stylesheet' href='tex4ht-doc.css' /> 
+<link rel='stylesheet' type='text/css' href='tex4ht-doc.css' /> 
 <meta name='src' content='tex4ht-doc.tex' /> 
-<link type='text/css' rel='stylesheet' href='style.css' /> 
+<link rel='stylesheet' type='text/css' href='style.css' /> 
 </head><body>
-<nav class='TOC'><span class='chapterToc'>1 <a href='Introduction.html#x2-10001'>Introduction</a></span><span class='chapterToc'>2 <a href='BasicTutorial.html#x3-30002'>Basic Tutorial</a></span><span class='chapterToc'>3 <a href='Howto.html#x4-40003'>How to</a></span><span class='chapterToc'>4 <a href='CallingCommands.html#x5-230004'>Calling Commands</a></span><span class='chapterToc'>5 <a href='OutputFormats.html#x6-280005'>Output Formats</a></span><span class='chapterToc'>6 <a href='#x7-290006'><code>tex4ht</code> Options</a></span><span class='sectionToc'>6.1 <a href='#x7-300006.1'>List of options</a></span><span class='chapterToc'>7 <a href='Configurations.html#x8-310007'>Configurations</a></span><span class='chapterToc'>8 <a href='Make4htBuildFiles.html#x9-700008'>Make4ht Build Files</a></span><span class='chapterToc'>9 <a href='FAQ.html#x10-740009'>FAQ</a></span><span class='chapterToc'>10 <a href='Fordevelopers.html#x11-7700010'>For developers</a></span><span class='chapterToc'>11 <a href='Glossary.html#x12-8700011'>Glossary</a></span><span class='chapterToc'>12 <a href='Bibliography.html#x13-8800012'>Bibliography</a></span><span class='chapterToc'>13 <a href='Index.html#x14-8900013'>Index</a></span></nav> 
+<nav class='TOC'><span class='chapterToc'>1 <a href='Introduction.html#x2-10001'>Introduction</a></span><span class='chapterToc'>2 <a href='BasicTutorial.html#x3-30002'>Basic Tutorial</a></span><span class='chapterToc'>3 <a href='Howto.html#x4-40003'>How to</a></span><span class='chapterToc'>4 <a href='CallingCommands.html#x5-240004'>Calling Commands</a></span><span class='chapterToc'>5 <a href='OutputFormats.html#x6-290005'>Output Formats</a></span><span class='chapterToc'>6 <a href='#x7-300006'><code>tex4ht</code> Options</a></span><span class='sectionToc'>6.1 <a href='#x7-310006.1'>List of options</a></span><span class='chapterToc'>7 <a href='Configurations.html#x8-320007'>Configurations</a></span><span class='chapterToc'>8 <a href='Make4htBuildFiles.html#x9-710008'>Make4ht Build Files</a></span><span class='chapterToc'>9 <a href='FAQ.html#x10-750009'>FAQ</a></span><span class='chapterToc'>10 <a href='Fordevelopers.html#x11-7800010'>For developers</a></span><span class='chapterToc'>11 <a href='Glossary.html#x12-8800011'>Glossary</a></span><span class='chapterToc'>12 <a href='Bibliography.html#x13-8900012'>Bibliography</a></span><span class='chapterToc'>13 <a href='Index.html#x14-9000013'>Index</a></span></nav> 
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='OutputFormats.html'>prev</a>] [<a href='tex4ht-doc.html#texfourhtOptions.html'>up</a>] [<a href='Configurations.html'>next</a>] </nav> 
-<h2 class='chapterHead'><span class='titlemark'>Chapter 6</span><br /><a id='x7-290006'></a><code>tex4ht</code> Options</h2>
-                                                                  
-
-                                                                  
+<h2 class='chapterHead'><span class='titlemark'>Chapter 6</span><br /><a id='x7-300006'></a><code>tex4ht</code> Options</h2>
 Following is an incomplete list of options that can be passed to the
 <code>tex4ht.sty</code> package. These options can be used to modify the compilation process,
 for example to select a <span class='emph'>SVG</span> format for generated images, to request math
@@ -30,17 +27,17 @@ way is to pass them as options to <code>tex4ht.sty</code> using <code>\usepacka
 the options to the calling script, as an command line argument next to the
 filename:
 </p>   
-<figure role='doc-example' class='shellcommand'>
-<div class='fancyvrb' id='fancyvrb9'><a id='x7-29003r1'></a><span class='rm-lmtt-10'>make4ht filename.tex </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"fn-in"</span></span></div>
+<figure class='shellcommand' role='doc-example'>
+<div class='fancyvrb' id='fancyvrb9'><a id='x7-30003r1'></a><span class='rm-lmtt-10'>make4ht filename.tex </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"fn-in"</span></span></div>
 </figure>
-<!-- l. 30 --><p class='indent'>   For more information about calling scripts see the section <a href='CallingCommands.html#x5-270004.3.1'>4.3.1<!-- tex4ht:ref: sec:calling-commands  --></a>.
+<!-- l. 30 --><p class='indent'>   For more information about calling scripts see the section <a href='CallingCommands.html#x5-280004.3.1'>4.3.1<!-- tex4ht:ref: sec:calling-commands  --></a>.
 </p><!-- l. 32 --><p class='indent'>   It is also possible to pass options in the <code>\Preamble</code> command in a <span class='emph'>custom
 configuration file</span>.
 </p>   
-<figure role='doc-example' class='texsource'>
-<div class='fancyvrb' id='fancyvrb10'><a id='x7-29009r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>fn-in</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x7-29011r2'></a><span class='rm-lmtt-10'>...</span><br class='fancyvrb' /><a id='x7-29013r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x7-29015r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\EndPreamble</span></span></div>
+<figure class='texsource' role='doc-example'>
+<div class='fancyvrb' id='fancyvrb10'><a id='x7-30009r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>fn-in</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x7-30011r2'></a><span class='rm-lmtt-10'>...</span><br class='fancyvrb' /><a id='x7-30013r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x7-30015r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\EndPreamble</span></span></div>
 </figure>   
-<h3 class='sectionHead'><span class='titlemark'>6.1   </span> <a id='x7-300006.1'></a>List of options</h3>
+<h3 class='sectionHead'><span class='titlemark'>6.1   </span> <a id='x7-310006.1'></a>List of options</h3>
 <dl class='description'><dt class='description'>
 <span class='rm-lmbx-10'>-css</span> 
 </dt><dd class='description'>to ignore <code>CSS</code> code, use command line option <span class='obeylines-h'><code>-css</code></span>.
@@ -354,6 +351,14 @@ option <span class='obeylines-h'><code>obj-toc</code></span>.
 </dt><dd class='description'>for width specifications of tabular <span class='obeylines-h'><code>p</code></span> entries, use this option.
 </dd>     
 <dt class='description'>
+<span class='rm-lmbx-10'>p-indent</span> 
+</dt><dd class='description'>for indented paragraphs, without blank spaces.
+</dd>     
+<dt class='description'>
+<span class='rm-lmbx-10'>p-space</span> 
+</dt><dd class='description'>for spaces between paragraphs, without indents.
+</dd>     
+<dt class='description'>
 <span class='rm-lmbx-10'>pic-RL</span> 
 </dt><dd class='description'>for pictorial RL.
 </dd>     
@@ -397,14 +402,14 @@ option <span class='obeylines-h'><code>obj-toc</code></span>.
 <span class='rm-lmbx-10'>pic-m+</span> 
 </dt><dd class='description'>for pictorial <span class='obeylines-h'><code>$...$</code></span> and <span class='obeylines-h'><code>$$...$$</code></span> environments with L<span class='rm-lmr-7'>A</span><span class='TEX'>T<span class='E'>E</span>X</span>alt, use the
 command line option <span class='obeylines-h'><code>pic-m+</code></span> (not safe).
+                                                                  
+
+                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>pic-m</span> 
 </dt><dd class='description'>for pictorial <span class='obeylines-h'><code>$...$</code></span> environments, use the command line option <span class='obeylines-h'><code>pic-m</code></span>
 (not recommended).
-                                                                  
-
-                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>pic-matrix</span> 
@@ -465,15 +470,15 @@ body.
 <span class='rm-lmbx-10'>trace-onmo</span> 
 </dt><dd class='description'>for  mouseover  tracing  of  compilation,  use  the  command  line
 option, <span class='obeylines-h'><code>trace-onmo</code></span>.
+                                                                  
+
+                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>url-enc</span> 
 </dt><dd class='description'>for                                                                                   <code>URL</code>
 encoding within href, use this option. <span class='obeylines-h'><code>\Configure{url-encoder}</code></span> can be
 used to fine tune encoding.
-                                                                  
-
-                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>url-il2-pl</span> 
