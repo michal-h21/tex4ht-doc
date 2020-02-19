@@ -1,3 +1,28 @@
-Information about \texcommand{\NewConfigureOO} and styling and how to correctly use text styles (using configuration for HtmlPar)
+The OpenDocument Format uses XML configuration file for document styling. To
+declare new document style, \texfourht\ provides command
+\texcommand{\NewConfigureOO}. The declared style then needs to be configured using command \texcommand{\ConfigureOO}.
 
-\url{https://tex.stackexchange.com/a/471283/2891}, \url{https://tex.stackexchange.com/a/100287/2891}
+Usage of these commands can be illustrated by the following example:
+
+\begin{texsource}
+  \Configure{SectionTitleTest}{\ifvmode\IgnorePar\fi\EndP\HCode{<text:p text:style-name="section-title">}}{\HCode{</text:p>}}
+
+\NewConfigureOO{section-title}
+\ConfigureOO{section-title}{<style:style style:name="section-title" style:family="paragraph" style:class="text">
+      <style:text-properties style:text-underline-style="solid"
+       style:text-underline-width="auto"
+       style:text-underline-color="font-color"
+       />
+</style:style>}
+\end{texsource}
+
+Document style  \term{section-title} had been declared in this example. The
+\xml\ code  for this style can be used without the \texcommand{\HCode} command
+in \texcommand{\ConfigureOO}.
+
+The configuration \term{SectionTitleTest} inserts element \verb|<text:p>|. The
+\verb|text:style-name| corresponds to attribute \verb| style:name| of
+\verb|style:style| element in the style configuration.
+%Information about \texcommand{\NewConfigureOO} and styling and how to correctly use text styles (using configuration for HtmlPar)
+
+%\url{https://tex.stackexchange.com/a/471283/2891}, \url{https://tex.stackexchange.com/a/100287/2891}
