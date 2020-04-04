@@ -433,6 +433,14 @@ commands and cross-references work in this mode.
 
 The \mathml\ MathJax mode can be required using the \option{mathml,mathjax} option.
 
+\paragraph{Table of contents issues}
+
+Some math commands may cause issues when they are used in section titles in the MathJax mode. 
+This can be fixed using the \texcommand{\fixmathjaxtoc} command:
+
+\begin{texsource}
+\fixmathjaxtoc\int
+\end{texsource}
 
 
 \section{Bibliographies}
