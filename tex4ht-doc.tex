@@ -396,34 +396,43 @@ don't work out of the box.
 By default, inline and display math, as well as math environments, are kept as
 raw LaTeX code in the \HTML\ output. 
 
-The additional configuration for \term{MathJax} can be provided in special
-script environment in the \HTML\ page header. The following example provides
-support for some custom \LaTeX\ macros.
+The additional configuration for \term{MathJax} can be provided in the
+\configuration{MathJaxConfig} configuration.
+The following example provides support for some custom \LaTeX\ macros.
 
 \begin{texsource}
 \Preamble{xhtml}
-\Configure{@HEAD}{\HCode{
-<script>
-window.MathJax = {
-  tex: {
-    macros: {
-      \unexpanded{
+\Configure{MathJaxConfig}{{
+    tex: {
+      tags: "ams",
+      \detokenize{%
+      inlineMath: [ ["\\\(","\\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],}
+      processEscapes: true,
+      processEnvironments: true,
+      macros: {
         sc: "\\small\\rm",
         sl: "\\it",
       }
-    }
+      packages: ['base', 'color', 'ams']
+  },
+  loader: {
+    load: ['[tex]/color', '[tex]/ams']
   }
 };
-</script>
-}}
+}
 \begin{document}
 \EndPreamble
 
 \end{texsource}
 
+
+The configuration needs to be passed as a JavaScript object, this means that
+you need to use extra \verb|{}| brackets.
 The \texcommand{\detokenize} macro is used to avoid issues with backslash
 characters used in the macro definitions. Backslashes must be doubled in the
-JavaScript strings.
+JavaScript strings. Contents of this configuration are already enclosed in the
+\texcommand{\HCode} command, so you cannot use it in this configuration.
 
 
 \paragraph{\mathml\ mode}
