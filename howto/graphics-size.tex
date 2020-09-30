@@ -1,0 +1,54 @@
+You can use \texcommand{\Configure{Gin-dim}} command to change the way how image dimensions
+are calculated. By default, \texfourht\ relies on information about image
+dimensions provided by the Graphics package. If you use explicit dimensions
+(like \texcommand{width=0.5\textwidth}), the actual dimension calculated by \TeX\ is used.
+
+One problem is that if you set only one dimension, for example width, the other
+dimension will be set to the same value. You usually don't want this, unless
+your image is a square. To get the correct value for all dimensions, Graphics
+uses a \verb|.xbb| file for image. It can be created using the following command:
+
+\begin{shellcommand}
+ebb -x *.jpg
+\end{shellcommand}
+
+Run analogous command for every other supported image format you use. This will
+ensure that correct values are used for implicitly calculated dimensions.
+
+\subsection{Use relative size for images}
+
+The following configuration file example can be used to get image dimensions
+relative to the original page width. Thanks to the \LaTeX\ 3 project, we can 
+use the \package{l3fp} package to calculate the image dimensions in percents. 
+
+\begin{texsource}
+\Preamble{xhtml}
+\makeatletter
+\ExplSyntaxOn
+\Configure{Gin-dim}
+{style="width:\fp_eval:n{round(\Gin@req@width/\textwidth*100,2)}\%"}
+\ExplSyntaxOff
+\makeatother
+\begin{document}
+\EndPreamble
+\end{texsource}
+
+In this configuration, we divide the image width passed to
+\texcommand{\includegraphics} by the document text width. 
+This portion is then multiplied and rounded to get the correct percent value.
+The calculated value is used in the \verb|style| attribute of the generated \verb|<img>| element.
+The \package{l3fp} command \texcommand{\fp_eval:n} is used for the calculation. 
+\LaTeX\ 3 is part of \LaTeX\ kernel, so we don't need to require packages that it provides.
+
+The following example code:
+
+\begin{texsource}
+\includegraphics[width=0.5\textwidth]{example-image.png}
+\end{texsource}
+
+produces following HTML code:
+
+\begin{htmlsource}
+<img style='width:50%' alt='PIC' src='example-image.png' />
+\end{htmlsource}
+
