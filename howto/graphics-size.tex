@@ -52,3 +52,24 @@ produces following HTML code:
 <img style='width:50%' alt='PIC' src='example-image.png' />
 \end{htmlsource}
 
+
+\subsection{Change image \texttt{alt} attribute}
+
+By default, \package{Graphicx} package doesn't support the attribute that could
+be used to insert alternative text that describe the image. This is necessary
+for the accessibility purposes.
+
+We can define a new attribute for \texcommand{\includegraphics} command, named
+\texttt{alt}, for example. Here is a sample file that shows how to do that:
+
+\texinput{examples/imagealt/sample.tex}
+
+The \texcommand{\define@key{Gin}{alt}{}} command defines a dummy command that
+is used by regular \LaTeX. We need to redefine this key for \texfourht, so it uses the
+configuration that can specify the image alternative text, \configuration{GraphicsAlt}.
+
+\texinput{examples/imagealt/mycfg.cfg} 
+
+The resulting HTML file now contains image with the \texttt{alt} attribute:
+
+\htmlinput{examples/imagealt/sample-body.html}
