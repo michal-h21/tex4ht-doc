@@ -2,8 +2,8 @@ mode = draft
 engine = 
 outputdir = out
 
-IMAGESUBDIRS := $(wildcard images/*/.)
 
+IMAGESUBDIRS := $(wildcard images/*/.)
 
 ifeq (lualatex, lualatex)
 	engine = -l
@@ -17,12 +17,15 @@ endif
 sections = $(wildcard sections/*.tex)
 filters = $(wildcard filters/*.lua)
 	
-all: $(IMAGESUBDIRS) tex4ht-doc.pdf tex4ht-doc.html 
+all: examples $(IMAGESUBDIRS) tex4ht-doc.pdf tex4ht-doc.html 
 
 $(IMAGESUBDIRS):
 	$(MAKE) -C $@
 
-.PHONY: final all $(IMAGESUBDIRS)
+examples:
+	$(MAKE) -C examples/
+
+.PHONY: final all $(IMAGESUBDIRS) examples
 
 tex4ht-doc.pdf: tex4ht-doc.tex tex4ht-styles.sty ${sections}
 	lualatex -shell-escape tex4ht-doc.tex
