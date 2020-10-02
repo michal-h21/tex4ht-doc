@@ -1,0 +1,15 @@
+-- we want to remove headers from html files
+local domfilter = require "make4ht-domfilter"
+local process = domfilter {
+  function(dom)
+    -- save contents of the document body
+    local body = dom:query_selector("body")[1]
+    local content = body:serialize() or ""
+    -- remove <body> tags and trim spaces
+    content = content:gsub("<.?body>", ""):gsub("^%s*", ""):gsub("%s*$", "")
+    print(content)
+    return dom
+  end
+}
+
+Make:match("html$", process)
