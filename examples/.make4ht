@@ -9,10 +9,7 @@ local process = domfilter {
     content = content:gsub("<.?body>", ""):gsub("^%s*", ""):gsub("%s*$", "")
     if content then
       -- save the stripped content to \jobname-body.html
-      print(settings)
-      for k,v in pairs(settings) do print(k,v) end
       local f = io.open(settings.input .. "-body.html", "w")
-      
       f:write(content)
       f:close()
     end
