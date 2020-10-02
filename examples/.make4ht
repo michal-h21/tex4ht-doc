@@ -1,13 +1,21 @@
 -- we want to remove headers from html files
 local domfilter = require "make4ht-domfilter"
 local process = domfilter {
-  function(dom)
+  function(dom, settings)
     -- save contents of the document body
     local body = dom:query_selector("body")[1]
     local content = body:serialize() or ""
     -- remove <body> tags and trim spaces
     content = content:gsub("<.?body>", ""):gsub("^%s*", ""):gsub("%s*$", "")
-    print(content)
+    if content then
+      -- save the stripped content to \jobname-body.html
+      print(settings)
+      for k,v in pairs(settings) do print(k,v) end
+      local f = io.open(settings.input .. "-body.html", "w")
+      
+      f:write(content)
+      f:close()
+    end
     return dom
   end
 }
