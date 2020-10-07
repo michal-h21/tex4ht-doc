@@ -15,6 +15,7 @@ endif
 
 # sections = sections/tex4ht-commands.tex sections/tex4ht-options.tex sections/webfonts.tex sections/configuration-files.tex sections/tex4ht-development.tex sections/calling-commands.tex sections/graphics.tex
 sections = $(wildcard sections/*.tex)
+howtos = $(wildcard howto/*.tex)
 filters = $(wildcard filters/*.lua)
 	
 all: examples $(IMAGESUBDIRS) tex4ht-doc.pdf tex4ht-doc.html 
@@ -27,10 +28,10 @@ examples:
 
 .PHONY: final all $(IMAGESUBDIRS) examples
 
-tex4ht-doc.pdf: tex4ht-doc.tex tex4ht-styles.sty ${sections}
+tex4ht-doc.pdf: tex4ht-doc.tex tex4ht-styles.sty ${sections} ${howtos}
 	lualatex -shell-escape tex4ht-doc.tex
 
-tex4ht-doc.html: tex4ht-doc.tex config.cfg tex4ht-styles.sty build.mk4 ${sections} ${filters}
+tex4ht-doc.html: tex4ht-doc.tex config.cfg tex4ht-styles.sty build.mk4 ${sections} ${filters} ${howtos}
 	make4ht -usm $(mode) -c config $(engine) -d $(outputdir) -f html5+common_domfilters -e build.mk4  tex4ht-doc.tex
 
 
