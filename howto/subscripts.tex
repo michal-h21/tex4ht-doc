@@ -1,2 +1,73 @@
 % info about super and subscripts with MathML
 % https://tex.stackexchange.com/q/518839/2891
+
+Subscript and superscript support in \texfourht\ is a bit complicated. The
+catcodes of \texcommand{_} and \texcommand{^} characters are changed and they are
+active characters instead. This is necessary in order to insert the markup tags
+for these structures. One consequence of this is that you need to use a correct grouping
+for content that should be affected by these operators.
+For example, instead of 
+
+\begin{texsource}
+$A_\mathit{...}$
+\end{texsource}
+
+use the following, with added group around the \texcommand{\mathit} command:
+
+\begin{texsource}
+$A_{\mathit{...}}$
+\end{texsource}
+
+If you define custom commands in the document preamble, use \texcommand{\sp}
+and \texcommand{\sb} instead of \texcommand{^} and \texcommand{_}.
+
+For example:
+
+\begin{texsource}
+\newcommand \coeffX [4][X]{\mathbf{#1}_{{#2},{#3}}(#4)}
+\end{texsource}
+
+should become:
+
+\begin{texsource}
+\newcommand\coeffX [4][X]{{\mathbf{#1}}\sb{#2,#3}(#4)}
+\end{texsource}
+
+Sometimes, it is not possible to change the source files. In this situation, you 
+can pre-process the source using custom script that reads the original file, fixes the code
+and then pipes the modified output to \shellcmd{make4ht}.
+
+For example, you may want to change this input:
+
+\begin{texsource}
+$k'^4_{i}$
+\end{texsource}
+
+to the correct form:
+
+\begin{texsource}
+$k^{\prime 4}_{i}$
+\end{texsource}
+
+This can be done using the following Lua script:
+
+\begin{luasource}
+for line in io.lines() do
+  line = line:gsub("%'%^(.-)%_", "^{\\prime %1}_")
+  print(line)
+end
+\end{luasource}
+
+It uses Lua version of regular expressions to find the code we want to fix.
+The command to execute it could be:
+
+\begin{shellcommand}
+texlua filter.lua < sample.tex | make4ht -j sample - "mathml,mathjax"
+\end{shellcommand}
+
+The \shellcmd{-j} option is used to name the output file, which is necessary
+because the input comes from a pipe. The dash used in the place of filename
+tells \shellcmd{make4ht} to read input from the standard input.
+
+We use \shellcmd{MathJax} to render \mathml, as \mathml\ is not supported by
+all browsers. 
