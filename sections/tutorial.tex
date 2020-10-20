@@ -1,25 +1,23 @@
 \hypertarget{what-is-tex4ht}{%
 \subsection{\texorpdfstring{What is
-\texttt{tex4ht}?}{What is tex4ht?}}\label{what-is-tex4ht}}
+\texttt{TeX4ht}?}{What is TeX4ht?}}\label{what-is-tex4ht}}
 
-\href{https://www.tug.org/tex4ht/}{\texttt{tex4ht}} is a system which
-converts LaTeX to various output formats, including \texttt{html},
-\href{http://en.wikipedia.org/wiki/XHTML}{\texttt{xhtml}},
-\href{http://en.wikipedia.org/wiki/OpenDocument}{\texttt{odt}},
-\href{http://en.wikipedia.org/wiki/DocBook}{\texttt{docbook}} or
-\href{http://en.wikipedia.org/wiki/Text_Encoding_Initiative}{\texttt{tei}}.
-\texttt{html} and \texttt{odt} are the most common and best-supported
+\href{https://www.tug.org/tex4ht/}{\texttt{TeX4ht}} is a system which
+converts LaTeX to various output formats, including \texttt{HTML},
+\href{http://en.wikipedia.org/wiki/OpenDocument}{\texttt{ODT}},
+\href{http://en.wikipedia.org/wiki/DocBook}{\texttt{DocBook}} or
+\href{http://en.wikipedia.org/wiki/Text_Encoding_Initiative}{\texttt{TEI}}.
+\texttt{HTML} and \texttt{ODT} formats are the most common and best-supported
 conversion targets.
 
-\texttt{tex4ht} allows authors to use LaTeX input--widely employed for
-high-quality typography, especially mathematical typography--to produce
-output in other formats, especially \texttt{html} (for web pages) and
-\texttt{xhtml} (for ebooks and other applications).
+\texttt{TeX4ht} allows authors to convert \LaTeX\ input to 
+several output formats, like  \texttt{HTML} (for web pages) or
+\texttt{ePub} (for ebooks and other applications).
 
 \hypertarget{system-description}{%
 \subsection{System Description}\label{system-description}}
 
-\texttt{tex4ht} consists of three basic building blocks and various
+\texttt{TeX4ht} consists of three basic building blocks and various
 scripts which tie these blocks together.
 
 \begin{enumerate}
@@ -34,7 +32,7 @@ scripts which tie these blocks together.
   \texttt{tex4ht} is an executable (program), which extracts information
   stored in the \texttt{.dvi} file including text and output codes, and
   prepares auxiliary files for image conversion and other tasks. Note
-  that although whole system is named \texttt{tex4ht}, this command
+  that although whole system is named \texttt{TeX4ht}, this command
   cannot be executed on \texttt{.tex} file; it works only with
   \texttt{.dvi} file
 \item
@@ -59,7 +57,8 @@ providing extensive configuration files.
 The basic usage of the \texttt{htlatex} command (script) is as follows:
 
 \begin{verbatim}
- htlatex filename "options for tex4ht.sty" "options for tex4ht" "options for t4ht" "LaTeX options"
+ htlatex filename "options for tex4ht.sty" \ 
+ "options for tex4ht" "options for t4ht" "LaTeX options"
 \end{verbatim}
 
 As you can see, \texttt{htlatex} has five parameters; only first one,
@@ -76,7 +75,7 @@ for Open Document Format conversion, \texttt{dblatex} for docbook, or
 allowing user-generated configuration files. For further information,
 see
 \href{https://www.tug.org/applications/tex4ht/mn-commands.html\#QQ1-9-33}{calling
-commands} on the \texttt{tex4ht} website.
+commands} on the \texttt{TeX4ht} website.
 
 As an example, to compile to Open Document Format, you would type this
 at the commmand prompt:
@@ -87,7 +86,7 @@ mk4ht oolatex sample.tex
 
 A more recent option is to use Michal Hoftich's
 \href{https://github.com/michal-h21/make4ht}{make4ht} build system for
-\texttt{tex4ht}. It allows the user to call various commands during
+\texttt{TeX4ht}. It allows the user to call various commands during
 compilation, such as \texttt{bibtex}, \texttt{biber}, or \texttt{xindy};
 to postprocess output files with \texttt{Lua} scripts or commands such
 as \texttt{tidy} or \texttt{xslt} processors; and to specify the command
@@ -220,7 +219,7 @@ To get \texttt{xhtml} output from \texttt{htlatex}, use
 option in the option list passed to \texttt{tex4ht.sty}. Value of the
 first option must be either \texttt{html}, \texttt{xhtml} or name of
 custom config file. We will cover these config files later, as they are
-key component in customization of \texttt{tex4ht} output.
+key component in customization of \texttt{TeX4ht} output.
 
 So in order to get same output as from \texttt{make4ht}, we must use
 following command:
@@ -264,7 +263,7 @@ Entities are gone, but other persists. What we see is caused by a bug in
 \texttt{tex4ht} command. It decorates text which is set in non-default
 font with \texttt{\textless{}span\textgreater{}} elements. Unfortunately
 it doesn't play well with accented letters as we can see. This has easy
-solution, fortunately. We just need to dive into \texttt{tex4ht}
+solution, fortunately. We just need to dive into \texttt{TeX4ht}
 configuration. Yay!
 
 \hypertarget{configurations}{%
@@ -287,11 +286,11 @@ file with some basic structure:
  ...
  \Preamble{xhtml,tex4ht.sty options}
  ...
- tex4ht configurations
+ TeX4ht configurations
  ...
  \begin{document} 
  ...
- more tex4ht configurations
+ more TeX4ht configurations
  ...
  \EndPreamble
 \end{verbatim}
@@ -380,10 +379,10 @@ just add basic configurations for \texttt{\textbackslash{}textit} and
 \end{verbatim}
 
 For documentation of default configurations, see
-\href{http://michal-h21.github.io/src4ht/tex4ht-info.html}{tex4ht info},
+\href{http://michal-h21.github.io/src4ht/tex4ht-info.html}{TeX4ht info},
 most useful are
 \href{http://michal-h21.github.io/src4ht/tex4ht-infose2.html}{LaTeX} and
-\href{http://michal-h21.github.io/src4ht/tex4ht-infose1.html}{tex4ht}
+\href{http://michal-h21.github.io/src4ht/tex4ht-infose1.html}{TeX4ht}
 sections. Documentation for basic font commands such as
 \texttt{\textbackslash{}textit} or \texttt{\textbackslash{}textbf} is
 provided in
@@ -401,7 +400,7 @@ otherwise. In our example we insert \texttt{span} elements with some
 doesn't have any visual appearance by default, we use
 \texttt{\textbackslash{}Css} commands to add some styling. Yes, you need
 to know both \texttt{html} and \texttt{css} to effectively configure
-\texttt{tex4ht}!
+\texttt{TeX4ht}!
 
 If we look at \texttt{html} output now, we can see that things don't
 look much better than initially:
