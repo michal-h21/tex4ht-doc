@@ -1,0 +1,484 @@
+\hypertarget{what-is-tex4ht}{%
+\subsection{\texorpdfstring{What is
+\texttt{tex4ht}?}{What is tex4ht?}}\label{what-is-tex4ht}}
+
+\href{https://www.tug.org/tex4ht/}{\texttt{tex4ht}} is a system which
+converts LaTeX to various output formats, including \texttt{html},
+\href{http://en.wikipedia.org/wiki/XHTML}{\texttt{xhtml}},
+\href{http://en.wikipedia.org/wiki/OpenDocument}{\texttt{odt}},
+\href{http://en.wikipedia.org/wiki/DocBook}{\texttt{docbook}} or
+\href{http://en.wikipedia.org/wiki/Text_Encoding_Initiative}{\texttt{tei}}.
+\texttt{html} and \texttt{odt} are the most common and best-supported
+conversion targets.
+
+\texttt{tex4ht} allows authors to use LaTeX input--widely employed for
+high-quality typography, especially mathematical typography--to produce
+output in other formats, especially \texttt{html} (for web pages) and
+\texttt{xhtml} (for ebooks and other applications).
+
+\hypertarget{system-description}{%
+\subsection{System Description}\label{system-description}}
+
+\texttt{tex4ht} consists of three basic building blocks and various
+scripts which tie these blocks together.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \texttt{tex4ht.sty} is a TeX package which inserts configured output
+  codes (i.e., html tags) into TeX's \texttt{.dvi} output file. Many
+  documents can be translated to html without users needing to supply
+  tags explicitly, but there are macros to insert html directly into the
+  output if the need arises.
+\item
+  \texttt{tex4ht} is an executable (program), which extracts information
+  stored in the \texttt{.dvi} file including text and output codes, and
+  prepares auxiliary files for image conversion and other tasks. Note
+  that although whole system is named \texttt{tex4ht}, this command
+  cannot be executed on \texttt{.tex} file; it works only with
+  \texttt{.dvi} file
+\item
+  \texttt{t4ht} is a program which converts images, generates
+  \texttt{css} file, and runs various commands requested in the
+  \texttt{.tex} file
+\end{enumerate}
+
+A number of helper shell scripts (commands) exist, so that users do not
+need to invoke these commands manually. The best known of these is
+\texttt{htlatex}, which by default converts LaTeX to \texttt{html}.
+Using different options, you can convert to any output format supported
+by the \texttt{tex4ht} system.
+
+In fact, you can convert to almost any format using \texttt{tex4ht},
+even to formats not based on \texttt{xml}, but to do so involves
+providing extensive configuration files.
+
+\hypertarget{basic-usage}{%
+\subsection{Basic usage}\label{basic-usage}}
+
+The basic usage of the \texttt{htlatex} command (script) is as follows:
+
+\begin{verbatim}
+ htlatex filename "options for tex4ht.sty" "options for tex4ht" "options for t4ht" "LaTeX options"
+\end{verbatim}
+
+As you can see, \texttt{htlatex} has five parameters; only first one,
+the filename, is mandatory. Also note that options must be generally be
+enclosed in quotes so that they can be passed literally to the
+underlying commands.
+
+The calling command ``driver'' is \texttt{mk4ht}, which is similar to
+\texttt{htlatex}, but slips in a new first parameter indicating the
+system to be used. Values for this parameter include \texttt{htlatex}
+which produces the same results as the htlatex script, \texttt{oolatex}
+for Open Document Format conversion, \texttt{dblatex} for docbook, or
+\texttt{teilatex} for TEI. The \texttt{mk4ht} command is quite general,
+allowing user-generated configuration files. For further information,
+see
+\href{https://www.tug.org/applications/tex4ht/mn-commands.html\#QQ1-9-33}{calling
+commands} on the \texttt{tex4ht} website.
+
+As an example, to compile to Open Document Format, you would type this
+at the commmand prompt:
+
+\begin{verbatim}
+mk4ht oolatex sample.tex
+\end{verbatim}
+
+A more recent option is to use Michal Hoftich's
+\href{https://github.com/michal-h21/make4ht}{make4ht} build system for
+\texttt{tex4ht}. It allows the user to call various commands during
+compilation, such as \texttt{bibtex}, \texttt{biber}, or \texttt{xindy};
+to postprocess output files with \texttt{Lua} scripts or commands such
+as \texttt{tidy} or \texttt{xslt} processors; and to specify the command
+to be used for image conversion.
+
+In this tutorial, we will show usage of both \texttt{htlatex} and
+\texttt{make4ht}.
+
+\hypertarget{simple-example}{%
+\subsection{Simple example}\label{simple-example}}
+
+Lets start with conversion of simple LaTeX file to html. Let's say we
+have following multilingual LaTeX file:
+
+\begin{verbatim}
+\documentclass{article}
+\usepackage[english,czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\begin{document}
+Příliš žluťoučký kůň úpěl \textit{ďábelské} ódy.
+\begin{otherlanguage}{english}
+    Some text in English
+\end{otherlanguage}
+\end{document}
+\end{verbatim}
+
+things to notice are use of two languages, Czech is the main document
+language, English is secondary. Note usage of \texttt{otherlanguage}
+environment. It is provided by \texttt{babel} package and locally
+switches document languages, so correct hyphenation and other language
+dependent stuff are used. We could use
+\texttt{\textbackslash{}selectlanguage} command, but I would like to
+discourage usage of switching commands such is this one, or font
+switching commands like \texttt{\textbackslash{}bfseries}, for one
+reason: it is impossible to configure them correctly for end element
+insertion. For font switching commands, situation is saved by
+\texttt{tex4ht} command, which inserts formatting instructions for each
+font change. But generally, such commands don't play nice with nature of
+\texttt{xml} based formats, where every started element must be closed
+on the same hierarchical level. So they must have same parent element.
+Usage of \texttt{otherlanguage} environment will allow us to make proper
+configuration and insert opening and closing tags at correct places.
+
+But beware of following situation:
+
+\begin{verbatim}
+Hello world.
+\begin{someenv}
+Just start some environment.
+
+But run it through several paragraphs
+\end{someenv}
+\end{verbatim}
+
+say that we insert
+\texttt{\textless{}div\ class="someenv"\textgreater{}} and
+\texttt{\textless{}/div\textgreater{}} tags around \texttt{someenv}
+environment. By default this may produce following structure:
+
+\begin{verbatim}
+<p>Hello world.
+<div class="someenv">Just start some environment.
+</p>
+
+<p>But run it through several paragraphs
+</div></p>
+\end{verbatim}
+
+as you can see, generated html code is incorrect, as opening and closing
+\texttt{div} tags have different parent elements. \texttt{someenv} can
+be configured to close current paragraph, but it may be not what you
+want.
+
+Best way to prevent tag mismatch may be something like:
+
+\begin{verbatim}
+Hello world.
+\begin{someenv}
+Just start some environment.
+\end{someenv}
+
+\begin{someenv}
+But run it through several paragraphs
+\end{someenv}
+\end{verbatim}
+
+But stop talking about traps you may fall into and lets compile our
+example! For start use of both of \texttt{htlatex} and \texttt{make4ht}
+will be showed, we will focus on \texttt{make4ht} later.
+
+With \texttt{htlatex}, we may use
+
+\begin{verbatim}
+ htlatex sample1
+\end{verbatim}
+
+and with \texttt{make4ht}
+
+\begin{verbatim}
+ make4ht sample1
+\end{verbatim}
+
+lets look on text part generated by \texttt{htlatex}:
+
+\begin{verbatim}
+<!--l. 6--><p class="noindent" >P&#x0159;íli&#353; &#382;lu&#x0165;ou&#x010D;k&#x00FD; k&#x016F;&#x0148; úp&#x011B;l <span 
+class="ecti-1000">&#x010F;</span><span 
+class="ecti-1000">ábelsk</span><span 
+class="ecti-1000">é </span>ódy. Some text in English
+\end{verbatim}
+
+and by \texttt{make4ht}:
+
+\begin{verbatim}
+<!--l. 6--><p class="noindent" >P&#x0159;íli&#353; &#382;lu&#x0165;ou&#x010D;k&#x00FD; k&#x016F;&#x0148; úp&#x011B;l <span 
+class="ecti-1000">&#x010F;</span><span 
+class="ecti-1000">ábelsk</span><span 
+class="ecti-1000">é </span>ódy. Some text in English
+</p> 
+\end{verbatim}
+
+only difference is missing \texttt{\textless{}/p\textgreater{}} tag in
+output of \texttt{htlatex}, because \texttt{html\ 4.01} is produced by
+\texttt{htlatex} by default. \texttt{make4ht} on the other hand produces
+\texttt{xhtml} by default, so closing tag must be presented.
+
+To get \texttt{xhtml} output from \texttt{htlatex}, use
+\texttt{tex4ht.sty} option \texttt{xhtml}. This option must be first
+option in the option list passed to \texttt{tex4ht.sty}. Value of the
+first option must be either \texttt{html}, \texttt{xhtml} or name of
+custom config file. We will cover these config files later, as they are
+key component in customization of \texttt{tex4ht} output.
+
+So in order to get same output as from \texttt{make4ht}, we must use
+following command:
+
+\begin{verbatim}
+ htlatex sample1 xhtml
+\end{verbatim}
+
+Now we should get rid of ugly entities which encode accented letters.
+This is somewhat ugly with \texttt{htlatex}:
+
+\begin{verbatim}
+ htlatex sample1 "xhtml,charset=utf-8" " -cunihtf -utf8"
+\end{verbatim}
+
+\texttt{charset=utf-8"} produces meta element which declares document to
+be in \texttt{utf-8} encoding. Important are two options for
+\texttt{tex4ht} command, \texttt{-c} and \texttt{-utf8}.
+
+ToDo: add description of process of conversion from \texttt{htf} fonts
+to utf8 using unicode.4hf. It is directed from \texttt{tex4ht.env} file.
+
+With \texttt{make4ht}, situation is easier, as all we need to do is to
+add \texttt{-u} option:
+
+\begin{verbatim}
+ make4ht -u sample1.tex
+\end{verbatim}
+
+resulting file:
+
+\begin{verbatim}
+<!--l. 6--><p class="noindent" >Příliš žluťoučký kůň úpěl <span 
+class="ecti-1000">ď</span><span 
+class="ecti-1000">ábelsk</span><span 
+class="ecti-1000">é </span>ódy. Some text in English
+</p> 
+\end{verbatim}
+
+Entities are gone, but other persists. What we see is caused by a bug in
+\texttt{tex4ht} command. It decorates text which is set in non-default
+font with \texttt{\textless{}span\textgreater{}} elements. Unfortunately
+it doesn't play well with accented letters as we can see. This has easy
+solution, fortunately. We just need to dive into \texttt{tex4ht}
+configuration. Yay!
+
+\hypertarget{configurations}{%
+\subsection{Configurations}\label{configurations}}
+
+We already saw that we can use command line options to configure the
+output. For full list of options for \texttt{tex4ht.sty}, see an
+\href{http://www.cvr.cc/?p=504}{article on CVR's blog}. These options
+mainly influence appearance or math, footnotes, tables, etc. Note that
+these options aren't fixed set, anyone can add new options and not all
+options are supported in each output format supported by
+\texttt{tex4ht}. Generally these options work with \texttt{html} (and
+\texttt{xhtml}) output.
+
+Other option is to use custom config file (\texttt{.cfg}). This is a TeX
+file with some basic structure:
+
+\begin{verbatim}
+ optional stuff like requiring LaTeX packages etc
+ ...
+ \Preamble{xhtml,tex4ht.sty options}
+ ...
+ tex4ht configurations
+ ...
+ \begin{document} 
+ ...
+ more tex4ht configurations
+ ...
+ \EndPreamble
+\end{verbatim}
+
+Most important command for configuring is
+\texttt{\textbackslash{}Configure}. This command has variable number of
+arguments, in the simplest form it does have two arguments:
+\texttt{\textbackslash{}Configure\{configname\}\{insert\ for\ a\ first\ hook\}}.
+
+At this place we should talk about hooks. In order to insert html tags,
+LaTeX macros are redefined and in the definitions special hooks are
+inserted. These hooks are declared with
+\texttt{\textbackslash{}NewConfigure\{configname\}\{number\ of\ hooks\}}
+in special file named as redefined package name with suffix
+\texttt{.4ht}. These hooks are then seeded in configure files for
+particular output formats, or in the \texttt{.cfg} file.
+
+To illustrate that, we can show some simple example. Lets say we have
+simple package \texttt{hello.sty}:
+
+\begin{verbatim}
+\ProvidesPackage{hello} 
+\newcommand\hello{\textbf{hello world}}
+\endinput
+\end{verbatim}
+
+we can provide hooks in file named \texttt{hello.4ht}. Say we just want
+to insert tags at beginning and at end of \texttt{\textbackslash{}hello}
+command:
+
+\begin{verbatim}
+% provide configure for \hello command. we can choose any name
+% but most convenient is to name hooks after redefined command
+% we declare two hooks, to be inserted before and after the command
+\NewConfigure{hello}{2}
+% now we need to redefine \hello. save it to tmp command
+\let\tmp:hello\hello
+% note that `:` can be part of command name in `.4ht` files. 
+% now insert the hooks. they are named as \a:hook, \b:hook, ..., \h:hook
+% depending on how many hooks were declared
+\renewcommand\hello{\a:hello\tmp:hello\b:hello} 
+\end{verbatim}
+
+because we want to surround contents produced by
+\texttt{\textbackslash{}hello} with tags, we need to declare two hooks.
+This is the most usual case for normal commands which just produce some
+text. Old contents of macro are saved in temporary macro and then
+command is redefined to insert hooks and original contents stored in
+temporary macro.
+
+Now we can change our sample to use \texttt{hello} package:
+
+\begin{verbatim}
+\documentclass{article}
+\usepackage[english,czech]{babel} 
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage{hello}
+\begin{document} Příliš žluťoučký kůň úpěl \textit{ďábelské} ódy.
+\begin{otherlanguage}{english} Some text in English, \hello
+\end{otherlanguage} 
+\end{document}
+\end{verbatim}
+
+we haven't provided any configurations for \texttt{hello} yet, but you
+can see that text \texttt{hello\ world} is in \textbf{bold} font anyway.
+This is the same case as \texttt{\textbackslash{}textit} which is
+converted as \emph{italic}. Basic font styles are inserted by
+\texttt{tex4ht} command during extraction of text from \texttt{dvi} to a
+output format. So it is the right time to finally show how to configure
+both \texttt{textit} and \texttt{hello} to produce some better tags than
+they provide by default.
+
+Basic structure of a config file has been shown before, so now we will
+just add basic configurations for \texttt{\textbackslash{}textit} and
+\texttt{\textbackslash{}hello}:
+
+\begin{verbatim}
+\Preamble{xhtml}
+\Configure{textit}{\HCode{<span class="textit">}}{\HCode{</span>}}
+\Configure{hello}{\HCode{<span class="hello">}}{\HCode{</span>}}
+\Css{.textit{font-style:italic;}}
+\Css{.hello{font-weight:bold;}}
+\begin{document}
+\EndPreamble
+\end{verbatim}
+
+For documentation of default configurations, see
+\href{http://michal-h21.github.io/src4ht/tex4ht-info.html}{tex4ht info},
+most useful are
+\href{http://michal-h21.github.io/src4ht/tex4ht-infose2.html}{LaTeX} and
+\href{http://michal-h21.github.io/src4ht/tex4ht-infose1.html}{tex4ht}
+sections. Documentation for basic font commands such as
+\texttt{\textbackslash{}textit} or \texttt{\textbackslash{}textbf} is
+provided in
+\href{http://michal-h21.github.io/src4ht/tex4ht-infose2.html}{LaTeX}
+section. We can see that configuration takes two parameters, insertion
+before and after content. Same situation is with \texttt{hello}
+configuration we defined earlier, hooks are inserted before and after
+the content.
+
+To insert \texttt{html} tags, we need to use
+\texttt{\textbackslash{}HCode} commands, special characters such as
+\texttt{\textless{}},\texttt{\textgreater{}} or \texttt{\&} are escaped
+otherwise. In our example we insert \texttt{span} elements with some
+\texttt{class} attribute to distinguish them. Because these classes
+doesn't have any visual appearance by default, we use
+\texttt{\textbackslash{}Css} commands to add some styling. Yes, you need
+to know both \texttt{html} and \texttt{css} to effectively configure
+\texttt{tex4ht}!
+
+If we look at \texttt{html} output now, we can see that things don't
+look much better than initially:
+
+\begin{verbatim}
+<!--l. 6--><p class="noindent" >Příliš žluťoučký kůň úpěl <span class="textit"><span 
+class="ecti-1000">ď</span><span 
+class="ecti-1000">ábelsk</span><span 
+class="ecti-1000">é</span></span> ódy. Some text in English, <span class="hello"><span 
+class="ecbx-1000">hello world</span></span>
+</p> 
+\end{verbatim}
+
+our new tags were inserted, but unnecessary elements inserted by
+\texttt{tex4ht} processor are still present. Fortunately, we can
+suppress insertion of these elements with
+\texttt{\textbackslash{}NoFonts} command, and later enable again with
+\texttt{\textbackslash{}EndNoFonts}. We can also use \texttt{tex4ht.sty}
+option \texttt{NoFonts}, which will suppress font processing in whole
+document, but you should use this with caution, as it may have some side
+effects.
+
+Let's take a look how would out configurations look with
+\texttt{\textbackslash{}NoFonts} command:
+
+\begin{verbatim}
+\Preamble{xhtml}
+\Configure{textit}{\HCode{<span class="textit">}\NoFonts}
+{\EndNoFonts\HCode{</span>}}
+\Configure{hello}{\HCode{<span class="hello">}\NoFonts}
+{\EndNoFonts\HCode{</span>}}
+\Css{.textit{font-style:italic;}}
+\Css{.hello{font-weight:bold;}}
+\begin{document}
+\EndPreamble
+\end{verbatim}
+
+the output now looks much better:
+
+\begin{verbatim}
+<!--l. 6--><p class="noindent" >Příliš žluťoučký kůň úpěl <span class="textit">ďábelské</span> ódy. Some text in English, <span class="hello">hello world</span>
+</p> 
+\end{verbatim}
+
+It may seems that we can be happy at this point, but things aren't as
+easy as we may hope, because we haven't talked about one thing:
+
+\hypertarget{paragraphs}{%
+\subsubsection{Paragraphs}\label{paragraphs}}
+
+What if we add some more paragraphs in English to our sample file?
+
+\begin{verbatim}
+\documentclass{article}
+\usepackage[english,czech]{babel} 
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} 
+\usepackage{hello}
+\begin{document} Příliš žluťoučký kůň úpěl \textit{ďábelské} ódy.
+\begin{otherlanguage}{english} Some text in English, \hello
+\end{otherlanguage} 
+
+\begin{otherlanguage}{english} 
+
+\textit{What will do} \verb|\textit| at the beginning of paragraph?
+
+And also, what about configuration for \verb|otherlanguage| environment?
+
+\end{otherlanguage}
+
+\end{document}
+\end{verbatim}
+
+What if we want to insert elements with \texttt{lang} attribute to
+specify language of text in the \texttt{html}. It might be useful from
+semantic point of view, we can also enable hyphenation in the
+\texttt{css} and it works only when correct languages are marked in the
+source.
+
+This exercise will be little bit more difficult
