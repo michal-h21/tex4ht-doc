@@ -52,6 +52,23 @@ produces following HTML code:
 <img style='width:50%' alt='PIC' src='example-image.png' />
 \end{htmlsource}
 
+To disable setting of the image dimensions in HTML code completely
+use the following configuration:
+
+\begin{texsource}
+\Preamble{xhtml}
+\Configure{Gin-dim}{}
+\Css{img {
+    max-width: 100\%;
+    height: auto;
+}}
+\begin{document}
+\EndPreamble
+\end{texsource}
+
+This configuration uses CSS to set the maximum image dimension. This ensures that
+the image is donwsized on devices smaller than is the actual image size.
+
 
 \subsection{Change image \texttt{alt} attribute}
 
