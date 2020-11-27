@@ -1,10 +1,55 @@
 
-\section{Writing basic support for a new package}
-\begin{itemize}
-  \item \url{https://tex.stackexchange.com/a/402283/2891}
-\end{itemize}
+
+\section{Tutorial: Basic Support For a New Package}
+
+% from https://tex.stackexchange.com/a/402283/2891
+\texfourht\ tries to load a special \file{.4ht} file for each package loaded
+by \LaTeX. This special file can contain modifications to commands provided by the package, like 
+redefinitions of macros that cause clashes between the package and \texfourht, and most importantly
+they insert special macros, called hooks, that are then used to include the output format tags.
+
+Let's say that you have a custom package, called \file{mynote.sty}
+
+\begin{texsource}
+\ProvidesPackage{mynote}
+\RequirePackage{xcolor}
+\definecolor{notecolor}{rgb}{1,0.2,0.2}
+\newcommand\notetitle{Note:~}
+\newcommand\note[1]{{\textcolor{notecolor}{\textbf{\notetitle}}}#1}
+\endinput
+\end{texsource}
+
+
 
 \section{Two types of .4ht files}
+
+% text from the old documentation:
+% https://tug.org/tex4ht/doc/mn11.html#QQ1-11-66
+
+A compilation starts by opening tex4ht.sty and loading a fraction of its code.
+The main purpose of this phase is to request the loading of the system at a
+later time (for instance, upon reaching \texcommand{\begin{document}}). The motivation for
+the late loading is to allow TeX4ht to collect as much information as possible
+about the environment requested by the source file, and help the system reshape
+that environment with minimal interference from elsewhere.
+
+The system uses two kinds of (4ht) configuration files. The files of the first
+kind mainly seed hooks into the macros loaded by the source file (for instance,
+latex.4ht, fontmath.4ht, and article.4ht). The files of the second kind mainly
+attach meaning to the hooks (for instance, html4.4ht, unicode.4ht, and
+mathml.4ht).
+
+Different source files may request the loading of different style files and in
+different orders. The hook seeding files are loaded in response to the loading
+of the style files, and in a compatible order. Since the different style files
+may redefine the syntax and semantics of macros, TeX4t follows a similar route
+of defining and redefining the hooks and their meanings.
+
+The meaning attaching files are normally requested through option names
+introduced in the tex4ht.4ht system file. For instance, the mzlatex command
+refers to the mozilla option name of tex4ht.4ht, and the oolatex command refers
+to the ooffice option name. The user may add option names, and redefine old
+ones, within a new file named tex4ht.usr.
 
 \subsection{Inserting configurable hooks for packages}
 
