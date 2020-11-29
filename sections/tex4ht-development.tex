@@ -1,6 +1,10 @@
+\section{Introduction}
 
-
+This chapter deals with \texfourht\ development. It starts with a tutorial for basic
 \section{Tutorial: Basic Support For a New Package}
+
+In this tutorial, we will try to show how to provide \texfourht\ support for a
+simple \LaTeX\ package. 
 
 % from https://tex.stackexchange.com/a/402283/2891
 \texfourht\ tries to load a special \file{.4ht} file for each package loaded
@@ -12,8 +16,6 @@ Let's say that you have a custom package, called \file{mynote.sty}
 
 \begin{texsource}
 \ProvidesPackage{mynote}
-\RequirePackage{xcolor}
-\definecolor{notecolor}{rgb}{1,0.2,0.2}
 \newcommand\notetitle{Note:~}
 \newcommand\note[1]{{\textcolor{notecolor}{\textbf{\notetitle}}}#1}
 \endinput
