@@ -1,0 +1,37 @@
+\texfourht\ supports Plain \TeX, but it can be a bit tricky. In general, you
+will have to provide configurations to get good markup for your custom
+commands. You will also need to add few commands to your source file: 
+
+\begin{texsource}
+%!TEX TS-program = tex
+\input plain-4ht.tex
+\document
+Hello world
+\enddocument
+\end{texsource}
+
+The first line contains magic comment that tells \texttt{make4ht} to use Plain
+\TeX\ instead of \LaTeX for the compilation. \texcommand{\document} and \texcommand{\enddocument}
+commands are important, because they are crucial for correct execution of \texfourht.
+
+They are declared in the \texttt{plain-4ht.tex} file:
+
+\begin{texsource}
+\def\documentstyle#1{}
+\documentstyle{tex4ht}
+\csname tex4ht\endcsname
+\def\document{}
+\def\enddocument{\csname bye\endcsname}
+\end{texsource}
+
+In the PDF mode, these commands will do nothing, except for execution of the \texcommand{\bye} command.
+
+The document can be compiled using:
+
+\begin{shellcommand}
+make4ht -f html5+detect_engine filename.tex
+\end{shellcommand}
+
+The \verb|-f html5+detect_engine| requires the \verb|detect_engine| extension,
+which uses the magic command in the source file to determine which \TeX\ engine
+to use. It is necessary for the correct Plain \TeX\ support.
