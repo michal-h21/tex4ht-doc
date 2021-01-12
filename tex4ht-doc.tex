@@ -137,11 +137,19 @@ Require external CSS file.
 \input{sections/webfonts}
 \section{Use JavaScript}
 \section{Hyperlinks}
+
+\texcommand{\AnchorLabel} -- insert link for the current \texcommand{\label}. It should be placed after change 
+of \texcommand{\@currentlabel}. Note that \texfourht{} handles labels defined by \texcommand{\refstepcounter},
+this is necessary only for labels that are defined by direct modification of \texcommand{\@currentlabel}.
+
 % https://tex.stackexchange.com/a/521497/2891
 % https://tex.stackexchange.com/a/521905/2891
 \section{Document Navigation}
 
+
 \subsection{Cross-links}
+
+Cross-links provide navigation between several HTML pages generated from a single document.
 
 The following configurations modify behaviour of cross-links between pages in a multi page document.
 
