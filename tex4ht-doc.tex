@@ -420,19 +420,11 @@ The following example provides support for some custom \LaTeX\ macros.
     tex: {
       tags: "ams",
       \detokenize{%
-      inlineMath: [ ["\\\(","\\\)"] ],
-      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],}
-      processEscapes: true,
-      processEnvironments: true,
       macros: {
         sc: "\\small\\rm",
         sl: "\\it",
       }
-      packages: ['base', 'color', 'ams']
   },
-  loader: {
-    load: ['[tex]/color', '[tex]/ams']
-  }
 };
 }
 \begin{document}
