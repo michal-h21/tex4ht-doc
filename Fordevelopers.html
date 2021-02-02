@@ -2,12 +2,11 @@
 <html xml:lang='en-US' lang='en-US'> 
 <head><title>10 For developers</title> 
 <meta charset='utf-8' /> 
-<meta content='TeX4ht (http://www.tug.org/tex4ht/)' name='generator' /> 
-<meta content='width=device-width,initial-scale=1' name='viewport' /> 
-<link type='text/css' href='tex4ht-doc.css' rel='stylesheet' /> 
-<meta content='tex4ht-doc.tex' name='src' /> 
-<link type='text/css' href='style.css' rel='stylesheet' /> 
-<meta content='EsWY8xJLGY7SwK9eqJkeqjjGccgwDUqIsEcG2J_ITmE' name='google-site-verification' /> 
+<meta name='generator' content='TeX4ht (http://www.tug.org/tex4ht/)' /> 
+<meta name='viewport' content='width=device-width,initial-scale=1' /> 
+<link href='tex4ht-doc.css' rel='stylesheet' type='text/css' /> 
+<meta name='src' content='tex4ht-doc.tex' /> 
+<link href='style.css' rel='stylesheet' type='text/css' /> 
 </head><body>
 <nav class='TOC'><span class='chapterToc'>1 <a href='Introduction.html#x2-10001'>Introduction</a></span><span class='chapterToc'>2 <a href='BasicTutorial.html#x3-30002'>Basic Tutorial</a></span><span class='chapterToc'>3 <a href='Howto.html#x4-100003'>How to</a></span><span class='chapterToc'>4 <a href='CallingCommands.html#x5-330004'>Calling Commands</a></span><span class='chapterToc'>5 <a href='OutputFormats.html#x6-380005'>Output Formats</a></span><span class='chapterToc'>6 <a href='texfourhtOptions.html#x7-390006'><code>tex4ht</code> Options</a></span><span class='chapterToc'>7 <a href='Configurations.html#x8-410007'>Configurations</a></span><span class='chapterToc'>8 <a href='Make4htBuildFiles.html#x9-850008'>Make4ht Build Files</a></span><span class='chapterToc'>9 <a href='FAQ.html#x10-890009'>FAQ</a></span><span class='chapterToc'>10 <a href='#x11-9200010'>For developers</a></span><span class='sectionToc'>10.1 <a href='#x11-9300010.1'>Introduction</a></span><span class='sectionToc'>10.2 <a href='#x11-9400010.2'>Tutorial: Basic Support For a New Package</a></span><span class='sectionToc'>10.3 <a href='#x11-9500010.3'>Two types of .4ht files</a></span><span class='subsectionToc'>10.3.1 <a href='#x11-9600010.3.1'>Inserting configurable hooks for packages</a></span><span class='subsectionToc'>10.3.2 <a href='#x11-9700010.3.2'>Configure the hooks in output format configuration files</a></span><span class='sectionToc'>10.4 <a href='#x11-9800010.4'>How to add support for a package to the <code>tex4ht</code> literate sources</a></span><span class='subsectionToc'>10.4.1 <a href='#x11-9900010.4.1'>Example</a></span><span class='sectionToc'>10.5 <a href='#x11-10000010.5'>Commands Usable in the <code>.4ht</code> files</a></span><span class='sectionToc'>10.6 <a href='#x11-10100010.6'>ProTeX</a></span><span class='subsectionToc'>10.6.1 <a href='#x11-10200010.6.1'>ProTeX</a></span><span class='chapterToc'>11 <a href='Glossary.html#x12-10300011'>Glossary</a></span><span class='chapterToc'>12 <a href='Bibliography.html#x13-10400012'>Bibliography</a></span><span class='chapterToc'>13 <a href='Index.html#x14-10500013'>Index</a></span></nav> 
 <main class='main-content'> 
@@ -110,7 +109,7 @@ printed by the command.
 called using <code>|&lt;name|&gt;</code>. The license text is included in the example this way.
 In order to generate the <code>sample.4ht</code> file, we need to use <code>sample.4ht</code> as a
 name in the code block and command <code>\AddFile{9}{sample}</code> after the block
-definition<span class='footnote-mark'><a href='#fn1x11' id='fn1x11-bk'><sup class='textsuperscript'>1</sup></a></span><a id='x11-99040f1'></a>.
+definition<span class='footnote-mark'><a id='fn1x11-bk' href='#fn1x11'><sup class='textsuperscript'>1</sup></a></span><a id='x11-99040f1'></a>.
 </p><!-- l. 106 --><p class='indent'>   Each package configuration must include <code>\Hinput{packagename}</code>, in order to
 load the configurations for the package.
 </p><!-- l. 108 --><p class='indent'>   The command <code>\NewConfigure{hello}{2}</code> declares new configuration <code>hello</code>,
@@ -205,7 +204,8 @@ too large in size).
 
                                                                   
 </p>   
-<nav class='crosslinks-bottom'>[<a href='FAQ.html'>prev</a>] [<a href='tex4ht-doc.html#Fordevelopers.html'>up</a>] [<a href='Glossary.html'>next</a>] </nav>  </main><div class='footnotes'><!-- l. 104 --><p class='indent'>     <span class='footnote-mark'><a href='#fn1x11-bk' id='fn1x11'><sup class='textsuperscript'>1</sup></a></span><span class='rm-lmr-8'>I have no idea what the number in the first parameter means.</span></p>                              </div>
+<nav class='crosslinks-bottom'>[<a href='FAQ.html'>prev</a>] [<a href='tex4ht-doc.html#Fordevelopers.html'>up</a>] [<a href='Glossary.html'>next</a>] </nav>  </main><p><script src='/js/libs/goatcounter.js' data-goatcounter='https://kodymirus.goatcounter.com/count'></script></p> 
+<div class='footnotes'><!-- l. 104 --><p class='indent'>     <span class='footnote-mark'><a id='fn1x11' href='#fn1x11-bk'><sup class='textsuperscript'>1</sup></a></span><span class='rm-lmr-8'>I have no idea what the number in the first parameter means.</span></p>                              </div>
  
 </body> 
 </html>
