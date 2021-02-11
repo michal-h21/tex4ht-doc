@@ -45,6 +45,30 @@ By default, \texfourht\ separates paragraphs by spaces. If you want to use text 
 \subsection{CSS}
 \subsection{Web fonts}
 
+It is easy to change fonts in the web pages using CSS, but if you want to use
+actual font files for the distribution, for example in an Epub file, \texfourht
+provides following configurations. This example shows how to use OTF files
+for the EB Garamond font. 
+
+\begin{texsource}
+% define font family. The first argument is family name
+% that can be used in CSS font-family rule
+% second argument is the family name declared by the font
+\Configure{FontFamily}{rmfamily}{EB Garamond}
+% declare font filenames for particular font styles. 
+% the font files must be placed in the location that is
+% declared.
+% these four font styles are supported
+\Configure{NormalFont}{EBGaramond-Regular.otf}
+\Configure{ItalicFont}{EBGaramond-Italic.otf}
+\Configure{BoldFont}{EBGaramond-Bold.otf}
+\Configure{BoldItalicFont}{EBGaramond-BoldItalic.otf}
+% use CSS to use the declared font family in the document
+% serif is used as a fallback
+\Css{body{font-family: "rmfamily", serif;}}
+\end{texsource}
+
+
 \section{Math}
 
 \subsection{MathJax}
