@@ -4,9 +4,9 @@
 <meta charset='utf-8' /> 
 <meta name='generator' content='TeX4ht (http://www.tug.org/tex4ht/)' /> 
 <meta name='viewport' content='width=device-width,initial-scale=1' /> 
-<link href='tex4ht-doc.css' rel='stylesheet' type='text/css' /> 
+<link type='text/css' rel='stylesheet' href='tex4ht-doc.css' /> 
 <meta name='src' content='tex4ht-doc.tex' /> 
-<link href='style.css' rel='stylesheet' type='text/css' /> 
+<link type='text/css' rel='stylesheet' href='style.css' /> 
 </head><body>
 <nav class='TOC'><span class='chapterToc'>1 <a href='Introduction.html#x2-10001'>Introduction</a></span><span class='chapterToc'>2 <a href='BasicTutorial.html#x3-30002'>Basic Tutorial</a></span><span class='chapterToc'>3 <a href='#x4-100003'>How to</a></span><span class='sectionToc'>3.1 <a href='#x4-110003.1'>Change design</a></span><span class='subsectionToc'>3.1.1 <a href='#x4-120003.1.1'>Basics</a></span><span class='subsectionToc'>3.1.2 <a href='#x4-130003.1.2'>CSS</a></span><span class='subsectionToc'>3.1.3 <a href='#x4-140003.1.3'>Web fonts</a></span><span class='sectionToc'>3.2 <a href='#x4-150003.2'>Math</a></span><span class='subsectionToc'>3.2.1 <a href='#x4-160003.2.1'>MathJax</a></span><span class='subsectionToc'>3.2.2 <a href='#x4-170003.2.2'>MathML</a></span><span class='subsectionToc'>3.2.3 <a href='#x4-180003.2.3'>Subscripts and superscripts</a></span><span class='subsectionToc'>3.2.4 <a href='#x4-190003.2.4'>MathJax Node</a></span><span class='sectionToc'>3.3 <a href='#x4-200003.3'>Graphics</a></span><span class='subsectionToc'>3.3.1 <a href='#x4-210003.3.1'>Include graphics (svg,pdf)</a></span><span class='subsectionToc'>3.3.2 <a href='#x4-220003.3.2'>Change image size and resolution</a></span><span class='subsectionToc'>3.3.3 <a href='#x4-230003.3.3'>Use relative size for images</a></span><span class='subsectionToc'>3.3.4 <a href='#x4-240003.3.4'>Change image <code>alt</code> attribute</a></span><span class='sectionToc'>3.4 <a href='#x4-250003.4'>Plain TEX</a></span><span class='sectionToc'>3.5 <a href='#x4-260003.5'>Blogging</a></span><span class='sectionToc'>3.6 <a href='#x4-270003.6'>Work with external commands</a></span><span class='subsectionToc'>3.6.1 <a href='#x4-280003.6.1'>Indexing</a></span><span class='subsectionToc'>3.6.2 <a href='#x4-290003.6.2'>Bibliographies</a></span><span class='subsectionToc'>3.6.3 <a href='#x4-300003.6.3'>R</a></span><span class='subsectionToc'>3.6.4 <a href='#x4-310003.6.4'>Markdown</a></span><span class='subsectionToc'>3.6.5 <a href='#x4-320003.6.5'>PythonTeX</a></span><span class='chapterToc'>4 <a href='CallingCommands.html#x5-330004'>Calling Commands</a></span><span class='chapterToc'>5 <a href='OutputFormats.html#x6-380005'>Output Formats</a></span><span class='chapterToc'>6 <a href='texfourhtOptions.html#x7-390006'><code>tex4ht</code> Options</a></span><span class='chapterToc'>7 <a href='Configurations.html#x8-410007'>Configurations</a></span><span class='chapterToc'>8 <a href='Make4htBuildFiles.html#x9-850008'>Make4ht Build Files</a></span><span class='chapterToc'>9 <a href='FAQ.html#x10-890009'>FAQ</a></span><span class='chapterToc'>10 <a href='Fordevelopers.html#x11-9200010'>For developers</a></span><span class='chapterToc'>11 <a href='Glossary.html#x12-10300011'>Glossary</a></span><span class='chapterToc'>12 <a href='Bibliography.html#x13-10400012'>Bibliography</a></span><span class='chapterToc'>13 <a href='Index.html#x14-10500013'>Index</a></span></nav> 
 <main class='main-content'> 
@@ -24,19 +24,42 @@ instead, try the <span class='emph'>p-indent</span> option.
 <!-- l. 46 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead'><span class='titlemark'>3.1.3   </span> <a id='x4-140003.1.3'></a>Web fonts</h4>
-<!-- l. 48 --><p class='noindent'>
+<!-- l. 48 --><p class='noindent'>It is easy to change fonts in the web pages using CSS, but if you want to use actual
+font files for the distribution, for example in an Epub file, <code>tex4ht</code>provides following
+configurations. This example shows how to use OTF files for the EB Garamond
+font.
 </p>   
-<h3 class='sectionHead'><span class='titlemark'>3.2   </span> <a id='x4-150003.2'></a>Math</h3>
-<!-- l. 50 --><p class='noindent'>
-</p>   
-<h4 class='subsectionHead'><span class='titlemark'>3.2.1   </span> <a id='x4-160003.2.1'></a>MathJax</h4>
+<figure class='texsource' role='doc-example'>
+<div id='fancyvrb1' class='fancyvrb'><a id='x4-14017r1'></a><span class='textcolor-878787'><span class='textit'>% define font family. The first argument is family name</span></span>
+<br class='fancyvrb' /><a id='x4-14019r2'></a><span class='textcolor-878787'><span class='textit'>% that can be used in CSS font-family rule</span></span>
+<br class='fancyvrb' /><a id='x4-14021r3'></a><span class='textcolor-878787'><span class='textit'>% second argument is the family name declared by the font</span></span>
+<br class='fancyvrb' /><a id='x4-14023r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>FontFamily</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>rmfamily</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>EB Garamond</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span>
+<br class='fancyvrb' /><a id='x4-14025r5'></a><span class='textcolor-878787'><span class='textit'>% declare font filenames for particular font styles.</span></span>
                                                                   
 
                                                                   
-<!-- l. 53 --><p class='noindent'>
+<br class='fancyvrb' /><a id='x4-14027r6'></a><span class='textcolor-878787'><span class='textit'>% the font files must be placed in the location that is</span></span>
+<br class='fancyvrb' /><a id='x4-14029r7'></a><span class='textcolor-878787'><span class='textit'>% declared.</span></span>
+<br class='fancyvrb' /><a id='x4-14031r8'></a><span class='textcolor-878787'><span class='textit'>% these four font styles are supported</span></span>
+<br class='fancyvrb' /><a id='x4-14033r9'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>NormalFont</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>EBGaramond-Regular.otf</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span>
+<br class='fancyvrb' /><a id='x4-14035r10'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>ItalicFont</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>EBGaramond-Italic.otf</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span>
+<br class='fancyvrb' /><a id='x4-14037r11'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>BoldFont</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>EBGaramond-Bold.otf</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span>
+<br class='fancyvrb' /><a id='x4-14039r12'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>BoldItalicFont</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>EBGaramond-BoldItalic.otf</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span>
+<br class='fancyvrb' /><a id='x4-14041r13'></a><span class='textcolor-878787'><span class='textit'>% use CSS to use the declared font family in the document</span></span>
+<br class='fancyvrb' /><a id='x4-14043r14'></a><span class='textcolor-878787'><span class='textit'>% serif is used as a fallback</span></span>
+<br class='fancyvrb' /><a id='x4-14045r15'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Css</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>body</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>font-family: "rmfamily", serif;</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}</span></span>
+</div>
+</figure>
+<!-- l. 72 --><p class='noindent'>
+</p>   
+<h3 class='sectionHead'><span class='titlemark'>3.2   </span> <a id='x4-150003.2'></a>Math</h3>
+<!-- l. 74 --><p class='noindent'>
+</p>   
+<h4 class='subsectionHead'><span class='titlemark'>3.2.1   </span> <a id='x4-160003.2.1'></a>MathJax</h4>
+<!-- l. 77 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead'><span class='titlemark'>3.2.2   </span> <a id='x4-170003.2.2'></a>MathML</h4>
-<!-- l. 54 --><p class='noindent'>
+<!-- l. 78 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead'><span class='titlemark'>3.2.3   </span> <a id='x4-180003.2.3'></a>Subscripts and superscripts</h4>
 <!-- l. 4 --><p class='noindent'>Subscript and superscript support in <code>tex4ht</code> is a bit complicated. The catcodes of <code>_</code>
@@ -45,54 +68,57 @@ necessary in order to insert the markup tags for these structures. One consequen
 this is that you need to use a correct grouping for content that should be affected by
 these operators. For example, instead of
 </p>   
-<figure role='doc-example' class='texsource'>
-<div class='fancyvrb' id='fancyvrb1'><a id='x4-18003r1'></a><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>A_</span></span><span class='textcolor-af3f3f'><span class='rm-lmtt-10'>\mathit</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{...}</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span></div>
+<figure class='texsource' role='doc-example'>
+<div id='fancyvrb2' class='fancyvrb'><a id='x4-18003r1'></a><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>A_</span></span><span class='textcolor-af3f3f'><span class='rm-lmtt-10'>\mathit</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{...}</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span></div>
 </figure>
 <!-- l. 15 --><p class='indent'>   use the following, with added group around the <code>\mathit</code> command:
 </p>   
-<figure role='doc-example' class='texsource'>
-<div class='fancyvrb' id='fancyvrb2'><a id='x4-18006r1'></a><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>A_{</span></span><span class='textcolor-af3f3f'><span class='rm-lmtt-10'>\mathit</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{...}}</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span></div>
+<figure class='texsource' role='doc-example'>
+<div id='fancyvrb3' class='fancyvrb'><a id='x4-18006r1'></a><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>A_{</span></span><span class='textcolor-af3f3f'><span class='rm-lmtt-10'>\mathit</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{...}}</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span></div>
+                                                                  
+
+                                                                  
 </figure>
 <!-- l. 21 --><p class='indent'>   If you define custom commands in the document preamble, use <code>\sp</code> and <code>\sb</code>
 instead of <code>^</code> and <code>_</code>.
 </p><!-- l. 24 --><p class='indent'>   For example:
 </p>   
-<figure role='doc-example' class='texsource'>
-<div class='fancyvrb' id='fancyvrb3'><a id='x4-18009r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\newcommand</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\coeffX</span></span><span class='rm-lmtt-10'> [4][X]</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\mathbf</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>#1</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}_{{</span></span><span class='rm-lmtt-10'>#2</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><span class='rm-lmtt-10'>,</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>#3</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}</span></span><span class='rm-lmtt-10'>(#4)</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span></div>
+<figure class='texsource' role='doc-example'>
+<div id='fancyvrb4' class='fancyvrb'><a id='x4-18009r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\newcommand</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\coeffX</span></span><span class='rm-lmtt-10'> [4][X]</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\mathbf</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>#1</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}_{{</span></span><span class='rm-lmtt-10'>#2</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><span class='rm-lmtt-10'>,</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>#3</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}</span></span><span class='rm-lmtt-10'>(#4)</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span></div>
 </figure>
 <!-- l. 30 --><p class='indent'>   should become:
 </p>   
-<figure role='doc-example' class='texsource'>
-<div class='fancyvrb' id='fancyvrb4'><a id='x4-18012r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\newcommand\coeffX</span></span><span class='rm-lmtt-10'> [4][X]</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\mathbf</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>#1</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\sb</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>#2,#3</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><span class='rm-lmtt-10'>(#4)</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span></div>
+<figure class='texsource' role='doc-example'>
+<div id='fancyvrb5' class='fancyvrb'><a id='x4-18012r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\newcommand\coeffX</span></span><span class='rm-lmtt-10'> [4][X]</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\mathbf</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>#1</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\sb</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>#2,#3</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><span class='rm-lmtt-10'>(#4)</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span></div>
 </figure>
 <!-- l. 36 --><p class='indent'>   Sometimes, it is not possible to change the source files. In this situation, you can
 pre-process the source using custom script that reads the original file, fixes the code
 and then pipes the modified output to <code>make4ht</code>.
-                                                                  
-
-                                                                  
 </p><!-- l. 40 --><p class='indent'>   For example, you may want to change this input:
 </p>   
-<figure role='doc-example' class='texsource'>
-<div class='fancyvrb' id='fancyvrb5'><a id='x4-18015r1'></a><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>k</span><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>^</span></span><span class='textcolor-444444'><span class='rm-lmtt-10'>4</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>_{i}</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span></div>
+<figure class='texsource' role='doc-example'>
+<div id='fancyvrb6' class='fancyvrb'><a id='x4-18015r1'></a><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>k</span><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>^</span></span><span class='textcolor-444444'><span class='rm-lmtt-10'>4</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>_{i}</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span></div>
 </figure>
 <!-- l. 46 --><p class='indent'>   to the correct form:
 </p>   
-<figure role='doc-example' class='texsource'>
-<div class='fancyvrb' id='fancyvrb6'><a id='x4-18018r1'></a><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>k^{</span></span><span class='textcolor-af3f3f'><span class='rm-lmtt-10'>\prime</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'> </span></span><span class='textcolor-444444'><span class='rm-lmtt-10'>4</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}_{i}</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span></div>
+<figure class='texsource' role='doc-example'>
+<div id='fancyvrb7' class='fancyvrb'><a id='x4-18018r1'></a><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>k^{</span></span><span class='textcolor-af3f3f'><span class='rm-lmtt-10'>\prime</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'> </span></span><span class='textcolor-444444'><span class='rm-lmtt-10'>4</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}_{i}</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span></div>
 </figure>
 <!-- l. 52 --><p class='indent'>   This can be done using the following Lua script:
 </p><!-- l. 1 --><p class='indent'>
 </p>   
-<div class='fancyvrb' id='fancyvrb7'><a id='x4-18024r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>for</span></span><span class='rm-lmtt-10'> line </span><span class='textcolor-2838af'><span class='rm-lmtt-10'>in</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>io.lines</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>()</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-2838af'><span class='rm-lmtt-10'>do</span></span><br class='fancyvrb' /><a id='x4-18026r2'></a><span class='rm-lmtt-10'>  line </span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='rm-lmtt-10'> line</span><span class='textcolor-878787'><span class='rm-lmtt-10'>:</span></span><span class='rm-lmtt-10'>gsub</span><span class='textcolor-878787'><span class='rm-lmtt-10'>(</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"%</span><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>%^(.-)%_"</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>,</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"^{</span></span><span class='textcolor-708e30'><span class='rm-lmtt-10'>\\</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>prime %1}_"</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>)</span></span>
+<div id='fancyvrb8' class='fancyvrb'><a id='x4-18024r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>for</span></span><span class='rm-lmtt-10'> line </span><span class='textcolor-2838af'><span class='rm-lmtt-10'>in</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>io.lines</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>()</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-2838af'><span class='rm-lmtt-10'>do</span></span><br class='fancyvrb' /><a id='x4-18026r2'></a><span class='rm-lmtt-10'>  line </span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='rm-lmtt-10'> line</span><span class='textcolor-878787'><span class='rm-lmtt-10'>:</span></span><span class='rm-lmtt-10'>gsub</span><span class='textcolor-878787'><span class='rm-lmtt-10'>(</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"%</span><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>%^(.-)%_"</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>,</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"^{</span></span><span class='textcolor-708e30'><span class='rm-lmtt-10'>\\</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>prime %1}_"</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>)</span></span>
 <br class='fancyvrb' /><a id='x4-18028r3'></a><span class='rm-lmtt-10'>  </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>print</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>(</span></span><span class='rm-lmtt-10'>line</span><span class='textcolor-878787'><span class='rm-lmtt-10'>)</span></span>
 <br class='fancyvrb' /><a id='x4-18030r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>end</span></span>
 </div>
 <!-- l. 61 --><p class='indent'>   It uses Lua version of regular expressions to find the code we want to fix. The
 command to execute it could be:
 </p>   
-<figure role='doc-example' class='shellcommand'>
-<div class='fancyvrb' id='fancyvrb8'><a id='x4-18033r1'></a><span class='rm-lmtt-10'>texlua filter.lua &lt; sample.tex </span><span class='textcolor-878787'><span class='rm-lmtt-10'>|</span></span><span class='rm-lmtt-10'> make4ht -j sample - </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"mathml,mathjax"</span></span></div>
+<figure class='shellcommand' role='doc-example'>
+                                                                  
+
+                                                                  
+<div id='fancyvrb9' class='fancyvrb'><a id='x4-18033r1'></a><span class='rm-lmtt-10'>texlua filter.lua &lt; sample.tex </span><span class='textcolor-878787'><span class='rm-lmtt-10'>|</span></span><span class='rm-lmtt-10'> make4ht -j sample - </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"mathml,mathjax"</span></span></div>
 </figure>
 <!-- l. 68 --><p class='indent'>   The <code>-j</code> option is used to name the output file, which is necessary because the
 input comes from a pipe. The dash used in the place of filename tells <code>make4ht</code> to read
@@ -101,16 +127,13 @@ input from the standard input.
 browsers.
 </p>   
 <h4 class='subsectionHead'><span class='titlemark'>3.2.4   </span> <a id='x4-190003.2.4'></a>MathJax Node</h4>
-<!-- l. 59 --><p class='noindent'>
+<!-- l. 83 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead'><span class='titlemark'>3.3   </span> <a id='x4-200003.3'></a>Graphics</h3>
-                                                                  
-
-                                                                  
-<!-- l. 60 --><p class='noindent'>
+<!-- l. 84 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead'><span class='titlemark'>3.3.1   </span> <a id='x4-210003.3.1'></a>Include graphics (svg,pdf)</h4>
-<!-- l. 61 --><p class='noindent'>
+<!-- l. 85 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead'><span class='titlemark'>3.3.2   </span> <a id='x4-220003.3.2'></a>Change image size and resolution</h4>
 <!-- l. 1 --><p class='noindent'>You can use <code>\Configure{Gin-dim}</code> command to change the way how image
@@ -124,9 +147,12 @@ unless your image is a square. To get the correct value for all dimensions,
 Graphics uses a <span class='obeylines-h'><code>.xbb</code></span> file for image. It can be created using the following
 command:
 </p>   
-<figure role='doc-example' class='shellcommand'>
-<div class='fancyvrb' id='fancyvrb9'><a id='x4-22003r1'></a><span class='rm-lmtt-10'>ebb -x *.jpg</span></div>
+<figure class='shellcommand' role='doc-example'>
+<div id='fancyvrb10' class='fancyvrb'><a id='x4-22003r1'></a><span class='rm-lmtt-10'>ebb -x *.jpg</span></div>
 </figure>
+                                                                  
+
+                                                                  
 <!-- l. 15 --><p class='indent'>   Run analogous command for every other supported image format you
 use. This will ensure that correct values are used for implicitly calculated
 dimensions.
@@ -137,8 +163,8 @@ dimensions.
 to the original page width. Thanks to the <span class='LATEX'>L<span class='A'>A</span><span class='TEX'>T<span class='E'>E</span>X</span></span> 3 project, we can use the <code>l3fp</code>
 package to calculate the image dimensions in percents.
 </p>   
-<figure role='doc-example' class='texsource'>
-<div class='fancyvrb' id='fancyvrb10'><a id='x4-23011r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x4-23013r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatletter</span></span><br class='fancyvrb' /><a id='x4-23015r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\ExplSyntaxOn</span></span><br class='fancyvrb' /><a id='x4-23017r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin-dim</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span>
+<figure class='texsource' role='doc-example'>
+<div id='fancyvrb11' class='fancyvrb'><a id='x4-23011r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x4-23013r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatletter</span></span><br class='fancyvrb' /><a id='x4-23015r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\ExplSyntaxOn</span></span><br class='fancyvrb' /><a id='x4-23017r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin-dim</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span>
 <br class='fancyvrb' /><a id='x4-23019r5'></a><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>style="width:</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\fp</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>_</span></span><span class='rm-lmtt-10'>eval:n</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>round(</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Gin</span></span><span class='rm-lmtt-10'>@req@width/</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\textwidth*</span></span><span class='rm-lmtt-10'>100,2)</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\%</span></span><span class='rm-lmtt-10'>"</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span>
 <br class='fancyvrb' /><a id='x4-23021r6'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\ExplSyntaxOff</span></span>
 <br class='fancyvrb' /><a id='x4-23023r7'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatother</span></span>
@@ -146,9 +172,6 @@ package to calculate the image dimensions in percents.
 <br class='fancyvrb' /><a id='x4-23027r9'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\EndPreamble</span></span>
 </div>
 </figure>
-                                                                  
-
-                                                                  
 <!-- l. 36 --><p class='indent'>   In this configuration, we divide the image width passed to <code>\includegraphics</code> by
 the document text width. This portion is then multiplied and rounded to get the
 correct percent value. The calculated value is used in the <span class='obeylines-h'><code>style</code></span> attribute of the
@@ -157,19 +180,22 @@ generated <span class='obeylines-h'><code>&lt;img&gt;</code></span> element. The
 provides.
 </p><!-- l. 43 --><p class='indent'>   The following example code:
 </p>   
-<figure role='doc-example' class='texsource'>
-<div class='fancyvrb' id='fancyvrb11'><a id='x4-23030r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\includegraphics</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>[width=0.5\textwidth]{</span></span><span class='rm-lmtt-10'>example-image.png</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span></div>
+<figure class='texsource' role='doc-example'>
+<div id='fancyvrb12' class='fancyvrb'><a id='x4-23030r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\includegraphics</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>[width=0.5\textwidth]{</span></span><span class='rm-lmtt-10'>example-image.png</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span></div>
 </figure>
 <!-- l. 49 --><p class='indent'>   produces following HTML code:
 </p>   
-<figure role='doc-example' class='htmlsource'>
-<div class='fancyvrb' id='fancyvrb12'><a id='x4-23033r1'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>img</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>style</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>width:50%</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>alt</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>PIC</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>src</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>/&gt;</span></span></div>
+<figure class='htmlsource' role='doc-example'>
+<div id='fancyvrb13' class='fancyvrb'><a id='x4-23033r1'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>img</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>style</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>width:50%</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>alt</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>PIC</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>src</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>/&gt;</span></span></div>
 </figure>
 <!-- l. 55 --><p class='indent'>   To disable setting of the image dimensions in HTML code completely use the
 following configuration:
 </p>   
-<figure role='doc-example' class='texsource'>
-<div class='fancyvrb' id='fancyvrb13'><a id='x4-23043r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x4-23045r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin-dim</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{}</span></span><br class='fancyvrb' /><a id='x4-23047r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Css</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>img </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><br class='fancyvrb' /><a id='x4-23049r4'></a><span class='rm-lmtt-10'>    max-width: 100</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\%</span></span><span class='rm-lmtt-10'>;</span>
+<figure class='texsource' role='doc-example'>
+                                                                  
+
+                                                                  
+<div id='fancyvrb14' class='fancyvrb'><a id='x4-23043r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x4-23045r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin-dim</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{}</span></span><br class='fancyvrb' /><a id='x4-23047r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Css</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>img </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><br class='fancyvrb' /><a id='x4-23049r4'></a><span class='rm-lmtt-10'>    max-width: 100</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\%</span></span><span class='rm-lmtt-10'>;</span>
 <br class='fancyvrb' /><a id='x4-23051r5'></a><span class='rm-lmtt-10'>    height: auto;</span>
 <br class='fancyvrb' /><a id='x4-23053r6'></a><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}</span></span>
 <br class='fancyvrb' /><a id='x4-23055r7'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span>
@@ -188,11 +214,8 @@ purposes.
 </p><!-- l. 79 --><p class='indent'>   We can define a new attribute for <code>\includegraphics</code> command, named <code>alt</code>, for
 example. Here is a sample file that shows how to do that:
 </p><!-- l. 1 --><p class='indent'>
-                                                                  
-
-                                                                  
 </p>   
-<div class='fancyvrb' id='fancyvrb14'><a id='x4-24002r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>article</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x4-24004r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>graphicx</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x4-24006r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatletter</span></span>
+<div id='fancyvrb15' class='fancyvrb'><a id='x4-24002r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>article</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x4-24004r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>graphicx</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x4-24006r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatletter</span></span>
 <br class='fancyvrb' /><a id='x4-24008r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\define</span></span><span class='rm-lmtt-10'>@key</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>alt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{}</span></span>
 <br class='fancyvrb' /><a id='x4-24010r5'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatother</span></span>
 <br class='fancyvrb' /><a id='x4-24012r6'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span>
@@ -204,7 +227,7 @@ used by regular <span class='LATEX'>L<span class='A'>A</span><span class='TEX'>T
 configuration that can specify the image alternative text, <code>GraphicsAlt</code>.
 </p><!-- l. 1 --><p class='indent'>
 </p>   
-<div class='fancyvrb' id='fancyvrb15'><a id='x4-24018r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x4-24020r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatletter</span></span><br class='fancyvrb' /><a id='x4-24022r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\define</span></span><span class='rm-lmtt-10'>@key</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>alt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>GraphicsAlt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>#1</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}</span></span>
+<div id='fancyvrb16' class='fancyvrb'><a id='x4-24018r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x4-24020r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatletter</span></span><br class='fancyvrb' /><a id='x4-24022r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\define</span></span><span class='rm-lmtt-10'>@key</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>alt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>GraphicsAlt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>#1</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}</span></span>
 <br class='fancyvrb' /><a id='x4-24024r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatother</span></span>
 <br class='fancyvrb' /><a id='x4-24026r5'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span>
 <br class='fancyvrb' /><a id='x4-24028r6'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\EndPreamble</span></span>
@@ -212,16 +235,19 @@ configuration that can specify the image alternative text, <code>GraphicsAlt</co
 <!-- l. 90 --><p class='indent'>   The resulting HTML file now contains image with the <code>alt</code> attribute:
 </p><!-- l. 1 --><p class='indent'>
 </p>   
-<div class='fancyvrb' id='fancyvrb16'><a id='x4-24030r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!-- l. 7 --&gt;</span><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>img</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>alt</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>alt tags, information</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>src</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>/&gt;</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></div>
-<!-- l. 64 --><p class='noindent'>
+<div id='fancyvrb17' class='fancyvrb'><a id='x4-24030r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!-- l. 7 --&gt;</span><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>img</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>alt</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>alt tags, information</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>src</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>/&gt;</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></div>
+<!-- l. 88 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead'><span class='titlemark'>3.4   </span> <a id='x4-250003.4'></a>Plain <span class='TEX'>T<span class='E'>E</span>X</span></h3>
 <!-- l. 1 --><p class='noindent'><code>tex4ht</code> supports Plain <span class='TEX'>T<span class='E'>E</span>X</span>, but it can be a bit tricky. In general, you will have to
 provide configurations to get good markup for your custom commands. You will also
 need to add few commands to your source file:
+                                                                  
+
+                                                                  
 </p>   
-<figure role='doc-example' class='texsource'>
-<div class='fancyvrb' id='fancyvrb17'><a id='x4-25007r1'></a><span class='textcolor-878787'><span class='textit'>%!TEX TS-program = tex</span></span><br class='fancyvrb' /><a id='x4-25009r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\input</span></span><span class='rm-lmtt-10'> plain-4ht.tex</span><br class='fancyvrb' /><a id='x4-25011r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\document</span></span><br class='fancyvrb' /><a id='x4-25013r4'></a><span class='rm-lmtt-10'>Hello world</span><br class='fancyvrb' /><a id='x4-25015r5'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\enddocument</span></span></div>
+<figure class='texsource' role='doc-example'>
+<div id='fancyvrb18' class='fancyvrb'><a id='x4-25007r1'></a><span class='textcolor-878787'><span class='textit'>%!TEX TS-program = tex</span></span><br class='fancyvrb' /><a id='x4-25009r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\input</span></span><span class='rm-lmtt-10'> plain-4ht.tex</span><br class='fancyvrb' /><a id='x4-25011r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\document</span></span><br class='fancyvrb' /><a id='x4-25013r4'></a><span class='rm-lmtt-10'>Hello world</span><br class='fancyvrb' /><a id='x4-25015r5'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\enddocument</span></span></div>
 </figure>
 <!-- l. 13 --><p class='indent'>   The first line contains magic comment that tells <code>make4ht</code> to use Plain
 <span class='TEX'>T<span class='E'>E</span>X</span> instead of <span class='LATEX'>L<span class='A'>A</span><span class='TEX'>T<span class='E'>E</span>X</span></span>for the compilation. <code>\document</code> and <code>\enddocument</code>
@@ -229,47 +255,44 @@ commands are important, because they are crucial for correct execution of
 <code>tex4ht</code>.
 </p><!-- l. 17 --><p class='indent'>   They are declared in the <code>plain-4ht.tex</code> file:
 </p>   
-<figure role='doc-example' class='texsource'>
-<div class='fancyvrb' id='fancyvrb18'><a id='x4-25022r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\def\documentstyle</span></span><span class='rm-lmtt-10'>#1</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{}</span></span><br class='fancyvrb' /><a id='x4-25024r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\documentstyle</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>tex4ht</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x4-25026r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\csname</span></span><span class='rm-lmtt-10'> tex4ht</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\endcsname</span></span>
+<figure class='texsource' role='doc-example'>
+<div id='fancyvrb19' class='fancyvrb'><a id='x4-25022r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\def\documentstyle</span></span><span class='rm-lmtt-10'>#1</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{}</span></span><br class='fancyvrb' /><a id='x4-25024r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\documentstyle</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>tex4ht</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x4-25026r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\csname</span></span><span class='rm-lmtt-10'> tex4ht</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\endcsname</span></span>
 <br class='fancyvrb' /><a id='x4-25028r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\def\document</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{}</span></span>
 <br class='fancyvrb' /><a id='x4-25030r5'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\def\enddocument</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\csname</span></span><span class='rm-lmtt-10'> bye</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\endcsname</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span>
 </div>
-                                                                  
-
-                                                                  
 </figure>
 <!-- l. 27 --><p class='indent'>   In the PDF mode, these commands will do nothing, except for execution of the
 <code>\bye</code> command.
 </p><!-- l. 29 --><p class='indent'>   The document can be compiled using:
 </p>   
-<figure role='doc-example' class='shellcommand'>
-<div class='fancyvrb' id='fancyvrb19'><a id='x4-25033r1'></a><span class='rm-lmtt-10'>make4ht -f html5+detect_engine filename.tex</span></div>
+<figure class='shellcommand' role='doc-example'>
+<div id='fancyvrb20' class='fancyvrb'><a id='x4-25033r1'></a><span class='rm-lmtt-10'>make4ht -f html5+detect_engine filename.tex</span></div>
 </figure>
 <!-- l. 35 --><p class='indent'>   The <span class='obeylines-h'><code>-f html5+detect_engine</code></span> requires the <span class='obeylines-h'><code>detect_engine</code></span> extension, which uses
 the magic command in the source file to determine which <span class='TEX'>T<span class='E'>E</span>X</span> engine to use. It is
 necessary for the correct Plain <span class='TEX'>T<span class='E'>E</span>X</span> support.
-</p><!-- l. 68 --><p class='noindent'>
+</p><!-- l. 92 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead'><span class='titlemark'>3.5   </span> <a id='x4-260003.5'></a>Blogging</h3>
-<!-- l. 70 --><p class='noindent'>
+<!-- l. 94 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead'><span class='titlemark'>3.6   </span> <a id='x4-270003.6'></a>Work with external commands</h3>
-<!-- l. 71 --><p class='noindent'>
-</p>   
-<h4 class='subsectionHead'><span class='titlemark'>3.6.1   </span> <a id='x4-280003.6.1'></a>Indexing</h4>
-<!-- l. 72 --><p class='noindent'>
-</p>   
-<h4 class='subsectionHead'><span class='titlemark'>3.6.2   </span> <a id='x4-290003.6.2'></a>Bibliographies</h4>
-<!-- l. 73 --><p class='noindent'>
-</p>   
-<h4 class='subsectionHead'><span class='titlemark'>3.6.3   </span> <a id='x4-300003.6.3'></a>R</h4>
                                                                   
 
                                                                   
-<!-- l. 74 --><p class='noindent'>
+<!-- l. 95 --><p class='noindent'>
+</p>   
+<h4 class='subsectionHead'><span class='titlemark'>3.6.1   </span> <a id='x4-280003.6.1'></a>Indexing</h4>
+<!-- l. 96 --><p class='noindent'>
+</p>   
+<h4 class='subsectionHead'><span class='titlemark'>3.6.2   </span> <a id='x4-290003.6.2'></a>Bibliographies</h4>
+<!-- l. 97 --><p class='noindent'>
+</p>   
+<h4 class='subsectionHead'><span class='titlemark'>3.6.3   </span> <a id='x4-300003.6.3'></a>R</h4>
+<!-- l. 98 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead'><span class='titlemark'>3.6.4   </span> <a id='x4-310003.6.4'></a>Markdown</h4>
-<!-- l. 75 --><p class='noindent'>
+<!-- l. 99 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead'><span class='titlemark'>3.6.5   </span> <a id='x4-320003.6.5'></a>PythonTeX</h4>
                                                                   
