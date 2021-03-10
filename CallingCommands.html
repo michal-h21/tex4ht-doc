@@ -1,12 +1,12 @@
 <!DOCTYPE html> 
-<html lang='en-US' xml:lang='en-US'> 
+<html xml:lang='en-US' lang='en-US'> 
 <head><title>4 Calling Commands</title> 
 <meta charset='utf-8' /> 
-<meta name='generator' content='TeX4ht (http://www.tug.org/tex4ht/)' /> 
-<meta name='viewport' content='width=device-width,initial-scale=1' /> 
-<link href='tex4ht-doc.css' type='text/css' rel='stylesheet' /> 
-<meta name='src' content='tex4ht-doc.tex' /> 
-<link href='style.css' type='text/css' rel='stylesheet' /> 
+<meta content='TeX4ht (http://www.tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link rel='stylesheet' type='text/css' href='tex4ht-doc.css' /> 
+<meta content='tex4ht-doc.tex' name='src' /> 
+<link rel='stylesheet' type='text/css' href='style.css' /> 
 </head><body>
 <nav class='TOC'><span class='chapterToc'>1 <a href='Introduction.html#x2-10001'>Introduction</a></span><span class='chapterToc'>2 <a href='BasicTutorial.html#x3-30002'>Basic Tutorial</a></span><span class='chapterToc'>3 <a href='Howto.html#x4-100003'>How to</a></span><span class='chapterToc'>4 <a href='#x5-330004'>Calling Commands</a></span><span class='sectionToc'>4.1 <a href='#x5-340004.1'><code>make4ht</code> and other conversion scripts</a></span><span class='sectionToc'>4.2 <a href='#x5-350004.2'><code>htlatex</code> and other obsolete scripts</a></span><span class='sectionToc'>4.3 <a href='#x5-360004.3'>Overview of the Translation Process</a></span><span class='subsectionToc'>4.3.1 <a href='#x5-370004.3.1'>make4ht extensions</a></span><span class='chapterToc'>5 <a href='OutputFormats.html#x6-380005'>Output Formats</a></span><span class='chapterToc'>6 <a href='texfourhtOptions.html#x7-390006'><code>tex4ht</code> Options</a></span><span class='chapterToc'>7 <a href='Configurations.html#x8-410007'>Configurations</a></span><span class='chapterToc'>8 <a href='Make4htBuildFiles.html#x9-850008'>Make4ht Build Files</a></span><span class='chapterToc'>9 <a href='FAQ.html#x10-890009'>FAQ</a></span><span class='chapterToc'>10 <a href='Fordevelopers.html#x11-9200010'>For developers</a></span><span class='chapterToc'>11 <a href='Glossary.html#x12-10300011'>Glossary</a></span><span class='chapterToc'>12 <a href='Bibliography.html#x13-10400012'>Bibliography</a></span><span class='chapterToc'>13 <a href='Index.html#x14-10500013'>Index</a></span></nav> 
 <main class='main-content'> 
@@ -27,7 +27,7 @@ with the tex4ht and t4ht programs.
 steps of the process, without user intervention. The command assumes the
 form
 </p>   
-<figure class='shellcommand' role='doc-example'>
+<figure role='doc-example' class='shellcommand'>
 <div id='fancyvrb21' class='fancyvrb'><a id='x5-34003r1'></a><span class='rm-lmtt-10'>make4ht </span><span class='textcolor-656565'><span class='rm-lmtt-10'>[</span></span><span class='rm-lmtt-10'>make4ht options</span><span class='textcolor-656565'><span class='rm-lmtt-10'>]</span></span><span class='rm-lmtt-10'> filename.tex </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"options1"</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"option2"</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"options3"</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"options4"</span></span></div>
 </figure>
 <!-- l. 23 --><p class='indent'>   where the first set of options is for the tex4ht.sty and *.4ht style files, the second
@@ -36,7 +36,7 @@ one is for the <span class='LATEX'>L<span class='A'>A</span><span class='TEX'>T<
 </p><!-- l. 27 --><p class='indent'>   These options are optional.
 </p><!-- l. 29 --><p class='indent'>   The basic invokation of make4ht looks like this:
 </p>   
-<figure class='shellcommand' role='doc-example'>
+<figure role='doc-example' class='shellcommand'>
 <div id='fancyvrb22' class='fancyvrb'><a id='x5-34006r1'></a><span class='rm-lmtt-10'>make4ht filename.tex</span></div>
 </figure>
                                                                   
@@ -45,7 +45,7 @@ one is for the <span class='LATEX'>L<span class='A'>A</span><span class='TEX'>T<
 <!-- l. 35 --><p class='indent'>   This command requests a translation according to the default conditions, which
 are set to produce HTML 5 document.
 </p>   
-<figure class='shellcommand' role='doc-example'>
+<figure role='doc-example' class='shellcommand'>
 <div id='fancyvrb23' class='fancyvrb'><a id='x5-34009r1'></a><span class='rm-lmtt-10'>make4ht filename.tex </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"2,info"</span></span></div>
 </figure>
 <!-- l. 41 --><p class='indent'>   This command specifies some options for tex4ht.sty. The ”2” option requests a
@@ -57,7 +57,7 @@ information.
 </p><!-- l. 48 --><p class='indent'>   Information about additional options can be found in the <a href='texfourhtOptions.html#x7-400006.1'>List of options<!-- tex4ht:ref: sec:texfouhtoptions  --></a>
 section.
 </p>   
-<figure class='shellcommand' role='doc-example'>
+<figure role='doc-example' class='shellcommand'>
 <div id='fancyvrb24' class='fancyvrb'><a id='x5-34012r1'></a><span class='rm-lmtt-10'>make4ht -c foo.cfg filename </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"frames"</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>""</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"-p"</span></span></div>
 </figure>
 <!-- l. 55 --><p class='indent'>   This command requests LaTeX to load a <a href='Configurations.html#x8-420007.1'>Private Configuration Files<!-- tex4ht:ref: sec:private-configuration  --></a>, named
@@ -73,7 +73,7 @@ produce bitmaps for pictures.
 <!-- l. 70 --><p class='noindent'>The system can be activated with a sequence of commands of the following form,
 typically embedded within a script.
 </p>   
-<figure class='shellcommand' role='doc-example'>
+<figure role='doc-example' class='shellcommand'>
 <div id='fancyvrb25' class='fancyvrb'><a id='x5-36007r1'></a><span class='rm-lmtt-10'>latex      x            </span><span class='textcolor-656565'><span class='rm-lmtt-10'>(</span></span><span class='rm-lmtt-10'>or ‘tex x’</span><span class='textcolor-656565'><span class='rm-lmtt-10'>)</span></span><br class='fancyvrb' /><a id='x5-36009r2'></a><span class='rm-lmtt-10'>latex      x</span><br class='fancyvrb' /><a id='x5-36011r3'></a><span class='rm-lmtt-10'>latex      x</span><br class='fancyvrb' /><a id='x5-36013r4'></a><span class='rm-lmtt-10'>tex4ht     x</span><br class='fancyvrb' /><a id='x5-36015r5'></a><span class='rm-lmtt-10'>t4ht       x</span></div>
                                                                   
 
