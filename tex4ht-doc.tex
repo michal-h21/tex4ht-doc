@@ -464,6 +464,32 @@ characters used in the macro definitions. Backslashes must be doubled in the
 JavaScript strings. Contents of this configuration are already enclosed in the
 \texcommand{\HCode} command, so you cannot use it in this configuration.
 
+If you want to define macros with parameters, you may run to issues with the \# character, used for parameters.
+You need to change the catcode of this character to letter before the \configuration{MathJaxConfig} configuration:
+
+\begin{texsource}
+\Preamble{xhtml}
+% change catcode of # to letter
+% in order to support #1 in custom
+% MathJax macros
+\catcode`\#=11
+\Configure{MathJaxConfig}{{
+    tex: {
+      \detokenize{%
+      macros: { 
+        % our sample macro takes a parameter
+        hello: ["\\sqrt{#1}",1],
+      }
+  }
+}
+}}
+% don't forget to change the catcode 
+% back to the original value
+\catcode`\#=6
+\begin{document}
+\EndPreamble
+\end{texsource}
+
 
 \paragraph{\mathml\ mode}
 
