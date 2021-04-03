@@ -1,12 +1,12 @@
 <!DOCTYPE html> 
-<html xml:lang='en-US' lang='en-US'> 
+<html lang='en-US' xml:lang='en-US'> 
 <head><title>3 How to</title> 
 <meta charset='utf-8' /> 
-<meta content='TeX4ht (http://www.tug.org/tex4ht/)' name='generator' /> 
-<meta content='width=device-width,initial-scale=1' name='viewport' /> 
-<link rel='stylesheet' type='text/css' href='tex4ht-doc.css' /> 
-<meta content='tex4ht-doc.tex' name='src' /> 
-<link rel='stylesheet' type='text/css' href='style.css' /> 
+<meta name='generator' content='TeX4ht (http://www.tug.org/tex4ht/)' /> 
+<meta name='viewport' content='width=device-width,initial-scale=1' /> 
+<link type='text/css' rel='stylesheet' href='tex4ht-doc.css' /> 
+<meta name='src' content='tex4ht-doc.tex' /> 
+<link type='text/css' rel='stylesheet' href='style.css' /> 
 </head><body>
 <nav class='TOC'><span class='chapterToc'>1 <a href='Introduction.html#x2-10001'>Introduction</a></span><span class='chapterToc'>2 <a href='BasicTutorial.html#x3-30002'>Basic Tutorial</a></span><span class='chapterToc'>3 <a href='#x4-100003'>How to</a></span><span class='sectionToc'>3.1 <a href='#x4-110003.1'>Change design</a></span><span class='subsectionToc'>3.1.1 <a href='#x4-120003.1.1'>Basics</a></span><span class='subsectionToc'>3.1.2 <a href='#x4-130003.1.2'>CSS</a></span><span class='subsectionToc'>3.1.3 <a href='#x4-140003.1.3'>Web fonts</a></span><span class='sectionToc'>3.2 <a href='#x4-150003.2'>Math</a></span><span class='subsectionToc'>3.2.1 <a href='#x4-160003.2.1'>MathJax</a></span><span class='subsectionToc'>3.2.2 <a href='#x4-170003.2.2'>MathML</a></span><span class='subsectionToc'>3.2.3 <a href='#x4-180003.2.3'>Subscripts and superscripts</a></span><span class='subsectionToc'>3.2.4 <a href='#x4-190003.2.4'>MathJax Node</a></span><span class='sectionToc'>3.3 <a href='#x4-200003.3'>Graphics</a></span><span class='subsectionToc'>3.3.1 <a href='#x4-210003.3.1'>Include graphics (svg,pdf)</a></span><span class='subsectionToc'>3.3.2 <a href='#x4-220003.3.2'>Change image size and resolution</a></span><span class='subsectionToc'>3.3.3 <a href='#x4-230003.3.3'>Use relative size for images</a></span><span class='subsectionToc'>3.3.4 <a href='#x4-240003.3.4'>Change image <code>alt</code> attribute</a></span><span class='sectionToc'>3.4 <a href='#x4-250003.4'>Plain TEX</a></span><span class='sectionToc'>3.5 <a href='#x4-260003.5'>Blogging</a></span><span class='sectionToc'>3.6 <a href='#x4-270003.6'>Work with external commands</a></span><span class='subsectionToc'>3.6.1 <a href='#x4-280003.6.1'>Indexing</a></span><span class='subsectionToc'>3.6.2 <a href='#x4-290003.6.2'>Bibliographies</a></span><span class='subsectionToc'>3.6.3 <a href='#x4-300003.6.3'>R</a></span><span class='subsectionToc'>3.6.4 <a href='#x4-310003.6.4'>Markdown</a></span><span class='subsectionToc'>3.6.5 <a href='#x4-320003.6.5'>PythonTeX</a></span><span class='chapterToc'>4 <a href='CallingCommands.html#x5-330004'>Calling Commands</a></span><span class='chapterToc'>5 <a href='OutputFormats.html#x6-380005'>Output Formats</a></span><span class='chapterToc'>6 <a href='texfourhtOptions.html#x7-390006'><code>tex4ht</code> Options</a></span><span class='chapterToc'>7 <a href='Configurations.html#x8-410007'>Configurations</a></span><span class='chapterToc'>8 <a href='Make4htBuildFiles.html#x9-850008'>Make4ht Build Files</a></span><span class='chapterToc'>9 <a href='FAQ.html#x10-890009'>FAQ</a></span><span class='chapterToc'>10 <a href='Fordevelopers.html#x11-9200010'>For developers</a></span><span class='chapterToc'>11 <a href='Glossary.html#x12-10300011'>Glossary</a></span><span class='chapterToc'>12 <a href='Bibliography.html#x13-10400012'>Bibliography</a></span><span class='chapterToc'>13 <a href='Index.html#x14-10500013'>Index</a></span></nav> 
 <main class='main-content'> 
@@ -104,26 +104,36 @@ and then pipes the modified output to <code>make4ht</code>.
 <figure role='doc-example' class='texsource'>
 <div id='fancyvrb7' class='fancyvrb'><a id='x4-18018r1'></a><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>k^{</span></span><span class='textcolor-af3f3f'><span class='rm-lmtt-10'>\prime</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'> </span></span><span class='textcolor-444444'><span class='rm-lmtt-10'>4</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}_{i}</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>$</span></span></div>
 </figure>
-<!-- l. 52 --><p class='indent'>   This can be done using the following Lua script:
+<!-- l. 52 --><p class='indent'>   This, and other common issues, can be done using the following Lua
+script:
 </p><!-- l. 1 --><p class='indent'>
 </p>   
-<div id='fancyvrb8' class='fancyvrb'><a id='x4-18024r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>for</span></span><span class='rm-lmtt-10'> line </span><span class='textcolor-2838af'><span class='rm-lmtt-10'>in</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>io.lines</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>()</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-2838af'><span class='rm-lmtt-10'>do</span></span><br class='fancyvrb' /><a id='x4-18026r2'></a><span class='rm-lmtt-10'>  line </span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='rm-lmtt-10'> line</span><span class='textcolor-878787'><span class='rm-lmtt-10'>:</span></span><span class='rm-lmtt-10'>gsub</span><span class='textcolor-878787'><span class='rm-lmtt-10'>(</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"%</span><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>%^(.-)%_"</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>,</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"^{</span></span><span class='textcolor-708e30'><span class='rm-lmtt-10'>\\</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>prime %1}_"</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>)</span></span>
-<br class='fancyvrb' /><a id='x4-18028r3'></a><span class='rm-lmtt-10'>  </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>print</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>(</span></span><span class='rm-lmtt-10'>line</span><span class='textcolor-878787'><span class='rm-lmtt-10'>)</span></span>
-<br class='fancyvrb' /><a id='x4-18030r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>end</span></span>
+<div id='fancyvrb8' class='fancyvrb'><a id='x4-18033r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>for</span></span><span class='rm-lmtt-10'> line </span><span class='textcolor-2838af'><span class='rm-lmtt-10'>in</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>io.lines</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>()</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-2838af'><span class='rm-lmtt-10'>do</span></span><br class='fancyvrb' /><a id='x4-18035r2'></a><span class='rm-lmtt-10'>  </span><span class='textcolor-878787'><span class='textit'>-- fix primes</span></span>
+<br class='fancyvrb' /><a id='x4-18037r3'></a><span class='rm-lmtt-10'>  line </span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='rm-lmtt-10'> line</span><span class='textcolor-878787'><span class='rm-lmtt-10'>:</span></span><span class='rm-lmtt-10'>gsub</span><span class='textcolor-878787'><span class='rm-lmtt-10'>(</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>[[%</span><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>%^(.-)%_]]</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>,</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>[[^{\prime %1}_]]</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>)</span></span>
+<br class='fancyvrb' /><a id='x4-18039r4'></a><span class='rm-lmtt-10'>  </span><span class='textcolor-878787'><span class='textit'>-- fix \mathrm{hello}^2</span></span>
+<br class='fancyvrb' /><a id='x4-18041r5'></a><span class='rm-lmtt-10'>  line </span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='rm-lmtt-10'> line</span><span class='textcolor-878787'><span class='rm-lmtt-10'>:</span></span><span class='rm-lmtt-10'>gsub</span><span class='textcolor-878787'><span class='rm-lmtt-10'>(</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>[[(\[a-zA-Z]-)(%b{})([%^%_])]]</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>,</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>[[{%1%2}%3]]</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>)</span></span>
+<br class='fancyvrb' /><a id='x4-18043r6'></a><span class='rm-lmtt-10'>  </span><span class='textcolor-878787'><span class='textit'>-- fix x_\mathrm{hello}</span></span>
+<br class='fancyvrb' /><a id='x4-18045r7'></a><span class='rm-lmtt-10'>  line </span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='rm-lmtt-10'> line</span><span class='textcolor-878787'><span class='rm-lmtt-10'>:</span></span><span class='rm-lmtt-10'>gsub</span><span class='textcolor-878787'><span class='rm-lmtt-10'>(</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>[[([%_%^])(\[a-zA-Z]-)(%b{})]]</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>,</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"%1{%2%3}"</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>)</span></span>
+<br class='fancyvrb' /><a id='x4-18047r8'></a><span class='rm-lmtt-10'>  </span><span class='textcolor-878787'><span class='textit'>-- fix 10^2</span></span>
+<br class='fancyvrb' /><a id='x4-18049r9'></a><span class='rm-lmtt-10'>  line </span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='rm-lmtt-10'> line</span><span class='textcolor-878787'><span class='rm-lmtt-10'>:</span></span><span class='rm-lmtt-10'>gsub</span><span class='textcolor-878787'><span class='rm-lmtt-10'>(</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"([%d])([%_%^])"</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>,</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"{%1}%2"</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>)</span></span>
+<br class='fancyvrb' /><a id='x4-18051r10'></a><span class='rm-lmtt-10'>  </span><span class='textcolor-878787'><span class='textit'>-- fix {}_x</span></span>
+<br class='fancyvrb' /><a id='x4-18053r11'></a><span class='rm-lmtt-10'>  line </span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='rm-lmtt-10'> line</span><span class='textcolor-878787'><span class='rm-lmtt-10'>:</span></span><span class='rm-lmtt-10'>gsub</span><span class='textcolor-878787'><span class='rm-lmtt-10'>(</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"{}([%_%^])"</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>,</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"{</span></span><span class='textcolor-708e30'><span class='rm-lmtt-10'>\\</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>HCode{}}%1"</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>)</span></span>
+<br class='fancyvrb' /><a id='x4-18055r12'></a><span class='rm-lmtt-10'>  </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>print</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>(</span></span><span class='rm-lmtt-10'>line</span><span class='textcolor-878787'><span class='rm-lmtt-10'>)</span></span>
+<br class='fancyvrb' /><a id='x4-18057r13'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>end</span></span>
 </div>
-<!-- l. 61 --><p class='indent'>   It uses Lua version of regular expressions to find the code we want to fix. The
-command to execute it could be:
-</p>   
-<figure role='doc-example' class='shellcommand'>
                                                                   
 
                                                                   
-<div id='fancyvrb9' class='fancyvrb'><a id='x4-18033r1'></a><span class='rm-lmtt-10'>texlua filter.lua &lt; sample.tex </span><span class='textcolor-878787'><span class='rm-lmtt-10'>|</span></span><span class='rm-lmtt-10'> make4ht -j sample - </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"mathml,mathjax"</span></span></div>
+<!-- l. 70 --><p class='indent'>   It uses Lua version of regular expressions to find the code we want to fix. The
+command to execute it could be:
+</p>   
+<figure role='doc-example' class='shellcommand'>
+<div id='fancyvrb9' class='fancyvrb'><a id='x4-18060r1'></a><span class='rm-lmtt-10'>texlua filter.lua &lt; sample.tex </span><span class='textcolor-878787'><span class='rm-lmtt-10'>|</span></span><span class='rm-lmtt-10'> make4ht -j sample - </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"mathml,mathjax"</span></span></div>
 </figure>
-<!-- l. 68 --><p class='indent'>   The <code>-j</code> option is used to name the output file, which is necessary because the
+<!-- l. 77 --><p class='indent'>   The <code>-j</code> option is used to name the output file, which is necessary because the
 input comes from a pipe. The dash used in the place of filename tells <code>make4ht</code> to read
 input from the standard input.
-</p><!-- l. 72 --><p class='indent'>   We use <code>MathJax</code> to render <code>MathML</code>, as <code>MathML</code> is not supported by all
+</p><!-- l. 81 --><p class='indent'>   We use <code>MathJax</code> to render <code>MathML</code>, as <code>MathML</code> is not supported by all
 browsers.
 </p>   
 <h4 class='subsectionHead'><span class='titlemark'>3.2.4   </span> <a id='x4-190003.2.4'></a>MathJax Node</h4>
@@ -146,13 +156,13 @@ other dimension will be set to the same value. You usually don’t want this,
 unless your image is a square. To get the correct value for all dimensions,
 Graphics uses a <span class='obeylines-h'><code>.xbb</code></span> file for image. It can be created using the following
 command:
-</p>   
-<figure role='doc-example' class='shellcommand'>
-<div id='fancyvrb10' class='fancyvrb'><a id='x4-22003r1'></a><span class='rm-lmtt-10'>ebb -x *.jpg</span></div>
-</figure>
+</p>
                                                                   
 
                                                                   
+<figure role='doc-example' class='shellcommand'>   
+<div id='fancyvrb10' class='fancyvrb'><a id='x4-22003r1'></a><span class='rm-lmtt-10'>ebb -x *.jpg</span></div>
+</figure>
 <!-- l. 15 --><p class='indent'>   Run analogous command for every other supported image format you
 use. This will ensure that correct values are used for implicitly calculated
 dimensions.
@@ -187,14 +197,14 @@ provides.
 </p>   
 <figure role='doc-example' class='htmlsource'>
 <div id='fancyvrb13' class='fancyvrb'><a id='x4-23033r1'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>img</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>style</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>width:50%</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>alt</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>PIC</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>src</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>/&gt;</span></span></div>
+                                                                  
+
+                                                                  
 </figure>
 <!-- l. 55 --><p class='indent'>   To disable setting of the image dimensions in HTML code completely use the
 following configuration:
 </p>   
 <figure role='doc-example' class='texsource'>
-                                                                  
-
-                                                                  
 <div id='fancyvrb14' class='fancyvrb'><a id='x4-23043r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><br class='fancyvrb' /><a id='x4-23045r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin-dim</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{}</span></span><br class='fancyvrb' /><a id='x4-23047r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Css</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>img </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><br class='fancyvrb' /><a id='x4-23049r4'></a><span class='rm-lmtt-10'>    max-width: 100</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\%</span></span><span class='rm-lmtt-10'>;</span>
 <br class='fancyvrb' /><a id='x4-23051r5'></a><span class='rm-lmtt-10'>    height: auto;</span>
 <br class='fancyvrb' /><a id='x4-23053r6'></a><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}</span></span>
@@ -235,16 +245,16 @@ configuration that can specify the image alternative text, <code>GraphicsAlt</co
 <!-- l. 90 --><p class='indent'>   The resulting HTML file now contains image with the <code>alt</code> attribute:
 </p><!-- l. 1 --><p class='indent'>
 </p>   
-<div id='fancyvrb17' class='fancyvrb'><a id='x4-24030r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!-- l. 7 --&gt;</span><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>img</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>alt</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>alt tags, information</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>src</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>/&gt;</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></div>
+<div id='fancyvrb17' class='fancyvrb'><a id='x4-24030r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!-- l. 7 --&gt;</span><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>img</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>src</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>alt</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>alt tags, information</span><span class='ts1-lmtt10-'>'</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>/&gt;</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></div>
+                                                                  
+
+                                                                  
 <!-- l. 88 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead'><span class='titlemark'>3.4   </span> <a id='x4-250003.4'></a>Plain <span class='TEX'>T<span class='E'>E</span>X</span></h3>
 <!-- l. 1 --><p class='noindent'><code>tex4ht</code> supports Plain <span class='TEX'>T<span class='E'>E</span>X</span>, but it can be a bit tricky. In general, you will have to
 provide configurations to get good markup for your custom commands. You will also
 need to add few commands to your source file:
-                                                                  
-
-                                                                  
 </p>   
 <figure role='doc-example' class='texsource'>
 <div id='fancyvrb18' class='fancyvrb'><a id='x4-25007r1'></a><span class='textcolor-878787'><span class='textit'>%!TEX TS-program = tex</span></span><br class='fancyvrb' /><a id='x4-25009r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\input</span></span><span class='rm-lmtt-10'> plain-4ht.tex</span><br class='fancyvrb' /><a id='x4-25011r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\document</span></span><br class='fancyvrb' /><a id='x4-25013r4'></a><span class='rm-lmtt-10'>Hello world</span><br class='fancyvrb' /><a id='x4-25015r5'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\enddocument</span></span></div>
@@ -274,12 +284,12 @@ necessary for the correct Plain <span class='TEX'>T<span class='E'>E</span>X</sp
 </p><!-- l. 92 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead'><span class='titlemark'>3.5   </span> <a id='x4-260003.5'></a>Blogging</h3>
-<!-- l. 94 --><p class='noindent'>
-</p>   
-<h3 class='sectionHead'><span class='titlemark'>3.6   </span> <a id='x4-270003.6'></a>Work with external commands</h3>
                                                                   
 
                                                                   
+<!-- l. 94 --><p class='noindent'>
+</p>   
+<h3 class='sectionHead'><span class='titlemark'>3.6   </span> <a id='x4-270003.6'></a>Work with external commands</h3>
 <!-- l. 95 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead'><span class='titlemark'>3.6.1   </span> <a id='x4-280003.6.1'></a>Indexing</h4>
@@ -298,7 +308,7 @@ necessary for the correct Plain <span class='TEX'>T<span class='E'>E</span>X</sp
                                                                   
 
                                                                   
-<nav class='crosslinks-bottom'>[<a href='BasicTutorial.html'>prev</a>] [<a href='tex4ht-doc.html#Howto.html'>up</a>] [<a href='CallingCommands.html'>next</a>] </nav>   </main><p><script src='/js/libs/goatcounter.js' data-goatcounter='https://kodymirus.goatcounter.com/count'></script></p> 
+<nav class='crosslinks-bottom'>[<a href='BasicTutorial.html'>prev</a>] [<a href='tex4ht-doc.html#Howto.html'>up</a>] [<a href='CallingCommands.html'>next</a>] </nav>   </main><p><script data-goatcounter='https://kodymirus.goatcounter.com/count' src='/js/libs/goatcounter.js'></script></p> 
  
 </body> 
 </html>
