@@ -49,11 +49,20 @@ to the correct form:
 $k^{\prime 4}_{i}$
 \end{texsource}
 
-This can be done using the following Lua script:
+This, and other common issues, can be done using the following Lua script:
 
 \begin{luasource}
 for line in io.lines() do
-  line = line:gsub("%'%^(.-)%_", "^{\\prime %1}_")
+  -- fix primes
+  line = line:gsub([[%'%^(.-)%_]], [[^{\prime %1}_]])
+  -- fix \mathrm{hello}^2
+  line = line:gsub([[(\[a-zA-Z]-)(%b{})([%^%_])]], [[{%1%2}%3]])
+  -- fix x_\mathrm{hello}
+  line = line:gsub([[([%_%^])(\[a-zA-Z]-)(%b{})]], "%1{%2%3}")
+  -- fix 10^2
+  line = line:gsub("([%d])([%_%^])", "{%1}%2")
+  -- fix {}_x
+  line = line:gsub("{}([%_%^])", "{\\HCode{}}%1")
   print(line)
 end
 \end{luasource}
