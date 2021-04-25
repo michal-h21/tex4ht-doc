@@ -156,6 +156,9 @@ Produces a following \HTML\ code:
 \section{Commands Usable in the \file{.4ht} files}
 
 % \HLet - https://tex.stackexchange.com/a/471724/2891
+% - \HLet supports the Picture mechanism - it calls the original command inside \Picture*
+%   so we don't get content addded by TeX4ht in pictures. This is important, because we
+%   want this content to look in the same way as in the PDF
 
 % \append:def and variants
 
