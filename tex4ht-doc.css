@@ -20,27 +20,29 @@
 .cmsy-5{font-size:50%;}
 .rm-lmr-17{font-size:170%;}
 .rm-lmr-12{font-size:120%;}
-.rm-lmtt-10{ font-family: monospace;}
-.rm-lmtt-10{ font-family: monospace;}
-.rm-lmtt-10{ font-family: monospace;}
+.rm-lmtt-10{ font-family: monospace,monospace;}
+.rm-lmtt-10{ font-family: monospace,monospace;}
+.rm-lmtt-10{ font-family: monospace,monospace;}
 .rm-lmri-10{ font-style:italic;}
-.rm-lmtti-10{ font-family: monospace; font-style:italic;}
-.rm-lmtti-10{ font-family: monospace; font-style:italic;}
-.rm-lmtti-10{ font-family: monospace; font-style:italic;}
+.rm-lmtti-10{ font-family: monospace,monospace; font-style:italic;}
+.rm-lmtti-10{ font-family: monospace,monospace; font-style:italic;}
+.rm-lmtti-10{ font-family: monospace,monospace; font-style:italic;}
 .rm-lmbx-10{ font-weight: bold;}
 .rm-lmr-7{font-size:70%;}
-.rm-lmtk-10{ font-family: monospace;}
-.rm-lmtk-10{ font-family: monospace;}
-.rm-lmtk-10{ font-family: monospace;}
-.rm-lmtk-10{ font-family: monospace;}
-.rm-lmtk-10{ font-family: monospace;}
-.rm-lmtk-10{ font-family: monospace;}
+.rm-lmtk-10{ font-family: monospace,monospace;}
+.rm-lmtk-10{ font-family: monospace,monospace;}
+.rm-lmtk-10{ font-family: monospace,monospace;}
+.rm-lmtk-10{ font-family: monospace,monospace;}
+.rm-lmtk-10{ font-family: monospace,monospace;}
+.rm-lmtk-10{ font-family: monospace,monospace;}
 .rm-lmr-9{font-size:90%;}
 .rm-lmr-8{font-size:80%;}
-p.noindent { text-indent: 0em }
-td p.noindent { text-indent: 0em; margin-top:0em; }
-p.nopar { text-indent: 0em; }
-p.indent{ text-indent: 1.5em }
+p{margin-top:0;margin-bottom:0}
+p.indent{text-indent:0;}
+p + p{margin-top:1em;}
+p + div, p + pre {margin-top:1em;}
+div + p, pre + p {margin-top:1em;}
+a { overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; hyphens: auto; }
 @media print {div.crosslinks {visibility:hidden;}}
 a img { border-top: 0; border-left: 0; border-right: 0; }
 center { margin-top:1em; margin-bottom:1em; }
@@ -63,7 +65,7 @@ div.obeylines-v p { margin-top:0; margin-bottom:0; }
 td.displaylines {text-align:center; white-space:nowrap;}
 .centerline {text-align:center;}
 .rightline {text-align:right;}
-div.verbatim {font-family: monospace; white-space: nowrap; text-align:left; clear:both; }
+pre.verbatim {font-family: monospace,monospace; text-align:left; clear:both; }
 .fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
 div.fbox {display:table}
 div.center div.fbox {text-align:center; clear:both; padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
@@ -102,11 +104,6 @@ table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
 .hline td, .cline td{ padding: 0; }
 .hline hr, .cline hr{border:none;border-top:1px solid black;}
 .tabbing-right {text-align:right;}
-span.TEX {letter-spacing: -0.125em; }
-span.TEX span.E{ position:relative;top:0.5ex;left:-0.0417em;}
-a span.TEX span.E {text-decoration: none; }
-span.LATEX span.A{ position:relative; top:-0.5ex; left:-0.4em; font-size:85%;}
-span.LATEX span.TEX{ position:relative; left: -0.4em; }
 div.float, div.figure {margin-left: auto; margin-right: auto;}
 div.float img {text-align:center;}
 div.figure img {text-align:center;}
@@ -118,7 +115,7 @@ span.textit { font-style: italic; }
 span.textrm { font-family: serif; }
 span.textsc { font-variant: small-caps; }
 span.textsf { font-family: sans-serif; }
-span.texttt { font-family: monospace; }
+span.texttt { font-family: monospace,monospace; }
 span.emph { font-style: italic;}
 span.emph span.emph {font-style: normal;}
 .equation td{text-align:center; vertical-align:middle; }
@@ -147,14 +144,12 @@ p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom
 p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
 .paragraphHead, .likeparagraphHead { margin-top:2em; font-weight: bold;}
 .subparagraphHead, .likesubparagraphHead { font-weight: bold;}
-.quote {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; margin-right:1em; text-align:justify;}
 .verse{white-space:nowrap; margin-left:2em}
 div.maketitle {text-align:center;}
 h2.titleHead{text-align:center;}
 div.maketitle{ margin-bottom: 2em; }
 div.author, div.date {text-align:center;}
 div.thanks{text-align:left; margin-left:10%; font-size:85%; font-style:italic; }
-.quotation {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; }
 h1.partHead{text-align: center}
  .chapterToc, .likechapterToc {margin-left:0em;}
  .chapterToc ~ .likesectionToc, .chapterToc ~ .sectionToc, .likechapterToc ~ .likesectionToc, .likechapterToc ~ .sectionToc {margin-left:2em;}
@@ -166,8 +161,7 @@ h1.partHead{text-align: center}
  .likesubsectionToc, .subsectionToc {margin-left:0em;}
  .likesubsectionToc ~ .subsubsectionToc, .subsectionToc ~ .subsubsectionToc {margin-left:2em;}
 figure.float, div.figure {margin-left: auto; margin-right: auto;}
-figure.float img {text-align:center;}
-figure.figure img {text-align:center;}
+figure.float img, figure.figure img {display: block; margin-left: auto; margin-right: auto;}
 figure.figure > p {text-align:center;}
 figcaption.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:center;}
 figcaption.caption span.id{font-weight: bold; white-space: nowrap; }
@@ -190,8 +184,7 @@ table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
 .hline td, .cline td{ padding: 0; }
 .hline hr, .cline hr{border:none;border-top:1px solid black;}
 .rotatebox{display: inline-block;}
-.figure img.graphics {margin-left:10%;}
-P.fancyvrb {white-space: nowrap; margin:0em;}
+pre.fancyvrb {white-space: pre-wrap; margin:0em;font-family:monospace,monospace;}
 .framedenv{border: 1px solid black;}
 .equation-star td{text-align:center; vertical-align:middle; }
 table.equation-star { width:100%; } 
@@ -204,11 +197,11 @@ table.longtable{margin-left:auto; margin-right: auto;}
 .supertabular {text-align:center}
 /* end css.sty */
 
-.textcolor-b73838{color:rgb(183,56,56);}
 .textcolor-708e30{color:rgb(112,142,48);}
-.textcolor-2838af{color:rgb(40,56,175);}
-.textcolor-444444{color:rgb(68,68,68);}
-.textcolor-387f38{color:rgb(56,127,56);}
-.textcolor-878787{color:rgb(135,135,135);}
 .textcolor-656565{color:rgb(101,101,101);}
+.textcolor-444444{color:rgb(68,68,68);}
+.textcolor-878787{color:rgb(135,135,135);}
+.textcolor-b73838{color:rgb(183,56,56);}
 .textcolor-af3f3f{color:rgb(175,63,63);}
+.textcolor-387f38{color:rgb(56,127,56);}
+.textcolor-2838af{color:rgb(40,56,175);}

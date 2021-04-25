@@ -2,11 +2,11 @@
 <html lang='en-US' xml:lang='en-US'> 
 <head><title>2 Basic Tutorial</title> 
 <meta charset='utf-8' /> 
-<meta name='generator' content='TeX4ht (http://www.tug.org/tex4ht/)' /> 
-<meta name='viewport' content='width=device-width,initial-scale=1' /> 
-<link type='text/css' rel='stylesheet' href='tex4ht-doc.css' /> 
-<meta name='src' content='tex4ht-doc.tex' /> 
-<link type='text/css' rel='stylesheet' href='style.css' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='tex4ht-doc.css' type='text/css' rel='stylesheet' /> 
+<meta content='tex4ht-doc.tex' name='src' /> 
+<link href='style.css' type='text/css' rel='stylesheet' /> 
 </head><body>
 <nav class='TOC'><span class='chapterToc'>1 <a href='Introduction.html#x2-10001'>Introduction</a></span><span class='sectionToc'>1.1 <a href='Introduction.html#x2-20001.1'>Acknowledgements</a></span><span class='chapterToc'>2 <a href='#x3-30002'>Basic Tutorial</a></span><span class='subsectionToc'>2.0.1 <a href='#x3-40002.0.1'>What is <code>TeX4ht</code>?</a></span><span class='subsectionToc'>2.0.2 <a href='#x3-50002.0.2'>System Description</a></span><span class='subsectionToc'>2.0.3 <a href='#x3-60002.0.3'>Basic usage</a></span><span class='subsectionToc'>2.0.4 <a href='#x3-70002.0.4'>Simple example</a></span><span class='subsectionToc'>2.0.5 <a href='#x3-80002.0.5'>Configurations</a></span><span class='chapterToc'>3 <a href='Howto.html#x4-100003'>How to</a></span><span class='chapterToc'>4 <a href='CallingCommands.html#x5-330004'>Calling Commands</a></span><span class='chapterToc'>5 <a href='OutputFormats.html#x6-380005'>Output Formats</a></span><span class='chapterToc'>6 <a href='texfourhtOptions.html#x7-390006'><code>tex4ht</code> Options</a></span><span class='chapterToc'>7 <a href='Configurations.html#x8-410007'>Configurations</a></span><span class='chapterToc'>8 <a href='Make4htBuildFiles.html#x9-850008'>Make4ht Build Files</a></span><span class='chapterToc'>9 <a href='FAQ.html#x10-890009'>FAQ</a></span><span class='chapterToc'>10 <a href='Fordevelopers.html#x11-9200010'>For developers</a></span><span class='chapterToc'>11 <a href='Glossary.html#x12-10300011'>Glossary</a></span><span class='chapterToc'>12 <a href='Bibliography.html#x13-10400012'>Bibliography</a></span><span class='chapterToc'>13 <a href='Index.html#x14-10500013'>Index</a></span></nav> 
 <main class='main-content'> 
@@ -17,7 +17,7 @@
 <!-- l. 5 --><p class='noindent'><a href='https://www.tug.org/tex4ht/'><code>TeX4ht</code></a> is a system which converts LaTeX to various output formats, including
 <code>HTML</code>, <a href='http://en.wikipedia.org/wiki/OpenDocument'><code>ODT</code></a>, <a href='http://en.wikipedia.org/wiki/DocBook'><code>DocBook</code></a> or <a href='http://en.wikipedia.org/wiki/Text_Encoding_Initiative'><code>TEI</code></a>. <code>HTML</code> and <code>ODT</code> formats are the most common and
 best-supported conversion targets.
-</p><!-- l. 13 --><p class='indent'>   <code>TeX4ht</code> allows authors to convert <span class='LATEX'>L<span class='A'>A</span><span class='TEX'>T<span class='E'>E</span>X</span></span> input to several output formats, like
+</p><!-- l. 13 --><p class='indent'>   <code>TeX4ht</code> allows authors to convert LaTeX input to several output formats, like
 <code>HTML</code> (for web pages) or <code>ePub</code> (for ebooks and other applications).
 </p><!-- l. 18 --><p class='indent'>   <a id='system-description'></a>
 </p>   
@@ -27,20 +27,20 @@ blocks together.
 </p><!-- l. 23 --><p class='indent'>     
 </p>
 <ol class='enumerate1'>     
-<li id='x3-5002x1' class='enumerate'>
+<li class='enumerate' id='x3-5002x1'>
 <code>tex4ht.sty</code> is a TeX package which inserts configured output codes (i.e.,
 html tags) into TeX’s <code>.dvi</code> output file. Many documents can be translated
 to html without users needing to supply tags explicitly, but there are
 macros to insert html directly into the output if the need arises.
 </li>     
-<li id='x3-5004x2' class='enumerate'>
+<li class='enumerate' id='x3-5004x2'>
 <code>tex4ht</code> is an executable (program), which extracts information stored in
 the <code>.dvi</code> file including text and output codes, and prepares auxiliary files
 for image conversion and other tasks. Note that although whole system is
 named <code>TeX4ht</code>, this command cannot be executed on <code>.tex</code> file; it works
 only with <code>.dvi</code> file
 </li>     
-<li id='x3-5006x3' class='enumerate'>
+<li class='enumerate' id='x3-5006x3'>
 <code>t4ht</code> is a program which converts images, generates <code>css</code> file, and runs
 various commands requested in the <code>.tex</code> file</li></ol>
                                                                   
@@ -61,10 +61,10 @@ files.
 
                                                                   
 </p>   
-<div id='verbatim-1' class='verbatim'>
+<pre class='verbatim' id='verbatim-1'>
  htlatex filename "options for tex4ht.sty" \
- <br /> "options for tex4ht" "options for t4ht" "LaTeX options"
-</div>
+ "options for tex4ht" "options for t4ht" "LaTeX options"
+</pre>
 <!-- l. 62 --><p class='nopar'>
 </p><!-- l. 64 --><p class='indent'>   As you can see, <code>htlatex</code> has five parameters; only first one, the filename, is
 mandatory. Also note that options must be generally be enclosed in quotes so that
@@ -82,9 +82,9 @@ commmand prompt:
 
                                                                   
 </p>   
-<div id='verbatim-2' class='verbatim'>
+<pre class='verbatim' id='verbatim-2'>
 mk4ht oolatex sample.tex
-</div>
+</pre>
 <!-- l. 85 --><p class='nopar'>
 </p><!-- l. 87 --><p class='indent'>   A more recent option is to use Michal Hoftich’s <a href='https://github.com/michal-h21/make4ht'>make4ht</a> build system for <code>TeX4ht</code>.
 It allows the user to call various commands during compilation, such as <code>bibtex</code>,
@@ -101,18 +101,18 @@ multilingual LaTeX file:
 
                                                                   
 </p>   
-<div id='verbatim-3' class='verbatim'>
+<pre class='verbatim' id='verbatim-3'>
 \documentclass{article}
- <br />\usepackage[english,czech]{babel}
- <br />\usepackage[T1]{fontenc}
- <br />\usepackage[utf8]{inputenc}
- <br />\begin{document}
- <br />Příliš žluťoučký kůň úpěl \textit{ďábelské} ódy.
- <br />\begin{otherlanguage}{english}
- <br />    Some text in English
- <br />\end{otherlanguage}
- <br />\end{document}
-</div>
+\usepackage[english,czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\begin{document}
+Příliš žluťoučký kůň úpěl \textit{ďábelské} ódy.
+\begin{otherlanguage}{english}
+    Some text in English
+\end{otherlanguage}
+\end{document}
+</pre>
 <!-- l. 115 --><p class='nopar'>
 </p><!-- l. 117 --><p class='indent'>   things to notice are use of two languages, Czech is the main document language,
 English is secondary. Note usage of <code>otherlanguage</code> environment. It is provided by
@@ -133,14 +133,14 @@ places.
 
                                                                   
 </p>   
-<div id='verbatim-4' class='verbatim'>
+<pre class='verbatim' id='verbatim-4'>
 Hello world.
- <br />\begin{someenv}
- <br />Just start some environment.
- <br />
- <br />But run it through several paragraphs
- <br />\end{someenv}
-</div>
+\begin{someenv}
+Just start some environment.
+
+But run it through several paragraphs
+\end{someenv}
+</pre>
 <!-- l. 143 --><p class='nopar'>
 </p><!-- l. 145 --><p class='indent'>   say that we insert <code>&lt;div class="someenv"&gt;</code> and <code>&lt;/div&gt;</code> tags around <code>someenv</code>
 environment. By default this may produce following structure:
@@ -148,14 +148,14 @@ environment. By default this may produce following structure:
 
                                                                   
 </p>   
-<div id='verbatim-5' class='verbatim'>
+<pre class='verbatim' id='verbatim-5'>
 &lt;p&gt;Hello world.
- <br />&lt;div class="someenv"&gt;Just start some environment.
- <br />&lt;/p&gt;
- <br />
- <br />&lt;p&gt;But run it through several paragraphs
- <br />&lt;/div&gt;&lt;/p&gt;
-</div>
+&lt;div class="someenv"&gt;Just start some environment.
+&lt;/p&gt;
+
+&lt;p&gt;But run it through several paragraphs
+&lt;/div&gt;&lt;/p&gt;
+</pre>
 <!-- l. 157 --><p class='nopar'>
 </p><!-- l. 159 --><p class='indent'>   as you can see, generated html code is incorrect, as opening and closing <code>div</code> tags
 have different parent elements. <code>someenv</code> can be configured to close current paragraph,
@@ -165,16 +165,16 @@ but it may be not what you want.
 
                                                                   
 </p>   
-<div id='verbatim-6' class='verbatim'>
+<pre class='verbatim' id='verbatim-6'>
 Hello world.
- <br />\begin{someenv}
- <br />Just start some environment.
- <br />\end{someenv}
- <br />
- <br />\begin{someenv}
- <br />But run it through several paragraphs
- <br />\end{someenv}
-</div>
+\begin{someenv}
+Just start some environment.
+\end{someenv}
+
+\begin{someenv}
+But run it through several paragraphs
+\end{someenv}
+</pre>
 <!-- l. 175 --><p class='nopar'>
 </p><!-- l. 177 --><p class='indent'>   But stop talking about traps you may fall into and lets compile our example! For
 start use of both of <code>htlatex</code> and <code>make4ht</code> will be showed, we will focus on <code>make4ht</code>
@@ -184,43 +184,43 @@ later.
 
                                                                   
 </p>   
-<div id='verbatim-7' class='verbatim'>
+<pre class='verbatim' id='verbatim-7'>
  htlatex sample1
-</div>
+</pre>
 <!-- l. 185 --><p class='nopar'>
 </p><!-- l. 187 --><p class='indent'>   and with <code>make4ht</code>
                                                                   
 
                                                                   
 </p>   
-<div id='verbatim-8' class='verbatim'>
+<pre class='verbatim' id='verbatim-8'>
  make4ht sample1
-</div>
+</pre>
 <!-- l. 191 --><p class='nopar'>
 </p><!-- l. 193 --><p class='indent'>   lets look on text part generated by <code>htlatex</code>:
                                                                   
 
                                                                   
 </p>   
-<div id='verbatim-9' class='verbatim'>
+<pre class='verbatim' id='verbatim-9'>
 &lt;!--l. 6--&gt;&lt;p class="noindent" &gt;P&amp;#x0159;íli&amp;#353; &amp;#382;lu&amp;#x0165;ou&amp;#x010D;k&amp;#x00FD; k&amp;#x016F;&amp;#x0148; úp&amp;#x011B;l &lt;span
- <br />class="ecti-1000"&gt;&amp;#x010F;&lt;/span&gt;&lt;span
- <br />class="ecti-1000"&gt;ábelsk&lt;/span&gt;&lt;span
- <br />class="ecti-1000"&gt;é &lt;/span&gt;ódy. Some text in English
-</div>
+class="ecti-1000"&gt;&amp;#x010F;&lt;/span&gt;&lt;span
+class="ecti-1000"&gt;ábelsk&lt;/span&gt;&lt;span
+class="ecti-1000"&gt;é &lt;/span&gt;ódy. Some text in English
+</pre>
 <!-- l. 200 --><p class='nopar'>
 </p><!-- l. 202 --><p class='indent'>   and by <code>make4ht</code>:
                                                                   
 
                                                                   
 </p>   
-<div id='verbatim-10' class='verbatim'>
+<pre class='verbatim' id='verbatim-10'>
 &lt;!--l. 6--&gt;&lt;p class="noindent" &gt;P&amp;#x0159;íli&amp;#353; &amp;#382;lu&amp;#x0165;ou&amp;#x010D;k&amp;#x00FD; k&amp;#x016F;&amp;#x0148; úp&amp;#x011B;l &lt;span
- <br />class="ecti-1000"&gt;&amp;#x010F;&lt;/span&gt;&lt;span
- <br />class="ecti-1000"&gt;ábelsk&lt;/span&gt;&lt;span
- <br />class="ecti-1000"&gt;é &lt;/span&gt;ódy. Some text in English
- <br />&lt;/p&gt;
-</div>
+class="ecti-1000"&gt;&amp;#x010F;&lt;/span&gt;&lt;span
+class="ecti-1000"&gt;ábelsk&lt;/span&gt;&lt;span
+class="ecti-1000"&gt;é &lt;/span&gt;ódy. Some text in English
+&lt;/p&gt;
+</pre>
 <!-- l. 210 --><p class='nopar'>
 </p><!-- l. 212 --><p class='indent'>   only difference is missing <code>&lt;/p&gt;</code> tag in output of <code>htlatex</code>, because <code>html 4.01</code> is
 produced by <code>htlatex</code> by default. <code>make4ht</code> on the other hand produces <code>xhtml</code> by
@@ -236,9 +236,9 @@ command:
 
                                                                   
 </p>   
-<div id='verbatim-11' class='verbatim'>
+<pre class='verbatim' id='verbatim-11'>
  htlatex sample1 xhtml
-</div>
+</pre>
 <!-- l. 229 --><p class='nopar'>
 </p><!-- l. 231 --><p class='indent'>   Now we should get rid of ugly entities which encode accented letters. This is
 somewhat ugly with <code>htlatex</code>:
@@ -246,9 +246,9 @@ somewhat ugly with <code>htlatex</code>:
 
                                                                   
 </p>   
-<div id='verbatim-12' class='verbatim'>
+<pre class='verbatim' id='verbatim-12'>
  htlatex sample1 "xhtml,charset=utf-8" " -cunihtf -utf8"
-</div>
+</pre>
 <!-- l. 236 --><p class='nopar'>
 </p><!-- l. 238 --><p class='indent'>   <code>charset=utf-8"</code> produces meta element which declares document to be in
 <code>utf-8</code> encoding. Important are two options for <code>tex4ht</code> command, <code>-c</code> and
@@ -260,22 +260,22 @@ unicode.4hf. It is directed from <code>tex4ht.env</code> file.
 
                                                                   
 </p>   
-<div id='verbatim-13' class='verbatim'>
+<pre class='verbatim' id='verbatim-13'>
  make4ht -u sample1.tex
-</div>
+</pre>
 <!-- l. 250 --><p class='nopar'>
 </p><!-- l. 252 --><p class='indent'>   resulting file:
                                                                   
 
                                                                   
 </p>   
-<div id='verbatim-14' class='verbatim'>
+<pre class='verbatim' id='verbatim-14'>
 &lt;!--l. 6--&gt;&lt;p class="noindent" &gt;Příliš žluťoučký kůň úpěl &lt;span
- <br />class="ecti-1000"&gt;ď&lt;/span&gt;&lt;span
- <br />class="ecti-1000"&gt;ábelsk&lt;/span&gt;&lt;span
- <br />class="ecti-1000"&gt;é &lt;/span&gt;ódy. Some text in English
- <br />&lt;/p&gt;
-</div>
+class="ecti-1000"&gt;ď&lt;/span&gt;&lt;span
+class="ecti-1000"&gt;ábelsk&lt;/span&gt;&lt;span
+class="ecti-1000"&gt;é &lt;/span&gt;ódy. Some text in English
+&lt;/p&gt;
+</pre>
 <!-- l. 260 --><p class='nopar'>
 </p><!-- l. 262 --><p class='indent'>   Entities are gone, but other persists. What we see is caused by a bug in <code>tex4ht</code>
 command. It decorates text which is set in non-default font with <code>&lt;span&gt;</code> elements.
@@ -297,19 +297,19 @@ structure:
 
                                                                   
 </p>   
-<div id='verbatim-15' class='verbatim'>
+<pre class='verbatim' id='verbatim-15'>
  optional stuff like requiring LaTeX packages etc
- <br /> ...
- <br /> \Preamble{xhtml,tex4ht.sty options}
- <br /> ...
- <br /> TeX4ht configurations
- <br /> ...
- <br /> \begin{document}
- <br /> ...
- <br /> more TeX4ht configurations
- <br /> ...
- <br /> \EndPreamble
-</div>
+ ...
+ \Preamble{xhtml,tex4ht.sty options}
+ ...
+ TeX4ht configurations
+ ...
+ \begin{document}
+ ...
+ more TeX4ht configurations
+ ...
+ \EndPreamble
+</pre>
 <!-- l. 296 --><p class='nopar'>
 </p><!-- l. 298 --><p class='indent'>   Most important command for configuring is <code>\Configure</code>. This command has
 variable number of arguments, in the simplest form it does have two arguments:
@@ -326,11 +326,11 @@ package <code>hello.sty</code>:
 
                                                                   
 </p>   
-<div id='verbatim-16' class='verbatim'>
+<pre class='verbatim' id='verbatim-16'>
 \ProvidesPackage{hello}
- <br />\newcommand\hello{\textbf{hello world}}
- <br />\endinput
-</div>
+\newcommand\hello{\textbf{hello world}}
+\endinput
+</pre>
 <!-- l. 318 --><p class='nopar'>
 </p><!-- l. 320 --><p class='indent'>   we can provide hooks in file named <code>hello.4ht</code>. Say we just want to insert tags at
 beginning and at end of <code>\hello</code> command:
@@ -338,18 +338,18 @@ beginning and at end of <code>\hello</code> command:
 
                                                                   
 </p>   
-<div id='verbatim-17' class='verbatim'>
+<pre class='verbatim' id='verbatim-17'>
 % provide configure for \hello command. we can choose any name
- <br />% but most convenient is to name hooks after redefined command
- <br />% we declare two hooks, to be inserted before and after the command
- <br />\NewConfigure{hello}{2}
- <br />% now we need to redefine \hello. save it to tmp command
- <br />\let\tmp:hello\hello
- <br />% note that `:` can be part of command name in `.4ht` files.
- <br />% now insert the hooks. they are named as \a:hook, \b:hook, ..., \h:hook
- <br />% depending on how many hooks were declared
- <br />\renewcommand\hello{\a:hello\tmp:hello\b:hello}
-</div>
+% but most convenient is to name hooks after redefined command
+% we declare two hooks, to be inserted before and after the command
+\NewConfigure{hello}{2}
+% now we need to redefine \hello. save it to tmp command
+\let\tmp:hello\hello
+% note that `:` can be part of command name in `.4ht` files.
+% now insert the hooks. they are named as \a:hook, \b:hook, ..., \h:hook
+% depending on how many hooks were declared
+\renewcommand\hello{\a:hello\tmp:hello\b:hello}
+</pre>
 <!-- l. 335 --><p class='nopar'>
 </p><!-- l. 337 --><p class='indent'>   because we want to surround contents produced by <code>\hello</code> with tags, we need to
 declare two hooks. This is the most usual case for normal commands which just
@@ -361,17 +361,17 @@ macro.
 
                                                                   
 </p>   
-<div id='verbatim-18' class='verbatim'>
+<pre class='verbatim' id='verbatim-18'>
 \documentclass{article}
- <br />\usepackage[english,czech]{babel}
- <br />\usepackage[T1]{fontenc}
- <br />\usepackage[utf8]{inputenc}
- <br />\usepackage{hello}
- <br />\begin{document} Příliš žluťoučký kůň úpěl \textit{ďábelské} ódy.
- <br />\begin{otherlanguage}{english} Some text in English, \hello
- <br />\end{otherlanguage}
- <br />\end{document}
-</div>
+\usepackage[english,czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hello}
+\begin{document} Příliš žluťoučký kůň úpěl \textit{ďábelské} ódy.
+\begin{otherlanguage}{english} Some text in English, \hello
+\end{otherlanguage}
+\end{document}
+</pre>
 <!-- l. 356 --><p class='nopar'>
 </p><!-- l. 358 --><p class='indent'>   we haven’t provided any configurations for <code>hello</code> yet, but you can see that text
 <code>hello world</code> is in <span class='textbf'>bold</span> font anyway. This is the same case as <code>\textit</code> which is
@@ -385,15 +385,15 @@ basic configurations for <code>\textit</code> and <code>\hello</code>:
 
                                                                   
 </p>   
-<div id='verbatim-19' class='verbatim'>
+<pre class='verbatim' id='verbatim-19'>
 \Preamble{xhtml}
- <br />\Configure{textit}{\HCode{&lt;span class="textit"&gt;}}{\HCode{&lt;/span&gt;}}
- <br />\Configure{hello}{\HCode{&lt;span class="hello"&gt;}}{\HCode{&lt;/span&gt;}}
- <br />\Css{.textit{font-style:italic;}}
- <br />\Css{.hello{font-weight:bold;}}
- <br />\begin{document}
- <br />\EndPreamble
-</div>
+\Configure{textit}{\HCode{&lt;span class="textit"&gt;}}{\HCode{&lt;/span&gt;}}
+\Configure{hello}{\HCode{&lt;span class="hello"&gt;}}{\HCode{&lt;/span&gt;}}
+\Css{.textit{font-style:italic;}}
+\Css{.hello{font-weight:bold;}}
+\begin{document}
+\EndPreamble
+</pre>
 <!-- l. 379 --><p class='nopar'>
 </p><!-- l. 381 --><p class='indent'>   For documentation of default configurations, see <a href='http://michal-h21.github.io/src4ht/tex4ht-info.html'>TeX4ht info</a>, most useful are
 <a href='http://michal-h21.github.io/src4ht/tex4ht-infose2.html'>LaTeX</a> and <a href='http://michal-h21.github.io/src4ht/tex4ht-infose1.html'>TeX4ht</a> sections. Documentation for basic font commands such as
@@ -413,14 +413,14 @@ than initially:
 
                                                                   
 </p>   
-<div id='verbatim-20' class='verbatim'>
+<pre class='verbatim' id='verbatim-20'>
 &lt;!--l. 6--&gt;&lt;p class="noindent" &gt;Příliš žluťoučký kůň úpěl &lt;span class="textit"&gt;&lt;span
- <br />class="ecti-1000"&gt;ď&lt;/span&gt;&lt;span
- <br />class="ecti-1000"&gt;ábelsk&lt;/span&gt;&lt;span
- <br />class="ecti-1000"&gt;é&lt;/span&gt;&lt;/span&gt; ódy. Some text in English, &lt;span class="hello"&gt;&lt;span
- <br />class="ecbx-1000"&gt;hello world&lt;/span&gt;&lt;/span&gt;
- <br />&lt;/p&gt;
-</div>
+class="ecti-1000"&gt;ď&lt;/span&gt;&lt;span
+class="ecti-1000"&gt;ábelsk&lt;/span&gt;&lt;span
+class="ecti-1000"&gt;é&lt;/span&gt;&lt;/span&gt; ódy. Some text in English, &lt;span class="hello"&gt;&lt;span
+class="ecbx-1000"&gt;hello world&lt;/span&gt;&lt;/span&gt;
+&lt;/p&gt;
+</pre>
 <!-- l. 415 --><p class='nopar'>
 </p><!-- l. 417 --><p class='indent'>   our new tags were inserted, but unnecessary elements inserted by <code>tex4ht</code>
 processor are still present. Fortunately, we can suppress insertion of these elements
@@ -433,27 +433,27 @@ effects.
 
                                                                   
 </p>   
-<div id='verbatim-21' class='verbatim'>
+<pre class='verbatim' id='verbatim-21'>
 \Preamble{xhtml}
- <br />\Configure{textit}{\HCode{&lt;span class="textit"&gt;}\NoFonts}
- <br />{\EndNoFonts\HCode{&lt;/span&gt;}}
- <br />\Configure{hello}{\HCode{&lt;span class="hello"&gt;}\NoFonts}
- <br />{\EndNoFonts\HCode{&lt;/span&gt;}}
- <br />\Css{.textit{font-style:italic;}}
- <br />\Css{.hello{font-weight:bold;}}
- <br />\begin{document}
- <br />\EndPreamble
-</div>
+\Configure{textit}{\HCode{&lt;span class="textit"&gt;}\NoFonts}
+{\EndNoFonts\HCode{&lt;/span&gt;}}
+\Configure{hello}{\HCode{&lt;span class="hello"&gt;}\NoFonts}
+{\EndNoFonts\HCode{&lt;/span&gt;}}
+\Css{.textit{font-style:italic;}}
+\Css{.hello{font-weight:bold;}}
+\begin{document}
+\EndPreamble
+</pre>
 <!-- l. 439 --><p class='nopar'>
 </p><!-- l. 441 --><p class='indent'>   the output now looks much better:
                                                                   
 
                                                                   
 </p>   
-<div id='verbatim-22' class='verbatim'>
+<pre class='verbatim' id='verbatim-22'>
 &lt;!--l. 6--&gt;&lt;p class="noindent" &gt;Příliš žluťoučký kůň úpěl &lt;span class="textit"&gt;ďábelské&lt;/span&gt; ódy. Some text in English, &lt;span class="hello"&gt;hello world&lt;/span&gt;
- <br />&lt;/p&gt;
-</div>
+&lt;/p&gt;
+</pre>
 <!-- l. 446 --><p class='nopar'>
 </p><!-- l. 448 --><p class='indent'>   It may seems that we can be happy at this point, but things aren’t as easy as we
 may hope, because we haven’t talked about one thing:
@@ -465,26 +465,26 @@ may hope, because we haven’t talked about one thing:
 
                                                                   
 </p>   
-<div id='verbatim-23' class='verbatim'>
+<pre class='verbatim' id='verbatim-23'>
 \documentclass{article}
- <br />\usepackage[english,czech]{babel}
- <br />\usepackage[T1]{fontenc}
- <br />\usepackage[utf8]{inputenc}
- <br />\usepackage{hello}
- <br />\begin{document} Příliš žluťoučký kůň úpěl \textit{ďábelské} ódy.
- <br />\begin{otherlanguage}{english} Some text in English, \hello
- <br />\end{otherlanguage}
- <br />
- <br />\begin{otherlanguage}{english}
- <br />
- <br />\textit{What will do} \verb|\textit| at the beginning of paragraph?
- <br />
- <br />And also, what about configuration for \verb|otherlanguage| environment?
- <br />
- <br />\end{otherlanguage}
- <br />
- <br />\end{document}
-</div>
+\usepackage[english,czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hello}
+\begin{document} Příliš žluťoučký kůň úpěl \textit{ďábelské} ódy.
+\begin{otherlanguage}{english} Some text in English, \hello
+\end{otherlanguage}
+
+\begin{otherlanguage}{english}
+
+\textit{What will do} \verb|\textit| at the beginning of paragraph?
+
+And also, what about configuration for \verb|otherlanguage| environment?
+
+\end{otherlanguage}
+
+\end{document}
+</pre>
 <!-- l. 475 --><p class='nopar'>
 </p><!-- l. 477 --><p class='indent'>   What if we want to insert elements with <code>lang</code> attribute to specify language of
 text in the <code>html</code>. It might be useful from semantic point of view, we can also enable
@@ -495,7 +495,7 @@ source.
 
                                                                   
 </p>   
-<nav class='crosslinks-bottom'>[<a href='Introduction.html'>prev</a>] [<a href='tex4ht-doc.html#BasicTutorial.html'>up</a>] [<a href='Howto.html'>next</a>] </nav>   </main><p><script data-goatcounter='https://kodymirus.goatcounter.com/count' src='/js/libs/goatcounter.js'></script></p> 
+<nav class='crosslinks-bottom'>[<a href='Introduction.html'>prev</a>] [<a href='tex4ht-doc.html#BasicTutorial.html'>up</a>] [<a href='Howto.html'>next</a>] </nav>   </main><p><script src='/js/libs/goatcounter.js' data-goatcounter='https://kodymirus.goatcounter.com/count'></script></p> 
  
 </body> 
 </html>
