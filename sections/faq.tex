@@ -105,11 +105,81 @@ files, so you don't need to worry that it will break normal handling of environm
 \section{DOM Processing Errors}
 \label{faq:dom_processing}
 
-\texfourht\ post-process generated HTML and XML files using LuaXML. 
+\texfourht\ post-process generated HTML and XML files using Lua filters. They fixes various issues that
+are not possible fix on the \TeX\ level, and also add some additional features. For example, the \mathml\ 
+output relies on filters to produce valid code.
+
+These filters use the LuaXML library for the processing. When the generated HTML or XML file is not well-formed,
+you may get the following warning:
+
+
+\begin{shellcommand}
+[WARNING] domfilter: DOM parsing of test.html failed:
+[WARNING] domfilter: /home/michal/texmf/scripts/lua/LuaXML/
+luaxml-mod-xml.lua:175: Unbalanced Tag (/p) [char=1353]
+\end{shellcommand}
+
+This means that DOM parsing failed and filters cannot be applied. This will result in incorrect file.
 
 \begin{issue}{Incorrect handling of paragraphs}
+Common cause of this issue is incorect handling of paragraphs in commands that produce block level
+elements such as \htmlcommand{<div>} or \htmlcommand{<section>} elements.
+
+Say that you have a following code in your document:
+
+\begin{texsource}
+\newenvironment{test}{\itshape}{}
+
+\begin{test}
+world
+
+more paragraphs
+\end{test}
+\end{texsource}
+
+And that you configure the \term{test} environment to to produce a custom \htmlcommand{<div>} element:
+
+\begin{texsource}
+\ConfigureEnv{test}{\HCode{<div class="test">}}{\HCode{</div>}}{}{}
+\end{texsource}
+
+This configuration will break the LuaXML parsing, as it produces invalid HTML code:
+
+\begin{htmlsource}
+<!--l. 27--><p class="indent" >   <div class="test"> <span 
+class="cmti-12">world</span>
+</p><!--l. 30--><p class="indent" >   <span 
+class="cmti-12">more paragraphs</span>
+</div>
+</p>
+\end{htmlsource}
+
+The issue is that \htmlcommand{<p>} elements are mismatched. It is necessary that closing \htmlcommand{</p>} tag
+is inserted before \htmlcommand{<div>} tag. You can use commands introduced in section \nameref{sec:paragraph_handling} 
+(\ref{sec:paragraph_handling}) for this task. The correct configuration can look like this:
+
+\begin{texsource}
+\ConfigureEnv{test}{\ifvmode\IgnorePar\fi\EndP\HCode{<div class="test">}\par}
+{\ifvmode\IgnorePar\fi\EndP\HCode{</div>}\par}{}{}
+\end{texsource}
+
+The \texcommand{\EndP} inserts closing \htmlcommand{</p>} tag. But new paragraph still could be started before 
+\htmlcommand{<div>} if we are in the vertical mode, so we need to use also the \texcommand{\ifvmode\IgnorePar\fi}
+command. This will prevent starting of the new paragraph too early. But we want to start a new paragraph after 
+\htmlcommand{<div>}, so we need to use explicit \texcommand{\par} after \texcommand{\HCode}. Similar paragraph 
+treatment is needed also for the closing of the environment. The resulting HTML with this configuration is correct:
+
+\begin{htmlsource}
+<div class='test'>
+<!-- l. 28 --><p class='indent'>   <span class='cmti-12'>world</span>
+</p><!-- l. 30 --><p class='indent'>   <span class='cmti-12'>more paragraphs</span>
+</p></div>
+\end{htmlsource}
+
 
 \end{issue}
+
+
 
 \section{Math Issues}
 \subsection{Problems With \term{\mathml}}
