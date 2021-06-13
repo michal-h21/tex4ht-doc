@@ -2,11 +2,11 @@
 <html lang='en-US' xml:lang='en-US'> 
 <head><title>10 For Developers</title> 
 <meta charset='utf-8' /> 
-<meta name='generator' content='TeX4ht (https://tug.org/tex4ht/)' /> 
-<meta name='viewport' content='width=device-width,initial-scale=1' /> 
-<link href='tex4ht-doc.css' type='text/css' rel='stylesheet' /> 
-<meta name='src' content='tex4ht-doc.tex' /> 
-<link href='style.css' type='text/css' rel='stylesheet' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link rel='stylesheet' href='tex4ht-doc.css' type='text/css' /> 
+<meta content='tex4ht-doc.tex' name='src' /> 
+<link rel='stylesheet' href='style.css' type='text/css' /> 
 </head><body>
 <nav class='TOC'><span class='chapterToc'>1 <a href='Introduction.html#x2-10001'>Introduction</a></span><span class='chapterToc'>2 <a href='BasicTutorial.html#x3-30002'>Basic Tutorial</a></span><span class='chapterToc'>3 <a href='Howto.html#x4-100003'>How to</a></span><span class='chapterToc'>4 <a href='CallingCommands.html#x5-330004'>Calling Commands</a></span><span class='chapterToc'>5 <a href='OutputFormats.html#x6-380005'>Output Formats</a></span><span class='chapterToc'>6 <a href='texfourhtOptions.html#x7-390006'><code>TeX4ht</code> Options</a></span><span class='chapterToc'>7 <a href='Configurations.html#x8-410007'>Configurations</a></span><span class='chapterToc'>8 <a href='Make4htBuildFiles.html#x9-850008'>Make4ht Build Files</a></span><span class='chapterToc'>9 <a href='FAQandTroubleshooting.html#x10-890009'>FAQ and Troubleshooting</a></span><span class='chapterToc'>10 <a href='#x11-9500010'>For Developers</a></span><span class='sectionToc'>10.1 <a href='#x11-9600010.1'>Introduction</a></span><span class='sectionToc'>10.2 <a href='#x11-9700010.2'>Tutorial: Basic Support For a New Package</a></span><span class='sectionToc'>10.3 <a href='#x11-9800010.3'>Two types of .4ht files</a></span><span class='subsectionToc'>10.3.1 <a href='#x11-9900010.3.1'>Inserting configurable hooks for packages</a></span><span class='subsectionToc'>10.3.2 <a href='#x11-10000010.3.2'>Configure the hooks in output format configuration files</a></span><span class='sectionToc'>10.4 <a href='#x11-10100010.4'>How to add support for a package to the <code>TeX4ht</code> literate sources</a></span><span class='subsectionToc'>10.4.1 <a href='#x11-10200010.4.1'>Example</a></span><span class='sectionToc'>10.5 <a href='#x11-10300010.5'>Commands Usable in the <code>.4ht</code> files</a></span><span class='sectionToc'>10.6 <a href='#x11-10400010.6'>ProTeX</a></span><span class='subsectionToc'>10.6.1 <a href='#x11-10500010.6.1'>ProTeX</a></span><span class='chapterToc'>11 <a href='Glossary.html#x12-10600011'>Glossary</a></span><span class='chapterToc'>12 <a href='Bibliography.html#x13-10700012'>Bibliography</a></span><span class='chapterToc'>13 <a href='Index.html#x14-10800013'>Index</a></span><span class='chapterToc'>14 <a href='Changes.html#x15-10900014'>Changes</a></span></nav> 
 <main class='main-content'> 
@@ -27,7 +27,7 @@ the output format tags.
 </p><!-- l. 15 --><p class='indent'>   Let’s say that you have a custom package, called <code>mynote.sty</code>
 </p>   
 <figure role='doc-example' class='texsource'>
-<pre id='fancyvrb69' class='fancyvrb'><a id='x11-97006r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\ProvidesPackage</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>mynote</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
+<pre id='fancyvrb75' class='fancyvrb'><a id='x11-97006r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\ProvidesPackage</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>mynote</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x11-97008r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\newcommand\notetitle</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Note:~</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x11-97010r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\newcommand\note</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>[1]{{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\textcolor</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>notecolor</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\textbf</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\notetitle</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}}</span></span><span class='rm-lmtt-10'>#1</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x11-97012r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\endinput</span></span></pre>
@@ -83,7 +83,7 @@ necessary to update the <code>mktex4ht-cnf.tex</code>.
 <!-- l. 71 --><p class='noindent'>Given following package <code>sample.sty</code>:
 </p>   
 <figure role='doc-example' class='texsource'>
-<pre id='fancyvrb70' class='fancyvrb'><a id='x11-102005r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\ProvidesPackage</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>sample</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
+<pre id='fancyvrb76' class='fancyvrb'><a id='x11-102005r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\ProvidesPackage</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>sample</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x11-102007r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\newcommand\hello</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>hello</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x11-102009r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\endinput</span></span></pre>
 </figure>
@@ -94,7 +94,7 @@ printed by the command.
 </p><!-- l. 83 --><p class='indent'>   Basic template for <code>tex4ht-4ht.tex</code>
 </p>   
 <figure role='doc-example' class='texsource'>
-<pre id='fancyvrb71' class='fancyvrb'><a id='x11-102021r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&lt;</span></span><span class='rm-lmtt-10'>sample.4ht</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&gt;</span></span><span class='rm-lmtt-10'>&lt;&lt;&lt;</span> 
+<pre id='fancyvrb77' class='fancyvrb'><a id='x11-102021r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&lt;</span></span><span class='rm-lmtt-10'>sample.4ht</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&gt;</span></span><span class='rm-lmtt-10'>&lt;&lt;&lt;</span> 
 <a id='x11-102023r2'></a><span class='textcolor-878787'><span class='textit'>% sample.4ht (|version), generated from |jobname.tex</span></span> 
 <a id='x11-102025r3'></a><span class='textcolor-878787'><span class='textit'>% Copyright 2017 TeX Users Group</span></span> 
 <a id='x11-102027r4'></a><span class='rm-lmtt-10'>|&lt;TeX4ht license text|&gt;</span> 
@@ -123,7 +123,7 @@ beginning, respective at the end of the redefined command.
 file:
 </p>   
 <figure role='doc-example' class='texsource'>
-<pre id='fancyvrb72' class='fancyvrb'><a id='x11-102046r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&lt;</span></span><span class='rm-lmtt-10'>configure html4 sample</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&gt;</span></span><span class='rm-lmtt-10'>&lt;&lt;&lt;</span> 
+<pre id='fancyvrb78' class='fancyvrb'><a id='x11-102046r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&lt;</span></span><span class='rm-lmtt-10'>configure html4 sample</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&gt;</span></span><span class='rm-lmtt-10'>&lt;&lt;&lt;</span> 
 <a id='x11-102048r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>hello</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>&lt;span class="hello"&gt;</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>&lt;/span&gt;</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}</span></span> 
 <a id='x11-102050r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Css</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>.hello</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>color:red;</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}</span></span> 
 <a id='x11-102052r4'></a><span class='rm-lmtt-10'>&gt;&gt;&gt;</span></pre>
@@ -136,13 +136,13 @@ packagename\&gt;</code> block.
 </p><!-- l. 128 --><p class='indent'>   The package name must be also included in <code>mktex4ht-cnf.tex</code>:
 </p>   
 <figure role='doc-example' class='texsource'>
-<pre id='fancyvrb73' class='fancyvrb'><a id='x11-102055r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\AddFile</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>9</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>sample</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span></pre>
+<pre id='fancyvrb79' class='fancyvrb'><a id='x11-102055r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\AddFile</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>9</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>sample</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span></pre>
 </figure>
 <!-- l. 134 --><p class='indent'>   The <code>.4ht</code> files can be generated simply using the <code>make</code> command.
 </p><!-- l. 136 --><p class='indent'>   The following sample TeX file:
 </p>   
 <figure role='doc-example' class='texsource'>
-<pre id='fancyvrb74' class='fancyvrb'><a id='x11-102062r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>article</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
+<pre id='fancyvrb80' class='fancyvrb'><a id='x11-102062r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>article</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x11-102064r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>sample</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x11-102066r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x11-102068r4'></a><span class='rm-lmtt-10'>  </span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\hello\ </span></span><span class='rm-lmtt-10'>world.</span> 
@@ -151,7 +151,7 @@ packagename\&gt;</code> block.
 <!-- l. 147 --><p class='indent'>   Produces a following <code>HTML</code> code:
 </p>   
 <figure role='doc-example' class='htmlsource'>
-<pre id='fancyvrb75' class='fancyvrb'><a id='x11-102075r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 4--&gt;</span><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"noindent"</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span> 
+<pre id='fancyvrb81' class='fancyvrb'><a id='x11-102075r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 4--&gt;</span><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"noindent"</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span> 
 <a id='x11-102077r2'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>span</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"hello"</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>hello</span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'> world.</span> 
 <a id='x11-102079r3'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></pre>
 </figure>
@@ -176,7 +176,7 @@ ProTeX.
                                                                   
 </p>   
 <figure role='doc-example' class='texsource'>
-<pre id='fancyvrb76' class='fancyvrb'><a id='x11-105009r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\input</span></span><span class='rm-lmtt-10'> ProTex.sty</span> 
+<pre id='fancyvrb82' class='fancyvrb'><a id='x11-105009r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\input</span></span><span class='rm-lmtt-10'> ProTex.sty</span> 
 <a id='x11-105011r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\AlProTex</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>extension,&lt;&lt;&lt;&gt;&gt;&gt;,list,title,escape-character</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x11-105013r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&lt;</span></span><span class='rm-lmtt-10'>title</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&gt;</span></span><span class='rm-lmtt-10'>&lt;&lt;&lt;</span> 
 <a id='x11-105015r4'></a><span class='rm-lmtt-10'>code fragment</span> 
@@ -187,14 +187,14 @@ ProTeX.
 <!-- l. 195 --><p class='indent'>   Some explanation:
 </p>   
 <figure role='doc-example' class='texsource'>
-<pre id='fancyvrb77' class='fancyvrb'><a id='x11-105025r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\input</span></span><span class='rm-lmtt-10'> ProTex.sty</span> 
+<pre id='fancyvrb83' class='fancyvrb'><a id='x11-105025r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\input</span></span><span class='rm-lmtt-10'> ProTex.sty</span> 
 <a id='x11-105027r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\AlProTex</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>extension,&lt;&lt;&lt;&gt;&gt;&gt;,list,title,escape-character</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span></pre>
 </figure>
 <!-- l. 202 --><p class='indent'>   The escape-character stands for ‘, @, —, or ?. If omitted, it stands for
 <span class='obeylines-h'><code>\</code></span>.
 </p>   
 <figure role='doc-example' class='texsource'>
-<pre id='fancyvrb78' class='fancyvrb'><a id='x11-105033r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&lt;</span></span><span class='rm-lmtt-10'>title</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&gt;</span></span><span class='rm-lmtt-10'>&lt;&lt;&lt;</span> 
+<pre id='fancyvrb84' class='fancyvrb'><a id='x11-105033r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&lt;</span></span><span class='rm-lmtt-10'>title</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&gt;</span></span><span class='rm-lmtt-10'>&lt;&lt;&lt;</span> 
 <a id='x11-105035r2'></a><span class='rm-lmtt-10'>code fragment</span> 
 <a id='x11-105037r3'></a><span class='rm-lmtt-10'>&gt;&gt;&gt;</span></pre>
 </figure>
@@ -202,20 +202,20 @@ ProTeX.
 too large in size).
 </p>   
 <figure role='doc-example' class='texsource'>
-<pre id='fancyvrb79' class='fancyvrb'><a id='x11-105040r1'></a><span class='rm-lmtt-10'> |&lt;title|&gt;</span></pre>
+<pre id='fancyvrb85' class='fancyvrb'><a id='x11-105040r1'></a><span class='rm-lmtt-10'> |&lt;title|&gt;</span></pre>
 </figure>
 <!-- l. 218 --><p class='indent'>   This command acts as a place holder for the code segment associated to the title
 (<code>|</code> stands for the escape character).
 </p>   
 <figure role='doc-example' class='texsource'>
-<pre id='fancyvrb80' class='fancyvrb'><a id='x11-105043r1'></a><span class='rm-lmtt-10'>   </span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\OutputCode\&lt;</span></span><span class='rm-lmtt-10'>...</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&gt;</span></span></pre>
+<pre id='fancyvrb86' class='fancyvrb'><a id='x11-105043r1'></a><span class='rm-lmtt-10'>   </span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\OutputCode\&lt;</span></span><span class='rm-lmtt-10'>...</span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\&gt;</span></span></pre>
 </figure>
 <!-- l. 224 --><p class='indent'>   This command creates a file for the code whose root node is specified.
                                                                   
 
                                                                   
 </p>   
-<nav class='crosslinks-bottom'>[<a href='FAQandTroubleshooting.html'>prev</a>] [<a href='tex4ht-doc.html#ForDevelopers.html'>up</a>] [<a href='Glossary.html'>next</a>] </nav>  </main><p><script src='/js/libs/goatcounter.js' data-goatcounter='https://kodymirus.goatcounter.com/count'></script></p> 
+<nav class='crosslinks-bottom'>[<a href='FAQandTroubleshooting.html'>prev</a>] [<a href='tex4ht-doc.html#ForDevelopers.html'>up</a>] [<a href='Glossary.html'>next</a>] </nav>  </main><p><script data-goatcounter='https://kodymirus.goatcounter.com/count' src='/js/libs/goatcounter.js'></script></p> 
 <div class='footnotes'><!-- l. 104 --><p class='indent'>     <span class='footnote-mark'><a href='#fn1x11-bk' id='fn1x11'><sup class='textsuperscript'>1</sup></a></span><span class='rm-lmr-8'>I have no idea what the number in the first parameter means.</span></p>                              </div>
  
 </body> 

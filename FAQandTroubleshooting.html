@@ -2,11 +2,11 @@
 <html lang='en-US' xml:lang='en-US'> 
 <head><title>9 FAQ and Troubleshooting</title> 
 <meta charset='utf-8' /> 
-<meta name='generator' content='TeX4ht (https://tug.org/tex4ht/)' /> 
-<meta name='viewport' content='width=device-width,initial-scale=1' /> 
-<link href='tex4ht-doc.css' type='text/css' rel='stylesheet' /> 
-<meta name='src' content='tex4ht-doc.tex' /> 
-<link href='style.css' type='text/css' rel='stylesheet' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link rel='stylesheet' href='tex4ht-doc.css' type='text/css' /> 
+<meta content='tex4ht-doc.tex' name='src' /> 
+<link rel='stylesheet' href='style.css' type='text/css' /> 
 </head><body>
 <nav class='TOC'><span class='chapterToc'>1 <a href='Introduction.html#x2-10001'>Introduction</a></span><span class='chapterToc'>2 <a href='BasicTutorial.html#x3-30002'>Basic Tutorial</a></span><span class='chapterToc'>3 <a href='Howto.html#x4-100003'>How to</a></span><span class='chapterToc'>4 <a href='CallingCommands.html#x5-330004'>Calling Commands</a></span><span class='chapterToc'>5 <a href='OutputFormats.html#x6-380005'>Output Formats</a></span><span class='chapterToc'>6 <a href='texfourhtOptions.html#x7-390006'><code>TeX4ht</code> Options</a></span><span class='chapterToc'>7 <a href='Configurations.html#x8-410007'>Configurations</a></span><span class='chapterToc'>8 <a href='Make4htBuildFiles.html#x9-850008'>Make4ht Build Files</a></span><span class='chapterToc'>9 <a href='#x10-890009'>FAQ and Troubleshooting</a></span><span class='sectionToc'>9.1 <a href='#x10-900009.1'>General Advice</a></span><span class='sectionToc'>9.2 <a href='#x10-910009.2'>Compilation Errors</a></span><span class='sectionToc'>9.3 <a href='#x10-920009.3'>DOM Processing Errors</a></span><span class='sectionToc'>9.4 <a href='#x10-930009.4'>Math Issues</a></span><span class='subsectionToc'>9.4.1 <a href='#x10-940009.4.1'>Problems With <span class='emph'><code>MathML</code></span></a></span><span class='chapterToc'>10 <a href='ForDevelopers.html#x11-9500010'>For Developers</a></span><span class='chapterToc'>11 <a href='Glossary.html#x12-10600011'>Glossary</a></span><span class='chapterToc'>12 <a href='Bibliography.html#x13-10700012'>Bibliography</a></span><span class='chapterToc'>13 <a href='Index.html#x14-10800013'>Index</a></span><span class='chapterToc'>14 <a href='Changes.html#x15-10900014'>Changes</a></span></nav> 
 <main class='main-content'> 
@@ -108,21 +108,93 @@ break normal handling of environments.
 </p><!-- l. 105 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead'><span class='titlemark'>9.3   </span> <a id='x10-920009.3'></a>DOM Processing Errors</h3>
-<!-- l. 108 --><p class='noindent'><code>TeX4ht</code> post-process generated HTML and XML files using LuaXML.
-</p><!-- l. 110 --><p class='noindent'><span class='textbf'>Incorrect handling of paragraphs</span>
-</p><!-- l. 114 --><p class='noindent'>
+<!-- l. 108 --><p class='noindent'><code>TeX4ht</code> post-process generated HTML and XML files using Lua filters. They fixes
+various issues that are not possible fix on the TeX level, and also add some
+additional features. For example, the <code>MathML</code> output relies on filters to produce valid
+code.
+</p><!-- l. 112 --><p class='indent'>   These filters use the LuaXML library for the processing. When the generated
+HTML or XML file is not well-formed, you may get the following warning:
+</p>   
+<figure role='doc-example' class='shellcommand'>
+<pre id='fancyvrb69' class='fancyvrb'><a id='x10-92005r1'></a><span class='textcolor-656565'><span class='rm-lmtt-10'>[</span></span><span class='rm-lmtt-10'>WARNING</span><span class='textcolor-656565'><span class='rm-lmtt-10'>]</span></span><span class='rm-lmtt-10'> domfilter: DOM parsing of test.html failed:</span> 
+<a id='x10-92007r2'></a><span class='textcolor-656565'><span class='rm-lmtt-10'>[</span></span><span class='rm-lmtt-10'>WARNING</span><span class='textcolor-656565'><span class='rm-lmtt-10'>]</span></span><span class='rm-lmtt-10'> domfilter: /home/michal/texmf/scripts/lua/LuaXML/</span> 
+<a id='x10-92009r3'></a><span class='rm-lmtt-10'>luaxml-mod-xml.lua:175: Unbalanced Tag </span><span class='textcolor-656565'><span class='rm-lmtt-10'>(</span></span><span class='rm-lmtt-10'>/p</span><span class='textcolor-656565'><span class='rm-lmtt-10'>)</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-656565'><span class='rm-lmtt-10'>[</span></span><span class='textcolor-af3f3f'><span class='rm-lmtt-10'>char</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-444444'><span class='rm-lmtt-10'>1353</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>]</span></span></pre>
+</figure>
+<!-- l. 122 --><p class='indent'>   This means that DOM parsing failed and filters cannot be applied. This will
+result in incorrect file.
+</p><!-- l. 124 --><p class='noindent'><span class='textbf'>Incorrect handling of paragraphs</span> Common cause of this issue is incorect
+handling of paragraphs in commands that produce block level elements such as <code>&lt;div&gt;</code>
+or <code>&lt;section&gt;</code> elements.
+</p><!-- l. 128 --><p class='indent'>   Say that you have a following code in your document:
+</p>   
+<figure role='doc-example' class='texsource'>
+<pre id='fancyvrb70' class='fancyvrb'><a id='x10-92018r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\newenvironment</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>test</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\itshape</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{}</span></span> 
+<a id='x10-92020r2'></a> 
+<a id='x10-92022r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>test</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
+<a id='x10-92024r4'></a><span class='rm-lmtt-10'>world</span> 
+<a id='x10-92026r5'></a> 
+<a id='x10-92028r6'></a><span class='rm-lmtt-10'>more paragraphs</span> 
+<a id='x10-92030r7'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>test</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span></pre>
+                                                                  
+
+                                                                  
+</figure>
+<!-- l. 140 --><p class='indent'>   And that you configure the <span class='emph'>test</span> environment to to produce a custom <code>&lt;div&gt;</code>
+element:
+</p>   
+<figure role='doc-example' class='texsource'>
+<pre id='fancyvrb71' class='fancyvrb'><a id='x10-92033r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\ConfigureEnv</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>test</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>&lt;div class="test"&gt;</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>&lt;/div&gt;</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}{}{}</span></span></pre>
+</figure>
+<!-- l. 146 --><p class='indent'>   This configuration will break the LuaXML parsing, as it produces invalid HTML
+code:
+</p>   
+<figure role='doc-example' class='htmlsource'>
+<pre id='fancyvrb72' class='fancyvrb'><a id='x10-92041r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 27--&gt;</span><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"indent"</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>   </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>div</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"test"</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>span</span></span> 
+<a id='x10-92043r2'></a><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"cmti-12"</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>world</span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span> 
+<a id='x10-92045r3'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span><span class='textit'>&lt;!--l. 30--&gt;</span><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"indent"</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>   </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>span</span></span> 
+<a id='x10-92047r4'></a><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"cmti-12"</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>more paragraphs</span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span> 
+<a id='x10-92049r5'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>div</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span> 
+<a id='x10-92051r6'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></pre>
+</figure>
+<!-- l. 157 --><p class='indent'>   The issue is that <code>&lt;p&gt;</code> elements are mismatched. It is necessary that closing <code>&lt;/p&gt;</code>
+tag is inserted before <code>&lt;div&gt;</code> tag. You can use commands introduced in section
+<a href='Configurations.html#x8-500007.3.3'>Paragraph Handling<!-- tex4ht:ref: sec:paragraph_handling  --></a> (<a href='Configurations.html#x8-500007.3.3'>7.3.3<!-- tex4ht:ref: sec:paragraph_handling  --></a>) for this task. The correct configuration can look like
+this:
+</p>   
+<figure role='doc-example' class='texsource'>
+<pre id='fancyvrb73' class='fancyvrb'><a id='x10-92055r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\ConfigureEnv</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>test</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\ifvmode\IgnorePar\fi\EndP\HCode</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>&lt;div class="test"&gt;</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\par</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
+<a id='x10-92057r2'></a><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\ifvmode\IgnorePar\fi\EndP\HCode</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>&lt;/div&gt;</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\par</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{}{}</span></span></pre>
+</figure>
+<!-- l. 166 --><p class='indent'>   The <code>\EndP</code> inserts closing <code>&lt;/p&gt;</code> tag. But new paragraph still could be
+started before <code>&lt;div&gt;</code> if we are in the vertical mode, so we need to use also the
+<code>\ifvmode\IgnorePar\fi</code> command. This will prevent starting of the new paragraph
+too early. But we want to start a new paragraph after <code>&lt;div&gt;</code>, so we need to use
+explicit <code>\par</code> after <code>\HCode</code>. Similar paragraph treatment is needed also for the
+closing of the environment. The resulting HTML with this configuration is
+correct:
+</p>   
+<figure role='doc-example' class='htmlsource'>
+<pre id='fancyvrb74' class='fancyvrb'><a id='x10-92063r1'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>div</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>test</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span> 
+<a id='x10-92065r2'></a><span class='textcolor-878787'><span class='textit'>&lt;!-- l. 28 --&gt;</span><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>indent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>   </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>span</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>cmti-12</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>world</span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span> 
+<a id='x10-92067r3'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span><span class='textit'>&lt;!-- l. 30 --&gt;</span><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>indent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>   </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>span</span></span><span class='rm-lmtt-10'> </span><span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>cmti-12</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>more paragraphs</span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span> 
+<a id='x10-92069r4'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>div</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></pre>
+</figure>
+                                                                  
+
+                                                                  
+<!-- l. 184 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead'><span class='titlemark'>9.4   </span> <a id='x10-930009.4'></a>Math Issues</h3>
-<!-- l. 115 --><p class='noindent'>
+<!-- l. 185 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead'><span class='titlemark'>9.4.1   </span> <a id='x10-940009.4.1'></a>Problems With <span class='emph'><code>MathML</code></span></h4>
-<!-- l. 117 --><p class='noindent'><span class='textbf'>Single delimiters</span> Use of single delimiters like <code>$\langle$</code> may result in
+<!-- l. 187 --><p class='noindent'><span class='textbf'>Single delimiters</span> Use of single delimiters like <code>$\langle$</code> may result in
 invalid <code>MathML</code> code. <code>TeX4ht</code> can try to fix that using the <span class='emph'>mathml-</span> option.
                                                                   
 
                                                                   
 </p>   
-<nav class='crosslinks-bottom'>[<a href='Make4htBuildFiles.html'>prev</a>] [<a href='tex4ht-doc.html#FAQandTroubleshooting.html'>up</a>] [<a href='ForDevelopers.html'>next</a>] </nav>   </main><p><script src='/js/libs/goatcounter.js' data-goatcounter='https://kodymirus.goatcounter.com/count'></script></p> 
+<nav class='crosslinks-bottom'>[<a href='Make4htBuildFiles.html'>prev</a>] [<a href='tex4ht-doc.html#FAQandTroubleshooting.html'>up</a>] [<a href='ForDevelopers.html'>next</a>] </nav>   </main><p><script data-goatcounter='https://kodymirus.goatcounter.com/count' src='/js/libs/goatcounter.js'></script></p> 
  
 </body> 
 </html>
