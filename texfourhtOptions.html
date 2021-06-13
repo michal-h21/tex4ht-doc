@@ -1,6 +1,6 @@
 <!DOCTYPE html> 
-<html xml:lang='en-US' lang='en-US'> 
-<head><title>6 tex4ht Options</title> 
+<html lang='en-US' xml:lang='en-US'> 
+<head><title>6 TeX4ht Options</title> 
 <meta charset='utf-8' /> 
 <meta name='generator' content='TeX4ht (https://tug.org/tex4ht/)' /> 
 <meta name='viewport' content='width=device-width,initial-scale=1' /> 
@@ -8,10 +8,10 @@
 <meta name='src' content='tex4ht-doc.tex' /> 
 <link href='style.css' type='text/css' rel='stylesheet' /> 
 </head><body>
-<nav class='TOC'><span class='chapterToc'>1 <a href='Introduction.html#x2-10001'>Introduction</a></span><span class='chapterToc'>2 <a href='BasicTutorial.html#x3-30002'>Basic Tutorial</a></span><span class='chapterToc'>3 <a href='Howto.html#x4-100003'>How to</a></span><span class='chapterToc'>4 <a href='CallingCommands.html#x5-330004'>Calling Commands</a></span><span class='chapterToc'>5 <a href='OutputFormats.html#x6-380005'>Output Formats</a></span><span class='chapterToc'>6 <a href='#x7-390006'><code>tex4ht</code> Options</a></span><span class='sectionToc'>6.1 <a href='#x7-400006.1'>List of options</a></span><span class='chapterToc'>7 <a href='Configurations.html#x8-410007'>Configurations</a></span><span class='chapterToc'>8 <a href='Make4htBuildFiles.html#x9-850008'>Make4ht Build Files</a></span><span class='chapterToc'>9 <a href='FAQ.html#x10-890009'>FAQ</a></span><span class='chapterToc'>10 <a href='Fordevelopers.html#x11-9200010'>For developers</a></span><span class='chapterToc'>11 <a href='Glossary.html#x12-10300011'>Glossary</a></span><span class='chapterToc'>12 <a href='Bibliography.html#x13-10400012'>Bibliography</a></span><span class='chapterToc'>13 <a href='Index.html#x14-10500013'>Index</a></span></nav> 
+<nav class='TOC'><span class='chapterToc'>1 <a href='Introduction.html#x2-10001'>Introduction</a></span><span class='chapterToc'>2 <a href='BasicTutorial.html#x3-30002'>Basic Tutorial</a></span><span class='chapterToc'>3 <a href='Howto.html#x4-100003'>How to</a></span><span class='chapterToc'>4 <a href='CallingCommands.html#x5-330004'>Calling Commands</a></span><span class='chapterToc'>5 <a href='OutputFormats.html#x6-380005'>Output Formats</a></span><span class='chapterToc'>6 <a href='#x7-390006'><code>TeX4ht</code> Options</a></span><span class='sectionToc'>6.1 <a href='#x7-400006.1'>List of options</a></span><span class='chapterToc'>7 <a href='Configurations.html#x8-410007'>Configurations</a></span><span class='chapterToc'>8 <a href='Make4htBuildFiles.html#x9-850008'>Make4ht Build Files</a></span><span class='chapterToc'>9 <a href='FAQandTroubleshooting.html#x10-890009'>FAQ and Troubleshooting</a></span><span class='chapterToc'>10 <a href='ForDevelopers.html#x11-9500010'>For Developers</a></span><span class='chapterToc'>11 <a href='Glossary.html#x12-10600011'>Glossary</a></span><span class='chapterToc'>12 <a href='Bibliography.html#x13-10700012'>Bibliography</a></span><span class='chapterToc'>13 <a href='Index.html#x14-10800013'>Index</a></span><span class='chapterToc'>14 <a href='Changes.html#x15-10900014'>Changes</a></span></nav> 
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='OutputFormats.html'>prev</a>] [<a href='tex4ht-doc.html#texfourhtOptions.html'>up</a>] [<a href='Configurations.html'>next</a>] </nav> 
-<h2 class='chapterHead'><span class='titlemark'>Chapter 6</span><br /><a id='x7-390006'></a><code>tex4ht</code> Options</h2>
+<h2 class='chapterHead'><span class='titlemark'>Chapter 6</span><br /><a id='x7-390006'></a><code>TeX4ht</code> Options</h2>
 Following is an incomplete list of options that can be passed to the
 <code>tex4ht.sty</code> package. These options can be used to modify the compilation process,
 for example to select a <span class='emph'>SVG</span> format for generated images, to request math
@@ -20,7 +20,7 @@ pages.
 <!-- l. 11 --><p class='indent'>   The options may be defined in the <code>.4ht</code> files and may depend on the output
 format, so it is not feasible to provide their full list. Most of the following options
 work only in the <code>HTML</code> output.
-</p><!-- l. 15 --><p class='indent'>   There are several ways how to pass the options to <code>tex4ht</code>. The non-recommended
+</p><!-- l. 15 --><p class='indent'>   There are several ways how to pass the options to <code>TeX4ht</code>. The non-recommended
 way is to pass them as options to <code>tex4ht.sty</code> using <code>\usepackage</code> command in the
 TeX file.
 </p><!-- l. 19 --><p class='indent'>   Better ways don’t require modifications of the TeX files. It is possible to pass
@@ -39,11 +39,11 @@ configuration file</span>.
 <a id='x7-39011r2'></a><span class='rm-lmtt-10'>...</span> 
 <a id='x7-39013r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x7-39015r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\EndPreamble</span></span></pre>
-</figure>   
-<h3 class='sectionHead'><span class='titlemark'>6.1   </span> <a id='x7-400006.1'></a>List of options</h3>
+</figure>
                                                                   
 
                                                                   
+<h3 class='sectionHead'><span class='titlemark'>6.1   </span> <a id='x7-400006.1'></a>List of options</h3>
 <dl class='description'><dt class='description'>
 <span class='rm-lmbx-10'>-css</span> 
 </dt><dd class='description'>to ignore <code>CSS</code> code, use command line option <span class='obeylines-h'><code>-css</code></span>.
@@ -101,6 +101,9 @@ section levels), use the appropriate command line option <span class='obeylines-
 <dt class='description'>
 <span class='rm-lmbx-10'>_13</span> 
 </dt><dd class='description'>option for active subscript character.
+                                                                  
+
+                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>accent-</span> 
@@ -110,9 +113,6 @@ pictures for some math accents.
 <dt class='description'>
 <span class='rm-lmbx-10'>bib-</span> 
 </dt><dd class='description'>for degraded bibliography friendlier for conversion to <span class='obeylines-h'><code>.doc</code></span>.
-                                                                  
-
-                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>bibtex2</span> 
@@ -171,6 +171,9 @@ list counter provided as an attribute namely, <span class='obeylines-h'><code>va
 <dt class='description'>
 <span class='rm-lmbx-10'>fonts</span> 
 </dt><dd class='description'>for tracing L<span class='rm-lmr-7'>A</span>TeX font commands, use this command line option.
+                                                                  
+
+                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>fonts+</span> 
@@ -180,9 +183,6 @@ list counter provided as an attribute namely, <span class='obeylines-h'><code>va
 <span class='rm-lmbx-10'>font</span> 
 </dt><dd class='description'>for  adjusted  font  size,  use  the  command  line  option  <span class='obeylines-h'><code>font=...</code></span> (e.g.,
 font=-2).
-                                                                  
-
-                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>frames-</span> 
@@ -242,6 +242,9 @@ index=2).
 <dt class='description'>
 <span class='rm-lmbx-10'>javahelp</span> 
 </dt><dd class='description'>for <span class='obeylines-h'><code>JavaHelp</code></span> output format, use this command line option.
+                                                                  
+
+                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>javascript</span> 
@@ -251,9 +254,6 @@ index=2).
 <span class='rm-lmbx-10'>jh-</span> 
 </dt><dd class='description'>for sources failing to produce <code>XML</code> versions of <code>HTML</code>, try this command line
 option.
-                                                                  
-
-                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>jpg</span> 
@@ -312,6 +312,9 @@ option, <span class='obeylines-h'><code>minitoc&lt;</code></span>.
 <span class='rm-lmbx-10'>no-VERSION</span> 
 </dt><dd class='description'>to  remove  <span class='obeylines-h'><code>&lt;?xml version="..."?&gt;</code></span> processing  instruction
 from the output.
+                                                                  
+
+                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>NoFonts</span> 
@@ -321,9 +324,6 @@ from the output.
 <span class='rm-lmbx-10'>no-halign</span> 
 </dt><dd class='description'>suppress <code>\halign</code> redefinition. It doesn’t work with the <code>tabular</code>
 environment.
-                                                                  
-
-                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>no^</span> 
@@ -380,6 +380,9 @@ option <span class='obeylines-h'><code>obj-toc</code></span>.
 <dt class='description'>
 <span class='rm-lmbx-10'>pic-cases</span> 
 </dt><dd class='description'>for pictorial cases environment.
+                                                                  
+
+                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>pic-eqalign</span> 
@@ -392,9 +395,6 @@ option <span class='obeylines-h'><code>obj-toc</code></span>.
 <dt class='description'>
 <span class='rm-lmbx-10'>pic-equation</span> 
 </dt><dd class='description'>for pictorial equations.
-                                                                  
-
-                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>pic-fbox</span> 
@@ -451,6 +451,9 @@ option <span class='obeylines-h'><code>sec-filename</code></span>.
 <dt class='description'>
 <span class='rm-lmbx-10'>sections+</span> 
 </dt><dd class='description'>for back links to table of contents, use this option.
+                                                                  
+
+                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>svg-</span> 
@@ -463,9 +466,6 @@ option <span class='obeylines-h'><code>sec-filename</code></span>.
 <dt class='description'>
 <span class='rm-lmbx-10'>svg</span> 
 </dt><dd class='description'>for dvi pictures in <span class='obeylines-h'><code>svg</code></span> format.
-                                                                  
-
-                                                                  
 </dd>     
 <dt class='description'>
 <span class='rm-lmbx-10'>svg-inline</span> 
@@ -510,7 +510,7 @@ used to fine tune encoding.
                                                                   
 
                                                                   
-<nav class='crosslinks-bottom'>[<a href='OutputFormats.html'>prev</a>] [<a href='tex4ht-doc.html#texfourhtOptions.html'>up</a>] [<a href='Configurations.html'>next</a>] </nav>  </main><p><script data-goatcounter='https://kodymirus.goatcounter.com/count' src='/js/libs/goatcounter.js'></script></p> 
+<nav class='crosslinks-bottom'>[<a href='OutputFormats.html'>prev</a>] [<a href='tex4ht-doc.html#texfourhtOptions.html'>up</a>] [<a href='Configurations.html'>next</a>] </nav>  </main><p><script src='/js/libs/goatcounter.js' data-goatcounter='https://kodymirus.goatcounter.com/count'></script></p> 
  
 </body> 
 </html>
