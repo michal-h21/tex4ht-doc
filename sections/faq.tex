@@ -1,11 +1,124 @@
-\section{Math issues}
 
-\subsection{Problems with \term{\mathml}}
+\section{General Advice}
+
+In general, don't postpone your conversion to the last moment. As it is quite
+common to produce ebook or HTML versions of \LaTeX\ documents these days, it is 
+best to prepare this process as soon as possible.
+
+It is much easier to fix errors as soon as they appear. Often, one issue can
+cause many other issues, and it can be really hard to find the culprit. 
+
+It is a good idea to compile your document using \texfourht\ every time you add
+a new package to your document preamble, as some packages may clash. You may also find
+that you will need a different definitions for some commands for the HTML conversion, as the 
+version suitable for PDF produce some artifacts from drawing commands. These issues are 
+also best to fix as soon as possible.
+
+\section{Compilation Errors}
+\label{faq:compilation_errors}
+
+
+\begin{issue}{Packages that cause issues}
+\texfourht\ can clash with other packages sometimes. If you don't need features
+the problematic package provides (typically, they modify stuff that makes sense in 
+the PDF output, but not in HTML, like page headers, fancy section titles, etc.),
+it is often easiest to disable their loading when \texfourht\ is active. 
+
+There are multiple ways how to conditionally suppress package loading, but the easiest 
+way is to just add the following to your document preamble:
+
+\begin{texsource}
+\ifdefined\HCode
+... code for TeX4ht
+\else
+\usepackage{foo}
+\fi
+\end{texsource}
+\end{issue}
+
+\begin{issue}{Fragile commands}
+Some commands may cause compilation errors when used in \texcommand{\section} or
+\texcommand{\caption} arguments. These errors usually show when the document preamble
+stops and auxilary files are loaded. They can be quite hard to debug.
+
+Consider the following example:
+
+\begin{texsource}
+\begin{figure}[h]
+\includegraphics{example-image}
+\caption{$\begin{array}{c c} hello & world\end{array}$}
+\end{figure}
+\end{texsource}
+
+It produces a fatal error:
+
+\begin{shellcommand}
+[ERROR]   htlatex: Compilation errors in the htlatex run
+[ERROR]   htlatex: Filename     Line    Message
+[ERROR]   htlatex: ./minimal.tex        7        Argument of \im:g has an extra }.
+[ERROR]   htlatex: ./minimal.tex        7        Paragraph ended before \im:g was complete.
+[ERROR]   htlatex: ?    ?        Incomplete \iffalse; all text was ignored after line 7.
+[ERROR]   htlatex: ?    ?        Emergency stop.
+[FATAL]   make4ht-lib: Fatal error. Command htlatex returned exit code 1
+\end{shellcommand}
+
+You can get more context for this error using the \verb|-a debug| option for \term{make4ht}:
+
+\begin{shellcommand}
+! Argument of \im:g has an extra }.
+<inserted text> 
+                \par 
+l.7 ...egin{array}{c c} hello & world\end{array}}
+\end{shellcommand}
+
+The error itself is pretty cryptic, but you can see that the cause is in 
+
+\begin{texsource}
+\caption{$\begin{array}{c c} hello & world\end{array}$}
+\end{texsource}
+
+The issue is that some commands needs to be protected when used in parameters of \texcommand{\section}
+or \texcommand{\caption} commands. There are two possible fixes. First is to use the \texcommand{\protect}
+command:
+
+\begin{texsource}
+\caption{$\protect\begin{array}{c c} hello & world\protect\end{array}$}
+\end{texsource}
+
+Other fix is to use the \term{writetoc} configuration:
+
+\begin{texsource}
+\Configure{writetoc}{%
+\def\begin{\detokenize{\begin}}
+\def\end{\detokenize{\end}}
+}
+\end{texsource}
+
+In this configuration, we redefine \texcommand{\begin} and \texcommand{\end} commands to print
+their verbatim contents when they are used. They will be then written to the auxilary file
+thanks to this configuration.
+Redefinitions that happen in \term{writetoc} are active only when stuff is written to the auxilary
+files, so you don't need to worry that it will break normal handling of environments.
+
+\end{issue}
+
+\section{DOM Processing Errors}
+\label{faq:dom_processing}
+
+\texfourht\ post-process generated HTML and XML files using LuaXML. 
+
+\begin{issue}{Incorrect handling of paragraphs}
+
+\end{issue}
+
+\section{Math Issues}
+\subsection{Problems With \term{\mathml}}
 
 \begin{issue}{Single delimiters}
   Use of single delimiters like \texcommand{$\langle$} may result in invalid
   \mathml\ code. \texfourht\ can try to fix that using the \option{mathml-}
   option.
 \end{issue}
+
 
 
