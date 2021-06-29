@@ -14,34 +14,30 @@ investigate available resources before committing to work on private features.
 
 \subsection{Requesting Private Configuration Files}
 
-The leading entry, in the first list of options of the \shellcmd{htlatex}-like
-commands, can equal \option{html} or \option{xhtml}. If this is not the case,
-the entry is assumed to be the name of a configuration file. The extension
-‘cfg’ is assumed for names of configuration files that are listed without their
-extension.
+Private configuration files can be requested by passing the \shellcmd{-c}
+option to \shellcmd{make4ht}:
 
-Example: The command \shellcmd{htlatex myfile "mycfg,2"} requests the
-compilation of a file named \file{myfile.tex}, in the presence of a
-configuration file named \file{mycfg.cfg}. The configuration file might have the
-following content.
-
-In \shellcmd{make4ht}, it is possible, in addition to the method described
-above, to use the \shellcmd{-c} option: \shellcmd{make4ht -c mycfg.cfg myfile "2"}.
+\begin{shellcommand}
+make4ht -c mycfg.cfg myfile "2"
+\end{shellcommand}
 
 
-A configuration file should take the following form for LaTeX files.
+A configuration file should take the following form for \LaTeX\ files:
 
 \begin{texsource}
 ...early definitions...
-\Preamble{options}
+\Preamble{xhtml,options}
 ...definitions...
 \begin{document}
 ...insertions into the header of the html file...
 \EndPreamble
 \end{texsource}
 
-It is up to the user to decide the distribution of options between the
-\texcommand{\Preamble} and the htlatex-like commands.
+The \texcommand{\Preamble} command should always use \option{xhtml} 
+as the first option. Otherwise, \texfourht\ switches to the HTML 4 mode and XML
+post-processing tools used by make4ht to fix some common issues will fail! For 
+more information about available options, see the \nameref{sec:texfouhtoptions} 
+section (\ref{sec:texfouhtoptions}).
 
 \begin{texsource}
 \Preamble{xhtml} 
@@ -60,10 +56,11 @@ It is up to the user to decide the distribution of options between the
   \item Instructions defined within a source file may be redefined in a
     configuration file. Such a feature enables to keep source files intact for
     compilation to different formats by different tools.
+
+    For instance, a definition of the form \texcommand{\renewcommand\mycommand{...}} within a
+    configuration file provided for the following \LaTeX\ source:
 \end{itemize}
 
-For instance, a definition of the form \texcommand{\renewcommand\mycommand{...}} within a
-configuration file provided for the following LaTeX source.
 
 \begin{texsource}
 \documentclass{...} 

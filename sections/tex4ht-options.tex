@@ -29,10 +29,11 @@ make4ht filename.tex "fn-in"
 
 For more information about calling scripts see the section \ref{sec:calling-commands}.
 
-It is also possible to pass options in the \texcommand{\Preamble} command in a \cfgfile.
+It is also possible to pass options in the \texcommand{\Preamble} command in a \cfgfile. Note that first option in the 
+\texcommand{\Preamble} must be \option{xhtml}, invalid HTML file will be produced otherwise!
 
 \begin{texsource}
-\Preamble{fn-in}
+\Preamble{xhtml,fn-in}
 ...
 \begin{document}
 \EndPreamble
