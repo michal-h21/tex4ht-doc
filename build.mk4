@@ -15,7 +15,7 @@ filter_settings "collapsetoc" {
   toc_query = "nav.TOC"
 }
 -- local process = domfilter{toc_sections, fix_code_blocks, join_colors}
-local process = domfilter{"collapsetoc", fix_code_blocks, join_colors}
+local process = domfilter{"collapsetoc", fix_code_blocks, "joincolors"}
 
 -- it removed the whole TOC. What is the issue?
 Make:match("html$", process)
