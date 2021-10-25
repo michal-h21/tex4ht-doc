@@ -1,3 +1,7 @@
+2017-10-25  Michal Hoftich  <michal.h21@gmail.com>
+
+	* tex4ht-doc.tex: added example for environment handling in MathJax.
+
 2017-10-03  Michal Hoftich  <michal.h21@gmail.com>
 
 	* tex4ht-doc.tex: added new entries to the outline
