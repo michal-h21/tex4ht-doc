@@ -1,17 +1,131 @@
 <!DOCTYPE html> 
-<html xml:lang='en-US' lang='en-US'> 
+<html lang='en-US' xml:lang='en-US'> 
 <head><title>6 TeX4ht Options</title> 
 <meta charset='utf-8' /> 
 <meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
 <meta content='width=device-width,initial-scale=1' name='viewport' /> 
-<link rel='stylesheet' href='tex4ht-doc.css' type='text/css' /> 
+<link href='tex4ht-doc.css' rel='stylesheet' type='text/css' /> 
 <meta content='tex4ht-doc.tex' name='src' /> 
-<link rel='stylesheet' href='style.css' type='text/css' /> 
+<link href='style.css' rel='stylesheet' type='text/css' /> 
 </head><body>
-<nav class='TOC'><span class='chapterToc'>1 <a href='Introduction.html#x2-10001'>Introduction</a></span><span class='chapterToc'>2 <a href='BasicTutorial.html#x3-30002'>Basic Tutorial</a></span><span class='chapterToc'>3 <a href='Howto.html#x4-100003'>How to</a></span><span class='chapterToc'>4 <a href='CallingCommands.html#x5-330004'>Calling Commands</a></span><span class='chapterToc'>5 <a href='OutputFormats.html#x6-380005'>Output Formats</a></span><span class='chapterToc'>6 <a href='#x7-390006'><code>TeX4ht</code> Options</a></span><span class='sectionToc'>6.1 <a href='#x7-400006.1'>List of options</a></span><span class='chapterToc'>7 <a href='Configurations.html#x8-410007'>Configurations</a></span><span class='chapterToc'>8 <a href='Make4htBuildFiles.html#x9-850008'>Make4ht Build Files</a></span><span class='chapterToc'>9 <a href='FAQandTroubleshooting.html#x10-890009'>FAQ and Troubleshooting</a></span><span class='chapterToc'>10 <a href='ForDevelopers.html#x11-9500010'>For Developers</a></span><span class='chapterToc'>11 <a href='Glossary.html#x12-10600011'>Glossary</a></span><span class='chapterToc'>12 <a href='Bibliography.html#x13-10700012'>Bibliography</a></span><span class='chapterToc'>13 <a href='Index.html#x14-10800013'>Index</a></span><span class='chapterToc'>14 <a href='Changes.html#x15-10900014'>Changes</a></span></nav> 
+<nav class='TOC'>   
+<span class='chapterToc'>1 <a href='Introduction.html#introduction'>Introduction</a></span>
+ 
+<span class='chapterToc'>2 <a href='BasicTutorial.html#basic-tutorial'>Basic Tutorial</a></span>
+ 
+ 
+ 
+ 
+ 
+ 
+<span class='chapterToc'>3 <a href='Howto.html#how-to'>How to</a></span>
+ 
+  
+  
+  
+ 
+  
+  
+  
+  
+ 
+  
+  
+  
+  
+ 
+ 
+ 
+  
+  
+  
+  
+  
+<span class='chapterToc'>4 <a href='CallingCommands.html#calling-commands'>Calling Commands</a></span>
+ 
+ 
+ 
+  
+<span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
+<span class='chapterToc'>6 <a href='#texttt-texht'><code>TeX4ht</code> Options</a></span>
+ <span class='sectionToc'>6.1 <a href='#list-of-options'>List of options</a></span>
+<span class='chapterToc'>7 <a href='Configurations.html#configurations1'>Configurations</a></span>
+ 
+  
+  
+                                                                  
+
+                                                                  
+ 
+ 
+  
+  
+  
+  
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+  
+ 
+  
+  
+ 
+ 
+  
+  
+  
+ 
+ 
+ 
+  
+  
+  
+ 
+ 
+ 
+  
+<span class='chapterToc'>8 <a href='Make4htBuildFiles.html#makeht-build-files'>Make4ht Build Files</a></span>
+ 
+ 
+ 
+<span class='chapterToc'>9 <a href='FAQandTroubleshooting.html#faq-and-troubleshooting'>FAQ and Troubleshooting</a></span>
+ 
+ 
+ 
+ 
+  
+                                                                  
+
+                                                                  
+<span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
+ 
+ 
+ 
+  
+  
+ 
+  
+ 
+ 
+  
+<span class='chapterToc'>11 <a href='Glossary.html#glossary'>Glossary</a></span>
+<span class='chapterToc'>12 <a href='Bibliography.html#bibliography'>Bibliography</a></span>
+<span class='chapterToc'>13 <a href='Index.html#index'>Index</a></span>
+<span class='chapterToc'>14 <a href='Changes.html#changes'>Changes</a></span>
+ 
+   
+</nav> 
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='OutputFormats.html'>prev</a>] [<a href='tex4ht-doc.html#texfourhtOptions.html'>up</a>] [<a href='Configurations.html'>next</a>] </nav> 
-<h2 class='chapterHead'><span class='titlemark'>Chapter 6</span><br /><a id='x7-390006'></a><code>TeX4ht</code> Options</h2>
+<h2 class='chapterHead' id='texttt-texht'><span class='titlemark'>Chapter 6</span><br /><a id='x7-390006'></a><code>TeX4ht</code> Options</h2>
 Following is an incomplete list of options that can be passed to the
 <code>tex4ht.sty</code> package. These options can be used to modify the compilation process,
 for example to select a <span class='emph'>SVG</span> format for generated images, to request math
@@ -28,485 +142,910 @@ the options to the calling script, as an command line argument next to the
 filename:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb26'><a id='x7-39003r1'></a><span class='rm-lmtt-10'>make4ht filename.tex </span><span class='textcolor-b73838'><span class='rm-lmtt-10'>"fn-in"</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb26'><a id='x7-39003r1'></a><span class='ec-lmtt-10'>make4ht filename.tex </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"fn-in"</span></span></pre>
 </figure>
-<!-- l. 30 --><p class='indent'>   For more information about calling scripts see the section <a href='CallingCommands.html#x5-370004.3.1'>4.3.1<!-- tex4ht:ref: sec:calling-commands  --></a>.
+<!-- l. 30 --><p class='indent'>   For more information about calling scripts see the section <a href='CallingCommands.html#makeht-extensions'>4.3.1<!-- tex4ht:ref: sec:calling-commands  --></a>.
 </p><!-- l. 32 --><p class='indent'>   It is also possible to pass options in the <code>\Preamble</code> command in a <span class='emph'>custom
 configuration file</span>. Note that first option in the <code>\Preamble</code> must be <span class='emph'>xhtml</span>, invalid
 HTML file will be produced otherwise!
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb27'><a id='x7-39009r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>xhtml,fn-in</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
-<a id='x7-39011r2'></a><span class='rm-lmtt-10'>...</span> 
-<a id='x7-39013r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
-<a id='x7-39015r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\EndPreamble</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb27'><a id='x7-39009r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml,fn-in</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x7-39011r2'></a><span class='ec-lmtt-10'>...</span> 
+<a id='x7-39013r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x7-39015r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span></pre>
 </figure>
                                                                   
 
                                                                   
-<h3 class='sectionHead'><span class='titlemark'>6.1   </span> <a id='x7-400006.1'></a>List of options</h3>
-<dl class='description'><dt class='description'>
-<span class='rm-lmbx-10'>-css</span> 
-</dt><dd class='description'>to ignore <code>CSS</code> code, use command line option <span class='obeylines-h'><code>-css</code></span>.
-</dd>     
+<h3 class='sectionHead' id='list-of-options'><span class='titlemark'>6.1   </span> <a id='x7-400006.1'></a>List of options</h3>
+<dl class='description'><dt class='description'>     
+<!-- l. 58 --><p class='noindent'>
+<span class='ec-lmbx-10'>-css</span> 
+</p>
+</dt><dd class='description'> 
+<!-- l. 58 --><p class='noindent'>to ignore <code>CSS</code> code, use command line option <span class='obeylines-h'><code>-css</code></span>.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>-xtpipes</span> 
-</dt><dd class='description'>to avoid <span class='obeylines-h'><code>xtpipes</code></span> post-processing the output. This might be useful
-for docbook <code>XML</code> output.
-</dd>     
+<!-- l. 60 --><p class='noindent'>
+<span class='ec-lmbx-10'>-xtpipes</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 60 --><p class='noindent'>to avoid <span class='obeylines-h'><code>xtpipes</code></span> post-processing the output. This might be useful for
+docbook <code>XML</code> output.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>0</span> 
-</dt><dd class='description'>pagination shall be obtained through the option <span class='obeylines-h'><code>0</code></span> or <span class='obeylines-h'><code>1</code></span>, at locations marked
+<!-- l. 67 --><p class='noindent'>
+<span class='ec-lmbx-10'>0</span> 
+</p>
+</dt><dd class='description'>   
+<!-- l. 67 --><p class='noindent'>pagination shall be obtained through the option <span class='obeylines-h'><code>0</code></span> or <span class='obeylines-h'><code>1</code></span>, at locations marked
 with <span class='obeylines-h'><code>\PageBreak</code></span>.
-</dd>     
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>1, 2, 3, 4, 5, 6, 7</span> 
-</dt><dd class='description'>for  automatic  sectioning  pagination  (to  break  at  various
-section levels), use the appropriate command line option <span class='obeylines-h'><code>1, 2, 3, 4,</code>
-</span><span class='obeylines-h'><code>5, 6, 7</code></span>.
-</dd>     
+<!-- l. 70 --><p class='noindent'>
+<span class='ec-lmbx-10'>1, 2, 3, 4, 5, 6, 7</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 70 --><p class='noindent'>for automatic sectioning pagination (to break at various section levels),
+use the appropriate command line option <span class='obeylines-h'><code>1, 2, 3, 4,</code></span> <span class='obeylines-h'><code>5, 6, 7</code></span>.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>DOCTYPE</span> 
-</dt><dd class='description'>to request a <span class='obeylines-h'><code>DOCTYPE</code></span> declaration, use the command line option
-<span class='obeylines-h'><code>DOCTYPE</code></span>.
-</dd>     
+<!-- l. 74 --><p class='noindent'>
+<span class='ec-lmbx-10'>DOCTYPE</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 74 --><p class='noindent'>to request a <span class='obeylines-h'><code>DOCTYPE</code></span> declaration, use the command line option <span class='obeylines-h'><code>DOCTYPE</code></span>.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>Gin-dim</span> 
-</dt><dd class='description'>for key dimensions of the graphic, try this option.
-</dd>     
+<!-- l. 77 --><p class='noindent'>
+<span class='ec-lmbx-10'>Gin-dim</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 77 --><p class='noindent'>for key dimensions of the graphic, try this option.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>Gin-dim+</span> 
-</dt><dd class='description'>for key dimensions when the bounding box is not available.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>NoFonts</span> 
-</dt><dd class='description'>to ignore <code>CSS</code> font decoration.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>PMath</span> 
-</dt><dd class='description'>Option  to  choose  positioned  math.  Example:  <span class='obeylines-h'><code>\def\({\PMath$}</code></span>;
-<span class='obeylines-h'><code>\def\){$\EndPMath}</code></span>; <span class='obeylines-h'><code>\def\[{\PMath$$}</code></span>; <span class='obeylines-h'><code>\def\]{$$\EndPMath}</code></span>.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>RL2LR</span> 
-</dt><dd class='description'>to reverse the direction of RL sentences.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>TocLink</span> 
-</dt><dd class='description'>option to request links from the tables of contents.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>^13</span> 
-</dt><dd class='description'>option for active superscript character.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>_13</span> 
-</dt><dd class='description'>option for active subscript character.
+<!-- l. 79 --><p class='noindent'>
+<span class='ec-lmbx-10'>Gin-dim+</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 79 --><p class='noindent'>for key dimensions when the bounding box is not available.
                                                                   
 
                                                                   
-</dd>     
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>accent-</span> 
-</dt><dd class='description'>This option is available only together with <span class='emph'>new-accents</span>. It produces
+<!-- l. 82 --><p class='noindent'>
+<span class='ec-lmbx-10'>NoFonts</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 82 --><p class='noindent'>to ignore <code>CSS</code> font decoration.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 84 --><p class='noindent'>
+<span class='ec-lmbx-10'>PMath</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 84 --><p class='noindent'>Option   to   choose   positioned   math.   Example:   <span class='obeylines-h'><code>\def\({\PMath$}</code></span>;
+<span class='obeylines-h'><code>\def\){$\EndPMath}</code></span>; <span class='obeylines-h'><code>\def\[{\PMath$$}</code></span>; <span class='obeylines-h'><code>\def\]{$$\EndPMath}</code></span>.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 88 --><p class='noindent'>
+<span class='ec-lmbx-10'>RL2LR</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 88 --><p class='noindent'>to reverse the direction of RL sentences.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 92 --><p class='noindent'>
+<span class='ec-lmbx-10'>TocLink</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 92 --><p class='noindent'>option to request links from the tables of contents.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 94 --><p class='noindent'>
+<span class='ec-lmbx-10'>^13</span> 
+</p>
+</dt><dd class='description'> 
+<!-- l. 94 --><p class='noindent'>option for active superscript character.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 96 --><p class='noindent'>
+<span class='ec-lmbx-10'>_13</span> 
+</p>
+</dt><dd class='description'> 
+<!-- l. 96 --><p class='noindent'>option for active subscript character.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 98 --><p class='noindent'>
+<span class='ec-lmbx-10'>accent-</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 98 --><p class='noindent'>This  option  is  available  only  together  with  <span class='emph'>new-accents</span>.  It  produces
 pictures for some math accents.
-</dd>     
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>bib-</span> 
-</dt><dd class='description'>for degraded bibliography friendlier for conversion to <span class='obeylines-h'><code>.doc</code></span>.
-</dd>     
+<!-- l. 103 --><p class='noindent'>
+<span class='ec-lmbx-10'>bib-</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 103 --><p class='noindent'>for degraded bibliography friendlier for conversion to <span class='obeylines-h'><code>.doc</code></span>.
+                                                                  
+
+                                                                  
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>bibtex2</span> 
-</dt><dd class='description'>Option <span class='obeylines-h'><code>bibtex2</code></span> requires compilation of <span class='obeylines-h'><code>\jobname j.aux</code></span> with bibtex.
-</dd>     
+<!-- l. 106 --><p class='noindent'>
+<span class='ec-lmbx-10'>bibtex2</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 106 --><p class='noindent'>Option <span class='obeylines-h'><code>bibtex2</code></span> requires compilation of <span class='obeylines-h'><code>\jobname j.aux</code></span> with bibtex.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>charset</span> 
-</dt><dd class='description'>for   alternate   character   set,   use   the   command   line   option
-<span class='obeylines-h'><code>charset="..."</code></span> (e.g., <span class='obeylines-h'><code>charset="utf8"</code></span>).
-</dd>     
+<!-- l. 111 --><p class='noindent'>
+<span class='ec-lmbx-10'>charset</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 111 --><p class='noindent'>for alternate character set, use the command line option <span class='obeylines-h'><code>charset="..."</code></span>
+(e.g., <span class='obeylines-h'><code>charset="utf8"</code></span>).
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>css-in</span> 
-</dt><dd class='description'>the inline <code>CSS</code> code will be extracted from the input of the previous
+<!-- l. 116 --><p class='noindent'>
+<span class='ec-lmbx-10'>css-in</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 116 --><p class='noindent'>the  inline  <code>CSS</code> code  will  be  extracted  from  the  input  of  the  previous
 compilation, so an extra compilaion might be needed for this option to
 make it effective.
-</dd>     
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>css2</span> 
-</dt><dd class='description'>for <code>CSS</code>2 code.
-</dd>     
+<!-- l. 120 --><p class='noindent'>
+<span class='ec-lmbx-10'>css2</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 120 --><p class='noindent'>for <code>CSS</code>2 code.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>early^</span> 
-</dt><dd class='description'>for default catcode of superscript in the <span class='obeylines-h'><code>\Preamble</code></span>.
-</dd>     
+<!-- l. 128 --><p class='noindent'>
+<span class='ec-lmbx-10'>early^</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 128 --><p class='noindent'>for default catcode of superscript in the <span class='obeylines-h'><code>\Preamble</code></span>.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>early_</span> 
-</dt><dd class='description'>for default catcode of subscript in the <span class='obeylines-h'><code>\Preamble</code></span>.
-</dd>     
+<!-- l. 131 --><p class='noindent'>
+<span class='ec-lmbx-10'>early_</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 131 --><p class='noindent'>for default catcode of subscript in the <span class='obeylines-h'><code>\Preamble</code></span>.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>endnotes</span> 
-</dt><dd class='description'>for end notes instead of footnotes, use this option.
-</dd>     
+<!-- l. 136 --><p class='noindent'>
+<span class='ec-lmbx-10'>endnotes</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 136 --><p class='noindent'>for end notes instead of footnotes, use this option.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>enumerate+</span> 
-</dt><dd class='description'>for enumerated list elements that keep the list couter value. This
-will use the description list like <span class='obeylines-h'><code>&lt;dt&gt;...&lt;/dt&gt;</code></span> for the list counter.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>enumerate-</span> 
-</dt><dd class='description'>for enumerated list element’s <span class='obeylines-h'><code>&lt;li&gt;</code></span>’s with value attributes, use
-this command line option. This will be an ordered list with the value of
-list counter provided as an attribute namely, <span class='obeylines-h'><code>value</code></span> of the <span class='obeylines-h'><code>&lt;li&gt;</code></span> element.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>fancylogo</span> 
-</dt><dd class='description'>try to visually emulate <span class='obeylines-h'><code>\TeX</code></span> and <span class='obeylines-h'><code>\LaTeX</code></span> logos.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>fn-in</span> 
-</dt><dd class='description'>for inline footnotes use this option.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>fn-out</span> 
-</dt><dd class='description'>for offline footnotes.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>fonts</span> 
-</dt><dd class='description'>for tracing L<span class='rm-lmr-7'>A</span>TeX font commands, use this command line option.
+<!-- l. 140 --><p class='noindent'>
+<span class='ec-lmbx-10'>enumerate+</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 140 --><p class='noindent'>for enumerated list elements that keep the list couter value. This will use
+the description list like <span class='obeylines-h'><code>&lt;dt&gt;...&lt;/dt&gt;</code></span> for the list counter.
                                                                   
 
                                                                   
-</dd>     
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>fonts+</span> 
-</dt><dd class='description'>for marking of the base font, use this option.
-</dd>     
+<!-- l. 144 --><p class='noindent'>
+<span class='ec-lmbx-10'>enumerate-</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 144 --><p class='noindent'>for  enumerated  list  element’s  <span class='obeylines-h'><code>&lt;li&gt;</code></span>’s  with  value  attributes,  use  this
+command line option. This will be an ordered list with the value of list
+counter provided as an attribute namely, <span class='obeylines-h'><code>value</code></span> of the <span class='obeylines-h'><code>&lt;li&gt;</code></span> element.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>font</span> 
-</dt><dd class='description'>for  adjusted  font  size,  use  the  command  line  option  <span class='obeylines-h'><code>font=...</code></span> (e.g.,
+<!-- l. 150 --><p class='noindent'>
+<span class='ec-lmbx-10'>fancylogo</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 150 --><p class='noindent'>try to visually emulate <span class='obeylines-h'><code>\TeX</code></span> and <span class='obeylines-h'><code>\LaTeX</code></span> logos.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 152 --><p class='noindent'>
+<span class='ec-lmbx-10'>fn-in</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 152 --><p class='noindent'>for inline footnotes use this option.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 154 --><p class='noindent'>
+<span class='ec-lmbx-10'>fn-out</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 154 --><p class='noindent'>for offline footnotes.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 156 --><p class='noindent'>
+<span class='ec-lmbx-10'>fonts</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 156 --><p class='noindent'>for tracing L<span class='ec-lmr-7'>A</span>TeX font commands, use this command line option.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 159 --><p class='noindent'>
+<span class='ec-lmbx-10'>fonts+</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 159 --><p class='noindent'>for marking of the base font, use this option.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 161 --><p class='noindent'>
+<span class='ec-lmbx-10'>font</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 161 --><p class='noindent'>for  adjusted  font  size,  use  the  command  line  option  <span class='obeylines-h'><code>font=...</code></span> (e.g.,
 font=-2).
-</dd>     
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>frames-</span> 
-</dt><dd class='description'>for frames support. <span class='obeylines-h'><code>frames</code></span> is also valid option for frames support.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>frames-fn</span> 
-</dt><dd class='description'>for content, <code>TOC</code> and footnotes in three frames.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>frames</span> 
-</dt><dd class='description'>for <code>TOC</code> and content in two frames.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>gif</span> 
-</dt><dd class='description'>for bitmaps of pictures in <span class='obeylines-h'><code>.gif</code></span> format, use this option.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>graphics-</span> 
-</dt><dd class='description'>if the included graphics are of degraded quality, try the command
-line options <span class='obeylines-h'><code>graphics-num</code></span> or <span class='obeylines-h'><code>graphics-</code></span>. The <span class='obeylines-h'><code>num</code></span> should provide the
-density of pixels in the bitmaps (e.g., 110).
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>hidden-ref</span> 
-</dt><dd class='description'>option to hide clickable index and bibliography references.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>html+</span> 
-</dt><dd class='description'>for stricter <code>HTML</code> code.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>imgdir</span> 
-</dt><dd class='description'>for addressing images in a subdirectory, use the option <span class='obeylines-h'><code>\imgdir:.../</code></span>.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>image-maps</span> 
-</dt><dd class='description'>for <span class='obeylines-h'><code>image-maps</code></span> support.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>index</span> 
-</dt><dd class='description'>for  <span class='emph'>n</span>-column  index,  use  the  command  line  option,  <span class='obeylines-h'><code>index=n</code></span> (e.g.,
-index=2).
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>info-oo</span> 
-</dt><dd class='description'>for extra tracing information while generating open office output.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>info</span> 
-</dt><dd class='description'>for extra information in the <span class='obeylines-h'><code>\jobname.log</code></span> file.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>java</span> 
-</dt><dd class='description'>for <span class='obeylines-h'><code>java</code></span>support.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>javahelp</span> 
-</dt><dd class='description'>for <span class='obeylines-h'><code>JavaHelp</code></span> output format, use this command line option.
+<!-- l. 164 --><p class='noindent'>
+<span class='ec-lmbx-10'>frames-</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 164 --><p class='noindent'>for frames support. <span class='obeylines-h'><code>frames</code></span> is also valid option for frames support.
                                                                   
 
                                                                   
-</dd>     
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>javascript</span> 
-</dt><dd class='description'>for <span class='obeylines-h'><code>javascript</code></span> support.
-</dd>     
+<!-- l. 167 --><p class='noindent'>
+<span class='ec-lmbx-10'>frames-fn</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 167 --><p class='noindent'>for content, <code>TOC</code> and footnotes in three frames.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>jh-</span> 
-</dt><dd class='description'>for sources failing to produce <code>XML</code> versions of <code>HTML</code>, try this command line
+<!-- l. 170 --><p class='noindent'>
+<span class='ec-lmbx-10'>frames</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 170 --><p class='noindent'>for <code>TOC</code> and content in two frames.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 174 --><p class='noindent'>
+<span class='ec-lmbx-10'>gif</span> 
+</p>
+</dt><dd class='description'> 
+<!-- l. 174 --><p class='noindent'>for bitmaps of pictures in <span class='obeylines-h'><code>.gif</code></span> format, use this option.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 177 --><p class='noindent'>
+<span class='ec-lmbx-10'>graphics-</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 177 --><p class='noindent'>if the included graphics are of degraded quality, try the command line
+options <span class='obeylines-h'><code>graphics-num</code></span> or <span class='obeylines-h'><code>graphics-</code></span>. The <span class='obeylines-h'><code>num</code></span> should provide the density
+of pixels in the bitmaps (e.g., 110).
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 184 --><p class='noindent'>
+<span class='ec-lmbx-10'>hidden-ref</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 184 --><p class='noindent'>option to hide clickable index and bibliography references.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 196 --><p class='noindent'>
+<span class='ec-lmbx-10'>html+</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 196 --><p class='noindent'>for stricter <code>HTML</code> code.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 200 --><p class='noindent'>
+<span class='ec-lmbx-10'>imgdir</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 200 --><p class='noindent'>for addressing images in a subdirectory, use the option <span class='obeylines-h'><code>\imgdir:.../</code></span>.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 203 --><p class='noindent'>
+<span class='ec-lmbx-10'>image-maps</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 203 --><p class='noindent'>for <span class='obeylines-h'><code>image-maps</code></span> support.
+                                                                  
+
+                                                                  
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 205 --><p class='noindent'>
+<span class='ec-lmbx-10'>index</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 205 --><p class='noindent'>for <span class='emph'>n</span>-column index, use the command line option, <span class='obeylines-h'><code>index=n</code></span> (e.g., index=2).
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 208 --><p class='noindent'>
+<span class='ec-lmbx-10'>info-oo</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 208 --><p class='noindent'>for extra tracing information while generating open office output.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 211 --><p class='noindent'>
+<span class='ec-lmbx-10'>info</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 211 --><p class='noindent'>for extra information in the <span class='obeylines-h'><code>\jobname.log</code></span> file.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 213 --><p class='noindent'>
+<span class='ec-lmbx-10'>java</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 213 --><p class='noindent'>for <span class='obeylines-h'><code>java</code></span>support.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 215 --><p class='noindent'>
+<span class='ec-lmbx-10'>javahelp</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 215 --><p class='noindent'>for <span class='obeylines-h'><code>JavaHelp</code></span> output format, use this command line option.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 218 --><p class='noindent'>
+<span class='ec-lmbx-10'>javascript</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 218 --><p class='noindent'>for <span class='obeylines-h'><code>javascript</code></span> support.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 220 --><p class='noindent'>
+<span class='ec-lmbx-10'>jh-</span> 
+</p>
+</dt><dd class='description'> 
+<!-- l. 220 --><p class='noindent'>for sources failing to produce <code>XML</code> versions of <code>HTML</code>, try this command line
 option.
-</dd>     
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>jpg</span> 
-</dt><dd class='description'>for bitmaps of pictures in <span class='obeylines-h'><code>.jpg</code></span> format, use this option.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>li-</span> 
-</dt><dd class='description'>for enumerated list elements li’s with value attributes.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>math-</span> 
-</dt><dd class='description'>option to use when sources fail to produce clean math code.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>mathjax</span> 
-</dt><dd class='description'>use <span class='emph'>MathJax</span> for the math rendering.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>mathltx-</span> 
-</dt><dd class='description'>option to use when sources fail to produce clean <span class='obeylines-h'><code>mathltx</code></span> code.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>mathml-</span> 
-</dt><dd class='description'>option to use when sources fail to produce clean <code>MathML</code>code.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>mathplayer</span> 
-</dt><dd class='description'>for <code>MathML</code> on Internet Explorer + MathPlayer.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>minitoc&lt;</span> 
-</dt><dd class='description'>for mini tocs immediately after the header use the command line
-option, <span class='obeylines-h'><code>minitoc&lt;</code></span>.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>mouseover</span> 
-</dt><dd class='description'>for pop ups on mouse over.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>new-accents</span> 
-</dt><dd class='description'>alternative configurations for accented characters.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>next</span> 
-</dt><dd class='description'>for linear cross-links of pages, use this option.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>nikud</span> 
-</dt><dd class='description'>for Hebrew vowels, use the command line option, <span class='obeylines-h'><code>nikud</code></span>.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>no-DOCTYPE</span> 
-</dt><dd class='description'>to remove <code>DOCTYPE</code> declaration from the output.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>no-VERSION</span> 
-</dt><dd class='description'>to  remove  <span class='obeylines-h'><code>&lt;?xml version="..."?&gt;</code></span> processing  instruction
-from the output.
+<!-- l. 225 --><p class='noindent'>
+<span class='ec-lmbx-10'>jpg</span> 
+</p>
+</dt><dd class='description'> 
+<!-- l. 225 --><p class='noindent'>for bitmaps of pictures in <span class='obeylines-h'><code>.jpg</code></span> format, use this option.
                                                                   
 
                                                                   
-</dd>     
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>NoFonts</span> 
-</dt><dd class='description'>disable ht-fonts processing in the document.
-</dd>     
+<!-- l. 228 --><p class='noindent'>
+<span class='ec-lmbx-10'>li-</span> 
+</p>
+</dt><dd class='description'>  
+<!-- l. 228 --><p class='noindent'>for enumerated list elements li’s with value attributes.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>no-halign</span> 
-</dt><dd class='description'>suppress <code>\halign</code> redefinition. It doesn’t work with the <code>tabular</code>
+<!-- l. 230 --><p class='noindent'>
+<span class='ec-lmbx-10'>math-</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 230 --><p class='noindent'>option to use when sources fail to produce clean math code.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 233 --><p class='noindent'>
+<span class='ec-lmbx-10'>mathjax</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 233 --><p class='noindent'>use <span class='emph'>MathJax</span> for the math rendering.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 236 --><p class='noindent'>
+<span class='ec-lmbx-10'>mathltx-</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 236 --><p class='noindent'>option to use when sources fail to produce clean <span class='obeylines-h'><code>mathltx</code></span> code.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 239 --><p class='noindent'>
+<span class='ec-lmbx-10'>mathml-</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 239 --><p class='noindent'>option to use when sources fail to produce clean <code>MathML</code>code.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 242 --><p class='noindent'>
+<span class='ec-lmbx-10'>mathplayer</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 242 --><p class='noindent'>for <code>MathML</code> on Internet Explorer + MathPlayer.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 244 --><p class='noindent'>
+<span class='ec-lmbx-10'>minitoc&lt;</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 244 --><p class='noindent'>for mini tocs immediately after the header use the command line option,
+<span class='obeylines-h'><code>minitoc&lt;</code></span>.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 247 --><p class='noindent'>
+<span class='ec-lmbx-10'>mouseover</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 247 --><p class='noindent'>for pop ups on mouse over.
+                                                                  
+
+                                                                  
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 249 --><p class='noindent'>
+<span class='ec-lmbx-10'>new-accents</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 249 --><p class='noindent'>alternative configurations for accented characters.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 251 --><p class='noindent'>
+<span class='ec-lmbx-10'>next</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 251 --><p class='noindent'>for linear cross-links of pages, use this option.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 253 --><p class='noindent'>
+<span class='ec-lmbx-10'>nikud</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 253 --><p class='noindent'>for Hebrew vowels, use the command line option, <span class='obeylines-h'><code>nikud</code></span>.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 256 --><p class='noindent'>
+<span class='ec-lmbx-10'>no-DOCTYPE</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 256 --><p class='noindent'>to remove <code>DOCTYPE</code> declaration from the output.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 259 --><p class='noindent'>
+<span class='ec-lmbx-10'>no-VERSION</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 259 --><p class='noindent'>to  remove  <span class='obeylines-h'><code>&lt;?xml version="..."?&gt;</code></span> processing  instruction  from  the
+output.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 262 --><p class='noindent'>
+<span class='ec-lmbx-10'>NoFonts</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 262 --><p class='noindent'>disable ht-fonts processing in the document.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 268 --><p class='noindent'>
+<span class='ec-lmbx-10'>no-halign</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 268 --><p class='noindent'>suppress  <code>\halign</code>  redefinition.  It  doesn’t  work  with  the  <code>tabular</code>
 environment.
-</dd>     
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>no^</span> 
-</dt><dd class='description'>for non-active <span class='obeylines-h'><code>^</code></span> (superscript), use the option <span class='obeylines-h'><code>no^</code></span>.
-</dd>     
+<!-- l. 272 --><p class='noindent'>
+<span class='ec-lmbx-10'>no^</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 272 --><p class='noindent'>for non-active <span class='obeylines-h'><code>^</code></span> (superscript), use the option <span class='obeylines-h'><code>no^</code></span>.
+                                                                  
+
+                                                                  
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>no_</span> 
-</dt><dd class='description'>for non-active <span class='obeylines-h'><code>_</code></span> (subscript command), use the command line option, <span class='obeylines-h'><code>no_</code></span>.
-</dd>     
+<!-- l. 275 --><p class='noindent'>
+<span class='ec-lmbx-10'>no_</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 275 --><p class='noindent'>for non-active <span class='obeylines-h'><code>_</code></span> (subscript command), use the command line option, <span class='obeylines-h'><code>no_</code></span>.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>no_^</span> 
-</dt><dd class='description'>for both non-active superscript and subscript, use the option <span class='obeylines-h'><code>no_^</code></span>.
-</dd>     
+<!-- l. 278 --><p class='noindent'>
+<span class='ec-lmbx-10'>no_^</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 278 --><p class='noindent'>for both non-active superscript and subscript, use the option <span class='obeylines-h'><code>no_^</code></span>.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>nolayers</span> 
-</dt><dd class='description'>to remove overlays of slides, use this option.
-</dd>     
+<!-- l. 281 --><p class='noindent'>
+<span class='ec-lmbx-10'>nolayers</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 281 --><p class='noindent'>to remove overlays of slides, use this option.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>nominitoc</span> 
-</dt><dd class='description'>this will eliminate mini tables of contents from the output.
-</dd>     
+<!-- l. 283 --><p class='noindent'>
+<span class='ec-lmbx-10'>nominitoc</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 283 --><p class='noindent'>this will eliminate mini tables of contents from the output.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>notoc*</span> 
-</dt><dd class='description'>for  tocs  without  <span class='obeylines-h'><code>*</code></span> entries,  use  this  option.  The  <span class='obeylines-h'><code>notoc*</code></span> option  is
-applicable only to pages that are automatically decomposed into separate
-web pages along section divides. It shall be used when <span class='obeylines-h'><code>\addcontentsline</code></span>
+<!-- l. 286 --><p class='noindent'>
+<span class='ec-lmbx-10'>notoc*</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 286 --><p class='noindent'>for tocs without <span class='obeylines-h'><code>*</code></span> entries, use this option. The <span class='obeylines-h'><code>notoc*</code></span> option is applicable
+only  to  pages  that  are  automatically  decomposed  into  separate  web
+pages  along  section  divides.  It  shall  be  used  when  <span class='obeylines-h'><code>\addcontentsline</code></span>
 instructions are present in the sources.
-</dd>     
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>obj-toc</span> 
-</dt><dd class='description'>for frames-like object based table of contents, use the command line
-option <span class='obeylines-h'><code>obj-toc</code></span>.
-</dd>     
+<!-- l. 292 --><p class='noindent'>
+<span class='ec-lmbx-10'>obj-toc</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 292 --><p class='noindent'>for frames-like object based table of contents, use the command line option
+<span class='obeylines-h'><code>obj-toc</code></span>.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>p-width</span> 
-</dt><dd class='description'>for width specifications of tabular <span class='obeylines-h'><code>p</code></span> entries, use this option.
-</dd>     
+<!-- l. 297 --><p class='noindent'>
+<span class='ec-lmbx-10'>p-width</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 297 --><p class='noindent'>for width specifications of tabular <span class='obeylines-h'><code>p</code></span> entries, use this option.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>p-indent</span> 
-</dt><dd class='description'>for indented paragraphs, without blank spaces.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>pic-RL</span> 
-</dt><dd class='description'>for pictorial RL.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>pic-align</span> 
-</dt><dd class='description'>for pictorial align environment.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>pic-array</span> 
-</dt><dd class='description'>for pictorial array.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>pic-cases</span> 
-</dt><dd class='description'>for pictorial cases environment.
+<!-- l. 300 --><p class='noindent'>
+<span class='ec-lmbx-10'>p-indent</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 300 --><p class='noindent'>for indented paragraphs, without blank spaces.
                                                                   
 
                                                                   
-</dd>     
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>pic-eqalign</span> 
-</dt><dd class='description'>for pictorial equalign environment.
-</dd>     
+<!-- l. 302 --><p class='noindent'>
+<span class='ec-lmbx-10'>pic-RL</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 302 --><p class='noindent'>for pictorial RL.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>pic-eqnarray</span> 
-</dt><dd class='description'>for pictorial eqnarray.
-</dd>     
+<!-- l. 304 --><p class='noindent'>
+<span class='ec-lmbx-10'>pic-align</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 304 --><p class='noindent'>for pictorial align environment.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>pic-equation</span> 
-</dt><dd class='description'>for pictorial equations.
-</dd>     
+<!-- l. 306 --><p class='noindent'>
+<span class='ec-lmbx-10'>pic-array</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 306 --><p class='noindent'>for pictorial array.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>pic-fbox</span> 
-</dt><dd class='description'>for pictorial or bitmapped fbox’es.
-</dd>     
+<!-- l. 308 --><p class='noindent'>
+<span class='ec-lmbx-10'>pic-cases</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 308 --><p class='noindent'>for pictorial cases environment.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>pic-framebox</span> 
-</dt><dd class='description'>for bitmap fameboxes.
-</dd>     
+<!-- l. 310 --><p class='noindent'>
+<span class='ec-lmbx-10'>pic-eqalign</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 310 --><p class='noindent'>for pictorial equalign environment.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>pic-longtable</span> 
-</dt><dd class='description'>for bitmapped longtable.
-</dd>     
+<!-- l. 312 --><p class='noindent'>
+<span class='ec-lmbx-10'>pic-eqnarray</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 312 --><p class='noindent'>for pictorial eqnarray.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>pic-m+</span> 
-</dt><dd class='description'>for pictorial <span class='obeylines-h'><code>$...$</code></span> and <span class='obeylines-h'><code>$$...$$</code></span> environments with L<span class='rm-lmr-7'>A</span>TeX alt, use the
+<!-- l. 314 --><p class='noindent'>
+<span class='ec-lmbx-10'>pic-equation</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 314 --><p class='noindent'>for pictorial equations.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 316 --><p class='noindent'>
+<span class='ec-lmbx-10'>pic-fbox</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 316 --><p class='noindent'>for pictorial or bitmapped fbox’es.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 318 --><p class='noindent'>
+<span class='ec-lmbx-10'>pic-framebox</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 318 --><p class='noindent'>for bitmap fameboxes.
+                                                                  
+
+                                                                  
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 320 --><p class='noindent'>
+<span class='ec-lmbx-10'>pic-longtable</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 320 --><p class='noindent'>for bitmapped longtable.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 322 --><p class='noindent'>
+<span class='ec-lmbx-10'>pic-m+</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 322 --><p class='noindent'>for pictorial <span class='obeylines-h'><code>$...$</code></span> and <span class='obeylines-h'><code>$$...$$</code></span> environments with L<span class='ec-lmr-7'>A</span>TeX alt, use the
 command line option <span class='obeylines-h'><code>pic-m+</code></span> (not safe).
-</dd>     
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>pic-m</span> 
-</dt><dd class='description'>for pictorial <span class='obeylines-h'><code>$...$</code></span> environments, use the command line option <span class='obeylines-h'><code>pic-m</code></span>
-(not recommended).
-</dd>     
+<!-- l. 326 --><p class='noindent'>
+<span class='ec-lmbx-10'>pic-m</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 326 --><p class='noindent'>for pictorial <span class='obeylines-h'><code>$...$</code></span> environments, use the command line option <span class='obeylines-h'><code>pic-m</code></span> (not
+recommended).
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>pic-matrix</span> 
-</dt><dd class='description'>for pictorial matrix.
-</dd>     
+<!-- l. 329 --><p class='noindent'>
+<span class='ec-lmbx-10'>pic-matrix</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 329 --><p class='noindent'>for pictorial matrix.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>pic-tabular</span> 
-</dt><dd class='description'>use this option for pictorial tabular.
-</dd>     
+<!-- l. 337 --><p class='noindent'>
+<span class='ec-lmbx-10'>pic-tabular</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 337 --><p class='noindent'>use this option for pictorial tabular.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>plain-</span> 
-</dt><dd class='description'>for scaled down implimentation.
-</dd>     
+<!-- l. 339 --><p class='noindent'>
+<span class='ec-lmbx-10'>plain-</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 339 --><p class='noindent'>for scaled down implimentation.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>prog-ref</span> 
-</dt><dd class='description'>for pointers to code files from root fragments, use the command line
-option <span class='obeylines-h'><code>prof-ref</code></span>. This is for debugging.
-</dd>     
+<!-- l. 347 --><p class='noindent'>
+<span class='ec-lmbx-10'>prog-ref</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 347 --><p class='noindent'>for pointers to code files from root fragments, use the command line option
+<span class='obeylines-h'><code>prof-ref</code></span>. This is for debugging.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>refcaption</span> 
-</dt><dd class='description'>for links into captions, instead of flat heads, use this option.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>rl2lr</span> 
-</dt><dd class='description'>to reverse the direction of Hebrew words, use this option.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>sec-filename</span> 
-</dt><dd class='description'>for file names derived from section titles, use the command line
-option <span class='obeylines-h'><code>sec-filename</code></span>.
-</dd>     
-<dt class='description'>
-<span class='rm-lmbx-10'>sections+</span> 
-</dt><dd class='description'>for back links to table of contents, use this option.
+<!-- l. 350 --><p class='noindent'>
+<span class='ec-lmbx-10'>refcaption</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 350 --><p class='noindent'>for links into captions, instead of flat heads, use this option.
                                                                   
 
                                                                   
-</dd>     
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>svg-</span> 
-</dt><dd class='description'>for external <code>SVG</code> files, try this option.
-</dd>     
+<!-- l. 353 --><p class='noindent'>
+<span class='ec-lmbx-10'>rl2lr</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 353 --><p class='noindent'>to reverse the direction of Hebrew words, use this option.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>svg-obj</span> 
-</dt><dd class='description'>same as above.
-</dd>     
+<!-- l. 356 --><p class='noindent'>
+<span class='ec-lmbx-10'>sec-filename</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 356 --><p class='noindent'>for file names derived from section titles, use the command line option
+<span class='obeylines-h'><code>sec-filename</code></span>.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>svg</span> 
-</dt><dd class='description'>for dvi pictures in <span class='obeylines-h'><code>svg</code></span> format.
-</dd>     
+<!-- l. 359 --><p class='noindent'>
+<span class='ec-lmbx-10'>sections+</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 359 --><p class='noindent'>for back links to table of contents, use this option.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>svg-inline</span> 
-</dt><dd class='description'>same as the <span class='emph'>svg</span>, but the <code>SVG</code> files are included in the document
-body.
-</dd>     
+<!-- l. 365 --><p class='noindent'>
+<span class='ec-lmbx-10'>svg-</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 365 --><p class='noindent'>for external <code>SVG</code> files, try this option.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>tab-eq</span> 
-</dt><dd class='description'>for tab-based layout of equation environment, use this option.
-</dd>     
+<!-- l. 367 --><p class='noindent'>
+<span class='ec-lmbx-10'>svg-obj</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 367 --><p class='noindent'>same as above.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>trace-onmo</span> 
-</dt><dd class='description'>for  mouseover  tracing  of  compilation,  use  the  command  line
-option, <span class='obeylines-h'><code>trace-onmo</code></span>.
-</dd>     
+<!-- l. 369 --><p class='noindent'>
+<span class='ec-lmbx-10'>svg</span> 
+</p>
+</dt><dd class='description'> 
+<!-- l. 369 --><p class='noindent'>for dvi pictures in <span class='obeylines-h'><code>svg</code></span> format.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>url-enc</span> 
-</dt><dd class='description'>for                                                                                   <code>URL</code>
-encoding within href, use this option. <span class='obeylines-h'><code>\Configure{url-encoder}</code></span> can be
-used to fine tune encoding.
-</dd>     
+<!-- l. 371 --><p class='noindent'>
+<span class='ec-lmbx-10'>svg-inline</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 371 --><p class='noindent'>same as the <span class='emph'>svg</span>, but the <code>SVG</code> files are included in the document body.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>url-il2-pl</span> 
-</dt><dd class='description'>for il2-pl <code>URL</code> encoding.
-</dd>     
+<!-- l. 373 --><p class='noindent'>
+<span class='ec-lmbx-10'>tab-eq</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 373 --><p class='noindent'>for tab-based layout of equation environment, use this option.
+                                                                  
+
+                                                                  
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>ver</span> 
-</dt><dd class='description'>for vertically stacked frames. Effective when <span class='obeylines-h'><code>frames</code></span> option is requested.
-</dd>     
+<!-- l. 378 --><p class='noindent'>
+<span class='ec-lmbx-10'>trace-onmo</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 378 --><p class='noindent'>for  mouseover  tracing  of  compilation,  use  the  command  line  option,
+<span class='obeylines-h'><code>trace-onmo</code></span>.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>xht</span> 
-</dt><dd class='description'>for file name extension, <span class='obeylines-h'><code>.xht</code></span>, use this command line option.
-</dd>     
+<!-- l. 388 --><p class='noindent'>
+<span class='ec-lmbx-10'>url-enc</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 388 --><p class='noindent'>for <code>URL</code> encoding within href, use this option. <span class='obeylines-h'><code>\Configure{url-encoder}</code></span>
+can be used to fine tune encoding.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>xhtml</span> 
-</dt><dd class='description'>for <code>XML</code> code, use the command line option, <span class='obeylines-h'><code>xml</code></span> or <span class='obeylines-h'><code>xhtml</code></span>.
-</dd>     
+<!-- l. 392 --><p class='noindent'>
+<span class='ec-lmbx-10'>url-il2-pl</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 392 --><p class='noindent'>for il2-pl <code>URL</code> encoding.
+</p>     
+</dd>
 <dt class='description'>
-<span class='rm-lmbx-10'>xml</span> 
-</dt><dd class='description'>See previous entry.
+<!-- l. 394 --><p class='noindent'>
+<span class='ec-lmbx-10'>ver</span> 
+</p>
+</dt><dd class='description'> 
+<!-- l. 394 --><p class='noindent'>for vertically stacked frames. Effective when <span class='obeylines-h'><code>frames</code></span> option is requested.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 400 --><p class='noindent'>
+<span class='ec-lmbx-10'>xht</span> 
+</p>
+</dt><dd class='description'> 
+<!-- l. 400 --><p class='noindent'>for file name extension, <span class='obeylines-h'><code>.xht</code></span>, use this command line option.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 403 --><p class='noindent'>
+<span class='ec-lmbx-10'>xhtml</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 403 --><p class='noindent'>for <code>XML</code> code, use the command line option, <span class='obeylines-h'><code>xml</code></span> or <span class='obeylines-h'><code>xhtml</code></span>.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 406 --><p class='noindent'>
+<span class='ec-lmbx-10'>xml</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 406 --><p class='noindent'>See previous entry.
+</p>     
 </dd></dl>
                                                                   
 

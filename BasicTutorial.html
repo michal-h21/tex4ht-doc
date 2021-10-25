@@ -1,19 +1,133 @@
 <!DOCTYPE html> 
-<html xml:lang='en-US' lang='en-US'> 
+<html lang='en-US' xml:lang='en-US'> 
 <head><title>2 Basic Tutorial</title> 
 <meta charset='utf-8' /> 
 <meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
 <meta content='width=device-width,initial-scale=1' name='viewport' /> 
-<link rel='stylesheet' href='tex4ht-doc.css' type='text/css' /> 
+<link href='tex4ht-doc.css' rel='stylesheet' type='text/css' /> 
 <meta content='tex4ht-doc.tex' name='src' /> 
-<link rel='stylesheet' href='style.css' type='text/css' /> 
+<link href='style.css' rel='stylesheet' type='text/css' /> 
 </head><body>
-<nav class='TOC'><span class='chapterToc'>1 <a href='Introduction.html#x2-10001'>Introduction</a></span><span class='chapterToc'>2 <a href='#x3-30002'>Basic Tutorial</a></span><span class='sectionToc'>2.1 <a href='#x3-40002.1'>What is <code>TeX4ht</code>?</a></span><span class='sectionToc'>2.2 <a href='#x3-50002.2'>System Description</a></span><span class='sectionToc'>2.3 <a href='#x3-60002.3'>Basic usage</a></span><span class='sectionToc'>2.4 <a href='#x3-70002.4'>Simple example</a></span><span class='sectionToc'>2.5 <a href='#x3-80002.5'>Configurations</a></span><span class='sectionToc'>2.6 <a href='#x3-90002.6'>Paragraphs</a></span><span class='chapterToc'>3 <a href='Howto.html#x4-100003'>How to</a></span><span class='chapterToc'>4 <a href='CallingCommands.html#x5-330004'>Calling Commands</a></span><span class='chapterToc'>5 <a href='OutputFormats.html#x6-380005'>Output Formats</a></span><span class='chapterToc'>6 <a href='texfourhtOptions.html#x7-390006'><code>TeX4ht</code> Options</a></span><span class='chapterToc'>7 <a href='Configurations.html#x8-410007'>Configurations</a></span><span class='chapterToc'>8 <a href='Make4htBuildFiles.html#x9-850008'>Make4ht Build Files</a></span><span class='chapterToc'>9 <a href='FAQandTroubleshooting.html#x10-890009'>FAQ and Troubleshooting</a></span><span class='chapterToc'>10 <a href='ForDevelopers.html#x11-9500010'>For Developers</a></span><span class='chapterToc'>11 <a href='Glossary.html#x12-10600011'>Glossary</a></span><span class='chapterToc'>12 <a href='Bibliography.html#x13-10700012'>Bibliography</a></span><span class='chapterToc'>13 <a href='Index.html#x14-10800013'>Index</a></span><span class='chapterToc'>14 <a href='Changes.html#x15-10900014'>Changes</a></span></nav> 
+<nav class='TOC'>   
+<span class='chapterToc'>1 <a href='Introduction.html#introduction'>Introduction</a></span>
+ 
+<span class='chapterToc'>2 <a href='#basic-tutorial'>Basic Tutorial</a></span>
+ <span class='sectionToc'>2.1 <a href='#what-is-texttt-texht'>What is <code>TeX4ht</code>?</a></span>
+ <span class='sectionToc'>2.2 <a href='#system-description'>System Description</a></span>
+ <span class='sectionToc'>2.3 <a href='#basic-usage'>Basic usage</a></span>
+ <span class='sectionToc'>2.4 <a href='#simple-example'>Simple example</a></span>
+ <span class='sectionToc'>2.5 <a href='#configurations'>Configurations</a></span>
+ <span class='sectionToc'>2.6 <a href='#paragraphs'>Paragraphs</a></span>
+<span class='chapterToc'>3 <a href='Howto.html#how-to'>How to</a></span>
+ 
+  
+  
+  
+ 
+  
+  
+  
+  
+ 
+  
+  
+  
+  
+ 
+ 
+ 
+  
+  
+  
+  
+  
+<span class='chapterToc'>4 <a href='CallingCommands.html#calling-commands'>Calling Commands</a></span>
+ 
+ 
+ 
+  
+<span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
+<span class='chapterToc'>6 <a href='texfourhtOptions.html#texttt-texht'><code>TeX4ht</code> Options</a></span>
+ 
+<span class='chapterToc'>7 <a href='Configurations.html#configurations1'>Configurations</a></span>
+ 
+  
+  
+                                                                  
+
+                                                                  
+ 
+ 
+  
+  
+  
+  
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+  
+ 
+  
+  
+ 
+ 
+  
+  
+  
+ 
+ 
+ 
+  
+  
+  
+ 
+ 
+ 
+  
+<span class='chapterToc'>8 <a href='Make4htBuildFiles.html#makeht-build-files'>Make4ht Build Files</a></span>
+ 
+ 
+ 
+<span class='chapterToc'>9 <a href='FAQandTroubleshooting.html#faq-and-troubleshooting'>FAQ and Troubleshooting</a></span>
+ 
+ 
+ 
+ 
+  
+                                                                  
+
+                                                                  
+<span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
+ 
+ 
+ 
+  
+  
+ 
+  
+ 
+ 
+  
+<span class='chapterToc'>11 <a href='Glossary.html#glossary'>Glossary</a></span>
+<span class='chapterToc'>12 <a href='Bibliography.html#bibliography'>Bibliography</a></span>
+<span class='chapterToc'>13 <a href='Index.html#index'>Index</a></span>
+<span class='chapterToc'>14 <a href='Changes.html#changes'>Changes</a></span>
+ 
+   
+</nav> 
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='Introduction.html'>prev</a>] [<a href='tex4ht-doc.html#BasicTutorial.html'>up</a>] [<a href='Howto.html'>next</a>] </nav> 
-<h2 class='chapterHead'><span class='titlemark'>Chapter 2</span><br /><a id='x3-30002'></a>Basic Tutorial</h2>
+<h2 class='chapterHead' id='basic-tutorial'><span class='titlemark'>Chapter 2</span><br /><a id='x3-30002'></a>Basic Tutorial</h2>
 <a id='what-is-tex4ht'></a>   
-<h3 class='sectionHead'><span class='titlemark'>2.1   </span> <a id='x3-40002.1'></a>What is <code>TeX4ht</code>?</h3>
+<h3 class='sectionHead' id='what-is-texttt-texht'><span class='titlemark'>2.1   </span> <a id='x3-40002.1'></a>What is <code>TeX4ht</code>?</h3>
 <!-- l. 5 --><p class='noindent'><a href='https://www.tug.org/tex4ht/'><code>TeX4ht</code></a> is a system which converts LaTeX to various output formats, including
 <code>HTML</code>, <a href='http://en.wikipedia.org/wiki/OpenDocument'><code>ODT</code></a>, <a href='http://en.wikipedia.org/wiki/DocBook'><code>DocBook</code></a> or <a href='http://en.wikipedia.org/wiki/Text_Encoding_Initiative'><code>TEI</code></a>. <code>HTML</code> and <code>ODT</code> formats are the most common and
 best-supported conversion targets.
@@ -26,25 +140,19 @@ best-supported conversion targets.
 blocks together.
 </p><!-- l. 23 --><p class='indent'>     
 </p>
-<ol class='enumerate1'>     
-<li class='enumerate' id='x3-5002x1'>
-<code>tex4ht.sty</code> is a TeX package which inserts configured output codes (i.e.,
+<ol class='enumerate1'>
+<li class='enumerate' id='x3-5002x1'><code>tex4ht.sty</code> is a TeX package which inserts configured output codes (i.e.,
 html tags) into TeX’s <code>.dvi</code> output file. Many documents can be translated
 to html without users needing to supply tags explicitly, but there are
 macros to insert html directly into the output if the need arises.
-</li>     
-<li class='enumerate' id='x3-5004x2'>
-<code>tex4ht</code> is an executable (program), which extracts information stored in
+</li>
+<li class='enumerate' id='x3-5004x2'><code>tex4ht</code> is an executable (program), which extracts information stored in
 the <code>.dvi</code> file including text and output codes, and prepares auxiliary files
 for image conversion and other tasks. Note that although whole system is
 named <code>TeX4ht</code>, this command cannot be executed on <code>.tex</code> file; it works
-                                                                  
-
-                                                                  
 only with <code>.dvi</code> file
-</li>     
-<li class='enumerate' id='x3-5006x3'>
-<code>t4ht</code> is a program which converts images, generates <code>css</code> file, and runs
+</li>
+<li class='enumerate' id='x3-5006x3'><code>t4ht</code> is a program which converts images, generates <code>css</code> file, and runs
 various commands requested in the <code>.tex</code> file</li></ol>
 <!-- l. 44 --><p class='indent'>   A number of helper shell scripts (commands) exist, so that users do not need to
 invoke these commands manually. The best known of these is <code>htlatex</code>, which by
