@@ -869,91 +869,92 @@ letter before the <code>MathJaxConfig</code> configuration:
 <a id='x8-78101r19'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-78103r20'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span></pre>
 </figure>
-<!-- l. 495 --><p class='indent'>   If you want to add support for a new environment, you can use the <span class='obeylines-h'><code>\VerbMath</code></span>
+<!-- l. 495 --><p class='noindent'><span class='paragraphHead' id='custom-environments-in-mathjax'><a id='x8-790007.19.3'></a><span class='ec-lmbx-10'>Custom environments in MathJax.</span></span>
+If you want to add support for a new environment, you can use the <span class='obeylines-h'><code>\VerbMath</code></span>
 command, and you will also need to pass suitable configuration to MathJax. For
 example for the following TeX file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb60'><a id='x8-78116r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[12pt]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>book</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
-<a id='x8-78118r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>amsmath</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
-<a id='x8-78120r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>breqn</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
-<a id='x8-78122r4'></a> 
-<a id='x8-78124r5'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
-<a id='x8-78126r6'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>dgroup*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
-<a id='x8-78128r7'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>dmath*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
-<a id='x8-78130r8'></a><span class='ec-lmtt-10'>     A = B</span> 
-<a id='x8-78132r9'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>dmath*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>     </span><span class='textcolor-878787'><span class='textit'>%error is around here</span></span> 
-<a id='x8-78134r10'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>dgroup*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
-<a id='x8-78136r11'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb60'><a id='x8-79013r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[12pt]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>book</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x8-79015r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>amsmath</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x8-79017r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>breqn</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x8-79019r4'></a> 
+<a id='x8-79021r5'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x8-79023r6'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>dgroup*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x8-79025r7'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>dmath*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x8-79027r8'></a><span class='ec-lmtt-10'>     A = B</span> 
+<a id='x8-79029r9'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>dmath*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>     </span><span class='textcolor-878787'><span class='textit'>%error is around here</span></span> 
+<a id='x8-79031r10'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>dgroup*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x8-79033r11'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
-<!-- l. 512 --><p class='indent'>   Can be configured using this configuration file:
+<!-- l. 514 --><p class='indent'>   Can be configured using this configuration file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb61'><a id='x8-78153r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
-<a id='x8-78155r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>MathJaxConfig</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{{</span></span> 
-<a id='x8-78157r3'></a><span class='ec-lmtt-10'>    tex: </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span> 
-<a id='x8-78159r4'></a><span class='ec-lmtt-10'>      tags: "ams",</span> 
-<a id='x8-78161r5'></a><span class='ec-lmtt-10'>      </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\detokenize</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-78163r6'></a><span class='ec-lmtt-10'>        environments: </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span> 
-<a id='x8-78165r7'></a><span class='ec-lmtt-10'>          "dgroup*": ["", ""],</span> 
-<a id='x8-78167r8'></a><span class='ec-lmtt-10'>          "dmath*": ["", ""],</span> 
-<a id='x8-78169r9'></a><span class='ec-lmtt-10'>        </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
-<a id='x8-78171r10'></a><span class='ec-lmtt-10'>      </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
-<a id='x8-78173r11'></a><span class='ec-lmtt-10'>    </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
-<a id='x8-78175r12'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
-<a id='x8-78177r13'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\VerbMath</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>dgroup*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
-<a id='x8-78179r14'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
-<a id='x8-78181r15'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span></pre>
                                                                   
 
                                                                   
+<pre class='fancyvrb' id='fancyvrb61'><a id='x8-79050r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x8-79052r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>MathJaxConfig</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{{</span></span> 
+<a id='x8-79054r3'></a><span class='ec-lmtt-10'>    tex: </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span> 
+<a id='x8-79056r4'></a><span class='ec-lmtt-10'>      tags: "ams",</span> 
+<a id='x8-79058r5'></a><span class='ec-lmtt-10'>      </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\detokenize</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-79060r6'></a><span class='ec-lmtt-10'>        environments: </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span> 
+<a id='x8-79062r7'></a><span class='ec-lmtt-10'>          "dgroup*": ["", ""],</span> 
+<a id='x8-79064r8'></a><span class='ec-lmtt-10'>          "dmath*": ["", ""],</span> 
+<a id='x8-79066r9'></a><span class='ec-lmtt-10'>        </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x8-79068r10'></a><span class='ec-lmtt-10'>      </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x8-79070r11'></a><span class='ec-lmtt-10'>    </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x8-79072r12'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
+<a id='x8-79074r13'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\VerbMath</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>dgroup*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x8-79076r14'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x8-79078r15'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span></pre>
 </figure>
-<!-- l. 532 --><p class='indent'>   The <span class='obeylines-h'><code>\VerbMath</code></span> command can be used just for the <span class='obeylines-h'><code>dgroup*</code></span> environment, as it will
+<!-- l. 534 --><p class='indent'>   The <span class='obeylines-h'><code>\VerbMath</code></span> command can be used just for the <span class='obeylines-h'><code>dgroup*</code></span> environment, as it will
 pass the whole contents, including the <span class='obeylines-h'><code>dgroup*</code></span> environment, to the HTML file. But
 you will need to provide MathJax configuration for both of these environments, as
 they are not supported by default.
 </p>
-<!-- l. 538 --><p class='noindent'><span class='paragraphHead' id='texttt-mathml'><a id='x8-790007.19.3'></a><code>MathML</code><span class='ec-lmbx-10'> mode</span></span>
+<!-- l. 540 --><p class='noindent'><span class='paragraphHead' id='texttt-mathml'><a id='x8-800007.19.3'></a><code>MathML</code><span class='ec-lmbx-10'> mode</span></span>
 Math is converted to <code>MathML</code> by <code>TeX4ht</code>, MathJax then renders it. Custom
 commands and cross-references work in this mode.
-</p><!-- l. 543 --><p class='indent'>   The <code>MathML</code> MathJax mode can be required using the <span class='emph'>mathml,mathjax</span>
+</p><!-- l. 545 --><p class='indent'>   The <code>MathML</code> MathJax mode can be required using the <span class='emph'>mathml,mathjax</span>
 option.
 </p>
-<!-- l. 545 --><p class='noindent'><span class='paragraphHead' id='table-of-contents-issues'><a id='x8-800007.19.3'></a><span class='ec-lmbx-10'>Table of contents issues</span></span>
+<!-- l. 547 --><p class='noindent'><span class='paragraphHead' id='table-of-contents-issues'><a id='x8-810007.19.3'></a><span class='ec-lmbx-10'>Table of contents issues</span></span>
 Some math commands may cause issues when they are used in section
 titles in the MathJax mode. This can be fixed using the <code>\fixmathjaxtoc</code>
 command:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb62'><a id='x8-80003r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\fixmathjaxtoc\int</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb62'><a id='x8-81003r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\fixmathjaxtoc\int</span></span></pre>
 </figure>
-<!-- l. 555 --><p class='noindent'>
+<!-- l. 557 --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='bibliographies1'><span class='titlemark'>7.20   </span> <a id='x8-810007.20'></a>Bibliographies</h3>
-<!-- l. 556 --><p class='noindent'>
-</p>   
-<h3 class='sectionHead' id='indexing1'><span class='titlemark'>7.21   </span> <a id='x8-820007.21'></a>Indexing</h3>
+<h3 class='sectionHead' id='bibliographies1'><span class='titlemark'>7.20   </span> <a id='x8-820007.20'></a>Bibliographies</h3>
 <!-- l. 558 --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='opendocument-format'><span class='titlemark'>7.22   </span> <a id='x8-830007.22'></a>OpenDocument Format</h3>
+<h3 class='sectionHead' id='indexing1'><span class='titlemark'>7.21   </span> <a id='x8-830007.21'></a>Indexing</h3>
                                                                   
 
                                                                   
+<!-- l. 560 --><p class='noindent'>
+</p>   
+<h3 class='sectionHead' id='opendocument-format'><span class='titlemark'>7.22   </span> <a id='x8-840007.22'></a>OpenDocument Format</h3>
 <!-- l. 1 --><p class='noindent'>The OpenDocument Format uses XML configuration file for document styling. To
 declare new document style, <code>TeX4ht</code> provides command <code>\NewConfigureOO</code>. The
 declared style then needs to be configured using command <code>\ConfigureOO</code>.
 </p><!-- l. 5 --><p class='indent'>   Usage of these commands can be illustrated by the following example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb63'><a id='x8-83011r1'></a><span class='ec-lmtt-10'>  </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>SectionTitleTest</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ifvmode\IgnorePar\fi\EndP\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;text:p text:style-name="section-title"&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;/text:p&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
-<a id='x8-83013r2'></a> 
-<a id='x8-83015r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\NewConfigureOO</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>section-title</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
-<a id='x8-83017r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ConfigureOO</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>section-title</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>&lt;style:style style:name="section-title" style:family="paragraph" style:class="text"&gt;</span> 
-<a id='x8-83019r5'></a><span class='ec-lmtt-10'>      &lt;style:text-properties style:text-underline-style="solid"</span> 
-<a id='x8-83021r6'></a><span class='ec-lmtt-10'>       style:text-underline-width="auto"</span> 
-<a id='x8-83023r7'></a><span class='ec-lmtt-10'>       style:text-underline-color="font-color"</span> 
-<a id='x8-83025r8'></a><span class='ec-lmtt-10'>       /&gt;</span> 
-<a id='x8-83027r9'></a><span class='ec-lmtt-10'>&lt;/style:style&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb63'><a id='x8-84011r1'></a><span class='ec-lmtt-10'>  </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>SectionTitleTest</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ifvmode\IgnorePar\fi\EndP\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;text:p text:style-name="section-title"&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;/text:p&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
+<a id='x8-84013r2'></a> 
+<a id='x8-84015r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\NewConfigureOO</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>section-title</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x8-84017r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ConfigureOO</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>section-title</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>&lt;style:style style:name="section-title" style:family="paragraph" style:class="text"&gt;</span> 
+<a id='x8-84019r5'></a><span class='ec-lmtt-10'>      &lt;style:text-properties style:text-underline-style="solid"</span> 
+<a id='x8-84021r6'></a><span class='ec-lmtt-10'>       style:text-underline-width="auto"</span> 
+<a id='x8-84023r7'></a><span class='ec-lmtt-10'>       style:text-underline-color="font-color"</span> 
+<a id='x8-84025r8'></a><span class='ec-lmtt-10'>       /&gt;</span> 
+<a id='x8-84027r9'></a><span class='ec-lmtt-10'>&lt;/style:style&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
 <!-- l. 19 --><p class='indent'>   Document style <span class='emph'>section-title</span> had been declared in this example. The <code>XML</code> code for
 this style can be used without the <code>\HCode</code> command in <code>\ConfigureOO</code>.
@@ -962,11 +963,11 @@ corresponds to attribute <span class='obeylines-h'><code> style:name</code></sp
 configuration.
 </p><!-- l. 30 --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='extra-configurations-for-opendocument-format'><span class='titlemark'>7.22.1   </span> <a id='x8-840007.22.1'></a>Extra Configurations for OpenDocument Format</h4>
+<h4 class='subsectionHead' id='extra-configurations-for-opendocument-format'><span class='titlemark'>7.22.1   </span> <a id='x8-850007.22.1'></a>Extra Configurations for OpenDocument Format</h4>
 <!-- l. 33 --><p class='noindent'>To use default ODF styles for sectioning commands, use the following configurations: </p>
 <figure class='texsource' role='doc-example'>   
-<pre class='fancyvrb' id='fancyvrb64'><a id='x8-84004r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>Heading-2</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>Heading 1</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
-<a id='x8-84006r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>Heading-3</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>Heading 2</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb64'><a id='x8-85004r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>Heading-2</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>Heading 1</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x8-85006r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>Heading-3</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>Heading 2</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
                                                                   
 
