@@ -47,7 +47,7 @@
  
   
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
-<span class='chapterToc'>6 <a href='texfourhtOptions.html#texttt-texht'><code>TeX4ht</code> Options</a></span>
+<span class='chapterToc'>6 <a href='texfourhtOptions.html#-texht-options'><code>TeX4ht</code> Options</a></span>
  
 <span class='chapterToc'>7 <a href='#configurations1'>Configurations</a></span>
  <span class='sectionToc'>7.1 <a href='#private-configuration-files'>Private Configuration Files</a></span>
@@ -58,7 +58,7 @@
                                                                   
  <span class='sectionToc'>7.2 <a href='#custom-output-formats'>Custom output formats</a></span>
  <span class='sectionToc'>7.3 <a href='#texht-commands'>tex4ht Commands</a></span>
-  <span class='subsectionToc'>7.3.1 <a href='#lowlevel-texttt-texht'>Low-level <code>TeX4ht</code> Commands</a></span>
+  <span class='subsectionToc'>7.3.1 <a href='#lowlevel-texht-commands'>Low-level <code>TeX4ht</code> Commands</a></span>
   <span class='subsectionToc'>7.3.2 <a href='#hyperlinks'>Hyperlinks</a></span>
   <span class='subsectionToc'>7.3.3 <a href='#paragraph-handling'>Paragraph Handling</a></span>
   <span class='subsectionToc'>7.3.4 <a href='#logical-document-structure-commands'>Logical Document Structure Commands</a></span>
@@ -80,7 +80,7 @@
  <span class='sectionToc'>7.15 <a href='#colors'>Colors</a></span>
  <span class='sectionToc'>7.16 <a href='#graphics-and-pictures'>Graphics and Pictures</a></span>
   <span class='subsectionToc'>7.16.1 <a href='#low-level-features'>Low level features</a></span>
-  <span class='subsectionToc'>7.16.2 <a href='#configurations-for-the-texttt-graphics'>Configurations for the <code>Graphics</code> package bundle</a></span>
+  <span class='subsectionToc'>7.16.2 <a href='#configurations-for-the-graphics-package-bundle'>Configurations for the <code>Graphics</code> package bundle</a></span>
   <span class='subsectionToc'>7.16.3 <a href='#pdf-support'>PDF support</a></span>
  <span class='sectionToc'>7.17 <a href='#tikz-'>TikZ </a></span>
  <span class='sectionToc'>7.18 <a href='#pstricks'>Pstricks</a></span>
@@ -229,7 +229,7 @@ command.
 <h3 class='sectionHead' id='texht-commands'><span class='titlemark'>7.3   </span> <a id='x8-470007.3'></a>tex4ht Commands</h3>
 <!-- l. 1 --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='lowlevel-texttt-texht'><span class='titlemark'>7.3.1   </span> <a id='x8-480007.3.1'></a>Low-level <code>TeX4ht</code> Commands</h4>
+<h4 class='subsectionHead' id='lowlevel-texht-commands'><span class='titlemark'>7.3.1   </span> <a id='x8-480007.3.1'></a>Low-level <code>TeX4ht</code> Commands</h4>
 <!-- l. 3 --><p class='noindent'><code>\HCode</code>
 </p><!-- l. 5 --><p class='indent'>   This command allows only for the expansion of macros, before sending its
 content to the output. The instruction <code>\Hnewline</code> may be introduced there for
@@ -678,7 +678,7 @@ information to the HTML attributes: <a class='url' href='https://tex.stackexchan
 <!-- l. 68 --><p class='indent'>   Records the filename of the most recent created picture.
 </p><!-- l. 70 --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='configurations-for-the-texttt-graphics'><span class='titlemark'>7.16.2   </span> <a id='x8-700007.16.2'></a>Configurations for the <code>Graphics</code> package bundle</h4>
+<h4 class='subsectionHead' id='configurations-for-the-graphics-package-bundle'><span class='titlemark'>7.16.2   </span> <a id='x8-700007.16.2'></a>Configurations for the <code>Graphics</code> package bundle</h4>
 <!-- l. 72 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>graphics</span>}{before graphics}{after graphics}</code>
 </p><!-- l. 75 --><p class='indent'>   Examples:
 </p>   
@@ -914,7 +914,7 @@ pass the whole contents, including the <span class='obeylines-h'><code>dgroup*</
 you will need to provide MathJax configuration for both of these environments, as
 they are not supported by default.
 </p>
-<!-- l. 540 --><p class='noindent'><span class='paragraphHead' id='texttt-mathml'><a id='x8-800007.19.3'></a><code>MathML</code><span class='ec-lmbx-10'> mode</span></span>
+<!-- l. 540 --><p class='noindent'><span class='paragraphHead' id='-mathml-mode'><a id='x8-800007.19.3'></a><code>MathML</code><span class='ec-lmbx-10'> mode</span></span>
 Math is converted to <code>MathML</code> by <code>TeX4ht</code>, MathJax then renders it. Custom
 commands and cross-references work in this mode.
 </p><!-- l. 545 --><p class='indent'>   The <code>MathML</code> MathJax mode can be required using the <span class='emph'>mathml,mathjax</span>

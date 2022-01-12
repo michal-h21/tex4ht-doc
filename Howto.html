@@ -32,7 +32,7 @@
   <span class='subsectionToc'>3.3.1 <a href='#include-graphics-svgpdf'>Include graphics (svg,pdf)</a></span>
   <span class='subsectionToc'>3.3.2 <a href='#change-image-size-and-resolution'>Change image size and resolution</a></span>
   <span class='subsectionToc'>3.3.3 <a href='#use-relative-size-for-images'>Use relative size for images</a></span>
-  <span class='subsectionToc'>3.3.4 <a href='#change-image-texttt-alt'>Change image <code>alt</code> attribute</a></span>
+  <span class='subsectionToc'>3.3.4 <a href='#change-images-alternative-text'>Change image’s alternative text</a></span>
  <span class='sectionToc'>3.4 <a href='#plain-tex'>Plain TeX</a></span>
  <span class='sectionToc'>3.5 <a href='#blogging'>Blogging</a></span>
  <span class='sectionToc'>3.6 <a href='#work-with-external-commands'>Work with external commands</a></span>
@@ -47,7 +47,7 @@
  
   
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
-<span class='chapterToc'>6 <a href='texfourhtOptions.html#texttt-texht'><code>TeX4ht</code> Options</a></span>
+<span class='chapterToc'>6 <a href='texfourhtOptions.html#-texht-options'><code>TeX4ht</code> Options</a></span>
  
 <span class='chapterToc'>7 <a href='Configurations.html#configurations1'>Configurations</a></span>
  
@@ -334,12 +334,13 @@ size.
                                                                   
 </p><!-- l. 73 --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='change-image-texttt-alt'><span class='titlemark'>3.3.4   </span> <a id='x4-240003.3.4'></a>Change image <code>alt</code> attribute</h4>
-<!-- l. 75 --><p class='noindent'>By default, <code>Graphicx</code> package doesn’t support the attribute that could be used to
-insert alternative text that describe the image. This is necessary for the accessibility
-purposes.
-</p><!-- l. 79 --><p class='indent'>   We can define a new attribute for <code>\includegraphics</code> command, named <code>alt</code>, for
-example. Here is a sample file that shows how to do that:
+<h4 class='subsectionHead' id='change-images-alternative-text'><span class='titlemark'>3.3.4   </span> <a id='x4-240003.3.4'></a>Change image’s alternative text</h4>
+<!-- l. 75 --><p class='noindent'>The <code>Graphicx</code> package recently added alternative text support, which can be used to
+describe the image. This is necessary for the accessibility purposes.
+</p><!-- l. 79 --><p class='indent'>   If you use an older system, without support for this attribute, you can use the
+following example to define it yourself, and use it with the <code>\includegraphics</code>
+command. The attribute is named <code>alt</code>. Here is a sample file that shows how to do
+that:
 </p><!-- l. 1 --><p class='indent'>
 </p>   
 <pre class='fancyvrb' id='fancyvrb15'><a id='x4-24002r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>article</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
@@ -350,7 +351,7 @@ example. Here is a sample file that shows how to do that:
 <a id='x4-24012r6'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x4-24014r7'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\includegraphics</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[alt={alt tags, information}]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>example-image</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x4-24016r8'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
-<!-- l. 84 --><p class='indent'>   The <code>\define@key{Gin}{alt}{}</code> command defines a dummy command that is
+<!-- l. 86 --><p class='indent'>   The <code>\define@key{Gin}{alt}{}</code> command defines a dummy command that is
 used by regular LaTeX. We need to redefine this key for <code>TeX4ht</code>, so it uses the
 configuration that can specify the image alternative text, <code>GraphicsAlt</code>.
 </p><!-- l. 1 --><p class='indent'>
@@ -361,7 +362,7 @@ configuration that can specify the image alternative text, <code>GraphicsAlt</co
 <a id='x4-24024r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\makeatother</span></span> 
 <a id='x4-24026r5'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x4-24028r6'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span></pre>
-<!-- l. 90 --><p class='indent'>   The resulting HTML file now contains image with the <code>alt</code> attribute:
+<!-- l. 92 --><p class='indent'>   The resulting HTML file now contains image with the <code>alt</code> attribute:
 </p><!-- l. 1 --><p class='indent'>
 </p>   
 <pre class='fancyvrb' id='fancyvrb17'><a id='x4-24030r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!– l. 7 –&gt;</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>p</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='ec-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>img</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>alt</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='ec-lmtt-10'>alt tags, information</span><span class='ts1-lmtt10-'>'</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>src</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='ec-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-878787'><span class='ec-lmtt-10'>/&gt;</span></span> 
@@ -385,11 +386,11 @@ TeX instead of LaTeXfor the compilation. <code>\document</code> and <code>\endd
 commands are important, because they are crucial for correct execution of
 <code>TeX4ht</code>.
 </p><!-- l. 17 --><p class='indent'>   They are declared in the <code>plain-4ht.tex</code> file:
-</p>   
-<figure class='texsource' role='doc-example'>
                                                                   
 
                                                                   
+</p>   
+<figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb19'><a id='x4-25022r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\def\documentstyle</span></span><span class='ec-lmtt-10'>#1</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{}</span></span> 
 <a id='x4-25024r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\documentstyle</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>tex4ht</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x4-25026r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\csname</span></span><span class='ec-lmtt-10'> tex4ht</span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\endcsname</span></span> 

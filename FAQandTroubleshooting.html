@@ -47,7 +47,7 @@
  
   
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
-<span class='chapterToc'>6 <a href='texfourhtOptions.html#texttt-texht'><code>TeX4ht</code> Options</a></span>
+<span class='chapterToc'>6 <a href='texfourhtOptions.html#-texht-options'><code>TeX4ht</code> Options</a></span>
  
 <span class='chapterToc'>7 <a href='Configurations.html#configurations1'>Configurations</a></span>
  
@@ -101,7 +101,7 @@
  <span class='sectionToc'>9.2 <a href='#compilation-errors'>Compilation Errors</a></span>
  <span class='sectionToc'>9.3 <a href='#dom-processing-errors'>DOM Processing Errors</a></span>
  <span class='sectionToc'>9.4 <a href='#math-issues'>Math Issues</a></span>
-  <span class='subsectionToc'>9.4.1 <a href='#problems-with-emph-texttt-mathml'>Problems With <span class='emph'><code>MathML</code></span></a></span>
+  <span class='subsectionToc'>9.4.1 <a href='#problems-with-mathml'>Problems With <span class='emph'><code>MathML</code></span></a></span>
                                                                   
 
                                                                   
@@ -174,7 +174,7 @@ debug.
 <!-- l. 53 --><p class='indent'>   It produces a fatal error:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb67'><a id='x10-92036r1'></a><span class='textcolor-656565'><span class='ec-lmtt-10'>[</span></span><span class='ec-lmtt-10'>ERROR</span><span class='textcolor-656565'><span class='ec-lmtt-10'>]</span></span><span class='ec-lmtt-10'>   htlatex: Compilation errors in the htlatex run</span> 
+<pre class='fancyvrb' id='fancyvrb67'><a id='x10-92036r1'></a><span class='textcolor-656565'><span class='ec-lmtt-10'>[</span></span><span class='ec-lmtt-10'>ERROR</span><span class='textcolor-656565'><span class='ec-lmtt-10'>]</span></span><span class='ec-lmtt-10'>   htlatex: Compilation errors </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>in</span></span><span class='ec-lmtt-10'> the htlatex run</span> 
 <a id='x10-92038r2'></a><span class='textcolor-656565'><span class='ec-lmtt-10'>[</span></span><span class='ec-lmtt-10'>ERROR</span><span class='textcolor-656565'><span class='ec-lmtt-10'>]</span></span><span class='ec-lmtt-10'>   htlatex: Filename     Line    Message</span> 
 <a id='x10-92040r3'></a><span class='textcolor-656565'><span class='ec-lmtt-10'>[</span></span><span class='ec-lmtt-10'>ERROR</span><span class='textcolor-656565'><span class='ec-lmtt-10'>]</span></span><span class='ec-lmtt-10'>   htlatex: ./minimal.tex        </span><span class='textcolor-444444'><span class='ec-lmtt-10'>7</span></span><span class='ec-lmtt-10'>        Argument of </span><span class='textcolor-708e30'><span class='ec-lmtt-10'>\i</span></span><span class='ec-lmtt-10'>m:g has an extra </span><span class='textcolor-656565'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>.</span> 
 <a id='x10-92042r4'></a><span class='textcolor-656565'><span class='ec-lmtt-10'>[</span></span><span class='ec-lmtt-10'>ERROR</span><span class='textcolor-656565'><span class='ec-lmtt-10'>]</span></span><span class='ec-lmtt-10'>   htlatex: ./minimal.tex        </span><span class='textcolor-444444'><span class='ec-lmtt-10'>7</span></span><span class='ec-lmtt-10'>        Paragraph ended before </span><span class='textcolor-708e30'><span class='ec-lmtt-10'>\i</span></span><span class='ec-lmtt-10'>m:g was complete.</span> 
@@ -301,7 +301,7 @@ correct:
 <h3 class='sectionHead' id='math-issues'><span class='titlemark'>9.4   </span> <a id='x10-940009.4'></a>Math Issues</h3>
 <!-- l. 185 --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='problems-with-emph-texttt-mathml'><span class='titlemark'>9.4.1   </span> <a id='x10-950009.4.1'></a>Problems With <span class='emph'><code>MathML</code></span></h4>
+<h4 class='subsectionHead' id='problems-with-mathml'><span class='titlemark'>9.4.1   </span> <a id='x10-950009.4.1'></a>Problems With <span class='emph'><code>MathML</code></span></h4>
 <!-- l. 187 --><p class='noindent'><span class='textbf'>Single delimiters</span> Use of single delimiters like <code>$\langle$</code> may result in
 invalid <code>MathML</code> code. <code>TeX4ht</code> can try to fix that using the <span class='emph'>mathml-</span> option.
                                                                   
