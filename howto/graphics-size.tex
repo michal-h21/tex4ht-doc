@@ -70,14 +70,16 @@ This configuration uses CSS to set the maximum image dimension. This ensures tha
 the image is donwsized on devices smaller than is the actual image size.
 
 
-\subsection{Change image \texttt{alt} attribute}
+\subsection{Change image's alternative text}
 
-By default, \package{Graphicx} package doesn't support the attribute that could
-be used to insert alternative text that describe the image. This is necessary
+The \package{Graphicx} package recently added alternative text support,
+which can be used to describe the image. This is necessary
 for the accessibility purposes.
 
-We can define a new attribute for \texcommand{\includegraphics} command, named
-\texttt{alt}, for example. Here is a sample file that shows how to do that:
+If you use an older system, without support for this attribute, 
+you can use the following example to define it yourself, and use it 
+with the \texcommand{\includegraphics} command. The attribute is named 
+\texttt{alt}. Here is a sample file that shows how to do that:
 
 \texinput{examples/imagealt/sample.tex}
 
