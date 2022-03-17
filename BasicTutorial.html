@@ -13,11 +13,10 @@
  
 <span class='chapterToc'>2 <a href='#basic-tutorial'>Basic Tutorial</a></span>
  <span class='sectionToc'>2.1 <a href='#what-is-texht'>What is <code>TeX4ht</code>?</a></span>
- <span class='sectionToc'>2.2 <a href='#system-description'>System Description</a></span>
- <span class='sectionToc'>2.3 <a href='#basic-usage'>Basic usage</a></span>
- <span class='sectionToc'>2.4 <a href='#simple-example'>Simple example</a></span>
- <span class='sectionToc'>2.5 <a href='#configurations'>Configurations</a></span>
- <span class='sectionToc'>2.6 <a href='#paragraphs'>Paragraphs</a></span>
+ <span class='sectionToc'>2.2 <a href='#basic-usage'>Basic usage</a></span>
+ <span class='sectionToc'>2.3 <a href='#simple-example'>Simple example</a></span>
+ <span class='sectionToc'>2.4 <a href='#configurations'>Configurations</a></span>
+ <span class='sectionToc'>2.5 <a href='#paragraphs'>Paragraphs</a></span>
 <span class='chapterToc'>3 <a href='Howto.html#how-to'>How to</a></span>
  
   
@@ -53,10 +52,10 @@
  
   
   
+ 
                                                                   
 
                                                                   
- 
  
   
   
@@ -102,10 +101,10 @@
  
  
   
+<span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
                                                                   
 
                                                                   
-<span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
  
  
  
@@ -133,472 +132,347 @@
 best-supported conversion targets.
 </p><!-- l. 13 --><p class='indent'>   <code>TeX4ht</code> allows authors to convert LaTeX input to several output formats, like
 <code>HTML</code> (for web pages) or <code>ePub</code> (for ebooks and other applications).
-</p><!-- l. 18 --><p class='indent'>   <a id='system-description'></a>
+</p><!-- l. 18 --><p class='indent'>   <a id='basic-usage'></a>
 </p>   
-<h3 class='sectionHead'><span class='titlemark'>2.2   </span> <a id='x3-50002.2'></a>System Description</h3>
-<!-- l. 20 --><p class='noindent'><code>TeX4ht</code> consists of three basic building blocks and various scripts which tie these
-blocks together.
-</p><!-- l. 23 --><p class='indent'>     
-</p>
-<ol class='enumerate1'>
-<li class='enumerate' id='x3-5002x1'><code>tex4ht.sty</code> is a TeX package which inserts configured output codes (i.e.,
-html tags) into TeX’s <code>.dvi</code> output file. Many documents can be translated
-to html without users needing to supply tags explicitly, but there are
-macros to insert html directly into the output if the need arises.
-</li>
-<li class='enumerate' id='x3-5004x2'><code>tex4ht</code> is an executable (program), which extracts information stored in
-the <code>.dvi</code> file including text and output codes, and prepares auxiliary files
-for image conversion and other tasks. Note that although whole system is
-named <code>TeX4ht</code>, this command cannot be executed on <code>.tex</code> file; it works
-only with <code>.dvi</code> file
-</li>
-<li class='enumerate' id='x3-5006x3'><code>t4ht</code> is a program which converts images, generates <code>css</code> file, and runs
-various commands requested in the <code>.tex</code> file</li></ol>
-<!-- l. 44 --><p class='indent'>   A number of helper shell scripts (commands) exist, so that users do not need to
-invoke these commands manually. The best known of these is <code>htlatex</code>, which by
-default converts LaTeX to <code>html</code>. Using different options, you can convert to any
-output format supported by the <code>tex4ht</code> system.
-</p><!-- l. 50 --><p class='indent'>   In fact, you can convert to almost any format using <code>tex4ht</code>, even to formats
-not based on <code>xml</code>, but to do so involves providing extensive configuration
-files.
-</p><!-- l. 55 --><p class='indent'>   <a id='basic-usage'></a>
+<h3 class='sectionHead'><span class='titlemark'>2.2   </span> <a id='x3-50002.2'></a>Basic usage</h3>
+<!-- l. 20 --><p class='noindent'>The conversion is invoked using the <code>make4ht</code> command:
 </p>   
-<h3 class='sectionHead'><span class='titlemark'>2.3   </span> <a id='x3-60002.3'></a>Basic usage</h3>
-<!-- l. 57 --><p class='noindent'>The basic usage of the <code>htlatex</code> command (script) is as follows:
+<figure class='shellcommand' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb1'><a id='x3-5003r1'></a><span class='ec-lmtt-10'> make4ht filename.tex</span></pre>
+</figure>
+<!-- l. 26 --><p class='indent'>   By default, it converts LaTeX file to HTML 5 document. You can request
+conversion to other formats using the <code>-f</code> option. For example, to convert document to
+the OpenDocument Format, use:
+</p>   
+<figure class='shellcommand' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb2'><a id='x3-5006r1'></a><span class='ec-lmtt-10'>make4ht -f odt filename.tex</span></pre>
                                                                   
 
                                                                   
+</figure>
+<!-- l. 36 --><p class='indent'>   <a id='simple-example'></a>
 </p>   
-<pre class='verbatim' id='verbatim-1'>
- htlatex filename "options for tex4ht.sty" \
- "options for tex4ht" "options for t4ht" "LaTeX options"
-</pre>
-<!-- l. 62 --><p class='nopar'>
-</p><!-- l. 64 --><p class='indent'>   As you can see, <code>htlatex</code> has five parameters; only first one, the filename, is
-mandatory. Also note that options must be generally be enclosed in quotes so that
-they can be passed literally to the underlying commands.
-</p><!-- l. 69 --><p class='indent'>   The calling command “driver” is <code>mk4ht</code>, which is similar to <code>htlatex</code>, but slips
-in a new first parameter indicating the system to be used. Values for this
-parameter include <code>htlatex</code> which produces the same results as the htlatex script,
-<code>oolatex</code> for Open Document Format conversion, <code>dblatex</code> for docbook, or
-<code>teilatex</code> for TEI. The <code>mk4ht</code> command is quite general, allowing user-generated
-configuration files. For further information, see <a href='https://www.tug.org/applications/tex4ht/mn-commands.html#QQ1-9-33'>calling commands</a> on the <code>TeX4ht</code>
-website.
-</p><!-- l. 80 --><p class='indent'>   As an example, to compile to Open Document Format, you would type this at the
-commmand prompt:
-                                                                  
-
-                                                                  
-</p>   
-<pre class='verbatim' id='verbatim-2'>
-mk4ht oolatex sample.tex
-</pre>
-<!-- l. 85 --><p class='nopar'>
-</p><!-- l. 87 --><p class='indent'>   A more recent option is to use Michal Hoftich’s <a href='https://github.com/michal-h21/make4ht'>make4ht</a> build system for <code>TeX4ht</code>.
-It allows the user to call various commands during compilation, such as <code>bibtex</code>,
-<code>biber</code>, or <code>xindy</code>; to postprocess output files with <code>Lua</code> scripts or commands such as
-<code>tidy</code> or <code>xslt</code> processors; and to specify the command to be used for image
-conversion.
-</p><!-- l. 95 --><p class='indent'>   In this tutorial, we will show usage of both <code>htlatex</code> and <code>make4ht</code>.
-</p><!-- l. 99 --><p class='indent'>   <a id='simple-example'></a>
-</p>   
-<h3 class='sectionHead'><span class='titlemark'>2.4   </span> <a id='x3-70002.4'></a>Simple example</h3>
-<!-- l. 101 --><p class='noindent'>Lets start with conversion of simple LaTeX file to html. Let’s say we have following
+<h3 class='sectionHead'><span class='titlemark'>2.3   </span> <a id='x3-60002.3'></a>Simple example</h3>
+<!-- l. 38 --><p class='noindent'>Lets start with conversion of simple LaTeX file to html. Let’s say we have following
 multilingual LaTeX file:
-                                                                  
-
-                                                                  
 </p>   
-<pre class='verbatim' id='verbatim-3'>
-\documentclass{article}
-\usepackage[english,czech]{babel}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\begin{document}
-Příliš žluťoučký kůň úpěl \textit{ďábelské} ódy.
-\begin{otherlanguage}{english}
-    Some text in English
-\end{otherlanguage}
-\end{document}
-</pre>
-<!-- l. 115 --><p class='nopar'>
-</p><!-- l. 117 --><p class='indent'>   things to notice are use of two languages, Czech is the main document language,
-English is secondary. Note usage of <code>otherlanguage</code> environment. It is provided by
-<code>babel</code> package and locally switches document languages, so correct hyphenation and
-other language dependent stuff are used. We could use <code>\selectlanguage</code>
-command, but I would like to discourage usage of switching commands such
-is this one, or font switching commands like <code>\bfseries</code>, for one reason:
-it is impossible to configure them correctly for end element insertion. For
-font switching commands, situation is saved by <code>tex4ht</code> command, which
-inserts formatting instructions for each font change. But generally, such
-commands don’t play nice with nature of <code>xml</code> based formats, where every started
-element must be closed on the same hierarchical level. So they must have
-same parent element. Usage of <code>otherlanguage</code> environment will allow us to
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb3'><a id='x3-6012r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>article</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-6014r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[english,czech]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>babel</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-6016r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[T1]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>fontenc</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-6018r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[utf8]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>inputenc</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-6020r5'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-6022r6'></a><span class='ec-lmtt-10'>Příliš žluťoučký kůň úpěl </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\textit</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>ďábelské</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'> ódy.</span> 
+<a id='x3-6024r7'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>otherlanguage</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>english</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-6026r8'></a><span class='ec-lmtt-10'>    Some text in English</span> 
+<a id='x3-6028r9'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>otherlanguage</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-6030r10'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
+</figure>
+<!-- l. 54 --><p class='indent'>   One thing to notice is the use of two languages in the document. Czech is the
+main document language, English is secondary. Note usage of <code>otherlanguage</code>
+environment. It is provided by <code>babel</code> package and locally switches document
+languages, so correct hyphenation and other language dependent stuff are used. We
+could use <code>\selectlanguage</code> command, but I would like to discourage usage of
+switching commands such is this one, or font switching commands like <code>\bfseries</code>,
+for one reason: it is impossible to configure them correctly for end element
+insertion.
+</p><!-- l. 66 --><p class='indent'>   For font switching commands, situation is saved by the <code>tex4ht</code> command. It
+inserts formatting instructions for each font change, so font sizes and styles are
+supported. But generally, such commands don’t play nice with the nature of <code>XML</code>
+based formats, where every started element must be closed on the same
+hierarchical level. Usage of <code>otherlanguage</code> environment will allow us to
 make proper configuration and insert opening and closing tags at correct
 places.
-</p><!-- l. 134 --><p class='indent'>   But beware of following situation:
-                                                                  
-
-                                                                  
+</p><!-- l. 75 --><p class='indent'>   But beware of the following situation:
 </p>   
-<pre class='verbatim' id='verbatim-4'>
-Hello world.
-\begin{someenv}
-Just start some environment.
-
-But run it through several paragraphs
-\end{someenv}
-</pre>
-<!-- l. 143 --><p class='nopar'>
-</p><!-- l. 145 --><p class='indent'>   say that we insert <code>&lt;div class="someenv"&gt;</code> and <code>&lt;/div&gt;</code> tags around <code>someenv</code>
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb4'><a id='x3-6038r1'></a><span class='ec-lmtt-10'>Hello world.</span> 
+<a id='x3-6040r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>someenv</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-6042r3'></a><span class='ec-lmtt-10'>Just start some environment.</span> 
+<a id='x3-6044r4'></a> 
+<a id='x3-6046r5'></a><span class='ec-lmtt-10'>But run it through several paragraphs</span> 
+<a id='x3-6048r6'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>someenv</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
+</figure>
+<!-- l. 86 --><p class='indent'>   say that we insert <code>&lt;div class="someenv"&gt;</code> and <code>&lt;/div&gt;</code> tags around the <code>someenv</code>
 environment. By default this may produce following structure:
-                                                                  
-
-                                                                  
 </p>   
-<pre class='verbatim' id='verbatim-5'>
-&lt;p&gt;Hello world.
-&lt;div class="someenv"&gt;Just start some environment.
-&lt;/p&gt;
-
-&lt;p&gt;But run it through several paragraphs
-&lt;/div&gt;&lt;/p&gt;
-</pre>
-<!-- l. 157 --><p class='nopar'>
-</p><!-- l. 159 --><p class='indent'>   as you can see, generated html code is incorrect, as opening and closing <code>div</code> tags
-have different parent elements. <code>someenv</code> can be configured to close current paragraph,
-but it may be not what you want.
-</p><!-- l. 164 --><p class='indent'>   Best way to prevent tag mismatch may be something like:
+<figure class='htmlsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb5'><a id='x3-6056r1'></a><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>Hello world.</span> 
+<a id='x3-6058r2'></a><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>div</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"someenv"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>Just start some environment.</span> 
+<a id='x3-6060r3'></a><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span> 
+<a id='x3-6062r4'></a> 
+<a id='x3-6064r5'></a><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>But run it through several paragraphs</span> 
+<a id='x3-6066r6'></a><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>div</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span></pre>
                                                                   
 
                                                                   
+</figure>
+<!-- l. 100 --><p class='indent'>   as you can see, generated html code is incorrect, as opening and closing <code>&lt;div&gt;</code>
+tags have different parent elements. <code>someenv</code> environment can be configured to close
+current paragraph, but it may be not what you want.
+</p><!-- l. 105 --><p class='indent'>   Best way to prevent tag mismatch may be something like:
 </p>   
-<pre class='verbatim' id='verbatim-6'>
-Hello world.
-\begin{someenv}
-Just start some environment.
-\end{someenv}
-
-\begin{someenv}
-But run it through several paragraphs
-\end{someenv}
-</pre>
-<!-- l. 175 --><p class='nopar'>
-</p><!-- l. 177 --><p class='indent'>   But stop talking about traps you may fall into and lets compile our example! For
-start use of both of <code>htlatex</code> and <code>make4ht</code> will be showed, we will focus on <code>make4ht</code>
-later.
-</p><!-- l. 181 --><p class='indent'>   With <code>htlatex</code>, we may use
-                                                                  
-
-                                                                  
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb6'><a id='x3-6076r1'></a><span class='ec-lmtt-10'>Hello world.</span> 
+<a id='x3-6078r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>someenv</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-6080r3'></a><span class='ec-lmtt-10'>Just start some environment.</span> 
+<a id='x3-6082r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>someenv</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-6084r5'></a> 
+<a id='x3-6086r6'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>someenv</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-6088r7'></a><span class='ec-lmtt-10'>But run it through several paragraphs</span> 
+<a id='x3-6090r8'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>someenv</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
+</figure>
+<!-- l. 118 --><p class='indent'>   and with <code>make4ht</code>
 </p>   
-<pre class='verbatim' id='verbatim-7'>
- htlatex sample1
-</pre>
-<!-- l. 185 --><p class='nopar'>
-</p><!-- l. 187 --><p class='indent'>   and with <code>make4ht</code>
-                                                                  
-
-                                                                  
+<figure class='shellcommand' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb7'><a id='x3-6093r1'></a><span class='ec-lmtt-10'> make4ht sample1</span></pre>
+</figure>
+<!-- l. 124 --><p class='indent'>   lets look on text part generated by <code>htlatex</code>:
 </p>   
-<pre class='verbatim' id='verbatim-8'>
- make4ht sample1
-</pre>
-<!-- l. 191 --><p class='nopar'>
-</p><!-- l. 193 --><p class='indent'>   lets look on text part generated by <code>htlatex</code>:
-                                                                  
-
-                                                                  
+<figure class='htmlsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb8'><a id='x3-6099r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!–l. 6–&gt;</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>p</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"noindent"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>P</span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#x0159;</span></span><span class='ec-lmtt-10'>íli</span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#353;</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#382;</span></span><span class='ec-lmtt-10'>lu</span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#x0165;</span></span><span class='ec-lmtt-10'>ou</span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#x010D;</span></span><span class='ec-lmtt-10'>k</span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#x00FD;</span></span><span class='ec-lmtt-10'> k</span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#x016F;&amp;#x0148;</span></span><span class='ec-lmtt-10'> úp</span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#x011B;</span></span><span class='ec-lmtt-10'>l </span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span> 
+<a id='x3-6101r2'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"ecti-1000"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#x010F;</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span> 
+<a id='x3-6103r3'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"ecti-1000"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>ábelsk</span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span> 
+<a id='x3-6105r4'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"ecti-1000"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>é </span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>ódy. Some text in English</span></pre>
+</figure>
+<!-- l. 133 --><p class='indent'>   and by <code>make4ht</code>:
 </p>   
-<pre class='verbatim' id='verbatim-9'>
-&lt;!--l. 6--&gt;&lt;p class="noindent" &gt;P&amp;#x0159;íli&amp;#353; &amp;#382;lu&amp;#x0165;ou&amp;#x010D;k&amp;#x00FD; k&amp;#x016F;&amp;#x0148; úp&amp;#x011B;l &lt;span
-class="ecti-1000"&gt;&amp;#x010F;&lt;/span&gt;&lt;span
-class="ecti-1000"&gt;ábelsk&lt;/span&gt;&lt;span
-class="ecti-1000"&gt;é &lt;/span&gt;ódy. Some text in English
-</pre>
-<!-- l. 200 --><p class='nopar'>
-</p><!-- l. 202 --><p class='indent'>   and by <code>make4ht</code>:
-                                                                  
-
-                                                                  
-</p>   
-<pre class='verbatim' id='verbatim-10'>
-&lt;!--l. 6--&gt;&lt;p class="noindent" &gt;P&amp;#x0159;íli&amp;#353; &amp;#382;lu&amp;#x0165;ou&amp;#x010D;k&amp;#x00FD; k&amp;#x016F;&amp;#x0148; úp&amp;#x011B;l &lt;span
-class="ecti-1000"&gt;&amp;#x010F;&lt;/span&gt;&lt;span
-class="ecti-1000"&gt;ábelsk&lt;/span&gt;&lt;span
-class="ecti-1000"&gt;é &lt;/span&gt;ódy. Some text in English
-&lt;/p&gt;
-</pre>
-<!-- l. 210 --><p class='nopar'>
-</p><!-- l. 212 --><p class='indent'>   only difference is missing <code>&lt;/p&gt;</code> tag in output of <code>htlatex</code>, because <code>html 4.01</code> is
+<figure class='htmlsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb9'><a id='x3-6112r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!–l. 6–&gt;</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>p</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"noindent"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>P</span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#x0159;</span></span><span class='ec-lmtt-10'>íli</span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#353;</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#382;</span></span><span class='ec-lmtt-10'>lu</span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#x0165;</span></span><span class='ec-lmtt-10'>ou</span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#x010D;</span></span><span class='ec-lmtt-10'>k</span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#x00FD;</span></span><span class='ec-lmtt-10'> k</span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#x016F;&amp;#x0148;</span></span><span class='ec-lmtt-10'> úp</span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#x011B;</span></span><span class='ec-lmtt-10'>l </span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span> 
+<a id='x3-6114r2'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"ecti-1000"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='textcolor-708e30'><span class='ec-lmtt-10'>&amp;#x010F;</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span> 
+<a id='x3-6116r3'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"ecti-1000"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>ábelsk</span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span> 
+<a id='x3-6118r4'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"ecti-1000"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>é </span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>ódy. Some text in English</span> 
+<a id='x3-6120r5'></a><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span></pre>
+</figure>
+<!-- l. 143 --><p class='indent'>   only difference is missing <code>&lt;/p&gt;</code> tag in output of <code>htlatex</code>, because <code>html 4.01</code> is
 produced by <code>htlatex</code> by default. <code>make4ht</code> on the other hand produces <code>xhtml</code> by
 default, so closing tag must be presented.
-</p><!-- l. 217 --><p class='indent'>   To get <code>xhtml</code> output from <code>htlatex</code>, use <code>tex4ht.sty</code> option <code>xhtml</code>. This option
+</p><!-- l. 148 --><p class='indent'>   To get <code>xhtml</code> output from <code>htlatex</code>, use <code>tex4ht.sty</code> option <code>xhtml</code>. This option
 must be first option in the option list passed to <code>tex4ht.sty</code>. Value of the first option
 must be either <code>html</code>, <code>xhtml</code> or name of custom config file. We will cover these
 config files later, as they are key component in customization of <code>TeX4ht</code>
 output.
-</p><!-- l. 224 --><p class='indent'>   So in order to get same output as from <code>make4ht</code>, we must use following
+</p><!-- l. 155 --><p class='indent'>   So in order to get same output as from <code>make4ht</code>, we must use following
 command:
+</p>   
+<figure class='shellcommand' role='doc-example'>
                                                                   
 
                                                                   
-</p>   
-<pre class='verbatim' id='verbatim-11'>
- htlatex sample1 xhtml
-</pre>
-<!-- l. 229 --><p class='nopar'>
-</p><!-- l. 231 --><p class='indent'>   Now we should get rid of ugly entities which encode accented letters. This is
+<pre class='fancyvrb' id='fancyvrb10'><a id='x3-6123r1'></a><span class='ec-lmtt-10'> htlatex sample1 xhtml</span></pre>
+</figure>
+<!-- l. 162 --><p class='indent'>   Now we should get rid of ugly entities which encode accented letters. This is
 somewhat ugly with <code>htlatex</code>:
-                                                                  
-
-                                                                  
 </p>   
-<pre class='verbatim' id='verbatim-12'>
- htlatex sample1 "xhtml,charset=utf-8" " -cunihtf -utf8"
-</pre>
-<!-- l. 236 --><p class='nopar'>
-</p><!-- l. 238 --><p class='indent'>   <code>charset=utf-8"</code> produces meta element which declares document to be in
+<figure class='shellcommand' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb11'><a id='x3-6126r1'></a><span class='ec-lmtt-10'> htlatex sample1 </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"xhtml,charset=utf-8"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>" -cunihtf -utf8"</span></span></pre>
+</figure>
+<!-- l. 169 --><p class='indent'>   <code>charset=utf-8"</code> produces meta element which declares document to be in
 <code>utf-8</code> encoding. Important are two options for <code>tex4ht</code> command, <code>-c</code> and
 <code>-utf8</code>.
-</p><!-- l. 242 --><p class='indent'>   ToDo: add description of process of conversion from <code>htf</code> fonts to utf8 using
+</p><!-- l. 173 --><p class='indent'>   ToDo: add description of process of conversion from <code>htf</code> fonts to utf8 using
 unicode.4hf. It is directed from <code>tex4ht.env</code> file.
-</p><!-- l. 245 --><p class='indent'>   With <code>make4ht</code>, situation is easier, as all we need to do is to add <code>-u</code> option:
-                                                                  
-
-                                                                  
+</p><!-- l. 176 --><p class='indent'>   With <code>make4ht</code>, situation is easier, as all we need to do is to add <code>-u</code> option:
 </p>   
-<pre class='verbatim' id='verbatim-13'>
- make4ht -u sample1.tex
-</pre>
-<!-- l. 250 --><p class='nopar'>
-</p><!-- l. 252 --><p class='indent'>   resulting file:
-                                                                  
-
-                                                                  
+<figure class='shellcommand' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb12'><a id='x3-6129r1'></a><span class='ec-lmtt-10'> make4ht -u sample1.tex</span></pre>
+</figure>
+<!-- l. 183 --><p class='indent'>   resulting file:
 </p>   
-<pre class='verbatim' id='verbatim-14'>
-&lt;!--l. 6--&gt;&lt;p class="noindent" &gt;Příliš žluťoučký kůň úpěl &lt;span
-class="ecti-1000"&gt;ď&lt;/span&gt;&lt;span
-class="ecti-1000"&gt;ábelsk&lt;/span&gt;&lt;span
-class="ecti-1000"&gt;é &lt;/span&gt;ódy. Some text in English
-&lt;/p&gt;
-</pre>
-<!-- l. 260 --><p class='nopar'>
-</p><!-- l. 262 --><p class='indent'>   Entities are gone, but other persists. What we see is caused by a bug in <code>tex4ht</code>
+<figure class='htmlsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb13'><a id='x3-6136r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!–l. 6–&gt;</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>p</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"noindent"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>Příliš žluťoučký kůň úpěl </span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span> 
+<a id='x3-6138r2'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"ecti-1000"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>ď</span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span> 
+<a id='x3-6140r3'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"ecti-1000"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>ábelsk</span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span> 
+<a id='x3-6142r4'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"ecti-1000"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>é </span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>ódy. Some text in English</span> 
+<a id='x3-6144r5'></a><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span></pre>
+</figure>
+<!-- l. 193 --><p class='indent'>   Entities are gone, but other persists. What we see is caused by a bug in <code>tex4ht</code>
 command. It decorates text which is set in non-default font with <code>&lt;span&gt;</code> elements.
 Unfortunately it doesn’t play well with accented letters as we can see. This has
 easy solution, fortunately. We just need to dive into <code>TeX4ht</code> configuration.
 Yay!
-</p><!-- l. 270 --><p class='indent'>   <a id='configurations'></a>
+</p><!-- l. 201 --><p class='indent'>   <a id='configurations'></a>
 </p>   
-<h3 class='sectionHead'><span class='titlemark'>2.5   </span> <a id='x3-80002.5'></a>Configurations</h3>
-<!-- l. 272 --><p class='noindent'>We already saw that we can use command line options to configure the output. For
+<h3 class='sectionHead'><span class='titlemark'>2.4   </span> <a id='x3-70002.4'></a>Configurations</h3>
+<!-- l. 203 --><p class='noindent'>We already saw that we can use command line options to configure the output. For
 full list of options for <code>tex4ht.sty</code>, see an <a href='http://www.cvr.cc/?p=504'>article on CVR’s blog</a>. These options
 mainly influence appearance or math, footnotes, tables, etc. Note that these options
 aren’t fixed set, anyone can add new options and not all options are supported in
 each output format supported by <code>tex4ht</code>. Generally these options work with <code>html</code>
 (and <code>xhtml</code>) output.
-</p><!-- l. 281 --><p class='indent'>   Other option is to use custom config file (<code>.cfg</code>). This is a TeX file with some basic
-structure:
                                                                   
 
                                                                   
+</p><!-- l. 212 --><p class='indent'>   Other option is to use custom config file (<code>.cfg</code>). This is a TeX file with some basic
+structure:
 </p>   
-<pre class='verbatim' id='verbatim-15'>
- optional stuff like requiring LaTeX packages etc
- ...
- \Preamble{xhtml,tex4ht.sty options}
- ...
- TeX4ht configurations
- ...
- \begin{document}
- ...
- more TeX4ht configurations
- ...
- \EndPreamble
-</pre>
-<!-- l. 296 --><p class='nopar'>
-</p><!-- l. 298 --><p class='indent'>   Most important command for configuring is <code>\Configure</code>. This command has
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb14'><a id='x3-7013r1'></a><span class='ec-lmtt-10'> optional stuff like requiring LaTeX packages etc</span> 
+<a id='x3-7015r2'></a><span class='ec-lmtt-10'> ...</span> 
+<a id='x3-7017r3'></a><span class='ec-lmtt-10'> </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml,tex4ht.sty options</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7019r4'></a><span class='ec-lmtt-10'> ...</span> 
+<a id='x3-7021r5'></a><span class='ec-lmtt-10'> TeX4ht configurations</span> 
+<a id='x3-7023r6'></a><span class='ec-lmtt-10'> ...</span> 
+<a id='x3-7025r7'></a><span class='ec-lmtt-10'> </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7027r8'></a><span class='ec-lmtt-10'> ...</span> 
+<a id='x3-7029r9'></a><span class='ec-lmtt-10'> more TeX4ht configurations</span> 
+<a id='x3-7031r10'></a><span class='ec-lmtt-10'> ...</span> 
+<a id='x3-7033r11'></a><span class='ec-lmtt-10'> </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span></pre>
+</figure>
+<!-- l. 229 --><p class='indent'>   Most important command for configuring is <code>\Configure</code>. This command has
 variable number of arguments, in the simplest form it does have two arguments:
 <code>\Configure{configname}{insert for a first hook}</code>.
-</p><!-- l. 303 --><p class='indent'>   At this place we should talk about hooks. In order to insert html tags, LaTeX
+</p><!-- l. 234 --><p class='indent'>   At this place we should talk about hooks. In order to insert html tags, LaTeX
 macros are redefined and in the definitions special hooks are inserted. These hooks
 are declared with <code>\NewConfigure{configname}{number of hooks}</code> in special
 file named as redefined package name with suffix <code>.4ht</code>. These hooks are
 then seeded in configure files for particular output formats, or in the <code>.cfg</code>
 file.
-</p><!-- l. 311 --><p class='indent'>   To illustrate that, we can show some simple example. Lets say we have simple
+</p><!-- l. 242 --><p class='indent'>   To illustrate that, we can show some simple example. Lets say we have simple
 package <code>hello.sty</code>:
-                                                                  
-
-                                                                  
 </p>   
-<pre class='verbatim' id='verbatim-16'>
-\ProvidesPackage{hello}
-\newcommand\hello{\textbf{hello world}}
-\endinput
-</pre>
-<!-- l. 318 --><p class='nopar'>
-</p><!-- l. 320 --><p class='indent'>   we can provide hooks in file named <code>hello.4ht</code>. Say we just want to insert tags at
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb15'><a id='x3-7038r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ProvidesPackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>hello</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7040r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\newcommand\hello</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\textbf</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>hello world</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
+<a id='x3-7042r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\endinput</span></span></pre>
+</figure>
+<!-- l. 251 --><p class='indent'>   we can provide hooks in file named <code>hello.4ht</code>. Say we just want to insert tags at
 beginning and at end of <code>\hello</code> command:
-                                                                  
-
-                                                                  
 </p>   
-<pre class='verbatim' id='verbatim-17'>
-% provide configure for \hello command. we can choose any name
-% but most convenient is to name hooks after redefined command
-% we declare two hooks, to be inserted before and after the command
-\NewConfigure{hello}{2}
-% now we need to redefine \hello. save it to tmp command
-\let\tmp:hello\hello
-% note that `:` can be part of command name in `.4ht` files.
-% now insert the hooks. they are named as \a:hook, \b:hook, ..., \h:hook
-% depending on how many hooks were declared
-\renewcommand\hello{\a:hello\tmp:hello\b:hello}
-</pre>
-<!-- l. 335 --><p class='nopar'>
-</p><!-- l. 337 --><p class='indent'>   because we want to surround contents produced by <code>\hello</code> with tags, we need to
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb16'><a id='x3-7054r1'></a><span class='textcolor-878787'><span class='textit'>% provide configure for \hello command. we can choose any name</span></span> 
+<a id='x3-7056r2'></a><span class='textcolor-878787'><span class='textit'>% but most convenient is to name hooks after redefined command</span></span> 
+<a id='x3-7058r3'></a><span class='textcolor-878787'><span class='textit'>% we declare two hooks, to be inserted before and after the command</span></span> 
+<a id='x3-7060r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\NewConfigure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>hello</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>2</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7062r5'></a><span class='textcolor-878787'><span class='textit'>% now we need to redefine \hello. save it to tmp command</span></span> 
+<a id='x3-7064r6'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\let\tmp</span></span><span class='ec-lmtt-10'>:hello</span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\hello</span></span> 
+<a id='x3-7066r7'></a><span class='textcolor-878787'><span class='textit'>% note that `:` can be part of command name in `.4ht` files.</span></span> 
+<a id='x3-7068r8'></a><span class='textcolor-878787'><span class='textit'>% now insert the hooks. they are named as \a:hook, \b:hook, ..., \h:hook</span></span> 
+<a id='x3-7070r9'></a><span class='textcolor-878787'><span class='textit'>% depending on how many hooks were declared</span></span> 
+<a id='x3-7072r10'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\renewcommand\hello</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\a</span></span><span class='ec-lmtt-10'>:hello</span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\tmp</span></span><span class='ec-lmtt-10'>:hello</span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\b</span></span><span class='ec-lmtt-10'>:hello</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
+</figure>
+<!-- l. 268 --><p class='indent'>   because we want to surround contents produced by <code>\hello</code> with tags, we need to
 declare two hooks. This is the most usual case for normal commands which just
 produce some text. Old contents of macro are saved in temporary macro and then
 command is redefined to insert hooks and original contents stored in temporary
 macro.
-</p><!-- l. 344 --><p class='indent'>   Now we can change our sample to use <code>hello</code> package:
+</p><!-- l. 275 --><p class='indent'>   Now we can change our sample to use <code>hello</code> package:
+</p>   
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb17'><a id='x3-7083r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>article</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7085r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[english,czech]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>babel</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7087r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[T1]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>fontenc</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7089r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[utf8]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>inputenc</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7091r5'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>hello</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7093r6'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'> Příliš žluťoučký kůň úpěl </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\textit</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>ďábelské</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'> ódy.</span> 
+<a id='x3-7095r7'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>otherlanguage</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>english</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'> Some text in English, </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\hello</span></span> 
+<a id='x3-7097r8'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>otherlanguage</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7099r9'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
                                                                   
 
                                                                   
-</p>   
-<pre class='verbatim' id='verbatim-18'>
-\documentclass{article}
-\usepackage[english,czech]{babel}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{hello}
-\begin{document} Příliš žluťoučký kůň úpěl \textit{ďábelské} ódy.
-\begin{otherlanguage}{english} Some text in English, \hello
-\end{otherlanguage}
-\end{document}
-</pre>
-<!-- l. 356 --><p class='nopar'>
-</p><!-- l. 358 --><p class='indent'>   we haven’t provided any configurations for <code>hello</code> yet, but you can see that text
+</figure>
+<!-- l. 289 --><p class='indent'>   we haven’t provided any configurations for <code>hello</code> yet, but you can see that text
 <code>hello world</code> is in <span class='textbf'>bold</span> font anyway. This is the same case as <code>\textit</code> which is
 converted as <span class='emph'>italic</span>. Basic font styles are inserted by <code>tex4ht</code> command during
 extraction of text from <code>dvi</code> to a output format. So it is the right time to finally show
 how to configure both <code>textit</code> and <code>hello</code> to produce some better tags than they
 provide by default.
-</p><!-- l. 367 --><p class='indent'>   Basic structure of a config file has been shown before, so now we will just add
+</p><!-- l. 298 --><p class='indent'>   Basic structure of a config file has been shown before, so now we will just add
 basic configurations for <code>\textit</code> and <code>\hello</code>:
-                                                                  
-
-                                                                  
 </p>   
-<pre class='verbatim' id='verbatim-19'>
-\Preamble{xhtml}
-\Configure{textit}{\HCode{&lt;span class="textit"&gt;}}{\HCode{&lt;/span&gt;}}
-\Configure{hello}{\HCode{&lt;span class="hello"&gt;}}{\HCode{&lt;/span&gt;}}
-\Css{.textit{font-style:italic;}}
-\Css{.hello{font-weight:bold;}}
-\begin{document}
-\EndPreamble
-</pre>
-<!-- l. 379 --><p class='nopar'>
-</p><!-- l. 381 --><p class='indent'>   For documentation of default configurations, see <a href='http://michal-h21.github.io/src4ht/tex4ht-info.html'>TeX4ht info</a>, most useful are
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb18'><a id='x3-7108r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7110r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>textit</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;span class="textit"&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;/span&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
+<a id='x3-7112r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>hello</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;span class="hello"&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;/span&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
+<a id='x3-7114r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Css</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>.textit</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>font-style:italic;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
+<a id='x3-7116r5'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Css</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>.hello</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>font-weight:bold;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
+<a id='x3-7118r6'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7120r7'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span></pre>
+</figure>
+<!-- l. 312 --><p class='indent'>   For documentation of default configurations, see <a href='http://michal-h21.github.io/src4ht/tex4ht-info.html'>TeX4ht info</a>, most useful are
 <a href='http://michal-h21.github.io/src4ht/tex4ht-infose2.html'>LaTeX</a> and <a href='http://michal-h21.github.io/src4ht/tex4ht-infose1.html'>TeX4ht</a> sections. Documentation for basic font commands such as
 <code>\textit</code> or <code>\textbf</code> is provided in <a href='http://michal-h21.github.io/src4ht/tex4ht-infose2.html'>LaTeX</a> section. We can see that configuration
 takes two parameters, insertion before and after content. Same situation is with
 <code>hello</code> configuration we defined earlier, hooks are inserted before and after the
 content.
-</p><!-- l. 395 --><p class='indent'>   To insert <code>html</code> tags, we need to use <code>\HCode</code> commands, special characters such as
+</p><!-- l. 326 --><p class='indent'>   To insert <code>html</code> tags, we need to use <code>\HCode</code> commands, special characters such as
 <code>&lt;</code>,<code>&gt;</code> or <code>&amp;</code> are escaped otherwise. In our example we insert <code>span</code> elements with
 some <code>class</code> attribute to distinguish them. Because these classes doesn’t
 have any visual appearance by default, we use <code>\Css</code> commands to add some
 styling. Yes, you need to know both <code>html</code> and <code>css</code> to effectively configure
 <code>TeX4ht</code>!
-</p><!-- l. 405 --><p class='indent'>   If we look at <code>html</code> output now, we can see that things don’t look much better
+</p><!-- l. 336 --><p class='indent'>   If we look at <code>html</code> output now, we can see that things don’t look much better
 than initially:
-                                                                  
-
-                                                                  
 </p>   
-<pre class='verbatim' id='verbatim-20'>
-&lt;!--l. 6--&gt;&lt;p class="noindent" &gt;Příliš žluťoučký kůň úpěl &lt;span class="textit"&gt;&lt;span
-class="ecti-1000"&gt;ď&lt;/span&gt;&lt;span
-class="ecti-1000"&gt;ábelsk&lt;/span&gt;&lt;span
-class="ecti-1000"&gt;é&lt;/span&gt;&lt;/span&gt; ódy. Some text in English, &lt;span class="hello"&gt;&lt;span
-class="ecbx-1000"&gt;hello world&lt;/span&gt;&lt;/span&gt;
-&lt;/p&gt;
-</pre>
-<!-- l. 415 --><p class='nopar'>
-</p><!-- l. 417 --><p class='indent'>   our new tags were inserted, but unnecessary elements inserted by <code>tex4ht</code>
+<figure class='htmlsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb19'><a id='x3-7128r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!–l. 6–&gt;</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>p</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"noindent"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>Příliš žluťoučký kůň úpěl </span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"textit"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span> 
+<a id='x3-7130r2'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"ecti-1000"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>ď</span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span> 
+<a id='x3-7132r3'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"ecti-1000"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>ábelsk</span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span> 
+<a id='x3-7134r4'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"ecti-1000"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>é</span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'> ódy. Some text in English, </span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"hello"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span> 
+<a id='x3-7136r5'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"ecbx-1000"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>hello world</span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span> 
+<a id='x3-7138r6'></a><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span></pre>
+</figure>
+<!-- l. 348 --><p class='indent'>   our new tags were inserted, but unnecessary elements inserted by <code>tex4ht</code>
 processor are still present. Fortunately, we can suppress insertion of these elements
 with <code>\NoFonts</code> command, and later enable again with <code>\EndNoFonts</code>. We can also use
 <code>tex4ht.sty</code> option <code>NoFonts</code>, which will suppress font processing in whole
 document, but you should use this with caution, as it may have some side
 effects.
-</p><!-- l. 426 --><p class='indent'>   Let’s take a look how would out configurations look with <code>\NoFonts</code> command:
+</p><!-- l. 357 --><p class='indent'>   Let’s take a look how would out configurations look with <code>\NoFonts</code> command:
+</p>   
+<figure class='texsource' role='doc-example'>
                                                                   
 
                                                                   
+<pre class='fancyvrb' id='fancyvrb20'><a id='x3-7149r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7151r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>textit</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;span class="textit"&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\NoFonts</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7153r3'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndNoFonts\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;/span&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
+<a id='x3-7155r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>hello</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;span class="hello"&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\NoFonts</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7157r5'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndNoFonts\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;/span&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
+<a id='x3-7159r6'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Css</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>.textit</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>font-style:italic;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
+<a id='x3-7161r7'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Css</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>.hello</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>font-weight:bold;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
+<a id='x3-7163r8'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-7165r9'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span></pre>
+</figure>
+<!-- l. 372 --><p class='indent'>   the output now looks much better:
 </p>   
-<pre class='verbatim' id='verbatim-21'>
-\Preamble{xhtml}
-\Configure{textit}{\HCode{&lt;span class="textit"&gt;}\NoFonts}
-{\EndNoFonts\HCode{&lt;/span&gt;}}
-\Configure{hello}{\HCode{&lt;span class="hello"&gt;}\NoFonts}
-{\EndNoFonts\HCode{&lt;/span&gt;}}
-\Css{.textit{font-style:italic;}}
-\Css{.hello{font-weight:bold;}}
-\begin{document}
-\EndPreamble
-</pre>
-<!-- l. 439 --><p class='nopar'>
-</p><!-- l. 441 --><p class='indent'>   the output now looks much better:
-                                                                  
-
-                                                                  
-</p>   
-<pre class='verbatim' id='verbatim-22'>
-&lt;!--l. 6--&gt;&lt;p class="noindent" &gt;Příliš žluťoučký kůň úpěl &lt;span class="textit"&gt;ďábelské&lt;/span&gt; ódy. Some text in English, &lt;span class="hello"&gt;hello world&lt;/span&gt;
-&lt;/p&gt;
-</pre>
-<!-- l. 446 --><p class='nopar'>
-</p><!-- l. 448 --><p class='indent'>   It may seems that we can be happy at this point, but things aren’t as easy as we
+<figure class='htmlsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb21'><a id='x3-7169r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!–l. 6–&gt;</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>p</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"noindent"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>Příliš žluťoučký kůň úpěl </span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"textit"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>ďábelské</span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'> ódy. Some text in English, </span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='ec-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"hello"</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span><span class='ec-lmtt-10'>hello world</span><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span> 
+<a id='x3-7171r2'></a><span class='textcolor-878787'><span class='ec-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='ec-lmtt-10'>&gt;</span></span></pre>
+</figure>
+<!-- l. 379 --><p class='indent'>   It may seems that we can be happy at this point, but things aren’t as easy as we
 may hope, because we haven’t talked about one thing:
-</p><!-- l. 452 --><p class='indent'>   <a id='paragraphs'></a>
+</p><!-- l. 383 --><p class='indent'>   <a id='paragraphs'></a>
 </p>   
-<h3 class='sectionHead'><span class='titlemark'>2.6   </span> <a id='x3-90002.6'></a>Paragraphs</h3>
-<!-- l. 454 --><p class='noindent'>What if we add some more paragraphs in English to our sample file?
-                                                                  
-
-                                                                  
+<h3 class='sectionHead'><span class='titlemark'>2.5   </span> <a id='x3-80002.5'></a>Paragraphs</h3>
+<!-- l. 385 --><p class='noindent'>What if we add some more paragraphs in English to our sample file?
 </p>   
-<pre class='verbatim' id='verbatim-23'>
-\documentclass{article}
-\usepackage[english,czech]{babel}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{hello}
-\begin{document} Příliš žluťoučký kůň úpěl \textit{ďábelské} ódy.
-\begin{otherlanguage}{english} Some text in English, \hello
-\end{otherlanguage}
-
-\begin{otherlanguage}{english}
-
-\textit{What will do} \verb|\textit| at the beginning of paragraph?
-
-And also, what about configuration for \verb|otherlanguage| environment?
-
-\end{otherlanguage}
-
-\end{document}
-</pre>
-<!-- l. 475 --><p class='nopar'>
-</p><!-- l. 477 --><p class='indent'>   What if we want to insert elements with <code>lang</code> attribute to specify language of
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb22'><a id='x3-8020r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>article</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-8022r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[english,czech]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>babel</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-8024r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[T1]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>fontenc</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-8026r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[utf8]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>inputenc</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-8028r5'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>hello</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-8030r6'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'> Příliš žluťoučký kůň úpěl </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\textit</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>ďábelské</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'> ódy.</span> 
+<a id='x3-8032r7'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>otherlanguage</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>english</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'> Some text in English, </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\hello</span></span> 
+<a id='x3-8034r8'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>otherlanguage</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-8036r9'></a> 
+<a id='x3-8038r10'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>otherlanguage</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>english</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-8040r11'></a> 
+<a id='x3-8042r12'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\textit</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>What will do</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\verb</span></span><span class='ec-lmtt-10'>|</span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\textit</span></span><span class='ec-lmtt-10'>| at the beginning of paragraph?</span> 
+<a id='x3-8044r13'></a> 
+<a id='x3-8046r14'></a><span class='ec-lmtt-10'>And also, what about configuration for </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\verb</span></span><span class='ec-lmtt-10'>|otherlanguage| environment?</span> 
+<a id='x3-8048r15'></a> 
+<a id='x3-8050r16'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>otherlanguage</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<a id='x3-8052r17'></a> 
+<a id='x3-8054r18'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
+</figure>
+<!-- l. 408 --><p class='indent'>   What if we want to insert elements with <code>lang</code> attribute to specify language of
 text in the <code>html</code>. It might be useful from semantic point of view, we can also enable
 hyphenation in the <code>css</code> and it works only when correct languages are marked in the
 source.
-</p><!-- l. 483 --><p class='indent'>   This exercise will be little bit more difficult
+</p><!-- l. 414 --><p class='indent'>   This exercise will be little bit more difficult
                                                                   
 
                                                                   
