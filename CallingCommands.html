@@ -137,67 +137,67 @@ source into dvi code with the native LaTeX engine, and post-processing the outco
 with the tex4ht and t4ht programs.
 </p>   
 <h3 class='sectionHead' id='-makeht-and-other-conversion-scripts'><span class='titlemark'>4.1   </span> <a id='x5-340004.1'></a><code>make4ht</code> and other conversion scripts</h3>
-<!-- l. 15 --><p class='noindent'>The conversion command loads a script which takes on itself to invoke the different
+<!-- l. 16 --><p class='noindent'>The conversion command loads a script which takes on itself to invoke the different
 steps of the process, without user intervention. The command assumes the
 form
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb44'><a id='x5-34003r1'></a><span class='ec-lmtt-10'>make4ht </span><span class='textcolor-656565'><span class='ec-lmtt-10'>[</span></span><span class='ec-lmtt-10'>make4ht options</span><span class='textcolor-656565'><span class='ec-lmtt-10'>]</span></span><span class='ec-lmtt-10'> filename.tex </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"options1"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"option2"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"options3"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"options4"</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb46'><a id='x5-34003r1'></a><span class='ec-lmtt-10'>make4ht </span><span class='textcolor-656565'><span class='ec-lmtt-10'>[</span></span><span class='ec-lmtt-10'>make4ht options</span><span class='textcolor-656565'><span class='ec-lmtt-10'>]</span></span><span class='ec-lmtt-10'> filename.tex </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"options1"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"option2"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"options3"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"options4"</span></span></pre>
 </figure>
-<!-- l. 23 --><p class='indent'>   where the first set of options is for the tex4ht.sty and *.4ht style files, the second
+<!-- l. 24 --><p class='indent'>   where the first set of options is for the tex4ht.sty and *.4ht style files, the second
 set is for the tex4ht post-processor, the third for the t4ht post-processor, and the last
 one is for the LaTeX compiler.
-</p><!-- l. 27 --><p class='indent'>   These options are optional.
-</p><!-- l. 29 --><p class='indent'>   The basic invokation of make4ht looks like this:
+</p><!-- l. 28 --><p class='indent'>   These options are optional.
+</p><!-- l. 30 --><p class='indent'>   The basic invokation of make4ht looks like this:
 </p>
                                                                   
 
                                                                   
 <figure class='shellcommand' role='doc-example'>   
-<pre class='fancyvrb' id='fancyvrb45'><a id='x5-34006r1'></a><span class='ec-lmtt-10'>make4ht filename.tex</span></pre>
+<pre class='fancyvrb' id='fancyvrb47'><a id='x5-34006r1'></a><span class='ec-lmtt-10'>make4ht filename.tex</span></pre>
 </figure>
-<!-- l. 35 --><p class='indent'>   This command requests a translation according to the default conditions, which
+<!-- l. 36 --><p class='indent'>   This command requests a translation according to the default conditions, which
 are set to produce HTML 5 document.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb46'><a id='x5-34009r1'></a><span class='ec-lmtt-10'>make4ht filename.tex </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"2,info"</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb48'><a id='x5-34009r1'></a><span class='ec-lmtt-10'>make4ht filename.tex </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"2,info"</span></span></pre>
 </figure>
-<!-- l. 41 --><p class='indent'>   This command specifies some options for tex4ht.sty. The "2" option requests a
+<!-- l. 42 --><p class='indent'>   This command specifies some options for tex4ht.sty. The "2" option requests a
 break up of the output into separate web pages, in accordance to the two top
 sectioning levels of the document.
-</p><!-- l. 45 --><p class='indent'>   The <code>info</code> option requests inclusion of documentation of basic configurations to
+</p><!-- l. 46 --><p class='indent'>   The <code>info</code> option requests inclusion of documentation of basic configurations to
 the <code>filename.log</code> file. You can open this file using a text editor to read this
 information.
-</p><!-- l. 48 --><p class='indent'>   Information about additional options can be found in the <a href='texfourhtOptions.html#list-of-options'>List of options<!-- tex4ht:ref: sec:texfouhtoptions  --></a>
+</p><!-- l. 49 --><p class='indent'>   Information about additional options can be found in the <a href='texfourhtOptions.html#list-of-options'>List of options<!-- tex4ht:ref: sec:texfouhtoptions  --></a>
 section.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb47'><a id='x5-34012r1'></a><span class='ec-lmtt-10'>make4ht -c foo.cfg filename </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"frames"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>""</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"-p"</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb49'><a id='x5-34012r1'></a><span class='ec-lmtt-10'>make4ht -c foo.cfg filename </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"frames"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>""</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"-p"</span></span></pre>
 </figure>
-<!-- l. 55 --><p class='indent'>   This command requests LaTeX to load a <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!-- tex4ht:ref: sec:private-configuration  --></a>, named
+<!-- l. 56 --><p class='indent'>   This command requests LaTeX to load a <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!-- tex4ht:ref: sec:private-configuration  --></a>, named
 foo.cfg, using the <code>-c</code> make4ht option. The <code>frames</code> option requires placing of the
 content and table of contents in separate frames. In addition, it asks t4ht not to
 produce bitmaps for pictures.
-</p><!-- l. 62 --><p class='noindent'>
+</p><!-- l. 63 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='-htlatex-and-other-obsolete-scripts'><span class='titlemark'>4.2   </span> <a id='x5-350004.2'></a><code>htlatex</code> and other obsolete scripts</h3>
-<!-- l. 66 --><p class='noindent'>
+<!-- l. 67 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='overview-of-the-translation-process'><span class='titlemark'>4.3   </span> <a id='x5-360004.3'></a>Overview of the Translation Process</h3>
-<!-- l. 70 --><p class='noindent'>The system can be activated with a sequence of commands of the following form,
+<!-- l. 71 --><p class='noindent'>The system can be activated with a sequence of commands of the following form,
 typically embedded within a script.
                                                                   
 
                                                                   
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb48'><a id='x5-36007r1'></a><span class='ec-lmtt-10'>latex      x            </span><span class='textcolor-656565'><span class='ec-lmtt-10'>(</span></span><span class='ec-lmtt-10'>or ‘tex x’</span><span class='textcolor-656565'><span class='ec-lmtt-10'>)</span></span> 
+<pre class='fancyvrb' id='fancyvrb50'><a id='x5-36007r1'></a><span class='ec-lmtt-10'>latex      x            </span><span class='textcolor-656565'><span class='ec-lmtt-10'>(</span></span><span class='ec-lmtt-10'>or ‘tex x’</span><span class='textcolor-656565'><span class='ec-lmtt-10'>)</span></span> 
 <a id='x5-36009r2'></a><span class='ec-lmtt-10'>latex      x</span> 
 <a id='x5-36011r3'></a><span class='ec-lmtt-10'>latex      x</span> 
 <a id='x5-36013r4'></a><span class='ec-lmtt-10'>tex4ht     x</span> 
 <a id='x5-36015r5'></a><span class='ec-lmtt-10'>t4ht       x</span></pre>
 </figure>
-<!-- l. 80 --><p class='indent'>   The three compilations with La(TeX) are needed to ensure proper links. The
+<!-- l. 81 --><p class='indent'>   The three compilations with La(TeX) are needed to ensure proper links. The
 approach is illustrated in the picture <a href='#-texht-process-overview'>4.1<!-- tex4ht:ref: fig:process  --></a>.
 </p>   
 <figure class='figure' id='-texht-process-overview'> 
@@ -209,68 +209,68 @@ approach is illustrated in the picture <a href='#-texht-process-overview'>4.1<!-
                                                                   
 
                                                                   
-<!-- l. 83 --><p class='noindent'><img alt='PIC' src='images/tex4ht_process/tex4ht_process.svg' style='width:100%' />
+<!-- l. 84 --><p class='noindent'><img alt='PIC' src='images/tex4ht_process/tex4ht_process.svg' style='width:100%' />
 </p>
-<figcaption class='caption'><span class='id'>Figure 4.1:</span><span class='content'><code>TeX4ht</code> process overview</span></figcaption><!-- tex4ht:label?: x5-36016r1  -->
+<figcaption class='caption'><span class='id'>Figure 4.1: </span><span class='content'><code>TeX4ht</code> process overview</span></figcaption><!-- tex4ht:label?: x5-36016r1  -->
                                                                   
 
                                                                   
 </figure>     
 <dl class='description'><dt class='description'>
-<!-- l. 89 --><p class='noindent'>
+<!-- l. 90 --><p class='noindent'>
 <span class='ec-lmbx-10'>x.tex</span> 
 </p>
 </dt><dd class='description'>
-<!-- l. 89 --><p class='noindent'>     
+<!-- l. 90 --><p class='noindent'>     
 </p>
-<!-- l. 91 --><p class='noindent'>This is a source TeX/LaTeX/OtherTeX file that imports the style files
+<!-- l. 92 --><p class='noindent'>This is a source TeX/LaTeX/OtherTeX file that imports the style files
 tex4ht.sty and *.4ht. The style files define the features for the output.
 </p>     
 </dd>
 <dt class='description'>
-<!-- l. 93 --><p class='noindent'>
+<!-- l. 94 --><p class='noindent'>
 <span class='ec-lmbx-10'>tex4ht</span> 
 </p>
 </dt><dd class='description'>
-<!-- l. 93 --><p class='noindent'>     
+<!-- l. 94 --><p class='noindent'>     
 </p>
-<!-- l. 95 --><p class='noindent'>The  output  of  TeX  is  a  standard  dvi  file  interleaved  with  special
+<!-- l. 96 --><p class='noindent'>The  output  of  TeX  is  a  standard  dvi  file  interleaved  with  special
 instructions for the postprocessor <code>tex4ht</code> to use. The special instructions
 come from implicit and explicit requests made in the source file through
 commands of <code>TeX4ht</code>.
 </p>     
-<!-- l. 100 --><p class='noindent'>The utility tex4ht translates the dvi code into standard text, while obeying
+<!-- l. 101 --><p class='noindent'>The utility tex4ht translates the dvi code into standard text, while obeying
 the requests it gets from the special instructions. The special instructions
 may  request  the  creation  of  files,  insertion  of  html  code,  filtering  of
 pictures, and so forth.
 </p>     
-<!-- l. 105 --><p class='noindent'>In the extreme case that the source code contains no commands of TeX4ht,
+<!-- l. 106 --><p class='noindent'>In the extreme case that the source code contains no commands of TeX4ht,
 tex4ht  gets  pure  dvi  code  and  it  outputs  (almost)  plain  text  with  no
 hypertext elements in it.
 </p>     
-<!-- l. 109 --><p class='noindent'>The  special  (<code>\special</code>)  instructions  seeded  in  the  dvi  code  are  not
+<!-- l. 110 --><p class='noindent'>The  special  (<code>\special</code>)  instructions  seeded  in  the  dvi  code  are  not
 understood by dvi processors other than those of TeX4ht.
 </p>     
 </dd>
 <dt class='description'>
-<!-- l. 112 --><p class='noindent'>
+<!-- l. 113 --><p class='noindent'>
 <span class='ec-lmbx-10'>x.idv</span> 
 </p>
 </dt><dd class='description'>
-<!-- l. 112 --><p class='noindent'>     
+<!-- l. 113 --><p class='noindent'>     
 </p>
-<!-- l. 114 --><p class='noindent'>This is a dvi file extracted from x.dvi, and it contains the pictures needed
+<!-- l. 115 --><p class='noindent'>This is a dvi file extracted from x.dvi, and it contains the pictures needed
 in the html files.
 </p>     
 </dd>
 <dt class='description'>
-<!-- l. 117 --><p class='noindent'>
+<!-- l. 118 --><p class='noindent'>
 <span class='ec-lmbx-10'>x.lg</span> 
 </p>
 </dt><dd class='description'>
-<!-- l. 117 --><p class='noindent'>     
+<!-- l. 118 --><p class='noindent'>     
 </p>
-<!-- l. 119 --><p class='noindent'>This is a log file listing the pictures of x.idv, the png files that should
+<!-- l. 120 --><p class='noindent'>This is a log file listing the pictures of x.idv, the png files that should
 be created, CSS information, and user directives introduced through the
 ‘<code>\Needs{...}</code>’ command.
                                                                   
@@ -279,11 +279,11 @@ be created, CSS information, and user directives introduced through the
 </p>     
 </dd>
 <dt class='description'>
-<!-- l. 123 --><p class='noindent'>
+<!-- l. 124 --><p class='noindent'>
 <span class='ec-lmbx-10'>t4ht</span> 
 </p>
 </dt><dd class='description'>
-<!-- l. 123 --><p class='noindent'>This is an interpreter for executing the requests made in the x.lg script.
+<!-- l. 124 --><p class='noindent'>This is an interpreter for executing the requests made in the x.lg script.
 </p>     
 </dd></dl>
 <h4 class='subsectionHead' id='makeht-extensions'><span class='titlemark'>4.3.1   </span> <a id='x5-370004.3.1'></a>make4ht extensions</h4>
