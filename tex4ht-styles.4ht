@@ -1,0 +1,12 @@
+% minted commands for input of examples
+\NewConfigure{htmlinput}{2}
+\NewConfigure{texinput}{2}
+
+\pend:defI\texinput{\a:texinput}
+\append:defI\texinput{\b:texinput}
+
+\pend:defI\htmlinput{\a:htmlinput}
+\append:defI\htmlinput{\b:htmlinput}
+
+\Hinput{tex4ht-styles}
+\endinput
