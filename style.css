@@ -70,7 +70,7 @@ main.main-content{
 p.indent, p.noindent{text-indent:0}
 /* code{font-size:1.4rem;} */
 /* figure pre.listings{font-size: 1.4rem;} */
-figure.texsource, figure.shellcommand, figure.htmlsource{
+figure.texsource, figure.shellcommand, figure.htmlsource, figure.luasource{
   margin:0.5rem 0; 
   padding-left:0.5rem; 
   overflow:auto;
