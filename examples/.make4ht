@@ -17,4 +17,21 @@ local process = domfilter {
   end
 }
 
-Make:match("html$", process)
+-- we need to extract the document body only after all other filters were executed
+local function insert_process(s)
+  Make:match("html", process)
+end
+
+Make:add("insert_process", insert_process)
+
+if mode=="draft" then
+  Make:htlatex {}
+  Make:insert_process  {}
+else
+  Make:htlatex {}
+  Make:htlatex {}
+  Make:htlatex {}
+  Make:insert_process  {}
+end
+
+
