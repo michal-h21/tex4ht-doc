@@ -1,5 +1,6 @@
 \ProvidesPackage{tex4ht-styles}
 \RequirePackage{minted}
+\RequirePackage{nameref}
 
 \usemintedstyle{lovelace}
 \RequirePackage{xparse}
@@ -53,5 +54,13 @@
 % Document \Configure commands. They have variable number of arguments, so it is necessary to process them as a list
 \def\PrintConfigures#1#2\@nil{\{#1\}\allowbreak\ifx\relax#2\relax\else\expandafter\PrintConfigures#2\@nil\fi}
 \def\DocConfigure#1#2\EndDoc{\par\bigskip\noindent\texttt{\textbf{\textbackslash Configure}\{\textit{#1}\}\PrintConfigures#2{}\@nil}}
+
+
+% don't print page number after nameref with TeX4ht
+\ifdefined\HCode
+\newcommand\namerefpage[1]{\nameref{#1}}
+\else
+\newcommand\namerefpage[1]{\nameref{#1}, (p.~\pageref{#1})}
+\fi
 
 \endinput
