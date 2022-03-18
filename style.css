@@ -120,7 +120,7 @@ nav.TOC span:hover, nav.TOC span:hover *{
 
 
 
-figure.texsource, figure.shellcommand, figure.htmlsource{
+figure.texsource, figure.shellcommand, figure.htmlsource, figure.luasource{
   border:1px solid #cec1aa; 
   background-color:#d5e3c6;
 }
