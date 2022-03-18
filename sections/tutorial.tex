@@ -31,25 +31,37 @@ to convert document to the OpenDocument Format, use:
 make4ht -f odt filename.tex
 \end{shellcommand}
 
+More information about \texttt{make4ht} and it's features can be found in the
+section \namerefpage{sec:make4ht-intro}.
+
+
 
 \hypertarget{simple-example}{%
 \section{Simple example}\label{simple-example}}
 
-Lets start with conversion of simple LaTeX file to html. Let's say we
-have following multilingual LaTeX file:
+Lets start with conversion of simple LaTeX file to html  
+with the following \LaTeX\ file:
 
-\begin{texsource}
-\documentclass{article}
-\usepackage[english,czech]{babel}
-\begin{document}
-Příliš žluťoučký kůň úpěl \textit{ďábelské} ódy.
-\begin{otherlanguage}{english}
-    Some text in English
-\end{otherlanguage}
-\end{document}
-\end{texsource}
+\texinput{examples/otherlang/babel.tex}
 
-One thing to notice is the use of two languages in the document. 
+You can compile it using the following command:
+
+\begin{shellcommand}
+make4ht -m draft filename.tex
+\end{shellcommand}
+
+By default, \texttt{make4ht} compiles your \TeX\ file three times, to get correct hyperlinks 
+and other features that depend on auxilary files. The \texttt{-m draft} option uses
+only one compilation, so it is much faster.
+
+The resulting HTML file contains the following code:
+
+\htmlinput{examples/otherlang/babel-body.html}
+
+You can see that there is an issue -- the \textit{ď} and \textit{ť} letters are broken into
+two letters, a base letter and an accent.
+
+You can notice the use of two languages in the document. 
 Czech is the main document language, English is secondary. 
 Note usage of \texttt{otherlanguage} environment. 
 It is provided by \package{babel} package and locally
@@ -62,7 +74,7 @@ reason: it is impossible to configure them correctly for end element
 insertion. 
 
 For font switching commands, situation is saved by the
-\texttt{tex4ht} command. It inserts formatting instructions for each
+\texttt{tex4ht} command. As it processes the DVI file, it can find formatting instructions for each
 font change, so font sizes and styles are supported. 
 But generally, such commands don't play nice with the nature of
 \texttt{XML} based formats, where every started element must be closed
@@ -73,7 +85,7 @@ configuration and insert opening and closing tags at correct places.
 \subsection{Basic configuration}
 
 You may want to insert some custom HTML tags. It is a bit more complicated for
-\LaTeX\ commands, but easy for environments. We can configure code that is 
+\LaTeX\ commands, but easy for environments. You can configure code that is 
 inserted before and after environment using the \texcommand{\ConfigureEnv} command.
 It has a following syntax:
 
@@ -82,7 +94,12 @@ It has a following syntax:
 {before-list}{after-list}
 \end{texsource}
 
-ToDo: continue here
+We can ignore the \texttt{before-list} and \texttt{after-list} arguments, as they
+are used only for list like environments, such as \texttt{itemize}. So we just need to
+
+
+
+
 
 
 But beware of the following situation:
