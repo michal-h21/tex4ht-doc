@@ -47,19 +47,33 @@ with the following \LaTeX\ file:
 You can compile it using the following command:
 
 \begin{shellcommand}
-make4ht -m draft filename.tex
+make4ht -lm draft filename.tex
 \end{shellcommand}
+
+As you can see, you can join multiple options for \texttt{make4ht}. The above invocation is equal to the following:
+
+\begin{shellcommand}
+make4ht -l -m draft filename.tex
+\end{shellcommand}
+
+You can also use the long options:
+
+\begin{shellcommand}
+make4ht --lua --mode draft filename.tex
+\end{shellcommand}
+
+
 
 By default, \texttt{make4ht} compiles your \TeX\ file three times, to get correct hyperlinks 
 and other features that depend on auxilary files. The \texttt{-m draft} option uses
 only one compilation, so it is much faster.
 
+
+
 The resulting HTML file contains the following code:
 
-\htmlinput{examples/otherlang/babel-body.html}
+\htmlinput{examples/otherlang/babel-lua-body.html}
 
-You can see that there is an issue -- the \textit{ď} and \textit{ť} letters are broken into
-two letters, a base letter and an accent. It is caused by the fact
 
 
 
