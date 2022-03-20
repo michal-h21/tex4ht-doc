@@ -1,4 +1,6 @@
 \NewConfigure{hello}{2}
-\pend:def\hello{\a:hello}
-\append:def\hello{\b:hello}
+\AddToHook{cmd/hello/before}{\a:hello}
+\AddToHook{cmd/hello/after}{\b:hello}
+% \pend:def\hello{\a:hello}
+% \append:def\hello{\b:hello}
 \Hinput{sample}
