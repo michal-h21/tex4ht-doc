@@ -788,15 +788,17 @@ delimiters:
 </p><!-- l. 401 --><p class='indent'>   It is also advisable to always use <code>common_domfilters</code> <span class='emph'>make4ht</span> extension (see
 section <a href='CallingCommands.html#makeht-extensions'>4.3.1<!-- tex4ht:ref: sec:make4ht-extensions  --></a> for more information about <span class='emph'>make4ht</span> extensions), as it fixes some
 common <code>MathML</code> errors that cannot be easily fixed on the TeX level.
-</p><!-- l. 407 --><p class='indent'>   Add information about the <a class='url' href='https://github.com/pshihn/math-ml'><span class='ec-lmtt-10'>https://github.com/pshihn/math-ml</span></a> - it adds
+</p><!-- l. 407 --><p class='indent'>   If you want to add original LaTeX source as an annotation to your MathML
+formulas, you can try a configuration from this <a href='https://tex.stackexchange.com/a/637910/2891'>this answer</a>.
+</p><!-- l. 410 --><p class='indent'>   Add information about the <a class='url' href='https://github.com/pshihn/math-ml'><span class='ec-lmtt-10'>https://github.com/pshihn/math-ml</span></a> - it adds
 support for MathML in all modern web browsers with HTML 5.
-</p><!-- l. 411 --><p class='noindent'>
+</p><!-- l. 414 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='mathjax1'><span class='titlemark'>7.19.3   </span> <a id='x8-770007.19.3'></a>MathJax</h4>
-<!-- l. 412 --><p class='noindent'><code>TeX4ht</code> supports MathJax, library for math rendering in HTML documents. It
+<!-- l. 415 --><p class='noindent'><code>TeX4ht</code> supports MathJax, library for math rendering in HTML documents. It
 supports two modes – LaTeX math and <code>MathML</code>.
-</p><!-- l. 415 --><p class='indent'>   The <span class='emph'>MathJax</span> processing can be required using the <span class='emph'>mathjax</span> option.
-</p><!-- l. 417 --><p class='indent'>   The address of the <span class='emph'>MathJax</span> script and its configuration string can be specified
+</p><!-- l. 418 --><p class='indent'>   The <span class='emph'>MathJax</span> processing can be required using the <span class='emph'>mathjax</span> option.
+</p><!-- l. 420 --><p class='indent'>   The address of the <span class='emph'>MathJax</span> script and its configuration string can be specified
 in the <code>MathjaxSource</code> configuration. Default value of this configuration
 is:
 </p>   
@@ -804,20 +806,20 @@ is:
 <pre class='fancyvrb' id='fancyvrb84'><a id='x8-77004r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>MathjaxSource</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-77006r2'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
-<!-- l. 425 --><p class='noindent'><span class='paragraphHead' id='latex-mode'><a id='x8-780007.19.3'></a><span class='ec-lmbx-10'>LaTeX mode</span></span>
+                                                                  
+
+                                                                  
+<!-- l. 428 --><p class='noindent'><span class='paragraphHead' id='latex-mode'><a id='x8-780007.19.3'></a><span class='ec-lmbx-10'>LaTeX mode</span></span>
 In the LaTeXmath mode, TeX macros used in the math mode are preserved in
 the output HTML document. They are parsed and rendered by MathJax when the
 document is displayed by a web browser. The downside of this mode is that
 commands unknown to MathJax must be configured in a special configuration for
-                                                                  
-
-                                                                  
 MathJax. Cross-references to equations and other numbered math environments
 don’t work out of the box. You can try the Lua scripts proposed in <a href='https://tex.stackexchange.com/a/597913/2891'>this post on
 TeX.sx</a> as a workaround.
-</p><!-- l. 436 --><p class='indent'>   By default, inline and display math, as well as math environments, are kept as
+</p><!-- l. 439 --><p class='indent'>   By default, inline and display math, as well as math environments, are kept as
 raw LaTeX code in the <code>HTML</code> output.
-</p><!-- l. 439 --><p class='indent'>   The additional configuration for <span class='emph'>MathJax</span> can be provided in the <code>MathJaxConfig</code>
+</p><!-- l. 442 --><p class='indent'>   The additional configuration for <span class='emph'>MathJax</span> can be provided in the <code>MathJaxConfig</code>
 configuration. The following example provides support for some custom
 LaTeX macros.
 </p>   
@@ -838,13 +840,13 @@ LaTeX macros.
 <a id='x8-78043r14'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span> 
 <a id='x8-78045r15'></a></pre>
 </figure>
-<!-- l. 462 --><p class='indent'>   The configuration needs to be passed as a JavaScript object, this means that you
+<!-- l. 465 --><p class='indent'>   The configuration needs to be passed as a JavaScript object, this means that you
 need to use extra <span class='obeylines-h'><code>{}</code></span> brackets. The <code>\detokenize</code> macro is used to avoid
 issues with backslash characters used in the macro definitions. Backslashes
 must be doubled in the JavaScript strings. Contents of this configuration
 are already enclosed in the <code>\HCode</code> command, so you cannot use it in this
 configuration.
-</p><!-- l. 469 --><p class='indent'>   If you want to define macros with parameters, you may run to issues with the #
+</p><!-- l. 472 --><p class='indent'>   If you want to define macros with parameters, you may run to issues with the #
 character, used for parameters. You need to change the catcode of this character to
 letter before the <code>MathJaxConfig</code> configuration:
 </p>   
@@ -870,7 +872,7 @@ letter before the <code>MathJaxConfig</code> configuration:
 <a id='x8-78103r19'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-78105r20'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span></pre>
 </figure>
-<!-- l. 495 --><p class='noindent'><span class='paragraphHead' id='custom-environments-in-mathjax'><a id='x8-790007.19.3'></a><span class='ec-lmbx-10'>Custom environments in MathJax.</span></span>
+<!-- l. 498 --><p class='noindent'><span class='paragraphHead' id='custom-environments-in-mathjax'><a id='x8-790007.19.3'></a><span class='ec-lmbx-10'>Custom environments in MathJax.</span></span>
 If you want to add support for a new environment, you can use the <span class='obeylines-h'><code>\VerbMath</code></span>
 command, and you will also need to pass suitable configuration to MathJax. For
 example for the following TeX file:
@@ -887,13 +889,13 @@ example for the following TeX file:
 <a id='x8-79029r9'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>dmath*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>     </span><span class='textcolor-878787'><span class='textit'>%error is around here</span></span> 
 <a id='x8-79031r10'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>dgroup*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-79033r11'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
-</figure>
-<!-- l. 514 --><p class='indent'>   Can be configured using this configuration file:
-</p>   
-<figure class='texsource' role='doc-example'>
                                                                   
 
                                                                   
+</figure>
+<!-- l. 517 --><p class='indent'>   Can be configured using this configuration file:
+</p>   
+<figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb88'><a id='x8-79050r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-79052r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>MathJaxConfig</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{{</span></span> 
 <a id='x8-79054r3'></a><span class='ec-lmtt-10'>    tex: </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span> 
@@ -910,18 +912,18 @@ example for the following TeX file:
 <a id='x8-79076r14'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-79078r15'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span></pre>
 </figure>
-<!-- l. 534 --><p class='indent'>   The <span class='obeylines-h'><code>\VerbMath</code></span> command can be used just for the <span class='obeylines-h'><code>dgroup*</code></span> environment, as it will
+<!-- l. 537 --><p class='indent'>   The <span class='obeylines-h'><code>\VerbMath</code></span> command can be used just for the <span class='obeylines-h'><code>dgroup*</code></span> environment, as it will
 pass the whole contents, including the <span class='obeylines-h'><code>dgroup*</code></span> environment, to the HTML file. But
 you will need to provide MathJax configuration for both of these environments, as
 they are not supported by default.
 </p>
-<!-- l. 540 --><p class='noindent'><span class='paragraphHead' id='-mathml-mode'><a id='x8-800007.19.3'></a><code>MathML</code><span class='ec-lmbx-10'> mode</span></span>
+<!-- l. 543 --><p class='noindent'><span class='paragraphHead' id='-mathml-mode'><a id='x8-800007.19.3'></a><code>MathML</code><span class='ec-lmbx-10'> mode</span></span>
 Math is converted to <code>MathML</code> by <code>TeX4ht</code>, MathJax then renders it. Custom
 commands and cross-references work in this mode.
-</p><!-- l. 545 --><p class='indent'>   The <code>MathML</code> MathJax mode can be required using the <span class='emph'>mathml,mathjax</span>
+</p><!-- l. 548 --><p class='indent'>   The <code>MathML</code> MathJax mode can be required using the <span class='emph'>mathml,mathjax</span>
 option.
 </p>
-<!-- l. 547 --><p class='noindent'><span class='paragraphHead' id='table-of-contents-issues'><a id='x8-810007.19.3'></a><span class='ec-lmbx-10'>Table of contents issues</span></span>
+<!-- l. 550 --><p class='noindent'><span class='paragraphHead' id='table-of-contents-issues'><a id='x8-810007.19.3'></a><span class='ec-lmbx-10'>Table of contents issues</span></span>
 Some math commands may cause issues when they are used in section
 titles in the MathJax mode. This can be fixed using the <code>\fixmathjaxtoc</code>
 command:
@@ -929,16 +931,16 @@ command:
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb89'><a id='x8-81003r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\fixmathjaxtoc\int</span></span></pre>
 </figure>
-<!-- l. 557 --><p class='noindent'>
+<!-- l. 560 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='bibliographies1'><span class='titlemark'>7.20   </span> <a id='x8-820007.20'></a>Bibliographies</h3>
-<!-- l. 558 --><p class='noindent'>
+<!-- l. 561 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='indexing1'><span class='titlemark'>7.21   </span> <a id='x8-830007.21'></a>Indexing</h3>
                                                                   
 
                                                                   
-<!-- l. 560 --><p class='noindent'>
+<!-- l. 563 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='opendocument-format'><span class='titlemark'>7.22   </span> <a id='x8-840007.22'></a>OpenDocument Format</h3>
 <!-- l. 1 --><p class='noindent'>The OpenDocument Format uses XML configuration file for document styling. To
