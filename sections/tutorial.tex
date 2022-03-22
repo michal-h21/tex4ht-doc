@@ -23,23 +23,8 @@ The conversion is invoked using the \texttt{make4ht} command:
 make4ht filename.tex
 \end{shellcommand}
 
-By default, it converts \LaTeX\ file to HTML 5 document. You can request
-conversion to other formats using the \texttt{-f} option. For example,
-to convert document to the OpenDocument Format, use:
 
-\begin{shellcommand}
-make4ht -f odt filename.tex
-\end{shellcommand}
-
-More information about \texttt{make4ht} and it's features can be found in the
-section \namerefpage{sec:make4ht-intro}.
-
-
-
-\hypertarget{simple-example}{%
-\section{Simple example}\label{simple-example}}
-
-Lets start with conversion of simple LaTeX file to html  
+Lets start with conversion of simple \LaTeX\ file to HTML  
 with the following \LaTeX\ file:
 
 \texinput{examples/otherlang/babel.tex}
@@ -49,6 +34,10 @@ You can compile it using the following command:
 \begin{shellcommand}
 make4ht -lm draft filename.tex
 \end{shellcommand}
+
+The resulting HTML file contains the following code:
+
+\htmlinput{examples/otherlang/babel-lua-body.html}
 
 As you can see, you can join multiple options for \texttt{make4ht}. The above invocation is equal to the following:
 
@@ -62,17 +51,31 @@ You can also use the long options:
 make4ht --lua --mode draft filename.tex
 \end{shellcommand}
 
+What do these options mean? 
+
+The \texttt{--lua} option tells \texttt{make4ht} to use Lua\LaTeX\ as an engine
+for compilation. There is also \texttt{-x} (or \texttt{--xetex}) option that enables 
+use of Xe\LaTeX\ for the compilation. If neither of these options is used, the file
+will be converted with the default PDF\LaTeX\ engine.
 
 
+The \texttt{--mode} option sets 
 By default, \texttt{make4ht} compiles your \TeX\ file three times, to get correct hyperlinks 
 and other features that depend on auxilary files. The \texttt{-m draft} option uses
 only one compilation, so it is much faster.
 
+\texttt{make4ht} converts \LaTeX\ file to a HTML 5 document. You can request
+conversion to other formats using the \texttt{-f} option. For example,
+to convert document to the OpenDocument Format, use:
+
+\begin{shellcommand}
+make4ht -f odt filename.tex
+\end{shellcommand}
+
+More information about \texttt{make4ht} and it's command line options and other features can be found in the
+section \namerefpage{sec:make4ht-intro}.
 
 
-The resulting HTML file contains the following code:
-
-\htmlinput{examples/otherlang/babel-lua-body.html}
 
 
 
