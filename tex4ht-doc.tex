@@ -123,12 +123,23 @@ can be missing.
   \item[JATS] support for this format is limited, even basic document structure is missing.
 \end{description}
 
+Additionally, you can create e-book formats such as EPUB or MOBI. For historical reasons, these formats
+are created using separate tool, \texttt{tex4ebook}. It supports the folowing formats:
+
+\begin{description}
+  \item[AZW]
+  \item[AZW 3]
+  \item[EPUB]
+  \item[EPUB 3]
+  \item[MOBI]
+\end{description}
+
 To convert your file to any of these formats, use it as a lowercase name, without spaces, in the
 \texttt{-f} option of \makefourht:
 
 \begin{shellcommand}
 $ make4ht -f odt filename.tex
-$ make4ht -f html5 filename.tex
+$ tex4ebook -f epub3 filename.tex
 \end{shellcommand}
 
 
