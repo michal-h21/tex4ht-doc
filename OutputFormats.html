@@ -15,7 +15,7 @@
  
  
  
-  
+ 
  
  
 <span class='chapterToc'>3 <a href='Howto.html#how-to'>How to</a></span>
@@ -44,19 +44,18 @@
 <span class='chapterToc'>4 <a href='CallingCommands.html#calling-commands'>Calling Commands</a></span>
  
  
- 
   
 <span class='chapterToc'>5 <a href='#output-formats'>Output Formats</a></span>
-<span class='chapterToc'>6 <a href='texfourhtOptions.html#-texht-options'><code>TeX4ht</code> Options</a></span>
+<span class='chapterToc'>6 <a href='texfourhtOptions.html#-texht-options1'><code>TeX4ht</code> Options</a></span>
  
-<span class='chapterToc'>7 <a href='Configurations.html#configurations1'>Configurations</a></span>
+<span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
  
   
   
+ 
                                                                   
 
                                                                   
- 
  
   
   
@@ -102,10 +101,10 @@
  
  
   
+<span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
                                                                   
 
                                                                   
-<span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
  
  
  
@@ -125,7 +124,67 @@
 </nav> 
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='CallingCommands.html'>prev</a>] [<a href='tex4ht-doc.html#OutputFormats.html'>up</a>] [<a href='texfourhtOptions.html'>next</a>] </nav> 
-<h2 class='chapterHead' id='output-formats'><span class='titlemark'>Chapter 5</span><br /><a id='x6-380005'></a>Output Formats</h2>
+<h2 class='chapterHead' id='output-formats'><span class='titlemark'>Chapter 5</span><br /><a id='x6-370005'></a>Output Formats</h2>
+<code>TeX4ht</code> supports following output formats:
+<dl class='description'><dt class='description'>     
+<!-- l. 111 --><p class='noindent'>
+<span class='ec-lmbx-10'>HTML 5</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 111 --><p class='noindent'>used by default, when you don’t provide the <code>-f</code> option.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 112 --><p class='noindent'>
+<span class='ec-lmbx-10'>XHTML</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 112 --><p class='noindent'>alternative if you don’t want to use new HTML elements.
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 113 --><p class='noindent'>
+<span class='ec-lmbx-10'>ODT</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 113 --><p class='noindent'>suitable for LibreOffice or MS Word.</p></dd></dl>
+<!-- l. 116 --><p class='indent'>   There are also historicaly other formats with more limited support. Basic
+structures, like sections or lists should work, but specific formatting for most of
+LaTeX packages can be missing.
+</p>     
+<dl class='description'><dt class='description'>
+<!-- l. 121 --><p class='noindent'>
+<span class='ec-lmbx-10'>DocBook</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 121 --><p class='noindent'>     
+</p>
+</dd>     
+<dt class='description'>
+<!-- l. 122 --><p class='noindent'>
+<span class='ec-lmbx-10'>TEI</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 122 --><p class='noindent'>
+                                                                  
+
+                                                                  
+</p>     
+</dd>
+<dt class='description'>
+<!-- l. 123 --><p class='noindent'>
+<span class='ec-lmbx-10'>JATS</span> 
+</p>
+</dt><dd class='description'>
+<!-- l. 123 --><p class='noindent'>support  for  this  format  is  limited,  even  basic  document  structure  is
+missing.</p></dd></dl>
+<!-- l. 126 --><p class='indent'>   To convert your file to any of these formats, use it as a lowercase name, without
+spaces, in the <code>-f</code> option of <code>make4ht</code>:
+</p>   
+<figure class='shellcommand' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb54'><a id='x6-37004r1'></a><span class='ec-lmtt-10'>$ make4ht -f odt filename.tex</span> 
+<a id='x6-37006r2'></a><span class='ec-lmtt-10'>$ make4ht -f html5 filename.tex</span></pre>
+</figure>
                                                                   
 
                                                                   
