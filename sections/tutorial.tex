@@ -15,7 +15,7 @@ several output formats, like \texttt{HTML} (for web pages) or
 \texttt{ePub} (for ebooks and other applications).
 
 \hypertarget{basic-usage}{%
-\section{Basic usage}\label{basic-usage}}
+\section{Basic Usage}\label{sec:tutorial-basic-usage}}
 
 Conversion is invoked using the \texttt{make4ht} command:
 
@@ -53,15 +53,28 @@ make4ht --lua --mode draft filename.tex
 
 What do these options mean? 
 
-The option \texttt{--lua} tells \texttt{make4ht} to use Lua\LaTeX\ as a compilation engine. There is also a \texttt{-x} (or \texttt{--xetex}) option that allows the 
-use of Xe\LaTeX\ for compilation. If neither of these options is used, the file
-will be converted with the default PDF\LaTeX\ engine.
+The option \texttt{--lua} tells \texttt{make4ht} to use Lua\LaTeX\ as a
+compilation engine. There is also a \texttt{-x} (or \texttt{--xetex}) option
+that allows the use of Xe\LaTeX\ for compilation. If neither of these options
+is used, the file will be converted with the default PDF\LaTeX\ engine.
+
+For example, if we compiled the sample file without the \texttt{-l} option, we would get
+a different result:
+
+\texinput{examples/otherlang/babel-body.html}
+
+Notice that the accents in \textit{ť} and \textit{ď} letters are detached from the base letters.
+That's because \texfourht\ uses information about characters from the DVI file. Current \LaTeX
+supports basic accented characters out of the box, but sometimes, they don't work as expected.
 
 
-The \texttt{--mode} option sets 
+The \texttt{--mode} option sets the compilation mode. \texttt{make4ht} has one built-in mode,
+named \texttt{draft}. 
 By default, \texttt{make4ht} compiles your \TeX\ file three times, to get correct hyperlinks 
-and other features that depend on auxilary files. The \texttt{-m draft} option uses
+and other features that depend on auxilary files. The \texttt{draft} mode uses
 only one compilation, so it is much faster.
+
+
 
 \texttt{make4ht} converts \LaTeX\ file to a HTML 5 document. You can request
 conversion to other formats using the \texttt{-f} option. For example,
@@ -75,32 +88,14 @@ More information about \texttt{make4ht} and it's command line options and other 
 section \namerefpage{sec:make4ht-intro}.
 
 
+\section{\texfourht\ Options}
 
 
 
 
-You can notice the use of two languages in the document. 
-Czech is the main document language, and English is secondary. 
-Note the usage of the \texttt{otherlanguage} environment. 
-It is provided by the \package{babel} package and locally
-switches document languages, so correct hyphenation and other language-dependent 
-stuff are used. We could use the
-\texcommand{\selectlanguage} command, but I would like to
-discourage the usage of switching commands such as this one, or font
-switching commands like \texcommand{\bfseries}, for one
-reason: it is impossible to configure them correctly for end element
-insertion. 
 
-For font-switch commands, situation is saved by the
-\texttt{tex4ht} command. As it processes the DVI file, it can find formatting instructions for each
-font change, so font sizes and styles are supported. 
-But generally, such commands do not play nice with the nature of
-\texttt{XML} based formats, where every started element must be closed
-at the same hierarchical level. 
-The use of \texttt{otherlanguage} environment will allow us to make the proper
-configuration and insert opening and closing tags at correct places.
-
-\subsection{Basic configuration}
+\section{Configurations}
+\label{sec:tutorial-configurations}
 
 You may want to insert some custom HTML tags. It is a bit more complicated for
 \LaTeX\ commands, but easy for environments. You can configure code that is 
