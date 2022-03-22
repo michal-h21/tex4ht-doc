@@ -16,9 +16,16 @@ There are several ways how to pass the options to \texfourht. The
 non-recommended way is to pass them as options to \fourhtsty\ using
 \texcommand{\usepackage} command in the \TeX\ file. 
 
-Better ways don't require modifications of the \TeX\ files.
-It is possible to pass the options to the calling script, as an command line
-argument next to the filename:
+\begin{texsource}
+...
+\usepackage[xhtml,option1,option2]{tex4ht}
+...
+\end{texsource}
+
+Recommended solutions don't require modifications of the \TeX\ files.
+
+One way is to pass the options to \texttt{make4ht} as an command line
+argument, next to the filename:
 % it is run from the command line. These can also be provided as options when \texfourht
 % package is loaded in a \LaTeX\ document with the default usepackage command or to
 % the \verb|\Preamble| command in the custom config file
@@ -27,10 +34,10 @@ argument next to the filename:
 make4ht filename.tex "fn-in"
 \end{shellcommand}
 
-For more information about calling scripts see the section \ref{sec:calling-commands}.
+For more information on calling scripts see the section \ref{sec:calling-commands}.
 
-It is also possible to pass options in the \texcommand{\Preamble} command in a \cfgfile. Note that first option in the 
-\texcommand{\Preamble} must be \option{xhtml}, invalid HTML file will be produced otherwise!
+The second way is to pass options in the \texcommand{\Preamble} command in a \cfgfile. Note that first option in the 
+\texcommand{\Preamble} command must be \option{xhtml}.
 
 \begin{texsource}
 \Preamble{xhtml,fn-in}
@@ -39,6 +46,8 @@ It is also possible to pass options in the \texcommand{\Preamble} command in a \
 \EndPreamble
 \end{texsource}
 
+See the section \namerefpage{sec:private-configuration} for more details on
+configuration files.
 
 
 \section{List of options}
