@@ -17,7 +17,7 @@ several output formats, like \texttt{HTML} (for web pages) or
 \hypertarget{basic-usage}{%
 \section{Basic Usage}\label{sec:tutorial-basic-usage}}
 
-Conversion is invoked using the \texttt{make4ht} command:
+Conversion is invoked using the \makefourht\ command:
 
 \begin{shellcommand}
 make4ht filename.tex
@@ -39,7 +39,7 @@ The resulting HTML file contains the following code:
 
 \htmlinput{examples/otherlang/babel-lua-body.html}
 
-As you can see, multiple options can be joined for \texttt{make4ht}. The above invocation is equal to the following:
+As you can see, multiple options can be joined for \makefourht.  The above invocation is equal to the following:
 
 \begin{shellcommand}
 make4ht -l -m draft filename.tex
@@ -53,7 +53,7 @@ make4ht --lua --mode draft filename.tex
 
 What do these options mean? 
 
-The option \texttt{--lua} tells \texttt{make4ht} to use Lua\LaTeX\ as a
+The option \texttt{--lua} tells \makefourht\  to use Lua\LaTeX\ as a
 compilation engine. There is also a \texttt{-x} (or \texttt{--xetex}) option
 that allows the use of Xe\LaTeX\ for compilation. If neither of these options
 is used, the file will be converted with the default PDF\LaTeX\ engine.
@@ -68,15 +68,15 @@ That's because \texfourht\ uses information about characters from the DVI file. 
 supports basic accented characters out of the box, but sometimes, they don't work as expected.
 
 
-The \texttt{--mode} option sets the compilation mode. \texttt{make4ht} has one built-in mode,
+The \texttt{--mode} option sets the compilation mode. \makefourht\  has one built-in mode,
 named \texttt{draft}. 
-By default, \texttt{make4ht} compiles your \TeX\ file three times, to get correct hyperlinks 
+By default, \makefourht\  compiles your \TeX\ file three times, to get correct hyperlinks 
 and other features that depend on auxilary files. The \texttt{draft} mode uses
 only one compilation, so it is much faster.
 
 
 
-\texttt{make4ht} converts \LaTeX\ file to a HTML 5 document. You can request
+\makefourht\  converts \LaTeX\ file to a HTML 5 document. You can request
 conversion to other formats using the \texttt{-f} option. For example,
 to convert a document to the OpenDocument Format, use:
 
@@ -84,7 +84,7 @@ to convert a document to the OpenDocument Format, use:
 make4ht -f odt filename.tex
 \end{shellcommand}
 
-More information about \texttt{make4ht} and it's command line options and other features can be found in the
+More information about \makefourht\ and it's command line options and other features can be found in the
 section \namerefpage{sec:make4ht-intro}.
 
 
