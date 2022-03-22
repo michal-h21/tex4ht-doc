@@ -2,7 +2,7 @@
 \section{\texorpdfstring{What is
 \texttt{TeX4ht}?}{What is TeX4ht?}}\label{what-is-tex4ht}}
 
-\href{https://www.tug.org/tex4ht/}{\texttt{TeX4ht}} is a system which
+\href{https://www.tug.org/tex4ht/}{\texttt{TeX4ht}} is a system that
 converts LaTeX to various output formats, including \texttt{HTML},
 \href{http://en.wikipedia.org/wiki/OpenDocument}{\texttt{ODT}},
 \href{http://en.wikipedia.org/wiki/DocBook}{\texttt{DocBook}} or
@@ -11,20 +11,20 @@ converts LaTeX to various output formats, including \texttt{HTML},
 conversion targets.
 
 \texttt{TeX4ht} allows authors to convert \LaTeX\ input to 
-several output formats, like  \texttt{HTML} (for web pages) or
+several output formats, like \texttt{HTML} (for web pages) or
 \texttt{ePub} (for ebooks and other applications).
 
 \hypertarget{basic-usage}{%
 \section{Basic usage}\label{basic-usage}}
 
-The conversion is invoked using the \texttt{make4ht} command:
+Conversion is invoked using the \texttt{make4ht} command:
 
 \begin{shellcommand}
 make4ht filename.tex
 \end{shellcommand}
 
 
-Lets start with conversion of simple \LaTeX\ file to HTML  
+Let us start with conversion of simple \LaTeX\ file to HTML  
 with the following \LaTeX\ file:
 
 \texinput{examples/otherlang/babel.tex}
@@ -39,7 +39,7 @@ The resulting HTML file contains the following code:
 
 \htmlinput{examples/otherlang/babel-lua-body.html}
 
-As you can see, you can join multiple options for \texttt{make4ht}. The above invocation is equal to the following:
+As you can see, multiple options can be joined for \texttt{make4ht}. The above invocation is equal to the following:
 
 \begin{shellcommand}
 make4ht -l -m draft filename.tex
@@ -53,9 +53,8 @@ make4ht --lua --mode draft filename.tex
 
 What do these options mean? 
 
-The \texttt{--lua} option tells \texttt{make4ht} to use Lua\LaTeX\ as an engine
-for compilation. There is also \texttt{-x} (or \texttt{--xetex}) option that enables 
-use of Xe\LaTeX\ for the compilation. If neither of these options is used, the file
+The option \texttt{--lua} tells \texttt{make4ht} to use Lua\LaTeX\ as a compilation engine. There is also a \texttt{-x} (or \texttt{--xetex}) option that allows the 
+use of Xe\LaTeX\ for compilation. If neither of these options is used, the file
 will be converted with the default PDF\LaTeX\ engine.
 
 
@@ -66,7 +65,7 @@ only one compilation, so it is much faster.
 
 \texttt{make4ht} converts \LaTeX\ file to a HTML 5 document. You can request
 conversion to other formats using the \texttt{-f} option. For example,
-to convert document to the OpenDocument Format, use:
+to convert a document to the OpenDocument Format, use:
 
 \begin{shellcommand}
 make4ht -f odt filename.tex
@@ -81,24 +80,24 @@ section \namerefpage{sec:make4ht-intro}.
 
 
 You can notice the use of two languages in the document. 
-Czech is the main document language, English is secondary. 
-Note usage of \texttt{otherlanguage} environment. 
-It is provided by \package{babel} package and locally
-switches document languages, so correct hyphenation and other language
-dependent stuff are used. We could use
+Czech is the main document language, and English is secondary. 
+Note the usage of the \texttt{otherlanguage} environment. 
+It is provided by the \package{babel} package and locally
+switches document languages, so correct hyphenation and other language-dependent 
+stuff are used. We could use the
 \texcommand{\selectlanguage} command, but I would like to
-discourage usage of switching commands such is this one, or font
+discourage the usage of switching commands such as this one, or font
 switching commands like \texcommand{\bfseries}, for one
 reason: it is impossible to configure them correctly for end element
 insertion. 
 
-For font switching commands, situation is saved by the
+For font-switch commands, situation is saved by the
 \texttt{tex4ht} command. As it processes the DVI file, it can find formatting instructions for each
 font change, so font sizes and styles are supported. 
-But generally, such commands don't play nice with the nature of
+But generally, such commands do not play nice with the nature of
 \texttt{XML} based formats, where every started element must be closed
-on the same hierarchical level. 
-Usage of \texttt{otherlanguage} environment will allow us to make proper
+at the same hierarchical level. 
+The use of \texttt{otherlanguage} environment will allow us to make the proper
 configuration and insert opening and closing tags at correct places.
 
 \subsection{Basic configuration}
