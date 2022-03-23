@@ -143,7 +143,7 @@ available resources before committing to work on private features.
 <code>make4ht</code>:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb60'><a id='x8-42003r1'></a><span class='ec-lmtt-10'>make4ht -c mycfg.cfg myfile </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"2"</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb58'><a id='x8-42003r1'></a><span class='ec-lmtt-10'>make4ht -c mycfg.cfg myfile </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"2"</span></span></pre>
 </figure>
 <!-- l. 25 --><p class='indent'>   A configuration file should take the following form for LaTeX files:
 </p>   
@@ -151,7 +151,7 @@ available resources before committing to work on private features.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb61'><a id='x8-42011r1'></a><span class='ec-lmtt-10'>...early definitions...</span> 
+<pre class='fancyvrb' id='fancyvrb59'><a id='x8-42011r1'></a><span class='ec-lmtt-10'>...early definitions...</span> 
 <a id='x8-42013r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml,options</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-42015r3'></a><span class='ec-lmtt-10'>...definitions...</span> 
 <a id='x8-42017r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
@@ -164,7 +164,7 @@ make4ht to fix some common issues will fail! For more information about availabl
 options, see the <a href='texfourhtOptions.html#list-of-options'>List of options<!-- tex4ht:ref: sec:texfouhtoptions  --></a> section (<a href='texfourhtOptions.html#list-of-options'>6.1<!-- tex4ht:ref: sec:texfouhtoptions  --></a>).
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb62'><a id='x8-42027r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb60'><a id='x8-42027r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-42029r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-42031r3'></a><span class='ec-lmtt-10'>  </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Css</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>body </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'> color : red; </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
 <a id='x8-42033r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span></pre>
@@ -183,7 +183,7 @@ different formats by different tools.
 <!-- l. 60 --><p class='noindent'>For instance, a definition of the form <code>\renewcommand\mycommand{...}</code>
 within a configuration file provided for the following LaTeX source:</p></li></ul>
 <figure class='texsource' role='doc-example'>   
-<pre class='fancyvrb' id='fancyvrb63'><a id='x8-43007r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>...</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb61'><a id='x8-43007r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>...</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-43009r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\newcommand\mycommand</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>...</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-43011r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-43013r4'></a><span class='ec-lmtt-10'>Use </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\mycommand</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>...</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
@@ -205,7 +205,7 @@ command.
 </p><!-- l. 83 --><p class='indent'>   Sample package, <code>commonconfigurations.sty</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb64'><a id='x8-44008r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ProvidesPackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>commonconfigurations</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb62'><a id='x8-44008r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ProvidesPackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>commonconfigurations</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-44010r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\AtBeginDocument</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-878787'><span class='textit'>%</span></span> 
 <a id='x8-44012r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>@HEAD</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-44014r4'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;meta name="test" content="test"/&gt;</span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Hnewline</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
@@ -215,7 +215,7 @@ command.
 <!-- l. 94 --><p class='indent'>   It can be requested in a configuration file using <code>\RequirePackage</code> command.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb65'><a id='x8-44024r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb63'><a id='x8-44024r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-44026r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\RequirePackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>commonconfigurations</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-44028r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-44030r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span></pre>
@@ -239,7 +239,7 @@ requesting line breaks, and the command <code>\#</code> may be used for the shar
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb66'><a id='x8-47006r1'></a><span class='ec-lmtt-10'> Two lines of text      </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;br /&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb64'><a id='x8-47006r1'></a><span class='ec-lmtt-10'> Two lines of text      </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;br /&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-47008r2'></a><span class='ec-lmtt-10'> separated by a horizontal line.</span> 
 <a id='x8-47010r3'></a> 
 <a id='x8-47012r4'></a><span class='ec-lmtt-10'> You probably don</span><span class='ts1-lmtt10-'>'</span><span class='ec-lmtt-10'>t want a </span><span class='ts1-lmtt10-'>'</span><span class='ec-lmtt-10'>&lt;br&gt;</span><span class='ts1-lmtt10-'>'</span><span class='ec-lmtt-10'>.</span></pre>
@@ -270,7 +270,7 @@ etc.
 </p><!-- l. 45 --><p class='indent'>   I think it will be best to show some concrete examples:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb67'><a id='x8-50023r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\NewLogicalBlock</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>textit</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb65'><a id='x8-50023r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\NewLogicalBlock</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>textit</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-50025r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\SetBlockProperty</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>textit</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>class</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>textit</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-50027r3'></a> 
 <a id='x8-50029r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\NewLogicalBlock</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>maketitle</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
@@ -300,12 +300,12 @@ inserted to the document using
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb68'><a id='x8-50066r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\InlineElementStart</span></span><span class='ec-lmtt-10'> ... </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\InlineElementEnd</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb66'><a id='x8-50066r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\InlineElementStart</span></span><span class='ec-lmtt-10'> ... </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\InlineElementEnd</span></span></pre>
 </figure>
 <!-- l. 82 --><p class='noindent'>or
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb69'><a id='x8-50069r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\BlockElementStart</span></span><span class='ec-lmtt-10'> ... </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\BlockElementEnd</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb67'><a id='x8-50069r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\BlockElementStart</span></span><span class='ec-lmtt-10'> ... </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\BlockElementEnd</span></span></pre>
 </figure>
 <!-- l. 88 --><p class='noindent'>pairs. The start commands take two parameters, first is the logical block name, the
 second can be local parameters which shouldn’t be used for the given logical block
@@ -333,7 +333,7 @@ The alternative file consists of the code loaded from listed files, and of the c
 explicitly specified in its body.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb70'><a id='x8-51011r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ConfigureList</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>mylist</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb68'><a id='x8-51011r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ConfigureList</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>mylist</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-51013r2'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;div class="mylist"&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;/div&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>* </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{}</span></span> 
 <a id='x8-51015r3'></a> 
 <a id='x8-51017r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
@@ -366,7 +366,7 @@ changed using <span class='obeylines-h'><code>\Configure{FontFamily}{cssfamilyna
 command.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb71'><a id='x8-52003r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>FontFamily</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>rmfamily</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>Latin Modern</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb69'><a id='x8-52003r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>FontFamily</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>rmfamily</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>Latin Modern</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
 <!-- l. 16 --><p class='indent'>   The font shapes can be configure using <span class='obeylines-h'><code>\Configure{NormalFont}</code></span>, <code>\Configure</code>
 <code>{ItalicFont}</code>, <span class='obeylines-h'><code>\Configure{BoldItalicFont}</code></span> and <span class='obeylines-h'><code>Configure{BoldFont}</code></span>. The
@@ -374,7 +374,7 @@ argument should be font file in the format supported by browsers, such as <span 
 <span class='textit'>otf</span>.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb72'><a id='x8-52016r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>NormalFont</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>normal-font-file.otf</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb70'><a id='x8-52016r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>NormalFont</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>normal-font-file.otf</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-52018r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>BoldFont</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>bold-font-file.otf</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-52020r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>BoldItalicFont</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>bold-italic-font-file.otf</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-52022r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>ItalicFont</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>italic-font-file.otf</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
@@ -413,7 +413,7 @@ multi page document.
 pages obtained for sectioning commands.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb73'><a id='x8-56006r1'></a><span class='ec-lmtt-10'> </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb71'><a id='x8-56006r1'></a><span class='ec-lmtt-10'> </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-56008r2'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{}{}{</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-af3f3f'><span class='ec-lmtt-10'>\scriptstyle\Rightarrow</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-56010r3'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-af3f3f'><span class='ec-lmtt-10'>\scriptstyle\Leftarrow</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-56012r4'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{}{}{}{</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-af3f3f'><span class='ec-lmtt-10'>\scriptstyle\Uparrow</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
@@ -424,7 +424,7 @@ front, up. The last argument must be empty.
 </p><!-- l. 238 --><p class='indent'>   Default:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb74'><a id='x8-56018r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>next</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb72'><a id='x8-56018r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>next</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-56020r2'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>prev</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>prevtail</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-56022r3'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>tail</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>front</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-56024r4'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>up</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{}</span></span></pre>
@@ -458,7 +458,7 @@ links are omitted, if both <span class='obeylines-h'><code>#3</code></span> and 
 <!-- l. 264 --><p class='indent'>   Default: The values provided in <code>\Configure{crosslinks}</code>
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb75'><a id='x8-56032r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks:next</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>..................1</span> 
+<pre class='fancyvrb' id='fancyvrb73'><a id='x8-56032r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks:next</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>..................1</span> 
 <a id='x8-56034r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks:prev</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>..................1</span> 
 <a id='x8-56036r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks:prevtail</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>..............1</span> 
 <a id='x8-56038r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks:tail</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>..................1</span> 
@@ -472,7 +472,7 @@ links are omitted, if both <span class='obeylines-h'><code>#3</code></span> and 
 </p><!-- l. 283 --><p class='indent'>   Examples:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb76'><a id='x8-56050r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks-</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{}{}</span></span> 
+<pre class='fancyvrb' id='fancyvrb74'><a id='x8-56050r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks-</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{}{}</span></span> 
 <a id='x8-56052r2'></a> 
 <a id='x8-56054r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks-</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-56056r4'></a><span class='ec-lmtt-10'>    </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;span class="hidden"&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>[</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
@@ -518,7 +518,7 @@ HTML, RTL can be requested using:
 
                                                                   
 <figure class='texsource' role='doc-example'>   
-<pre class='fancyvrb' id='fancyvrb77'><a id='x8-64005r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ConfigureEnv</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>arab</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb75'><a id='x8-64005r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ConfigureEnv</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>arab</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-64007r2'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>LRdir</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'> dir="rtl"</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
 <a id='x8-64009r3'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>LRdir</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{}}{}{}</span></span></pre>
 </figure>
@@ -527,7 +527,7 @@ it after the environment end.
 </p><!-- l. 327 --><p class='indent'>   In the ODT output, different mechanism is used:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb78'><a id='x8-64012r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ConfigureEnv</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>arab</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\@</span></span><span class='ec-lmtt-10'>rltrue</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\@</span></span><span class='ec-lmtt-10'>rlfalse</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{}{}</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb76'><a id='x8-64012r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ConfigureEnv</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>arab</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\@</span></span><span class='ec-lmtt-10'>rltrue</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\@</span></span><span class='ec-lmtt-10'>rlfalse</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{}{}</span></span></pre>
 </figure>
 <!-- l. 333 --><p class='noindent'>
 </p>   
@@ -540,7 +540,7 @@ necessary.
 <code>inputenc</code> and <code>fontenc</code> packages:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb79'><a id='x8-65008r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>article</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb77'><a id='x8-65008r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>article</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-65010r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[utf8]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>inputenc</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-65012r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[T1]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>fontenc</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-65014r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
@@ -556,7 +556,7 @@ exists.
 the <code>Script</code> option.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb80'><a id='x8-65021r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\newfontfamily\greekfont</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>Linux Libertine O</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>[Script=Greek]</span></pre>
+<pre class='fancyvrb' id='fancyvrb78'><a id='x8-65021r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\newfontfamily\greekfont</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>Linux Libertine O</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>[Script=Greek]</span></pre>
                                                                   
 
                                                                   
@@ -565,7 +565,7 @@ the <code>Script</code> option.
 using the <code>\xeuniuseblock</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb81'><a id='x8-65024r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\xeuniuseblock</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>Greek</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb79'><a id='x8-65024r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\xeuniuseblock</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>Greek</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
 <!-- l. 373 --><p class='indent'>   The block names are based on <a href='https://en.wikipedia.org/wiki/Unicode_block'>Unicode blocks</a>.
 </p><!-- l. 375 --><p class='indent'>   It is also possible to declare all characters in an Unicode range. The command
@@ -573,13 +573,13 @@ using the <code>\xeuniuseblock</code>:
 be declared.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb82'><a id='x8-65027r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\xeuniregisterblockhex</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>0100</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>017F</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb80'><a id='x8-65027r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\xeuniregisterblockhex</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>0100</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>017F</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
 <!-- l. 383 --><p class='indent'>   Individual character can be declared using the <code>\xeuniregisterchar</code>
 command:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb83'><a id='x8-65030r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\xeuniregisterchar</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>"1F00</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb81'><a id='x8-65030r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\xeuniregisterchar</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>"1F00</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
 <!-- l. 389 --><p class='indent'>   In contrast to <code>\xeuniregisterblockhex</code>, it uses decimal numbers by
 default, so it is necessary to use the <code>"</code> character in front of a hexadecimal
@@ -589,7 +589,7 @@ number.
 support works. Common problem is filename support, for example in included
 graphics. In general, it is better to avoid such filenames. If it is not possible, try to
 use the <code>\detokenize</code> command.  <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb84'><a id='x8-65033r1'></a><span class='ec-lmtt-10'>  </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\includegraphics</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\detokenize</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>háček.jpg</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb82'><a id='x8-65033r1'></a><span class='ec-lmtt-10'>  </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\includegraphics</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\detokenize</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>háček.jpg</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span></pre>
 </figure>
 </section>
                                                                   
@@ -611,7 +611,7 @@ information to the HTML attributes: <a class='url' href='https://tex.stackexchan
 </p>   
 <h4 class='subsectionHead' id='low-level-features'><span class='titlemark'>7.16.1   </span> <a id='x8-680007.16.1'></a>Low level features</h4>
 <figure class='texsource' role='doc-example'>   
-<pre class='fancyvrb' id='fancyvrb85'><a id='x8-68064r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\DocConfigure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>Picture</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>Extension name for bitmap files of dvi pictures, stored in </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\texcommand</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\PictExt</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndDoc</span></span> 
+<pre class='fancyvrb' id='fancyvrb83'><a id='x8-68064r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\DocConfigure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>Picture</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>Extension name for bitmap files of dvi pictures, stored in </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\texcommand</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\PictExt</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndDoc</span></span> 
 <a id='x8-68066r2'></a> 
 <a id='x8-68068r3'></a><span class='ec-lmtt-10'>  Default:</span> 
 <a id='x8-68070r4'></a> 
@@ -682,7 +682,7 @@ information to the HTML attributes: <a class='url' href='https://tex.stackexchan
 </p><!-- l. 75 --><p class='indent'>   Examples:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb86'><a id='x8-69021r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>graphics</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb84'><a id='x8-69021r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>graphics</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-69023r2'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Picture</span></span><span class='ec-lmtt-10'>+[PIC]</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'> class="graphics"</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
 <a id='x8-69025r3'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPicture</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-69027r4'></a> 
@@ -703,7 +703,7 @@ information to the HTML attributes: <a class='url' href='https://tex.stackexchan
 <a id='x8-69057r19'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\egroup</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb87'><a id='x8-69100r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>graphics*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>..............2</span> 
+<pre class='fancyvrb' id='fancyvrb85'><a id='x8-69100r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>graphics*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>..............2</span> 
 <a id='x8-69102r2'></a> 
 <a id='x8-69104r3'></a><span class='ec-lmtt-10'>    #1  extension name</span> 
 <a id='x8-69106r4'></a><span class='ec-lmtt-10'>    #2  insertion</span> 
@@ -781,7 +781,7 @@ delimiters:
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb88'><a id='x8-75003r1'></a><span class='ec-lmtt-10'> Mail address: </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-af3f3f'><span class='ec-lmtt-10'>\lparen</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='ec-lmtt-10'>hello@world.com</span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-af3f3f'><span class='ec-lmtt-10'>\rparen</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb86'><a id='x8-75003r1'></a><span class='ec-lmtt-10'> Mail address: </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-af3f3f'><span class='ec-lmtt-10'>\lparen</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='ec-lmtt-10'>hello@world.com</span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-af3f3f'><span class='ec-lmtt-10'>\rparen</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span></pre>
 </figure>
 <!-- l. 440 --><p class='indent'>   In such cases, the <span class='emph'>matml-</span> may help.
 </p><!-- l. 442 --><p class='indent'>   It is also advisable to always use <code>common_domfilters</code> <span class='emph'>make4ht</span> extension (see
@@ -802,7 +802,7 @@ in the <code>MathjaxSource</code> configuration. Default value of this configura
 is:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb89'><a id='x8-76004r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>MathjaxSource</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb87'><a id='x8-76004r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>MathjaxSource</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-76006r2'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
 <!-- l. 469 --><p class='noindent'><span class='paragraphHead' id='latex-mode'><a id='x8-770007.19.3'></a><span class='ec-lmbx-10'>LaTeX mode</span></span>
@@ -823,7 +823,7 @@ LaTeX macros.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb90'><a id='x8-77017r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb88'><a id='x8-77017r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-77019r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>MathJaxConfig</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{{</span></span> 
 <a id='x8-77021r3'></a><span class='ec-lmtt-10'>    tex: </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span> 
 <a id='x8-77023r4'></a><span class='ec-lmtt-10'>      tags: "ams",</span> 
@@ -850,7 +850,7 @@ character, used for parameters. You need to change the catcode of this character
 letter before the <code>MathJaxConfig</code> configuration:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb91'><a id='x8-77067r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb89'><a id='x8-77067r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-77069r2'></a><span class='textcolor-878787'><span class='textit'>% change catcode of # to letter</span></span> 
 <a id='x8-77071r3'></a><span class='textcolor-878787'><span class='textit'>% in order to support #1 in custom</span></span> 
 <a id='x8-77073r4'></a><span class='textcolor-878787'><span class='textit'>% MathJax macros</span></span> 
@@ -877,7 +877,7 @@ command, and you will also need to pass suitable configuration to MathJax. For
 example for the following TeX file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb92'><a id='x8-78013r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[12pt]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>book</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb90'><a id='x8-78013r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>[12pt]</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>book</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-78015r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>amsmath</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-78017r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>breqn</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-78019r4'></a> 
@@ -892,7 +892,7 @@ example for the following TeX file:
 <!-- l. 558 --><p class='indent'>   Can be configured using this configuration file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb93'><a id='x8-78050r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb91'><a id='x8-78050r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-78052r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>MathJaxConfig</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{{</span></span> 
 <a id='x8-78054r3'></a><span class='ec-lmtt-10'>    tex: </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span> 
 <a id='x8-78056r4'></a><span class='ec-lmtt-10'>      tags: "ams",</span> 
@@ -928,7 +928,7 @@ titles in the MathJax mode. This can be fixed using the <code>\fixmathjaxtoc</co
 command:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb94'><a id='x8-80003r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\fixmathjaxtoc\int</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb92'><a id='x8-80003r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\fixmathjaxtoc\int</span></span></pre>
 </figure>
 <!-- l. 601 --><p class='noindent'>
 </p>   
@@ -945,7 +945,7 @@ declared style then needs to be configured using command <code>\ConfigureOO</cod
 </p><!-- l. 5 --><p class='indent'>   Usage of these commands can be illustrated by the following example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb95'><a id='x8-83011r1'></a><span class='ec-lmtt-10'>  </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>SectionTitleTest</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ifvmode\IgnorePar\fi\EndP\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;text:p text:style-name="section-title"&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;/text:p&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
+<pre class='fancyvrb' id='fancyvrb93'><a id='x8-83011r1'></a><span class='ec-lmtt-10'>  </span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>SectionTitleTest</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ifvmode\IgnorePar\fi\EndP\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;text:p text:style-name="section-title"&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;/text:p&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
 <a id='x8-83013r2'></a> 
 <a id='x8-83015r3'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\NewConfigureOO</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>section-title</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-83017r4'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ConfigureOO</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>section-title</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>&lt;style:style style:name="section-title" style:family="paragraph" style:class="text"&gt;</span> 
@@ -968,7 +968,7 @@ configuration.
 <h4 class='subsectionHead' id='extra-configurations-for-opendocument-format'><span class='titlemark'>7.22.1   </span> <a id='x8-840007.22.1'></a>Extra Configurations for OpenDocument Format</h4>
 <!-- l. 33 --><p class='noindent'>To use default ODF styles for sectioning commands, use the following configurations: </p>
 <figure class='texsource' role='doc-example'>   
-<pre class='fancyvrb' id='fancyvrb96'><a id='x8-84004r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>Heading-2</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>Heading 1</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb94'><a id='x8-84004r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>Heading-2</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>Heading 1</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-84006r2'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>Heading-3</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>Heading 2</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
                                                                   
