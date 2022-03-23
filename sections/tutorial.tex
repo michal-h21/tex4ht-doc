@@ -114,7 +114,7 @@ Generally, it is best to use \mathml{}, as it supports correct vertical alignmen
 $ make4ht filename.tex "mathml,mathjax"
 \end{shellcommand}
 
-On the other hand, if you want to use pictures for math exclusively, you can try \option{pic-m}, which requires pictures even for inline math. There are also similar options for equations and other math environments.
+On the other hand, if you want to use pictures for math exclusively, you can try the \option{pic-m} option, which requires pictures even for inline math. There are also similar options for equations and other math environments.
 
 \begin{shellcommand}
 $ make4ht filename.tex "pic-m,pic-equation"
@@ -126,12 +126,18 @@ The generated pictures are in the PNG format, which is raster and depends on the
 $ make4ht filename.tex "pic-m,pic-equation,svg"
 \end{shellcommand}
 
-For more information on options, see the chapter \namerefpage{chap:options}.
+For more information on options, see chapter \namerefpage{chap:options}.
 
 \section{\makefourht{} extensions}
 
-\makefourht{} has an extension support. These extensions can modify various aspects of the conversion process.
+\makefourht{} has an extension support. These extensions can modify various aspects of the conversion process, for example, post-process the generated files, cache images, or add support for Rmarkdown files.
+Extensions can be enabled using the \texttt{-f format_name+extension_name} option:
 
+\begin{shellcommand}
+$ make4ht -f html5+preprocess_input sample.Rmd
+\end{shellcommand}
+
+You can find list of extensions in \href{\makefourht{} documentation}{https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions}.
 If your document produces many pictures, the compilation can take a long time. To make it faster, you can use the \verb|dvisvgm_hashes| extension.
 
 \section{Configurations}
