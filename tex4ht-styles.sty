@@ -46,9 +46,9 @@
 
 \ifdefined\HCode
   % don't print page number after nameref with TeX4ht
-  \newcommand\namerefpage[1]{\nameref{#1}}
+  \newcommand\namerefpage[1]{\MakeLowercase{\nameref{#1}}}
 \else
-  \newcommand\namerefpage[1]{\nameref{#1}, (p.~\pageref{#1})}
+  \newcommand\namerefpage[1]{\MakeLowercase{\nameref{#1}}, (p.~\pageref{#1})}
 \fi
 
 \newminted[texsource]{latex}{breaklines=true}
