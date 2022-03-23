@@ -106,6 +106,12 @@ $ make4ht filename.tex "3,fn-in"
 \end{shellcommand}
 
 
+There are other numeric options, each of them breaks document into separate HTML pages on a different sectioning level. Option 1 does not break pages at all, 2 at parts, 3 at chapters, 4 at sections, 5 at subsections, 6 at sub-subsections, and 7 at paragraphs. 
+
+There are also options that change the handling of math. Normally, HTML elements are used for simple math, and pictures are used for more complex features, such as fractions or square roots. This usually does not look nice, so what are other options?
+
+Usually, it is best to use \mathml{}. It has 
+
 
 
 \section{Configurations}
