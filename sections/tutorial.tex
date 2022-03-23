@@ -20,7 +20,7 @@ several output formats, like \texttt{HTML} (for web pages) or
 Conversion is invoked using the \makefourht\ command:
 
 \begin{shellcommand}
-make4ht filename.tex
+$ make4ht filename.tex
 \end{shellcommand}
 
 
@@ -32,7 +32,7 @@ with the following \LaTeX\ file:
 You can compile it using the following command:
 
 \begin{shellcommand}
-make4ht -lm draft filename.tex
+$ make4ht -lm draft filename.tex
 \end{shellcommand}
 
 The resulting HTML file contains the following code:
@@ -42,13 +42,13 @@ The resulting HTML file contains the following code:
 As you can see, multiple options can be joined for \makefourht.  The above invocation is equal to the following:
 
 \begin{shellcommand}
-make4ht -l -m draft filename.tex
+$ make4ht -l -m draft filename.tex
 \end{shellcommand}
 
 You can also use the long options:
 
 \begin{shellcommand}
-make4ht --lua --mode draft filename.tex
+$ make4ht --lua --mode draft filename.tex
 \end{shellcommand}
 
 What do these options mean? 
@@ -72,7 +72,7 @@ The \texttt{--mode} option sets the compilation mode. \makefourht\  has one buil
 named \texttt{draft}. 
 By default, \makefourht\  compiles your \TeX\ file three times, to get correct hyperlinks 
 and other features that depend on auxilary files. The \texttt{draft} mode uses
-only one compilation, so it is much faster.
+only one compilation run, so it is much faster.
 
 
 
@@ -81,7 +81,7 @@ conversion to other formats using the \texttt{-f} option. For example,
 to convert a document to the OpenDocument Format, use:
 
 \begin{shellcommand}
-make4ht -f odt filename.tex
+$ make4ht -f odt filename.tex
 \end{shellcommand}
 
 More information about \makefourht\ and it's command line options and other features can be found in the
@@ -90,6 +90,20 @@ section \namerefpage{sec:make4ht-intro}.
 
 \section{\texfourht\ Options}
 
+The simplest way to change some aspects of the design is to use \texfourht\ options. They can be passed
+as a first positional argument after filename to \makefourht:
+
+\begin{shellcommand}
+$ make4ht filename.tex "option1,option2"
+\end{shellcommand}
+
+For example, \texfourht\ produces one HTML file for a document, but each footnote is placed in a separate file.
+If you have a big document, you may want to use separate page for each chapter, with a list of footnotes
+at the end of these chapters. You can use following options: 
+
+\begin{shellcommand}
+$ make4ht filename.tex "3,fn-in"
+\end{shellcommand}
 
 
 
