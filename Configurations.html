@@ -223,7 +223,7 @@ command.
 <!-- l. 103 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='custom-output-formats'><span class='titlemark'>7.2   </span> <a id='x8-450007.2'></a>Custom output formats</h3>
-<!-- l. 153 --><p class='noindent'>
+<!-- l. 154 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='texht-commands'><span class='titlemark'>7.3   </span> <a id='x8-460007.3'></a>tex4ht Commands</h3>
 <!-- l. 1 --><p class='noindent'>
@@ -316,19 +316,19 @@ should allow us to make somehow more clear configurations for basic document
 building blocks.
 </p>   
 <h3 class='sectionHead' id='styling-the-document'><span class='titlemark'>7.4   </span> <a id='x8-510007.4'></a>Styling the Document</h3>
-<!-- l. 157 --><p class='noindent'><code>TeX4ht</code> provides several commands that can be used for changing of the document
+<!-- l. 158 --><p class='noindent'><code>TeX4ht</code> provides several commands that can be used for changing of the document
 appearance using Cascading Style Sheets (<code>CSS</code>). Only basic styling for the
 document is provided by default. Additional styles are added by configurations
 for the fonts, packages and commands used in the document. Full control
 of the document styling can be achieved using following commands and
 configurations.
-</p><!-- l. 164 --><p class='indent'>   <code>\Css{content}</code>
-</p><!-- l. 166 --><p class='indent'>   This command sends its content to the CSS file of the document.
-</p><!-- l. 168 --><p class='indent'>   <code>\CssFile[list-of-css-files]content\EndCssFile</code>
-</p><!-- l. 170 --><p class='indent'>   The CSS file <code>TeX4ht</code> used by default initially consists just a single line, <code>/*
+</p><!-- l. 165 --><p class='indent'>   <code>\Css{content}</code>
+</p><!-- l. 167 --><p class='indent'>   This command sends its content to the CSS file of the document.
+</p><!-- l. 169 --><p class='indent'>   <code>\CssFile[list-of-css-files]content\EndCssFile</code>
+</p><!-- l. 171 --><p class='indent'>   The CSS file <code>TeX4ht</code> used by default initially consists just a single line, <code>/*
 css.sty */</code>. This line is later replaced with the code submitted by the <code>\Css{...}</code>
 commands.
-</p><!-- l. 174 --><p class='indent'>   The <code>\CssFile</code> command allows to specify an alternative to the initial CSS file.
+</p><!-- l. 175 --><p class='indent'>   The <code>\CssFile</code> command allows to specify an alternative to the initial CSS file.
 The alternative file consists of the code loaded from listed files, and of the content
 explicitly specified in its body.
 </p>   
@@ -343,18 +343,18 @@ explicitly specified in its body.
 <a id='x8-51025r8'></a><span class='ec-lmtt-10'>.mylist </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'> color : red; </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-51027r9'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndCssFile</span></span></pre>
 </figure>
-<!-- l. 190 --><p class='indent'>   The names in the list of files should be separated by commas, and the rectangular
+<!-- l. 191 --><p class='indent'>   The names in the list of files should be separated by commas, and the rectangular
 brackets are optional when the list is empty.
                                                                   
 
                                                                   
-</p><!-- l. 192 --><p class='indent'>   The file should include a line having the content of <span class='obeylines-h'><code>/* css.sty */</code></span>. If more than
+</p><!-- l. 193 --><p class='indent'>   The file should include a line having the content of <span class='obeylines-h'><code>/* css.sty */</code></span>. If more than
 one such line is included, the content of the <code>\Css{...}</code> commands replace the first
 occurrence of this line. Arbitrary many space characters may appear around the
 substrings ‘/*’ and ‘*/’.
-</p><!-- l. 197 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>AddCss</span>}{CSS file name}</code>
-</p><!-- l. 199 --><p class='indent'>   Require external CSS file.
-</p><!-- l. 201 --><p class='noindent'>
+</p><!-- l. 198 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>AddCss</span>}{CSS file name}</code>
+</p><!-- l. 200 --><p class='indent'>   Require external CSS file.
+</p><!-- l. 202 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='webfonts'><span class='titlemark'>7.5   </span> <a id='x8-520007.5'></a>Webfonts</h3>
 <!-- l. 3 --><p class='noindent'>The declared font family is not used automatically, it is necessary to select it using
@@ -387,29 +387,29 @@ argument should be font file in the format supported by browsers, such as <span 
 <a id='x8-52036r11'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Css</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>span.hello</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>font-family: hello, sans-serif;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span></pre>
 </figure>   
 <h3 class='sectionHead' id='use-javascript'><span class='titlemark'>7.6   </span> <a id='x8-530007.6'></a>Use JavaScript</h3>
-<!-- l. 204 --><p class='noindent'>
+<!-- l. 205 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='hyperlinks1'><span class='titlemark'>7.7   </span> <a id='x8-540007.7'></a>Hyperlinks</h3>
                                                                   
 
                                                                   
-<!-- l. 206 --><p class='noindent'><code>\AnchorLabel</code> – insert link for the current <code>\label</code>. It should be placed after change
+<!-- l. 207 --><p class='noindent'><code>\AnchorLabel</code> – insert link for the current <code>\label</code>. It should be placed after change
 of <code>\@currentlabel</code>. Note that <code>TeX4ht</code> handles labels defined by <code>\refstepcounter</code>,
 this is necessary only for labels that are defined by direct modification of
 <code>\@currentlabel</code>.
-</p><!-- l. 212 --><p class='noindent'>
+</p><!-- l. 213 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='document-navigation'><span class='titlemark'>7.8   </span> <a id='x8-550007.8'></a>Document Navigation</h3>
-<!-- l. 215 --><p class='noindent'>
+<!-- l. 216 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='crosslinks'><span class='titlemark'>7.8.1   </span> <a id='x8-560007.8.1'></a>Cross-links</h4>
-<!-- l. 217 --><p class='noindent'>Cross-links provide navigation between several HTML pages generated from a single
+<!-- l. 218 --><p class='noindent'>Cross-links provide navigation between several HTML pages generated from a single
 document.
-</p><!-- l. 219 --><p class='indent'>   The following configurations modify behaviour of cross-links between pages in a
+</p><!-- l. 220 --><p class='indent'>   The following configurations modify behaviour of cross-links between pages in a
 multi page document.
-</p><!-- l. 221 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>crosslinks</span>}{left-delimiter}{right-delimiter}{next}{prev}
+</p><!-- l. 222 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>crosslinks</span>}{left-delimiter}{right-delimiter}{next}{prev}
 {prev-tail}{front}{tail}{up}</code>
-</p><!-- l. 223 --><p class='indent'>   This command configures the appearance of the cross-links between hypertext
+</p><!-- l. 224 --><p class='indent'>   This command configures the appearance of the cross-links between hypertext
 pages obtained for sectioning commands.
 </p>   
 <figure class='texsource' role='doc-example'>
@@ -418,10 +418,10 @@ pages obtained for sectioning commands.
 <a id='x8-56010r3'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-af3f3f'><span class='ec-lmtt-10'>\scriptstyle\Leftarrow</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-56012r4'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{}{}{}{</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-af3f3f'><span class='ec-lmtt-10'>\scriptstyle\Uparrow</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
-<!-- l. 232 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>crosslinks*</span>}{1–7 arguments}</code>
-</p><!-- l. 234 --><p class='indent'>   Links to be included and their order. Available options: next, prev, prevtail, tail,
+<!-- l. 233 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>crosslinks*</span>}{1–7 arguments}</code>
+</p><!-- l. 235 --><p class='indent'>   Links to be included and their order. Available options: next, prev, prevtail, tail,
 front, up. The last argument must be empty.
-</p><!-- l. 238 --><p class='indent'>   Default:
+</p><!-- l. 239 --><p class='indent'>   Default:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb74'><a id='x8-56018r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>next</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
@@ -429,33 +429,33 @@ front, up. The last argument must be empty.
 <a id='x8-56022r3'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>tail</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>front</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-56024r4'></a><span class='ec-lmtt-10'>   </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>up</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{}</span></span></pre>
 </figure>
-<!-- l. 247 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>crosslinks+</span>}{before-top-links}{after-top-links}
+<!-- l. 248 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>crosslinks+</span>}{before-top-links}{after-top-links}
 {before-bottom-links}{after-bottob-links}</code>
-</p><!-- l. 249 --><p class='indent'>   The top cross links are omitted, if both <span class='obeylines-h'><code>#1</code></span> and <span class='obeylines-h'><code>#2</code></span> are empty. The bottom cross
+</p><!-- l. 250 --><p class='indent'>   The top cross links are omitted, if both <span class='obeylines-h'><code>#1</code></span> and <span class='obeylines-h'><code>#2</code></span> are empty. The bottom cross
 links are omitted, if both <span class='obeylines-h'><code>#3</code></span> and <span class='obeylines-h'><code>#4</code></span> are empty.
                                                                   
 
                                                                   
-</p><!-- l. 252 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>next</span>}{the anchor of the next button of the front page}
+</p><!-- l. 253 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>next</span>}{the anchor of the next button of the front page}
 </code>
-</p><!-- l. 254 --><p class='indent'>   Default: The value provided in <code>\Configure{crosslinks}</code>
-</p><!-- l. 256 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>next+</span>}{before}{after}</code>
+</p><!-- l. 255 --><p class='indent'>   Default: The value provided in <code>\Configure{crosslinks}</code>
+</p><!-- l. 257 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>next+</span>}{before}{after}</code>
 </p>     
 <dl class='description'><dt class='description'>
-<!-- l. 259 --><p class='noindent'>
+<!-- l. 260 --><p class='noindent'>
 <span class='ec-lmbx-10'>#1</span> 
 </p>
 </dt><dd class='description'> 
-<!-- l. 259 --><p class='noindent'>before the next button of the front page, when the ‘next’ option is active.
+<!-- l. 260 --><p class='noindent'>before the next button of the front page, when the ‘next’ option is active.
 </p>     
 </dd>
 <dt class='description'>
-<!-- l. 261 --><p class='noindent'>
+<!-- l. 262 --><p class='noindent'>
 <span class='ec-lmbx-10'>#2</span> 
 </p>
 </dt><dd class='description'> 
-<!-- l. 261 --><p class='noindent'>after the button</p></dd></dl>
-<!-- l. 264 --><p class='indent'>   Default: The values provided in <code>\Configure{crosslinks}</code>
+<!-- l. 262 --><p class='noindent'>after the button</p></dd></dl>
+<!-- l. 265 --><p class='indent'>   Default: The values provided in <code>\Configure{crosslinks}</code>
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb75'><a id='x8-56032r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks:next</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>..................1</span> 
@@ -465,11 +465,11 @@ links are omitted, if both <span class='obeylines-h'><code>#3</code></span> and 
 <a id='x8-56040r5'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks:front</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>.................1</span> 
 <a id='x8-56042r6'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks:up</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'>....................1</span></pre>
 </figure>
-<!-- l. 275 --><p class='indent'>   <span class='obeylines-h'><code>#1</code></span> local configurations for the delimiters and hooks
-</p><!-- l. 277 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>crosslinks-</span>}{before}{after}</code>
-</p><!-- l. 279 --><p class='indent'>   Asks to show linkless buttons with the following insertions.
-</p><!-- l. 281 --><p class='indent'>   The default values are used, if both <span class='obeylines-h'><code>#1</code></span> and <span class='obeylines-h'><code>#2</code></span> are empty
-</p><!-- l. 283 --><p class='indent'>   Examples:
+<!-- l. 276 --><p class='indent'>   <span class='obeylines-h'><code>#1</code></span> local configurations for the delimiters and hooks
+</p><!-- l. 278 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>crosslinks-</span>}{before}{after}</code>
+</p><!-- l. 280 --><p class='indent'>   Asks to show linkless buttons with the following insertions.
+</p><!-- l. 282 --><p class='indent'>   The default values are used, if both <span class='obeylines-h'><code>#1</code></span> and <span class='obeylines-h'><code>#2</code></span> are empty
+</p><!-- l. 284 --><p class='indent'>   Examples:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb76'><a id='x8-56050r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>crosslinks-</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{}{}</span></span> 
@@ -479,40 +479,40 @@ links are omitted, if both <span class='obeylines-h'><code>#3</code></span> and 
 <a id='x8-56058r5'></a><span class='ec-lmtt-10'>    </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>]</span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\HCode</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>&lt;/span&gt;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-56060r6'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Css</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>span.hidden </span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>visibility:hidden;</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span></pre>
 </figure>
-<!-- l. 294 --><p class='noindent'>
+<!-- l. 295 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='tables-of-contents'><span class='titlemark'>7.9   </span> <a id='x8-570007.9'></a>Tables of Contents</h3>
                                                                   
 
                                                                   
-<!-- l. 296 --><p class='noindent'>
-</p>   
-<h3 class='sectionHead' id='sections'><span class='titlemark'>7.10   </span> <a id='x8-580007.10'></a>Sections</h3>
 <!-- l. 297 --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='lists'><span class='titlemark'>7.11   </span> <a id='x8-590007.11'></a>Lists</h3>
+<h3 class='sectionHead' id='sections'><span class='titlemark'>7.10   </span> <a id='x8-580007.10'></a>Sections</h3>
 <!-- l. 298 --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='tables'><span class='titlemark'>7.12   </span> <a id='x8-600007.12'></a>Tables</h3>
-<!-- l. 300 --><p class='noindent'>
+<h3 class='sectionHead' id='lists'><span class='titlemark'>7.11   </span> <a id='x8-590007.11'></a>Lists</h3>
+<!-- l. 299 --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='fonts'><span class='titlemark'>7.13   </span> <a id='x8-610007.13'></a>Fonts</h3>
+<h3 class='sectionHead' id='tables'><span class='titlemark'>7.12   </span> <a id='x8-600007.12'></a>Tables</h3>
 <!-- l. 301 --><p class='noindent'>
 </p>   
+<h3 class='sectionHead' id='fonts'><span class='titlemark'>7.13   </span> <a id='x8-610007.13'></a>Fonts</h3>
+<!-- l. 302 --><p class='noindent'>
+</p>   
 <h4 class='subsectionHead' id='basic-font-commands'><span class='titlemark'>7.13.1   </span> <a id='x8-620007.13.1'></a>Basic font commands</h4>
-<!-- l. 303 --><p class='noindent'>Information about the <span class='emph'>fonts</span> option and <span class='emph'>MathML</span> issues. Example configuration:
+<!-- l. 304 --><p class='noindent'>Information about the <span class='emph'>fonts</span> option and <span class='emph'>MathML</span> issues. Example configuration:
 <a class='url' href='https://tex.stackexchange.com/a/416613/2891'><span class='ec-lmtt-10'>https://tex.stackexchange.com/a/416613/2891</span></a>
-</p><!-- l. 307 --><p class='noindent'>
+</p><!-- l. 308 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='multilingual-support'><span class='titlemark'>7.14   </span> <a id='x8-630007.14'></a>Multi-lingual support</h3>
-<!-- l. 309 --><p class='noindent'>RTL support in the ODT output: <a class='url' href='https://tex.stackexchange.com/a/470434/2891'><span class='ec-lmtt-10'>https://tex.stackexchange.com/a/470434/2891</span></a>.
-</p><!-- l. 311 --><p class='noindent'>
+<!-- l. 310 --><p class='noindent'>RTL support in the ODT output: <a class='url' href='https://tex.stackexchange.com/a/470434/2891'><span class='ec-lmtt-10'>https://tex.stackexchange.com/a/470434/2891</span></a>.
+</p><!-- l. 312 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='righttoleft-text'><span class='titlemark'>7.14.1   </span> <a id='x8-640007.14.1'></a>Right-to-left text</h4>
-<!-- l. 313 --><p class='noindent'>There is a difference in the RTL support for HTML and ODT output formats. In
+<!-- l. 314 --><p class='noindent'>There is a difference in the RTL support for HTML and ODT output formats. In
 HTML, RTL can be requested using:
-</p><!-- l. 315 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>LRdir</span>}{ value for the dir attribute}</code>
-</p><!-- l. 317 --><p class='indent'>   Example:
+</p><!-- l. 316 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>LRdir</span>}{ value for the dir attribute}</code>
+</p><!-- l. 318 --><p class='indent'>   Example:
 </p>
                                                                   
 
@@ -522,21 +522,21 @@ HTML, RTL can be requested using:
 <a id='x8-64007r2'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>LRdir</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'> dir="rtl"</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}}</span></span> 
 <a id='x8-64009r3'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>LRdir</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{}}{}{}</span></span></pre>
 </figure>
-<!-- l. 325 --><p class='indent'>   This configuration sets the direction to <span class='emph'>rtl</span> inside the <span class='emph'>arab</span> environment and resets
+<!-- l. 326 --><p class='indent'>   This configuration sets the direction to <span class='emph'>rtl</span> inside the <span class='emph'>arab</span> environment and resets
 it after the environment end.
-</p><!-- l. 327 --><p class='indent'>   In the ODT output, different mechanism is used:
+</p><!-- l. 328 --><p class='indent'>   In the ODT output, different mechanism is used:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb78'><a id='x8-64012r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\ConfigureEnv</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>arab</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\@</span></span><span class='ec-lmtt-10'>rltrue</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='ec-lmtt-10'>\@</span></span><span class='ec-lmtt-10'>rlfalse</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{}{}</span></span></pre>
 </figure>
-<!-- l. 333 --><p class='noindent'>
+<!-- l. 334 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='unicode'><span class='titlemark'>7.14.2   </span> <a id='x8-650007.14.2'></a>Unicode</h4>
-<!-- l. 335 --><p class='noindent'>Generally speaking, <code>TeX4ht</code> supports <span class='emph'>Unicode</span>, but there are some issues to be aware
+<!-- l. 336 --><p class='noindent'>Generally speaking, <code>TeX4ht</code> supports <span class='emph'>Unicode</span>, but there are some issues to be aware
 of. Most complete support exists for LuaLaTeX, thanks to special Lua script which is
 automatically loaded during the compilation. No additional packages are
 necessary.
-</p><!-- l. 340 --><p class='indent'>   PDFLaTeX doesn’t support nativelly, but it is possible to emulate it using the
+</p><!-- l. 341 --><p class='indent'>   PDFLaTeX doesn’t support nativelly, but it is possible to emulate it using the
 <code>inputenc</code> and <code>fontenc</code> packages:
 </p>   
 <figure class='texsource' role='doc-example'>
@@ -547,12 +547,12 @@ necessary.
 <a id='x8-65016r5'></a><span class='ec-lmtt-10'>Unicode text</span> 
 <a id='x8-65018r6'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
-<!-- l. 352 --><p class='indent'>   XeLaTeX is an Unicode format, similarly to LuaLaTeX. The supporting
+<!-- l. 353 --><p class='indent'>   XeLaTeX is an Unicode format, similarly to LuaLaTeX. The supporting
 mechanism for <code>TeX4ht</code> is different in this case and full Unicode range is not
 supported out of the box. By default, only most Latin based characters are
 supported. For other scripts, such as Greek or Cyrillic, two ways to enable support
 exists.
-</p><!-- l. 358 --><p class='indent'>   First option is to define new font family using <code>fontspec</code> <code>\newfontfamily</code> with
+</p><!-- l. 359 --><p class='indent'>   First option is to define new font family using <code>fontspec</code> <code>\newfontfamily</code> with
 the <code>Script</code> option.
 </p>   
 <figure class='texsource' role='doc-example'>
@@ -561,27 +561,27 @@ the <code>Script</code> option.
 
                                                                   
 </figure>
-<!-- l. 365 --><p class='indent'>   The second option is to declare load support for a script in the custom config file
+<!-- l. 366 --><p class='indent'>   The second option is to declare load support for a script in the custom config file
 using the <code>\xeuniuseblock</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb81'><a id='x8-65024r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\xeuniuseblock</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>Greek</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
-<!-- l. 373 --><p class='indent'>   The block names are based on <a href='https://en.wikipedia.org/wiki/Unicode_block'>Unicode blocks</a>.
-</p><!-- l. 375 --><p class='indent'>   It is also possible to declare all characters in an Unicode range. The command
+<!-- l. 374 --><p class='indent'>   The block names are based on <a href='https://en.wikipedia.org/wiki/Unicode_block'>Unicode blocks</a>.
+</p><!-- l. 376 --><p class='indent'>   It is also possible to declare all characters in an Unicode range. The command
 <code>\xeuniregisterblockhex</code> takes two hexadecimal parameters with Unicode range to
 be declared.
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb82'><a id='x8-65027r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\xeuniregisterblockhex</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>0100</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}{</span></span><span class='ec-lmtt-10'>017F</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
-<!-- l. 383 --><p class='indent'>   Individual character can be declared using the <code>\xeuniregisterchar</code>
+<!-- l. 384 --><p class='indent'>   Individual character can be declared using the <code>\xeuniregisterchar</code>
 command:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb83'><a id='x8-65030r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\xeuniregisterchar</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>"1F00</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
-<!-- l. 389 --><p class='indent'>   In contrast to <code>\xeuniregisterblockhex</code>, it uses decimal numbers by
+<!-- l. 390 --><p class='indent'>   In contrast to <code>\xeuniregisterblockhex</code>, it uses decimal numbers by
 default, so it is necessary to use the <code>"</code> character in front of a hexadecimal
 number.
 </p>   
@@ -595,16 +595,16 @@ use the <code>\detokenize</code> command.  <figure class='texsource' role='doc-e
                                                                   
 
                                                                   
-<!-- l. 402 --><p class='noindent'>
+<!-- l. 403 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='colors'><span class='titlemark'>7.15   </span> <a id='x8-660007.15'></a>Colors</h3>
-<!-- l. 404 --><p class='noindent'>Information about the <code>\color</code> command: <a class='url' href='https://tex.stackexchange.com/a/195677/2891'><span class='ec-lmtt-10'>https://tex.stackexchange.com/a/195677/2891</span></a>.
+<!-- l. 405 --><p class='noindent'>Information about the <code>\color</code> command: <a class='url' href='https://tex.stackexchange.com/a/195677/2891'><span class='ec-lmtt-10'>https://tex.stackexchange.com/a/195677/2891</span></a>.
 Example of possible configuration for the <code>\color</code> command:
 <a class='url' href='https://tex.stackexchange.com/q/470179/2891'><span class='ec-lmtt-10'>https://tex.stackexchange.com/q/470179/2891</span></a>.
-</p><!-- l. 409 --><p class='indent'>   Example of extracting color information to the CSS and custom color environment
+</p><!-- l. 410 --><p class='indent'>   Example of extracting color information to the CSS and custom color environment
 support: <a class='url' href='https://tex.stackexchange.com/a/422281/2891'><span class='ec-lmtt-10'>https://tex.stackexchange.com/a/422281/2891</span></a>. Extracting of color
 information to the HTML attributes: <a class='url' href='https://tex.stackexchange.com/a/390151/2891'><span class='ec-lmtt-10'>https://tex.stackexchange.com/a/390151/2891</span></a>.
-</p><!-- l. 415 --><p class='noindent'>
+</p><!-- l. 416 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='graphics-and-pictures'><span class='titlemark'>7.16   </span> <a id='x8-670007.16'></a>Graphics and Pictures</h3>
 <!-- l. 1 --><p class='noindent'>
@@ -754,26 +754,26 @@ information to the HTML attributes: <a class='url' href='https://tex.stackexchan
 <!-- l. 145 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>PdfConvert</span>}{}{}</code>
 </p><!-- l. 146 --><p class='noindent'><code><span class='textbf'>\Configure</span>{<span class='textit'>Ghostscript</span>}{name of the executable for GhostScript}
 </code>
-</p><!-- l. 418 --><p class='noindent'>
+</p><!-- l. 419 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='tikz-'><span class='titlemark'>7.17   </span> <a id='x8-710007.17'></a>TikZ </h3>
-<!-- l. 420 --><p class='noindent'>Animations using Animate package: <a class='url' href='https://tex.stackexchange.com/a/404600/2891'><span class='ec-lmtt-10'>https://tex.stackexchange.com/a/404600/2891</span></a>
-</p><!-- l. 422 --><p class='indent'>   Issues with drivers: <a class='url' href='https://tex.stackexchange.com/a/471460/2891'><span class='ec-lmtt-10'>https://tex.stackexchange.com/a/471460/2891</span></a>.
+<!-- l. 421 --><p class='noindent'>Animations using Animate package: <a class='url' href='https://tex.stackexchange.com/a/404600/2891'><span class='ec-lmtt-10'>https://tex.stackexchange.com/a/404600/2891</span></a>
+</p><!-- l. 423 --><p class='indent'>   Issues with drivers: <a class='url' href='https://tex.stackexchange.com/a/471460/2891'><span class='ec-lmtt-10'>https://tex.stackexchange.com/a/471460/2891</span></a>.
 </p>   
 <h3 class='sectionHead' id='pstricks'><span class='titlemark'>7.18   </span> <a id='x8-720007.18'></a>Pstricks</h3>
-<!-- l. 425 --><p class='noindent'>
-</p>   
-<h3 class='sectionHead' id='math1'><span class='titlemark'>7.19   </span> <a id='x8-730007.19'></a>Math</h3>
 <!-- l. 426 --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='default-math-handling'><span class='titlemark'>7.19.1   </span> <a id='x8-740007.19.1'></a>Default math handling</h4>
+<h3 class='sectionHead' id='math1'><span class='titlemark'>7.19   </span> <a id='x8-730007.19'></a>Math</h3>
 <!-- l. 427 --><p class='noindent'>
 </p>   
+<h4 class='subsectionHead' id='default-math-handling'><span class='titlemark'>7.19.1   </span> <a id='x8-740007.19.1'></a>Default math handling</h4>
+<!-- l. 428 --><p class='noindent'>
+</p>   
 <h4 class='subsectionHead' id='mathml1'><span class='titlemark'>7.19.2   </span> <a id='x8-750007.19.2'></a>MathML</h4>
-<!-- l. 429 --><p class='noindent'><code>MathML</code> is a XML markup for the math encoding. It is supported in many aplications
+<!-- l. 430 --><p class='noindent'><code>MathML</code> is a XML markup for the math encoding. It is supported in many aplications
 including OpenOffice Writer or Firefox web browser. The advantage over use of
 images
-</p><!-- l. 433 --><p class='indent'>   The <code>MathML</code> code produced by <code>TeX4ht</code> may contain some issues. For
+</p><!-- l. 434 --><p class='indent'>   The <code>MathML</code> code produced by <code>TeX4ht</code> may contain some issues. For
 example, one common issue may happen when the math contain unmatched
 delimiters:
 </p>   
@@ -783,21 +783,21 @@ delimiters:
                                                                   
 <pre class='fancyvrb' id='fancyvrb88'><a id='x8-75003r1'></a><span class='ec-lmtt-10'> Mail address: </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-af3f3f'><span class='ec-lmtt-10'>\lparen</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='ec-lmtt-10'>hello@world.com</span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span><span class='textcolor-af3f3f'><span class='ec-lmtt-10'>\rparen</span></span><span class='textcolor-b73838'><span class='ec-lmtt-10'>$</span></span></pre>
 </figure>
-<!-- l. 440 --><p class='indent'>   In such cases, the <span class='emph'>matml-</span> may help.
-</p><!-- l. 442 --><p class='indent'>   It is also advisable to always use <code>common_domfilters</code> <span class='emph'>make4ht</span> extension (see
+<!-- l. 441 --><p class='indent'>   In such cases, the <span class='emph'>matml-</span> may help.
+</p><!-- l. 443 --><p class='indent'>   It is also advisable to always use <code>common_domfilters</code> <span class='emph'>make4ht</span> extension (see
 section <a href='CallingCommands.html#makeht-extensions'>4.2.1<!-- tex4ht:ref: sec:make4ht-extensions  --></a> for more information about <span class='emph'>make4ht</span> extensions), as it fixes some
 common <code>MathML</code> errors that cannot be easily fixed on the TeX level.
-</p><!-- l. 448 --><p class='indent'>   If you want to add original LaTeX source as an annotation to your MathML
+</p><!-- l. 449 --><p class='indent'>   If you want to add original LaTeX source as an annotation to your MathML
 formulas, you can try a configuration from this <a href='https://tex.stackexchange.com/a/637910/2891'>this answer</a>.
-</p><!-- l. 451 --><p class='indent'>   Add information about the <a class='url' href='https://github.com/pshihn/math-ml'><span class='ec-lmtt-10'>https://github.com/pshihn/math-ml</span></a> - it adds
+</p><!-- l. 452 --><p class='indent'>   Add information about the <a class='url' href='https://github.com/pshihn/math-ml'><span class='ec-lmtt-10'>https://github.com/pshihn/math-ml</span></a> - it adds
 support for MathML in all modern web browsers with HTML 5.
-</p><!-- l. 455 --><p class='noindent'>
+</p><!-- l. 456 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='mathjax1'><span class='titlemark'>7.19.3   </span> <a id='x8-760007.19.3'></a>MathJax</h4>
-<!-- l. 456 --><p class='noindent'><code>TeX4ht</code> supports MathJax, library for math rendering in HTML documents. It
+<!-- l. 457 --><p class='noindent'><code>TeX4ht</code> supports MathJax, library for math rendering in HTML documents. It
 supports two modes – LaTeX math and <code>MathML</code>.
-</p><!-- l. 459 --><p class='indent'>   The <span class='emph'>MathJax</span> processing can be required using the <span class='emph'>mathjax</span> option.
-</p><!-- l. 461 --><p class='indent'>   The address of the <span class='emph'>MathJax</span> script and its configuration string can be specified
+</p><!-- l. 460 --><p class='indent'>   The <span class='emph'>MathJax</span> processing can be required using the <span class='emph'>mathjax</span> option.
+</p><!-- l. 462 --><p class='indent'>   The address of the <span class='emph'>MathJax</span> script and its configuration string can be specified
 in the <code>MathjaxSource</code> configuration. Default value of this configuration
 is:
 </p>   
@@ -805,7 +805,7 @@ is:
 <pre class='fancyvrb' id='fancyvrb89'><a id='x8-76004r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>MathjaxSource</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-76006r2'></a><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
-<!-- l. 469 --><p class='noindent'><span class='paragraphHead' id='latex-mode'><a id='x8-770007.19.3'></a><span class='ec-lmbx-10'>LaTeX mode</span></span>
+<!-- l. 470 --><p class='noindent'><span class='paragraphHead' id='latex-mode'><a id='x8-770007.19.3'></a><span class='ec-lmbx-10'>LaTeX mode</span></span>
 In the LaTeXmath mode, TeX macros used in the math mode are preserved in
 the output HTML document. They are parsed and rendered by MathJax when the
 document is displayed by a web browser. The downside of this mode is that
@@ -813,9 +813,9 @@ commands unknown to MathJax must be configured in a special configuration for
 MathJax. Cross-references to equations and other numbered math environments
 don’t work out of the box. You can try the Lua scripts proposed in <a href='https://tex.stackexchange.com/a/597913/2891'>this post on
 TeX.sx</a> as a workaround.
-</p><!-- l. 480 --><p class='indent'>   By default, inline and display math, as well as math environments, are kept as
+</p><!-- l. 481 --><p class='indent'>   By default, inline and display math, as well as math environments, are kept as
 raw LaTeX code in the <code>HTML</code> output.
-</p><!-- l. 483 --><p class='indent'>   The additional configuration for <span class='emph'>MathJax</span> can be provided in the <code>MathJaxConfig</code>
+</p><!-- l. 484 --><p class='indent'>   The additional configuration for <span class='emph'>MathJax</span> can be provided in the <code>MathJaxConfig</code>
 configuration. The following example provides support for some custom
 LaTeX macros.
 </p>   
@@ -839,13 +839,13 @@ LaTeX macros.
 <a id='x8-77043r14'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span> 
 <a id='x8-77045r15'></a></pre>
 </figure>
-<!-- l. 506 --><p class='indent'>   The configuration needs to be passed as a JavaScript object, this means that you
+<!-- l. 507 --><p class='indent'>   The configuration needs to be passed as a JavaScript object, this means that you
 need to use extra <span class='obeylines-h'><code>{}</code></span> brackets. The <code>\detokenize</code> macro is used to avoid
 issues with backslash characters used in the macro definitions. Backslashes
 must be doubled in the JavaScript strings. Contents of this configuration
 are already enclosed in the <code>\HCode</code> command, so you cannot use it in this
 configuration.
-</p><!-- l. 513 --><p class='indent'>   If you want to define macros with parameters, you may run to issues with the #
+</p><!-- l. 514 --><p class='indent'>   If you want to define macros with parameters, you may run to issues with the #
 character, used for parameters. You need to change the catcode of this character to
 letter before the <code>MathJaxConfig</code> configuration:
 </p>   
@@ -871,7 +871,7 @@ letter before the <code>MathJaxConfig</code> configuration:
 <a id='x8-77103r19'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-77105r20'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span></pre>
 </figure>
-<!-- l. 539 --><p class='noindent'><span class='paragraphHead' id='custom-environments-in-mathjax'><a id='x8-780007.19.3'></a><span class='ec-lmbx-10'>Custom environments in MathJax.</span></span>
+<!-- l. 540 --><p class='noindent'><span class='paragraphHead' id='custom-environments-in-mathjax'><a id='x8-780007.19.3'></a><span class='ec-lmbx-10'>Custom environments in MathJax.</span></span>
 If you want to add support for a new environment, you can use the <span class='obeylines-h'><code>\VerbMath</code></span>
 command, and you will also need to pass suitable configuration to MathJax. For
 example for the following TeX file:
@@ -889,7 +889,7 @@ example for the following TeX file:
 <a id='x8-78031r10'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>dgroup*</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-78033r11'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span></pre>
 </figure>
-<!-- l. 558 --><p class='indent'>   Can be configured using this configuration file:
+<!-- l. 559 --><p class='indent'>   Can be configured using this configuration file:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb93'><a id='x8-78050r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
@@ -908,7 +908,7 @@ example for the following TeX file:
 <a id='x8-78076r14'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='ec-lmtt-10'>{</span></span><span class='ec-lmtt-10'>document</span><span class='textcolor-387f38'><span class='ec-lmtt-10'>}</span></span> 
 <a id='x8-78078r15'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\EndPreamble</span></span></pre>
 </figure>
-<!-- l. 578 --><p class='indent'>   The <span class='obeylines-h'><code>\VerbMath</code></span> command can be used just for the <span class='obeylines-h'><code>dgroup*</code></span> environment, as it will
+<!-- l. 579 --><p class='indent'>   The <span class='obeylines-h'><code>\VerbMath</code></span> command can be used just for the <span class='obeylines-h'><code>dgroup*</code></span> environment, as it will
 pass the whole contents, including the <span class='obeylines-h'><code>dgroup*</code></span> environment, to the HTML file. But
 you will need to provide MathJax configuration for both of these environments, as
 they are not supported by default.
@@ -916,13 +916,13 @@ they are not supported by default.
 
                                                                   
 </p>
-<!-- l. 584 --><p class='noindent'><span class='paragraphHead' id='-mathml-mode'><a id='x8-790007.19.3'></a><code>MathML</code><span class='ec-lmbx-10'> mode</span></span>
+<!-- l. 585 --><p class='noindent'><span class='paragraphHead' id='-mathml-mode'><a id='x8-790007.19.3'></a><code>MathML</code><span class='ec-lmbx-10'> mode</span></span>
 Math is converted to <code>MathML</code> by <code>TeX4ht</code>, MathJax then renders it. Custom
 commands and cross-references work in this mode.
-</p><!-- l. 589 --><p class='indent'>   The <code>MathML</code> MathJax mode can be required using the <span class='emph'>mathml,mathjax</span>
+</p><!-- l. 590 --><p class='indent'>   The <code>MathML</code> MathJax mode can be required using the <span class='emph'>mathml,mathjax</span>
 option.
 </p>
-<!-- l. 591 --><p class='noindent'><span class='paragraphHead' id='table-of-contents-issues'><a id='x8-800007.19.3'></a><span class='ec-lmbx-10'>Table of contents issues</span></span>
+<!-- l. 592 --><p class='noindent'><span class='paragraphHead' id='table-of-contents-issues'><a id='x8-800007.19.3'></a><span class='ec-lmbx-10'>Table of contents issues</span></span>
 Some math commands may cause issues when they are used in section
 titles in the MathJax mode. This can be fixed using the <code>\fixmathjaxtoc</code>
 command:
@@ -930,13 +930,13 @@ command:
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb94'><a id='x8-80003r1'></a><span class='textcolor-2838af'><span class='ec-lmtt-10'>\fixmathjaxtoc\int</span></span></pre>
 </figure>
-<!-- l. 601 --><p class='noindent'>
-</p>   
-<h3 class='sectionHead' id='bibliographies1'><span class='titlemark'>7.20   </span> <a id='x8-810007.20'></a>Bibliographies</h3>
 <!-- l. 602 --><p class='noindent'>
 </p>   
+<h3 class='sectionHead' id='bibliographies1'><span class='titlemark'>7.20   </span> <a id='x8-810007.20'></a>Bibliographies</h3>
+<!-- l. 603 --><p class='noindent'>
+</p>   
 <h3 class='sectionHead' id='indexing1'><span class='titlemark'>7.21   </span> <a id='x8-820007.21'></a>Indexing</h3>
-<!-- l. 604 --><p class='noindent'>
+<!-- l. 605 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='opendocument-format'><span class='titlemark'>7.22   </span> <a id='x8-830007.22'></a>OpenDocument Format</h3>
 <!-- l. 1 --><p class='noindent'>The OpenDocument Format uses XML configuration file for document styling. To
