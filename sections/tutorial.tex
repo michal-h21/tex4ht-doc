@@ -24,7 +24,7 @@ $ make4ht filename.tex
 \end{shellcommand}
 
 
-Let us start with conversion of simple \LaTeX\ file to HTML  
+Let us start with conversion of a simple \LaTeX\ file to HTML  
 with the following \LaTeX\ file:
 
 \texinput{examples/otherlang/babel.tex}
@@ -54,23 +54,23 @@ $ make4ht --lua --mode draft filename.tex
 What do these options mean? 
 
 The option \texttt{--lua} tells \makefourht\  to use Lua\LaTeX\ as a
-compilation engine. There is also a \texttt{-x} (or \texttt{--xetex}) option
-that allows the use of Xe\LaTeX\ for compilation. If neither of these options
+compilation engine. There is also an option \texttt{-x} (or \texttt{--xetex})
+that allows the use of Xe\LaTeX\ for the compilation. If neither of these options
 is used, the file will be converted with the default PDF\LaTeX\ engine.
 
-For example, if we compiled the sample file without the \texttt{-l} option, we would get
+For example, if we compile the sample file without the \texttt{-l} option, we would get
 a different result:
 
 \texinput{examples/otherlang/babel-body.html}
 
-Notice that the accents in \textit{ť} and \textit{ď} letters are detached from the base letters.
-That's because \texfourht\ uses information about characters from the DVI file. Current \LaTeX
+Notice that the accents in the \textit{ť} and \textit{ď} letters are detached from the base letters.
+That is because \texfourht{} uses information about characters in the DVI file. Current \LaTeX
 supports basic accented characters out of the box, but sometimes, they don't work as expected.
 
 
-The \texttt{--mode} option sets the compilation mode. \makefourht\  has one built-in mode,
+The option \texttt{----mode} sets the compilation mode. \makefourht\  has one built-in mode,
 named \texttt{draft}. 
-By default, \makefourht\  compiles your \TeX\ file three times, to get correct hyperlinks 
+By default, \makefourht{}  compiles your \TeX{} file three times, to obtain the correct hyperlinks 
 and other features that depend on auxilary files. The \texttt{draft} mode uses
 only one compilation run, so it is much faster.
 
@@ -78,13 +78,13 @@ only one compilation run, so it is much faster.
 
 \makefourht\  converts \LaTeX\ file to a HTML 5 document. You can request
 conversion to other formats using the \texttt{-f} option. For example,
-to convert a document to the OpenDocument Format, use:
+to convert a document to the OpenDocument Format, use the following:
 
 \begin{shellcommand}
 $ make4ht -f odt filename.tex
 \end{shellcommand}
 
-More information about \makefourht\ and it's command line options and other features can be found in the
+More information about \makefourht and its command line options and other features can be found in
 section \namerefpage{sec:make4ht-intro}.
 
 
@@ -112,7 +112,7 @@ $ make4ht filename.tex "3,fn-in"
 \label{sec:tutorial-configurations}
 
 You may want to insert some custom HTML tags. It is a bit more complicated for
-\LaTeX\ commands, but easy for environments. You can configure code that is 
+\LaTeX commands, but it is easy for environments. You can configure the code that is 
 inserted before and after environment using the \texcommand{\ConfigureEnv} command.
 It has a following syntax:
 
@@ -121,7 +121,7 @@ It has a following syntax:
 {before-list}{after-list}
 \end{texsource}
 
-We can ignore the \texttt{before-list} and \texttt{after-list} arguments, as they
+We can ignore the arguments \texttt{before-list} and \texttt{after-list}, as they
 are used only for list like environments, such as \texttt{itemize}. So we just need to
 
 
