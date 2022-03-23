@@ -1,16 +1,16 @@
 
 \section{General Advice}
 
-In general, don't postpone your conversion to the last moment. As it is quite
-common to produce ebook or HTML versions of \LaTeX\ documents these days, it is 
-best to prepare this process as soon as possible.
+In general, don't postpone your conversion to the last moment. As you will 
+most likely want to produce ebook or HTML versions of \LaTeX\ documents these days, 
+you should try the conversion of your document from the beginning. 
 
 It is much easier to fix errors as soon as they appear. Often, one issue can
-cause many other issues, and it can be really hard to find the culprit. 
+cause many issues that follows, and it can be really hard to find the culprit. 
 
-It is a good idea to compile your document using \texfourht\ every time you add
-a new package to your document preamble, as some packages may clash. You may also find
-that you will need a different definitions for some commands for the HTML conversion, as the 
+Compile your document using \texfourht\ every time you add
+a new package, as the included code can break other packages or even \LaTeX\ kernel. 
+You may also find that you will need a different definitions for some commands for the HTML conversion, as the 
 version suitable for PDF produce some artifacts from drawing commands. These issues are 
 also best to fix as soon as possible.
 
@@ -19,13 +19,13 @@ also best to fix as soon as possible.
 
 
 \begin{issue}{Packages that cause issues}
-\texfourht\ can clash with other packages sometimes. If you don't need features
+\texfourht\ can sometimes clash with other packages. If you don't need features
 the problematic package provides (typically, they modify stuff that makes sense in 
 the PDF output, but not in HTML, like page headers, fancy section titles, etc.),
-it is often easiest to disable their loading when \texfourht\ is active. 
+an easiest fix is to disable their loading when \texfourht\ is active. 
 
-There are multiple ways how to conditionally suppress package loading, but the easiest 
-way is to just add the following to your document preamble:
+The easiest way to disable package from loading is to add the following
+condition to your document preamble:
 
 \begin{texsource}
 \ifdefined\HCode
