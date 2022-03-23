@@ -131,14 +131,28 @@ For more information on options, see chapter \namerefpage{chap:options}.
 \section{\makefourht{} extensions}
 
 \makefourht{} has an extension support. These extensions can modify various aspects of the conversion process, for example, post-process the generated files, cache images, or add support for Rmarkdown files.
-Extensions can be enabled using the \texttt{-f format_name+extension_name} option:
+Extensions can be enabled using the \verb|-f format_name+extension_name| option: 
 
 \begin{shellcommand}
 $ make4ht -f html5+preprocess_input sample.Rmd
 \end{shellcommand}
 
-You can find list of extensions in \href{\makefourht{} documentation}{https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions}.
-If your document produces many pictures, the compilation can take a long time. To make it faster, you can use the \verb|dvisvgm_hashes| extension.
+If your document produces many pictures, the compilation can take a long time. To make it faster, you can use the \verb|dvisvgm_hashes| extension. It caches the SVG images
+and creates them only for the changed math environments.
+
+\begin{shellcommand}
+$ make4ht -f html5+dvisvgm_hashes filename.tex "pic-m,pic-equation,svg"
+\end{shellcommand}
+
+\makefourht{} also loads some extensions by default. They fix some issues in the generated HTML files using the LuaXML package. To disable this processing,
+use \texttt{-extension_name}:
+
+
+\begin{shellcommand}
+$ make4ht -f html5-common_domfilters filename.tex
+\end{shellcommand}
+
+You can find list of extensions in \href{https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions}{\makefourht{} documentation}.
 
 \section{Configurations}
 \label{sec:tutorial-configurations}
