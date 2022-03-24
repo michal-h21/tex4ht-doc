@@ -142,7 +142,7 @@ steps of the process, without user intervention. The command assumes the
 form
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb57'><a id='x5-35003r1'></a><span class='ec-lmtt-10'>make4ht </span><span class='textcolor-656565'><span class='ec-lmtt-10'>[</span></span><span class='ec-lmtt-10'>make4ht options</span><span class='textcolor-656565'><span class='ec-lmtt-10'>]</span></span><span class='ec-lmtt-10'> filename.tex </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"options1"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"option2"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"options3"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"options4"</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb59'><a id='x5-35003r1'></a><span class='ec-lmtt-10'>make4ht </span><span class='textcolor-656565'><span class='ec-lmtt-10'>[</span></span><span class='ec-lmtt-10'>make4ht options</span><span class='textcolor-656565'><span class='ec-lmtt-10'>]</span></span><span class='ec-lmtt-10'> filename.tex </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"options1"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"option2"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"options3"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"options4"</span></span></pre>
 </figure>
 <!-- l. 24 --><p class='indent'>   where the first set of options is for the tex4ht.sty and *.4ht style files, the second
 set is for the tex4ht post-processor, the third for the t4ht post-processor, and the last
@@ -154,13 +154,13 @@ one is for the LaTeX compiler.
 
                                                                   
 <figure class='shellcommand' role='doc-example'>   
-<pre class='fancyvrb' id='fancyvrb58'><a id='x5-35006r1'></a><span class='ec-lmtt-10'>make4ht filename.tex</span></pre>
+<pre class='fancyvrb' id='fancyvrb60'><a id='x5-35006r1'></a><span class='ec-lmtt-10'>make4ht filename.tex</span></pre>
 </figure>
 <!-- l. 36 --><p class='indent'>   This command requests a translation according to the default conditions, which
 are set to produce HTML 5 document.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb59'><a id='x5-35009r1'></a><span class='ec-lmtt-10'>make4ht filename.tex </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"2,info"</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb61'><a id='x5-35009r1'></a><span class='ec-lmtt-10'>make4ht filename.tex </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"2,info"</span></span></pre>
 </figure>
 <!-- l. 42 --><p class='indent'>   This command specifies some options for tex4ht.sty. The "2" option requests a
 break up of the output into separate web pages, in accordance to the two top
@@ -172,7 +172,7 @@ information.
 section.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb60'><a id='x5-35012r1'></a><span class='ec-lmtt-10'>make4ht -c foo.cfg filename </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"frames"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>""</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"-p"</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb62'><a id='x5-35012r1'></a><span class='ec-lmtt-10'>make4ht -c foo.cfg filename </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"frames"</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>""</span></span><span class='ec-lmtt-10'> </span><span class='textcolor-b73838'><span class='ec-lmtt-10'>"-p"</span></span></pre>
 </figure>
 <!-- l. 56 --><p class='indent'>   This command requests LaTeX to load a <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!-- tex4ht:ref: sec:private-configuration  --></a>, named
 foo.cfg, using the <code>-c</code> make4ht option. The <code>frames</code> option requires placing of the
@@ -185,7 +185,7 @@ produce bitmaps for pictures.
 typically embedded within a script.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb61'><a id='x5-36007r1'></a><span class='ec-lmtt-10'>latex      x            </span><span class='textcolor-656565'><span class='ec-lmtt-10'>(</span></span><span class='ec-lmtt-10'>or ‘tex x’</span><span class='textcolor-656565'><span class='ec-lmtt-10'>)</span></span> 
+<pre class='fancyvrb' id='fancyvrb63'><a id='x5-36007r1'></a><span class='ec-lmtt-10'>latex      x            </span><span class='textcolor-656565'><span class='ec-lmtt-10'>(</span></span><span class='ec-lmtt-10'>or ‘tex x’</span><span class='textcolor-656565'><span class='ec-lmtt-10'>)</span></span> 
 <a id='x5-36009r2'></a><span class='ec-lmtt-10'>latex      x</span> 
 <a id='x5-36011r3'></a><span class='ec-lmtt-10'>latex      x</span> 
 <a id='x5-36013r4'></a><span class='ec-lmtt-10'>tex4ht     x</span> 
