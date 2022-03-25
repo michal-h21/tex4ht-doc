@@ -162,9 +162,20 @@ fonts, packages and commands used in the document. Full control of the document
 styling can be achieved using following commands and configurations.
 
 
-\texcommand{\Css{content}}
+\cmd{Css}\marg{content}
 
 This command sends its content to the CSS file of the document. 
+
+\DocConfigure{AddCss} {CSS file name}\EndDoc
+
+Add local CSS file.
+
+\begin{texsource}
+\Css{body{max-width:70ch;margin: 1rem auto;}}
+\Configure{AddCss}{custom.css}
+% link to a CSS on some web:
+\Configure{@HEAD}{\HCode{<link type="text/css" href="https://example.com/style.css" />}
+\end{texsource}
 
 \texcommand{\CssFile[list-of-css-files]content\EndCssFile}
 
@@ -195,9 +206,6 @@ more than one such line is included, the content of the \texcommand{\Css{...}} c
 replace the first occurrence of this line. Arbitrary many space characters may
 appear around the substrings ‘/*’ and ‘*/’. 
 
-\DocConfigure{AddCss} {CSS file name}\EndDoc
-
-Require external CSS file.
 
 \section{Webfonts}
 \input{sections/webfonts}
