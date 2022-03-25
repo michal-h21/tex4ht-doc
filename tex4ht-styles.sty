@@ -62,6 +62,8 @@
 \def\PrintConfigures#1#2\@nil{\{#1\}\allowbreak\ifx\relax#2\relax\else\expandafter\PrintConfigures#2\@nil\fi}
 \def\DocConfigure#1#2\EndDoc{\par\bigskip\noindent\texttt{\textbf{\textbackslash Configure}\{\textit{#1}\}\PrintConfigures#2{}\@nil}}
 
+\newcommand\cmd[1]{\textbf{\texttt{\textbackslash #1}}}
+\newcommand\marg[1]{\{\textit{#1}\}}
 
 
 \endinput
