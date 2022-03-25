@@ -1,17 +1,32 @@
 \subsection{Low-level \texfourht\ Commands}
 
-\texcommand{\HCode}
+\cmd{Configure}\marg{name}\marg{arg 1}\ldots\marg{arg n}
 
-This command allows only for the expansion of macros, before sending its content to the output. The instruction \texcommand{\Hnewline} may be introduced there for requesting line breaks, and the command \texcommand{\#} may be used for the sharp symbol ‘\#’.
+The \cmd{Configure} command declares code that is inserted into hooks related to the \textit{name} configuration.
+It is possible to define up to nine hooks, so number of arguments is variable.
+
+
+\cmd{ConfigureEnv}\marg{<environment name>}\marg{before env}\marg{after env}
+\marg{before-list}\marg{after-list}
+
+
+\cmd{HCode}\marg{output format markup}
+
+This is a basic command for insertion of the output format markup, as it's content is not escaped for the \textless and \textgreater.
+
+This command allows only for the expansion of macros, before sending its content to the output. 
+The instruction \texcommand{\Hnewline} may be introduced there for requesting line breaks, and the command \texcommand{\#} may be used for the sharp symbol ‘\#’.
 
 \begin{texsource}
- Two lines of text      \HCode{<br />}
- separated by a horizontal line.
+ First line\HCode{<br />}
+ second line 
 
- You probably don't want a '<br>'.
+ You don't want to include tags directly into the document '<br>'. 
 \end{texsource}
 
-\texcommand{\Tg}
+\cmd{Tg}\texcommand{<markup>}
+
+This is a variation of the \cmd{HCode} command that don't require braces, and it does some additional processing.
 
 \subsection{Hyperlinks}
 \texcommand{\Link[target-file arguments]{target-loc}{cur-loc}anchor\EndLink}
