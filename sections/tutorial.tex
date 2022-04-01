@@ -51,12 +51,12 @@ $ make4ht --lua --mode draft filename.tex
 
 What do these options mean? 
 
-The option \texttt{--lua} tells \makefourht\  to use Lua\LaTeX\ as a
-compilation engine. There is also an option \texttt{-x} (or \texttt{--xetex})
+The option \shellcmd{--lua} tells \makefourht\  to use Lua\LaTeX\ as a
+compilation engine. There is also an option \shellcmd{-x} (or \shellcmd{--xetex})
 that allows the use of Xe\LaTeX\ for the compilation. If neither of these options
 is used, the file will be converted with the default PDF\LaTeX\ engine.
 
-For example, if we compile the sample file without the \texttt{-l} option, we would get
+For example, if we compile the sample file without the \shellcmd{-l} option, we would get
 a different result:
 
 \htmlinput{examples/otherlang/babel-body.html}
@@ -66,7 +66,7 @@ That is because \texfourht{} uses information about characters in the DVI file. 
 supports basic accented characters out of the box, but sometimes, they don't work as expected.
 
 
-The option \texttt{----mode} sets the compilation mode. \makefourht\  has one built-in mode,
+The option \shellcmd{--mode} sets the compilation mode. \makefourht\  has one built-in mode,
 named \texttt{draft}. 
 By default, \makefourht{}  compiles your \TeX{} file three times, to obtain the correct hyperlinks 
 and other features that depend on auxilary files. The \texttt{draft} mode uses
