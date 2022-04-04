@@ -6,18 +6,18 @@ We provide a build script, called \shellcmd{make4ht}, which simplifies the
 process.
 
 
-\section{\texttt{make4ht} and other conversion scripts}
+\section{\texttt{make4ht} Build System}
 \label{sec:make4ht-intro}
 
 The conversion command loads a script which takes on itself to invoke the
 different steps of the process, without user intervention. The command assumes
-the form
+the form:
 
 \begin{shellcommand}
 make4ht [make4ht options] filename.tex "options1" "option2" "options3" "options4"
 \end{shellcommand}
 
-where the first set of options is for the tex4ht.sty and *.4ht style files, the
+The first set of options is for the tex4ht.sty and *.4ht style files, the
 second set is for the tex4ht post-processor, the third for the t4ht
 post-processor, and the last one is for the \LaTeX\ compiler. 
 
@@ -42,7 +42,8 @@ sectioning levels of the document.
 The \texttt{info} option requests inclusion of documentation of basic configurations to the \texttt{filename.log} file.
 You can open this file using a text editor to read this information.
 
-Information about additional options can be found in the \nameref{sec:texfouhtoptions} section.
+Information about additional options can be found in the \namerefpage{sec:texfouhtoptions} section.
+
 
 
 \begin{shellcommand}
@@ -52,8 +53,57 @@ make4ht -c foo.cfg filename "frames" "" "-p"
 This command requests LaTeX to load a \nameref{sec:private-configuration}, named
 foo.cfg, using the \texttt{-c} make4ht option. The \texttt{frames} option
 requires placing of the content and table of contents in separate frames. In
-addition, it asks t4ht not to produce bitmaps for pictures. 
+addition, it asks the \shellcmd{t4ht} command not to produce bitmaps for pictures using the \shellcmd{-p} option.
 
+\section{\makefourht{} Options}
+
+
+\begin{shellcommand}
+-a,--loglevel (default status) Set log level.
+possible values: debug, info, status, warning, error, fatal
+-b,--backend (default tex4ht) Backend used for xml generation. 
+possible values: tex4ht or lua4ht
+-c,--config (default xhtml) Custom config file
+-d,--output-dir (default nil)  Output directory
+-e,--build-file (default nil)  If build file is different than `filename`.mk4
+-f,--format  (default html5)  Output file format
+-h,--help  Display this message
+-j,--jobname (default nil)  Set the jobname
+-l,--lua  Use lualatex for document compilation
+-m,--mode (default default) Switch which can be used in the makefile 
+-n,--no-tex4ht Disable dvi file processing with the tex4ht command
+-s,--shell-escape Enables running external programs from LaTeX
+-u,--utf8  [obsolete] The document is generated in UTF8 encoding by default
+-v,--version  Display version number
+-x,--xetex Use xelatex for document compilation
+\end{shellcommand}
+
+\subsection{Terminal Output}
+
+\makefourht\ hides the terminal output by default. It shows only errors and warnings.
+It doesn't always show the correct error context. In such cases, try the \shellcmd{-a debug} option.
+It is also recommended to use output of this option for \TeX4ht bug reports.
+
+\begin{shellcommand}
+$ make4ht -a debug -m draft buggy.tex
+\end{shellcommand}
+
+\subsection{Output Directory}
+
+To copy generated files to a different directoy, use the \shellcmd{-d path} option. The passed path
+can be absolute or relative to the current directory. It also doesn't need to exist, \makefourht{}
+will create it if necessary.
+
+\begin{shellcommand}
+$ make4ht -d outdir filename.tex
+\end{shellcommand}
+
+Note that this option doesn't remove any files from the current directory. If you want to remove the temporary
+files, use the \shellcmd{-m clean} option:
+
+\begin{shellcommand}
+$ make4ht -m clean filename.tex
+\end{shellcommand}
 
 
 \section{Overview of the Translation Process}\label{sec:overview}
