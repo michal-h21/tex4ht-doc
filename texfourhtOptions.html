@@ -46,22 +46,26 @@
  
  
   
+  
+ 
+  
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
 <span class='chapterToc'>6 <a href='#-texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
  <span class='sectionToc'>6.1 <a href='#list-of-options'>List of options</a></span>
 <span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
- 
-  
-  
                                                                   
 
                                                                   
  
+  
+  
+ 
  
   
   
   
   
+ 
  
  
  
@@ -98,13 +102,13 @@
  
 <span class='chapterToc'>9 <a href='FAQandTroubleshooting.html#faq-and-troubleshooting'>FAQ and Troubleshooting</a></span>
  
+                                                                  
+
+                                                                  
  
  
  
   
-                                                                  
-
-                                                                  
 <span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
  
  
@@ -125,7 +129,7 @@
 </nav> 
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='OutputFormats.html'>prev</a>] [<a href='tex4ht-doc.html#texfourhtOptions.html'>up</a>] [<a href='Configurations.html'>next</a>] </nav> 
-<h2 class='chapterHead' id='-texht-options1'><span class='titlemark'>Chapter 6</span><br /><a id='x7-390006'></a><code class='texttt'>TeX4ht</code> Options</h2>
+<h2 class='chapterHead' id='-texht-options1'><span class='titlemark'>Chapter 6</span><br /><a id='x7-420006'></a><code class='texttt'>TeX4ht</code> Options</h2>
 Following is an incomplete list of options that can be passed to the
 <code class='texttt'>tex4ht.sty</code> package. These options can be used to modify the compilation process,
 for example to select a <span class='emph'>SVG</span> format for generated images, to request math
@@ -139,9 +143,9 @@ way is to pass them as options to <code class='texttt'>tex4ht.sty</code> using 
 TeX file.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb65'><a id='x7-39005r1'></a>... 
-<a id='x7-39007r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[xhtml,option1,option2]{</span>tex4ht<span class='textcolor-387f38'>}</span> 
-<a id='x7-39009r3'></a>...</pre>
+<pre class='fancyvrb' id='fancyvrb69'><a id='x7-42005r1'></a>... 
+<a id='x7-42007r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[xhtml,option1,option2]{</span>tex4ht<span class='textcolor-387f38'>}</span> 
+<a id='x7-42009r3'></a>...</pre>
 
 </figure>
 <!-- l. 25 --><p class='indent'>   Recommended solutions don’t require modifications of the TeX files.
@@ -149,28 +153,28 @@ TeX file.
 the filename:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb66'><a id='x7-39012r1'></a>make4ht filename.tex <span class='textcolor-b73838'>"fn-in"</span></pre>
+<pre class='fancyvrb' id='fancyvrb70'><a id='x7-42012r1'></a>make4ht filename.tex <span class='textcolor-b73838'>"fn-in"</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
-<!-- l. 37 --><p class='indent'>   For more information on calling scripts see the section <a href='CallingCommands.html#makeht-extensions'>4.2.1<!-- tex4ht:ref: sec:calling-commands  --></a>.
-                                                                  
-
-                                                                  
+<!-- l. 37 --><p class='indent'>   For more information on calling scripts see the section <a href='CallingCommands.html#makeht-extensions'>4.3.1<!-- tex4ht:ref: sec:calling-commands  --></a>.
 </p><!-- l. 39 --><p class='indent'>   The second way is to pass options in the <code class='texttt'>\Preamble</code> command in a <span class='emph'>custom
 configuration file</span>. Note that first option in the <code class='texttt'>\Preamble</code> command must be
 <span class='emph'>xhtml</span>.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb67'><a id='x7-39018r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml,fn-in<span class='textcolor-387f38'>}</span> 
-<a id='x7-39020r2'></a>... 
-<a id='x7-39022r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x7-39024r4'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb71'><a id='x7-42018r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml,fn-in<span class='textcolor-387f38'>}</span> 
+<a id='x7-42020r2'></a>... 
+<a id='x7-42022r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x7-42024r4'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
 <!-- l. 49 --><p class='indent'>   See the section <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!-- tex4ht:ref: sec:private-configuration  --></a> for more details on configuration
 files.
 </p>   
-<h3 class='sectionHead' id='list-of-options'><span class='titlemark'>6.1   </span> <a id='x7-400006.1'></a>List of options</h3>
+<h3 class='sectionHead' id='list-of-options'><span class='titlemark'>6.1   </span> <a id='x7-430006.1'></a>List of options</h3>
 <dl class='description'><dt class='description'>     
 <!-- l. 67 --><p class='noindent'>
 <span class='ec-lmbx-10'>-css</span> 

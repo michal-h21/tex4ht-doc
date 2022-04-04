@@ -46,22 +46,26 @@
  
  
   
+  
+ 
+  
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
 <span class='chapterToc'>6 <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
  
 <span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
- 
-  
-  
                                                                   
 
                                                                   
  
+  
+  
+ 
  
   
   
   
   
+ 
  
  
  
@@ -98,13 +102,13 @@
  
 <span class='chapterToc'>9 <a href='#faq-and-troubleshooting'>FAQ and Troubleshooting</a></span>
  <span class='sectionToc'>9.1 <a href='#general-advice'>General Advice</a></span>
+                                                                  
+
+                                                                  
  <span class='sectionToc'>9.2 <a href='#compilation-errors'>Compilation Errors</a></span>
  <span class='sectionToc'>9.3 <a href='#dom-processing-errors'>DOM Processing Errors</a></span>
  <span class='sectionToc'>9.4 <a href='#math-issues'>Math Issues</a></span>
   <span class='subsectionToc'>9.4.1 <a href='#problems-with-mathml'>Problems With <span class='emph'><code class='texttt'>MathML</code></span></a></span>
-                                                                  
-
-                                                                  
 <span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
  
  
@@ -125,8 +129,8 @@
 </nav> 
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='Make4htBuildFiles.html'>prev</a>] [<a href='tex4ht-doc.html#FAQandTroubleshooting.html'>up</a>] [<a href='ForDevelopers.html'>next</a>] </nav> 
-<h2 class='chapterHead' id='faq-and-troubleshooting'><span class='titlemark'>Chapter 9</span><br /><a id='x10-900009'></a>FAQ and Troubleshooting</h2>
-<h3 class='sectionHead' id='general-advice'><span class='titlemark'>9.1   </span> <a id='x10-910009.1'></a>General Advice</h3>
+<h2 class='chapterHead' id='faq-and-troubleshooting'><span class='titlemark'>Chapter 9</span><br /><a id='x10-940009'></a>FAQ and Troubleshooting</h2>
+<h3 class='sectionHead' id='general-advice'><span class='titlemark'>9.1   </span> <a id='x10-950009.1'></a>General Advice</h3>
 <!-- l. 4 --><p class='noindent'>In general, don’t postpone your conversion to the last moment. As you will most
 likely want to produce ebook or HTML versions of LaTeX documents these days,
 you should try the conversion of your document from the beginning.
@@ -141,24 +145,24 @@ artifacts from drawing commands. These issues are also best to fix as soon as
 possible.
 </p><!-- l. 17 --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='compilation-errors'><span class='titlemark'>9.2   </span> <a id='x10-920009.2'></a>Compilation Errors</h3>
+<h3 class='sectionHead' id='compilation-errors'><span class='titlemark'>9.2   </span> <a id='x10-960009.2'></a>Compilation Errors</h3>
 <!-- l. 21 --><p class='noindent'><span class='textbf'>Packages that cause issues</span> <code class='texttt'>TeX4ht</code> can sometimes clash with other packages. If
 you don’t need features the problematic package provides (typically, they modify
 stuff that makes sense in the PDF output, but not in HTML, like page headers, fancy
+                                                                  
+
+                                                                  
 section titles, etc.), an easiest fix is to disable their loading when <code class='texttt'>TeX4ht</code> is
 active.
 </p><!-- l. 27 --><p class='indent'>   The easiest way to disable package from loading is to add the following condition
 to your document preamble:
-                                                                  
-
-                                                                  
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb107'><a id='x10-92007r1'></a><span class='textcolor-2838af'>\ifdefined\HCode</span> 
-<a id='x10-92009r2'></a>... code for TeX4ht 
-<a id='x10-92011r3'></a><span class='textcolor-2838af'>\else</span> 
-<a id='x10-92013r4'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>foo<span class='textcolor-387f38'>}</span> 
-<a id='x10-92015r5'></a><span class='textcolor-2838af'>\fi</span></pre>
+<pre class='fancyvrb' id='fancyvrb111'><a id='x10-96007r1'></a><span class='textcolor-2838af'>\ifdefined\HCode</span> 
+<a id='x10-96009r2'></a>... code for TeX4ht 
+<a id='x10-96011r3'></a><span class='textcolor-2838af'>\else</span> 
+<a id='x10-96013r4'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>foo<span class='textcolor-387f38'>}</span> 
+<a id='x10-96015r5'></a><span class='textcolor-2838af'>\fi</span></pre>
 
 </figure>
 <!-- l. 39 --><p class='noindent'><span class='textbf'>Fragile commands</span> Some commands may cause compilation errors when used in
@@ -168,58 +172,58 @@ debug.
 </p><!-- l. 44 --><p class='indent'>   Consider the following example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb108'><a id='x10-92021r1'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>figure<span class='textcolor-387f38'>}</span>[h] 
-<a id='x10-92023r2'></a><span class='textcolor-2838af'>\includegraphics</span><span class='textcolor-387f38'>{</span>example-image<span class='textcolor-387f38'>}</span> 
-<a id='x10-92025r3'></a><span class='textcolor-2838af'>\caption</span><span class='textcolor-387f38'>{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\begin</span><span class='textcolor-387f38'>{array}{c c} hello &amp; world</span><span class='textcolor-af3f3f'>\end</span><span class='textcolor-387f38'>{array}</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span> 
-<a id='x10-92027r4'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>figure<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb112'><a id='x10-96021r1'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>figure<span class='textcolor-387f38'>}</span>[h] 
+<a id='x10-96023r2'></a><span class='textcolor-2838af'>\includegraphics</span><span class='textcolor-387f38'>{</span>example-image<span class='textcolor-387f38'>}</span> 
+<a id='x10-96025r3'></a><span class='textcolor-2838af'>\caption</span><span class='textcolor-387f38'>{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\begin</span><span class='textcolor-387f38'>{array}{c c} hello &amp; world</span><span class='textcolor-af3f3f'>\end</span><span class='textcolor-387f38'>{array}</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span> 
+<a id='x10-96027r4'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>figure<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!-- l. 53 --><p class='indent'>   It produces a fatal error:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb109'><a id='x10-92036r1'></a><span class='textcolor-656565'>[</span>ERROR<span class='textcolor-656565'>]</span>   htlatex: Compilation errors <span class='textcolor-2838af'>in</span> the htlatex run 
-<a id='x10-92038r2'></a><span class='textcolor-656565'>[</span>ERROR<span class='textcolor-656565'>]</span>   htlatex: Filename     Line    Message 
-<a id='x10-92040r3'></a><span class='textcolor-656565'>[</span>ERROR<span class='textcolor-656565'>]</span>   htlatex: ./minimal.tex        <span class='textcolor-444444'>7</span>        Argument of <span class='textcolor-708e30'>\i</span>m:g has an extra <span class='textcolor-656565'>}</span>. 
-<a id='x10-92042r4'></a><span class='textcolor-656565'>[</span>ERROR<span class='textcolor-656565'>]</span>   htlatex: ./minimal.tex        <span class='textcolor-444444'>7</span>        Paragraph ended before <span class='textcolor-708e30'>\i</span>m:g was complete. 
-<a id='x10-92044r5'></a><span class='textcolor-656565'>[</span>ERROR<span class='textcolor-656565'>]</span>   htlatex: ?    ?        Incomplete <span class='textcolor-708e30'>\i</span>ffalse<span class='textcolor-878787'>;</span> all text was ignored after line <span class='textcolor-444444'>7</span>. 
-<a id='x10-92046r6'></a><span class='textcolor-656565'>[</span>ERROR<span class='textcolor-656565'>]</span>   htlatex: ?    ?        Emergency stop. 
-<a id='x10-92048r7'></a><span class='textcolor-656565'>[</span>FATAL<span class='textcolor-656565'>]</span>   make4ht-lib: Fatal error. Command htlatex returned <span class='textcolor-387f38'>exit</span> code <span class='textcolor-444444'>1</span></pre>
+<pre class='fancyvrb' id='fancyvrb113'><a id='x10-96036r1'></a><span class='textcolor-656565'>[</span>ERROR<span class='textcolor-656565'>]</span>   htlatex: Compilation errors <span class='textcolor-2838af'>in</span> the htlatex run 
+<a id='x10-96038r2'></a><span class='textcolor-656565'>[</span>ERROR<span class='textcolor-656565'>]</span>   htlatex: Filename     Line    Message 
+<a id='x10-96040r3'></a><span class='textcolor-656565'>[</span>ERROR<span class='textcolor-656565'>]</span>   htlatex: ./minimal.tex        <span class='textcolor-444444'>7</span>        Argument of <span class='textcolor-708e30'>\i</span>m:g has an extra <span class='textcolor-656565'>}</span>. 
+<a id='x10-96042r4'></a><span class='textcolor-656565'>[</span>ERROR<span class='textcolor-656565'>]</span>   htlatex: ./minimal.tex        <span class='textcolor-444444'>7</span>        Paragraph ended before <span class='textcolor-708e30'>\i</span>m:g was complete. 
+<a id='x10-96044r5'></a><span class='textcolor-656565'>[</span>ERROR<span class='textcolor-656565'>]</span>   htlatex: ?    ?        Incomplete <span class='textcolor-708e30'>\i</span>ffalse<span class='textcolor-878787'>;</span> all text was ignored after line <span class='textcolor-444444'>7</span>. 
+<a id='x10-96046r6'></a><span class='textcolor-656565'>[</span>ERROR<span class='textcolor-656565'>]</span>   htlatex: ?    ?        Emergency stop. 
+<a id='x10-96048r7'></a><span class='textcolor-656565'>[</span>FATAL<span class='textcolor-656565'>]</span>   make4ht-lib: Fatal error. Command htlatex returned <span class='textcolor-387f38'>exit</span> code <span class='textcolor-444444'>1</span></pre>
 
 </figure>
 <!-- l. 65 --><p class='indent'>   You can get more context for this error using the <span class='obeylines-h'><code class='verb'>-a debug</code></span> option for
 <code class='texttt'>make4ht</code>:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb110'><a id='x10-92054r1'></a>! Argument of <span class='textcolor-708e30'>\i</span>m:g has an extra <span class='textcolor-656565'>}</span>. 
-<a id='x10-92056r2'></a>&lt;inserted text&gt; 
-<a id='x10-92058r3'></a>                <span class='textcolor-708e30'>\p</span>ar 
-<a id='x10-92060r4'></a>l.7 ...egin<span class='textcolor-656565'>{</span>array<span class='textcolor-656565'>}{</span>c c<span class='textcolor-656565'>}</span> hello <span class='textcolor-878787'>&amp;</span> world<span class='textcolor-708e30'>\e</span>nd<span class='textcolor-656565'>{</span>array<span class='textcolor-656565'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb114'><a id='x10-96054r1'></a>! Argument of <span class='textcolor-708e30'>\i</span>m:g has an extra <span class='textcolor-656565'>}</span>. 
+<a id='x10-96056r2'></a>&lt;inserted text&gt; 
+<a id='x10-96058r3'></a>                <span class='textcolor-708e30'>\p</span>ar 
+<a id='x10-96060r4'></a>l.7 ...egin<span class='textcolor-656565'>{</span>array<span class='textcolor-656565'>}{</span>c c<span class='textcolor-656565'>}</span> hello <span class='textcolor-878787'>&amp;</span> world<span class='textcolor-708e30'>\e</span>nd<span class='textcolor-656565'>{</span>array<span class='textcolor-656565'>}}</span></pre>
 
 </figure>
 <!-- l. 74 --><p class='indent'>   The error itself is pretty cryptic, but you can see that the cause is in
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb111'><a id='x10-92063r1'></a><span class='textcolor-2838af'>\caption</span><span class='textcolor-387f38'>{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\begin</span><span class='textcolor-387f38'>{array}{c c} hello &amp; world</span><span class='textcolor-af3f3f'>\end</span><span class='textcolor-387f38'>{array}</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb115'><a id='x10-96063r1'></a><span class='textcolor-2838af'>\caption</span><span class='textcolor-387f38'>{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\begin</span><span class='textcolor-387f38'>{array}{c c} hello &amp; world</span><span class='textcolor-af3f3f'>\end</span><span class='textcolor-387f38'>{array}</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!-- l. 80 --><p class='indent'>   The issue is that some commands needs to be protected when used in parameters
 of <code class='texttt'>\section</code> or <code class='texttt'>\caption</code> commands. There are two possible fixes. First is to use the
 <code class='texttt'>\protect</code> command:
-                                                                  
-
-                                                                  
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb112'><a id='x10-92066r1'></a><span class='textcolor-2838af'>\caption</span><span class='textcolor-387f38'>{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\protect\begin</span><span class='textcolor-387f38'>{array}{c c} hello &amp; world</span><span class='textcolor-af3f3f'>\protect\end</span><span class='textcolor-387f38'>{array}</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb116'><a id='x10-96066r1'></a><span class='textcolor-2838af'>\caption</span><span class='textcolor-387f38'>{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\protect\begin</span><span class='textcolor-387f38'>{array}{c c} hello &amp; world</span><span class='textcolor-af3f3f'>\protect\end</span><span class='textcolor-387f38'>{array}</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!-- l. 88 --><p class='indent'>   Other fix is to use the <span class='emph'>writetoc</span> configuration:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb113'><a id='x10-92072r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>writetoc<span class='textcolor-387f38'>}{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x10-92074r2'></a><span class='textcolor-2838af'>\def\begin</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\detokenize</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>}}</span> 
-<a id='x10-92076r3'></a><span class='textcolor-2838af'>\def\end</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\detokenize</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>}}</span> 
-<a id='x10-92078r4'></a><span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb117'><a id='x10-96072r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>writetoc<span class='textcolor-387f38'>}{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x10-96074r2'></a><span class='textcolor-2838af'>\def\begin</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\detokenize</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>}}</span> 
+<a id='x10-96076r3'></a><span class='textcolor-2838af'>\def\end</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\detokenize</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>}}</span> 
+<a id='x10-96078r4'></a><span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!-- l. 97 --><p class='indent'>   In this configuration, we redefine <code class='texttt'>\begin</code> and <code class='texttt'>\end</code> commands to print their
@@ -229,7 +233,7 @@ when stuff is written to the auxilary files, so you don’t need to worry that i
 break normal handling of environments.
 </p><!-- l. 105 --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='dom-processing-errors'><span class='titlemark'>9.3   </span> <a id='x10-930009.3'></a>DOM Processing Errors</h3>
+<h3 class='sectionHead' id='dom-processing-errors'><span class='titlemark'>9.3   </span> <a id='x10-970009.3'></a>DOM Processing Errors</h3>
 <!-- l. 108 --><p class='noindent'><code class='texttt'>TeX4ht</code> post-process generated HTML and XML files using Lua filters. They fixes
 various issues that are not possible fix on the TeX level, and also add some
 additional features. For example, the <code class='texttt'>MathML</code> output relies on filters to produce valid
@@ -238,9 +242,9 @@ code.
 HTML or XML file is not well-formed, you may get the following warning:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb114'><a id='x10-93005r1'></a><span class='textcolor-656565'>[</span>WARNING<span class='textcolor-656565'>]</span> domfilter: DOM parsing of test.html failed: 
-<a id='x10-93007r2'></a><span class='textcolor-656565'>[</span>WARNING<span class='textcolor-656565'>]</span> domfilter: /home/michal/texmf/scripts/lua/LuaXML/ 
-<a id='x10-93009r3'></a>luaxml-mod-xml.lua:175: Unbalanced Tag <span class='textcolor-656565'>(</span>/p<span class='textcolor-656565'>)</span> <span class='textcolor-656565'>[</span><span class='textcolor-af3f3f'>char</span><span class='textcolor-656565'>=</span><span class='textcolor-444444'>1353</span><span class='textcolor-656565'>]</span></pre>
+<pre class='fancyvrb' id='fancyvrb118'><a id='x10-97005r1'></a><span class='textcolor-656565'>[</span>WARNING<span class='textcolor-656565'>]</span> domfilter: DOM parsing of test.html failed: 
+<a id='x10-97007r2'></a><span class='textcolor-656565'>[</span>WARNING<span class='textcolor-656565'>]</span> domfilter: /home/michal/texmf/scripts/lua/LuaXML/ 
+<a id='x10-97009r3'></a>luaxml-mod-xml.lua:175: Unbalanced Tag <span class='textcolor-656565'>(</span>/p<span class='textcolor-656565'>)</span> <span class='textcolor-656565'>[</span><span class='textcolor-af3f3f'>char</span><span class='textcolor-656565'>=</span><span class='textcolor-444444'>1353</span><span class='textcolor-656565'>]</span></pre>
 
 </figure>
 <!-- l. 122 --><p class='indent'>   This means that DOM parsing failed and filters cannot be applied. This will
@@ -248,38 +252,38 @@ result in incorrect file.
 </p><!-- l. 124 --><p class='noindent'><span class='textbf'>Incorrect handling of paragraphs</span> Common cause of this issue is incorect
 handling of paragraphs in commands that produce block level elements such as <code class='texttt'>&lt;div&gt;</code>
 or <code class='texttt'>&lt;section&gt;</code> elements.
-</p><!-- l. 128 --><p class='indent'>   Say that you have a following code in your document:
-</p>   
-<figure class='texsource' role='doc-example'>
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb115'><a id='x10-93018r1'></a><span class='textcolor-2838af'>\newenvironment</span><span class='textcolor-387f38'>{</span>test<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\itshape</span><span class='textcolor-387f38'>}{}</span> 
-<a id='x10-93020r2'></a> 
-<a id='x10-93022r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>test<span class='textcolor-387f38'>}</span> 
-<a id='x10-93024r4'></a>world 
-<a id='x10-93026r5'></a> 
-<a id='x10-93028r6'></a>more paragraphs 
-<a id='x10-93030r7'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>test<span class='textcolor-387f38'>}</span></pre>
+</p><!-- l. 128 --><p class='indent'>   Say that you have a following code in your document:
+</p>   
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb119'><a id='x10-97018r1'></a><span class='textcolor-2838af'>\newenvironment</span><span class='textcolor-387f38'>{</span>test<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\itshape</span><span class='textcolor-387f38'>}{}</span> 
+<a id='x10-97020r2'></a> 
+<a id='x10-97022r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>test<span class='textcolor-387f38'>}</span> 
+<a id='x10-97024r4'></a>world 
+<a id='x10-97026r5'></a> 
+<a id='x10-97028r6'></a>more paragraphs 
+<a id='x10-97030r7'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>test<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!-- l. 140 --><p class='indent'>   And that you configure the <span class='emph'>test</span> environment to to produce a custom <code class='texttt'>&lt;div&gt;</code>
 element:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb116'><a id='x10-93033r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>test<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;div class="test"&gt;<span class='textcolor-387f38'>}}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/div&gt;<span class='textcolor-387f38'>}}{}{}</span></pre>
+<pre class='fancyvrb' id='fancyvrb120'><a id='x10-97033r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>test<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;div class="test"&gt;<span class='textcolor-387f38'>}}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/div&gt;<span class='textcolor-387f38'>}}{}{}</span></pre>
 
 </figure>
 <!-- l. 146 --><p class='indent'>   This configuration will break the LuaXML parsing, as it produces invalid HTML
 code:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb117'><a id='x10-93041r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 27--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"indent"</span> <span class='textcolor-878787'>&gt;</span>   <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>div</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"test"</span><span class='textcolor-878787'>&gt;</span> <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x10-93043r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"cmti-12"</span><span class='textcolor-878787'>&gt;</span>world<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
-<a id='x10-93045r3'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;<span class='textit'>&lt;!--l. 30--&gt;</span>&lt;</span><span class='textcolor-2838af'>p</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"indent"</span> <span class='textcolor-878787'>&gt;</span>   <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x10-93047r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"cmti-12"</span><span class='textcolor-878787'>&gt;</span>more paragraphs<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
-<a id='x10-93049r5'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>div</span><span class='textcolor-878787'>&gt;</span> 
-<a id='x10-93051r6'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb121'><a id='x10-97041r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 27--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"indent"</span> <span class='textcolor-878787'>&gt;</span>   <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>div</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"test"</span><span class='textcolor-878787'>&gt;</span> <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x10-97043r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"cmti-12"</span><span class='textcolor-878787'>&gt;</span>world<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
+<a id='x10-97045r3'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;<span class='textit'>&lt;!--l. 30--&gt;</span>&lt;</span><span class='textcolor-2838af'>p</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"indent"</span> <span class='textcolor-878787'>&gt;</span>   <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x10-97047r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"cmti-12"</span><span class='textcolor-878787'>&gt;</span>more paragraphs<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
+<a id='x10-97049r5'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>div</span><span class='textcolor-878787'>&gt;</span> 
+<a id='x10-97051r6'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
 
 </figure>
 <!-- l. 157 --><p class='indent'>   The issue is that <code class='texttt'>&lt;p&gt;</code> elements are mismatched. It is necessary that closing <code class='texttt'>&lt;/p&gt;</code>
@@ -288,8 +292,8 @@ tag is inserted before <code class='texttt'>&lt;div&gt;</code> tag. You can use 
 this:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb118'><a id='x10-93055r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>test<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span class='textcolor-387f38'>{</span>&lt;div class="test"&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\par</span><span class='textcolor-387f38'>}</span> 
-<a id='x10-93057r2'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span class='textcolor-387f38'>{</span>&lt;/div&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\par</span><span class='textcolor-387f38'>}{}{}</span></pre>
+<pre class='fancyvrb' id='fancyvrb122'><a id='x10-97055r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>test<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span class='textcolor-387f38'>{</span>&lt;div class="test"&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\par</span><span class='textcolor-387f38'>}</span> 
+<a id='x10-97057r2'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span class='textcolor-387f38'>{</span>&lt;/div&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\par</span><span class='textcolor-387f38'>}{}{}</span></pre>
 
 </figure>
 <!-- l. 166 --><p class='indent'>   The <code class='texttt'>\EndP</code> inserts closing <code class='texttt'>&lt;/p&gt;</code> tag. But new paragraph still could be
@@ -301,10 +305,10 @@ closing of the environment. The resulting HTML with this configuration is
 correct:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb119'><a id='x10-93063r1'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>div</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'test'</span><span class='textcolor-878787'>&gt;</span> 
-<a id='x10-93065r2'></a><span class='textcolor-878787'><span class='textit'>&lt;!-- l. 28 --&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'indent'</span><span class='textcolor-878787'>&gt;</span>   <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'cmti-12'</span><span class='textcolor-878787'>&gt;</span>world<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
-<a id='x10-93067r3'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;<span class='textit'>&lt;!-- l. 30 --&gt;</span>&lt;</span><span class='textcolor-2838af'>p</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'indent'</span><span class='textcolor-878787'>&gt;</span>   <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'cmti-12'</span><span class='textcolor-878787'>&gt;</span>more paragraphs<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
-<a id='x10-93069r4'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;&lt;/</span><span class='textcolor-2838af'>div</span><span class='textcolor-878787'>&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb123'><a id='x10-97063r1'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>div</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'test'</span><span class='textcolor-878787'>&gt;</span> 
+<a id='x10-97065r2'></a><span class='textcolor-878787'><span class='textit'>&lt;!-- l. 28 --&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'indent'</span><span class='textcolor-878787'>&gt;</span>   <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'cmti-12'</span><span class='textcolor-878787'>&gt;</span>world<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
+<a id='x10-97067r3'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;<span class='textit'>&lt;!-- l. 30 --&gt;</span>&lt;</span><span class='textcolor-2838af'>p</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'indent'</span><span class='textcolor-878787'>&gt;</span>   <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> <span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'cmti-12'</span><span class='textcolor-878787'>&gt;</span>more paragraphs<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
+<a id='x10-97069r4'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;&lt;/</span><span class='textcolor-2838af'>div</span><span class='textcolor-878787'>&gt;</span></pre>
 
 </figure>
                                                                   
@@ -312,10 +316,10 @@ correct:
                                                                   
 <!-- l. 184 --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='math-issues'><span class='titlemark'>9.4   </span> <a id='x10-940009.4'></a>Math Issues</h3>
+<h3 class='sectionHead' id='math-issues'><span class='titlemark'>9.4   </span> <a id='x10-980009.4'></a>Math Issues</h3>
 <!-- l. 185 --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='problems-with-mathml'><span class='titlemark'>9.4.1   </span> <a id='x10-950009.4.1'></a>Problems With <span class='emph'><code class='texttt'>MathML</code></span></h4>
+<h4 class='subsectionHead' id='problems-with-mathml'><span class='titlemark'>9.4.1   </span> <a id='x10-990009.4.1'></a>Problems With <span class='emph'><code class='texttt'>MathML</code></span></h4>
 <!-- l. 187 --><p class='noindent'><span class='textbf'>Single delimiters</span> Use of single delimiters like <code class='texttt'>$\langle$</code> may result in
 invalid <code class='texttt'>MathML</code> code. <code class='texttt'>TeX4ht</code> can try to fix that using the <span class='emph'>mathml-</span> option.
                                                                   
