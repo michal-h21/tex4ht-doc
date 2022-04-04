@@ -55,10 +55,11 @@ foo.cfg, using the \texttt{-c} make4ht option. The \texttt{frames} option
 requires placing of the content and table of contents in separate frames. In
 addition, it asks the \shellcmd{t4ht} command not to produce bitmaps for pictures using the \shellcmd{-p} option.
 
-\section{\makefourht{} Options}
+\section{\makefourht{} Switches and Options}
 
+\makefourht{} accepts following command line switches and options:
 
-\begin{shellcommand}
+\begin{textsource}
 -a,--loglevel (default status) Set log level.
 possible values: debug, info, status, warning, error, fatal
 -b,--backend (default tex4ht) Backend used for xml generation. 
@@ -76,7 +77,28 @@ possible values: tex4ht or lua4ht
 -u,--utf8  [obsolete] The document is generated in UTF8 encoding by default
 -v,--version  Display version number
 -x,--xetex Use xelatex for document compilation
+\end{textsource}
+
+You can either use the long form \shellcmd{--mode}, or the short form \shellcmd{-m}. 
+Short options can be chained:
+
+\begin{shellcommand}
+$ make4ht -lsm draft filename.tex
 \end{shellcommand}
+
+The above command is equvalent to the following that uses the long names:
+
+\begin{shellcommand}
+$ make4ht --lua --shell-escape --mode draft filename.tex
+\end{shellcommand}
+
+Some of these options are discussed in other chapters, see section \namerefpage{sec:private-configuration}
+for details on configuration files requested using the \shellcmd{-c} option,
+and section \namerefpage{sec:make4ht-build-files} for details on build files requested using 
+the \shellcmd{-e} option.
+
+Supported  output formats are described in the chapter \ref{sec:output-formats}. They can be requested using the \shellcmd{-f} option.
+This option also supports extensions. This feature was shown in the section \namerefpage{sec:tutorial-basic-usage} of the tutorial.
 
 \subsection{Terminal Output}
 
@@ -87,6 +109,7 @@ It is also recommended to use output of this option for \TeX4ht bug reports.
 \begin{shellcommand}
 $ make4ht -a debug -m draft buggy.tex
 \end{shellcommand}
+
 
 \subsection{Output Directory}
 
