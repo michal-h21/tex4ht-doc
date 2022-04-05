@@ -28,7 +28,12 @@ The instruction \texcommand{\Hnewline} may be introduced there for requesting li
 
 This is a variation of the \cmd{HCode} command that don't require braces, and it does some additional processing.
 
+\cmd{ifOption}\marg{name of the option to be checked}\marg{true part}\marg{false part}
+
+This command can be used in the private configuration files to test if a custom option was used
+
 \subsection{Hyperlinks}
+
 \texcommand{\Link[target-file arguments]{target-loc}{cur-loc}anchor\EndLink}
 
 This command requests an anchor that links to \verb|‘target-file#target-loc’|, and marks the current location with the name \texttt{‘cur-loc’}.
