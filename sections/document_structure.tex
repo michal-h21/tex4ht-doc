@@ -1,0 +1,39 @@
+\subsection{File extension}
+
+\DocConfigure {ext} {default extension name for target files  (recorded in \texcommand{\:html})} \EndDoc
+
+It can also be requested through a command line option \shellcmd{ext=...}.
+
+\subsection{HTML header}
+\DocConfigure {PROLOG} {Comma separated list of hooks to appear before HTML} \EndDoc
+
+Each hook E is declared to be configurable by an instruction of the form \texcommand{\NewConfigure{E}{1}}
+
+
+Example:
+
+\begin{texsource}
+\Configure{PROLOG}{VERSION,DOCTYPE,*XML-STYLESHEET}
+\Configure{VERSION}{\HCode{<?xml version="1.0"?>}}
+\end{texsource}
+
+A star '*' prefix calls for accumulative configurations
+
+
+\subsection{Titles}
+
+\DocConfigure{TITLE+} {Title contents}\EndDoc
+
+Set contents of the \htmlcommand{<title>} element.
+
+There are also similar commands for pages split on sectioning commands. For example, for document that
+is split on chapters, use:
+
+\begin{texsource}
+\Configure{TITLE+}{My web site |\@title}
+\Configure{chapterTITLE+}{My web site | \thechapter\space#1}
+\Configure{likechapterTITLE+}{My web site | #1}
+\end{texsource}
+
+\texttt{likechapter} prefix is used for \texcommand{\chapter*} command. The text of sectioning command
+can be accessed using \texcommand{#1}.
