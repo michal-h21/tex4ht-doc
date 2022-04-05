@@ -67,7 +67,7 @@ configuration files.
 \item[-css] to ignore \css\ code, use command line option \verb=-css=.
 
 \item[-xtpipes] to avoid \verb=xtpipes= post-processing the
-  output. This might be useful for docbook \xml\ output.
+  output. This might be useful for Docbook \xml\ or ODT output.
 
   % \item[/bib]
   % \item[/obeylines]
@@ -420,5 +420,18 @@ configuration files.
 
 % \item[xmldtd]
 
+\end{description}
+
+\section{Options for the ODT output}
+
+\begin{description}
+  \item[bib-] produces degraded bibliography that should be friendlier for conversion to Word.
+  \item[description-inline] use run-in style for description lists.
+  \item[endnotes] convert footnotes to endnotes.
+  \item[hidden-ref] hide clickable index and bibliography references.
+  \item[NoSections] don't use sections for text alignment environments.
+  \item[tab-eq] tab based layout of equations.
+  \item[timestamp] save creation date in the document metadata.
+  \item[TocLink] request links from table of contents.
 \end{description}
 \endgroup
