@@ -49,13 +49,17 @@
 
 
 
+
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
 <span class='chapterToc'>6 <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
 
-<span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
                                                                   
 
                                                                   
+<span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
+
+
+
 
 
 
@@ -98,13 +102,13 @@
 
 <span class='chapterToc'>8 <a href='Make4htBuildFiles.html#makeht-build-files'>Make4ht Build Files</a></span>
 
+                                                                  
+
+                                                                  
 
 
 <span class='chapterToc'>9 <a href='FAQandTroubleshooting.html#faq-and-troubleshooting'>FAQ and Troubleshooting</a></span>
 
-                                                                  
-
-                                                                  
 
 
 
@@ -139,6 +143,9 @@ instead, try the <span class='emph'>p-indent</span> option.
 </p><!-- l. 45 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='css'><span class='titlemark'>3.1.2   </span> <a id='x4-140003.1.2'></a>CSS</h4>
+                                                                  
+
+                                                                  
 <!-- l. 46 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='web-fonts'><span class='titlemark'>3.1.3   </span> <a id='x4-150003.1.3'></a>Web fonts</h4>
@@ -146,9 +153,6 @@ instead, try the <span class='emph'>p-indent</span> option.
 files for the distribution, for example, in an Epub file, <code class='texttt'>TeX4ht</code>provides the following
 configurations. This example shows how to use OTF files for the EB Garamond
 font.
-                                                                  
-
-                                                                  
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb39'><a id='x4-15017r1'></a><span class='textcolor-878787'><span class='textit'>% define font family. The first argument is family name</span></span> 
@@ -188,15 +192,15 @@ these operators. For example, instead of
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb40'><a id='x4-19003r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>A_</span><span class='textcolor-af3f3f'>\mathit</span><span class='textcolor-387f38'>{...}</span><span class='textcolor-b73838'>$</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!-- l. 15 --><p class='indent'>   use the following, with added group around the <code class='texttt'>\mathit</code> command:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb41'><a id='x4-19006r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>A_{</span><span class='textcolor-af3f3f'>\mathit</span><span class='textcolor-387f38'>{...}}</span><span class='textcolor-b73838'>$</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!-- l. 21 --><p class='indent'>   If you define custom commands in the document preamble, use <code class='texttt'>\sp</code> and <code class='texttt'>\sb</code>
@@ -232,6 +236,9 @@ and then pipes the modified output to <code class='texttt'>make4ht</code>.
 script:
 </p>   
 <figure class='luasource' role='doc-example'>
+                                                                  
+
+                                                                  
 <pre class='fancyvrb' id='fancyvrb46'><a id='x4-19033r1'></a><span class='textcolor-2838af'>for</span> line <span class='textcolor-2838af'>in </span><span class='textcolor-387f38'>io.lines</span><span class='textcolor-878787'>() </span><span class='textcolor-2838af'>do</span> 
 <a id='x4-19035r2'></a>  <span class='textcolor-878787'><span class='textit'>-- fix primes</span></span> 
 <a id='x4-19037r3'></a>  line <span class='textcolor-656565'>=</span> line<span class='textcolor-878787'>:</span>gsub<span class='textcolor-878787'>(</span><span class='textcolor-b73838'>[[%'%^(.-)%_]]</span><span class='textcolor-878787'>, </span><span class='textcolor-b73838'>[[^{\prime %1}_]]</span><span class='textcolor-878787'>)</span> 
@@ -251,9 +258,6 @@ script:
 command to execute it could be:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb47'><a id='x4-19060r1'></a>texlua filter.lua &lt; sample.tex <span class='textcolor-878787'>|</span> make4ht -j sample - <span class='textcolor-b73838'>"mathml,mathjax"</span></pre>
 
 </figure>
@@ -283,14 +287,14 @@ other dimension will be set to the same value. You usually don’t want this,
 unless your image is a square. To get the correct value for all dimensions,
 Graphics uses a <span class='obeylines-h'><code class='verb'>.xbb</code></span> file for image. It can be created using the following
 command:
+                                                                  
+
+                                                                  
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb48'><a id='x4-23003r1'></a>ebb -x *.jpg</pre>
 
 </figure>
-                                                                  
-
-                                                                  
 <!-- l. 15 --><p class='indent'>   Run analogous command for every other supported image format you
 use. This will ensure that correct values are used for implicitly calculated
 dimensions.
@@ -333,6 +337,9 @@ provides.
 </figure>
 <!-- l. 55 --><p class='indent'>   To disable setting of the image dimensions in HTML code completely use the
 following configuration:
+                                                                  
+
+                                                                  
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb52'><a id='x4-24043r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
@@ -343,9 +350,6 @@ following configuration:
 <a id='x4-24053r6'></a><span class='textcolor-387f38'>}}</span> 
 <a id='x4-24055r7'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
 <a id='x4-24057r8'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!-- l. 69 --><p class='indent'>   This configuration uses CSS to set the maximum image dimension. This ensures
@@ -389,6 +393,9 @@ configuration that can specify the image alternative text, <code class='texttt'>
 <pre class='fancyvrb' id='fancyvrb55'><a id='x4-25030r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!-- l. 7 --&gt;</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>img</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>alt</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>alt tags, information</span><span class='ts1-lmtt10-'>'</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>src</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span> <span class='textcolor-878787'><span class='rm-lmtt-10'>/&gt;</span></span> 
 <a id='x4-25032r2'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></pre>
 </figure>
+                                                                  
+
+                                                                  
 <!-- l. 88 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='plain-tex'><span class='titlemark'>3.4   </span> <a id='x4-260003.4'></a>Plain TeX</h3>
@@ -397,9 +404,6 @@ provide configurations to get good markup for your custom commands. You will als
 need to add few commands to your source file:
 </p>   
 <figure class='texsource' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb56'><a id='x4-26007r1'></a><span class='textcolor-878787'><span class='textit'>%!TEX TS-program = tex</span></span> 
 <a id='x4-26009r2'></a><span class='textcolor-2838af'>\input</span> plain-4ht.tex 
 <a id='x4-26011r3'></a><span class='textcolor-2838af'>\document</span> 
@@ -435,15 +439,15 @@ necessary for the correct Plain TeX support.
 </p><!-- l. 92 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='blogging'><span class='titlemark'>3.5   </span> <a id='x4-270003.5'></a>Blogging</h3>
+                                                                  
+
+                                                                  
 <!-- l. 94 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='work-with-external-commands'><span class='titlemark'>3.6   </span> <a id='x4-280003.6'></a>Work with external commands</h3>
 <!-- l. 95 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='indexing'><span class='titlemark'>3.6.1   </span> <a id='x4-290003.6.1'></a>Indexing</h4>
-                                                                  
-
-                                                                  
 <!-- l. 96 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='bibliographies'><span class='titlemark'>3.6.2   </span> <a id='x4-300003.6.2'></a>Bibliographies</h4>

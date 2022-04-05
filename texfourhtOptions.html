@@ -49,13 +49,17 @@
 
 
 
+
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
 <span class='chapterToc'>6 <a href='#-texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
 <span class='sectionToc'>6.1 <a href='#list-of-options'>List of options</a></span>
-<span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
                                                                   
 
                                                                   
+<span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
+
+
+
 
 
 
@@ -98,13 +102,13 @@
 
 <span class='chapterToc'>8 <a href='Make4htBuildFiles.html#makeht-build-files'>Make4ht Build Files</a></span>
 
+                                                                  
+
+                                                                  
 
 
 <span class='chapterToc'>9 <a href='FAQandTroubleshooting.html#faq-and-troubleshooting'>FAQ and Troubleshooting</a></span>
 
-                                                                  
-
-                                                                  
 
 
 
@@ -129,7 +133,7 @@
 </nav> 
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='OutputFormats.html'>prev</a>] [<a href='tex4ht-doc.html#texfourhtOptions.html'>up</a>] [<a href='Configurations.html'>next</a>] </nav> 
-<h2 class='chapterHead' id='-texht-options1'><span class='titlemark'>Chapter 6</span><br /><a id='x7-420006'></a><code class='texttt'>TeX4ht</code> Options</h2>
+<h2 class='chapterHead' id='-texht-options1'><span class='titlemark'>Chapter 6</span><br /><a id='x7-430006'></a><code class='texttt'>TeX4ht</code> Options</h2>
 Following is an incomplete list of options that can be passed to the <code class='texttt'>tex4ht.sty</code>
 package. These options can be used to modify the compilation process, for example
 to select a <span class='emph'>SVG</span> format for generated images, to request math environments to be
@@ -142,20 +146,20 @@ way is to pass them as options to <code class='texttt'>tex4ht.sty</code> using <
 TeX file.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb71'><a id='x7-42005r1'></a>... 
-<a id='x7-42007r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[xhtml,option1,option2]{</span>tex4ht<span class='textcolor-387f38'>}</span> 
-<a id='x7-42009r3'></a>...</pre>
+<pre class='fancyvrb' id='fancyvrb71'><a id='x7-43005r1'></a>... 
+<a id='x7-43007r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[xhtml,option1,option2]{</span>tex4ht<span class='textcolor-387f38'>}</span> 
+<a id='x7-43009r3'></a>...</pre>
 
 </figure>
 <!-- l. 25 --><p class='indent'>   Recommended solutions don’t require modifications of the TeX files.
 </p><!-- l. 27 --><p class='indent'>   One way is to pass the options to <code class='texttt'>make4ht</code> as an command line argument, next to
 the filename:
-</p>   
-<figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb72'><a id='x7-42012r1'></a>make4ht filename.tex <span class='textcolor-b73838'>"fn-in"</span></pre>
+</p>
                                                                   
 
                                                                   
+<figure class='shellcommand' role='doc-example'>   
+<pre class='fancyvrb' id='fancyvrb72'><a id='x7-43012r1'></a>make4ht filename.tex <span class='textcolor-b73838'>"fn-in"</span></pre>
 
 </figure>
 <!-- l. 37 --><p class='indent'>   For more information on calling scripts see the section <a href='CallingCommands.html#makeht-extensions'>4.3.1<!-- tex4ht:ref: sec:calling-commands  --></a>.
@@ -164,16 +168,16 @@ configuration file</span>. Note that first option in the <code class='texttt'>\P
 <span class='emph'>xhtml</span>.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb73'><a id='x7-42018r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml,fn-in<span class='textcolor-387f38'>}</span> 
-<a id='x7-42020r2'></a>... 
-<a id='x7-42022r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x7-42024r4'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb73'><a id='x7-43018r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml,fn-in<span class='textcolor-387f38'>}</span> 
+<a id='x7-43020r2'></a>... 
+<a id='x7-43022r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x7-43024r4'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
 <!-- l. 49 --><p class='indent'>   See the section <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!-- tex4ht:ref: sec:private-configuration  --></a> for more details on configuration
 files.
 </p>   
-<h3 class='sectionHead' id='list-of-options'><span class='titlemark'>6.1   </span> <a id='x7-430006.1'></a>List of options</h3>
+<h3 class='sectionHead' id='list-of-options'><span class='titlemark'>6.1   </span> <a id='x7-440006.1'></a>List of options</h3>
 <dl class='description'><dt class='description'>     
 <!-- l. 67 --><p class='noindent'>
 <span class='ec-lmbx-10'>-css</span> 
@@ -205,13 +209,13 @@ with <span class='obeylines-h'><code class='verb'>\PageBreak</code></span>.
 <span class='ec-lmbx-10'>1, 2, 3, 4, 5, 6, 7</span> 
 </p>
 </dt><dd class='description'>
+                                                                  
+
+                                                                  
 <!-- l. 79 --><p class='noindent'>for automatic sectioning pagination (to break at various section levels),
 use the appropriate command line option <span class='obeylines-h'><code class='verb'>1, 2, 3, 4,</code></span> <span class='obeylines-h'><code class='verb'>5, 6, 7</code></span>. Option
 1 doesn’t break pages at all, 2 at parts, 3 at chapters, 4 at sections, 5 at
 subsections, 6 at subsubsections and 7 at paragraphs.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>

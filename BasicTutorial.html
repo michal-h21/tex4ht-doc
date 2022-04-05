@@ -49,13 +49,17 @@
 
 
 
+
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
 <span class='chapterToc'>6 <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
 
-<span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
                                                                   
 
                                                                   
+<span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
+
+
+
 
 
 
@@ -98,13 +102,13 @@
 
 <span class='chapterToc'>8 <a href='Make4htBuildFiles.html#makeht-build-files'>Make4ht Build Files</a></span>
 
+                                                                  
+
+                                                                  
 
 
 <span class='chapterToc'>9 <a href='FAQandTroubleshooting.html#faq-and-troubleshooting'>FAQ and Troubleshooting</a></span>
 
-                                                                  
-
-                                                                  
 
 
 
@@ -143,15 +147,15 @@ best-supported conversion targets.
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb1'><a id='x3-5003r1'></a>$ make4ht filename.tex</pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!-- l. 25 --><p class='indent'>   Let us start with conversion of a simple LaTeX file to HTML with the following
 LaTeX file:
 </p>   
 <figure class='texsource' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb2'><a id='x3-5005r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>article</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x3-5007r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>[czech]</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>babel</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x3-5009r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
@@ -192,12 +196,12 @@ default PDFLaTeX engine.
 different result:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb7'><a id='x3-5028r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!-- l. 4 --&gt;</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>Příliš žlut’oučký kůň úpěl d’ábelské ódy.</span> 
-<a id='x3-5030r2'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></pre>
-</figure>
                                                                   
 
                                                                   
+<pre class='fancyvrb' id='fancyvrb7'><a id='x3-5028r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!-- l. 4 --&gt;</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>Příliš žlut’oučký kůň úpěl d’ábelské ódy.</span> 
+<a id='x3-5030r2'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></pre>
+</figure>
 <!-- l. 64 --><p class='indent'>   Notice that the accents in the <span class='textit'>ť</span> and <span class='textit'>ď</span> letters are detached from the base letters.
 That is because <code class='texttt'>TeX4ht</code> uses information about characters in the DVI file. Current
 LaTeXsupports basic accented characters out of the box, but sometimes, they don’t
@@ -234,11 +238,11 @@ You can use the following options:
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb10'><a id='x3-6006r1'></a>$ make4ht filename.tex <span class='textcolor-b73838'>"3,sec-filename,fn-in"</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
-                                                                  
-
-                                                                  
 <!-- l. 107 --><p class='indent'>   There are other numeric options, each of them breaks document into separate
 HTML pages on a different sectioning level. Option 1 does not break pages at all, 2
 at parts, 3 at chapters, 4 at sections, 5 at subsections, 6 at sub-subsections, and 7 at
@@ -276,11 +280,11 @@ pictures:
 
 </figure>
 <!-- l. 129 --><p class='indent'>   For more information on options, see chapter <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code>Options<!-- tex4ht:ref: chap:options  --></a>.
-</p><!-- l. 131 --><p class='noindent'>
-</p>
                                                                   
 
                                                                   
+</p><!-- l. 131 --><p class='noindent'>
+</p>   
 <h3 class='sectionHead' id='-makeht-extensions'><span class='titlemark'>2.4   </span> <a id='x3-70002.4'></a><code class='texttt'>make4ht</code> extensions</h3>
 <!-- l. 133 --><p class='noindent'><code class='texttt'>make4ht</code> has an extension support. These extensions can modify various aspects of
 the conversion process, for example, post-process the generated files, cache images,
@@ -320,12 +324,12 @@ generated HTML files using the LuaXML package. To disable this processing, use
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb18'><a id='x3-7017r1'></a>$ make4ht -f html5-common_domfilters filename.tex</pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!-- l. 166 --><p class='indent'>   You can find a list of extensions in <a href='https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions'><code class='texttt'>make4ht</code> documentation</a>.
-                                                                  
-
-                                                                  
 </p><!-- l. 168 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead'><span class='titlemark'>2.5   </span> <a id='x3-80002.5'></a>Configurations</h3>
@@ -373,15 +377,15 @@ environment. By default this may produce following structure:
 <a id='x3-8038r4'></a> 
 <a id='x3-8040r5'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span>But run it through several paragraphs 
 <a id='x3-8042r6'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>div</span><span class='textcolor-878787'>&gt;&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!-- l. 229 --><p class='indent'>   as you can see, generated html code is incorrect, as opening and closing <code class='texttt'>&lt;div&gt;</code>
 tags have different parent elements. <code class='texttt'>someenv</code> environment can be configured to close
 current paragraph, but it may be not what you want.
 </p><!-- l. 234 --><p class='indent'>   Best way to prevent tag mismatch may be something like:
-                                                                  
-
-                                                                  
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb22'><a id='x3-8052r1'></a>Hello world. 
@@ -431,14 +435,14 @@ output.
 command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
+                                                                  
+
+                                                                  
 <pre class='fancyvrb' id='fancyvrb26'><a id='x3-8099r1'></a>htlatex sample1 xhtml</pre>
 
 </figure>
 <!-- l. 291 --><p class='indent'>   Now we should get rid of ugly entities which encode accented letters. This is
 somewhat ugly with <code class='texttt'>htlatex</code>:
-                                                                  
-
-                                                                  
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb27'><a id='x3-8102r1'></a>htlatex sample1 <span class='textcolor-b73838'>"xhtml,charset=utf-8" </span><span class='textcolor-b73838'>" -cunihtf -utf8"</span></pre>
@@ -479,14 +483,14 @@ mainly influence appearance or math, footnotes, tables, etc. Note that these opt
 aren’t fixed set, anyone can add new options and not all options are supported in
 each output format supported by <code class='texttt'>tex4ht</code>. Generally these options work with <code class='texttt'>html</code>
 (and <code class='texttt'>xhtml</code>) output.
-</p><!-- l. 341 --><p class='indent'>   Other option is to use custom config file (<code class='texttt'>.cfg</code>). This is a TeX file with some basic
-structure:
-</p>
                                                                   
 
                                                                   
-<figure class='texsource' role='doc-example'>   
-<pre class='fancyvrb' id='fancyvrb30'><a id='x3-9013r1'></a>  optional stuff like requiring LaTeX packages etc 
+</p><!-- l. 341 --><p class='indent'>   Other option is to use custom config file (<code class='texttt'>.cfg</code>). This is a TeX file with some basic
+structure:
+</p>   
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb30'><a id='x3-9013r1'></a> optional stuff like requiring LaTeX packages etc 
 <a id='x3-9015r2'></a> ... 
 <a id='x3-9017r3'></a> <span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml,tex4ht.sty options<span class='textcolor-387f38'>}</span> 
 <a id='x3-9019r4'></a> ... 
@@ -550,14 +554,14 @@ macro.
 <a id='x3-9095r7'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>otherlanguage<span class='textcolor-387f38'>}{</span>english<span class='textcolor-387f38'>}</span> Some text in English, <span class='textcolor-2838af'>\hello</span> 
 <a id='x3-9097r8'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>otherlanguage<span class='textcolor-387f38'>}</span> 
 <a id='x3-9099r9'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!-- l. 418 --><p class='indent'>   we haven’t provided any configurations for <code class='texttt'>hello</code> yet, but you can see that text
 <code class='texttt'>hello world</code> is in <span class='textbf'>bold</span> font anyway. This is the same case as <code class='texttt'>\textit</code> which is
 converted as <span class='emph'>italic</span>. Basic font styles are inserted by <code class='texttt'>tex4ht</code> command during
-                                                                  
-
-                                                                  
 extraction of text from <code class='texttt'>dvi</code> to a output format. So it is the right time to finally show
 how to configure both <code class='texttt'>textit</code> and <code class='texttt'>hello</code> to produce some better tags than they
 provide by default.
@@ -607,6 +611,9 @@ effects.
 </p><!-- l. 486 --><p class='indent'>   Let’s take a look how would out configurations look with <code class='texttt'>\NoFonts</code> command:
 </p>   
 <figure class='texsource' role='doc-example'>
+                                                                  
+
+                                                                  
 <pre class='fancyvrb' id='fancyvrb36'><a id='x3-9149r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
 <a id='x3-9151r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;span class="textit"&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\NoFonts</span><span class='textcolor-387f38'>}</span> 
 <a id='x3-9153r3'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\EndNoFonts\HCode</span><span class='textcolor-387f38'>{</span>&lt;/span&gt;<span class='textcolor-387f38'>}}</span> 
@@ -619,9 +626,6 @@ effects.
 
 </figure>
 <!-- l. 501 --><p class='indent'>   the output now looks much better:
-                                                                  
-
-                                                                  
 </p>   
 <figure class='htmlsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb37'><a id='x3-9169r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>Příliš žluťoučký kůň úpěl <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"textit"</span><span class='textcolor-878787'>&gt;</span>ďábelské<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> ódy. Some text in English, <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"hello"</span><span class='textcolor-878787'>&gt;</span>hello world<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
