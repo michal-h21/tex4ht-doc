@@ -2,8 +2,10 @@ The conversion process used by \texfourht\ involves several tools
 (see section \ref{sec:overview}, \nameref{sec:overview} for details). 
 
 
-We provide a build script, called \shellcmd{make4ht}, which simplifies the 
-process.
+We provide a build script, called \makefourht, which simplifies the 
+process. There is also a variant of \makefourht{}, \shellcmd{tex4ebook} 
+for e-book production. See the chapter \namerefpage{sec:output-formats}
+for more information on output formats.
 
 
 \section{\texttt{make4ht} Build System}
@@ -17,8 +19,8 @@ the form:
 make4ht [make4ht options] filename.tex "options1" "option2" "options3" "options4"
 \end{shellcommand}
 
-The first set of options is for the tex4ht.sty and *.4ht style files, the
-second set is for the tex4ht post-processor, the third for the t4ht
+The first set of options is for the \texttt{tex4ht.sty} and *.4ht style files, the
+second set is for the \shellcmd{tex4ht} post-processor, the third for the \shellcmd{t4ht}
 post-processor, and the last one is for the \LaTeX\ compiler. 
 
 These options are optional.
@@ -74,7 +76,6 @@ possible values: tex4ht or lua4ht
 -m,--mode (default default) Switch which can be used in the makefile 
 -n,--no-tex4ht Disable dvi file processing with the tex4ht command
 -s,--shell-escape Enables running external programs from LaTeX
--u,--utf8  [obsolete] The document is generated in UTF8 encoding by default
 -v,--version  Display version number
 -x,--xetex Use xelatex for document compilation
 \end{textsource}
@@ -97,8 +98,19 @@ for details on configuration files requested using the \shellcmd{-c} option,
 and section \namerefpage{sec:make4ht-build-files} for details on build files requested using 
 the \shellcmd{-e} option.
 
-Supported  output formats are described in the chapter \ref{sec:output-formats}. They can be requested using the \shellcmd{-f} option.
-This option also supports extensions. This feature was shown in the section \namerefpage{sec:tutorial-basic-usage} of the tutorial.
+Supported  output formats are described in the chapter \namerefpage{sec:output-formats}. They can be requested using the \shellcmd{-f} option.
+This option also supports extensions. This feature has been shown in the section \namerefpage{sec:tutorial-basic-usage} of the tutorial.
+
+\subsection{\TeX{} engine}
+
+\makefourht{} uses \TeX{} compiler to produce a DVI file. Normally, it uses PDF\TeX{} engine, but you can also select Lua\TeX{} or 
+Xe\TeX{}, using the \shellcmd{-l} or \shellcmd{-x} switches.
+
+The selected engine is important especially for handling of accented and non-Latin characters. While \texfourht{} doesn't support
+OpenType fonts, it can emulate the Fontspec package, so it supports documents that use it. With Lua\TeX{} backend, \texfourht{}
+should support all Unicode characters. With Xe\TeX{}, it needs special instructions to load non-Latin character support. See
+\namerefpage{sec:unicode} section for more details.
+
 
 \subsection{Terminal Output}
 
