@@ -56,6 +56,7 @@
                                                                   
 
                                                                   
+
 <span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
 
 
@@ -101,10 +102,10 @@
 
 
 <span class='chapterToc'>8 <a href='Make4htBuildFiles.html#makeht-build-files'>Make4ht Build Files</a></span>
-
                                                                   
 
                                                                   
+
 
 
 <span class='chapterToc'>9 <a href='FAQandTroubleshooting.html#faq-and-troubleshooting'>FAQ and Troubleshooting</a></span>
@@ -149,12 +150,12 @@ form:
 <pre class='fancyvrb' id='fancyvrb59'><a id='x5-35003r1'></a>make4ht <span class='textcolor-656565'>[</span>make4ht options<span class='textcolor-656565'>]</span> filename.tex <span class='textcolor-b73838'>"options1" </span><span class='textcolor-b73838'>"option2" </span><span class='textcolor-b73838'>"options3" </span><span class='textcolor-b73838'>"options4"</span></pre>
 
 </figure>
-<!-- l. 22 --><p class='indent'>   The first set of options is for the <code class='texttt'>tex4ht.sty</code> and *.4ht style files, the second set
-is for the <code class='texttt'>tex4ht</code> post-processor, the third for the <code class='texttt'>t4ht</code> post-processor, and the last
-one is for the LaTeX compiler.
                                                                   
 
                                                                   
+<!-- l. 22 --><p class='indent'>   The first set of options is for the <code class='texttt'>tex4ht.sty</code> and *.4ht style files, the second set
+is for the <code class='texttt'>tex4ht</code> post-processor, the third for the <code class='texttt'>t4ht</code> post-processor, and the last
+one is for the LaTeX compiler.
 </p><!-- l. 26 --><p class='indent'>   These options are optional.
 </p><!-- l. 28 --><p class='indent'>   The basic invokation of make4ht looks like this:
 </p>   
@@ -191,11 +192,11 @@ option.
 </p>   
 <h3 class='sectionHead' id='-makeht-switches-and-options'><span class='titlemark'>4.2   </span> <a id='x5-360004.2'></a><code class='texttt'>make4ht</code> Switches and Options</h3>
 <!-- l. 62 --><p class='noindent'><code class='texttt'>make4ht</code> accepts following command line switches and options:
-</p>   
-<figure class='textsource' role='doc-example'>
                                                                   
 
                                                                   
+</p>   
+<figure class='textsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb63'><a id='x5-36018r1'></a>-a,--loglevel (default status) Set log level. 
 <a id='x5-36020r2'></a>possible values: debug, info, status, warning, error, fatal 
 <a id='x5-36022r3'></a>-b,--backend (default tex4ht) Backend used for xml generation. 
@@ -246,12 +247,12 @@ the Fontspec package, so it supports documents that use it. With LuaTeX backend,
 <code class='texttt'>TeX4ht</code> should support all Unicode characters. With XeTeX, it needs special
 instructions to load non-Latin character support. See <a href='Configurations.html#unicode'>Unicode<!-- tex4ht:ref: sec:unicode  --></a> section for more
 details.
-</p><!-- l. 115 --><p class='noindent'>
-</p>   
-<h4 class='subsectionHead' id='terminal-output'><span class='titlemark'>4.2.2   </span> <a id='x5-380004.2.2'></a>Terminal Output</h4>
                                                                   
 
                                                                   
+</p><!-- l. 115 --><p class='noindent'>
+</p>   
+<h4 class='subsectionHead' id='terminal-output'><span class='titlemark'>4.2.2   </span> <a id='x5-380004.2.2'></a>Terminal Output</h4>
 <!-- l. 117 --><p class='noindent'><code class='texttt'>make4ht</code> hides the terminal output by default. It shows only errors and warnings. It
 doesn’t always show the correct error context. In such cases, try the <code class='texttt'>-a debug</code>
 option. It is also recommended to use output of this option for TeX4ht bug
@@ -287,11 +288,11 @@ want to remove the temporary files, use the <code class='texttt'>-m clean</code>
 configuration files, named as <code class='texttt'>&lt;pkgname&gt;.4ht</code>. These configuration files patches
 commands provided by the packages, and insert special hooks, which are later filled
 with XML code for the output format.
-</p><!-- l. 153 --><p class='indent'>   To ensure that all packages are processed, <code class='texttt'>tex4ht.sty</code> needs to be loaded early,
-ideally before <code class='texttt'>\documentclass</code>.
                                                                   
 
                                                                   
+</p><!-- l. 153 --><p class='indent'>   To ensure that all packages are processed, <code class='texttt'>tex4ht.sty</code> needs to be loaded early,
+ideally before <code class='texttt'>\documentclass</code>.
 </p><!-- l. 156 --><p class='indent'>   Result of the LaTeX run is a DVI file that contain document text and special
 instructions with XML code, or with requests for pictures. This file is then processed
 by the <code class='texttt'>tex4ht</code> command. It generates the output XML or HTML files and the IDV
