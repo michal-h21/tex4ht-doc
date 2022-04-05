@@ -219,21 +219,6 @@ this is necessary only for labels that are defined by direct modification of \te
 % https://tex.stackexchange.com/a/521497/2891
 % https://tex.stackexchange.com/a/521905/2891
 
-\DocConfigure{TITLE+} {Title contents}\EndDoc
-
-Set contents of the \htmlcommand{<title>} element.
-
-There are also similar commands for pages split on sectioning commands. For example, for document that
-is split on chapters, use:
-
-\begin{texsource}
-\Configure{TITLE+}{My web site |\@title}
-\Configure{chapterTITLE+}{My web site | \thechapter\space#1}
-\Configure{likechapterTITLE+}{My web site | #1}
-\end{texsource}
-
-\texttt{likechapter} prefix is used for \texcommand{\chapter*} command. The text of sectioning command
-can be accessed using \texcommand{#1}.
 
 \section{Basic document structure and metadata}
 
@@ -361,6 +346,7 @@ In the ODT output, different mechanism is used:
 \end{texsource}
 
 \subsection{Unicode}
+\label{sec:unicode}
 
 Generally speaking, \texfourht\ supports \term{Unicode}, but there are some
 issues to be aware of. Most complete support exists for Lua\LaTeX, thanks to
