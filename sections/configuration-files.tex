@@ -1,10 +1,10 @@
 \section{Private Configuration Files}\label{sec:private-configuration}
 
 It is highly recommended to leave source LaTeX and TeX files intact, and not
-introduce TeX4ht configurations there. The configurations should be introduced
+introduce \texfourht{} configurations there. The configurations should be introduced
 indirectly in private configuration files. Source files containing just native
 LaTeX and TeX code permit their compilation to different output formats,
-including PostScript and PDF, by TeX4ht and other tools.
+including PostScript and PDF, by \texfourht{} and other tools.
 
 Packages used by the general LaTeX community typically provide better support
 than one can expect from tailoring private commands and configurations for such
@@ -15,7 +15,7 @@ investigate available resources before committing to work on private features.
 \subsection{Requesting Private Configuration Files}
 
 Private configuration files can be requested by passing the \shellcmd{-c}
-option to \shellcmd{make4ht}:
+option to \makefourht:
 
 \begin{shellcommand}
 make4ht -c mycfg.cfg myfile 
@@ -33,9 +33,9 @@ A configuration file should take the following form for \LaTeX\ files:
 \EndPreamble
 \end{texsource}
 
-The \texcommand{\Preamble} command should always use \option{xhtml} 
+The \cmd{Preamble} command should always use \option{xhtml} 
 as the first option. Otherwise, \texfourht\ switches to the HTML 4 mode and XML
-post-processing tools used by make4ht to fix some common issues will fail! For 
+post-processing tools used by \makefourht{} to fix some common issues will fail! For 
 more information about available options, see the \nameref{sec:texfouhtoptions} 
 section (\ref{sec:texfouhtoptions}).
 
@@ -78,7 +78,7 @@ is one important thing to be aware of. The configuration hooks are inserted to
 the patched commands when the compilation reaches the  
 \texcommand{\begin{document}} command, so configurations for these hooks
 declared before the hook definition have no effect. It is necessary to include
-them in the \texcommand{\AtBeginDocument} command.
+them in the \cmd{AtBeginDocument} command.
 
 Sample package, \file{commonconfigurations.sty}:
 
@@ -91,7 +91,7 @@ Sample package, \file{commonconfigurations.sty}:
 \endinput
 \end{texsource}
 
-It can be requested in a configuration file using \texcommand{\RequirePackage} command.
+It can be requested in a configuration file using \cmd{RequirePackage} command.
 
 \begin{texsource}
 \Preamble{xhtml}
