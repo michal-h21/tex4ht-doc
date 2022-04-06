@@ -334,9 +334,11 @@ generated HTML files using the LuaXML package. To disable this processing, use
 </p><!-- l. 168 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead'><span class='titlemark'>2.5   </span> <a id='x3-80002.5'></a>Configurations</h3>
-<!-- l. 171 --><p class='noindent'>Most of the markup produced by <code class='texttt'>TeX4ht</code> is configurable. Supported commands can
-be configured using the <code class='texttt'>\Configure</code> command. We can also insert markup before and
-after environments, using <code class='texttt'>\ConfigureEnv</code> command.
+<!-- l. 171 --><p class='noindent'>Most of the markup produced by <code class='texttt'>TeX4ht</code> is configurable. Supported commands can be configured
+using the <code>  <span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span>
+</code> command. We can also insert markup before and after environments, using
+<code> <span class='textcolor-2838af'><span class='rm-lmtt-10'>\ConfigureEnv</span></span>
+</code> command.
 </p><!-- l. 175 --><p class='indent'>   While it is possible to insert these commands directly to your document, it is
 better to use a custom configuration file, as you would get a compilation
 error if you compiled document containing <code class='texttt'>TeX4ht</code> commands directly by
@@ -344,14 +346,15 @@ LaTeX.
 </p><!-- l. 179 --><p class='indent'>   You can find more information about syntax and available commands in section
 <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!-- tex4ht:ref: sec:private-configuration  --></a>. Here, we will show some simple examples.
 </p><!-- l. 182 --><p class='indent'>   The <span class='textbf'><code class='texttt'>\Configure</code></span> command
-</p><!-- l. 186 --><p class='indent'>   You may want to insert some custom HTML tags. It is a bit more complicated for
-LaTeXcommands, but it is easy for environments. You can configure the code that is
-inserted before and after environment using the <code class='texttt'>\ConfigureEnv</code> command. It has a
-following syntax:
+</p><!-- l. 186 --><p class='indent'>   You may want to insert some custom HTML tags. It is a bit more
+complicated for LaTeXcommands, but it is easy for environments. You can
+configure the code that is inserted before and after environment using the
+<code> <span class='textcolor-2838af'><span class='rm-lmtt-10'>\ConfigureEnv</span></span>
+</code> command. It has a following syntax:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb19'><a id='x3-8004r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>&lt;environment name&gt;<span class='textcolor-387f38'>}{</span>before env<span class='textcolor-387f38'>}{</span>after env<span class='textcolor-387f38'>}</span> 
-<a id='x3-8006r2'></a><span class='textcolor-387f38'>{</span>before-list<span class='textcolor-387f38'>}{</span>after-list<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb19'><a id='x3-8007r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>&lt;environment name&gt;<span class='textcolor-387f38'>}{</span>before env<span class='textcolor-387f38'>}{</span>after env<span class='textcolor-387f38'>}</span> 
+<a id='x3-8009r2'></a><span class='textcolor-387f38'>{</span>before-list<span class='textcolor-387f38'>}{</span>after-list<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!-- l. 196 --><p class='indent'>   We can ignore the arguments <code class='texttt'>before-list</code> and <code class='texttt'>after-list</code>, as they
@@ -360,27 +363,27 @@ to
 </p><!-- l. 204 --><p class='indent'>   But beware of the following situation:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb20'><a id='x3-8014r1'></a>Hello world. 
-<a id='x3-8016r2'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
-<a id='x3-8018r3'></a>Just start some environment. 
-<a id='x3-8020r4'></a> 
-<a id='x3-8022r5'></a>But run it through several paragraphs 
-<a id='x3-8024r6'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb20'><a id='x3-8017r1'></a>Hello world. 
+<a id='x3-8019r2'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
+<a id='x3-8021r3'></a>Just start some environment. 
+<a id='x3-8023r4'></a> 
+<a id='x3-8025r5'></a>But run it through several paragraphs 
+<a id='x3-8027r6'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!-- l. 215 --><p class='indent'>   say that we insert <code class='texttt'>&lt;div class="someenv"&gt;</code> and <code class='texttt'>&lt;/div&gt;</code> tags around the <code class='texttt'>someenv</code>
 environment. By default this may produce following structure:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb21'><a id='x3-8032r1'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span>Hello world. 
-<a id='x3-8034r2'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>div </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"someenv"</span><span class='textcolor-878787'>&gt;</span>Just start some environment. 
-<a id='x3-8036r3'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span> 
-<a id='x3-8038r4'></a> 
-<a id='x3-8040r5'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span>But run it through several paragraphs 
-<a id='x3-8042r6'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>div</span><span class='textcolor-878787'>&gt;&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
                                                                   
 
                                                                   
+<pre class='fancyvrb' id='fancyvrb21'><a id='x3-8035r1'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span>Hello world. 
+<a id='x3-8037r2'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>div </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"someenv"</span><span class='textcolor-878787'>&gt;</span>Just start some environment. 
+<a id='x3-8039r3'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span> 
+<a id='x3-8041r4'></a> 
+<a id='x3-8043r5'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span>But run it through several paragraphs 
+<a id='x3-8045r6'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>div</span><span class='textcolor-878787'>&gt;&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
 
 </figure>
 <!-- l. 229 --><p class='indent'>   as you can see, generated html code is incorrect, as opening and closing <code class='texttt'>&lt;div&gt;</code>
@@ -389,39 +392,39 @@ current paragraph, but it may be not what you want.
 </p><!-- l. 234 --><p class='indent'>   Best way to prevent tag mismatch may be something like:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb22'><a id='x3-8052r1'></a>Hello world. 
-<a id='x3-8054r2'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
-<a id='x3-8056r3'></a>Just start some environment. 
-<a id='x3-8058r4'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
-<a id='x3-8060r5'></a> 
-<a id='x3-8062r6'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
-<a id='x3-8064r7'></a>But run it through several paragraphs 
-<a id='x3-8066r8'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb22'><a id='x3-8055r1'></a>Hello world. 
+<a id='x3-8057r2'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
+<a id='x3-8059r3'></a>Just start some environment. 
+<a id='x3-8061r4'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
+<a id='x3-8063r5'></a> 
+<a id='x3-8065r6'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
+<a id='x3-8067r7'></a>But run it through several paragraphs 
+<a id='x3-8069r8'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!-- l. 247 --><p class='indent'>   and with <code class='texttt'>make4ht</code>
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb23'><a id='x3-8069r1'></a>make4ht sample1</pre>
+<pre class='fancyvrb' id='fancyvrb23'><a id='x3-8072r1'></a>make4ht sample1</pre>
 
 </figure>
 <!-- l. 253 --><p class='indent'>   lets look on text part generated by <code class='texttt'>htlatex</code>:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb24'><a id='x3-8075r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>P<span class='textcolor-708e30'>&amp;#x0159;</span>íli<span class='textcolor-708e30'>&amp;#353; </span><span class='textcolor-708e30'>&amp;#382;</span>lu<span class='textcolor-708e30'>&amp;#x0165;</span>ou<span class='textcolor-708e30'>&amp;#x010D;</span>k<span class='textcolor-708e30'>&amp;#x00FD;</span> k<span class='textcolor-708e30'>&amp;#x016F;&amp;#x0148;</span> úp<span class='textcolor-708e30'>&amp;#x011B;</span>l <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8077r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span><span class='textcolor-708e30'>&amp;#x010F;</span><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8079r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8081r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é <span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span>ódy. Some text in English</pre>
+<pre class='fancyvrb' id='fancyvrb24'><a id='x3-8078r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>P<span class='textcolor-708e30'>&amp;#x0159;</span>íli<span class='textcolor-708e30'>&amp;#353; </span><span class='textcolor-708e30'>&amp;#382;</span>lu<span class='textcolor-708e30'>&amp;#x0165;</span>ou<span class='textcolor-708e30'>&amp;#x010D;</span>k<span class='textcolor-708e30'>&amp;#x00FD;</span> k<span class='textcolor-708e30'>&amp;#x016F;&amp;#x0148;</span> úp<span class='textcolor-708e30'>&amp;#x011B;</span>l <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-8080r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span><span class='textcolor-708e30'>&amp;#x010F;</span><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-8082r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-8084r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é <span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span>ódy. Some text in English</pre>
 
 </figure>
 <!-- l. 262 --><p class='indent'>   and by <code class='texttt'>make4ht</code>:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb25'><a id='x3-8088r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>P<span class='textcolor-708e30'>&amp;#x0159;</span>íli<span class='textcolor-708e30'>&amp;#353; </span><span class='textcolor-708e30'>&amp;#382;</span>lu<span class='textcolor-708e30'>&amp;#x0165;</span>ou<span class='textcolor-708e30'>&amp;#x010D;</span>k<span class='textcolor-708e30'>&amp;#x00FD;</span> k<span class='textcolor-708e30'>&amp;#x016F;&amp;#x0148;</span> úp<span class='textcolor-708e30'>&amp;#x011B;</span>l <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8090r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span><span class='textcolor-708e30'>&amp;#x010F;</span><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8092r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8094r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é <span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span>ódy. Some text in English 
-<a id='x3-8096r5'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb25'><a id='x3-8091r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>P<span class='textcolor-708e30'>&amp;#x0159;</span>íli<span class='textcolor-708e30'>&amp;#353; </span><span class='textcolor-708e30'>&amp;#382;</span>lu<span class='textcolor-708e30'>&amp;#x0165;</span>ou<span class='textcolor-708e30'>&amp;#x010D;</span>k<span class='textcolor-708e30'>&amp;#x00FD;</span> k<span class='textcolor-708e30'>&amp;#x016F;&amp;#x0148;</span> úp<span class='textcolor-708e30'>&amp;#x011B;</span>l <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-8093r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span><span class='textcolor-708e30'>&amp;#x010F;</span><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-8095r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-8097r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é <span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span>ódy. Some text in English 
+<a id='x3-8099r5'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
 
 </figure>
 <!-- l. 272 --><p class='indent'>   only difference is missing <code class='texttt'>&lt;/p&gt;</code> tag in output of <code class='texttt'>htlatex</code>, because <code class='texttt'>html 4.01</code> is
@@ -439,14 +442,14 @@ command:
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb26'><a id='x3-8099r1'></a>htlatex sample1 xhtml</pre>
+<pre class='fancyvrb' id='fancyvrb26'><a id='x3-8102r1'></a>htlatex sample1 xhtml</pre>
 
 </figure>
 <!-- l. 291 --><p class='indent'>   Now we should get rid of ugly entities which encode accented letters. This is
 somewhat ugly with <code class='texttt'>htlatex</code>:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb27'><a id='x3-8102r1'></a>htlatex sample1 <span class='textcolor-b73838'>"xhtml,charset=utf-8" </span><span class='textcolor-b73838'>" -cunihtf -utf8"</span></pre>
+<pre class='fancyvrb' id='fancyvrb27'><a id='x3-8105r1'></a>htlatex sample1 <span class='textcolor-b73838'>"xhtml,charset=utf-8" </span><span class='textcolor-b73838'>" -cunihtf -utf8"</span></pre>
 
 </figure>
 <!-- l. 298 --><p class='indent'>   <code class='texttt'>charset=utf-8"</code> produces meta element which declares document to be in
@@ -457,17 +460,17 @@ unicode.4hf. It is directed from <code class='texttt'>tex4ht.env</code> file.
 </p><!-- l. 305 --><p class='indent'>   With <code class='texttt'>make4ht</code>, situation is easier, as all we need to do is to add <code class='texttt'>-u</code> option:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb28'><a id='x3-8105r1'></a>make4ht -u sample1.tex</pre>
+<pre class='fancyvrb' id='fancyvrb28'><a id='x3-8108r1'></a>make4ht -u sample1.tex</pre>
 
 </figure>
 <!-- l. 312 --><p class='indent'>   resulting file:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb29'><a id='x3-8112r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>Příliš žluťoučký kůň úpěl <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8114r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ď<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8116r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8118r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é <span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span>ódy. Some text in English 
-<a id='x3-8120r5'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb29'><a id='x3-8115r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>Příliš žluťoučký kůň úpěl <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-8117r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ď<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-8119r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-8121r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é <span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span>ódy. Some text in English 
+<a id='x3-8123r5'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
 
 </figure>
 <!-- l. 322 --><p class='indent'>   Entities are gone, but other persists. What we see is caused by a bug in <code class='texttt'>tex4ht</code>

@@ -283,16 +283,18 @@ want to remove the temporary files, use the <code class='texttt'>-m clean</code>
 <!-- l. 144 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='overview-of-the-translation-process'><span class='titlemark'>4.3   </span> <a id='x5-400004.3'></a>Overview of the Translation Process</h3>
-<!-- l. 147 --><p class='noindent'>The translation of a LaTeX source file into HTML involves loading of the
-<code class='texttt'>tex4ht.sty</code> package. It watches loaded packages, and loads corresponding
-configuration files, named as <code class='texttt'>&lt;pkgname&gt;.4ht</code>. These configuration files patches
-commands provided by the packages, and insert special hooks, which are later filled
-with XML code for the output format.
+<!-- l. 147 --><p class='noindent'>The translation of a LaTeX source file into HTML involves loading of the <code class='texttt'>tex4ht.sty</code>
+package. It watches loaded packages, and loads corresponding configuration files, named
+as <code>  <span class='rm-lmtt-10'>&lt;pkgname&gt;.4ht</span>
+</code>. These configuration files patches commands provided by the packages, and
                                                                   
 
                                                                   
-</p><!-- l. 153 --><p class='indent'>   To ensure that all packages are processed, <code class='texttt'>tex4ht.sty</code> needs to be loaded early,
-ideally before <code class='texttt'>\documentclass</code>.
+insert special hooks, which are later filled with XML code for the output
+format.
+</p><!-- l. 153 --><p class='indent'>   To ensure that all packages are processed, <code class='texttt'>tex4ht.sty</code> needs to be loaded early, ideally
+before <code>  <span class='textcolor-2838af'><span class='rm-lmtt-10'>\documentclass</span></span>
+</code>.
 </p><!-- l. 156 --><p class='indent'>   Result of the LaTeX run is a DVI file that contain document text and special
 instructions with XML code, or with requests for pictures. This file is then processed
 by the <code class='texttt'>tex4ht</code> command. It generates the output XML or HTML files and the IDV
@@ -301,11 +303,11 @@ file, which is then used for pictures.
 </p><!-- l. 164 --><p class='indent'>   Basic sequence of execution of these command is following:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb69'><a id='x5-40007r1'></a>latex      x            <span class='textcolor-656565'>(</span>or ‘tex x’<span class='textcolor-656565'>)</span> 
-<a id='x5-40009r2'></a>latex      x 
-<a id='x5-40011r3'></a>latex      x 
-<a id='x5-40013r4'></a>tex4ht     x 
-<a id='x5-40015r5'></a>t4ht       x</pre>
+<pre class='fancyvrb' id='fancyvrb69'><a id='x5-40009r1'></a>latex      x            <span class='textcolor-656565'>(</span>or ‘tex x’<span class='textcolor-656565'>)</span> 
+<a id='x5-40011r2'></a>latex      x 
+<a id='x5-40013r3'></a>latex      x 
+<a id='x5-40015r4'></a>tex4ht     x 
+<a id='x5-40017r5'></a>t4ht       x</pre>
 
 </figure>
 <!-- l. 174 --><p class='indent'>   The three compilations with La(TeX) are needed to ensure proper links. The
@@ -316,13 +318,13 @@ approach is illustrated in the picture <a href='#-texht-process-overview'>4.1<!-
                                                                   
 
                                                                   
-<a id='x5-40016r1'></a>
+<a id='x5-40018r1'></a>
                                                                   
 
                                                                   
 <!-- l. 177 --><p class='noindent'><img alt='PIC' src='images/tex4ht_process/tex4ht_process.svg' style='width:100%' />
 </p>
-<figcaption class='caption'><span class='id'>Figure 4.1: </span><span class='content'><code class='texttt'>TeX4ht</code> process overview</span></figcaption><!-- tex4ht:label?: x5-40016r1  -->
+<figcaption class='caption'><span class='id'>Figure 4.1: </span><span class='content'><code class='texttt'>TeX4ht</code> process overview</span></figcaption><!-- tex4ht:label?: x5-40018r1  -->
                                                                   
 
                                                                   
@@ -359,8 +361,9 @@ pictures, and so forth.
 it  gets  the  pure  dvi  code  and  it  outputs  (almost)  plain  text  with  no
 hypertext elements in it.
 </p>     
-<!-- l. 203 --><p class='noindent'>The  special  (<code class='texttt'>\special</code>)  instructions  seeded  in  the  DVI  code  are  not
-understood by dvi processors other than those of TeX4ht.
+<!-- l. 203 --><p class='noindent'>The special (<code>  <span class='textcolor-2838af'><span class='rm-lmtt-10'>\special</span></span>
+</code>) instructions seeded in the DVI code are not understood by dvi processors
+other than those of TeX4ht.
 </p>     
 </dd>
 <dt class='description'>
@@ -379,14 +382,15 @@ in the html files.
 <span class='ec-lmbx-10'>x.lg</span> 
 </p>
 </dt><dd class='description'>
-<!-- l. 211 --><p class='noindent'>     
-</p>
-<!-- l. 213 --><p class='noindent'>This is a log file listing the pictures of x.idv, the png files that should
-be created, CSS information, and user directives introduced through the
-‘<code class='texttt'>\Needs{...}</code>’ command.
+<!-- l. 211 --><p class='noindent'>
                                                                   
 
                                                                   
+</p>     
+<!-- l. 213 --><p class='noindent'>This is a log file listing the pictures of x.idv, the png files that should
+be created, CSS information, and user directives introduced through the
+‘<code>  <span class='textcolor-2838af'><span class='rm-lmtt-10'>\Needs</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>...</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span>
+</code>’ command.
 </p>     
 </dd>
 <dt class='description'>
