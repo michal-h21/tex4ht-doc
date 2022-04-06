@@ -1,68 +1,163 @@
 \subsection{Low-level \texfourht\ Commands}
 
-\cmd{Configure}\marg{name}\marg{arg 1}\ldots\marg{arg n}
+\DocCommand{Configure}\marg{name}\marg{arg 1}\ldots\marg{arg n}
 
 The \cmd{Configure} command declares code that is inserted into hooks related to the \textit{name} configuration.
 It is possible to define up to nine hooks, so number of arguments is variable.
 
 
-\cmd{ConfigureEnv}\marg{\textless environment name\textgreater}\marg{before env}\marg{after env}
+\DocCommand{ConfigureEnv}\marg{\textless environment name\textgreater}\marg{before env}\marg{after env}
 \marg{before-list}\marg{after-list}
 
 
-\cmd{HCode}\marg{output format markup}
-
-This is a basic command for insertion of the output format markup, as it's content is not escaped for the \textless and \textgreater.
+\DocCommand{HCode}\marg{output format markup} is a basic command for insertion
+of the output format markup, as it's content is not escaped for the \textless{}
+and \textgreater.
 
 This command allows only for the expansion of macros, before sending its content to the output. 
 The instruction \texcommand{\Hnewline} may be introduced there for requesting line breaks, and the command \texcommand{\#} may be used for the sharp symbol ‘\#’.
 
 \begin{texsource}
- First line\HCode{<br />}
- second line 
+First line\HCode{<br />}
+second line 
 
- You don't want to include tags directly into the document '<br>'. 
+You don't want to include tags directly into the document '<br>'. 
 \end{texsource}
 
-\cmd{Tg}\texcommand{<markup>}
+\DocCommand{Tg}\verb|<markup>| is a variation of the \cmd{HCode} command that don't require braces, and it does some additional processing.
 
-This is a variation of the \cmd{HCode} command that don't require braces, and it does some additional processing.
-
-\cmd{ifOption}\marg{name of the option to be checked}\marg{true part}\marg{false part}
+\DocCommand{ifOption}\marg{name of the option to be checked}\marg{true part}\marg{false part}
 
 This command can be used in the private configuration files to test if a custom option was used
 
 \subsection{Hyperlinks}
 
-\texcommand{\Link[target-file arguments]{target-loc}{cur-loc}anchor\EndLink}
+\DocCommand{Link}\texttt{[target-file arguments]}\marg{target-loc}\marg{cur-loc} text inside link\cmd{EndLink}
 
-This command requests an anchor that links to \verb|‘target-file#target-loc’|, and marks the current location with the name \texttt{‘cur-loc’}.
+This command requests an anchor that links to \verb|target-file#target-loc|, and marks the current location with the name \verb|‘cur-loc’|.
 
-The component \texttt{‘[...]’} is optional when it is empty, and the target file need not be mentioned if it is created from the current source file.
+The component in square brackets \texttt{‘[...]’} is optional when it is empty, 
+and the target file need not be mentioned if it is created from the current source file.
 
 
-\texcommand{\LinkCommand}
+\DocCommand{LinkCommand} creates a \cmd{Link}\textit{-like} command. It has variable number for parameters:
+
+\begin{enumerate}
+  \item tag name
+  \item href-like attribute
+  \item name-like attribute
+  \item insertion
+  \item /, if empty element
+  \item replacement for \texcommand{#} character  (ignored if absent)
+\end{enumerate}
+
+Example:
+
+\begin{texsource}
+\LinkCommand\JSLink{a,\noexpand\jsref,name}
+\def\jsref="#1"{href="javascript:window.open('#1')"}
+
+% example of use of the defined command:
+\JSLink{a}{}xx\EndJSLink % link to a destination
+\Link{}{a}\EndLink       % set link destination (or by \JSLink{}{a}\EndJSLink)
+\end{texsource}
 
 
 \subsection{Paragraph Handling}
 \label{sec:paragraph_handling}
 
+Paragraph handling is one of the more complicated areas in \texfourht.
+You must handle insertion of tags for paragraph opening and closing,
+to prevent wrong nesting of XML tags. Mismatch of tags leads to issues with 
+LuaXML post-processing of the generated files, preventing many fixes 
+that are necessary for correct conversion.
+
+\DocCommand{HtmlParOff} turns off insertion of paragraph tags in the following text.
+
+\DocCommand{HtmlParOn} enables insertion of paragraphs tags.
+
+\DocCommand{IgnorePar} asks to ignore the next paragraph.
+\DocCommand{ShowPar} asks to take into account the following paragraphs.
+
+\DocCommand{IgnoreIndent}  asks to ignore indentation in the next paragraph.
+\DocCommand{ShowIndent}    asks to check indentation in the following paragraphs.
+
+\DocCommand{SaveEndP}  saves the content of \cmd{EndP}, and sets it to empty content.
+\DocCommand{RecallEndP} resets the content of \cmd{EndP}.
+
+\DocCommand{SaveHtmlPar} saves current configuration for paragraphs. It can be
+useful before local declaration of \cmd{Configure}\marg{HtmlPar}.
+\DocCommand{RecallHtmlPar} resets configuration for paragraphs to the value saved by
+\cmd{SaveHtmlPar}.
+
+
+The following example adds \htmlcommand{<div>...</div>} tags around contents of the document body.
+The \texcommand{\ifvmode\IgnorePar\fi} commands will prevent insertion of the \htmlcommand{<p>} tag 
+before \htmlcommand{<div>} if we are in \TeX's vertical mode. The \texcommand{\EndP} closes currently
+opened paragraph, if it is opened. The \texcommand{\par\ShowPar} commands start new paragraph
+after the inserted \htmlcommand{<div>} tag. It is necessary to explicitly start paragraphs sometimes.
+
+\begin{texsource}
+\Configure{@BODY}
+{\ifvmode\IgnorePar\fi\EndP
+ \HCode{<div>}\par\ShowPar}
+\Configure{@/BODY}
+{\ifvmode\IgnorePar\fi\EndP
+ \HCode{</div>}}
+\end{texsource}
+
+
+\DocConfigure{HtmlPar} {content at the start non-indented paragraphs} 
+   {content at the start indented paragraphs}
+   {insertion into \cmd{EndP}, at the start of non-indented paragraphs}
+   {insertion into \cmd{EndP}, at the start of indented paragraphs} \EndDoc
+
+Example:
+
+\begin{texsource}
+\Configure{HtmlPar}
+{\EndP\HCode{<p class="indent">}}
+{\EndP\HCode{<p class="noindent">}}
+{\HCode{</p>}}
+{\HCode{</p>}}
+\end{texsource}
+
 % https://tex.stackexchange.com/a/66172/2891
 
-\texcommand{\Configure{HtmlPar}}
-\texcommand{\IgnorePar}
-\texcommand{\EndP}
-etc.
 
 \subsection{Logical Document Structure Commands}
-I've created some alternative commands to \texcommand{\HCode} or \texcommand{\Tg}. The idea is to define
-semantic names for logical elements of the document, such as titles, authors,
-sections etc. It is possible to assign HTML elements and attributes to these
-logical elements. There are commands for inline and block level elements,
-which should eliminate the need for constructs like \texcommand{\ifvmode\IgnorePar\fi\EndP}
+I've created an alternative commands to \cmd{HCode} or \cmd{Tg}. 
+The idea is to define semantic names for logical blocks of the document, such as titles, authors,
+sections etc. HTML elements and attributes can be assigned to these
+logical blocks. There are commands for inline and block level elements,
+eliminating need for constructs like \texcommand{\ifvmode\IgnorePar\fi\EndP}
 etc.
 
-I think it will be best to show some concrete examples:
+\DocCommand{NewLogicalBlock}\marg{name} create a new logical block.
+\DocCommand{SetBlockProperty}\marg{name}\marg{attribute name}\marg{value} set block attribute .
+\DocCommand{SetTag}\marg{name}{tag name} assign element name to the logical block
+\DocCommand{BlockElementStart}\marg{name}\marg{additional attributes} start block level element.
+\DocCommand{BlockElementEnd}\marg{name} close block level element.
+\DocCommand{InlineElementStart}\marg{name}\marg{additional attributes} start inline level element.
+\DocCommand{InlineElementEnd}\marg{name} close inline level element.
+
+
+The default tag name for declared logical blocks is \htmlcommand{<span>}. You
+need to use the \cmd{SetTag} command only when you want to use a different
+element.
+
+The attributes can be set either using \cmd{SetBlockProperty}, or in the second
+argument to  \cmd{BlockElementStart} and \cmd{InlineElementStart} commands. First method should be
+used for static attributes that don't change, for instance \textit{class}. The second method
+is preferred for dynamic attributes, such as \textit{id}, which should be different for 
+every element.
+
+The main idea behind this mechanism is to allow easy work with new HTML5
+elements and attributes for WAI-ARIA or Schema.org properties. I hope that
+this should allow us to make somehow more clear configurations for basic
+document building blocks.
+
+Example:
 
 
 \begin{texsource}
@@ -76,10 +171,12 @@ I think it will be best to show some concrete examples:
 \SetTag{titlehead}{h1}
 \SetBlockProperty{titlehead}{class}{titleHead}
 
+% configure \textit using inline level elements
 \Configure{textit}
 {\NoFonts\InlineElementStart{textit}{}}
 {\InlineElementEnd{textit}\EndNoFonts}
 
+% configure \maketitle using block level elements
 \Configure{maketitle}{%
 {\Configure{maketitle}{}{}{}{}%
 \Tag{TITLE+}{\@title}}
@@ -91,25 +188,6 @@ I think it will be best to show some concrete examples:
 
 
 
-The \texcommand{\NewLogicalBlock} creates a new logical element. The used tag is configured
-using \texcommand{\SetTag}, the attributes are set using \texcommand{\SetBlockProperty}. The blocks are
-inserted to the document using 
 
-\begin{texsource}
-\InlineElementStart ... \InlineElementEnd
-\end{texsource}
 
-\noindent or
 
-\begin{texsource}
-\BlockElementStart ... \BlockElementEnd 
-\end{texsource}
-
-\noindent pairs. The start commands take two
-parameters, first is the logical block name, the second can be local
-parameters which shouldn't be used for the given logical block globally.
-
-The main idea behind this mechanism is to allow easy work with new HTML5
-elements and attributes for WAI-ARIA or Schema.org properties. I hope that
-this should allow us to make somehow more clear configurations for basic
-document building blocks.

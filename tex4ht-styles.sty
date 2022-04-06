@@ -23,7 +23,7 @@
 % to the commands defined by \newmintinline, in order to support syntax hyghlithting
 % The \fontencoding command is used to prevent ligatures in << or -- 
 % TeX4ht in --lua mode uses T1 fontencoding by default, and it causes ligature forming
-\NewDocumentCommand\texcommand{v}{\begingroup\fontencoding{OT1}\texttt{#1}\endgroup}
+\NewDocumentCommand\texcommand{v}{\begingroup\fontencoding{OT1}\minttexcommand{#1}\endgroup}
 \NewDocumentCommand\shellcmd{v}{\begingroup\fontencoding{OT1}\texttt{#1}\endgroup}
 \NewDocumentCommand\htmlcommand{v}{\begingroup\fontencoding{OT1}\texttt{#1}\endgroup}
 
@@ -70,6 +70,7 @@
 % Document \Configure commands. They have variable number of arguments, so it is necessary to process them as a list
 \def\PrintConfigures#1#2\@nil{\{#1\}\allowbreak\ifx\relax#2\relax\else\expandafter\PrintConfigures#2\@nil\fi}
 \def\DocConfigure#1#2\EndDoc{\par\bigskip\noindent\texttt{\textbf{\textbackslash Configure}\{\textit{#1}\}\PrintConfigures#2{}\@nil}}
+\def\DocCommand#1{\par\bigskip\noindent\texttt{\textbf{\textbackslash #1}}}
 
 \newcommand\cmd[1]{\textbf{\texttt{\textbackslash #1}}}
 \newcommand\marg[1]{\{\textit{#1}\}}
