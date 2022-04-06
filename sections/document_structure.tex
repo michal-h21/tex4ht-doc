@@ -19,6 +19,62 @@ Example:
 
 A star '*' prefix calls for accumulative configurations
 
+\subsection{Document structure}
+
+
+\DocConfigure{DOCTYPE} {doctype definition}\EndDoc
+\DocConfigure{HTML} {HTML start} {HTML end}\EndDoc
+\DocConfigure{HEAD} {HEAD start} {HEAD end}\EndDoc
+\DocConfigure{@HEAD} {content added to HEAD}\EndDoc
+\DocConfigure{BODY} {BODY start} {BODY end}\EndDoc
+\DocConfigure{TITLE} {TITLE start} {TITLE end}\EndDoc
+\DocConfigure{Preamble} {code executed at the very beging} {code executed at \cmd{EndPreamble}}\EndDoc
+
+\begin{texsource}
+<DOCTYPE>
+<HTML 1>
+  <HEAD 1>
+     <TITLE 1>
+        <@TITLE>
+        <TITLE+>
+     <TITLE 2>
+     <@HEAD>
+  <HEAD 2>
+  <BODY 1>
+  ......
+  <BODY 2>
+<HTML 2>
+\end{texsource}
+
+The \texcommand{\Configure{@HEAD}{...}} command is additive, concatenating the
+content of all of its appearances.  An empty parameter requests
+the cancellation of the earlier contributions.
+
+For instance,
+
+\begin{texsource}
+\Configure{@HEAD}{A}
+\Configure{@HEAD}{}
+\Configure{@HEAD}{B}
+\Configure{@HEAD}{C}
+\end{texsource}
+
+contributes `BC'.
+
+
+\DocConfigure{@BODY} {additive insertions at start of BODY}\EndDoc
+\DocConfigure{@/BODY} {additive insertions at end of BODY}\EndDoc
+
+   Variants of \texcommand{\Configure{@HEAD}} which contribute their content,
+   respectively, after \htmlcommand{<body>} and before \htmlcommand{</body>}.
+
+\DocConfigure{CutAtTITLE+} {an insertion just before the content of TITLE}\EndDoc
+\DocConfigure{HPageTITLE+} {an insertion just before the content of TITLE}\EndDoc
+
+If \texcommand{#1} is a one parametric macro, it gets the title content for an
+argument.
+
+
 
 \subsection{Titles}
 
@@ -26,7 +82,7 @@ A star '*' prefix calls for accumulative configurations
 
 Set contents of the \htmlcommand{<title>} element.
 
-There are also similar commands for pages split on sectioning commands. For example, for document that
+There are also similar configurations for pages split on sectioning commands. For example, for document that
 is split on chapters, use:
 
 \begin{texsource}
@@ -37,3 +93,11 @@ is split on chapters, use:
 
 \texttt{likechapter} prefix is used for \texcommand{\chapter*} command. The text of sectioning command
 can be accessed using \texcommand{#1}.
+
+\DocConfigure{@TITLE} {redefinitions of commands in the title group} \EndDoc
+
+Acts as a hook for introducing localized configurations. As is the case for
+\texcommand{\Configure{@HEAD}}, the contribution of \texcommand{\Configure{@TITLE}} is also
+additive.
+
+
