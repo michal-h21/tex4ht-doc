@@ -23,7 +23,8 @@
 % to the commands defined by \newmintinline, in order to support syntax hyghlithting
 % The \fontencoding command is used to prevent ligatures in << or -- 
 % TeX4ht in --lua mode uses T1 fontencoding by default, and it causes ligature forming
-\NewDocumentCommand\texcommand{v}{\begingroup\fontencoding{OT1}\minttexcommand{#1}\endgroup}
+% \NewDocumentCommand\texcommand{v}{\begingroup\fontencoding{OT1}\minttexcommand{#1}\endgroup}
+\NewDocumentCommand\texcommand{v}{\begingroup\fontencoding{OT1}\texttt{#1}\endgroup}
 \NewDocumentCommand\shellcmd{v}{\begingroup\fontencoding{OT1}\texttt{#1}\endgroup}
 \NewDocumentCommand\htmlcommand{v}{\begingroup\fontencoding{OT1}\texttt{#1}\endgroup}
 
