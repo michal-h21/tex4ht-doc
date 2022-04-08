@@ -62,7 +62,7 @@ a different result:
 \htmlinput{examples/otherlang/babel-body.html}
 
 Notice that the accents in the \textit{ť} and \textit{ď} letters are detached from the base letters.
-That is because \texfourht{} uses information about characters in the DVI file. Current \LaTeX
+That is because \texfourht{} uses information about characters in the DVI file. Current \LaTeX{}
 supports basic accented characters out of the box, but sometimes, they don't work as expected.
 
 
@@ -155,8 +155,8 @@ and creates them only for the changed math environments.
 $ make4ht -f html5+dvisvgm_hashes filename.tex "pic-m,pic-equation,svg"
 \end{shellcommand}
 
-\makefourht{} also loads some extensions by default. They fix some issues in the generated HTML files using the LuaXML package. To disable this processing,
-use \verb|-extension_name|:
+\makefourht{} loads the \verb|common_domfilters| extension automatically. It fixes common issues in the generated HTML files using the LuaXML package. To disable extension
+from loading, use \verb|-extension_name| syntax:
 
 
 \begin{shellcommand}
