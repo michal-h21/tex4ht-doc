@@ -19,6 +19,7 @@
 
 
 
+
 <span class='chapterToc'>3 <a href='Howto.html#how-to'>How to</a></span>
 
 
@@ -52,13 +53,12 @@
 
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
 <span class='chapterToc'>6 <a href='#-texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
-<span class='sectionToc'>6.1 <a href='#list-of-options'>List of options</a></span>
                                                                   
 
                                                                   
+<span class='sectionToc'>6.1 <a href='#list-of-options'>List of options</a></span>
 <span class='sectionToc'>6.2 <a href='#options-for-the-odt-output'>Options for the ODT output</a></span>
 <span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
-
 
 
 
@@ -135,7 +135,7 @@
 </nav> 
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='OutputFormats.html'>prev</a>] [<a href='tex4ht-doc.html#texfourhtOptions.html'>up</a>] [<a href='Configurations.html'>next</a>] </nav> 
-<h2 class='chapterHead' id='-texht-options1'><span class='titlemark'>Chapter 6</span><br /><a id='x7-430006'></a><code class='texttt'>TeX4ht</code> Options</h2>
+<h2 class='chapterHead' id='-texht-options1'><span class='titlemark'>Chapter 6</span><br /><a id='x7-440006'></a><code class='texttt'>TeX4ht</code> Options</h2>
 Following is an incomplete list of options that can be passed to the <code class='texttt'>tex4ht.sty</code>
 package. These options can be used to modify the compilation process, for example
 to select a <span class='emph'>SVG</span> format for generated images, to request math environments to be
@@ -143,46 +143,43 @@ convert as images or to split sections as separate HTML pages.
 <!-- l. 11 --><p class='indent'>   The options may be defined in the <code class='texttt'>.4ht</code> files and may depend on the output
 format, so it is not feasible to provide their full list. Most of the following options
 work only in the <code class='texttt'>HTML</code> output.
-</p><!-- l. 15 --><p class='indent'>   There are several ways how to pass the options to <code class='texttt'>TeX4ht</code>. The
-non-recommended way is to pass them as options to <code class='texttt'>tex4ht.sty</code> using
-<code> <span class='textcolor-2838af'><span class='rm-lmtt-10'>\usepackage</span></span>
-</code> command in the TeX file.
+</p><!-- l. 15 --><p class='indent'>   There are several ways how to pass the options to <code class='texttt'>TeX4ht</code>. The non-recommended
+way is to pass them as options to <code class='texttt'>tex4ht.sty</code> using <code class='texttt'>\usepackage</code> command in the
+TeX file.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb71'><a id='x7-43006r1'></a>... 
-<a id='x7-43008r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[xhtml,option1,option2]{</span>tex4ht<span class='textcolor-387f38'>}</span> 
-<a id='x7-43010r3'></a>...</pre>
+<pre class='fancyvrb' id='fancyvrb72'><a id='x7-44005r1'></a>... 
+<a id='x7-44007r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[xhtml,option1,option2]{</span>tex4ht<span class='textcolor-387f38'>}</span> 
+<a id='x7-44009r3'></a>...</pre>
 
 </figure>
 <!-- l. 25 --><p class='indent'>   Recommended solutions don’t require modifications of the TeX files.
-                                                                  
-
-                                                                  
 </p><!-- l. 27 --><p class='indent'>   One way is to pass the options to <code class='texttt'>make4ht</code> as an command line argument, next to
 the filename:
+                                                                  
+
+                                                                  
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb72'><a id='x7-43013r1'></a>make4ht filename.tex <span class='textcolor-b73838'>"fn-in"</span></pre>
+<pre class='fancyvrb' id='fancyvrb73'><a id='x7-44012r1'></a>make4ht filename.tex <span class='textcolor-b73838'>"fn-in"</span></pre>
 
 </figure>
-<!-- l. 37 --><p class='indent'>   For more information on calling scripts see the section <a href='CallingCommands.html#makeht-extensions'>4.3.1<!-- tex4ht:ref: sec:calling-commands  --></a>.
-</p><!-- l. 39 --><p class='indent'>   The second way is to pass options in the
-<code> <span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span>
-</code> command in a <span class='emph'>custom configuration file</span>. Note that first option in the
-<code> <span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span>
-</code> command must be <span class='emph'>xhtml</span>.
+<!-- l. 37 --><p class='indent'>   For more information on calling scripts see the section <a href='#x5-42016r4.3'>4.3<!-- tex4ht:ref: sec:calling-commands  --></a>.
+</p><!-- l. 39 --><p class='indent'>   The second way is to pass options in the <code class='texttt'>\Preamble</code> command in a <span class='emph'>custom
+configuration file</span>. Note that first option in the <code class='texttt'>\Preamble</code> command must be
+<span class='emph'>xhtml</span>.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb73'><a id='x7-43021r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml,fn-in<span class='textcolor-387f38'>}</span> 
-<a id='x7-43023r2'></a>... 
-<a id='x7-43025r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x7-43027r4'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb74'><a id='x7-44018r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml,fn-in<span class='textcolor-387f38'>}</span> 
+<a id='x7-44020r2'></a>... 
+<a id='x7-44022r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x7-44024r4'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
 <!-- l. 49 --><p class='indent'>   See the section <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!-- tex4ht:ref: sec:private-configuration  --></a> for more details on configuration
 files.
 </p>   
-<h3 class='sectionHead' id='list-of-options'><span class='titlemark'>6.1   </span> <a id='x7-440006.1'></a>List of options</h3>
+<h3 class='sectionHead' id='list-of-options'><span class='titlemark'>6.1   </span> <a id='x7-450006.1'></a>List of options</h3>
 <dl class='description'><dt class='description'>     
 <!-- l. 67 --><p class='noindent'>
 <span class='ec-lmbx-10'>-css</span> 
@@ -207,9 +204,6 @@ Docbook <code class='texttt'>XML</code> or ODT output.
 </dt><dd class='description'>   
 <!-- l. 76 --><p class='noindent'>pagination shall be obtained through the option <span class='obeylines-h'><code class='verb'>0</code></span> or <span class='obeylines-h'><code class='verb'>1</code></span>, at locations marked
 with <span class='obeylines-h'><code class='verb'>\PageBreak</code></span>.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -217,6 +211,9 @@ with <span class='obeylines-h'><code class='verb'>\PageBreak</code></span>.
 <span class='ec-lmbx-10'>1, 2, 3, 4, 5, 6, 7</span> 
 </p>
 </dt><dd class='description'>
+                                                                  
+
+                                                                  
 <!-- l. 79 --><p class='noindent'>for automatic sectioning pagination (to break at various section levels),
 use the appropriate command line option <span class='obeylines-h'><code class='verb'>1, 2, 3, 4,</code></span> <span class='obeylines-h'><code class='verb'>5, 6, 7</code></span>. Option
 1 doesn’t break pages at all, 2 at parts, 3 at chapters, 4 at sections, 5 at
@@ -278,9 +275,6 @@ subsections, 6 at subsubsections and 7 at paragraphs.
 </p>
 </dt><dd class='description'>
 <!-- l. 101 --><p class='noindent'>to reverse the direction of RL sentences.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -289,6 +283,9 @@ subsections, 6 at subsubsections and 7 at paragraphs.
 </p>
 </dt><dd class='description'>
 <!-- l. 105 --><p class='noindent'>option to request links from the tables of contents.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -349,9 +346,6 @@ pictures for some math accents.
 <!-- l. 129 --><p class='noindent'>the  inline  <code class='texttt'>CSS</code> code  will  be  extracted  from  the  input  of  the  previous
 compilation, so an extra compilaion might be needed for this option to
 make it effective.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -360,6 +354,9 @@ make it effective.
 </p>
 </dt><dd class='description'>
 <!-- l. 133 --><p class='noindent'>for <code class='texttt'>CSS</code>2 code.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -419,9 +416,6 @@ counter provided as an attribute namely, <span class='obeylines-h'><code class='
 </p>
 </dt><dd class='description'>
 <!-- l. 165 --><p class='noindent'>for inline footnotes use this option.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -430,6 +424,9 @@ counter provided as an attribute namely, <span class='obeylines-h'><code class='
 </p>
 </dt><dd class='description'>
 <!-- l. 167 --><p class='noindent'>for offline footnotes.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -487,9 +484,6 @@ font=-2).
 </p>
 </dt><dd class='description'> 
 <!-- l. 187 --><p class='noindent'>for bitmaps of pictures in <span class='obeylines-h'><code class='verb'>.gif</code></span> format, use this option.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -500,6 +494,9 @@ font=-2).
 <!-- l. 190 --><p class='noindent'>if the included graphics are of degraded quality, try the command line
 options <span class='obeylines-h'><code class='verb'>graphics-num</code></span> or <span class='obeylines-h'><code class='verb'>graphics-</code></span>. The <span class='obeylines-h'><code class='verb'>num</code></span> should provide the density
 of pixels in the bitmaps (e.g., 110).
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -556,9 +553,6 @@ of pixels in the bitmaps (e.g., 110).
 </p>
 </dt><dd class='description'>
 <!-- l. 224 --><p class='noindent'>for extra information in the <span class='obeylines-h'><code class='verb'>\jobname.log</code></span> file.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -575,6 +569,9 @@ of pixels in the bitmaps (e.g., 110).
 </p>
 </dt><dd class='description'>
 <!-- l. 228 --><p class='noindent'>for <span class='obeylines-h'><code class='verb'>JavaHelp</code></span> output format, use this command line option.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -624,9 +621,6 @@ option.
 </p>
 </dt><dd class='description'>
 <!-- l. 246 --><p class='noindent'>use <span class='emph'>MathJax</span> for the math rendering.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -643,6 +637,9 @@ option.
 </p>
 </dt><dd class='description'>
 <!-- l. 252 --><p class='noindent'>option to use when sources fail to produce clean <code class='texttt'>MathML</code>code.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -692,9 +689,6 @@ option.
 </p>
 </dt><dd class='description'>
 <!-- l. 266 --><p class='noindent'>for Hebrew vowels, use the command line option, <span class='obeylines-h'><code class='verb'>nikud</code></span>.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -712,6 +706,9 @@ option.
 </dt><dd class='description'>
 <!-- l. 272 --><p class='noindent'>to  remove  <span class='obeylines-h'><code class='verb'>&lt;?xml version="..."?&gt;</code></span> processing  instruction  from  the
 output.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -727,9 +724,8 @@ output.
 <span class='ec-lmbx-10'>no-halign</span> 
 </p>
 </dt><dd class='description'>
-<!-- l. 281 --><p class='noindent'>suppress <code>  <span class='textcolor-2838af'><span class='rm-lmtt-10'>\halign</span></span>
-</code> redefinition. It doesn’t work with the <code>  <span class='rm-lmtt-10'>tabular</span>
-</code> environment.
+<!-- l. 281 --><p class='noindent'>suppress  <code class='texttt'>\halign</code>  redefinition.  It  doesn’t  work  with  the  <code class='texttt'>tabular</code>
+environment.
 </p>     
 </dd>
 <dt class='description'>
@@ -762,9 +758,6 @@ output.
 </p>
 </dt><dd class='description'>
 <!-- l. 294 --><p class='noindent'>to remove overlays of slides, use this option.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -784,6 +777,9 @@ output.
 only  to  pages  that  are  automatically  decomposed  into  separate  web
 pages  along  section  divides.  It  shall  be  used  when  <span class='obeylines-h'><code class='verb'>\addcontentsline</code></span>
 instructions are present in the sources.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -833,9 +829,6 @@ instructions are present in the sources.
 </p>
 </dt><dd class='description'>
 <!-- l. 319 --><p class='noindent'>for pictorial array.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -852,6 +845,9 @@ instructions are present in the sources.
 </p>
 </dt><dd class='description'>
 <!-- l. 323 --><p class='noindent'>for pictorial equalign environment.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -901,9 +897,6 @@ instructions are present in the sources.
 </dt><dd class='description'>
 <!-- l. 335 --><p class='noindent'>for pictorial <span class='obeylines-h'><code class='verb'>$...$</code></span> and <span class='obeylines-h'><code class='verb'>$$...$$</code></span> environments with L<span class='rm-lmr-7'>A</span>TeX alt, use the
 command line option <span class='obeylines-h'><code class='verb'>pic-m+</code></span> (not safe).
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -921,6 +914,9 @@ recommended).
 </p>
 </dt><dd class='description'>
 <!-- l. 342 --><p class='noindent'>for pictorial matrix.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -971,9 +967,6 @@ recommended).
 </dt><dd class='description'>
 <!-- l. 369 --><p class='noindent'>for file names derived from section titles, use the command line option
 <span class='obeylines-h'><code class='verb'>sec-filename</code></span>.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -990,6 +983,9 @@ recommended).
 </p>
 </dt><dd class='description'>
 <!-- l. 378 --><p class='noindent'>for external <code class='texttt'>SVG</code> files, try this option.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -1040,9 +1036,6 @@ recommended).
 </dt><dd class='description'>
 <!-- l. 401 --><p class='noindent'>for <code class='texttt'>URL</code> encoding within href, use this option. <span class='obeylines-h'><code class='verb'>\Configure{url-encoder}</code></span>
 can be used to fine tune encoding.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -1059,6 +1052,9 @@ can be used to fine tune encoding.
 </p>
 </dt><dd class='description'> 
 <!-- l. 407 --><p class='noindent'>for vertically stacked frames. Effective when <span class='obeylines-h'><code class='verb'>frames</code></span> option is requested.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -1087,7 +1083,7 @@ can be used to fine tune encoding.
 </dd></dl>
 <!-- l. 425 --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='options-for-the-odt-output'><span class='titlemark'>6.2   </span> <a id='x7-450006.2'></a>Options for the ODT output</h3>
+<h3 class='sectionHead' id='options-for-the-odt-output'><span class='titlemark'>6.2   </span> <a id='x7-460006.2'></a>Options for the ODT output</h3>
 <dl class='description'><dt class='description'>     
 <!-- l. 428 --><p class='noindent'>
 <span class='ec-lmbx-10'>bib-</span> 
@@ -1103,9 +1099,6 @@ Word.
 </p>
 </dt><dd class='description'>
 <!-- l. 429 --><p class='noindent'>use run-in style for description lists.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -1122,6 +1115,9 @@ Word.
 </p>
 </dt><dd class='description'>
 <!-- l. 431 --><p class='noindent'>hide clickable index and bibliography references.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>

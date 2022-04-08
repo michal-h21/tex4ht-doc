@@ -17,6 +17,7 @@
 <span class='sectionToc'>2.3 <a href='#-texht-options'><code class='texttt'>TeX4ht</code> Options</a></span>
 <span class='sectionToc'>2.4 <a href='#-makeht-extensions'><code class='texttt'>make4ht</code> extensions</a></span>
 <span class='sectionToc'>2.5 <a href='#configurations'>Configurations</a></span>
+<span class='subsectionToc'>2.5.1 <a href='#the-thtxcconfigure-command'>The <span class='textbf'><code class='texttt'>\onfigure</code></span> command</a></span>
 <span class='sectionToc'>2.6 <a href='#configurations1'>Configurations</a></span>
 <span class='sectionToc'>2.7 <a href='#paragraphs'>Paragraphs</a></span>
 <span class='chapterToc'>3 <a href='Howto.html#how-to'>How to</a></span>
@@ -52,13 +53,12 @@
 
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
 <span class='chapterToc'>6 <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
-
                                                                   
 
                                                                   
+
 
 <span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
-
 
 
 
@@ -206,7 +206,7 @@ different result:
 </figure>
 <!-- l. 64 --><p class='indent'>   Notice that the accents in the <span class='textit'>ť</span> and <span class='textit'>ď</span> letters are detached from the base letters.
 That is because <code class='texttt'>TeX4ht</code> uses information about characters in the DVI file. Current
-LaTeXsupports basic accented characters out of the box, but sometimes, they don’t
+LaTeX supports basic accented characters out of the box, but sometimes, they don’t
 work as expected.
 </p><!-- l. 69 --><p class='indent'>   The option <code class='texttt'>--mode</code> sets the compilation mode. <code class='texttt'>make4ht</code> has one built-in mode,
 named <code class='texttt'>draft</code>. By default, <code class='texttt'>make4ht</code> compiles your TeX file three times, to obtain the
@@ -320,9 +320,9 @@ images and creates them only for the changed math environments.
 <pre class='fancyvrb' id='fancyvrb17'><a id='x3-7014r1'></a>$ make4ht -f html5+dvisvgm_hashes filename.tex <span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
-<!-- l. 158 --><p class='indent'>   <code class='texttt'>make4ht</code> also loads some extensions by default. They fix some issues in the
-generated HTML files using the LuaXML package. To disable this processing, use
-<span class='obeylines-h'><code class='verb'>-extension_name</code></span>:
+<!-- l. 158 --><p class='indent'>   <code class='texttt'>make4ht</code> loads the <span class='obeylines-h'><code class='verb'>common_domfilters</code></span> extension automatically. It fixes common
+issues in the generated HTML files using the LuaXML package. To disable extension
+from loading, use <span class='obeylines-h'><code class='verb'>-extension_name</code></span> syntax:
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb18'><a id='x3-7017r1'></a>$ make4ht -f html5-common_domfilters filename.tex</pre>
@@ -335,27 +335,26 @@ generated HTML files using the LuaXML package. To disable this processing, use
 </p><!-- l. 168 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead'><span class='titlemark'>2.5   </span> <a id='x3-80002.5'></a>Configurations</h3>
-<!-- l. 171 --><p class='noindent'>Most of the markup produced by <code class='texttt'>TeX4ht</code> is configurable. Supported commands can be configured
-using the <code>  <span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span>
-</code> command. We can also insert markup before and after environments, using
-<code> <span class='textcolor-2838af'><span class='rm-lmtt-10'>\ConfigureEnv</span></span>
-</code> command.
+<!-- l. 171 --><p class='noindent'>Most of the markup produced by <code class='texttt'>TeX4ht</code> is configurable. Supported commands can
+be configured using the <code class='texttt'>\Configure</code> command. We can also insert markup before and
+after environments, using <code class='texttt'>\ConfigureEnv</code> command.
 </p><!-- l. 175 --><p class='indent'>   While it is possible to insert these commands directly to your document, it is
 better to use a custom configuration file, as you would get a compilation
 error if you compiled document containing <code class='texttt'>TeX4ht</code> commands directly by
 LaTeX.
 </p><!-- l. 179 --><p class='indent'>   You can find more information about syntax and available commands in section
 <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!-- tex4ht:ref: sec:private-configuration  --></a>. Here, we will show some simple examples.
-</p><!-- l. 182 --><p class='indent'>   The <span class='textbf'><code class='texttt'>\Configure</code></span> command
-</p><!-- l. 186 --><p class='indent'>   You may want to insert some custom HTML tags. It is a bit more
-complicated for LaTeXcommands, but it is easy for environments. You can
-configure the code that is inserted before and after environment using the
-<code> <span class='textcolor-2838af'><span class='rm-lmtt-10'>\ConfigureEnv</span></span>
-</code> command. It has a following syntax:
+</p><!-- l. 182 --><p class='noindent'>
+</p>   
+<h4 class='subsectionHead' id='the-thtxcconfigure-command'><span class='titlemark'>2.5.1   </span> <a id='x3-90002.5.1'></a>The <span class='textbf'><code class='texttt'>\Configure</code></span> command</h4>
+<!-- l. 186 --><p class='noindent'>You may want to insert some custom HTML tags. It is a bit more complicated for
+LaTeXcommands, but it is easy for environments. You can configure the code that is
+inserted before and after environment using the <code class='texttt'>\ConfigureEnv</code> command. It has a
+following syntax:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb19'><a id='x3-8007r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>&lt;environment name&gt;<span class='textcolor-387f38'>}{</span>before env<span class='textcolor-387f38'>}{</span>after env<span class='textcolor-387f38'>}</span> 
-<a id='x3-8009r2'></a><span class='textcolor-387f38'>{</span>before-list<span class='textcolor-387f38'>}{</span>after-list<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb19'><a id='x3-9004r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>&lt;environment name&gt;<span class='textcolor-387f38'>}{</span>before env<span class='textcolor-387f38'>}{</span>after env<span class='textcolor-387f38'>}</span> 
+<a id='x3-9006r2'></a><span class='textcolor-387f38'>{</span>before-list<span class='textcolor-387f38'>}{</span>after-list<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!-- l. 196 --><p class='indent'>   We can ignore the arguments <code class='texttt'>before-list</code> and <code class='texttt'>after-list</code>, as they
@@ -364,27 +363,27 @@ to
 </p><!-- l. 204 --><p class='indent'>   But beware of the following situation:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb20'><a id='x3-8017r1'></a>Hello world. 
-<a id='x3-8019r2'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
-<a id='x3-8021r3'></a>Just start some environment. 
-<a id='x3-8023r4'></a> 
-<a id='x3-8025r5'></a>But run it through several paragraphs 
-<a id='x3-8027r6'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb20'><a id='x3-9014r1'></a>Hello world. 
+<a id='x3-9016r2'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
+<a id='x3-9018r3'></a>Just start some environment. 
+<a id='x3-9020r4'></a> 
+<a id='x3-9022r5'></a>But run it through several paragraphs 
+<a id='x3-9024r6'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!-- l. 215 --><p class='indent'>   say that we insert <code class='texttt'>&lt;div class="someenv"&gt;</code> and <code class='texttt'>&lt;/div&gt;</code> tags around the <code class='texttt'>someenv</code>
 environment. By default this may produce following structure:
-</p>   
-<figure class='htmlsource' role='doc-example'>
+</p>
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb21'><a id='x3-8035r1'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span>Hello world. 
-<a id='x3-8037r2'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>div </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"someenv"</span><span class='textcolor-878787'>&gt;</span>Just start some environment. 
-<a id='x3-8039r3'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span> 
-<a id='x3-8041r4'></a> 
-<a id='x3-8043r5'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span>But run it through several paragraphs 
-<a id='x3-8045r6'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>div</span><span class='textcolor-878787'>&gt;&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
+<figure class='htmlsource' role='doc-example'>   
+<pre class='fancyvrb' id='fancyvrb21'><a id='x3-9032r1'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span>Hello world. 
+<a id='x3-9034r2'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>div </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"someenv"</span><span class='textcolor-878787'>&gt;</span>Just start some environment. 
+<a id='x3-9036r3'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span> 
+<a id='x3-9038r4'></a> 
+<a id='x3-9040r5'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span>But run it through several paragraphs 
+<a id='x3-9042r6'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>div</span><span class='textcolor-878787'>&gt;&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
 
 </figure>
 <!-- l. 229 --><p class='indent'>   as you can see, generated html code is incorrect, as opening and closing <code class='texttt'>&lt;div&gt;</code>
@@ -393,39 +392,39 @@ current paragraph, but it may be not what you want.
 </p><!-- l. 234 --><p class='indent'>   Best way to prevent tag mismatch may be something like:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb22'><a id='x3-8055r1'></a>Hello world. 
-<a id='x3-8057r2'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
-<a id='x3-8059r3'></a>Just start some environment. 
-<a id='x3-8061r4'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
-<a id='x3-8063r5'></a> 
-<a id='x3-8065r6'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
-<a id='x3-8067r7'></a>But run it through several paragraphs 
-<a id='x3-8069r8'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb22'><a id='x3-9052r1'></a>Hello world. 
+<a id='x3-9054r2'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
+<a id='x3-9056r3'></a>Just start some environment. 
+<a id='x3-9058r4'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
+<a id='x3-9060r5'></a> 
+<a id='x3-9062r6'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
+<a id='x3-9064r7'></a>But run it through several paragraphs 
+<a id='x3-9066r8'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!-- l. 247 --><p class='indent'>   and with <code class='texttt'>make4ht</code>
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb23'><a id='x3-8072r1'></a>make4ht sample1</pre>
+<pre class='fancyvrb' id='fancyvrb23'><a id='x3-9069r1'></a>make4ht sample1</pre>
 
 </figure>
 <!-- l. 253 --><p class='indent'>   lets look on text part generated by <code class='texttt'>htlatex</code>:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb24'><a id='x3-8078r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>P<span class='textcolor-708e30'>&amp;#x0159;</span>íli<span class='textcolor-708e30'>&amp;#353; </span><span class='textcolor-708e30'>&amp;#382;</span>lu<span class='textcolor-708e30'>&amp;#x0165;</span>ou<span class='textcolor-708e30'>&amp;#x010D;</span>k<span class='textcolor-708e30'>&amp;#x00FD;</span> k<span class='textcolor-708e30'>&amp;#x016F;&amp;#x0148;</span> úp<span class='textcolor-708e30'>&amp;#x011B;</span>l <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8080r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span><span class='textcolor-708e30'>&amp;#x010F;</span><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8082r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8084r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é <span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span>ódy. Some text in English</pre>
+<pre class='fancyvrb' id='fancyvrb24'><a id='x3-9075r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>P<span class='textcolor-708e30'>&amp;#x0159;</span>íli<span class='textcolor-708e30'>&amp;#353; </span><span class='textcolor-708e30'>&amp;#382;</span>lu<span class='textcolor-708e30'>&amp;#x0165;</span>ou<span class='textcolor-708e30'>&amp;#x010D;</span>k<span class='textcolor-708e30'>&amp;#x00FD;</span> k<span class='textcolor-708e30'>&amp;#x016F;&amp;#x0148;</span> úp<span class='textcolor-708e30'>&amp;#x011B;</span>l <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-9077r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span><span class='textcolor-708e30'>&amp;#x010F;</span><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-9079r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-9081r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é <span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span>ódy. Some text in English</pre>
 
 </figure>
 <!-- l. 262 --><p class='indent'>   and by <code class='texttt'>make4ht</code>:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb25'><a id='x3-8091r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>P<span class='textcolor-708e30'>&amp;#x0159;</span>íli<span class='textcolor-708e30'>&amp;#353; </span><span class='textcolor-708e30'>&amp;#382;</span>lu<span class='textcolor-708e30'>&amp;#x0165;</span>ou<span class='textcolor-708e30'>&amp;#x010D;</span>k<span class='textcolor-708e30'>&amp;#x00FD;</span> k<span class='textcolor-708e30'>&amp;#x016F;&amp;#x0148;</span> úp<span class='textcolor-708e30'>&amp;#x011B;</span>l <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8093r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span><span class='textcolor-708e30'>&amp;#x010F;</span><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8095r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8097r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é <span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span>ódy. Some text in English 
-<a id='x3-8099r5'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb25'><a id='x3-9088r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>P<span class='textcolor-708e30'>&amp;#x0159;</span>íli<span class='textcolor-708e30'>&amp;#353; </span><span class='textcolor-708e30'>&amp;#382;</span>lu<span class='textcolor-708e30'>&amp;#x0165;</span>ou<span class='textcolor-708e30'>&amp;#x010D;</span>k<span class='textcolor-708e30'>&amp;#x00FD;</span> k<span class='textcolor-708e30'>&amp;#x016F;&amp;#x0148;</span> úp<span class='textcolor-708e30'>&amp;#x011B;</span>l <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-9090r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span><span class='textcolor-708e30'>&amp;#x010F;</span><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-9092r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-9094r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é <span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span>ódy. Some text in English 
+<a id='x3-9096r5'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
 
 </figure>
 <!-- l. 272 --><p class='indent'>   only difference is missing <code class='texttt'>&lt;/p&gt;</code> tag in output of <code class='texttt'>htlatex</code>, because <code class='texttt'>html 4.01</code> is
@@ -436,21 +435,21 @@ must be first option in the option list passed to <code class='texttt'>tex4ht.st
 must be either <code class='texttt'>html</code>, <code class='texttt'>xhtml</code> or name of custom config file. We will cover these
 config files later, as they are key component in customization of <code class='texttt'>TeX4ht</code>
 output.
+                                                                  
+
+                                                                  
 </p><!-- l. 284 --><p class='indent'>   So in order to get same output as from <code class='texttt'>make4ht</code>, we must use following
 command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-                                                                  
-
-                                                                  
-<pre class='fancyvrb' id='fancyvrb26'><a id='x3-8102r1'></a>htlatex sample1 xhtml</pre>
+<pre class='fancyvrb' id='fancyvrb26'><a id='x3-9099r1'></a>htlatex sample1 xhtml</pre>
 
 </figure>
 <!-- l. 291 --><p class='indent'>   Now we should get rid of ugly entities which encode accented letters. This is
 somewhat ugly with <code class='texttt'>htlatex</code>:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb27'><a id='x3-8105r1'></a>htlatex sample1 <span class='textcolor-b73838'>"xhtml,charset=utf-8" </span><span class='textcolor-b73838'>" -cunihtf -utf8"</span></pre>
+<pre class='fancyvrb' id='fancyvrb27'><a id='x3-9102r1'></a>htlatex sample1 <span class='textcolor-b73838'>"xhtml,charset=utf-8" </span><span class='textcolor-b73838'>" -cunihtf -utf8"</span></pre>
 
 </figure>
 <!-- l. 298 --><p class='indent'>   <code class='texttt'>charset=utf-8"</code> produces meta element which declares document to be in
@@ -461,17 +460,17 @@ unicode.4hf. It is directed from <code class='texttt'>tex4ht.env</code> file.
 </p><!-- l. 305 --><p class='indent'>   With <code class='texttt'>make4ht</code>, situation is easier, as all we need to do is to add <code class='texttt'>-u</code> option:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb28'><a id='x3-8108r1'></a>make4ht -u sample1.tex</pre>
+<pre class='fancyvrb' id='fancyvrb28'><a id='x3-9105r1'></a>make4ht -u sample1.tex</pre>
 
 </figure>
 <!-- l. 312 --><p class='indent'>   resulting file:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb29'><a id='x3-8115r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>Příliš žluťoučký kůň úpěl <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8117r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ď<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8119r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-8121r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é <span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span>ódy. Some text in English 
-<a id='x3-8123r5'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb29'><a id='x3-9112r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>Příliš žluťoučký kůň úpěl <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-9114r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ď<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-9116r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-9118r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é <span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span>ódy. Some text in English 
+<a id='x3-9120r5'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
 
 </figure>
 <!-- l. 322 --><p class='indent'>   Entities are gone, but other persists. What we see is caused by a bug in <code class='texttt'>tex4ht</code>
@@ -480,32 +479,32 @@ Unfortunately it doesn’t play well with accented letters as we can see. This h
 easy solution, fortunately. We just need to dive into <code class='texttt'>TeX4ht</code> configuration.
 Yay!
 </p><!-- l. 330 --><p class='indent'>   <a id='configurations'></a>
+                                                                  
+
+                                                                  
 </p>   
-<h3 class='sectionHead' id='configurations1'><span class='titlemark'>2.6   </span> <a id='x3-90002.6'></a>Configurations</h3>
+<h3 class='sectionHead' id='configurations1'><span class='titlemark'>2.6   </span> <a id='x3-100002.6'></a>Configurations</h3>
 <!-- l. 332 --><p class='noindent'>We already saw that we can use command line options to configure the output. For
 full list of options for <code class='texttt'>tex4ht.sty</code>, see an <a href='http://www.cvr.cc/?p=504'>article on CVR’s blog</a>. These options
 mainly influence appearance or math, footnotes, tables, etc. Note that these options
 aren’t fixed set, anyone can add new options and not all options are supported in
 each output format supported by <code class='texttt'>tex4ht</code>. Generally these options work with <code class='texttt'>html</code>
 (and <code class='texttt'>xhtml</code>) output.
-                                                                  
-
-                                                                  
 </p><!-- l. 341 --><p class='indent'>   Other option is to use custom config file (<code class='texttt'>.cfg</code>). This is a TeX file with some basic
 structure:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb30'><a id='x3-9013r1'></a> optional stuff like requiring LaTeX packages etc 
-<a id='x3-9015r2'></a> ... 
-<a id='x3-9017r3'></a> <span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml,tex4ht.sty options<span class='textcolor-387f38'>}</span> 
-<a id='x3-9019r4'></a> ... 
-<a id='x3-9021r5'></a> TeX4ht configurations 
-<a id='x3-9023r6'></a> ... 
-<a id='x3-9025r7'></a> <span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x3-9027r8'></a> ... 
-<a id='x3-9029r9'></a> more TeX4ht configurations 
-<a id='x3-9031r10'></a> ... 
-<a id='x3-9033r11'></a> <span class='textcolor-2838af'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb30'><a id='x3-10013r1'></a> optional stuff like requiring LaTeX packages etc 
+<a id='x3-10015r2'></a> ... 
+<a id='x3-10017r3'></a> <span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml,tex4ht.sty options<span class='textcolor-387f38'>}</span> 
+<a id='x3-10019r4'></a> ... 
+<a id='x3-10021r5'></a> TeX4ht configurations 
+<a id='x3-10023r6'></a> ... 
+<a id='x3-10025r7'></a> <span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x3-10027r8'></a> ... 
+<a id='x3-10029r9'></a> more TeX4ht configurations 
+<a id='x3-10031r10'></a> ... 
+<a id='x3-10033r11'></a> <span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
 <!-- l. 358 --><p class='indent'>   Most important command for configuring is <code class='texttt'>\Configure</code>. This command has
@@ -521,47 +520,47 @@ file.
 package <code class='texttt'>hello.sty</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb31'><a id='x3-9038r1'></a><span class='textcolor-2838af'>\ProvidesPackage</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}</span> 
-<a id='x3-9040r2'></a><span class='textcolor-2838af'>\newcommand\hello</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\textbf</span><span class='textcolor-387f38'>{</span>hello world<span class='textcolor-387f38'>}}</span> 
-<a id='x3-9042r3'></a><span class='textcolor-2838af'>\endinput</span></pre>
+<pre class='fancyvrb' id='fancyvrb31'><a id='x3-10038r1'></a><span class='textcolor-2838af'>\ProvidesPackage</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}</span> 
+<a id='x3-10040r2'></a><span class='textcolor-2838af'>\newcommand\hello</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\textbf</span><span class='textcolor-387f38'>{</span>hello world<span class='textcolor-387f38'>}}</span> 
+<a id='x3-10042r3'></a><span class='textcolor-2838af'>\endinput</span></pre>
 
 </figure>
 <!-- l. 380 --><p class='indent'>   we can provide hooks in file named <code class='texttt'>hello.4ht</code>. Say we just want to insert tags at
 beginning and at end of <code class='texttt'>\hello</code> command:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb32'><a id='x3-9054r1'></a><span class='textcolor-878787'><span class='textit'>% provide configure for \hello command. we can choose any name</span></span> 
-<a id='x3-9056r2'></a><span class='textcolor-878787'><span class='textit'>% but most convenient is to name hooks after redefined command</span></span> 
-<a id='x3-9058r3'></a><span class='textcolor-878787'><span class='textit'>% we declare two hooks, to be inserted before and after the command</span></span> 
-<a id='x3-9060r4'></a><span class='textcolor-2838af'>\NewConfigure</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}{</span>2<span class='textcolor-387f38'>}</span> 
-<a id='x3-9062r5'></a><span class='textcolor-878787'><span class='textit'>% now we need to redefine \hello. save it to tmp command</span></span> 
-<a id='x3-9064r6'></a><span class='textcolor-2838af'>\let\tmp</span>:hello<span class='textcolor-2838af'>\hello</span> 
-<a id='x3-9066r7'></a><span class='textcolor-878787'><span class='textit'>% note that `:` can be part of command name in `.4ht` files.</span></span> 
-<a id='x3-9068r8'></a><span class='textcolor-878787'><span class='textit'>% now insert the hooks. they are named as \a:hook, \b:hook, ..., \h:hook</span></span> 
-<a id='x3-9070r9'></a><span class='textcolor-878787'><span class='textit'>% depending on how many hooks were declared</span></span> 
-<a id='x3-9072r10'></a><span class='textcolor-2838af'>\renewcommand\hello</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\a</span>:hello<span class='textcolor-2838af'>\tmp</span>:hello<span class='textcolor-2838af'>\b</span>:hello<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb32'><a id='x3-10054r1'></a><span class='textcolor-878787'><span class='textit'>% provide configure for \hello command. we can choose any name</span></span> 
+<a id='x3-10056r2'></a><span class='textcolor-878787'><span class='textit'>% but most convenient is to name hooks after redefined command</span></span> 
+<a id='x3-10058r3'></a><span class='textcolor-878787'><span class='textit'>% we declare two hooks, to be inserted before and after the command</span></span> 
+<a id='x3-10060r4'></a><span class='textcolor-2838af'>\NewConfigure</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}{</span>2<span class='textcolor-387f38'>}</span> 
+<a id='x3-10062r5'></a><span class='textcolor-878787'><span class='textit'>% now we need to redefine \hello. save it to tmp command</span></span> 
+<a id='x3-10064r6'></a><span class='textcolor-2838af'>\let\tmp</span>:hello<span class='textcolor-2838af'>\hello</span> 
+<a id='x3-10066r7'></a><span class='textcolor-878787'><span class='textit'>% note that `:` can be part of command name in `.4ht` files.</span></span> 
+<a id='x3-10068r8'></a><span class='textcolor-878787'><span class='textit'>% now insert the hooks. they are named as \a:hook, \b:hook, ..., \h:hook</span></span> 
+<a id='x3-10070r9'></a><span class='textcolor-878787'><span class='textit'>% depending on how many hooks were declared</span></span> 
+<a id='x3-10072r10'></a><span class='textcolor-2838af'>\renewcommand\hello</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\a</span>:hello<span class='textcolor-2838af'>\tmp</span>:hello<span class='textcolor-2838af'>\b</span>:hello<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!-- l. 397 --><p class='indent'>   because we want to surround contents produced by <code class='texttt'>\hello</code> with tags, we need to
 declare two hooks. This is the most usual case for normal commands which just
 produce some text. Old contents of macro are saved in temporary macro and then
+                                                                  
+
+                                                                  
 command is redefined to insert hooks and original contents stored in temporary
 macro.
 </p><!-- l. 404 --><p class='indent'>   Now we can change our sample to use <code class='texttt'>hello</code> package:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb33'><a id='x3-9083r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>article<span class='textcolor-387f38'>}</span> 
-<a id='x3-9085r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[english,czech]{</span>babel<span class='textcolor-387f38'>}</span> 
-<a id='x3-9087r3'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[T1]{</span>fontenc<span class='textcolor-387f38'>}</span> 
-<a id='x3-9089r4'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[utf8]{</span>inputenc<span class='textcolor-387f38'>}</span> 
-<a id='x3-9091r5'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}</span> 
-<a id='x3-9093r6'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> Příliš žluťoučký kůň úpěl <span class='textcolor-2838af'>\textit</span><span class='textcolor-387f38'>{</span>ďábelské<span class='textcolor-387f38'>}</span> ódy. 
-<a id='x3-9095r7'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>otherlanguage<span class='textcolor-387f38'>}{</span>english<span class='textcolor-387f38'>}</span> Some text in English, <span class='textcolor-2838af'>\hello</span> 
-<a id='x3-9097r8'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>otherlanguage<span class='textcolor-387f38'>}</span> 
-<a id='x3-9099r9'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
-                                                                  
-
-                                                                  
+<pre class='fancyvrb' id='fancyvrb33'><a id='x3-10083r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>article<span class='textcolor-387f38'>}</span> 
+<a id='x3-10085r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[english,czech]{</span>babel<span class='textcolor-387f38'>}</span> 
+<a id='x3-10087r3'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[T1]{</span>fontenc<span class='textcolor-387f38'>}</span> 
+<a id='x3-10089r4'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[utf8]{</span>inputenc<span class='textcolor-387f38'>}</span> 
+<a id='x3-10091r5'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}</span> 
+<a id='x3-10093r6'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> Příliš žluťoučký kůň úpěl <span class='textcolor-2838af'>\textit</span><span class='textcolor-387f38'>{</span>ďábelské<span class='textcolor-387f38'>}</span> ódy. 
+<a id='x3-10095r7'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>otherlanguage<span class='textcolor-387f38'>}{</span>english<span class='textcolor-387f38'>}</span> Some text in English, <span class='textcolor-2838af'>\hello</span> 
+<a id='x3-10097r8'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>otherlanguage<span class='textcolor-387f38'>}</span> 
+<a id='x3-10099r9'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!-- l. 418 --><p class='indent'>   we haven’t provided any configurations for <code class='texttt'>hello</code> yet, but you can see that text
@@ -574,13 +573,13 @@ provide by default.
 basic configurations for <code class='texttt'>\textit</code> and <code class='texttt'>\hello</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb34'><a id='x3-9108r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
-<a id='x3-9110r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;span class="textit"&gt;<span class='textcolor-387f38'>}}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/span&gt;<span class='textcolor-387f38'>}}</span> 
-<a id='x3-9112r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;span class="hello"&gt;<span class='textcolor-387f38'>}}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/span&gt;<span class='textcolor-387f38'>}}</span> 
-<a id='x3-9114r4'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>.textit<span class='textcolor-387f38'>{</span>font-style:italic;<span class='textcolor-387f38'>}}</span> 
-<a id='x3-9116r5'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>.hello<span class='textcolor-387f38'>{</span>font-weight:bold;<span class='textcolor-387f38'>}}</span> 
-<a id='x3-9118r6'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x3-9120r7'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb34'><a id='x3-10108r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
+<a id='x3-10110r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;span class="textit"&gt;<span class='textcolor-387f38'>}}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/span&gt;<span class='textcolor-387f38'>}}</span> 
+<a id='x3-10112r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;span class="hello"&gt;<span class='textcolor-387f38'>}}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/span&gt;<span class='textcolor-387f38'>}}</span> 
+<a id='x3-10114r4'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>.textit<span class='textcolor-387f38'>{</span>font-style:italic;<span class='textcolor-387f38'>}}</span> 
+<a id='x3-10116r5'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>.hello<span class='textcolor-387f38'>{</span>font-weight:bold;<span class='textcolor-387f38'>}}</span> 
+<a id='x3-10118r6'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x3-10120r7'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
 <!-- l. 441 --><p class='indent'>   For documentation of default configurations, see <a href='http://michal-h21.github.io/src4ht/tex4ht-info.html'>TeX4ht info</a>, most useful are
@@ -599,16 +598,19 @@ styling. Yes, you need to know both <code class='texttt'>html</code> and <code c
 than initially:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb35'><a id='x3-9128r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>Příliš žluťoučký kůň úpěl <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"textit"</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-9130r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ď<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-9132r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-9134r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> ódy. Some text in English, <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"hello"</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
-<a id='x3-9136r5'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecbx-1000"</span><span class='textcolor-878787'>&gt;</span>hello world<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
-<a id='x3-9138r6'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb35'><a id='x3-10128r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>Příliš žluťoučký kůň úpěl <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"textit"</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-10130r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ď<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-10132r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-10134r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> ódy. Some text in English, <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"hello"</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x3-10136r5'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecbx-1000"</span><span class='textcolor-878787'>&gt;</span>hello world<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
+<a id='x3-10138r6'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
 
 </figure>
 <!-- l. 477 --><p class='indent'>   our new tags were inserted, but unnecessary elements inserted by <code class='texttt'>tex4ht</code>
 processor are still present. Fortunately, we can suppress insertion of these elements
+                                                                  
+
+                                                                  
 with <code class='texttt'>\NoFonts</code> command, and later enable again with <code class='texttt'>\EndNoFonts</code>. We can also use
 <code class='texttt'>tex4ht.sty</code> option <code class='texttt'>NoFonts</code>, which will suppress font processing in whole
 document, but you should use this with caution, as it may have some side
@@ -616,53 +618,50 @@ effects.
 </p><!-- l. 486 --><p class='indent'>   Let’s take a look how would out configurations look with <code class='texttt'>\NoFonts</code> command:
 </p>   
 <figure class='texsource' role='doc-example'>
-                                                                  
-
-                                                                  
-<pre class='fancyvrb' id='fancyvrb36'><a id='x3-9149r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
-<a id='x3-9151r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;span class="textit"&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\NoFonts</span><span class='textcolor-387f38'>}</span> 
-<a id='x3-9153r3'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\EndNoFonts\HCode</span><span class='textcolor-387f38'>{</span>&lt;/span&gt;<span class='textcolor-387f38'>}}</span> 
-<a id='x3-9155r4'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;span class="hello"&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\NoFonts</span><span class='textcolor-387f38'>}</span> 
-<a id='x3-9157r5'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\EndNoFonts\HCode</span><span class='textcolor-387f38'>{</span>&lt;/span&gt;<span class='textcolor-387f38'>}}</span> 
-<a id='x3-9159r6'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>.textit<span class='textcolor-387f38'>{</span>font-style:italic;<span class='textcolor-387f38'>}}</span> 
-<a id='x3-9161r7'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>.hello<span class='textcolor-387f38'>{</span>font-weight:bold;<span class='textcolor-387f38'>}}</span> 
-<a id='x3-9163r8'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x3-9165r9'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb36'><a id='x3-10149r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
+<a id='x3-10151r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;span class="textit"&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\NoFonts</span><span class='textcolor-387f38'>}</span> 
+<a id='x3-10153r3'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\EndNoFonts\HCode</span><span class='textcolor-387f38'>{</span>&lt;/span&gt;<span class='textcolor-387f38'>}}</span> 
+<a id='x3-10155r4'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;span class="hello"&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\NoFonts</span><span class='textcolor-387f38'>}</span> 
+<a id='x3-10157r5'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\EndNoFonts\HCode</span><span class='textcolor-387f38'>{</span>&lt;/span&gt;<span class='textcolor-387f38'>}}</span> 
+<a id='x3-10159r6'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>.textit<span class='textcolor-387f38'>{</span>font-style:italic;<span class='textcolor-387f38'>}}</span> 
+<a id='x3-10161r7'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>.hello<span class='textcolor-387f38'>{</span>font-weight:bold;<span class='textcolor-387f38'>}}</span> 
+<a id='x3-10163r8'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x3-10165r9'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
 <!-- l. 501 --><p class='indent'>   the output now looks much better:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb37'><a id='x3-9169r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>Příliš žluťoučký kůň úpěl <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"textit"</span><span class='textcolor-878787'>&gt;</span>ďábelské<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> ódy. Some text in English, <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"hello"</span><span class='textcolor-878787'>&gt;</span>hello world<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
-<a id='x3-9171r2'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb37'><a id='x3-10169r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>Příliš žluťoučký kůň úpěl <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"textit"</span><span class='textcolor-878787'>&gt;</span>ďábelské<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> ódy. Some text in English, <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"hello"</span><span class='textcolor-878787'>&gt;</span>hello world<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
+<a id='x3-10171r2'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
 
 </figure>
 <!-- l. 508 --><p class='indent'>   It may seems that we can be happy at this point, but things aren’t as easy as we
 may hope, because we haven’t talked about one thing:
 </p><!-- l. 512 --><p class='indent'>   <a id='paragraphs'></a>
 </p>   
-<h3 class='sectionHead'><span class='titlemark'>2.7   </span> <a id='x3-100002.7'></a>Paragraphs</h3>
+<h3 class='sectionHead'><span class='titlemark'>2.7   </span> <a id='x3-110002.7'></a>Paragraphs</h3>
 <!-- l. 514 --><p class='noindent'>What if we add some more paragraphs in English to our sample file?
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb38'><a id='x3-10020r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>article<span class='textcolor-387f38'>}</span> 
-<a id='x3-10022r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[english,czech]{</span>babel<span class='textcolor-387f38'>}</span> 
-<a id='x3-10024r3'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[T1]{</span>fontenc<span class='textcolor-387f38'>}</span> 
-<a id='x3-10026r4'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[utf8]{</span>inputenc<span class='textcolor-387f38'>}</span> 
-<a id='x3-10028r5'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}</span> 
-<a id='x3-10030r6'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> Příliš žluťoučký kůň úpěl <span class='textcolor-2838af'>\textit</span><span class='textcolor-387f38'>{</span>ďábelské<span class='textcolor-387f38'>}</span> ódy. 
-<a id='x3-10032r7'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>otherlanguage<span class='textcolor-387f38'>}{</span>english<span class='textcolor-387f38'>}</span> Some text in English, <span class='textcolor-2838af'>\hello</span> 
-<a id='x3-10034r8'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>otherlanguage<span class='textcolor-387f38'>}</span> 
-<a id='x3-10036r9'></a> 
-<a id='x3-10038r10'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>otherlanguage<span class='textcolor-387f38'>}{</span>english<span class='textcolor-387f38'>}</span> 
-<a id='x3-10040r11'></a> 
-<a id='x3-10042r12'></a><span class='textcolor-2838af'>\textit</span><span class='textcolor-387f38'>{</span>What will do<span class='textcolor-387f38'>} </span><span class='textcolor-2838af'>\verb</span>|<span class='textcolor-2838af'>\textit</span>| at the beginning of paragraph? 
-<a id='x3-10044r13'></a> 
-<a id='x3-10046r14'></a>And also, what about configuration for <span class='textcolor-2838af'>\verb</span>|otherlanguage| environment? 
-<a id='x3-10048r15'></a> 
-<a id='x3-10050r16'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>otherlanguage<span class='textcolor-387f38'>}</span> 
-<a id='x3-10052r17'></a> 
-<a id='x3-10054r18'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb38'><a id='x3-11020r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>article<span class='textcolor-387f38'>}</span> 
+<a id='x3-11022r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[english,czech]{</span>babel<span class='textcolor-387f38'>}</span> 
+<a id='x3-11024r3'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[T1]{</span>fontenc<span class='textcolor-387f38'>}</span> 
+<a id='x3-11026r4'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[utf8]{</span>inputenc<span class='textcolor-387f38'>}</span> 
+<a id='x3-11028r5'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}</span> 
+<a id='x3-11030r6'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> Příliš žluťoučký kůň úpěl <span class='textcolor-2838af'>\textit</span><span class='textcolor-387f38'>{</span>ďábelské<span class='textcolor-387f38'>}</span> ódy. 
+<a id='x3-11032r7'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>otherlanguage<span class='textcolor-387f38'>}{</span>english<span class='textcolor-387f38'>}</span> Some text in English, <span class='textcolor-2838af'>\hello</span> 
+<a id='x3-11034r8'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>otherlanguage<span class='textcolor-387f38'>}</span> 
+<a id='x3-11036r9'></a> 
+<a id='x3-11038r10'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>otherlanguage<span class='textcolor-387f38'>}{</span>english<span class='textcolor-387f38'>}</span> 
+<a id='x3-11040r11'></a> 
+<a id='x3-11042r12'></a><span class='textcolor-2838af'>\textit</span><span class='textcolor-387f38'>{</span>What will do<span class='textcolor-387f38'>} </span><span class='textcolor-2838af'>\verb</span>|<span class='textcolor-2838af'>\textit</span>| at the beginning of paragraph? 
+<a id='x3-11044r13'></a> 
+<a id='x3-11046r14'></a>And also, what about configuration for <span class='textcolor-2838af'>\verb</span>|otherlanguage| environment? 
+<a id='x3-11048r15'></a> 
+<a id='x3-11050r16'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>otherlanguage<span class='textcolor-387f38'>}</span> 
+<a id='x3-11052r17'></a> 
+<a id='x3-11054r18'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!-- l. 537 --><p class='indent'>   What if we want to insert elements with <code class='texttt'>lang</code> attribute to specify language of
