@@ -62,6 +62,20 @@ Example:
 \Link{}{a}\EndLink       % set link destination (or by \JSLink{}{a}\EndJSLink)
 \end{texsource}
 
+\subsection{Cross references}
+
+For correct support of cross-references, you need to place link destinations for labels.
+\texfourht{} handles labels defined by the \cmd{refstepcounter} command, 
+but links for labels that use a direct setting of the \cmd{@currentlabel} command needs to be 
+inserted manually.
+
+\DocCommand{AnchorLabel} inserts link destination for the current \cmd{label} command. It will be used 
+in \cmd{ref},  \cmd{pageref}, and other cross referencing commands that point to the label.
+It should be placed after change of \cmd{@currentlabel}. 
+
+\DocCommand{SkipRefstepAnchor} don't insert anchor for the next \cmd{refstepcounter}.
+
+\DocCommand{ShowRefstepAnchor} show anchor for the next \cmd{refstepcounter}.
 
 \subsection{Paragraph Handling}
 \label{sec:paragraph_handling}
@@ -110,7 +124,7 @@ after the inserted \htmlcommand{<div>} tag. It is necessary to explicitly start 
 \DocConfigure{HtmlPar} {content at the start non-indented paragraphs} 
    {content at the start indented paragraphs}
    {insertion into \cmd{EndP}, at the start of non-indented paragraphs}
-   {insertion into \cmd{EndP}, at the start of indented paragraphs} \EndDoc
+   {insertion into \cmd{EndP}, at the start of indented paragraphs}\EndDoc
 
 Example:
 
