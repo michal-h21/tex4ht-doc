@@ -6,18 +6,21 @@ it using the \term{font-family} Css property.
 The default font family name which should be used in the Css
 \term{font-family} command for a declared font is \term{rmfamily}. 
 It use the Latin Modern font installed on the viewer's system. 
-The Css font family and the local font name can be changed using
-\verb|\Configure{FontFamily}{cssfamilyname}{LocalFontName}| command.
+
+\DocConfigure {FontFamily} {cssfamilyname} {LocalFontName}\EndDoc
+
+Change default CSS font family name. Example:
 
 \begin{texsource}
 \Configure{FontFamily}{rmfamily}{Latin Modern}
 \end{texsource}
 
-The font shapes can be configure using \verb|\Configure{NormalFont}|, 
-\texcommand{\Configure}\allowbreak\texcommand{{ItalicFont}}, \verb|\Configure{BoldItalicFont}| and
-\verb|Configure{BoldFont}|. The argument should be font file in the format
+The font shapes can be configure using \cmd{Configure}\marg{NormalFont}, 
+\cmd{Configure}\marg{ItalicFont}, \cmd{Configure}\marg{BoldItalicFont} and
+\cmd{Configure}\marg{BoldFont}. The argument should be font file in the format
 supported by browsers, such as \textit{woff} or \textit{otf}.
 
+Full example of font CSS configurations:
 
 \begin{texsource}
 \Configure{NormalFont}{normal-font-file.otf}

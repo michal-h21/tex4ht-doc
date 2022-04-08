@@ -210,24 +210,39 @@ appear around the substrings ‘/*’ and ‘*/’.
 \section{Webfonts}
 \input{sections/webfonts}
 \section{Use JavaScript}
-\section{Hyperlinks}
 
-\texcommand{\AnchorLabel} -- insert link for the current \texcommand{\label}. It should be placed after change 
-of \texcommand{\@currentlabel}. Note that \texfourht{} handles labels defined by \texcommand{\refstepcounter},
-this is necessary only for labels that are defined by direct modification of \texcommand{\@currentlabel}.
+\DocConfigure{AddJs} {filename of JS file to be included}\EndDoc 
 
-% https://tex.stackexchange.com/a/521497/2891
-% https://tex.stackexchange.com/a/521905/2891
+This configuration inserts link to a local JavaScript file. 
+
+\DocCommand{JavaScript} ... \cmd{EndJavaScript} insert JS code in the verbatim mode.
+This command is available only when the \option{javascript} option is active. It can put JS code
+directly to the document. If used in the configuration file, it should be placed after
+\texcommand{\begin{document}}.
+
+Full example of configuration file that use both of these methods:
+
+\begin{texsource}
+\Preamble{xhtml,javascript}
+\Configure{AddJs}{sample.js}
+\begin{document}
+\JavaScript
+console.log("Hello JS");
+\EndJavaScript
+\EndPreamble
+
+\end{texsource}
+
 
 
 \section{Basic document structure and metadata}
 
 \input{sections/document_structure}
 
-\section{Document Navigation}
+% \section{Document Navigation}
 
 
-\subsection{Cross-links}
+\section{Cross-links}
 
 Cross-links provide navigation between several HTML pages generated from a single document.
 
@@ -246,11 +261,11 @@ This command configures the appearance of the cross-links between hypertext page
 
 \DocConfigure{crosslinks*} {1--7 arguments}\EndDoc
 
-  Links to be included and their order. Available
-  options: next, prev, prevtail, tail, front, up.
+Links to be included and their order. Available
+  options: \textit{next}, \textit{prev}, \textit{prevtail}, \textit{tail}, \textit{front}, \textit{up}.
   The last argument must be empty.
 
-  Default:
+Default values:
 
 \begin{texsource}
 \Configure{crosslinks*}{next}
@@ -268,7 +283,7 @@ The bottom cross links are omitted, if both \verb|#3| and \verb|#4| are empty.
 
 Default: The value provided in \texcommand{\Configure{crosslinks}}
 
-\DocConfigure{next+}{before} {after}\EndDoc
+\DocConfigure{next+} {before} {after}\EndDoc
 
 \begin{description}
   \item[\#1]  before the next button of the front page, when the `next'
@@ -278,16 +293,13 @@ Default: The value provided in \texcommand{\Configure{crosslinks}}
 
     Default: The values provided in \texcommand{\Configure{crosslinks}}
 
-\begin{texsource}
-\Configure{crosslinks:next}..................1
-\Configure{crosslinks:prev}..................1
-\Configure{crosslinks:prevtail}..............1
-\Configure{crosslinks:tail}..................1
-\Configure{crosslinks:front}.................1
-\Configure{crosslinks:up}....................1
-\end{texsource}
+\DocConfigure{crosslinks:next} {local configurations for the delimiters and hooks}\EndDoc
+\DocConfigure{crosslinks:prev} {local configurations for the delimiters and hooks}\EndDoc
+\DocConfigure{crosslinks:prevtail} {local configurations for the delimiters and hooks}\EndDoc
+\DocConfigure{crosslinks:tail} {local configurations for the delimiters and hooks}\EndDoc
+\DocConfigure{crosslinks:front} {local configurations for the delimiters and hooks}\EndDoc
+\DocConfigure{crosslinks:up} {local configurations for the delimiters and hooks}\EndDoc
 
-  \verb|#1| local configurations for the delimiters and hooks
 
 \DocConfigure{crosslinks-}{before} {after}\EndDoc
 
