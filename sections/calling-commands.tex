@@ -140,6 +140,28 @@ files, use the \shellcmd{-m clean} option:
 $ make4ht -m clean filename.tex
 \end{shellcommand}
 
+\subsection{\makefourht{} extensions}\label{sec:make4ht-extensions}
+
+\makefourht{} extensions can modify the build process -- usually, 
+they are used to post-process the generated files, to fix some issues
+that are hard to fix on the \TeX{} level.
+
+The extensions can be enabled or disabled by appending \shellcmd{+EXTENSION} or \shellcmd{-EXTENSION} after the output format name:
+
+\begin{shellcommand}
+$ make4ht -uf html5+tidy filename.tex
+\end{shellcommand}
+
+Some of the available extensions:
+
+\begin{description}
+  \item[detect\_engine] choose \TeX{} engine and format necessary for the document compilation from the magic comments in the document.
+  \item[preprocess\_input] add support for Rmarkdown, R\TeX, and similar formats supported by Knith or Pandoc.
+  \item[staticsite] generate files suitable for static site generators, such as Jekyll or Hugo.
+\end{description}
+
+You can find a list of extensions in \href{https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions}{\makefourht{} documentation}.
+
 
 \section{Overview of the Translation Process}\label{sec:overview}
 
@@ -219,4 +241,3 @@ This is an interpreter for executing the requests made in the x.lg script.
 
 \end{description}
 
-\subsection{make4ht extensions}\label{sec:make4ht-extensions}
