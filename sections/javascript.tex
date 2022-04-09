@@ -1,0 +1,25 @@
+\section{Use JavaScript}
+\label{sec:javascript}
+
+\DocConfigure{AddJs} {filename of JS file to be included}\EndDoc 
+
+This configuration inserts link to a local JavaScript file. 
+
+\DocCommand{JavaScript} ... \cmd{EndJavaScript} insert JS code in the verbatim mode.
+This command is available only when the \option{javascript} option is active. It can put JS code
+directly to the document. If used in the configuration file, it should be placed after
+\texcommand{\begin{document}}.
+
+Full example of configuration file that use both of these methods:
+
+\begin{texsource}
+\Preamble{xhtml,javascript}
+\Configure{AddJs}{sample.js}
+\begin{document}
+\JavaScript
+console.log("Hello JS");
+\EndJavaScript
+\EndPreamble
+
+\end{texsource}
+

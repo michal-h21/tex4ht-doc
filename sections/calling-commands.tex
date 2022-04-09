@@ -1,3 +1,6 @@
+\chapter{Calling Commands}
+\label{sec:calling-commands}
+
 The conversion process used by \texfourht\ involves several tools
 (see section \ref{sec:overview}, \nameref{sec:overview} for details). 
 
@@ -168,12 +171,12 @@ You can find full a list of extensions in \href{https://www.kodymirus.cz/make4ht
 
 The translation of a LaTeX source file into HTML involves loading of
 the \texttt{tex4ht.sty} package. It watches loaded packages, and loads
-corresponding configuration files, named as \texcommand{<pkgname>.4ht}. 
+corresponding configuration files, named as \shellcmd{<pkgname>.4ht}. 
 These configuration files patches commands provided by the packages, and
 insert special hooks, which are later filled with XML code for the output format.
 
 To ensure that all packages are processed, \texttt{tex4ht.sty} needs to be 
-loaded early, ideally before \texcommand{\documentclass}.
+loaded early, ideally before \cmd{documentclass}.
 
 Result of the \LaTeX{} run is a DVI file that contain document text and 
 special instructions with XML code, or with requests for pictures. 

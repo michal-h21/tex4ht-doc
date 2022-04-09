@@ -1,0 +1,53 @@
+\section{Document Styling Using CSS}
+\label{sec:css-styling}
+
+\texfourht\ provides several commands that can be used for changing of the
+document appearance using Cascading Style Sheets (\css). Only basic styling for
+the document is provided by default. Additional styles are added by configurations for the
+fonts, packages and commands used in the document. Full control of the document
+styling can be achieved using following commands and configurations.
+
+
+\cmd{Css}\marg{content}
+
+This command sends its content to the CSS file of the document. 
+
+\DocConfigure{AddCss} {CSS file name}\EndDoc
+
+Add local CSS file.
+
+\begin{texsource}
+\Css{body{max-width:70ch;margin: 1rem auto;}}
+\Configure{AddCss}{custom.css}
+% link to a CSS on some web:
+\Configure{@HEAD}{\HCode{<link type="text/css" href="https://example.com/style.css" />}
+\end{texsource}
+
+\texcommand{\CssFile[list-of-css-files]content\EndCssFile}
+
+The CSS file \texfourht\ used by default initially consists just
+a single line,  \texcommand{/* css.sty */}. This line is later
+replaced with the code submitted by the \texcommand{\Css{...}} commands.
+
+The \texcommand{\CssFile} command allows to specify an alternative to the initial CSS file.
+The alternative file consists of the code loaded from listed files, and of the
+content explicitly specified in its body.
+
+\begin{texsource}
+\ConfigureList{mylist} 
+{\HCode{<div class="mylist">}} {\HCode{</div>}} {* }{} 
+       
+\begin{document} 
+       
+\CssFile 
+/* css.sty */ 
+.mylist { color : red; } 
+\EndCssFile 
+\end{texsource}
+
+The names in the list of files should be separated by commas, and the rectangular brackets are optional when the list is empty.
+
+The file should include a line having the content of \verb|/* css.sty */|. If
+more than one such line is included, the content of the \texcommand{\Css{...}} commands
+replace the first occurrence of this line. Arbitrary many space characters may
+appear around the substrings ‘/*’ and ‘*/’. 
