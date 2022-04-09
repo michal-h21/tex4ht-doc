@@ -105,44 +105,7 @@ for the EB Garamond font.
 \chapter{Output Formats}
 \label{sec:output-formats}
 
-\texfourht\ supports following output formats:
-
-\begin{description}
-  \item[HTML 5] used by default, when you don't provide the \shellcmd{-f} option.
-  \item[XHTML]  alternative if you don't want to use new HTML elements.
-  \item[ODT]    suitable for LibreOffice or MS Word.
-\end{description}
-
-There are also historicaly other formats with more limited support. Basic structures,
-like sections or lists should work, but specific formatting for most of \LaTeX\ packages 
-can be missing.
-
-\begin{description}
-  \item[DocBook]  
-  \item[TEI] 
-  \item[JATS] support for this format is limited, even basic document structure is missing.
-\end{description}
-
-Additionally, you can create e-book formats such as EPUB or MOBI. For historical reasons, these formats
-are created using separate tool, \texttt{tex4ebook}. It supports the folowing formats:
-
-\begin{description}
-  \item[AZW]
-  \item[AZW 3]
-  \item[EPUB]
-  \item[EPUB 3]
-  \item[MOBI]
-\end{description}
-
-To convert your file to any of these formats, use it as a lowercase name, without spaces, in the
-\texttt{-f} option of \makefourht:
-
-\begin{shellcommand}
-$ make4ht -f odt filename.tex
-$ tex4ebook -f epub3 filename.tex
-\end{shellcommand}
-
-
+\input{sections/output-formats}
 
 \chapter{\texfourht\ Options}
 \label{chap:options}
