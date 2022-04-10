@@ -138,12 +138,12 @@
 <h2 class='chapterHead' id='calling-commands'><span class='titlemark'>Chapter 4</span><br /><a id='x5-350004'></a>Calling Commands</h2>
 The conversion process used by <code class='texttt'>TeX4ht</code> involves several tools (see section <a href='#overview-of-the-translation-process'>4.3<!-- tex4ht:ref: sec:overview  --></a>,
 <a href='#overview-of-the-translation-process'>Overview of the Translation Process<!-- tex4ht:ref: sec:overview  --></a> for details).
-<!-- l. 5 --><p class='indent'>   We provide a build script, called <code class='texttt'>make4ht</code>, which simplifies the process. There is
+<!-- l. 8 --><p class='indent'>   We provide a build script, called <code class='texttt'>make4ht</code>, which simplifies the process. There is
 also a variant of <code class='texttt'>make4ht</code>, <code class='texttt'>tex4ebook</code> for e-book production. See the chapter <a href='OutputFormats.html#output-formats'>Output
 Formats<!-- tex4ht:ref: sec:output-formats  --></a> for more information on output formats.
 </p>   
 <h3 class='sectionHead' id='-makeht-build-system'><span class='titlemark'>4.1   </span> <a id='x5-360004.1'></a><code class='texttt'>make4ht</code> Build System</h3>
-<!-- l. 14 --><p class='noindent'>The conversion command loads a script which takes on itself to invoke the different
+<!-- l. 17 --><p class='noindent'>The conversion command loads a script which takes on itself to invoke the different
 steps of the process, without user intervention. The command assumes the
 form:
 </p>   
@@ -154,45 +154,45 @@ form:
                                                                   
 
                                                                   
-<!-- l. 22 --><p class='indent'>   The first set of options is for the <code class='texttt'>tex4ht.sty</code> and *.4ht style files, the second set
+<!-- l. 25 --><p class='indent'>   The first set of options is for the <code class='texttt'>tex4ht.sty</code> and *.4ht style files, the second set
 is for the <code class='texttt'>tex4ht</code> post-processor, the third for the <code class='texttt'>t4ht</code> post-processor, and the last
 one is for the LaTeX compiler.
-</p><!-- l. 26 --><p class='indent'>   These options are optional.
-</p><!-- l. 28 --><p class='indent'>   The basic invokation of make4ht looks like this:
+</p><!-- l. 29 --><p class='indent'>   These options are optional.
+</p><!-- l. 31 --><p class='indent'>   The basic invokation of make4ht looks like this:
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb60'><a id='x5-36006r1'></a>make4ht filename.tex</pre>
 
 </figure>
-<!-- l. 34 --><p class='indent'>   This command requests a translation according to the default conditions, which
+<!-- l. 37 --><p class='indent'>   This command requests a translation according to the default conditions, which
 are set to produce HTML 5 document.
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb61'><a id='x5-36009r1'></a>make4ht filename.tex <span class='textcolor-b73838'>"2,info"</span></pre>
 
 </figure>
-<!-- l. 40 --><p class='indent'>   This command specifies some options for tex4ht.sty. The "2" option requests a
+<!-- l. 43 --><p class='indent'>   This command specifies some options for tex4ht.sty. The "2" option requests a
 break up of the output into separate web pages, in accordance to the two top
 sectioning levels of the document.
-</p><!-- l. 44 --><p class='indent'>   The <code class='texttt'>info</code> option requests inclusion of documentation of basic configurations to
+</p><!-- l. 47 --><p class='indent'>   The <code class='texttt'>info</code> option requests inclusion of documentation of basic configurations to
 the <code class='texttt'>filename.log</code> file. You can open this file using a text editor to read this
 information.
-</p><!-- l. 47 --><p class='indent'>   Information about additional options can be found in the <a href='texfourhtOptions.html#list-of-options'>List of options<!-- tex4ht:ref: sec:texfouhtoptions  --></a>
+</p><!-- l. 50 --><p class='indent'>   Information about additional options can be found in the <a href='texfourhtOptions.html#list-of-options'>List of options<!-- tex4ht:ref: sec:texfouhtoptions  --></a>
 section.
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb62'><a id='x5-36012r1'></a>make4ht -c foo.cfg filename <span class='textcolor-b73838'>"frames" </span><span class='textcolor-b73838'>"" </span><span class='textcolor-b73838'>"-p"</span></pre>
 
 </figure>
-<!-- l. 55 --><p class='indent'>   This command requests LaTeX to load a <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!-- tex4ht:ref: sec:private-configuration  --></a>,
+<!-- l. 58 --><p class='indent'>   This command requests LaTeX to load a <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!-- tex4ht:ref: sec:private-configuration  --></a>,
 named foo.cfg, using the <code class='texttt'>-c</code> make4ht option. The <code class='texttt'>frames</code> option requires
 placing of the content and table of contents in separate frames. In addition, it
 asks the <code class='texttt'>t4ht</code> command not to produce bitmaps for pictures using the <code class='texttt'>-p</code>
 option.
-</p><!-- l. 60 --><p class='noindent'>
+</p><!-- l. 63 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='-makeht-switches-and-options'><span class='titlemark'>4.2   </span> <a id='x5-370004.2'></a><code class='texttt'>make4ht</code> Switches and Options</h3>
-<!-- l. 62 --><p class='noindent'><code class='texttt'>make4ht</code> accepts following command line switches and options:
+<!-- l. 65 --><p class='noindent'><code class='texttt'>make4ht</code> accepts following command line switches and options:
                                                                   
 
                                                                   
@@ -216,33 +216,33 @@ option.
 <a id='x5-37048r16'></a>-x,--xetex Use xelatex for document compilation</pre>
 
 </figure>
-<!-- l. 83 --><p class='indent'>   You can either use the long form <code class='texttt'>--mode</code>, or the short form <code class='texttt'>-m</code>. Short options can
+<!-- l. 86 --><p class='indent'>   You can either use the long form <code class='texttt'>--mode</code>, or the short form <code class='texttt'>-m</code>. Short options can
 be chained:
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb64'><a id='x5-37051r1'></a>$ make4ht -lsm draft filename.tex</pre>
 
 </figure>
-<!-- l. 90 --><p class='indent'>   The above command is equvalent to the following that uses the long
+<!-- l. 93 --><p class='indent'>   The above command is equvalent to the following that uses the long
 names:
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb65'><a id='x5-37054r1'></a>$ make4ht --lua --shell-escape --mode draft filename.tex</pre>
 
 </figure>
-<!-- l. 96 --><p class='indent'>   Some of these options are discussed in other chapters, see section <a href='Configurations.html#private-configuration-files'>Private
+<!-- l. 99 --><p class='indent'>   Some of these options are discussed in other chapters, see section <a href='Configurations.html#private-configuration-files'>Private
 Configuration Files<!-- tex4ht:ref: sec:private-configuration  --></a> for details on configuration files requested using the <code class='texttt'>-c</code> option,
 and section <a href='Make4htBuildFiles.html#makeht-build-files'>Make4ht Build Files<!-- tex4ht:ref: sec:make4ht-build-files  --></a> for details on build files requested using the <code class='texttt'>-e</code>
 option.
-</p><!-- l. 101 --><p class='indent'>   Supported output formats are described in the chapter <a href='OutputFormats.html#output-formats'>Output Formats<!-- tex4ht:ref: sec:output-formats  --></a>. They
+</p><!-- l. 104 --><p class='indent'>   Supported output formats are described in the chapter <a href='OutputFormats.html#output-formats'>Output Formats<!-- tex4ht:ref: sec:output-formats  --></a>. They
 can be requested using the <code class='texttt'>-f</code> option. This option also supports extensions. This
 feature has been shown in the section <a href='BasicTutorial.html#basic-usage'>Basic Usage<!-- tex4ht:ref: sec:tutorial-basic-usage  --></a> of the tutorial.
-</p><!-- l. 104 --><p class='noindent'>
+</p><!-- l. 107 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='tex-engine'><span class='titlemark'>4.2.1   </span> <a id='x5-380004.2.1'></a>TeX engine</h4>
-<!-- l. 106 --><p class='noindent'><code class='texttt'>make4ht</code> uses TeX compiler to produce a DVI file. Normally, it uses PDFTeX engine,
+<!-- l. 109 --><p class='noindent'><code class='texttt'>make4ht</code> uses TeX compiler to produce a DVI file. Normally, it uses PDFTeX engine,
 but you can also select LuaTeX or XeTeX, using the <code class='texttt'>-l</code> or <code class='texttt'>-x</code> switches.
-</p><!-- l. 109 --><p class='indent'>   The selected engine is important especially for handling of accented and
+</p><!-- l. 112 --><p class='indent'>   The selected engine is important especially for handling of accented and
 non-Latin characters. While <code class='texttt'>TeX4ht</code> doesn’t support OpenType fonts, it can emulate
 the Fontspec package, so it supports documents that use it. With LuaTeX backend,
 <code class='texttt'>TeX4ht</code> should support all Unicode characters. With XeTeX, it needs special
@@ -251,10 +251,10 @@ details.
                                                                   
 
                                                                   
-</p><!-- l. 115 --><p class='noindent'>
+</p><!-- l. 118 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='terminal-output'><span class='titlemark'>4.2.2   </span> <a id='x5-390004.2.2'></a>Terminal Output</h4>
-<!-- l. 117 --><p class='noindent'><code class='texttt'>make4ht</code> hides the terminal output by default. It shows only errors and warnings. It
+<!-- l. 120 --><p class='noindent'><code class='texttt'>make4ht</code> hides the terminal output by default. It shows only errors and warnings. It
 doesn’t always show the correct error context. In such cases, try the <code class='texttt'>-a debug</code>
 option. It is also recommended to use output of this option for TeX4ht bug
 reports.
@@ -263,10 +263,10 @@ reports.
 <pre class='fancyvrb' id='fancyvrb66'><a id='x5-39003r1'></a>$ make4ht -a debug -m draft buggy.tex</pre>
 
 </figure>
-<!-- l. 126 --><p class='noindent'>
+<!-- l. 129 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='output-directory'><span class='titlemark'>4.2.3   </span> <a id='x5-400004.2.3'></a>Output Directory</h4>
-<!-- l. 128 --><p class='noindent'>To copy generated files to a different directoy, use the <code class='texttt'>-d path</code> option. The passed
+<!-- l. 131 --><p class='noindent'>To copy generated files to a different directoy, use the <code class='texttt'>-d path</code> option. The passed
 path can be absolute or relative to the current directory. It also doesn’t need to exist,
 <code class='texttt'>make4ht</code> will create it if necessary.
 </p>   
@@ -274,20 +274,20 @@ path can be absolute or relative to the current directory. It also doesn’t nee
 <pre class='fancyvrb' id='fancyvrb67'><a id='x5-40003r1'></a>$ make4ht -d outdir filename.tex</pre>
 
 </figure>
-<!-- l. 136 --><p class='indent'>   Note that this option doesn’t remove any files from the current directory. If you
+<!-- l. 139 --><p class='indent'>   Note that this option doesn’t remove any files from the current directory. If you
 want to remove the temporary files, use the <code class='texttt'>-m clean</code> option:
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb68'><a id='x5-40006r1'></a>$ make4ht -m clean filename.tex</pre>
 
 </figure>
-<!-- l. 143 --><p class='noindent'>
+<!-- l. 146 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='-makeht-extensions1'><span class='titlemark'>4.2.4   </span> <a id='x5-410004.2.4'></a><code class='texttt'>make4ht</code> extensions</h4>
-<!-- l. 145 --><p class='noindent'><code class='texttt'>make4ht</code> extensions can modify the build process – usually, they are used to
+<!-- l. 148 --><p class='noindent'><code class='texttt'>make4ht</code> extensions can modify the build process – usually, they are used to
 post-process the generated files, to fix some issues that are hard to fix on the TeX
 level.
-</p><!-- l. 149 --><p class='indent'>   The extensions can be enabled or disabled by appending <code class='texttt'>+EXTENSION</code> or
+</p><!-- l. 152 --><p class='indent'>   The extensions can be enabled or disabled by appending <code class='texttt'>+EXTENSION</code> or
 <code class='texttt'>-EXTENSION</code> after the output format name:
                                                                   
 
@@ -297,52 +297,52 @@ level.
 <pre class='fancyvrb' id='fancyvrb69'><a id='x5-41003r1'></a>$ make4ht -uf html5+tidy filename.tex</pre>
 
 </figure>
-<!-- l. 155 --><p class='indent'>   Some of the available extensions:
+<!-- l. 158 --><p class='indent'>   Some of the available extensions:
 </p>     
 <dl class='description'><dt class='description'>
-<!-- l. 158 --><p class='noindent'>
+<!-- l. 161 --><p class='noindent'>
 <span class='ec-lmbx-10'>detect_engine</span> 
 </p>
 </dt><dd class='description'>
-<!-- l. 158 --><p class='noindent'>choose TeX engine and format necessary for the document compilation
+<!-- l. 161 --><p class='noindent'>choose TeX engine and format necessary for the document compilation
 from the magic comments in the document.
 </p>     
 </dd>
 <dt class='description'>
-<!-- l. 159 --><p class='noindent'>
+<!-- l. 162 --><p class='noindent'>
 <span class='ec-lmbx-10'>preprocess_input</span> 
 </p>
 </dt><dd class='description'>
-<!-- l. 159 --><p class='noindent'>add support for Rmarkdown, RTeX, and similar formats supported by
+<!-- l. 162 --><p class='noindent'>add support for Rmarkdown, RTeX, and similar formats supported by
 Knith or Pandoc.
 </p>     
 </dd>
 <dt class='description'>
-<!-- l. 160 --><p class='noindent'>
+<!-- l. 163 --><p class='noindent'>
 <span class='ec-lmbx-10'>staticsite</span> 
 </p>
 </dt><dd class='description'>
-<!-- l. 160 --><p class='noindent'>generate files suitable for static site generators, such as Jekyll or Hugo.</p></dd></dl>
-<!-- l. 163 --><p class='indent'>   You can find full a list of extensions in <a href='https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions'><code class='texttt'>make4ht</code> documentation</a>.
-</p><!-- l. 166 --><p class='noindent'>
+<!-- l. 163 --><p class='noindent'>generate files suitable for static site generators, such as Jekyll or Hugo.</p></dd></dl>
+<!-- l. 166 --><p class='indent'>   You can find full a list of extensions in <a href='https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions'><code class='texttt'>make4ht</code> documentation</a>.
+</p><!-- l. 169 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='overview-of-the-translation-process'><span class='titlemark'>4.3   </span> <a id='x5-420004.3'></a>Overview of the Translation Process</h3>
-<!-- l. 169 --><p class='noindent'>The translation of a LaTeX source file into HTML involves loading of the
+<!-- l. 172 --><p class='noindent'>The translation of a LaTeX source file into HTML involves loading of the
 <code class='texttt'>tex4ht.sty</code> package. It watches loaded packages, and loads corresponding
 configuration files, named as <code class='texttt'>&lt;pkgname&gt;.4ht</code>. These configuration files patches
 commands provided by the packages, and insert special hooks, which are later filled
 with XML code for the output format.
-</p><!-- l. 175 --><p class='indent'>   To ensure that all packages are processed, <code class='texttt'>tex4ht.sty</code> needs to be loaded early,
-ideally before <code class='texttt'>\documentclass</code>.
-</p><!-- l. 178 --><p class='indent'>   Result of the LaTeX run is a DVI file that contain document text and special
+</p><!-- l. 178 --><p class='indent'>   To ensure that all packages are processed, <code class='texttt'>tex4ht.sty</code> needs to be loaded early,
+ideally before <span class='textbf'><code class='texttt'>\documentclass</code></span>.
+</p><!-- l. 181 --><p class='indent'>   Result of the LaTeX run is a DVI file that contain document text and special
 instructions with XML code, or with requests for pictures. This file is then processed
 by the <code class='texttt'>tex4ht</code> command. It generates the output XML or HTML files and the IDV
 file, which is then used for pictures.
-</p><!-- l. 184 --><p class='indent'>   The last command is <code class='texttt'>t4ht</code>. It generates pictures and CSS file.
+</p><!-- l. 187 --><p class='indent'>   The last command is <code class='texttt'>t4ht</code>. It generates pictures and CSS file.
                                                                   
 
                                                                   
-</p><!-- l. 186 --><p class='indent'>   Basic sequence of execution of these command is following:
+</p><!-- l. 189 --><p class='indent'>   Basic sequence of execution of these command is following:
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb70'><a id='x5-42007r1'></a>latex      x            <span class='textcolor-656565'>(</span>or ‘tex x’<span class='textcolor-656565'>)</span> 
@@ -352,7 +352,7 @@ file, which is then used for pictures.
 <a id='x5-42015r5'></a>t4ht       x</pre>
 
 </figure>
-<!-- l. 196 --><p class='indent'>   The three compilations with La(TeX) are needed to ensure proper links. The
+<!-- l. 199 --><p class='indent'>   The three compilations with La(TeX) are needed to ensure proper links. The
 approach is illustrated in the picture <a href='#-texht-process-overview'>4.1<!-- tex4ht:ref: fig:process  --></a>.
 </p>   
 <figure class='figure' id='-texht-process-overview'> 
@@ -364,7 +364,7 @@ approach is illustrated in the picture <a href='#-texht-process-overview'>4.1<!-
                                                                   
 
                                                                   
-<!-- l. 199 --><p class='noindent'><img alt='PIC' src='images/tex4ht_process/tex4ht_process.svg' style='width:100%' />
+<!-- l. 202 --><p class='noindent'><img alt='PIC' src='images/tex4ht_process/tex4ht_process.svg' style='width:100%' />
 </p>
 <figcaption class='caption'><span class='id'>Figure 4.1: </span><span class='content'><code class='texttt'>TeX4ht</code> process overview</span></figcaption><!-- tex4ht:label?: x5-42016r1  -->
                                                                   
@@ -372,60 +372,60 @@ approach is illustrated in the picture <a href='#-texht-process-overview'>4.1<!-
                                                                   
 </figure>     
 <dl class='description'><dt class='description'>
-<!-- l. 205 --><p class='noindent'>
+<!-- l. 208 --><p class='noindent'>
 <span class='ec-lmbx-10'>x.tex</span> 
 </p>
 </dt><dd class='description'>
-<!-- l. 205 --><p class='noindent'>     
+<!-- l. 208 --><p class='noindent'>     
 </p>
-<!-- l. 207 --><p class='noindent'>This is a source TeX/LaTeX/OtherTeX file that imports the style files
+<!-- l. 210 --><p class='noindent'>This is a source TeX/LaTeX/OtherTeX file that imports the style files
 tex4ht.sty and *.4ht. The style files define the features for the output.
 </p>     
 </dd>
 <dt class='description'>
-<!-- l. 209 --><p class='noindent'>
+<!-- l. 212 --><p class='noindent'>
 <span class='ec-lmbx-10'>tex4ht</span> 
 </p>
 </dt><dd class='description'>
-<!-- l. 209 --><p class='noindent'>     
+<!-- l. 212 --><p class='noindent'>     
 </p>
-<!-- l. 211 --><p class='noindent'>The  output  of  TeX  is  a  standard  dvi  file  interleaved  with  special
+<!-- l. 214 --><p class='noindent'>The  output  of  TeX  is  a  standard  dvi  file  interleaved  with  special
 instructions for the postprocessor <code class='texttt'>tex4ht</code> to use. The special instructions
 come from implicit and explicit requests made in the source file through
 commands of <code class='texttt'>TeX4ht</code>.
 </p>     
-<!-- l. 216 --><p class='noindent'>The utility tex4ht translates the dvi code into standard text, while obeying
+<!-- l. 219 --><p class='noindent'>The utility tex4ht translates the dvi code into standard text, while obeying
 the requests it gets from the special instructions. The special instructions
 may  request  the  creation  of  files,  insertion  of  html  code,  filtering  of
 pictures, and so forth.
 </p>     
-<!-- l. 221 --><p class='noindent'>In the extreme case that the source code contains no commands of TeX4ht,
+<!-- l. 224 --><p class='noindent'>In the extreme case that the source code contains no commands of TeX4ht,
 it  gets  the  pure  dvi  code  and  it  outputs  (almost)  plain  text  with  no
 hypertext elements in it.
 </p>     
-<!-- l. 225 --><p class='noindent'>The  special  (<code class='texttt'>\special</code>)  instructions  seeded  in  the  DVI  code  are  not
+<!-- l. 228 --><p class='noindent'>The  special  (<code class='texttt'>\special</code>)  instructions  seeded  in  the  DVI  code  are  not
 understood by dvi processors other than those of TeX4ht.
 </p>     
 </dd>
 <dt class='description'>
-<!-- l. 228 --><p class='noindent'>
+<!-- l. 231 --><p class='noindent'>
 <span class='ec-lmbx-10'>x.idv</span> 
 </p>
 </dt><dd class='description'>
-<!-- l. 228 --><p class='noindent'>     
+<!-- l. 231 --><p class='noindent'>     
 </p>
-<!-- l. 230 --><p class='noindent'>This is a dvi file extracted from x.dvi, and it contains the pictures needed
+<!-- l. 233 --><p class='noindent'>This is a dvi file extracted from x.dvi, and it contains the pictures needed
 in the html files.
 </p>     
 </dd>
 <dt class='description'>
-<!-- l. 233 --><p class='noindent'>
+<!-- l. 236 --><p class='noindent'>
 <span class='ec-lmbx-10'>x.lg</span> 
 </p>
 </dt><dd class='description'>
-<!-- l. 233 --><p class='noindent'>     
+<!-- l. 236 --><p class='noindent'>     
 </p>
-<!-- l. 235 --><p class='noindent'>This is a log file listing the pictures of x.idv, the png files that should
+<!-- l. 238 --><p class='noindent'>This is a log file listing the pictures of x.idv, the png files that should
 be created, CSS information, and user directives introduced through the
 ‘<code class='texttt'>\Needs{...}</code>’ command.
                                                                   
@@ -434,11 +434,11 @@ be created, CSS information, and user directives introduced through the
 </p>     
 </dd>
 <dt class='description'>
-<!-- l. 239 --><p class='noindent'>
+<!-- l. 242 --><p class='noindent'>
 <span class='ec-lmbx-10'>t4ht</span> 
 </p>
 </dt><dd class='description'>
-<!-- l. 239 --><p class='noindent'>This is an interpreter for executing the requests made in the x.lg script.
+<!-- l. 242 --><p class='noindent'>This is an interpreter for executing the requests made in the x.lg script.
 </p>     
 </dd></dl>
                                                                   
