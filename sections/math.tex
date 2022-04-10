@@ -4,7 +4,10 @@
 Default method for displaying math in the HTML output is a mixture of HTML elements and pictures. Pictures
 are used for display math and elements that are hard to display using HTML and CSS only, like fractions or square roots.
 
-The downside of this method is that pictures don't 
+The downside of this method is that pictures may not align properly to the text baseline in inline math. Furthermore, by default,
+bitmap graphics is produced, which cannot be resized without losing of quality. To use vector SVG graphics instead, use the \option{svg} 
+option. To prevent mixing of HTML, use the \option{pic-m} option. There are also similar options for requiring pictures for equations
+and various math environments. See the chapter \namerefpage{chap:options}.
 
 
 \subsection{MathML}
