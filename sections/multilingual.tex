@@ -1,0 +1,25 @@
+\section{Multi-lingual support}
+
+RTL support in the ODT output: \url{https://tex.stackexchange.com/a/470434/2891}.
+
+\subsection{Right-to-left text}
+
+There is a difference in the RTL support for HTML and ODT output formats. In HTML, RTL can be requested using:
+
+\DocConfigure{LRdir} { value for the dir attribute}\EndDoc
+
+Example:
+
+\begin{texsource}
+\ConfigureEnv{arab}
+{\Configure{LRdir}{ dir="rtl"}}
+{\Configure{LRdir}{}}{}{}
+\end{texsource}
+
+This configuration sets the direction to \term{rtl} inside the \term{arab} environment and resets it after the environment end.
+
+In the ODT output, different mechanism is used:
+
+\begin{texsource}
+\ConfigureEnv{arab}{\@rltrue}{\@rlfalse}{}{}
+\end{texsource}
