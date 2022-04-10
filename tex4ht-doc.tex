@@ -113,83 +113,8 @@ for the EB Garamond font.
 \input{sections/document_structure}
 
 % \section{Document Navigation}
+\input{sections/crosslinks.tex}
 
-
-\section{Cross-links}
-
-Cross-links provide navigation between several HTML pages generated from a single document.
-
-The following configurations modify behaviour of cross-links between pages in a multi page document.
-
-\DocConfigure{crosslinks} {left-delimiter} {right-delimiter} {next} {prev} {prev-tail} {front} {tail} {up}\EndDoc
-
-This command configures the appearance of the cross-links between hypertext pages obtained for sectioning commands.
-
-\begin{texsource}
- \Configure{crosslinks}
-   {}{}{$\scriptstyle\Rightarrow$}
-   {$\scriptstyle\Leftarrow$}
-   {}{}{}{$\scriptstyle\Uparrow$}
-\end{texsource}
-
-\DocConfigure{crosslinks*} {1--7 arguments}\EndDoc
-
-Links to be included and their order. Available
-  options: \textit{next}, \textit{prev}, \textit{prevtail}, \textit{tail}, \textit{front}, \textit{up}.
-  The last argument must be empty.
-
-Default values:
-
-\begin{texsource}
-\Configure{crosslinks*}{next}
-   {prev}{prevtail}
-   {tail}{front}
-   {up}{}
-\end{texsource}
-
-\DocConfigure{crosslinks+} {before-top-links} {after-top-links} {before-bottom-links} {after-bottob-links}\EndDoc
-
-The top cross links are omitted, if both \verb|#1| and \verb|#2| are empty.
-The bottom cross links are omitted, if both \verb|#3| and \verb|#4| are empty.
-
-\DocConfigure{next} {the anchor of the next button of the front page}\EndDoc
-
-Default: The value provided in \texcommand{\Configure{crosslinks}}
-
-\DocConfigure{next+} {before} {after}\EndDoc
-
-\begin{description}
-  \item[\#1]  before the next button of the front page, when the `next'
-       option is active.
-  \item[\#2]  after the button
-\end{description}
-
-    Default: The values provided in \texcommand{\Configure{crosslinks}}
-
-\DocConfigure{crosslinks:next} {local configurations for the delimiters and hooks}\EndDoc
-\DocConfigure{crosslinks:prev} {local configurations for the delimiters and hooks}\EndDoc
-\DocConfigure{crosslinks:prevtail} {local configurations for the delimiters and hooks}\EndDoc
-\DocConfigure{crosslinks:tail} {local configurations for the delimiters and hooks}\EndDoc
-\DocConfigure{crosslinks:front} {local configurations for the delimiters and hooks}\EndDoc
-\DocConfigure{crosslinks:up} {local configurations for the delimiters and hooks}\EndDoc
-
-
-\DocConfigure{crosslinks-}{before} {after}\EndDoc
-
-Asks to show linkless buttons with the following insertions.
-
-The default values are used, if both \verb|#1| and \verb|#2| are empty
-
-   Examples:
-
-\begin{texsource}
-\Configure{crosslinks-}{}{}
-
-\Configure{crosslinks-}
-    {\HCode{<span class="hidden">}[}
-    {]\HCode{</span>} }
-\Css{span.hidden {visibility:hidden;}}
-\end{texsource}
 
 \section{Tables of Contents}
 
