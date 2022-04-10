@@ -1,0 +1,69 @@
+\subsection{Unicode}
+\label{sec:unicode}
+
+Generally speaking, \texfourht\ supports \term{Unicode}, but there are some
+issues to be aware of. Most complete support exists for Lua\LaTeX, thanks to
+special Lua script which is automatically loaded during the compilation. No
+additional packages are necessary.
+
+PDF\LaTeX\ doesn't support nativelly, but it is possible to emulate it using the
+\package{inputenc} and \package{fontenc} packages:
+
+\begin{texsource}
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\begin{document}
+Unicode text
+\end{document}
+\end{texsource}
+
+Xe\LaTeX\ is an Unicode format, similarly to Lua\LaTeX. The supporting
+mechanism for \texfourht\ is different in this case and full Unicode range is
+not supported out of the box. By default, only most Latin based characters are
+supported. For other scripts, such as Greek or Cyrillic, two ways to enable
+support exists. 
+
+First option is to define new font family using \package{fontspec} \texcommand{\newfontfamily} with the \texttt{Script} option.
+
+\begin{texsource}
+\newfontfamily\greekfont{Linux Libertine O}[Script=Greek]
+\end{texsource}
+
+
+The second option is to declare load support for a script in the custom config
+file using the \texcommand{\xeuniuseblock}:
+
+
+\begin{texsource}
+\xeuniuseblock{Greek}
+\end{texsource}
+
+The block names are based on \href{https://en.wikipedia.org/wiki/Unicode_block}{Unicode blocks}.
+
+It is also possible to declare all characters in an Unicode range. The command
+\texcommand{\xeuniregisterblockhex} takes two hexadecimal parameters with
+Unicode range to be declared.
+
+\begin{texsource}
+\xeuniregisterblockhex{0100}{017F}
+\end{texsource}
+
+Individual character can be declared using the \texcommand{\xeuniregisterchar} command:
+
+\begin{texsource}
+\xeuniregisterchar{"1F00}
+\end{texsource}
+
+In contrast to \texcommand{\xeuniregisterblockhex}, it uses decimal numbers by
+default, so it is necessary to use the \texttt{"} character in front of
+a hexadecimal number.
+
+\begin{warning}
+It is possible to run into issues because of the way how Xe\LaTeX\ Unicode
+support works. Common problem is filename support, for example in included
+graphics. In general, it is better to avoid such filenames. If it is not possible, try to use the \texcommand{\detokenize} command.
+\begin{texsource}
+  \includegraphics{\detokenize{háček.jpg}}
+\end{texsource}
+\end{warning}
