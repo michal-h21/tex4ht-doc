@@ -250,11 +250,32 @@ Issues with drivers: \url{https://tex.stackexchange.com/a/471460/2891}.
 
 \section{Math}
 \subsection{Default math handling}
+
+Default method for displaying math in the HTML output is a mixture of HTML elements and pictures. Pictures
+are used for display math and elements that are hard to display using HTML and CSS only, like fractions or square roots.
+
+The downside of this method is that pictures don't 
+
+
 \subsection{MathML}
 
-\mathml\ is a XML markup for the math encoding. It is supported in many
-aplications including OpenOffice Writer or Firefox web browser. 
-The advantage over use of images % Todo: write about advantages of MathML.
+\mathml\ is a XML markup for the math encoding. 
+It is supported in many aplications including OpenOffice Writer or Firefox web browser. 
+In the HTML output, you can enable \mathml{} using the \option{mathml} option. In other output formats,
+for example ODT, \mathml{} is used by default.
+
+The advantage over use of images is that the rendered math fits style of the surrounding text,
+and it can be resized without losing of quality.
+
+Disadvantage is that it is not fully supported by some Web browsers fully, in particular
+by Google Chrome and other browsers that are derived from Chrome's engine. Fortunatelly,
+the support can be added using JavaScript. Popular option is to use MathJax:
+
+\begin{texsource}
+$ make4ht filename.tex "mathml,mathjax"
+\end{texsource}
+
+\paragraph{\mathml{} troupbleshooting}
 
 The \mathml\ code produced by \texfourht\ may contain some issues. For example,
 one common issue may happen when the math contain unmatched delimiters:
@@ -265,18 +286,15 @@ one common issue may happen when the math contain unmatched delimiters:
 
 In such cases, the \option{matml-} may help. 
 
-It is also advisable to always use \extension{common\_domfilters}
-\term{make4ht} extension (see section \ref{sec:make4ht-extensions} for more
-information about \term{make4ht} extensions), as it fixes some common \mathml\
-errors that cannot be easily fixed on the \TeX\ level.
+The \extension{common\_domfilters}
+extension (see section \ref{sec:make4ht-extensions} for more
+information about \term{make4ht} extensions), fixes some common \mathml\
+errors that cannot be easily fixed on the \TeX\ level. 
 
+\paragraph{Additional information}
 
 If you want to add original \LaTeX\ source as an annotation to your MathML formulas,
-you can try a configuration from this \href{https://tex.stackexchange.com/a/637910/2891}{this answer}.
-
-Add information about the \url{https://github.com/pshihn/math-ml} - it adds
-support for MathML in all modern web browsers with HTML 5.
-
+you can try a configuration from \href{https://tex.stackexchange.com/a/637910/2891}{this answer}.
 
 \subsection{MathJax}
 \texfourht\ supports MathJax, library for math rendering in HTML documents. 
@@ -407,7 +425,7 @@ provide MathJax configuration for both of these environments, as they are not su
 
 
 
-\paragraph{\mathml\ mode}
+\paragraph{MathJax's \mathml\ mode}
 
 Math is converted to \mathml\ by \texfourht, MathJax then renders it. Custom
 commands and cross-references work in this mode.
