@@ -24,6 +24,8 @@ A star '*' prefix calls for accumulative configurations
 
 \subsection{Document structure}
 
+The following configurations are used to declare tags for basic structure of generated documents.
+
 
 \DocConfigure{DOCTYPE} {doctype definition}\EndDoc
 \DocConfigure{HTML} {HTML start} {HTML end}\EndDoc
@@ -33,21 +35,8 @@ A star '*' prefix calls for accumulative configurations
 \DocConfigure{TITLE} {TITLE start} {TITLE end}\EndDoc
 \DocConfigure{Preamble} {code executed at the very beging} {code executed at \cmd{EndPreamble}}\EndDoc
 
-\begin{texsource}
-<DOCTYPE>
-<HTML 1>
-  <HEAD 1>
-     <TITLE 1>
-        <@TITLE>
-        <TITLE+>
-     <TITLE 2>
-     <@HEAD>
-  <HEAD 2>
-  <BODY 1>
-  ......
-  <BODY 2>
-<HTML 2>
-\end{texsource}
+
+
 
 The \texcommand{\Configure{@HEAD}{...}} command is additive, concatenating the
 content of all of its appearances.  An empty parameter requests
@@ -71,12 +60,27 @@ contributes `BC'.
    Variants of \texcommand{\Configure{@HEAD}} which contribute their content,
    respectively, after \htmlcommand{<body>} and before \htmlcommand{</body>}.
 
-\DocConfigure{CutAtTITLE+} {an insertion just before the content of TITLE}\EndDoc
-\DocConfigure{HPageTITLE+} {an insertion just before the content of TITLE}\EndDoc
 
-If \texcommand{#1} is a one parametric macro, it gets the title content for an
-argument.
+The document structure hooks are placed in the following sequence:
 
+
+\begin{texsource}
+<DOCTYPE>
+<HTML 1>
+  <HEAD 1>
+     <TITLE 1>
+        <@TITLE>
+        <TITLE+>
+     <TITLE 2>
+     <@HEAD>
+  <HEAD 2>
+  <BODY 1>
+  <@BODY>
+  ......
+  <@/BODY>
+  <BODY 2>
+<HTML 2>
+\end{texsource}
 
 
 \subsection{Titles}
@@ -103,4 +107,9 @@ Acts as a hook for introducing localized configurations. As is the case for
 \texcommand{\Configure{@HEAD}}, the contribution of \texcommand{\Configure{@TITLE}} is also
 additive.
 
+\DocConfigure{CutAtTITLE+} {an insertion just before the content of TITLE}\EndDoc
+\DocConfigure{HPageTITLE+} {an insertion just before the content of TITLE}\EndDoc
+
+If \texcommand{#1} is a one parametric macro, it gets the title content for an
+argument.
 
