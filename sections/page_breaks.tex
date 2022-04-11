@@ -1,0 +1,83 @@
+\section{Page Breaks}
+
+\texfourht{} can break the generated document to separate files, each containing 
+contents of sectioning unit. The ‘1’, ‘2’, \ldots ,‘8’ options asks for a
+tree-structured set of files, reflecting on the sectioning of the document to
+the specified depth. 
+
+Sequential prev-next links within the hierarchy, instead
+of the default hierarchical ones, can be requested with the \option{next} option.
+The option \option{sections+} creates titles for the sectioning commands that link
+to the tables of contents. The \option{sec-filename} option requests that split  files will
+be named according to the section titles, instead of sequential numbers.
+
+Finer control is possible with the following commands and configurations:
+
+
+\DocCommand{CutAt}\marg{at-unit,until-unit-1,until-unit-2,\ldots}
+
+This directive asks the sectioning commands \cmd{at-unit} to place their units in
+separate hypertext pages. The pages are to terminate upon encountering any of
+the commands in the list \cmd{at-unit}, \cmd{until-unit-1}, \cmd{until-unit-2},\ldots.
+
+Within the \cmd{CutAt} instruction, the starred commands of \LaTeX{} should be
+referenced with the prefix ‘\textit{like}’ instead of the postfix of ‘*’, and appendices
+through the entry ‘appendix’.
+
+A plus character ‘+’, before the leading parameter, requests buttons that link
+to the hypertext pages; e.g., ‘\cmd{CutAt}\marg{+likesection}’. 
+
+
+The end points of sections not specified within the \cmd{CutAt} commands can be made
+known with instructions of the form \cmd{Configure}\marg{endunit}\marg{unit,unit,...}. 
+
+\begin{texsource}
+\CutAt{section,chapter}
+\tableofcontents
+\chapter{...}  ......  \section{...}  ......  \section{...}  ......
+\chapter{...}  ......  \section{...}  ......
+\end{texsource}
+
+Cut points at arbitrary points can be introduced by introducing section-like
+commands in a manner similar to
+
+\begin{texsource}
+\NewSection\mysection{}
+\CutAt{mysection}
+\end{texsource}
+
+\DocConfigure{CutAt} {unit} {before-button} {after-button}\EndDoc
+
+\DocConfigure{+CutAt}
+{sectioning type}
+{before}
+{after}\EndDoc
+
+Requests delimiters for the \cmd{CutAt} buttons of the specified
+     sectioning type
+
+Example:   
+
+\begin{texsource}
+\Configure{+CutAt}{mysection}{[}{]}
+\end{texsource}
+
+\DocCommand{PauseCutAt}\marg{section type}
+\DocCommand{ContCutAt}\marg{section type}
+
+Pause and continue page breaking for given section type.
+
+\DocConfigure{CutAt-filename} {filename for the next cut file}\EndDoc
+
+   A 2-parameter hook for tailoring section-based filenames.
+   The section type is available through \#1. The section title
+   is accessible through \#2.
+
+Example:
+
+\begin{texsource}
+\Configure{CutAt-filename}{\NextFile{#1-#2.html}}
+\end{texsource}
+
+
+
