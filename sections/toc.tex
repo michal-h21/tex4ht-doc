@@ -1,0 +1,186 @@
+\section{Tables of Contents}
+
+\texfourht{} supports tables of contents created using the \cmd{tableofcontents}
+command in the converted document. In addition, it can add local tables of contents
+to the 
+
+Created from the entries collected in the previous compilation within
+a \file{\cmd{jobname}.4tc} file.
+
+
+\DocConfigure{tableofcontents}
+ {before-toc} {end-of-toc} {after-toc} {before-nonindented-par} {before-indented-par}\EndDoc
+
+The \textit{end-of-toc} is inserted at the end of the internal environment of the tables. 
+The \textit{after-toc} is included after leaving the internal environment. 
+
+\DocCommand{tableofcontents}\oarg{unit-1,unit-2,\ldots}
+\DocCommand{TableOfContents}\oarg{unit-1,unit-2,\ldots}
+
+The \cmd{tableofcontents} command may be followed by a comma separated
+list of sectioning unit names to be included in the table of
+contents.  The list should be enclosed within square brackets.
+Alternatively, a command of the form \cmd{TableOfContents}\oarg{\ldots} might
+be used.
+
+\DocConfigure{writetoc} {definitions-for-the-writing-environment}\EndDoc
+
+\texfourht{} expands and then writes the sectioning titles into an auxiliary
+file, and it might encounter there problems from macros that are not fit for
+such conditions or for inclusion in the table of contents. The current
+configuration instruction allows to locally modify the behavior of macros for
+the writing phase.
+
+
+New configurations are added to those request earlier by the command.  An empty
+argument cancels the earlier contributions.
+
+For instance, the instruction \texcommand{\section{Foo \\ bar}} suggests a configuration
+similar to \texcommand{\Configure{writetoc}{\let\\\space}}. 
+
+\subsection{Local tables of contents}
+
+The following commands and configurations can produce tables of contents
+for chapters or sections.
+
+\DocCommand{ConfigureToc}\marg{unit-name}%
+\marg{before unit number}%
+\marg{before content}%
+\marg{before page number}%
+\marg{at end}%
+
+\begin{itemize}
+  \item Empty arguments request the omission of the corresponding field.
+
+  \item \cmd{TocCount}  Specifies the entry count withing the \file{\cmd{jobname}.4tc} file.
+
+  \item \cmd{TitleCount} Count of entries submitted to the toc file
+\end{itemize}
+
+Example:
+
+\begin{texsource}
+\ConfigureToc{section}
+   {}
+   {\Picture[*]{pic.jpg width="13"  height="13"}~}
+   {}
+   {\HCode{<br />}}
+\end{texsource}
+
+As an alternative to \cmd{ConfigureToc}, you can also use the following alternative:
+
+\begin{texsource}
+\def\toc<unit-name>#1#2#3{<before unit number>#1<before content>#2%
+    <before page number>#3<at end>}
+\end{texsource}
+
+
+
+
+\DocConfigure{TocLink} {\cmd{Link} like command}\EndDoc
+
+Configures the link offered in the third arguments of \cmd{ConfigureToc}
+
+Example:   
+
+\begin{texsource}
+\Configure{TocLink}{\Link{#2}{#3}#4\EndLink}
+\end{texsource}
+
+\DocCommand{TocAt}\marg{\#1,\#2,\#3,\ldots}
+
+\begin{description}
+  \item[\#1]           section type for which local tables of contents
+                 \cmd{Toc\#1} are requested
+  \item[\#2,\#3,\ldots]    sectioning types to be included in the tables of contents
+\end{description}
+
+The non-leading arguments may be preceded by slashes '/', in
+which cases the arguments specify end points for the tables.
+
+The default setting requests automatic insertion of the local
+tables immediately after the sectioning heads.
+
+A star `*' character may be introduced, between the  \cmd{TocAt} and
+the left brace, to request the appearances of the tables of
+contents at the end of the units' prefaces.
+
+A hyphen `-' character, on the other hand, disables the automatic
+insertions of the local tables.
+
+In case of a single argument, the command removes the
+existing definition of \cmd{Toc\#1}.
+
+    Example:
+
+\begin{texsource}
+\TocAt{mychapter,mysection,mysubsection,/myappendix,/mypart}
+\TocAt-{mysection,mysubsection,/mylikesection}
+\section{...}...\Tocmysection
+\end{texsource}
+
+The definition  of the local table of contents can be redefined
+within \texcommand{\csname Toc#1\endcsname}.
+
+Example:
+
+\begin{texsource}
+\TocAt{section}
+\def\Tocsection{\TableOfContents[section]}
+
+\Css{div.sectionTOCS {
+                    width : 30\%;
+                    float : right;
+               text-align : left;
+           vertical-align : top;
+              margin-left : 1em;
+                font-size : 85\%;
+         background-color : \#DDDDDD;
+    }}
+\end{texsource}
+
+Example: Table of content before the section title.
+
+\begin{texsource}
+\Configure{section}{}{}
+   {\Tocsection \let\saveTocsection=\Tocsection
+    \def\Tocsection{\let\Tocsection=\saveTocsection}%
+    \ifvmode \IgnorePar\fi \EndP\IgnorePar
+    \HCode{<h3 class="sectionHead">}\TitleMark\space\HtmlParOff}
+   {\HCode{</h3>}\HtmlParOn\ShowPar \IgnoreIndent \par}
+ \end{texsource}
+
+\DocConfigure{TocAt} {before the tables of contents} {after the tables of contents}\EndDoc
+\DocConfigure{TocAt*} {before the tables of contents} {after the tables of contents}\EndDoc
+
+These configurations can be used to execute code before and after \cmd{TocAt}, respective
+\cmd{TocAt*}.
+
+\DocConfigure{tableofcontents*} {section types}\EndDoc
+
+A non-empty  parameter asks to implicitly introduce
+a \cmd{tableofcontents} upon reaching the first sectioning
+command, if no \cmd{tableofcontents} command is encountered
+earlier. The parameter assumes a colon-separated list
+of sectioning types to be included in the output
+of \cmd{tableofcontents}.  Starred variants of sectioning
+types should be referenced with the `like' prefix.
+
+An empty parameter cancels earlier requests for implicit
+calls to \cmd{tableofcontents} (e.g., embedded within requests
+to package options 1, 2, 3, 4)
+
+Example:
+
+\begin{texsource}
+\Configure{tableofcontents*}{part,likepart,%
+           section,likesection,subsection,likesubsection}
+\end{texsource}
+
+\DocCommand{contentsname} A \LaTeX{} macro stating the title for a table of contents division.
+
+
+
+   
+
+
