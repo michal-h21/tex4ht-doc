@@ -1,0 +1,125 @@
+\section{Sectioning commands}
+\DocConfigure{unit-name}
+{start}
+{end}
+{before title}
+{after title}\EndDoc
+
+This command determines the content to be inserted at the mentioned locations of the specified units. 
+
+Example:
+
+\begin{texsource}
+\Configure{chapter}
+{\HCode{<section class="chapter">}}  {\HCode{</section>}}
+{\HCode{<h2 class="chapterHead">}\chaptername ~\TitleMark
+\HCode{<br />}}
+{\HCode{</h2>}}
+\end{texsource}
+
+
+
+\DocCommand{ConfigureMark}\marg{unit-name}\marg{print section number}
+
+
+Defines a macro \cmd{<<unit-name>>HMark} to hold the given argument. Upon
+entering the unit, \cmd{TitleMark} command gets the content of this macro.
+
+Some built-in configurations of \texfourht{} require an argument for the
+\cmd{<<unit-name>>HMark} commands. For safety, these commands should
+always be followed by a, possiblely empty, argument.  The argument
+should be a separator between the title mark and its content.
+
+Example:
+
+\begin{texsource}
+\Configure{section}
+   {}{}
+   {\HCode{<h3>}\TitleMark\space}    {\HCode{</h3>}}
+\ConfigureMark{section}{\thesection}
+\end{texsource}
+
+
+\DocCommand{NewSection}\cmd{unit} \marg{mark-for-toc}
+
+This directive introduces a sectioning command \cmd{unit}, which submits
+\textit{mark-for-toc} to the tables of contents.
+
+\begin{texsource}
+\newcounter{c}
+\NewSection\X {\thec}
+\Configure{X}
+{}{} 
+{\refstepcounter{c}\ifvmode\IgnorePar\fi\EndP\HCode{<h2>}\TitleMark\space}
+{\HCode{</h2>}}
+\ConfigureMark{X}{\arabic{c}}
+\end{texsource}
+
+\subsection{Links to and from TOC}
+\DocConfigure{toTocLink} {start link} {end link}\EndDoc
+
+Each unit title contains a \cmd{Link}\marg{\ldots}\marg{\ldots}\ldots\cmd{EndLink} command.
+The first argument of \cmd{Link} points to the first table of contents
+referencing the title. The second argument provides an anchor
+for references to the title (mainly from tables of contents).
+
+The package option \option{section+} requests the inclusion of the
+title within the anchor.  Without this option, the link command
+resides between the title mark and its content.
+
+The \cmd{Configure}\marg{toTocLink} command is provided for configuring
+the \cmd{Link} and \cmd{EndLink} instructions.  In the default setting,
+when the \option{sections+} option is not activated, the \cmd{Link}
+command is altered to replace its first argument with an empty
+argument.
+
+Example:
+
+\begin{texsource}
+\Configure{toTocLink}
+     {\Link}
+     {\ifx \TitleMark\sectionHMark
+        \Picture[\up]{haut.jpg align="right"}%
+        \EndLink
+        \TitleMark\space
+      \else \EndLink \fi
+     }
+  \def\up{[up]}
+\end{texsource}
+
+\DocConfigure{toToc} 
+{unit type}
+{desired contents type  (if empty, `unit type' is assumed)}\EndDoc
+
+You can also pass special values to \textit{unit type}:
+
+\begin{description}
+  \item[empty] stop adding entries of `unit type' to toc
+  \item[@] add entries of `unit type' to toc
+   \item[?] resume mode in effect before the last stop
+\end{description}
+
+Example: 
+\begin{texsource}
+\Configure{toToc}{chapter}{likechapter}
+\end{texsource}
+
+Introduces chapter as likechapter into TOC.
+
+Example that temporarily suppresses inclusion of chapter to TOC:
+
+\begin{texsource}
+\Configure{toToc}{}{chapter}
+\chapter{...}
+\Configure{toToc}{@}{chapter}
+\end{texsource}
+
+\DocCommand{NoLink}\marg{section name}
+
+Ignore option \option{section+} for sections of type \#1
+
+
+\DocConfigure{NoSection} {before} {after}\EndDoc
+
+Insertions around the parameters of sectioning commands, applied when
+the parameters are not used to create titles for the divisions.
