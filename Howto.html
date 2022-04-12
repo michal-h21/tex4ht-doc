@@ -106,6 +106,8 @@
 
                                                                   
 
+
+
 <span class='chapterToc'>8 <a href='Make4htBuildFiles.html#makeht-build-files'>Make4ht Build Files</a></span>
 
 
@@ -194,10 +196,10 @@ this is that you need to use a correct grouping for content that should be affec
 these operators. For example, instead of
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb40'><a id='x4-20003r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>A_</span><span class='textcolor-af3f3f'>\mathit</span><span class='textcolor-387f38'>{...}</span><span class='textcolor-b73838'>$</span></pre>
                                                                   
 
                                                                   
+<pre class='fancyvrb' id='fancyvrb40'><a id='x4-20003r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>A_</span><span class='textcolor-af3f3f'>\mathit</span><span class='textcolor-387f38'>{...}</span><span class='textcolor-b73838'>$</span></pre>
 
 </figure>
 <!-- l. 15 --><p class='indent'>   use the following, with added group around the <code class='texttt'>\mathit</code> command:
@@ -237,11 +239,11 @@ and then pipes the modified output to <code class='texttt'>make4ht</code>.
 </figure>
 <!-- l. 52 --><p class='indent'>   This, and other common issues, can be done using the following Lua
 script:
-</p>   
-<figure class='luasource' role='doc-example'>
                                                                   
 
                                                                   
+</p>   
+<figure class='luasource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb46'><a id='x4-20033r1'></a><span class='textcolor-2838af'>for</span> line <span class='textcolor-2838af'>in </span><span class='textcolor-387f38'>io.lines</span><span class='textcolor-878787'>() </span><span class='textcolor-2838af'>do</span> 
 <a id='x4-20035r2'></a>  <span class='textcolor-878787'><span class='textit'>-- fix primes</span></span> 
 <a id='x4-20037r3'></a>  line <span class='textcolor-656565'>=</span> line<span class='textcolor-878787'>:</span>gsub<span class='textcolor-878787'>(</span><span class='textcolor-b73838'>[[%'%^(.-)%_]]</span><span class='textcolor-878787'>, </span><span class='textcolor-b73838'>[[^{\prime %1}_]]</span><span class='textcolor-878787'>)</span> 
@@ -285,14 +287,14 @@ dimensions are calculated. By default, <code class='texttt'>TeX4ht</code> relies
 dimensions provided by the Graphics package. If you use explicit dimensions
 (like <code class='texttt'>width=0.5\textwidth</code>), the actual dimension calculated by TeX is
 used.
+                                                                  
+
+                                                                  
 </p><!-- l. 6 --><p class='indent'>   One problem is that if you set only one dimension, for example width, the
 other dimension will be set to the same value. You usually don’t want this,
 unless your image is a square. To get the correct value for all dimensions,
 Graphics uses a <span class='obeylines-h'><code class='verb'>.xbb</code></span> file for image. It can be created using the following
 command:
-                                                                  
-
-                                                                  
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb48'><a id='x4-24003r1'></a>ebb -x *.jpg</pre>
@@ -335,14 +337,14 @@ provides.
 <!-- l. 49 --><p class='indent'>   produces following HTML code:
 </p>   
 <figure class='htmlsource' role='doc-example'>
+                                                                  
+
+                                                                  
 <pre class='fancyvrb' id='fancyvrb51'><a id='x4-25033r1'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>img </span><span class='textcolor-387f38'>style</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'width:50%' </span><span class='textcolor-387f38'>alt</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'PIC' </span><span class='textcolor-387f38'>src</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'example-image.png' </span><span class='textcolor-878787'>/&gt;</span></pre>
 
 </figure>
 <!-- l. 55 --><p class='indent'>   To disable setting of the image dimensions in HTML code completely use the
 following configuration:
-                                                                  
-
-                                                                  
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb52'><a id='x4-25043r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 

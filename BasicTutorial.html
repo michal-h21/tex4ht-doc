@@ -106,6 +106,8 @@
 
                                                                   
 
+
+
 <span class='chapterToc'>8 <a href='Make4htBuildFiles.html#makeht-build-files'>Make4ht Build Files</a></span>
 
 
@@ -147,11 +149,11 @@ best-supported conversion targets.
 </p>   
 <h3 class='sectionHead'><span class='titlemark'>2.2   </span> <a id='x3-50002.2'></a>Basic Usage</h3>
 <!-- l. 18 --><p class='noindent'>Conversion is invoked using the <code class='texttt'>make4ht</code> command:
-</p>   
-<figure class='shellcommand' role='doc-example'>
+</p>
                                                                   
 
                                                                   
+<figure class='shellcommand' role='doc-example'>   
 <pre class='fancyvrb' id='fancyvrb1'><a id='x3-5003r1'></a>$ make4ht filename.tex</pre>
 
 </figure>
@@ -195,13 +197,13 @@ is equal to the following:
 is also an option <code class='texttt'>-x</code> (or <code class='texttt'>--xetex</code>) that allows the use of XeLaTeX for the
 compilation. If neither of these options is used, the file will be converted with the
 default PDFLaTeX engine.
+                                                                  
+
+                                                                  
 </p><!-- l. 59 --><p class='indent'>   For example, if we compile the sample file without the <code class='texttt'>-l</code> option, we would get a
 different result:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb7'><a id='x3-5028r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!-- l. 4 --&gt;</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>Příliš žlut’oučký kůň úpěl d’ábelské ódy.</span> 
 <a id='x3-5030r2'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></pre>
 </figure>
@@ -238,12 +240,12 @@ options. They can be passed as a first positional argument after filename to
 is placed in a separate file. If you have a large document, you may want to use a
 separate page for each chapter, with a list of footnotes at the end of these chapters.
 You can use the following options:
-</p>   
-<figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb10'><a id='x3-6006r1'></a>$ make4ht filename.tex <span class='textcolor-b73838'>"3,sec-filename,fn-in"</span></pre>
                                                                   
 
                                                                   
+</p>   
+<figure class='shellcommand' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb10'><a id='x3-6006r1'></a>$ make4ht filename.tex <span class='textcolor-b73838'>"3,sec-filename,fn-in"</span></pre>
 
 </figure>
 <!-- l. 107 --><p class='indent'>   There are other numeric options, each of them breaks document into separate
