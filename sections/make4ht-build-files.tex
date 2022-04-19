@@ -1,6 +1,62 @@
 \chapter{Make4ht Build Files}
 \label{sec:make4ht-build-files}
 \section{Commands execution}
+
+The following example uses a custom command, \texttt{myhtlatex}, to 
+determine if the document needs a recompilation. It makes MD5 checksum
+of temporary files used by \texfourht{}, before and after the compilation.
+
+It checksums differ, new sections or labels were added to the document, 
+and more \LaTeX{} compilations may be necessary to ger correct hyperlinks.
+The script will execute \LaTeX{} again, until checksums don't change.
+
+
+\begin{luasource}
+local htlatex = require "make4ht-htlatex"
+
+local function get_checksum(main_file, extensions)
+  -- make checksum for temporary files
+  local checksum = ""
+  local extensions = extensions or {"aux", "4tc", "xref"}
+  for _, ext in ipairs(extensions) do
+    local f = io.open(main_file .. "." .. ext, "r")
+    if f then
+      local content = f:read("*all")
+      f:close()
+      -- make checksum of the file and previous checksum
+      -- this way, we will detect change in any file
+      checksum = md5.sumhexa(checksum .. content)
+    end
+  end
+  return checksum
+end
+
+Make:add("myhtlatex", function(par)
+  -- get checksum of temp files before compilation
+  local checksum = get_checksum(par.input)
+  local status = htlatex.htlatex(par)
+  -- stop processing on error
+  if status ~= 0 then return status end
+  -- get checksum after compilation
+  local newchecksum = get_checksum(par.input)
+  -- this is needed to prevent possible infinite loops
+  local compilation_count = 1
+  local max_compilations  = 3 -- <- change as you want
+  while checksum ~= newchecksum do
+    -- 
+    if compilation_count > max_compilations then return status end
+    status = htlatex.htlatex(par)
+    -- stop processing on error
+    if status ~= 0 then return status end
+    checksum = newchecksum
+    -- get checksum after compilation
+    newchecksum = get_checksum(par.input)
+  end
+  return status
+end)
+Make:myhtlatex {}
+\end{luasource}
+
 \section{Filters}
 
 Some samples:
