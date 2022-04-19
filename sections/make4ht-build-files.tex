@@ -51,6 +51,7 @@ Make:add("myhtlatex", function(par)
     checksum = newchecksum
     -- get checksum after compilation
     newchecksum = get_checksum(par.input)
+    compilation_count = compilation_count + 1
   end
   return status
 end)
