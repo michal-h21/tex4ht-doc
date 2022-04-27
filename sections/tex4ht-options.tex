@@ -81,9 +81,11 @@ configuration files.
 
 \item[1, 2, 3, 4, 5, 6, 7] for automatic sectioning pagination (to
   break at various section levels), use the appropriate command line
-  option \verb=1, 2, 3, 4,= \verb=5, 6, 7=. Option 1 doesn't break pages
-  at all, 2 at parts, 3 at chapters, 4 at sections, 5 at subsections,
-  6 at subsubsections and 7 at paragraphs.
+  option \verb=1, 2, 3, 4,= \verb=5, 6, 7=. Option 1 break pages
+  at parts, 2 at chapters, 3 at sections, 4 at subsections,
+  5 at subsubsections and 6 at paragraphs. For document classes without 
+  the \cmd{chapter} command, like \package{article}, 2 breaks sections, 3 subsections,
+  etc.
 
 \item[DOCTYPE] to request a \verb=DOCTYPE= declaration, use the
   command line option \verb=DOCTYPE=.
