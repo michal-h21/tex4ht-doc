@@ -65,7 +65,23 @@ Example:
 \DocCommand{PauseCutAt}\marg{section type}
 \DocCommand{ContCutAt}\marg{section type}
 
-Pause and continue page breaking for given section type.
+Pause and continue page breaking for the given section type. Note that it can be used for multiple section types. 
+
+For example, if you use the command line option `4', with the \package{book}
+class, which breaks pages up to the subsection level, and you want to stop
+breaking sections, you need to use:
+
+\begin{texsource}
+\PauseCutAt{section}
+\PauseCutAt{subsection}
+\end{texsource}
+
+To resume breaking, use:
+
+\begin{texsource}
+\ContCutAt{section}
+\ContCutAt{subsection}
+\end{texsource}
 
 \DocConfigure{CutAt-filename} {filename for the next cut file}\EndDoc
 
