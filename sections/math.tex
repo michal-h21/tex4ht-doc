@@ -102,10 +102,11 @@ The following example provides support for some custom \LaTeX\ macros.
 
 The configuration needs to be passed as a JavaScript object, this means that
 you need to use extra \verb|{}| brackets.
-The \texcommand{\detokenize} macro is used to avoid issues with backslash
-characters used in the macro definitions. Backslashes must be doubled in the
-JavaScript strings. Contents of this configuration are already enclosed in the
-\texcommand{\HCode} command, so you cannot use it in this configuration.
+The \texcommand{\detokenize} macro is used to avoid possible issues with catcodes
+in the configuration. Backslashes must be doubled in the
+JavaScript strings, so they need to be written twice for all custom macros.
+Contents of this configuration is already enclosed in the
+\texcommand{\HCode} command, so you cannot use this command in the configuration.
 
 If you want to define macros with parameters, you may run to issues with the \# character, used for parameters.
 You need to change the catcode of this character to letter before the \configuration{MathJaxConfig} configuration:
@@ -128,6 +129,28 @@ You need to change the catcode of this character to letter before the \configura
 }}
 % don't forget to change the catcode 
 % back to the original value
+\catcode`\#=6
+\begin{document}
+\EndPreamble
+\end{texsource}
+
+Note that number of opening and closing brackets is important, they need to be balanced. 
+For example, if you use \verb|\left\\{|, you need to add special closing bracket for \verb|\\{|. 
+The problem is that this closing bracket can cause syntax error in the generated JavaScript, 
+as the opening bracket was contents of the string. You can fix that by enclosing the closing bracket
+in JavaScript comment string (\verb|/* } */|. In this way, \LaTeX\ will see the correct number of brackets,
+but JavaScript will ignore the extra ones:
+
+\begin{texsource}
+\Preamble{xhtml}
+\catcode`\#=11
+\Configure{MathJaxConfig}{{
+    tex: {
+      macros: {
+      leftbracket: ["\\left\\{#1\\right.",1], /*} */
+    }
+  }
+}}
 \catcode`\#=6
 \begin{document}
 \EndPreamble
