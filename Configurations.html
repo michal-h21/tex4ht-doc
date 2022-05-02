@@ -1498,12 +1498,12 @@ macros.
 
 </figure>
 <!-- l. 103 --><p class='indent'>   The configuration needs to be passed as a JavaScript object, this means that you
-need to use extra <span class='obeylines-h'><code class='verb'>{}</code></span> brackets. The <code class='texttt'>\detokenize</code> macro is used to avoid
-issues with backslash characters used in the macro definitions. Backslashes
-must be doubled in the JavaScript strings. Contents of this configuration
-are already enclosed in the <code class='texttt'>\HCode</code> command, so you cannot use it in this
-configuration.
-</p><!-- l. 110 --><p class='indent'>   If you want to define macros with parameters, you may run to issues with the #
+need to use extra <span class='obeylines-h'><code class='verb'>{}</code></span> brackets. The <code class='texttt'>\detokenize</code> macro is used to avoid possible
+issues with catcodes in the configuration. Backslashes must be doubled in the
+JavaScript strings, so they need to be written twice for all custom macros. Contents
+of this configuration is already enclosed in the <code class='texttt'>\HCode</code> command, so you cannot use
+this command in the configuration.
+</p><!-- l. 111 --><p class='indent'>   If you want to define macros with parameters, you may run to issues with the #
 character, used for parameters. You need to change the catcode of this character to
 letter before the <code class='texttt'>MathJaxConfig</code> configuration:
 </p>   
@@ -1530,13 +1530,36 @@ letter before the <code class='texttt'>MathJaxConfig</code> configuration:
 <a id='x8-93105r20'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
-<!-- l. 136 --><p class='noindent'><span class='paragraphHead' id='custom-environments-in-mathjax'><a id='x8-940007.18.3'></a><span class='ec-lmbx-10'>Custom environments in MathJax.</span></span>
+<!-- l. 137 --><p class='indent'>   Note that number of opening and closing brackets is important, they need to be
+balanced. For example, if you use <span class='obeylines-h'><code class='verb'>\left\\{</code></span>, you need to add special closing bracket
+for <span class='obeylines-h'><code class='verb'>\\{</code></span>. The problem is that this closing bracket can cause syntax error in the
+generated JavaScript, as the opening bracket was contents of the string. You can fix
+that by enclosing the closing bracket in JavaScript comment string (<span class='obeylines-h'><code class='verb'>/* } */</code></span>. In this
+way, LaTeX will see the correct number of brackets, but JavaScript will ignore the
+extra ones:
+</p>   
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb136'><a id='x8-93119r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
+<a id='x8-93121r2'></a><span class='textcolor-2838af'>\catcode</span>`<span class='textcolor-2838af'>\#</span>=11 
+<a id='x8-93123r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathJaxConfig<span class='textcolor-387f38'>}{{</span> 
+<a id='x8-93125r4'></a>    tex: <span class='textcolor-387f38'>{</span> 
+<a id='x8-93127r5'></a>      macros: <span class='textcolor-387f38'>{</span> 
+<a id='x8-93129r6'></a>      leftbracket: ["<span class='textcolor-2838af'>\\</span>left<span class='textcolor-2838af'>\\</span><span class='textcolor-387f38'>{</span>#1<span class='textcolor-2838af'>\\</span>right.",1], /*<span class='textcolor-387f38'>}</span> */ 
+<a id='x8-93131r7'></a>    <span class='textcolor-387f38'>}</span> 
+<a id='x8-93133r8'></a>  <span class='textcolor-387f38'>}</span> 
+<a id='x8-93135r9'></a><span class='textcolor-387f38'>}}</span> 
+<a id='x8-93137r10'></a><span class='textcolor-2838af'>\catcode</span>`<span class='textcolor-2838af'>\#</span>=6 
+<a id='x8-93139r11'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x8-93141r12'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
+
+</figure>
+<!-- l. 159 --><p class='noindent'><span class='paragraphHead' id='custom-environments-in-mathjax'><a id='x8-940007.18.3'></a><span class='ec-lmbx-10'>Custom environments in MathJax.</span></span>
 If you want to add support for a new environment, you can use the <span class='obeylines-h'><code class='verb'>\VerbMath</code></span>
 command, and you will also need to pass suitable configuration to MathJax. For
 example for the following TeX file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb136'><a id='x8-94013r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>[12pt]{</span>book<span class='textcolor-387f38'>}</span> 
+<pre class='fancyvrb' id='fancyvrb137'><a id='x8-94013r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>[12pt]{</span>book<span class='textcolor-387f38'>}</span> 
 <a id='x8-94015r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>amsmath<span class='textcolor-387f38'>}</span> 
 <a id='x8-94017r3'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>breqn<span class='textcolor-387f38'>}</span> 
 <a id='x8-94019r4'></a> 
@@ -1547,12 +1570,15 @@ example for the following TeX file:
 <a id='x8-94029r9'></a>   <span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>dmath*<span class='textcolor-387f38'>}     </span><span class='textcolor-878787'><span class='textit'>%error is around here</span></span> 
 <a id='x8-94031r10'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>dgroup*<span class='textcolor-387f38'>}</span> 
 <a id='x8-94033r11'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
-<!-- l. 155 --><p class='indent'>   Can be configured using this configuration file:
+<!-- l. 178 --><p class='indent'>   Can be configured using this configuration file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb137'><a id='x8-94050r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
+<pre class='fancyvrb' id='fancyvrb138'><a id='x8-94050r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
 <a id='x8-94052r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathJaxConfig<span class='textcolor-387f38'>}{{</span> 
 <a id='x8-94054r3'></a>    tex: <span class='textcolor-387f38'>{</span> 
 <a id='x8-94056r4'></a>      tags: "ams", 
@@ -1569,27 +1595,24 @@ example for the following TeX file:
 <a id='x8-94078r15'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
-<!-- l. 175 --><p class='indent'>   The <span class='obeylines-h'><code class='verb'>\VerbMath</code></span> command can be used just for the <span class='obeylines-h'><code class='verb'>dgroup*</code></span> environment, as it will
+<!-- l. 198 --><p class='indent'>   The <span class='obeylines-h'><code class='verb'>\VerbMath</code></span> command can be used just for the <span class='obeylines-h'><code class='verb'>dgroup*</code></span> environment, as it will
 pass the whole contents, including the <span class='obeylines-h'><code class='verb'>dgroup*</code></span> environment, to the HTML file. But
 you will need to provide MathJax configuration for both of these environments, as
 they are not supported by default.
-                                                                  
-
-                                                                  
 </p>
-<!-- l. 181 --><p class='noindent'><span class='paragraphHead' id='mathjaxs-mathml-mode'><a id='x8-950007.18.3'></a><span class='ec-lmbx-10'>MathJax’s </span><code class='texttt'>MathML</code> <span class='ec-lmbx-10'>mode</span></span>
+<!-- l. 204 --><p class='noindent'><span class='paragraphHead' id='mathjaxs-mathml-mode'><a id='x8-950007.18.3'></a><span class='ec-lmbx-10'>MathJax’s </span><code class='texttt'>MathML</code> <span class='ec-lmbx-10'>mode</span></span>
 Math is converted to <code class='texttt'>MathML</code> by <code class='texttt'>TeX4ht</code>, MathJax then renders it. Custom
 commands and cross-references work in this mode.
-</p><!-- l. 186 --><p class='indent'>   The <code class='texttt'>MathML</code> MathJax mode can be required using the <span class='emph'>mathml,mathjax</span>
+</p><!-- l. 209 --><p class='indent'>   The <code class='texttt'>MathML</code> MathJax mode can be required using the <span class='emph'>mathml,mathjax</span>
 option.
 </p>
-<!-- l. 188 --><p class='noindent'><span class='paragraphHead' id='table-of-contents-issues'><a id='x8-960007.18.3'></a><span class='ec-lmbx-10'>Table of contents issues</span></span>
+<!-- l. 211 --><p class='noindent'><span class='paragraphHead' id='table-of-contents-issues'><a id='x8-960007.18.3'></a><span class='ec-lmbx-10'>Table of contents issues</span></span>
 Some math commands may cause issues when they are used in section
 titles in the MathJax mode. This can be fixed using the <code class='texttt'>\fixmathjaxtoc</code>
 command:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb138'><a id='x8-96003r1'></a><span class='textcolor-2838af'>\fixmathjaxtoc\int</span></pre>
+<pre class='fancyvrb' id='fancyvrb139'><a id='x8-96003r1'></a><span class='textcolor-2838af'>\fixmathjaxtoc\int</span></pre>
 
 </figure>
 <!-- l. 150 --><p class='noindent'>
@@ -1598,6 +1621,9 @@ command:
 <!-- l. 151 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='indexing1'><span class='titlemark'>7.20   </span> <a id='x8-980007.20'></a>Indexing</h3>
+                                                                  
+
+                                                                  
 <!-- l. 153 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='opendocument-format'><span class='titlemark'>7.21   </span> <a id='x8-990007.21'></a>OpenDocument Format</h3>
@@ -1607,7 +1633,7 @@ declared style then needs to be configured using command <code class='texttt'>\C
 </p><!-- l. 5 --><p class='indent'>   Usage of these commands can be illustrated by the following example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb139'><a id='x8-99011r1'></a>  <span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>SectionTitleTest<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span class='textcolor-387f38'>{</span>&lt;text:p text:style-name="section-title"&gt;<span class='textcolor-387f38'>}}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/text:p&gt;<span class='textcolor-387f38'>}}</span> 
+<pre class='fancyvrb' id='fancyvrb140'><a id='x8-99011r1'></a>  <span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>SectionTitleTest<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span class='textcolor-387f38'>{</span>&lt;text:p text:style-name="section-title"&gt;<span class='textcolor-387f38'>}}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/text:p&gt;<span class='textcolor-387f38'>}}</span> 
 <a id='x8-99013r2'></a> 
 <a id='x8-99015r3'></a><span class='textcolor-2838af'>\NewConfigureOO</span><span class='textcolor-387f38'>{</span>section-title<span class='textcolor-387f38'>}</span> 
 <a id='x8-99017r4'></a><span class='textcolor-2838af'>\ConfigureOO</span><span class='textcolor-387f38'>{</span>section-title<span class='textcolor-387f38'>}{</span>&lt;style:style style:name="section-title" style:family="paragraph" style:class="text"&gt; 
@@ -1616,9 +1642,6 @@ declared style then needs to be configured using command <code class='texttt'>\C
 <a id='x8-99023r7'></a>       style:text-underline-color="font-color" 
 <a id='x8-99025r8'></a>       /&gt; 
 <a id='x8-99027r9'></a>&lt;/style:style&gt;<span class='textcolor-387f38'>}</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!-- l. 19 --><p class='indent'>   Document style <span class='emph'>section-title</span> had been declared in this example. The <code class='texttt'>XML</code> code for
@@ -1631,7 +1654,7 @@ configuration.
 <h4 class='subsectionHead' id='extra-configurations-for-opendocument-format'><span class='titlemark'>7.21.1   </span> <a id='x8-1000007.21.1'></a>Extra Configurations for OpenDocument Format</h4>
 <!-- l. 33 --><p class='noindent'>To use default ODF styles for sectioning commands, use the following configurations: </p>
 <figure class='texsource' role='doc-example'>   
-<pre class='fancyvrb' id='fancyvrb140'><a id='x8-100004r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>Heading-2<span class='textcolor-387f38'>}{</span>Heading 1<span class='textcolor-387f38'>}</span> 
+<pre class='fancyvrb' id='fancyvrb141'><a id='x8-100004r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>Heading-2<span class='textcolor-387f38'>}{</span>Heading 1<span class='textcolor-387f38'>}</span> 
 <a id='x8-100006r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>Heading-3<span class='textcolor-387f38'>}{</span>Heading 2<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
