@@ -73,9 +73,9 @@
 \def\DocConfigure#1#2\EndDoc{\par\bigskip\noindent\texttt{\textbf{\textbackslash Configure}\{\textit{#1}\}\PrintConfigures#2{}\@nil}}
 \def\DocCommand#1{\par\bigskip\noindent\texttt{\textbf{\textbackslash #1}}}
 
-\newcommand\cmd[1]{\textbf{\texttt{\textbackslash #1}}}
-\newcommand\marg[1]{\{\textit{#1}\}}
-\newcommand\oarg[1]{[\textit{#1}]}
+\DeclareRobustCommand\cmd[1]{\textbf{\texttt{\textbackslash #1}}}
+\DeclareRobustCommand\marg[1]{\{\textit{#1}\}}
+\DeclareRobustCommand\oarg[1]{[\textit{#1}]}
 
 
 \endinput
