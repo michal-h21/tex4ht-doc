@@ -1,5 +1,5 @@
 <!DOCTYPE html> 
-<html lang='en-US' xml:lang='en-US'> 
+<html lang='en' xml:lang='en'> 
 <head><title>2 Basic Tutorial</title> 
 <meta charset='utf-8' /> 
 <meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
@@ -17,7 +17,7 @@
 <span class='sectionToc'>2.3 <a href='#-texht-options'><code class='texttt'>TeX4ht</code> Options</a></span>
 <span class='sectionToc'>2.4 <a href='#-makeht-extensions'><code class='texttt'>make4ht</code> extensions</a></span>
 <span class='sectionToc'>2.5 <a href='#configurations'>Configurations</a></span>
-<span class='subsectionToc'>2.5.1 <a href='#the-thtxcconfigure-command'>The <span class='textbf'><code class='texttt'>\onfigure</code></span> command</a></span>
+<span class='subsectionToc'>2.5.1 <a href='#the-configure-command'>The <span class='textbf'><code class='texttt'>\Configure</code></span> command</a></span>
 <span class='sectionToc'>2.6 <a href='#configurations1'>Configurations</a></span>
 <span class='sectionToc'>2.7 <a href='#paragraphs'>Paragraphs</a></span>
 <span class='chapterToc'>3 <a href='Howto.html#how-to'>How to</a></span>
@@ -349,7 +349,7 @@ LaTeX.
 <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!-- tex4ht:ref: sec:private-configuration  --></a>. Here, we will show some simple examples.
 </p><!-- l. 182 --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='the-thtxcconfigure-command'><span class='titlemark'>2.5.1   </span> <a id='x3-90002.5.1'></a>The <span class='textbf'><code class='texttt'>\Configure</code></span> command</h4>
+<h4 class='subsectionHead' id='the-configure-command'><span class='titlemark'>2.5.1   </span> <a id='x3-90002.5.1'></a>The <span class='textbf'><code class='texttt'>\Configure</code></span> command</h4>
 <!-- l. 186 --><p class='noindent'>You may want to insert some custom HTML tags. It is a bit more complicated for
 LaTeXcommands, but it is easy for environments. You can configure the code that is
 inserted before and after environment using the <code class='texttt'>\ConfigureEnv</code> command. It has a
@@ -455,7 +455,7 @@ somewhat ugly with <code class='texttt'>htlatex</code>:
 <pre class='fancyvrb' id='fancyvrb27'><a id='x3-9102r1'></a>htlatex sample1 <span class='textcolor-b73838'>"xhtml,charset=utf-8" </span><span class='textcolor-b73838'>" -cunihtf -utf8"</span></pre>
 
 </figure>
-<!-- l. 298 --><p class='indent'>   <code class='texttt'>charset=utf-8"</code> produces meta element which declares document to be in
+<!-- l. 298 --><p class='indent'>   <code class='texttt'>charset=utf-8</code> produces meta element which declares document to be in
 <code class='texttt'>utf-8</code> encoding. Important are two options for <code class='texttt'>tex4ht</code> command, <code class='texttt'>-c</code> and
 <code class='texttt'>-utf8</code>.
 </p><!-- l. 302 --><p class='indent'>   ToDo: add description of process of conversion from <code class='texttt'>htf</code> fonts to utf8 using
