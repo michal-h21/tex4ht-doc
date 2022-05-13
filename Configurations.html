@@ -665,21 +665,22 @@ depth.
 ones, can be requested with the <span class='emph'>next</span> option. The option <span class='emph'>sections+</span> creates titles for
 the sectioning commands that link to the tables of contents. The <span class='emph'>sec-filename</span> option
 requests that split files will be named according to the section titles, instead of
-sequential numbers.
-</p><!-- l. 14 --><p class='indent'>   Finer control is possible with the following commands and configurations:
+sequential numbers. The <span class='emph'>cut-fullname</span> option will prevent truncating of generated
+filenames.
+</p><!-- l. 15 --><p class='indent'>   Finer control is possible with the following commands and configurations:
                                                                   
 
                                                                   
-</p><!-- l. 17 --><p class='noindent'><code class='texttt'><span class='textbf'>\CutAt</span></code>{<span class='textit'>at-unit,until-unit-1,until-unit-2,…</span>}
-</p><!-- l. 19 --><p class='indent'>   This directive asks the sectioning commands <span class='textbf'><code class='texttt'>\at-unit</code></span> to place their units in
+</p><!-- l. 18 --><p class='noindent'><code class='texttt'><span class='textbf'>\CutAt</span></code>{<span class='textit'>at-unit,until-unit-1,until-unit-2,…</span>}
+</p><!-- l. 20 --><p class='indent'>   This directive asks the sectioning commands <span class='textbf'><code class='texttt'>\at-unit</code></span> to place their units in
 separate hypertext pages. The pages are to terminate upon encountering any of the
 commands in the list <span class='textbf'><code class='texttt'>\at-unit</code></span>, <span class='textbf'><code class='texttt'>\until-unit-1</code></span>, <span class='textbf'><code class='texttt'>\until-unit-2</code></span>,….
-</p><!-- l. 23 --><p class='indent'>   Within the <span class='textbf'><code class='texttt'>\CutAt</code></span> instruction, the starred commands of LaTeX should be
+</p><!-- l. 24 --><p class='indent'>   Within the <span class='textbf'><code class='texttt'>\CutAt</code></span> instruction, the starred commands of LaTeX should be
 referenced with the prefix ‘<span class='textit'>like</span>’ instead of the postfix of ‘*’, and appendices
 through the entry ‘appendix’.
-</p><!-- l. 27 --><p class='indent'>   A plus character ‘+’, before the leading parameter, requests buttons that link to
+</p><!-- l. 28 --><p class='indent'>   A plus character ‘+’, before the leading parameter, requests buttons that link to
 the hypertext pages; e.g., ‘<span class='textbf'><code class='texttt'>\CutAt</code></span>{<span class='textit'>+likesection</span>}’.
-</p><!-- l. 31 --><p class='indent'>   The end points of sections not specified within the <span class='textbf'><code class='texttt'>\CutAt</code></span> commands can be
+</p><!-- l. 32 --><p class='indent'>   The end points of sections not specified within the <span class='textbf'><code class='texttt'>\CutAt</code></span> commands can be
 made known with instructions of the form <span class='textbf'><code class='texttt'>\Configure</code></span>{<span class='textit'>endunit</span>}{<span class='textit'>unit,unit,...</span>}.
 </p>   
 <figure class='texsource' role='doc-example'>
@@ -689,7 +690,7 @@ made known with instructions of the form <span class='textbf'><code class='textt
 <a id='x8-67012r4'></a><span class='textcolor-2838af'>\chapter</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span>  ......  <span class='textcolor-2838af'>\section</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span>  ......</pre>
 
 </figure>
-<!-- l. 41 --><p class='indent'>   Cut points at arbitrary points can be introduced by introducing section-like
+<!-- l. 42 --><p class='indent'>   Cut points at arbitrary points can be introduced by introducing section-like
 commands in a manner similar to
 </p>   
 <figure class='texsource' role='doc-example'>
@@ -697,24 +698,24 @@ commands in a manner similar to
 <a id='x8-67018r2'></a><span class='textcolor-2838af'>\CutAt</span><span class='textcolor-387f38'>{</span>mysection<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
-<!-- l. 49 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>CutAt</span>}{unit}{before-button}{after-button}</code>
-</p><!-- l. 54 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>+CutAt</span>}{sectioning type}{before}{after}</code>
-</p><!-- l. 56 --><p class='indent'>   Requests delimiters for the <span class='textbf'><code class='texttt'>\CutAt</code></span> buttons of the specified sectioning
+<!-- l. 50 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>CutAt</span>}{unit}{before-button}{after-button}</code>
+</p><!-- l. 55 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>+CutAt</span>}{sectioning type}{before}{after}</code>
+</p><!-- l. 57 --><p class='indent'>   Requests delimiters for the <span class='textbf'><code class='texttt'>\CutAt</code></span> buttons of the specified sectioning
 type
-</p><!-- l. 59 --><p class='indent'>   Example:
+</p><!-- l. 60 --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb97'><a id='x8-67021r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>+CutAt<span class='textcolor-387f38'>}{</span>mysection<span class='textcolor-387f38'>}{</span>[<span class='textcolor-387f38'>}{</span>]<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
-<!-- l. 65 --><p class='noindent'><code class='texttt'><span class='textbf'>\PauseCutAt</span></code>{<span class='textit'>section type</span>}
-</p><!-- l. 66 --><p class='noindent'><code class='texttt'><span class='textbf'>\ContCutAt</span></code>{<span class='textit'>section type</span>}
-</p><!-- l. 68 --><p class='indent'>   Pause and continue page breaking for the given section type. Note that it can be
+<!-- l. 66 --><p class='noindent'><code class='texttt'><span class='textbf'>\PauseCutAt</span></code>{<span class='textit'>section type</span>}
+</p><!-- l. 67 --><p class='noindent'><code class='texttt'><span class='textbf'>\ContCutAt</span></code>{<span class='textit'>section type</span>}
+</p><!-- l. 69 --><p class='indent'>   Pause and continue page breaking for the given section type. Note that it can be
 used for multiple section types.
                                                                   
 
                                                                   
-</p><!-- l. 70 --><p class='indent'>   For example, if you use the command line option ‘4’, with the <code class='texttt'>book</code> class, which
+</p><!-- l. 71 --><p class='indent'>   For example, if you use the command line option ‘4’, with the <code class='texttt'>book</code> class, which
 breaks pages up to the subsection level, and you want to stop breaking sections, you
 need to use:
 </p>   
@@ -723,17 +724,17 @@ need to use:
 <a id='x8-67027r2'></a><span class='textcolor-2838af'>\PauseCutAt</span><span class='textcolor-387f38'>{</span>subsection<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
-<!-- l. 79 --><p class='indent'>   To resume breaking, use:
+<!-- l. 80 --><p class='indent'>   To resume breaking, use:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb99'><a id='x8-67031r1'></a><span class='textcolor-2838af'>\ContCutAt</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}</span> 
 <a id='x8-67033r2'></a><span class='textcolor-2838af'>\ContCutAt</span><span class='textcolor-387f38'>{</span>subsection<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
-<!-- l. 86 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>CutAt-filename</span>}{filename for the next cut file}</code>
-</p><!-- l. 88 --><p class='indent'>   A 2-parameter hook for tailoring section-based filenames. The section type is
+<!-- l. 87 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>CutAt-filename</span>}{filename for the next cut file}</code>
+</p><!-- l. 89 --><p class='indent'>   A 2-parameter hook for tailoring section-based filenames. The section type is
 available through #1. The section title is accessible through #2.
-</p><!-- l. 92 --><p class='indent'>   Example:
+</p><!-- l. 93 --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb100'><a id='x8-67036r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>CutAt-filename<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\NextFile</span><span class='textcolor-387f38'>{</span>#1-#2.html<span class='textcolor-387f38'>}}</span></pre>
