@@ -65,7 +65,7 @@ called \file{<name>.4ht}. For example, to seed hooks for the \file{mynote.sty} p
 \end{texsource}
 
 There is several things to note. First is that the \verb|:| character 
-can formt part of a command name in \file{.4ht} files. It is similar
+can be included as a part of a command name in \file{.4ht} files. It is similar
 to use of the \verb|@| character in \LaTeX\ packages. It allows us to 
 create command names that don't clash with other command names.
 
@@ -88,7 +88,7 @@ Of course, you can also insert hooks using other mechanisms, for example using
 \end{texsource}
 
 The second way for hook insertion, useful for commands where we want to insert
-tags also inside it's contents, we can use the \cmd{HLet} command. It is a
+tags also inside it's contents, is to use the \cmd{HLet} command. It is a
 variant of the \cmd{let} command.  In contrast to \cmd{let}, it saves the
 original command as \cmd{o:<command name>:}.  Commands redefined by \cmd{HLet}
 also support the \cmd{Picture} command, where the original version of the
@@ -169,6 +169,7 @@ It can detect use of the redefined command inside picture. In such case, it will
 the original command to produce correct visual result in the picture.
 
 \begin{texsource}
+\NewConfigure{note}{3}
 \def\:tempa#1{\a:note note:\b:note~#1\c:note}
 \HLet\note\:tempa
 \Configure{note}{*}{*}{*}
@@ -184,17 +185,22 @@ Restore command redefined using \cmd{HLet} to it's original content.
 
 \DocCommand{append:def<X>}\marg{redefined command}\marg{code to be inserted at the end}
 
+These two commands inserts code before and after a redefined command. There are several
+versions of these commands, depending on the number of parameters that the redefined 
+command expects. Number of parameters as roman number replaces the \verb|<X>| placeholder. 
+
+Up to three parameters are supported.
 
 
+\begin{texsource}
+\newcommand\bar{xxx}
+\pend:def\bar{*}
+\append:def\bar{*}
+\newcommand\foo[2]{#1, #2}
+\pend:defII\foo{*}
+\append:defII\foo{*}
+\end{texsource}
 
-% \HLet - https://tex.stackexchange.com/a/471724/2891
-% - \HLet supports the Picture mechanism - it calls the original command inside \Picture*
-%   so we don't get content addded by TeX4ht in pictures. This is important, because we
-%   want this content to look in the same way as in the PDF
-
-% \append:def and variants
-
-% \HRestore - I don't know what it does
 
 \section{Two types of .4ht files}
 
