@@ -27,10 +27,6 @@
 .ec-lmtt-10{ font-family: monospace,monospace;}
 .ec-lmtt-10{ font-family: monospace,monospace;}
 .ec-lmtt-10{ font-family: monospace,monospace;}
-.ec-lmtt-10{ font-family: monospace,monospace;}
-.ec-lmtt-10{ font-family: monospace,monospace;}
-.ec-lmbx-10{ font-weight: bold;}
-.ec-lmbx-10{ font-weight: bold;}
 .ec-lmbx-10{ font-weight: bold;}
 .ec-lmbx-10{ font-weight: bold;}
 .ec-lmbx-10{ font-weight: bold;}
@@ -45,10 +41,6 @@
 .ec-lmtk-10{ font-family: monospace,monospace;}
 .ec-lmtk-10{ font-family: monospace,monospace;}
 .ec-lmtk-10{ font-family: monospace,monospace;}
-.ec-lmtk-10{ font-family: monospace,monospace;}
-.ec-lmtk-10{ font-family: monospace,monospace;}
-.ec-lmtti-10{ font-family: monospace,monospace; font-style:italic;}
-.ec-lmtti-10{ font-family: monospace,monospace; font-style:italic;}
 .ec-lmtti-10{ font-family: monospace,monospace; font-style:italic;}
 .ec-lmtti-10{ font-family: monospace,monospace; font-style:italic;}
 .ec-lmtti-10{ font-family: monospace,monospace; font-style:italic;}
@@ -71,8 +63,6 @@
 .rm-lmtk-10{ font-family: monospace,monospace;}
 .rm-lmtk-10{ font-family: monospace,monospace;}
 .rm-lmr-7{font-size:70%;}
-.ec-lmr-9{font-size:90%;}
-.ec-lmr-8{font-size:80%;}
 p{margin-top:0;margin-bottom:0}
 p.indent{text-indent:0;}
 p + p{margin-top:1em;}
