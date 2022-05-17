@@ -1,6 +1,10 @@
-\section{Introduction}
+% \section{Introduction}
 
-This chapter deals with \texfourht\ development. It starts with a tutorial for basic
+This chapter deals with \texfourht\ development. It starts with a basic
+tutorial for a new package support, shows commands useful in the process,
+different types of \texfourht\ configuration files, and the syntax and structure of 
+literate source files.
+
 \section{Tutorial: Basic Support For a New Package}
 
 In this tutorial, we will try to show how to provide \texfourht\ support for a
@@ -15,20 +19,189 @@ they insert special macros, called hooks, that are then used to include the outp
 Let's say that you have a custom package, called \file{mynote.sty}
 
 \begin{texsource}
-\ProvidesPackage{mynote}
 \newcommand\notetitle{Note:~}
-\newcommand\note[1]{{\textcolor{notecolor}{\textbf{\notetitle}}}#1}
+\newcommand\note[1]{\textbf{\notetitle}#1}
+\newcommand\highlight[1]{\textbf{#1}}
 \endinput
 \end{texsource}
 
+It defines two user commands, \cmd{note} and \cmd{highlight}. 
+They can be used in the following way:
 
+
+\begin{texsource}
+\documentclass{article}
+\usepackage{mynote}
+\begin{document}
+\note{This is a note}
+
+Try to highlight \highlight{something}.
+\end{document}
+\end{texsource}
+
+\texfourht\ produces usable output for both of these commands out of the box, 
+thanks to the support for \TeX\ fonts. But you may want to use custom HTML 
+tags instead. To achieve that, you need to insert special commands, called hooks 
+in \texfourht, to package commands. These hooks can be then configured to
+insert tags in the output format.
+
+To introduce hooks, you need to create a hook seeding configuration file for the package,
+called \file{<name>.4ht}. For example, to seed hooks for the \file{mynote.sty} package, create file
+\file{mynote.4ht}:
+
+\begin{texsource}
+\NewConfigure{note}{3}
+
+% Use \HLet when you want to completely redefine a command
+\def\:tempa#1{\a:note\notetitle\b:note~#1\c:note}
+\HLet\note\:tempa
+
+\NewConfigure{highlight}{2}
+\pend:defI\highlight{\a:highlight}
+\append:defI\highlight{\b:highlight}
+
+\Hinput{mynote}
+\endinput
+\end{texsource}
+
+There is several things to note. First is that the \verb|:| character 
+can formt part of a command name in \file{.4ht} files. It is similar
+to use of the \verb|@| character in \LaTeX\ packages. It allows us to 
+create command names that don't clash with other command names.
+
+The hooks are created using the \cmd{NewConfigure} command. They can be
+later filled with the \cmd{Configure} command. To have an effect, hooks
+must be inserted to the existing commands. There are two ways how to do that.
+For simpler commands, where we want to insert tags only before and after 
+the contents produced by the patched command, we can use the \cmd{pend:def<X>} and 
+\cmd{append:def<X>} commands, where the \verb|<X>| is a roman number of parameters
+that the patched command expects. In this example, it expects one parameter, 
+so we can use the \cmd{pend:defI} command. For commands without parameters, use 
+\cmd{pend:def}.
+
+Of course, you can also insert hooks using other mechanisms, for example using
+\LaTeX's hook system:
+
+\begin{texsource}
+\AddToHook{cmd/highlight/before}{\a:highlight}
+\AddToHook{cmd/highlight/after}{\b:highlight}
+\end{texsource}
+
+The second way for hook insertion, useful for commands where we want to insert
+tags also inside it's contents, we can use the \cmd{HLet} command. It is a
+variant of the \cmd{let} command.  In contrast to \cmd{let}, it saves the
+original command as \cmd{o:<command name>:}.  Commands redefined by \cmd{HLet}
+also support the \cmd{Picture} command, where the original version of the
+command will be used. This way, pictures will produce the same result as they
+would produce in the PDF mode.
+
+In our example, we redefined the \cmd{note} command to use a hook between note title
+and note text. This enables us to style both the title and the text differently.
+
+
+The configuration file for our hooks could look like this:
+
+\begin{texsource}
+\Preamble{xhtml}
+\Configure{note}
+{\ifvmode\IgnorePar\fi\EndP\HCode{<div class="note"><span class="notetitle">}}
+{\HCode{</span><span class="notebody">}}
+{\HCode{</span></div>}}
+\Css{.notetitle{font-weight: bold;}}
+
+\Configure{highlight}{\HCode{<span class="highlight">}\NoFonts}{\EndNoFonts\HCode{</span>}}
+\Css{.highlight{font-weight:bold;}}
+\begin{document}
+\EndPreamble
+\end{texsource}
+
+As the \cmd{note} command should be used on it's own paragraph, we need to 
+fix paragraph closing. See the \namerefpage{sec:paragraph_handling} section for
+more information about this issue. More details about configuration files and configurations are
+in section \namerefpage{sec:private-configuration}.
+
+The HTML code produced by our configuration looks like this:
+
+\begin{htmlsource}
+<div class='note'><span class='notetitle'>Note: </span><span class='notebody'> This is a note</span></div>
+<!--  l. 6  --><p class='indent'>   Try to highlight <span class='highlight'>something</span>.
+</p>
+\end{htmlsource}
+
+
+\section{Commands Usable in the \file{.4ht} files}
+
+\DocCommand{NewConfigure}\marg{name}\marg{number of defined hooks}
+
+This command defines macros with an alphabetic prefix in the form of 
+\cmd{a:name} \ldots \cmd{i:name}, depending on the number of defined hooks.
+The maximum number is 9.
+
+\begin{texsource}
+\NewConfigure{try}{2}
+\def\try#1{\a:try#1\b:try}
+\Configure{try}{* }{}  
+\try{ho} 
+% produces "* ho"
+\end{texsource}
+
+\DocCommand{NewConfigure}\marg{name}\oarg{number or parameters}\marg{code}
+
+Variant of \cmd{NewConfigure} that doesn't define hooks with 
+alphabetic prefixes, but it passes argumens of \cmd{Configure}
+as \TeX\ arguments. See this exampe:
+
+\begin{texsource}
+\NewConfigure{try}[2]{\def\hookI{#1}\def\hookII{#2}}
+\def\try#1{\hookI#1\hookII}
+\Configure{try}{* }{}  
+\try{ho} 
+% produces "* ho"
+\end{texsource}
+
+When you use \texcommand{\Configure{try}}, it defines \cmd{hookI} and \cmd{hookII}
+commands. They can be then used in the redefined \cmd{try} command.
+
+\DocCommand{HLet}\marg{Redefined command name}\marg{new command}
+
+Variant of \cmd{let} that saves the original command under \cmd{\o:<name>:} name.
+It can detect use of the redefined command inside picture. In such case, it will use
+the original command to produce correct visual result in the picture.
+
+\begin{texsource}
+\def\:tempa#1{\a:note note:\b:note~#1\c:note}
+\HLet\note\:tempa
+\Configure{note}{*}{*}{*}
+\note{hello}
+% produces: "* note:* hello*
+\end{texsource}
+
+\DocCommand{HRestore}\marg{command name}
+
+Restore command redefined using \cmd{HLet} to it's original content.
+
+\DocCommand{pend:def<X>}\marg{redefined command}\marg{code to be inserted at the begin}
+
+\DocCommand{append:def<X>}\marg{redefined command}\marg{code to be inserted at the end}
+
+
+
+
+% \HLet - https://tex.stackexchange.com/a/471724/2891
+% - \HLet supports the Picture mechanism - it calls the original command inside \Picture*
+%   so we don't get content addded by TeX4ht in pictures. This is important, because we
+%   want this content to look in the same way as in the PDF
+
+% \append:def and variants
+
+% \HRestore - I don't know what it does
 
 \section{Two types of .4ht files}
 
 % text from the old documentation:
 % https://tug.org/tex4ht/doc/mn11.html#QQ1-11-66
 
-A compilation starts by opening tex4ht.sty and loading a fraction of its code.
+The compilation starts by opening tex4ht.sty and loading a fraction of its code.
 The main purpose of this phase is to request the loading of the system at a
 later time (for instance, upon reaching \texcommand{\begin{document}}). The motivation for
 the late loading is to allow TeX4ht to collect as much information as possible
@@ -37,36 +210,61 @@ that environment with minimal interference from elsewhere.
 
 The system uses two kinds of (4ht) configuration files. The files of the first
 kind mainly seed hooks into the macros loaded by the source file (for instance,
-latex.4ht, fontmath.4ht, and article.4ht). The files of the second kind mainly
-attach meaning to the hooks (for instance, html4.4ht, unicode.4ht, and
-mathml.4ht).
+\file{latex.4ht}, \file{fontmath.4ht}, and \file{article.4ht}).
+The files of the second kind mainly
+attach meaning to the hooks (for instance, \file{html4.4ht}, \file{unicode.4ht}, and
+\file{mathml.4ht}).
 
 Different source files may request the loading of different style files and in
 different orders. The hook seeding files are loaded in response to the loading
 of the style files, and in a compatible order. Since the different style files
-may redefine the syntax and semantics of macros, TeX4t follows a similar route
+may redefine the syntax and semantics of macros, \texfourht\ follows a similar route
 of defining and redefining the hooks and their meanings.
 
 The meaning attaching files are normally requested through option names
-introduced in the tex4ht.4ht system file. For instance, the mzlatex command
-refers to the mozilla option name of tex4ht.4ht, and the oolatex command refers
-to the ooffice option name. The user may add option names, and redefine old
+introduced in the \file{tex4ht.4ht} system file. It defines options for all output formats
+supported by \texfourht. For instance, \option{html5}, \option{ooffice} for the ODT output,
+\option{tei}, and so on.
+
+% For instance, the mzlatex command
+% refers to the mozilla option name of tex4ht.4ht, and the oolatex command refers
+% to the ooffice option name. 
+
+The user may add option names, and redefine old
 ones, within a new file named tex4ht.usr.
 
-\subsection{Inserting configurable hooks for packages}
+% \subsection{Inserting configurable hooks for packages}
 
-\subsection{Configure the hooks in output format configuration files}
 
-\section{How to add support for a package to the \texfourht\ literate sources}
+
+% \subsection{Configure the hooks in output format configuration files}
+
+\section{\texfourht\ literate sources}
 
 To add a proper support for a new package, it is necessary to edit the 
-\texfourht\ literate sources. The configurable hooks need to be placed in the \file{tex4ht-4ht.tex},
-the configuration of these hooks must be added to the output format configuration files.
-The most common output format is \HTML, which can be configured in \file{tex4ht-html4.tex}, or 
-\file{tex4ht-html5.tex} if \HTMLV\ features are used. It is also necessary to update the
-\file{mktex4ht-cnf.tex}.
+\texfourht\ literate sources. 
+The source files are available in the \href{https://puszcza.gnu.org.ua/projects/tex4ht/}{\texfourht\ source repository}.
+You can retrieve them using a SVN client. 
 
-\subsection{Example}
+\begin{shellcommand}
+$ svn checkout https://svn.gnu.org.ua/sources/tex4ht/
+$ cd tex4ht/trunk/lit/
+\end{shellcommand}
+
+
+The configurable hooks for all packages are contained by the \file{tex4ht-4ht.tex} file.
+Configurations of these hooks is placed in the output format configuration files.
+The most common output format is \HTML, which can be configured in \file{tex4ht-html4.tex}, or 
+\file{tex4ht-html5.tex} if \HTMLV\ features are used. You can also update sources for other output
+formats, for example \file{tex4th-ooffice.tex} for the ODT format, or \file{tex4ht-tei.tex} for TEI.
+The sources of the \file{tex4ht.sty} package are available in \file{tex4ht-sty.tex}.
+
+To compile all literate sources, run the \shellcmd{make} command. You will need basic UNIX utilities 
+for this to succeed, as well as \shellcmd{m4} and \shellcmd{javac}. You can also compile particular source
+files. Most of them can be compiled using \LaTeX, but some of them, for example \file{tex4ht-4ht.tex}, needs
+to be compiled using \shellcmd{etex}.
+
+\subsection{How to add support for a package to the \texfourht\ literate sources}
 
 Given following package \file{sample.sty}:
 
@@ -80,7 +278,7 @@ This simple package defines command \texcommand{\hello}, which simply prints the
 
 Let's say that we want to insert some \HTML\ tags before and after the text content printed by the command.
 
-Basic template for \file{tex4ht-4ht.tex}
+Basic template for \file{tex4ht-4ht.tex}:
 
 % examples/basicpackage/sample.4ht
 \begin{texsource}
@@ -99,9 +297,9 @@ Basic template for \file{tex4ht-4ht.tex}
 Configuration for each package must follow this basic template. The \ProTeX\ system is used as system for literate programming.
 
 The \verb|\<name\><<<code>>>| block defines new macro which can be then called using \texcommand{|<name|>}. The license text
-is included in the example this way. In order to generate the \file{sample.4ht} file, we need to use \texttt{sample.4ht} as a name
-in the code block and command \texcommand{\AddFile{9}{sample}} after the block definition\footnote{I have no idea what the number
-in the first parameter means.}.
+is included in this way in the example. The instruction to generate the \file{.4ht} file is given in the 
+command \texcommand{\AddFile{9}{sample}} after the block definition. The first argument to \cmd{AddFile} is an arbitrary number.
+
 
 Each package configuration  must include \texcommand{\Hinput{packagename}}, in order to load the configurations for the package.
 
@@ -110,8 +308,13 @@ These hooks are named  \texcommand{\a:hello} and \texcommand{\b:hello}. The hook
 \texcommand{\hello}, which can be easily done using the \texcommand{\pend:def} and \texcommand{\append:def} commands. These
 commands can insert code  at the beginning, respective at the end of the redefined command.
 
-The configuration for \HTML\ must be placed in the \file{tex4ht-html4.tex} file:
+The package name must be also included in the \file{mktex4ht-cnf.tex} file. This file is used in the generation of the 
 
+\begin{texsource}
+\AddFile{9}{sample}
+\end{texsource}
+
+You can place configuration for \HTML\ to the \file{tex4ht-html4.tex} file:
 
 % examples/basicpackage/config.cfg
 \begin{texsource}
@@ -121,15 +324,10 @@ The configuration for \HTML\ must be placed in the \file{tex4ht-html4.tex} file:
 >>>
 \end{texsource}
 
-The configuration for a package must be placed in \texcommand{\<configure html4 packagename\>} block.
-% ToDo: write more info
+The \texcommand{\<configure html4 packagename\>} block will produce code that 
+detects use of the package \file{packagename}. It then loads configurations
+for the package.
 
-
-The package name must be also included in \file{mktex4ht-cnf.tex}:
-
-\begin{texsource}
-\AddFile{9}{sample}
-\end{texsource}
 
 The \file{.4ht} files can be generated simply using the \shellcmd{make} command.
 
@@ -153,16 +351,6 @@ Produces a following \HTML\ code:
 \end{htmlsource}
 
 
-\section{Commands Usable in the \file{.4ht} files}
-
-% \HLet - https://tex.stackexchange.com/a/471724/2891
-% - \HLet supports the Picture mechanism - it calls the original command inside \Picture*
-%   so we don't get content addded by TeX4ht in pictures. This is important, because we
-%   want this content to look in the same way as in the PDF
-
-% \append:def and variants
-
-% \HRestore - I don't know what it does
 
 
 \section{ProTeX}
@@ -170,7 +358,6 @@ Produces a following \HTML\ code:
 
 The literate programming system used in the previous section is called ProTeX. We should discuss some main ideas behind this system.
 
-\subsection{ProTeX}
 % copied from
 % https://www.slac.stanford.edu/comp/unix/package/tex/tex4ht/mn2.html - it
 % seems like an older version of documentation which contains some information later ommited
@@ -199,7 +386,7 @@ Some explanation:
 \AlProTex{extension,<<<>>>,list,title,escape-character}
 \end{texsource}
 
-The escape-character stands for `, @, |, or ?. If omitted, it stands for \verb|\|. 
+The escape-character stands for `, @, |, or ?. If omitted, it stands for \verb'|'. 
 
 \begin{texsource}
 \<title\><<<
