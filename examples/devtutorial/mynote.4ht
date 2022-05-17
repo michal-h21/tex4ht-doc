@@ -1,0 +1,23 @@
+\NewConfigure{note}{3}
+
+% Use \HLet when you want to completely redefine a command
+\def\:tempa#1{\a:note\notetitle\b:note~#1\c:note}
+\HLet\note\:tempa
+
+\NewConfigure{highlight}{2}
+\pend:defI\highlight{\a:highlight}
+\append:defI\highlight{\b:highlight}
+
+\AtBeginDocument{
+  % code for the HTML output
+  \Configure{note}
+  {\ifvmode\IgnorePar\fi\EndP\HCode{<div class="note"><span class="notetitle">}}
+  {\HCode{</span><span class="notebody">}}
+  {\HCode{</span></div>}}
+  \Css{.notetitle{font-weight: bold;}}
+  
+  \Configure{highlight}{\HCode{<span class="highlight">}\NoFonts}{\EndNoFonts\HCode{</span>}}
+  \Css{.highlight{font-weight:bold;}}
+}
+\Hinput{mynote}
+\endinput
