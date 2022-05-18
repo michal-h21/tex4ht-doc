@@ -384,35 +384,42 @@ arbitrarily chosen option names. For that purpose, <span class='textbf'><code cl
 those provided in <code class='texttt'>tex4ht.4ht</code> should be employed. These are particularly useful if
 you use custom packages that are not included in TeX distributions and thus aren’t
 supported by <code class='texttt'>TeX4ht</code>.
-</p><!-- l. 269 --><p class='indent'>   You can place your custom <code class='texttt'>.4ht</code> files or <code class='texttt'>tex4ht.usr</code> in your local TEXMF tree,
-for instance in <code class='texttt'>~/texmf/tex/latex/my4htfiles</code>.
-</p><!-- l. 272 --><p class='noindent'>
+</p><!-- l. 269 --><p class='indent'>   You can place your custom <code class='texttt'>.4ht</code> files or <code class='texttt'>tex4ht.usr</code> in your local TEXMFHOME
+tree, for instance in <code class='texttt'>~/texmf/tex/latex/my4htfiles</code>.
+</p><!-- l. 272 --><p class='indent'>   Location of the TEXMFHOME directory can be found using the following
+command:
+</p>   
+<figure class='shellcommand' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb167'><a id='x11-115003r1'></a>$ kpsewhich -var-value TEXMFHOME</pre>
+
+</figure>
+<!-- l. 278 --><p class='noindent'>
 </p>   
 <h5 class='subsubsectionHead' id='example'><a id='x11-11600010.3.1'></a>Example</h5>
-<!-- l. 274 --><p class='noindent'>Let’s say that you have a custom package <code class='texttt'>mypackage.sty</code>:
+<!-- l. 280 --><p class='noindent'>Let’s say that you have a custom package <code class='texttt'>mypackage.sty</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb167'><a id='x11-116004r1'></a><span class='textcolor-2838af'>\newcommand\mycommand</span><span class='textcolor-387f38'>[1]{</span>Hello #1<span class='textcolor-387f38'>}</span> 
+<pre class='fancyvrb' id='fancyvrb168'><a id='x11-116004r1'></a><span class='textcolor-2838af'>\newcommand\mycommand</span><span class='textcolor-387f38'>[1]{</span>Hello #1<span class='textcolor-387f38'>}</span> 
 <a id='x11-116006r2'></a><span class='textcolor-2838af'>\endinput</span></pre>
 
 </figure>
-<!-- l. 281 --><p class='indent'>   This can be configured using the following configuration file, <code class='texttt'>mypackage.4ht</code>:
+<!-- l. 287 --><p class='indent'>   This can be configured using the following configuration file, <code class='texttt'>mypackage.4ht</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb168'><a id='x11-116013r1'></a><span class='textcolor-2838af'>\NewConfigure</span><span class='textcolor-387f38'>{</span>mycommand<span class='textcolor-387f38'>}{</span>2<span class='textcolor-387f38'>}</span> 
+<pre class='fancyvrb' id='fancyvrb169'><a id='x11-116013r1'></a><span class='textcolor-2838af'>\NewConfigure</span><span class='textcolor-387f38'>{</span>mycommand<span class='textcolor-387f38'>}{</span>2<span class='textcolor-387f38'>}</span> 
 <a id='x11-116015r2'></a><span class='textcolor-2838af'>\pend</span>:defI<span class='textcolor-2838af'>\mycommand</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\a</span>:mycommand<span class='textcolor-387f38'>}</span> 
 <a id='x11-116017r3'></a><span class='textcolor-2838af'>\append</span>:defI<span class='textcolor-2838af'>\mycommand</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\b</span>:mycommand<span class='textcolor-387f38'>}</span> 
 <a id='x11-116019r4'></a><span class='textcolor-2838af'>\Hinput</span><span class='textcolor-387f38'>{</span>mypackage<span class='textcolor-387f38'>}</span> 
 <a id='x11-116021r5'></a><span class='textcolor-2838af'>\endinput</span></pre>
 
 </figure>
-<!-- l. 291 --><p class='indent'>   Important command in this listing is <code class='texttt'>\Hinput{mypackage}</code>. The <span class='textbf'><code class='texttt'>\Hinput</code></span> expects
+<!-- l. 297 --><p class='indent'>   Important command in this listing is <code class='texttt'>\Hinput{mypackage}</code>. The <span class='textbf'><code class='texttt'>\Hinput</code></span> expects
 package name as it’s argument. It registers it for the latter processing in the output
 format files.
-</p><!-- l. 294 --><p class='indent'>   Here is a custom output format file <code class='texttt'>sample.4ht</code>:
+</p><!-- l. 300 --><p class='indent'>   Here is a custom output format file <code class='texttt'>sample.4ht</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb169'><a id='x11-116035r1'></a><span class='textcolor-2838af'>\exit</span>:ifnot<span class='textcolor-387f38'>{</span>mypackage<span class='textcolor-387f38'>}</span> 
+<pre class='fancyvrb' id='fancyvrb170'><a id='x11-116035r1'></a><span class='textcolor-2838af'>\exit</span>:ifnot<span class='textcolor-387f38'>{</span>mypackage<span class='textcolor-387f38'>}</span> 
 <a id='x11-116037r2'></a> 
 <a id='x11-116039r3'></a><span class='textcolor-878787'><span class='textit'>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span> 
 <a id='x11-116041r4'></a><span class='textcolor-2838af'>\ConfigureHinput</span><span class='textcolor-387f38'>{</span>mypackage<span class='textcolor-387f38'>}</span> 
@@ -424,22 +431,22 @@ format files.
 <a id='x11-116053r10'></a><span class='textcolor-878787'><span class='textit'>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span> 
 <a id='x11-116055r11'></a> 
 <a id='x11-116057r12'></a><span class='textcolor-2838af'>\endinput</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
-<!-- l. 311 --><p class='indent'>   The <span class='textbf'><code class='texttt'>\exit:ifnot</code></span> command takes comma separated list of packages supported by
+<!-- l. 317 --><p class='indent'>   The <span class='textbf'><code class='texttt'>\exit:ifnot</code></span> command takes comma separated list of packages supported by
 the output format file. This stops it’s loading if the currently processed package
 doesn’t have configurations in the file.
-</p><!-- l. 315 --><p class='indent'>   The configuration for the package is placed between <span class='textbf'><code class='texttt'>\ConfigureHinput</code></span> and
+</p><!-- l. 321 --><p class='indent'>   The configuration for the package is placed between <span class='textbf'><code class='texttt'>\ConfigureHinput</code></span> and
 <code class='texttt'>\endinput\empty\empty\empty\empty\empty\empty</code>.
-                                                                  
-
-                                                                  
-</p><!-- l. 318 --><p class='indent'>   To request the custom output format file, we need to add it to <code class='texttt'>tex4ht.usr</code>. Here
+</p><!-- l. 324 --><p class='indent'>   To request the custom output format file, we need to add it to <code class='texttt'>tex4ht.usr</code>. Here
 is an example that adds a new option <span class='emph'>myhtml5</span>. It is based on the code for the <span class='emph'>html5</span>
 option from <code class='texttt'>tex4ht.4ht</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb170'><a id='x11-116084r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>myhtml5<span class='textcolor-387f38'>}{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<pre class='fancyvrb' id='fancyvrb171'><a id='x11-116084r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>myhtml5<span class='textcolor-387f38'>}{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
 <a id='x11-116086r2'></a>   <span class='textcolor-2838af'>\:</span>CheckOption<span class='textcolor-387f38'>{</span>info<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\if</span>:Option 
 <a id='x11-116088r3'></a>               <span class='textcolor-2838af'>\Hinclude</span><span class='textcolor-387f38'>[*]{</span>infoht4.4ht<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\fi</span> 
 <a id='x11-116090r4'></a>   <span class='textcolor-2838af'>\:</span>CheckOption<span class='textcolor-387f38'>{</span>info<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\if</span>:Option 
@@ -466,66 +473,66 @@ option from <code class='texttt'>tex4ht.4ht</code>:
 <a id='x11-116132r25'></a><span class='textcolor-387f38'>}</span></pre>
 
 </figure>
-<!-- l. 350 --><p class='indent'>   It uses the <span class='textbf'><code class='texttt'>\:CheckOption</code></span> commands to detect additional options, which results
+<!-- l. 356 --><p class='indent'>   It uses the <span class='textbf'><code class='texttt'>\:CheckOption</code></span> commands to detect additional options, which results
 in conditional loading of various output format files using the <span class='textbf'><code class='texttt'>\Hinclude</code></span> command.
 Our custom output file <code class='texttt'>sample.4ht</code> is placed at the end.
-</p><!-- l. 354 --><p class='indent'>   You can then require the custom output format using this command:
+</p><!-- l. 360 --><p class='indent'>   You can then require the custom output format using this command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb171'><a id='x11-116135r1'></a>$ make4ht filename.tex <span class='textcolor-b73838'>"myhtml5"</span></pre>
+<pre class='fancyvrb' id='fancyvrb172'><a id='x11-116135r1'></a>$ make4ht filename.tex <span class='textcolor-b73838'>"myhtml5"</span></pre>
 
 </figure>
-<!-- l. 370 --><p class='noindent'>
+<!-- l. 376 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='-texht-literate-sources'><span class='titlemark'>10.4   </span> <a id='x11-11700010.4'></a><code class='texttt'>TeX4ht</code> literate sources</h3>
-<!-- l. 372 --><p class='noindent'>To add a proper support for a new package, it is necessary to edit the <code class='texttt'>TeX4ht</code>
+<!-- l. 378 --><p class='noindent'>To add a proper support for a new package, it is necessary to edit the <code class='texttt'>TeX4ht</code>
 literate sources. All distributed <code class='texttt'>TeX4ht</code> files, including <code class='texttt'>tex4ht.sty</code> and all
 <code class='texttt'>.4ht</code> files, are generated from these literate programming files. It is also the
 reason why the generated files don’t contain much comments, these are in the
 sources. If you want to understand how <code class='texttt'>TeX4ht</code> works, it is necessary to read
 them.
-</p><!-- l. 379 --><p class='indent'>   The source files are available in the <a href='https://puszcza.gnu.org.ua/projects/tex4ht/'><code class='texttt'>TeX4ht</code> source repository</a>. You can retrieve
+</p><!-- l. 385 --><p class='indent'>   The source files are available in the <a href='https://puszcza.gnu.org.ua/projects/tex4ht/'><code class='texttt'>TeX4ht</code> source repository</a>. You can retrieve
 them using a SVN client.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb172'><a id='x11-117004r1'></a>$ svn checkout https://svn.gnu.org.ua/sources/tex4ht/ 
+<pre class='fancyvrb' id='fancyvrb173'><a id='x11-117004r1'></a>$ svn checkout https://svn.gnu.org.ua/sources/tex4ht/ 
 <a id='x11-117006r2'></a>$ <span class='textcolor-387f38'>cd</span> tex4ht/trunk/lit/</pre>
+                                                                  
+
+                                                                  
 
 </figure>
-<!-- l. 388 --><p class='indent'>   The configurable hooks for all packages are contained by the <code class='texttt'>tex4ht-4ht.tex</code> file.
+<!-- l. 394 --><p class='indent'>   The configurable hooks for all packages are contained by the <code class='texttt'>tex4ht-4ht.tex</code> file.
 Configurations of these hooks is placed in the output format configuration files. The
 most common output format is <code class='texttt'>HTML</code>, which can be configured in <code class='texttt'>tex4ht-html4.tex</code>,
 or <code class='texttt'>tex4ht-html5.tex</code> if <code class='texttt'>HTML5</code> features are used. You can also update sources for
 other output formats, for example <code class='texttt'>tex4th-ooffice.tex</code> for the ODT format, or
 <code class='texttt'>tex4ht-tei.tex</code> for TEI. The sources of the <code class='texttt'>tex4ht.sty</code> package are available in
 <code class='texttt'>tex4ht-sty.tex</code>.
-                                                                  
-
-                                                                  
-</p><!-- l. 395 --><p class='indent'>   To compile all literate sources, run the <code class='texttt'>make</code> command. You will need basic UNIX
+</p><!-- l. 401 --><p class='indent'>   To compile all literate sources, run the <code class='texttt'>make</code> command. You will need basic UNIX
 utilities for this to succeed, as well as <code class='texttt'>m4</code> and <code class='texttt'>javac</code>. You can also compile
 particular source files. Most of them can be compiled using LaTeX, but
 some of them, for example <code class='texttt'>tex4ht-4ht.tex</code>, needs to be compiled using
 <code class='texttt'>etex</code>.
-</p><!-- l. 400 --><p class='noindent'>
+</p><!-- l. 406 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='how-to-add-support-for-a-package-to-the-texht-literate-sources'><span class='titlemark'>10.4.1   </span> <a id='x11-11800010.4.1'></a>How to add support for a package to the <code class='texttt'>TeX4ht</code> literate sources</h4>
-<!-- l. 402 --><p class='noindent'>Given following package <code class='texttt'>sample.sty</code>:
+<!-- l. 408 --><p class='noindent'>Given following package <code class='texttt'>sample.sty</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb173'><a id='x11-118005r1'></a><span class='textcolor-2838af'>\ProvidesPackage</span><span class='textcolor-387f38'>{</span>sample<span class='textcolor-387f38'>}</span> 
+<pre class='fancyvrb' id='fancyvrb174'><a id='x11-118005r1'></a><span class='textcolor-2838af'>\ProvidesPackage</span><span class='textcolor-387f38'>{</span>sample<span class='textcolor-387f38'>}</span> 
 <a id='x11-118007r2'></a><span class='textcolor-2838af'>\newcommand\hello</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}</span> 
 <a id='x11-118009r3'></a><span class='textcolor-2838af'>\endinput</span></pre>
 
 </figure>
-<!-- l. 410 --><p class='indent'>   This simple package defines command <code class='texttt'>\hello</code>, which simply prints the word
+<!-- l. 416 --><p class='indent'>   This simple package defines command <code class='texttt'>\hello</code>, which simply prints the word
 “hello” when used in a document.
-</p><!-- l. 412 --><p class='indent'>   Let’s say that we want to insert some <code class='texttt'>HTML</code> tags before and after the text content
+</p><!-- l. 418 --><p class='indent'>   Let’s say that we want to insert some <code class='texttt'>HTML</code> tags before and after the text content
 printed by the command.
-</p><!-- l. 414 --><p class='indent'>   Basic template for <code class='texttt'>tex4ht-4ht.tex</code>:
+</p><!-- l. 420 --><p class='indent'>   Basic template for <code class='texttt'>tex4ht-4ht.tex</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb174'><a id='x11-118021r1'></a><span class='textcolor-2838af'>\&lt;</span>sample.4ht<span class='textcolor-2838af'>\&gt;</span>&lt;&lt;&lt; 
+<pre class='fancyvrb' id='fancyvrb175'><a id='x11-118021r1'></a><span class='textcolor-2838af'>\&lt;</span>sample.4ht<span class='textcolor-2838af'>\&gt;</span>&lt;&lt;&lt; 
 <a id='x11-118023r2'></a><span class='textcolor-878787'><span class='textit'>% sample.4ht (|version), generated from |jobname.tex</span></span> 
 <a id='x11-118025r3'></a><span class='textcolor-878787'><span class='textit'>% Copyright 2017 TeX Users Group</span></span> 
 <a id='x11-118027r4'></a>|&lt;TeX4ht license text|&gt; 
@@ -537,77 +544,77 @@ printed by the command.
 <a id='x11-118039r10'></a>&gt;&gt;&gt; <span class='textcolor-2838af'>\AddFile</span><span class='textcolor-387f38'>{</span>9<span class='textcolor-387f38'>}{</span>sample<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
-<!-- l. 430 --><p class='indent'>   Configuration for each package must follow this basic template. The <code class='texttt'>ProTeX</code>
+<!-- l. 436 --><p class='indent'>   Configuration for each package must follow this basic template. The <code class='texttt'>ProTeX</code>
 system is used as system for literate programming.
-</p><!-- l. 432 --><p class='indent'>   The <span class='obeylines-h'><code class='verb'>\&lt;name\&gt;&lt;&lt;&lt;code&gt;&gt;&gt;</code></span> block defines new macro which can be then called
+</p><!-- l. 438 --><p class='indent'>   The <span class='obeylines-h'><code class='verb'>\&lt;name\&gt;&lt;&lt;&lt;code&gt;&gt;&gt;</code></span> block defines new macro which can be then called
 using <code class='texttt'>|&lt;name|&gt;</code>. The license text is included in this way in the example. The
 instruction to generate the <code class='texttt'>.4ht</code> file is given in the command <code class='texttt'>\AddFile{9}{sample}</code>
 after the block definition. The first argument to <span class='textbf'><code class='texttt'>\AddFile</code></span> is an arbitrary
 number.
-</p><!-- l. 437 --><p class='indent'>   Each package configuration must include <code class='texttt'>\Hinput{packagename}</code>, in order to
+</p><!-- l. 443 --><p class='indent'>   Each package configuration must include <code class='texttt'>\Hinput{packagename}</code>, in order to
 load the configurations for the package.
-</p><!-- l. 439 --><p class='indent'>   The command <code class='texttt'>\NewConfigure{hello}{2}</code> declares new configuration <code class='texttt'>hello</code>,
+                                                                  
+
+                                                                  
+</p><!-- l. 445 --><p class='indent'>   The command <code class='texttt'>\NewConfigure{hello}{2}</code> declares new configuration <code class='texttt'>hello</code>,
 with two configurable hooks. These hooks are named <code class='texttt'>\a:hello</code> and <code class='texttt'>\b:hello</code>. The
 hooks must be inserted into the <code class='texttt'>\hello</code>, which can be easily done using the
 <code class='texttt'>\pend:def</code> and <code class='texttt'>\append:def</code> commands. These commands can insert code at the
 beginning, respective at the end of the redefined command.
-</p><!-- l. 444 --><p class='indent'>   The package name must be also included in the <code class='texttt'>mktex4ht-cnf.tex</code> file. This file
+</p><!-- l. 450 --><p class='indent'>   The package name must be also included in the <code class='texttt'>mktex4ht-cnf.tex</code> file. This file
 is used in the generation of the
-</p>
-                                                                  
-
-                                                                  
-<figure class='texsource' role='doc-example'>   
-<pre class='fancyvrb' id='fancyvrb175'><a id='x11-118042r1'></a><span class='textcolor-2838af'>\AddFile</span><span class='textcolor-387f38'>{</span>9<span class='textcolor-387f38'>}{</span>sample<span class='textcolor-387f38'>}</span></pre>
-
-</figure>
-<!-- l. 450 --><p class='indent'>   You can place configuration for <code class='texttt'>HTML</code> to the <code class='texttt'>tex4ht-html4.tex</code> file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb176'><a id='x11-118048r1'></a><span class='textcolor-2838af'>\&lt;</span>configure html4 sample<span class='textcolor-2838af'>\&gt;</span>&lt;&lt;&lt; 
+<pre class='fancyvrb' id='fancyvrb176'><a id='x11-118042r1'></a><span class='textcolor-2838af'>\AddFile</span><span class='textcolor-387f38'>{</span>9<span class='textcolor-387f38'>}{</span>sample<span class='textcolor-387f38'>}</span></pre>
+
+</figure>
+<!-- l. 456 --><p class='indent'>   You can place configuration for <code class='texttt'>HTML</code> to the <code class='texttt'>tex4ht-html4.tex</code> file:
+</p>   
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb177'><a id='x11-118048r1'></a><span class='textcolor-2838af'>\&lt;</span>configure html4 sample<span class='textcolor-2838af'>\&gt;</span>&lt;&lt;&lt; 
 <a id='x11-118050r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;span class="hello"&gt;<span class='textcolor-387f38'>}}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/span&gt;<span class='textcolor-387f38'>}}</span> 
 <a id='x11-118052r3'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>.hello<span class='textcolor-387f38'>{</span>color:red;<span class='textcolor-387f38'>}}</span> 
 <a id='x11-118054r4'></a>&gt;&gt;&gt;</pre>
 
 </figure>
-<!-- l. 460 --><p class='indent'>   The <code class='texttt'>\&lt;configure html4 packagename\&gt;</code> block will produce code that
+<!-- l. 466 --><p class='indent'>   The <code class='texttt'>\&lt;configure html4 packagename\&gt;</code> block will produce code that
 detects use of the package <code class='texttt'>packagename</code>. It then loads configurations for the
 package.
-</p><!-- l. 465 --><p class='indent'>   The <code class='texttt'>.4ht</code> files can be generated simply using the <code class='texttt'>make</code> command.
-</p><!-- l. 467 --><p class='indent'>   The following sample TeX file:
+</p><!-- l. 471 --><p class='indent'>   The <code class='texttt'>.4ht</code> files can be generated simply using the <code class='texttt'>make</code> command.
+</p><!-- l. 473 --><p class='indent'>   The following sample TeX file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb177'><a id='x11-118061r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>article<span class='textcolor-387f38'>}</span> 
+<pre class='fancyvrb' id='fancyvrb178'><a id='x11-118061r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>article<span class='textcolor-387f38'>}</span> 
 <a id='x11-118063r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>sample<span class='textcolor-387f38'>}</span> 
 <a id='x11-118065r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
 <a id='x11-118067r4'></a>  <span class='textcolor-2838af'>\hello\ </span>world. 
 <a id='x11-118069r5'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
-<!-- l. 478 --><p class='indent'>   Produces a following <code class='texttt'>HTML</code> code:
+<!-- l. 484 --><p class='indent'>   Produces a following <code class='texttt'>HTML</code> code:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb178'><a id='x11-118074r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 4--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span> 
+<pre class='fancyvrb' id='fancyvrb179'><a id='x11-118074r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 4--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span> 
 <a id='x11-118076r2'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"hello"</span><span class='textcolor-878787'>&gt;</span>hello<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> world. 
 <a id='x11-118078r3'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
 
 </figure>
-<!-- l. 489 --><p class='noindent'>
+<!-- l. 495 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='protex'><span class='titlemark'>10.5   </span> <a id='x11-11900010.5'></a>ProTeX</h3>
-<!-- l. 492 --><p class='noindent'>The literate programming system used in the previous section is called ProTeX. We
+                                                                  
+
+                                                                  
+<!-- l. 498 --><p class='noindent'>The literate programming system used in the previous section is called ProTeX. We
 should discuss some main ideas behind this system.
-</p><!-- l. 498 --><p class='indent'>   Literate programming is a discipline that promotes the writing of programs the
+</p><!-- l. 504 --><p class='indent'>   Literate programming is a discipline that promotes the writing of programs the
 way one explains them to human beings. ProTeX is a literate programming system
 fully implemented in terms of TeX, and it is compatible with LaTeX and other
 TeX-base systems. TeX4ht, and ProTeX itself, are examples of applications written in
 ProTeX.
 </p>   
 <figure class='texsource' role='doc-example'>
-                                                                  
-
-                                                                  
-<pre class='fancyvrb' id='fancyvrb179'><a id='x11-119009r1'></a><span class='textcolor-2838af'>\input</span> ProTex.sty 
+<pre class='fancyvrb' id='fancyvrb180'><a id='x11-119009r1'></a><span class='textcolor-2838af'>\input</span> ProTex.sty 
 <a id='x11-119011r2'></a><span class='textcolor-2838af'>\AlProTex</span><span class='textcolor-387f38'>{</span>extension,&lt;&lt;&lt;&gt;&gt;&gt;,list,title,escape-character<span class='textcolor-387f38'>}</span> 
 <a id='x11-119013r3'></a><span class='textcolor-2838af'>\&lt;</span>title<span class='textcolor-2838af'>\&gt;</span>&lt;&lt;&lt; 
 <a id='x11-119015r4'></a>code fragment 
@@ -616,38 +623,38 @@ ProTeX.
 <a id='x11-119021r7'></a><span class='textcolor-2838af'>\OutputCode\&lt;</span>...<span class='textcolor-2838af'>\&gt;</span></pre>
 
 </figure>
-<!-- l. 515 --><p class='indent'>   Some explanation:
+<!-- l. 521 --><p class='indent'>   Some explanation:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb180'><a id='x11-119025r1'></a><span class='textcolor-2838af'>\input</span> ProTex.sty 
+<pre class='fancyvrb' id='fancyvrb181'><a id='x11-119025r1'></a><span class='textcolor-2838af'>\input</span> ProTex.sty 
 <a id='x11-119027r2'></a><span class='textcolor-2838af'>\AlProTex</span><span class='textcolor-387f38'>{</span>extension,&lt;&lt;&lt;&gt;&gt;&gt;,list,title,escape-character<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
-<!-- l. 522 --><p class='indent'>   The escape-character stands for ‘, @, |, or ?. If omitted, it stands for
+<!-- l. 528 --><p class='indent'>   The escape-character stands for ‘, @, |, or ?. If omitted, it stands for
 <span class='obeylines-h'><code class='verb'>|</code></span>.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb181'><a id='x11-119033r1'></a><span class='textcolor-2838af'>\&lt;</span>title<span class='textcolor-2838af'>\&gt;</span>&lt;&lt;&lt; 
+<pre class='fancyvrb' id='fancyvrb182'><a id='x11-119033r1'></a><span class='textcolor-2838af'>\&lt;</span>title<span class='textcolor-2838af'>\&gt;</span>&lt;&lt;&lt; 
 <a id='x11-119035r2'></a>code fragment 
 <a id='x11-119037r3'></a>&gt;&gt;&gt; 
 <a id='x11-119039r4'></a></pre>
 
 </figure>
-<!-- l. 531 --><p class='indent'>   This structure provides names to code fragments (the fragments should not be
+<!-- l. 537 --><p class='indent'>   This structure provides names to code fragments (the fragments should not be
 too large in size).
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb182'><a id='x11-119042r1'></a> |&lt;title|&gt;</pre>
+<pre class='fancyvrb' id='fancyvrb183'><a id='x11-119042r1'></a> |&lt;title|&gt;</pre>
 
 </figure>
-<!-- l. 538 --><p class='indent'>   This command acts as a place holder for the code segment associated to the title
+<!-- l. 544 --><p class='indent'>   This command acts as a place holder for the code segment associated to the title
 (<code class='texttt'>|</code> stands for the escape character).
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb183'><a id='x11-119045r1'></a>   <span class='textcolor-2838af'>\OutputCode\&lt;</span>...<span class='textcolor-2838af'>\&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb184'><a id='x11-119045r1'></a>   <span class='textcolor-2838af'>\OutputCode\&lt;</span>...<span class='textcolor-2838af'>\&gt;</span></pre>
 
 </figure>
-<!-- l. 544 --><p class='indent'>   This command creates a file for the code whose root node is specified.
+<!-- l. 550 --><p class='indent'>   This command creates a file for the code whose root node is specified.
                                                                   
 
                                                                   
