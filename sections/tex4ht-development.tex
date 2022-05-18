@@ -196,12 +196,28 @@ Up to three parameters are supported.
 \newcommand\bar{xxx}
 \pend:def\bar{*}
 \append:def\bar{*}
+\bar
+% produces: "*xxx*"
 \newcommand\foo[2]{#1, #2}
 \pend:defII\foo{*}
 \append:defII\foo{*}
+\foo{a}{b}
+% produces "*a, b*"
+
 \end{texsource}
 
+\DocCommand{:CheckOption}\marg{option name}
+\DocCommand{if:Option}
 
+Support for custom options. The \cmd{:CheckOption} checks if the given option
+is active, and \cmd{if:Option} conditional then run true or false branch.
+
+\begin{texsource}
+\:CheckOption{info}\if:Option
+... \else ...
+\fi
+\end{texsource}
+      
 \section{Two types of .4ht files}
 
 % text from the old documentation:
@@ -227,17 +243,123 @@ of the style files, and in a compatible order. Since the different style files
 may redefine the syntax and semantics of macros, \texfourht\ follows a similar route
 of defining and redefining the hooks and their meanings.
 
-The meaning attaching files are normally requested through option names
-introduced in the \file{tex4ht.4ht} system file. It defines options for all output formats
-supported by \texfourht. For instance, \option{html5}, \option{ooffice} for the ODT output,
-\option{tei}, and so on.
 
 % For instance, the mzlatex command
 % refers to the mozilla option name of tex4ht.4ht, and the oolatex command refers
 % to the ooffice option name. 
 
-The user may add option names, and redefine old
-ones, within a new file named tex4ht.usr.
+\subsection{Custom output formats}
+
+The meaning attaching files are normally requested through option names
+introduced in the \file{tex4ht.4ht} system file. It defines options for all output formats
+supported by \texfourht. For instance, \option{html5}, \option{ooffice} for the ODT output,
+\option{tei}, and so on. 
+
+These options are passed to \texfourht\ by \makefourht according to the \texttt{--format} 
+command line parameter, but you can pass them also yourself. 
+
+The user may add option names, and redefine old ones, within a new file named \file{tex4ht.usr}.
+
+A new tex4ht.usr file should group references to \file{*.4ht} configuration files
+under arbitrarily chosen option names. For that purpose, \cmd{Configure} commands
+similar to those provided in \file{tex4ht.4ht} should be employed. 
+These are particularly useful if you use custom packages that are not included in TeX distributions
+and thus aren't supported by \texfourht.
+
+You can place your custom \file{.4ht} files or \file{tex4ht.usr} in your local TEXMF tree, for instance
+in \shellcmd{~/texmf/tex/latex/my4htfiles}.
+
+\subsubsection{Example}
+
+Let's say that you have a custom package \file{mypackage.sty}:
+
+\begin{texsource}
+\newcommand\mycommand[1]{Hello #1}
+\endinput
+\end{texsource}
+
+This can be configured using the following configuration file, \file{mypackage.4ht}:
+
+\begin{texsource}
+\NewConfigure{mycommand}{2}
+\pend:defI\mycommand{\a:mycommand}
+\append:defI\mycommand{\b:mycommand}
+\Hinput{mypackage}
+\endinput
+\end{texsource}
+
+Important command in this listing is \texcommand{\Hinput{mypackage}}. The \cmd{Hinput} expects
+package name as it's argument. It registers it for the latter processing in the output format files.
+
+Here is a custom output format file \file{sample.4ht}:
+
+\begin{texsource}
+\exit:ifnot{mypackage} 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\ConfigureHinput{mypackage} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\Configure{mycommand}{\HCode{<span class="mycommand">}}{\HCode{</span>}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\endinput\empty\empty\empty\empty\empty\empty
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\endinput 
+\end{texsource}
+
+The \cmd{exit:ifnot} command takes comma separated list of packages supported by the
+output format file. This stops it's loading if the currently processed package doesn't 
+have configurations in the file. 
+
+The configuration for the package is placed between \cmd{ConfigureHinput} and
+\texcommand{\endinput\empty\empty\empty\empty\empty\empty}. 
+
+To request the custom output format file, we need to add it to \file{tex4ht.usr}. Here
+is an example that adds a new option \option{myhtml5}. It is based on the code for 
+the \option{html5} option from \file{tex4ht.4ht}:
+
+\begin{texsource}
+\Configure{myhtml5}{%
+   \:CheckOption{info}\if:Option
+               \Hinclude[*]{infoht4.4ht}\fi
+   \:CheckOption{info}\if:Option
+               \Hinclude[*]{infomml.4ht}\fi
+   \Hinclude[*]{html4.4ht}%
+   \Hinclude[*]{unicode.4ht}%
+   \:CheckOption{mathml}\if:Option%
+   \else\:CheckOption{mathml-}\fi%
+   \if:Option%
+      \Hinclude[*]{mathml.4ht}%
+      \Hinclude[*]{html-mml.4ht}%
+   \else
+      \Hinclude[*]{html4-math.4ht}%
+   \fi
+   \:CheckOption{svg}%
+             \if:Option \else\:CheckOption{svg-}\fi
+             \if:Option \else\:CheckOption{svg-obj}\fi
+             \if:Option \else\:CheckOption{svg-inline}\fi
+             \if:Option \Hinclude[*]{svg-option.4ht}%
+                        \:CheckOption{info}\if:Option \Hinclude[*]{infosvg.4ht}\fi
+             \fi
+   \Hinclude[*]{html5.4ht}%
+   \Hinclude[*]{sample.4ht}
+}
+\end{texsource}
+
+It uses the \cmd{:CheckOption} commands to detect additional options, which results 
+in conditional loading of various output format files using the \cmd{Hinclude} command. 
+Our custom output file \file{sample.4ht} is placed at the end.
+
+You can then require the custom output format using this command:
+
+\begin{shellcommand}
+$ make4ht filename.tex "myhtml5"
+\end{shellcommand}
+
+
+
+
 
 % \subsection{Inserting configurable hooks for packages}
 
@@ -248,7 +370,12 @@ ones, within a new file named tex4ht.usr.
 \section{\texfourht\ literate sources}
 
 To add a proper support for a new package, it is necessary to edit the 
-\texfourht\ literate sources. 
+\texfourht\ literate sources. All distributed \texfourht\ files, including
+\file{tex4ht.sty} and all \file{.4ht} files, are generated from these literate
+programming files. It is also the reason why the generated files don't contain
+much comments, these are in the sources. If you want to understand
+how \texfourht\ works, it is necessary to read them.
+
 The source files are available in the \href{https://puszcza.gnu.org.ua/projects/tex4ht/}{\texfourht\ source repository}.
 You can retrieve them using a SVN client. 
 
