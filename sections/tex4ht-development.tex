@@ -266,8 +266,14 @@ similar to those provided in \file{tex4ht.4ht} should be employed.
 These are particularly useful if you use custom packages that are not included in TeX distributions
 and thus aren't supported by \texfourht.
 
-You can place your custom \file{.4ht} files or \file{tex4ht.usr} in your local TEXMF tree, for instance
+You can place your custom \file{.4ht} files or \file{tex4ht.usr} in your local TEXMFHOME tree, for instance
 in \shellcmd{~/texmf/tex/latex/my4htfiles}.
+
+Location of the TEXMFHOME directory can be found using the following command:
+
+\begin{shellcommand}
+$ kpsewhich -var-value TEXMFHOME
+\end{shellcommand}
 
 \subsubsection{Example}
 
