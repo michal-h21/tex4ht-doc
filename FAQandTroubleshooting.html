@@ -328,10 +328,22 @@ correct:
 <h4 class='subsectionHead' id='problems-with-mathml'><span class='titlemark'>9.4.1   </span> <a id='x10-1100009.4.1'></a>Problems With <span class='emph'><code class='texttt'>MathML</code></span></h4>
 <!-- l. 187 --><p class='noindent'><span class='textbf'>Single delimiters</span> Use of single delimiters like <code class='texttt'>$\langle$</code> may result in
 invalid <code class='texttt'>MathML</code> code. <code class='texttt'>TeX4ht</code> can try to fix that using the <span class='emph'>mathml-</span> option.
+</p><!-- l. 193 --><p class='noindent'><span class='textbf'>Use of <span class='textbf'><code class='texttt'>\hbox</code></span> in math environments</span>
+</p><!-- l. 195 --><p class='indent'>   Don’t use the <span class='textbf'><code class='texttt'>\hbox</code></span> command inside math environments. The following code
+results in DOM error and wrong rendering by MathML processors. You can fix this
+by using <span class='textbf'><code class='texttt'>\mbox</code></span> instead.
+</p>   
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb156'><a id='x10-110007r1'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>equation*<span class='textcolor-387f38'>}</span> 
+<a id='x10-110009r2'></a>  <span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>array<span class='textcolor-387f38'>}{</span>ll<span class='textcolor-387f38'>}</span> 
+<a id='x10-110011r3'></a>      <span class='textcolor-2838af'>\frac</span><span class='textcolor-387f38'>{</span>k<span class='textcolor-387f38'>}{</span>2<span class='textcolor-387f38'>^{</span>n<span class='textcolor-387f38'>}}</span>, <span class='textcolor-387f38'>&amp; </span><span class='textcolor-2838af'>\hbox</span><span class='textcolor-387f38'>{</span> if <span class='textcolor-b73838'>\(</span><span class='textcolor-af3f3f'>\frac</span><span class='textcolor-387f38'>{k</span><span class='textcolor-656565'>-</span><span class='textcolor-444444'>1</span><span class='textcolor-387f38'>}{</span><span class='textcolor-444444'>2</span><span class='textcolor-387f38'>^{n}}</span><span class='textcolor-af3f3f'>\leq\tau</span><span class='textcolor-387f38'> &lt; </span><span class='textcolor-af3f3f'>\frac</span><span class='textcolor-387f38'>{k}{</span><span class='textcolor-444444'>2</span><span class='textcolor-387f38'>^{n}}</span><span class='textcolor-b73838'>\)</span>.<span class='textcolor-387f38'>}</span> 
+<a id='x10-110013r4'></a>  <span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>array<span class='textcolor-387f38'>}</span> 
+<a id='x10-110015r5'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>equation*<span class='textcolor-387f38'>}</span></pre>
+
+</figure>
                                                                   
 
                                                                   
-</p>   
 <nav class='crosslinks-bottom'>[<a href='Make4htBuildFiles.html'>prev</a>] [<a href='tex4ht-doc.html#FAQandTroubleshooting.html'>up</a>] [<a href='ForDevelopers.html'>next</a>] </nav>   </main><p><script data-goatcounter='https://kodymirus.goatcounter.com/count' src='/js/libs/goatcounter.js'></script></p> 
  
 </body> 
