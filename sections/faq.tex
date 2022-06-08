@@ -190,5 +190,18 @@ treatment is needed also for the closing of the environment. The resulting HTML 
   option.
 \end{issue}
 
+\begin{issue}{Use of \cmd{hbox} in math environments}
 
+Don't use the \cmd{hbox} command inside math environments. The following code results in 
+DOM error and wrong rendering by MathML processors. You can fix this by using \cmd{mbox} instead.
+
+\begin{texsource}
+\begin{equation*}
+  \begin{array}{ll}
+      \frac{k}{2^{n}}, & \hbox{ if \(\frac{k-1}{2^{n}}\leq\tau < \frac{k}{2^{n}}\).}
+  \end{array}
+\end{equation*}
+\end{texsource}
+  
+\end{issue}
 
