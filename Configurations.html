@@ -312,42 +312,54 @@ parameters:
 <a id='x8-55030r6'></a><span class='textcolor-2838af'>\Link</span><span class='textcolor-387f38'>{}{</span>a<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\EndLink       </span><span class='textcolor-878787'><span class='textit'>% set link destination (or by \JSLink{}{a}\EndJSLink)</span></span></pre>
 
 </figure>
-<!-- l. 68 --><p class='noindent'>
-</p>   
-<h4 class='subsectionHead' id='cross-references'><span class='titlemark'>7.3.3   </span> <a id='x8-560007.3.3'></a>Cross references</h4>
-<!-- l. 70 --><p class='noindent'>For correct support of cross-references, you need to place link destinations for labels.
-<code class='texttt'>TeX4ht</code> handles labels defined by the <span class='textbf'><code class='texttt'>\refstepcounter</code></span> command, but links for
-labels that use a direct setting of the <span class='textbf'><code class='texttt'>\@currentlabel</code></span> command needs to be inserted
-manually.
+<!-- l. 68 --><p class='noindent'><code class='texttt'><span class='textbf'>\Tag</span></code>{<span class='textit'>label</span>}{<span class='textit'>content</span>}
+</p><!-- l. 69 --><p class='noindent'><code class='texttt'><span class='textbf'>\Ref</span></code>{<span class='textit'>label</span>}
+</p><!-- l. 70 --><p class='noindent'><code class='texttt'><span class='textbf'>\LikeRef</span></code>{<span class='textit'>label</span>}
+</p><!-- l. 72 --><p class='indent'>   <span class='textbf'><code class='texttt'>\Tag</code></span> and <span class='textbf'><code class='texttt'>\Ref</code></span> are commands introduced cross-referencing content through <code class='texttt'>.xref</code>
+auxiliary files.
                                                                   
 
                                                                   
-</p><!-- l. 75 --><p class='noindent'><code class='texttt'><span class='textbf'>\AnchorLabel</span></code> inserts link destination for the current <span class='textbf'><code class='texttt'>\label</code></span> command. It will be
-used in <span class='textbf'><code class='texttt'>\ref</code></span>, <span class='textbf'><code class='texttt'>\pageref</code></span>, and other cross referencing commands that point to the
-label. It should be placed after change of <span class='textbf'><code class='texttt'>\@currentlabel</code></span>.
-</p><!-- l. 79 --><p class='noindent'><code class='texttt'><span class='textbf'>\SkipRefstepAnchor</span></code> don’t insert anchor for the next <span class='textbf'><code class='texttt'>\refstepcounter</code></span>.
-</p><!-- l. 81 --><p class='noindent'><code class='texttt'><span class='textbf'>\ShowRefstepAnchor</span></code> show anchor for the next <span class='textbf'><code class='texttt'>\refstepcounter</code></span>.
+</p><!-- l. 75 --><p class='indent'>   <span class='textbf'><code class='texttt'>\LikeRef</code></span> is a variant of <span class='textbf'><code class='texttt'>\Ref</code></span> which doesn’t verify whether the labels exit. It is
+mainly used in <span class='textbf'><code class='texttt'>\Link</code></span> and <span class='textbf'><code class='texttt'>\edef</code></span> environments.
+</p><!-- l. 78 --><p class='noindent'><code class='texttt'><span class='textbf'>\ifTag</span></code>{<span class='textit'>label</span>}{<span class='textit'>true part</span>}{<span class='textit'>false part</span>}
+</p><!-- l. 80 --><p class='indent'>   Test existence of a tag, and execute code depending on that.
 </p><!-- l. 83 --><p class='noindent'>
 </p>   
+<h4 class='subsectionHead' id='cross-references'><span class='titlemark'>7.3.3   </span> <a id='x8-560007.3.3'></a>Cross references</h4>
+<!-- l. 85 --><p class='noindent'>For correct support of cross-references, you need to place link destinations for labels.
+<code class='texttt'>TeX4ht</code> handles labels defined by the <span class='textbf'><code class='texttt'>\refstepcounter</code></span> command, but links for
+labels that use a direct setting of the <span class='textbf'><code class='texttt'>\@currentlabel</code></span> command needs to be inserted
+manually.
+</p><!-- l. 90 --><p class='noindent'><code class='texttt'><span class='textbf'>\AnchorLabel</span></code> inserts link destination for the current <span class='textbf'><code class='texttt'>\label</code></span> command. It will be
+used in <span class='textbf'><code class='texttt'>\ref</code></span>, <span class='textbf'><code class='texttt'>\pageref</code></span>, and other cross referencing commands that point to the
+label. It should be placed after change of <span class='textbf'><code class='texttt'>\@currentlabel</code></span>.
+</p><!-- l. 94 --><p class='noindent'><code class='texttt'><span class='textbf'>\SkipRefstepAnchor</span></code> don’t insert anchor for the next <span class='textbf'><code class='texttt'>\refstepcounter</code></span>.
+</p><!-- l. 96 --><p class='noindent'><code class='texttt'><span class='textbf'>\ShowRefstepAnchor</span></code> show anchor for the next <span class='textbf'><code class='texttt'>\refstepcounter</code></span>.
+</p><!-- l. 98 --><p class='noindent'>
+</p>   
 <h4 class='subsectionHead' id='paragraph-handling'><span class='titlemark'>7.3.4   </span> <a id='x8-570007.3.4'></a>Paragraph Handling</h4>
-<!-- l. 86 --><p class='noindent'>Paragraph handling is one of the more complicated areas in <code class='texttt'>TeX4ht</code>. You must handle
+<!-- l. 101 --><p class='noindent'>Paragraph handling is one of the more complicated areas in <code class='texttt'>TeX4ht</code>. You must handle
 insertion of tags for paragraph opening and closing, to prevent wrong nesting of
 XML tags. Mismatch of tags leads to issues with LuaXML post-processing of
 the generated files, preventing many fixes that are necessary for correct
 conversion.
-</p><!-- l. 92 --><p class='noindent'><code class='texttt'><span class='textbf'>\HtmlParOff</span></code> turns off insertion of paragraph tags in the following text.
-</p><!-- l. 94 --><p class='noindent'><code class='texttt'><span class='textbf'>\HtmlParOn</span></code> enables insertion of paragraphs tags.
-</p><!-- l. 96 --><p class='noindent'><code class='texttt'><span class='textbf'>\IgnorePar</span></code> asks to ignore the next paragraph.
-</p><!-- l. 97 --><p class='noindent'><code class='texttt'><span class='textbf'>\ShowPar</span></code> asks to take into account the following paragraphs.
-</p><!-- l. 99 --><p class='noindent'><code class='texttt'><span class='textbf'>\IgnoreIndent</span></code> asks to ignore indentation in the next paragraph.
-</p><!-- l. 100 --><p class='noindent'><code class='texttt'><span class='textbf'>\ShowIndent</span></code> asks to check indentation in the following paragraphs.
-</p><!-- l. 102 --><p class='noindent'><code class='texttt'><span class='textbf'>\SaveEndP</span></code> saves the content of <span class='textbf'><code class='texttt'>\EndP</code></span>, and sets it to empty content.
-</p><!-- l. 103 --><p class='noindent'><code class='texttt'><span class='textbf'>\RecallEndP</span></code> resets the content of <span class='textbf'><code class='texttt'>\EndP</code></span>.
-</p><!-- l. 105 --><p class='noindent'><code class='texttt'><span class='textbf'>\SaveHtmlPar</span></code> saves current configuration for paragraphs. It can be useful before
+</p><!-- l. 107 --><p class='noindent'><code class='texttt'><span class='textbf'>\HtmlParOff</span></code> turns off insertion of paragraph tags in the following text.
+</p><!-- l. 109 --><p class='noindent'><code class='texttt'><span class='textbf'>\HtmlParOn</span></code> enables insertion of paragraphs tags.
+</p><!-- l. 111 --><p class='noindent'><code class='texttt'><span class='textbf'>\IgnorePar</span></code> asks to ignore the next paragraph.
+</p><!-- l. 112 --><p class='noindent'><code class='texttt'><span class='textbf'>\ShowPar</span></code> asks to take into account the following paragraphs.
+</p><!-- l. 114 --><p class='noindent'><code class='texttt'><span class='textbf'>\IgnoreIndent</span></code> asks to ignore indentation in the next paragraph.
+</p><!-- l. 115 --><p class='noindent'><code class='texttt'><span class='textbf'>\ShowIndent</span></code> asks to check indentation in the following paragraphs.
+</p><!-- l. 117 --><p class='noindent'><code class='texttt'><span class='textbf'>\SaveEndP</span></code> saves the content of <span class='textbf'><code class='texttt'>\EndP</code></span>, and sets it to empty content.
+                                                                  
+
+                                                                  
+</p><!-- l. 118 --><p class='noindent'><code class='texttt'><span class='textbf'>\RecallEndP</span></code> resets the content of <span class='textbf'><code class='texttt'>\EndP</code></span>.
+</p><!-- l. 120 --><p class='noindent'><code class='texttt'><span class='textbf'>\SaveHtmlPar</span></code> saves current configuration for paragraphs. It can be useful before
 local declaration of <span class='textbf'><code class='texttt'>\Configure</code></span>{<span class='textit'>HtmlPar</span>}.
-</p><!-- l. 107 --><p class='noindent'><code class='texttt'><span class='textbf'>\RecallHtmlPar</span></code> resets configuration for paragraphs to the value saved by
+</p><!-- l. 122 --><p class='noindent'><code class='texttt'><span class='textbf'>\RecallHtmlPar</span></code> resets configuration for paragraphs to the value saved by
 <span class='textbf'><code class='texttt'>\SaveHtmlPar</code></span>.
-</p><!-- l. 111 --><p class='indent'>   The following example adds <code class='texttt'>&lt;div&gt;...&lt;/div&gt;</code> tags around contents of the
+</p><!-- l. 126 --><p class='indent'>   The following example adds <code class='texttt'>&lt;div&gt;...&lt;/div&gt;</code> tags around contents of the
 document body. The <code class='texttt'>\ifvmode\IgnorePar\fi</code> commands will prevent insertion of
 the <code class='texttt'>&lt;p&gt;</code> tag before <code class='texttt'>&lt;div&gt;</code> if we are in TeX’s vertical mode. The <code class='texttt'>\EndP</code> closes currently
 opened paragraph, if it is opened. The <code class='texttt'>\par\ShowPar</code> commands start new paragraph
@@ -355,9 +367,6 @@ after the inserted <code class='texttt'>&lt;div&gt;</code> tag. It is necessary 
 sometimes.
 </p>   
 <figure class='texsource' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb83'><a id='x8-57008r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@BODY<span class='textcolor-387f38'>}</span> 
 <a id='x8-57010r2'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ifvmode\IgnorePar\fi\EndP</span> 
 <a id='x8-57012r3'></a> <span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;div&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\par\ShowPar</span><span class='textcolor-387f38'>}</span> 
@@ -366,11 +375,11 @@ sometimes.
 <a id='x8-57018r6'></a> <span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/div&gt;<span class='textcolor-387f38'>}}</span></pre>
 
 </figure>
-<!-- l. 130 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>HtmlPar</span>}{content at the start non-indented paragraphs}
+<!-- l. 145 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>HtmlPar</span>}{content at the start non-indented paragraphs}
 {content at the start indented paragraphs}{insertion into <span class='textbf'><code class='texttt'>\EndP</code></span>, at the
 start of non-indented paragraphs}{insertion into <span class='textbf'><code class='texttt'>\EndP</code></span>, at the start of
 indented paragraphs}</code>
-</p><!-- l. 132 --><p class='indent'>   Example:
+</p><!-- l. 147 --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb84'><a id='x8-57025r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>HtmlPar<span class='textcolor-387f38'>}</span> 
@@ -380,37 +389,37 @@ indented paragraphs}</code>
 <a id='x8-57033r5'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/p&gt;<span class='textcolor-387f38'>}}</span></pre>
 
 </figure>
-<!-- l. 145 --><p class='noindent'>
+<!-- l. 160 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='logical-document-structure-commands'><span class='titlemark'>7.3.5   </span> <a id='x8-580007.3.5'></a>Logical Document Structure Commands</h4>
-<!-- l. 146 --><p class='noindent'>I’ve created an alternative commands to <span class='textbf'><code class='texttt'>\HCode</code></span> or <span class='textbf'><code class='texttt'>\Tg</code></span>. The idea is to define
+<!-- l. 161 --><p class='noindent'>I’ve created an alternative commands to <span class='textbf'><code class='texttt'>\HCode</code></span> or <span class='textbf'><code class='texttt'>\Tg</code></span>. The idea is to define
 semantic names for logical blocks of the document, such as titles, authors, sections
 etc. HTML elements and attributes can be assigned to these logical blocks. There are
 commands for inline and block level elements, eliminating need for constructs like
 <code class='texttt'>\ifvmode\IgnorePar\fi\EndP</code> etc.
-</p><!-- l. 153 --><p class='noindent'><code class='texttt'><span class='textbf'>\NewLogicalBlock</span></code>{<span class='textit'>name</span>} create a new logical block.
-</p><!-- l. 154 --><p class='noindent'><code class='texttt'><span class='textbf'>\SetBlockProperty</span></code>{<span class='textit'>name</span>}{<span class='textit'>attribute name</span>}{<span class='textit'>value</span>} set block attribute
+</p><!-- l. 168 --><p class='noindent'><code class='texttt'><span class='textbf'>\NewLogicalBlock</span></code>{<span class='textit'>name</span>} create a new logical block.
+</p><!-- l. 169 --><p class='noindent'><code class='texttt'><span class='textbf'>\SetBlockProperty</span></code>{<span class='textit'>name</span>}{<span class='textit'>attribute name</span>}{<span class='textit'>value</span>} set block attribute
 .
-</p><!-- l. 155 --><p class='noindent'><code class='texttt'><span class='textbf'>\SetTag</span></code>{<span class='textit'>name</span>}tag name assign element name to the logical block
-</p><!-- l. 156 --><p class='noindent'><code class='texttt'><span class='textbf'>\BlockElementStart</span></code>{<span class='textit'>name</span>}{<span class='textit'>additional attributes</span>} start block level element.
-</p><!-- l. 157 --><p class='noindent'><code class='texttt'><span class='textbf'>\BlockElementEnd</span></code>{<span class='textit'>name</span>} close block level element.
-</p><!-- l. 158 --><p class='noindent'><code class='texttt'><span class='textbf'>\InlineElementStart</span></code>{<span class='textit'>name</span>}{<span class='textit'>additional attributes</span>} start inline level element.
-</p><!-- l. 159 --><p class='noindent'><code class='texttt'><span class='textbf'>\InlineElementEnd</span></code>{<span class='textit'>name</span>} close inline level element.
-</p><!-- l. 162 --><p class='indent'>   The default tag name for declared logical blocks is <code class='texttt'>&lt;span&gt;</code>. You need to use the
+                                                                  
+
+                                                                  
+</p><!-- l. 170 --><p class='noindent'><code class='texttt'><span class='textbf'>\SetTag</span></code>{<span class='textit'>name</span>}tag name assign element name to the logical block
+</p><!-- l. 171 --><p class='noindent'><code class='texttt'><span class='textbf'>\BlockElementStart</span></code>{<span class='textit'>name</span>}{<span class='textit'>additional attributes</span>} start block level element.
+</p><!-- l. 172 --><p class='noindent'><code class='texttt'><span class='textbf'>\BlockElementEnd</span></code>{<span class='textit'>name</span>} close block level element.
+</p><!-- l. 173 --><p class='noindent'><code class='texttt'><span class='textbf'>\InlineElementStart</span></code>{<span class='textit'>name</span>}{<span class='textit'>additional attributes</span>} start inline level element.
+</p><!-- l. 174 --><p class='noindent'><code class='texttt'><span class='textbf'>\InlineElementEnd</span></code>{<span class='textit'>name</span>} close inline level element.
+</p><!-- l. 177 --><p class='indent'>   The default tag name for declared logical blocks is <code class='texttt'>&lt;span&gt;</code>. You need to use the
 <span class='textbf'><code class='texttt'>\SetTag</code></span> command only when you want to use a different element.
-</p><!-- l. 166 --><p class='indent'>   The attributes can be set either using <span class='textbf'><code class='texttt'>\SetBlockProperty</code></span>, or in the second
+</p><!-- l. 181 --><p class='indent'>   The attributes can be set either using <span class='textbf'><code class='texttt'>\SetBlockProperty</code></span>, or in the second
 argument to <span class='textbf'><code class='texttt'>\BlockElementStart</code></span> and <span class='textbf'><code class='texttt'>\InlineElementStart</code></span> commands. First
 method should be used for static attributes that don’t change, for instance <span class='textit'>class</span>. The
 second method is preferred for dynamic attributes, such as <span class='textit'>id</span>, which should be
 different for every element.
-                                                                  
-
-                                                                  
-</p><!-- l. 172 --><p class='indent'>   The main idea behind this mechanism is to allow easy work with new HTML5
+</p><!-- l. 187 --><p class='indent'>   The main idea behind this mechanism is to allow easy work with new HTML5
 elements and attributes for WAI-ARIA or Schema.org properties. I hope that this
 should allow us to make somehow more clear configurations for basic document
 building blocks.
-</p><!-- l. 177 --><p class='indent'>   Example:
+</p><!-- l. 192 --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb85'><a id='x8-58025r1'></a><span class='textcolor-2838af'>\NewLogicalBlock</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}</span> 
@@ -453,6 +462,9 @@ configurations.
 </p><!-- l. 17 --><p class='indent'>   Add local CSS file.
 </p>   
 <figure class='texsource' role='doc-example'>
+                                                                  
+
+                                                                  
 <pre class='fancyvrb' id='fancyvrb86'><a id='x8-59006r1'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>body<span class='textcolor-387f38'>{</span>max-width:70ch;margin: 1rem auto;<span class='textcolor-387f38'>}}</span> 
 <a id='x8-59008r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>AddCss<span class='textcolor-387f38'>}{</span>custom.css<span class='textcolor-387f38'>}</span> 
 <a id='x8-59010r3'></a><span class='textcolor-878787'><span class='textit'>% link to a CSS on some web:</span></span> 
@@ -477,9 +489,6 @@ explicitly specified in its body.
 <a id='x8-59035r7'></a>/* css.sty */ 
 <a id='x8-59037r8'></a>.mylist <span class='textcolor-387f38'>{</span> color : red; <span class='textcolor-387f38'>}</span> 
 <a id='x8-59039r9'></a><span class='textcolor-2838af'>\EndCssFile</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!-- l. 48 --><p class='indent'>   The names in the list of files should be separated by commas, and the rectangular
@@ -507,6 +516,9 @@ the viewer’s system.
 The argument should be font file in the format supported by browsers, such as <span class='textit'>woff</span>
 or <span class='textit'>otf</span>.
 </p><!-- l. 25 --><p class='indent'>   Full example of font CSS configurations:
+                                                                  
+
+                                                                  
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb89'><a id='x8-60016r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>NormalFont<span class='textcolor-387f38'>}{</span>normal-font-file.otf<span class='textcolor-387f38'>}</span> 
@@ -525,9 +537,6 @@ or <span class='textit'>otf</span>.
 <h3 class='sectionHead' id='use-javascript'><span class='titlemark'>7.6   </span> <a id='x8-610007.6'></a>Use JavaScript</h3>
 <!-- l. 4 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>AddJs</span>}{filename of JS file to be included}</code>
 </p><!-- l. 6 --><p class='indent'>   This configuration inserts link to a local JavaScript file.
-                                                                  
-
-                                                                  
 </p><!-- l. 8 --><p class='noindent'><code class='texttt'><span class='textbf'>\JavaScript</span></code> ... <span class='textbf'><code class='texttt'>\EndJavaScript</code></span> insert JS code in the verbatim mode. This
 command is available only when the <span class='emph'>javascript</span> option is active. It can put JS code
 directly to the document. If used in the configuration file, it should be placed after
@@ -554,6 +563,9 @@ directly to the document. If used in the configuration file, it should be placed
 <!-- l. 6 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>ext</span>}{default extension name for target files (recorded in
 <span class='textbf'><code class='texttt'>\:html</code></span>)}</code>
 </p><!-- l. 8 --><p class='indent'>   It can also be requested through a command line option <code class='texttt'>ext=...</code>.
+                                                                  
+
+                                                                  
 </p><!-- l. 10 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='html-header'><span class='titlemark'>7.7.2   </span> <a id='x8-640007.7.2'></a>HTML header</h4>
@@ -569,9 +581,6 @@ directly to the document. If used in the configuration file, it should be placed
 
 </figure>
 <!-- l. 23 --><p class='indent'>   A star ’*’ prefix calls for accumulative configurations
-                                                                  
-
-                                                                  
 </p><!-- l. 25 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='document-structure'><span class='titlemark'>7.7.3   </span> <a id='x8-650007.7.3'></a>Document structure</h4>
@@ -591,6 +600,9 @@ contributions.
 </p><!-- l. 45 --><p class='indent'>   For instance,
 </p>   
 <figure class='texsource' role='doc-example'>
+                                                                  
+
+                                                                  
 <pre class='fancyvrb' id='fancyvrb92'><a id='x8-65006r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@HEAD<span class='textcolor-387f38'>}{</span>A<span class='textcolor-387f38'>}</span> 
 <a id='x8-65008r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@HEAD<span class='textcolor-387f38'>}{}</span> 
 <a id='x8-65010r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@HEAD<span class='textcolor-387f38'>}{</span>B<span class='textcolor-387f38'>}</span> 
@@ -622,9 +634,6 @@ contributions.
 <a id='x8-65057r15'></a>&lt;HTML 2&gt;</pre>
 
 </figure>
-                                                                  
-
-                                                                  
 <!-- l. 86 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='titles'><span class='titlemark'>7.7.4   </span> <a id='x8-660007.7.4'></a>Titles</h4>
@@ -651,6 +660,9 @@ additive.
 </p><!-- l. 111 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>HPageTITLE+</span>}{an insertion just before the content of TITLE}
 </code>
 </p><!-- l. 113 --><p class='indent'>   If <code class='texttt'>#1</code> is a one parametric macro, it gets the title content for an argument.
+                                                                  
+
+                                                                  
 </p><!-- l. 1 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='page-breaks'><span class='titlemark'>7.8   </span> <a id='x8-670007.8'></a>Page Breaks</h3>
@@ -665,9 +677,6 @@ requests that split files will be named according to the section titles, instead
 sequential numbers. The <span class='emph'>cut-fullname</span> option will prevent truncating of generated
 filenames.
 </p><!-- l. 15 --><p class='indent'>   Finer control is possible with the following commands and configurations:
-                                                                  
-
-                                                                  
 </p><!-- l. 18 --><p class='noindent'><code class='texttt'><span class='textbf'>\CutAt</span></code>{<span class='textit'>at-unit,until-unit-1,until-unit-2,…</span>}
 </p><!-- l. 20 --><p class='indent'>   This directive asks the sectioning commands <span class='textbf'><code class='texttt'>\at-unit</code></span> to place their units in
 separate hypertext pages. The pages are to terminate upon encountering any of the
@@ -699,6 +708,9 @@ commands in a manner similar to
 </p><!-- l. 55 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>+CutAt</span>}{sectioning type}{before}{after}</code>
 </p><!-- l. 57 --><p class='indent'>   Requests delimiters for the <span class='textbf'><code class='texttt'>\CutAt</code></span> buttons of the specified sectioning
 type
+                                                                  
+
+                                                                  
 </p><!-- l. 60 --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
@@ -709,9 +721,6 @@ type
 </p><!-- l. 67 --><p class='noindent'><code class='texttt'><span class='textbf'>\ContCutAt</span></code>{<span class='textit'>section type</span>}
 </p><!-- l. 69 --><p class='indent'>   Pause and continue page breaking for the given section type. Note that it can be
 used for multiple section types.
-                                                                  
-
-                                                                  
 </p><!-- l. 71 --><p class='indent'>   For example, if you use the command line option ‘4’, with the <code class='texttt'>book</code> class, which
 breaks pages up to the subsection level, and you want to stop breaking sections, you
 need to use:
@@ -737,6 +746,9 @@ available through #1. The section title is accessible through #2.
 <pre class='fancyvrb' id='fancyvrb100'><a id='x8-67036r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>CutAt-filename<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\NextFile</span><span class='textcolor-387f38'>{</span>#1-#2.html<span class='textcolor-387f38'>}}</span></pre>
 
 </figure>
+                                                                  
+
+                                                                  
 <!-- l. 1 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='crosslinks'><span class='titlemark'>7.9   </span> <a id='x8-680007.9'></a>Cross-links</h3>
@@ -750,9 +762,6 @@ multi page document.
 pages obtained for sectioning commands.
 </p>   
 <figure class='texsource' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb101'><a id='x8-68006r1'></a> <span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>crosslinks<span class='textcolor-387f38'>}</span> 
 <a id='x8-68008r2'></a>   <span class='textcolor-387f38'>{}{}{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\scriptstyle\Rightarrow</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span> 
 <a id='x8-68010r3'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\scriptstyle\Leftarrow</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span> 
@@ -786,6 +795,9 @@ links are omitted, if both <span class='obeylines-h'><code class='verb'>#3</code
 </p>
 </dt><dd class='description'> 
 <!-- l. 46 --><p class='noindent'>before the next button of the front page, when the ‘next’ option is active.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -801,9 +813,6 @@ hooks}</code>
 hooks}</code>
 </p><!-- l. 55 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>crosslinks:prevtail</span>}{local configurations for the delimiters
 and hooks}</code>
-                                                                  
-
-                                                                  
 </p><!-- l. 56 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>crosslinks:tail</span>}{local configurations for the delimiters and
 hooks}</code>
 </p><!-- l. 57 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>crosslinks:front</span>}{local configurations for the delimiters
@@ -830,6 +839,9 @@ the converted document. In addition, it can add local tables of contents to
 the
 </p><!-- l. 7 --><p class='indent'>   Created from the entries collected in the previous compilation within a
 <code class='texttt'><span class='textbf'><code class='texttt'>\jobname</code></span>.4tc</code> file.
+                                                                  
+
+                                                                  
 </p><!-- l. 12 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>tableofcontents</span>}{before-toc}{end-of-toc}{after-toc}
 {before-nonindented-par}{before-indented-par}</code>
 </p><!-- l. 14 --><p class='indent'>   The <span class='textit'>end-of-toc</span> is inserted at the end of the internal environment of the tables.
@@ -842,9 +854,6 @@ be enclosed within square brackets. Alternatively, a command of the form
 <span class='textbf'><code class='texttt'>\TableOfContents</code></span>[<span class='textit'>…</span>] might be used.
 </p><!-- l. 26 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>writetoc</span>}{definitions-for-the-writing-environment}
 </code>
-                                                                  
-
-                                                                  
 </p><!-- l. 28 --><p class='indent'>   <code class='texttt'>TeX4ht</code> expands and then writes the sectioning titles into an auxiliary file, and
 it might encounter there problems from macros that are not fit for such
 conditions or for inclusion in the table of contents. The current configuration
@@ -866,6 +875,9 @@ number</span>}{<span class='textit'>at end</span>}
 <li class='itemize'>Empty arguments request the omission of the corresponding field.
 </li>
 <li class='itemize'><span class='textbf'><code class='texttt'>\TocCount</code></span> Specifies the entry count withing the <code class='texttt'><span class='textbf'><code class='texttt'>\jobname</code></span>.4tc</code> file.
+                                                                  
+
+                                                                  
 </li>
 <li class='itemize'><span class='textbf'><code class='texttt'>\TitleCount</code></span> Count of entries submitted to the toc file</li></ul>
 <!-- l. 60 --><p class='indent'>   Example:
@@ -881,9 +893,6 @@ number</span>}{<span class='textit'>at end</span>}
 <!-- l. 70 --><p class='indent'>   As an alternative to <span class='textbf'><code class='texttt'>\ConfigureToc</code></span>, you can also use the following alternative:
 </p>   
 <figure class='texsource' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb105'><a id='x8-70019r1'></a><span class='textcolor-2838af'>\def\toc</span>&lt;unit-name&gt;#1#2#3<span class='textcolor-387f38'>{</span>&lt;before unit number&gt;#1&lt;before content&gt;#2<span class='textcolor-878787'><span class='textit'>%</span></span> 
 <a id='x8-70021r2'></a>    &lt;before page number&gt;#3&lt;at end&gt;<span class='textcolor-387f38'>}</span></pre>
 
@@ -912,6 +921,9 @@ number</span>}{<span class='textit'>at end</span>}
 </p>
 </dt><dd class='description'>
 <!-- l. 95 --><p class='noindent'>sectioning types to be included in the tables of contents</p></dd></dl>
+                                                                  
+
+                                                                  
 <!-- l. 98 --><p class='indent'>   The non-leading arguments may be preceded by slashes ’/’, in which cases the
 arguments specify end points for the tables.
 </p><!-- l. 101 --><p class='indent'>   The default setting requests automatic insertion of the local tables immediately
@@ -929,9 +941,6 @@ local tables.
 <pre class='fancyvrb' id='fancyvrb107'><a id='x8-70029r1'></a><span class='textcolor-2838af'>\TocAt</span><span class='textcolor-387f38'>{</span>mychapter,mysection,mysubsection,/myappendix,/mypart<span class='textcolor-387f38'>}</span> 
 <a id='x8-70031r2'></a><span class='textcolor-2838af'>\TocAt</span>-<span class='textcolor-387f38'>{</span>mysection,mysubsection,/mylikesection<span class='textcolor-387f38'>}</span> 
 <a id='x8-70033r3'></a><span class='textcolor-2838af'>\section</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span>...<span class='textcolor-2838af'>\Tocmysection</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!-- l. 122 --><p class='indent'>   The definition of the local table of contents can be redefined within <code class='texttt'>\csname
@@ -971,6 +980,9 @@ contents}</code>
 </p><!-- l. 156 --><p class='indent'>   These configurations can be used to execute code before and after <span class='textbf'><code class='texttt'>\TocAt</code></span>,
 respective <span class='textbf'><code class='texttt'>\TocAt*</code></span>.
 </p><!-- l. 159 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>tableofcontents*</span>}{section types}</code>
+                                                                  
+
+                                                                  
 </p><!-- l. 161 --><p class='indent'>   A non-empty parameter asks to implicitly introduce a <span class='textbf'><code class='texttt'>\tableofcontents</code></span> upon
 reaching the first sectioning command, if no <span class='textbf'><code class='texttt'>\tableofcontents</code></span> command is
 encountered earlier. The parameter assumes a colon-separated list of sectioning types
@@ -987,9 +999,6 @@ types should be referenced with the ‘like’ prefix.
 </figure>
 <!-- l. 180 --><p class='noindent'><code class='texttt'><span class='textbf'>\contentsname</span></code> A LaTeX macro stating the title for a table of contents
 division.
-                                                                  
-
-                                                                  
 </p><!-- l. 1 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='sectioning-commands'><span class='titlemark'>7.11   </span> <a id='x8-710007.11'></a>Sectioning commands</h3>
@@ -1017,6 +1026,9 @@ between the title mark and its content.
 </p><!-- l. 33 --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
+                                                                  
+
+                                                                  
 <pre class='fancyvrb' id='fancyvrb112'><a id='x8-71021r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}</span> 
 <a id='x8-71023r2'></a>   <span class='textcolor-387f38'>{}{}</span> 
 <a id='x8-71025r3'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;h3&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\TitleMark\space</span><span class='textcolor-387f38'>}    </span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/h3&gt;<span class='textcolor-387f38'>}}</span> 
@@ -1037,9 +1049,6 @@ between the title mark and its content.
 <a id='x8-71048r7'></a><span class='textcolor-2838af'>\ConfigureMark</span><span class='textcolor-387f38'>{</span>X<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\arabic</span><span class='textcolor-387f38'>{</span>c<span class='textcolor-387f38'>}}</span></pre>
 
 </figure>
-                                                                  
-
-                                                                  
 <!-- l. 58 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='links-to-and-from-toc'><span class='titlemark'>7.11.1   </span> <a id='x8-720007.11.1'></a>Links to and from TOC</h4>
@@ -1072,6 +1081,9 @@ argument.
 <!-- l. 92 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>toToc</span>}{unit type}{desired contents type (if empty, ‘unit
 type’ is assumed)}</code>
 </p><!-- l. 94 --><p class='indent'>   You can also pass special values to <span class='textit'>unit type</span>:
+                                                                  
+
+                                                                  
 </p>     
 <dl class='description'><dt class='description'>
 <!-- l. 97 --><p class='noindent'>
@@ -1096,9 +1108,6 @@ type’ is assumed)}</code>
 </dt><dd class='description'>   
 <!-- l. 99 --><p class='noindent'>resume mode in effect before the last stop</p></dd></dl>
 <!-- l. 102 --><p class='indent'>   Example: </p> <figure class='texsource' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb115'><a id='x8-72030r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>toToc<span class='textcolor-387f38'>}{</span>chapter<span class='textcolor-387f38'>}{</span>likechapter<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
@@ -1121,6 +1130,9 @@ parameters are not used to create titles for the divisions.
 <!-- l. 122 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='tables'><span class='titlemark'>7.13   </span> <a id='x8-740007.13'></a>Tables</h3>
+                                                                  
+
+                                                                  
 <!-- l. 124 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='fonts'><span class='titlemark'>7.14   </span> <a id='x8-750007.14'></a>Fonts</h3>
@@ -1129,9 +1141,6 @@ parameters are not used to create titles for the divisions.
 <h4 class='subsectionHead' id='basic-font-commands'><span class='titlemark'>7.14.1   </span> <a id='x8-760007.14.1'></a>Basic font commands</h4>
 <!-- l. 127 --><p class='noindent'>Information about the <span class='emph'>fonts</span> option and <span class='emph'>MathML</span> issues. Example configuration:
 <a class='url' href='https://tex.stackexchange.com/a/416613/2891'><span class='rm-lmtt-10'>https://tex.stackexchange.com/a/416613/2891</span></a>
-                                                                  
-
-                                                                  
 </p><!-- l. 1 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='multilingual-support'><span class='titlemark'>7.15   </span> <a id='x8-770007.15'></a>Multi-lingual support</h3>
@@ -1157,7 +1166,10 @@ it after the environment end.
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb118'><a id='x8-78012r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>arab<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\@</span>rltrue<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\@</span>rlfalse<span class='textcolor-387f38'>}{}{}</span></pre>
 
-</figure>   
+</figure>
+                                                                  
+
+                                                                  
 <h4 class='subsectionHead' id='unicode'><span class='titlemark'>7.15.2   </span> <a id='x8-790007.15.2'></a>Unicode</h4>
 <!-- l. 4 --><p class='noindent'>Generally speaking, <code class='texttt'>TeX4ht</code> supports <span class='emph'>Unicode</span>, but there are some issues to be aware
 of. Most complete support exists for LuaLaTeX, thanks to special Lua script which is
@@ -1173,9 +1185,6 @@ necessary.
 <a id='x8-79014r4'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
 <a id='x8-79016r5'></a>Unicode text 
 <a id='x8-79018r6'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!-- l. 21 --><p class='indent'>   XeLaTeX is an Unicode format, similarly to LuaLaTeX. The supporting
@@ -1204,6 +1213,9 @@ be declared.
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb122'><a id='x8-79027r1'></a><span class='textcolor-2838af'>\xeuniregisterblockhex</span><span class='textcolor-387f38'>{</span>0100<span class='textcolor-387f38'>}{</span>017F<span class='textcolor-387f38'>}</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!-- l. 52 --><p class='indent'>   Individual character can be declared using the <code class='texttt'>\xeuniregisterchar</code>
@@ -1218,9 +1230,6 @@ default, so it is necessary to use the <span class='obeylines-h'><code class='ve
 number.
 </p>   
 <section role='doc-notice'><span class='textbf'>Warning:</span> It is possible to run into issues because of the way how XeLaTeX
-                                                                  
-
-                                                                  
 Unicode support works. Common problem is filename support, for example in
 included graphics. In general, it is better to avoid such filenames. If it is not possible,
 try to use the <code class='texttt'>\detokenize</code> command.  <figure class='texsource' role='doc-example'>
@@ -1240,6 +1249,9 @@ information to the HTML attributes: <a class='url' href='https://tex.stackexchan
 </p><!-- l. 147 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='graphics-and-pictures'><span class='titlemark'>7.17   </span> <a id='x8-810007.17'></a>Graphics and Pictures</h3>
+                                                                  
+
+                                                                  
 <!-- l. 1 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='low-level-features'><span class='titlemark'>7.17.1   </span> <a id='x8-820007.17.1'></a>Low level features</h4>
@@ -1252,9 +1264,6 @@ optional.
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb125'><a id='x8-82003r1'></a><span class='textcolor-2838af'>\Picture</span><span class='textcolor-387f38'>[picture description]{</span>foo.png class="picture"<span class='textcolor-387f38'>}</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!-- l. 15 --><p class='noindent'><code class='texttt'><span class='textbf'>\Picture+</span></code>[<span class='textit'>replacement-for-text-browsers</span>]{<span class='textit'>file-name attributes</span>} content <span class='textbf'><code class='texttt'>\EndPicture</code></span>
@@ -1281,6 +1290,9 @@ conversion, stored in <span class='textbf'><code class='texttt'>\PictExt</code><
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb127'><a id='x8-82015r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>Picture<span class='textcolor-387f38'>}{</span>.png<span class='textcolor-387f38'>}</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!-- l. 44 --><p class='indent'>   The extension names of bitmap files of glyphs of htf fonts may be determined
@@ -1295,9 +1307,6 @@ code}</code>
 </p><!-- l. 54 --><p class='indent'>   Typically, the plus ‘+’ variant is introduced as an inline contribution
 into paragraphs, and the star ‘*’ variant as an independent block between
 paragraphs.
-                                                                  
-
-                                                                  
 </p><!-- l. 58 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>PictureAlt</span>}{definitions before alt}{definitions after alt}
 </code>
 </p><!-- l. 59 --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>PictureAlt*+</span>}{definitions before alt}{definitions after alt}
@@ -1323,6 +1332,9 @@ delimiter}</code>
 </p><!-- l. 85 --><p class='indent'>   Requests a file name for the next created picture.
 </p><!-- l. 87 --><p class='indent'>   <span class='textbf'><code class='texttt'>\PictureFile</code></span>
 </p><!-- l. 89 --><p class='indent'>   Records the filename of the most recent created picture.
+                                                                  
+
+                                                                  
 </p><!-- l. 91 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='configurations-for-the-graphics-package-bundle'><span class='titlemark'>7.17.2   </span> <a id='x8-830007.17.2'></a>Configurations for the <code class='texttt'>Graphics</code> package bundle</h4>
@@ -1340,9 +1352,6 @@ delimiter}</code>
 macro, based on the type of the files.
 </p><!-- l. 114 --><p class='indent'>   An empty insertion for the second argument cancels previous requests for the
 specified extension.
-                                                                  
-
-                                                                  
 </p><!-- l. 117 --><p class='indent'>   You can utilise the macros that contain information about the image, for example
 <span class='textbf'><code class='texttt'>\Gin@base</code></span> (file name), <span class='textbf'><code class='texttt'>\Gin@ext</code></span> (extension), <span class='textbf'><code class='texttt'>\Gin@req@width</code></span> (requested image
 width), <span class='textbf'><code class='texttt'>\Gin@req@height</code></span> (requested image height), <span class='textbf'><code class='texttt'>\noBoundingBox</code></span> (defined iff
@@ -1386,14 +1395,14 @@ bounding box is unknown)
 <h4 class='subsectionHead' id='tikz-'><span class='titlemark'>7.17.4   </span> <a id='x8-850007.17.4'></a>TikZ </h4>
 <!-- l. 155 --><p class='noindent'>Animations using Animate package: <a class='url' href='https://tex.stackexchange.com/a/404600/2891'><span class='rm-lmtt-10'>https://tex.stackexchange.com/a/404600/2891</span></a>
 </p><!-- l. 157 --><p class='indent'>   Issues with drivers: <a class='url' href='https://tex.stackexchange.com/a/471460/2891'><span class='rm-lmtt-10'>https://tex.stackexchange.com/a/471460/2891</span></a>.
+                                                                  
+
+                                                                  
 </p>   
 <h4 class='subsectionHead' id='pstricks'><span class='titlemark'>7.17.5   </span> <a id='x8-860007.17.5'></a>Pstricks</h4>
 <!-- l. 1 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='math1'><span class='titlemark'>7.18   </span> <a id='x8-870007.18'></a>Math</h3>
-                                                                  
-
-                                                                  
 <!-- l. 2 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='default-math-handling'><span class='titlemark'>7.18.1   </span> <a id='x8-880007.18.1'></a>Default math handling</h4>
@@ -1425,6 +1434,9 @@ use MathJax:
 <pre class='fancyvrb' id='fancyvrb131'><a id='x8-89003r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'> make</span><span class='textcolor-444444'>4</span><span class='textcolor-387f38'>ht filename.tex "mathml,mathjax"</span></pre>
 
 </figure>
+                                                                  
+
+                                                                  
 <!-- l. 31 --><p class='noindent'><span class='paragraphHead' id='-mathml-troupbleshooting'><a id='x8-900007.18.2'></a><code class='texttt'>MathML</code> <span class='ec-lmbx-10'>troupbleshooting</span></span>
 The <code class='texttt'>MathML</code> code produced by <code class='texttt'>TeX4ht</code> may contain some issues. For
 example, one common issue may happen when the math contain unmatched
@@ -1432,9 +1444,6 @@ delimiters:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb132'><a id='x8-90003r1'></a> Mail address: <span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\lparen</span><span class='textcolor-b73838'>$</span>hello@world.com<span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\rparen</span><span class='textcolor-b73838'>$</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!-- l. 40 --><p class='indent'>   In such cases, the <span class='emph'>matml-</span> may help.
@@ -1466,6 +1475,9 @@ the output HTML document. They are parsed and rendered by MathJax when the
 document is displayed by a web browser. The downside of this mode is that
 commands unknown to MathJax must be configured in a special configuration for
 MathJax. Cross-references to equations and other numbered math environments
+                                                                  
+
+                                                                  
 don’t work out of the box. You can try the Lua scripts proposed in <a href='https://tex.stackexchange.com/a/597913/2891'>this post on
 TeX.sx</a> as a workaround.
 </p><!-- l. 77 --><p class='indent'>   By default, inline and display math, as well as math environments, are kept as
@@ -1473,11 +1485,8 @@ raw LaTeX code in the <code class='texttt'>HTML</code> output.
 </p><!-- l. 80 --><p class='indent'>   The additional configuration for <span class='emph'>MathJax</span> can be provided in the <code class='texttt'>MathJaxConfig</code>
 configuration. The following example provides support for some custom LaTeX
 macros.
-</p>
-                                                                  
-
-                                                                  
-<figure class='texsource' role='doc-example'>   
+</p>   
+<figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb134'><a id='x8-93017r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
 <a id='x8-93019r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathJaxConfig<span class='textcolor-387f38'>}{{</span> 
 <a id='x8-93021r3'></a>    tex: <span class='textcolor-387f38'>{</span> 
@@ -1551,6 +1560,9 @@ extra ones:
 <a id='x8-93141r12'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
+                                                                  
+
+                                                                  
 <!-- l. 159 --><p class='noindent'><span class='paragraphHead' id='custom-environments-in-mathjax'><a id='x8-940007.18.3'></a><span class='ec-lmbx-10'>Custom environments in MathJax.</span></span>
 If you want to add support for a new environment, you can use the <span class='obeylines-h'><code class='verb'>\VerbMath</code></span>
 command, and you will also need to pass suitable configuration to MathJax. For
@@ -1568,9 +1580,6 @@ example for the following TeX file:
 <a id='x8-94029r9'></a>   <span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>dmath*<span class='textcolor-387f38'>}     </span><span class='textcolor-878787'><span class='textit'>%error is around here</span></span> 
 <a id='x8-94031r10'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>dgroup*<span class='textcolor-387f38'>}</span> 
 <a id='x8-94033r11'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!-- l. 178 --><p class='indent'>   Can be configured using this configuration file:
@@ -1613,15 +1622,15 @@ command:
 <pre class='fancyvrb' id='fancyvrb139'><a id='x8-96003r1'></a><span class='textcolor-2838af'>\fixmathjaxtoc\int</span></pre>
 
 </figure>
+                                                                  
+
+                                                                  
 <!-- l. 153 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='bibliographies1'><span class='titlemark'>7.19   </span> <a id='x8-970007.19'></a>Bibliographies</h3>
 <!-- l. 154 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='indexing1'><span class='titlemark'>7.20   </span> <a id='x8-980007.20'></a>Indexing</h3>
-                                                                  
-
-                                                                  
 <!-- l. 156 --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='opendocument-format'><span class='titlemark'>7.21   </span> <a id='x8-990007.21'></a>OpenDocument Format</h3>
