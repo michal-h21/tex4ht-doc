@@ -65,6 +65,21 @@ Example:
 \Link{}{a}\EndLink       % set link destination (or by \JSLink{}{a}\EndJSLink)
 \end{texsource}
 
+\DocCommand{Tag}\marg{label}\marg{content}
+\DocCommand{Ref}\marg{label}
+\DocCommand{LikeRef}\marg{label}
+
+\cmd{Tag} and \cmd{Ref} are  commands introduced cross-referencing
+content through \file{.xref} auxiliary files.
+
+\cmd{LikeRef} is a variant of \cmd{Ref} which doesn't verify whether the
+labels exit.  It is mainly used in \cmd{Link} and \cmd{edef} environments.
+
+\DocCommand{ifTag}\marg{label}\marg{true part}\marg{false part}
+
+Test existence of a tag, and execute code depending on that.
+
+
 \subsection{Cross references}
 
 For correct support of cross-references, you need to place link destinations for labels.
