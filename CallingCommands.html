@@ -148,7 +148,7 @@ steps of the process, without user intervention. The command assumes the
 form:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb59'><a id='x5-36003r1'></a>make4ht <span class='textcolor-656565'>[</span>make4ht options<span class='textcolor-656565'>]</span> filename.tex <span class='textcolor-b73838'>"options1" </span><span class='textcolor-b73838'>"option2" </span><span class='textcolor-b73838'>"options3" </span><span class='textcolor-b73838'>"options4"</span></pre>
+<pre class='fancyvrb' id='fancyvrb61'><a id='x5-36003r1'></a>make4ht <span class='textcolor-656565'>[</span>make4ht options<span class='textcolor-656565'>]</span> filename.tex <span class='textcolor-b73838'>"options1" </span><span class='textcolor-b73838'>"option2" </span><span class='textcolor-b73838'>"options3" </span><span class='textcolor-b73838'>"options4"</span></pre>
 
 </figure>
                                                                   
@@ -161,14 +161,14 @@ one is for the LaTeX compiler.
 </p><!-- l. 31 --><p class='indent'>   The basic invokation of make4ht looks like this:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb60'><a id='x5-36006r1'></a>make4ht filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb62'><a id='x5-36006r1'></a>make4ht filename.tex</pre>
 
 </figure>
 <!-- l. 37 --><p class='indent'>   This command requests a translation according to the default conditions, which
 are set to produce HTML 5 document.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb61'><a id='x5-36009r1'></a>make4ht filename.tex <span class='textcolor-b73838'>"2,info"</span></pre>
+<pre class='fancyvrb' id='fancyvrb63'><a id='x5-36009r1'></a>make4ht filename.tex <span class='textcolor-b73838'>"2,info"</span></pre>
 
 </figure>
 <!-- l. 43 --><p class='indent'>   This command specifies some options for tex4ht.sty. The “2” option requests a
@@ -181,7 +181,7 @@ information.
 section.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb62'><a id='x5-36012r1'></a>make4ht -c foo.cfg filename <span class='textcolor-b73838'>"frames" </span><span class='textcolor-b73838'>"" </span><span class='textcolor-b73838'>"-p"</span></pre>
+<pre class='fancyvrb' id='fancyvrb64'><a id='x5-36012r1'></a>make4ht -c foo.cfg filename <span class='textcolor-b73838'>"frames" </span><span class='textcolor-b73838'>"" </span><span class='textcolor-b73838'>"-p"</span></pre>
 
 </figure>
 <!-- l. 58 --><p class='indent'>   This command requests LaTeX to load a <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!-- tex4ht:ref: sec:private-configuration  --></a>,
@@ -198,7 +198,7 @@ option.
                                                                   
 </p>   
 <figure class='textsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb63'><a id='x5-37018r1'></a>-a,--loglevel (default status) Set log level. 
+<pre class='fancyvrb' id='fancyvrb65'><a id='x5-37018r1'></a>-a,--loglevel (default status) Set log level. 
 <a id='x5-37020r2'></a>possible values: debug, info, status, warning, error, fatal 
 <a id='x5-37022r3'></a>-b,--backend (default tex4ht) Backend used for xml generation. 
 <a id='x5-37024r4'></a>possible values: tex4ht or lua4ht 
@@ -220,14 +220,14 @@ option.
 be chained:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb64'><a id='x5-37051r1'></a>$ make4ht -lsm draft filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb66'><a id='x5-37051r1'></a>$ make4ht -lsm draft filename.tex</pre>
 
 </figure>
 <!-- l. 93 --><p class='indent'>   The above command is equvalent to the following that uses the long
 names:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb65'><a id='x5-37054r1'></a>$ make4ht --lua --shell-escape --mode draft filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb67'><a id='x5-37054r1'></a>$ make4ht --lua --shell-escape --mode draft filename.tex</pre>
 
 </figure>
 <!-- l. 99 --><p class='indent'>   Some of these options are discussed in other chapters, see section <a href='Configurations.html#private-configuration-files'>Private
@@ -260,7 +260,7 @@ option. It is also recommended to use output of this option for TeX4ht bug
 reports.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb66'><a id='x5-39003r1'></a>$ make4ht -a debug -m draft buggy.tex</pre>
+<pre class='fancyvrb' id='fancyvrb68'><a id='x5-39003r1'></a>$ make4ht -a debug -m draft buggy.tex</pre>
 
 </figure>
 <!-- l. 129 --><p class='noindent'>
@@ -271,14 +271,14 @@ path can be absolute or relative to the current directory. It also doesn’t nee
 <code class='texttt'>make4ht</code> will create it if necessary.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb67'><a id='x5-40003r1'></a>$ make4ht -d outdir filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb69'><a id='x5-40003r1'></a>$ make4ht -d outdir filename.tex</pre>
 
 </figure>
 <!-- l. 139 --><p class='indent'>   Note that this option doesn’t remove any files from the current directory. If you
 want to remove the temporary files, use the <code class='texttt'>-m clean</code> option:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb68'><a id='x5-40006r1'></a>$ make4ht -m clean filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb70'><a id='x5-40006r1'></a>$ make4ht -m clean filename.tex</pre>
 
 </figure>
 <!-- l. 146 --><p class='noindent'>
@@ -294,7 +294,7 @@ level.
                                                                   
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb69'><a id='x5-41003r1'></a>$ make4ht -uf html5+tidy filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb71'><a id='x5-41003r1'></a>$ make4ht -uf html5+tidy filename.tex</pre>
 
 </figure>
 <!-- l. 158 --><p class='indent'>   Some of the available extensions:
@@ -345,7 +345,7 @@ file, which is then used for pictures.
 </p><!-- l. 189 --><p class='indent'>   Basic sequence of execution of these command is following:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb70'><a id='x5-42007r1'></a>latex      x            <span class='textcolor-656565'>(</span>or ‘tex x’<span class='textcolor-656565'>)</span> 
+<pre class='fancyvrb' id='fancyvrb72'><a id='x5-42007r1'></a>latex      x            <span class='textcolor-656565'>(</span>or ‘tex x’<span class='textcolor-656565'>)</span> 
 <a id='x5-42009r2'></a>latex      x 
 <a id='x5-42011r3'></a>latex      x 
 <a id='x5-42013r4'></a>tex4ht     x 

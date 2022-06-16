@@ -450,16 +450,47 @@ necessary for the correct Plain TeX support.
 <!-- l. 98 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='indexing'><span class='titlemark'>3.6.1   </span> <a id='x4-300003.6.1'></a>Indexing</h4>
-<!-- l. 99 --><p class='noindent'>
+<!-- l. 101 --><p class='noindent'><code class='texttt'>make4ht</code> supports Makeindex, Xindy and Xindex indexing processors. You need to
+use a build file that calls them explicitly. The intermediate file with indexing
+information uses special format with <code class='texttt'>TeX4ht</code>, so it is not possible to just call these
+commands from the command line. <code class='texttt'>make4ht</code> uses some pre-processing and
+post-processing to make the indexing work correctly.
+</p><!-- l. 108 --><p class='indent'>   Here is a simple example:
+</p>   
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb59'><a id='x4-30009r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>article<span class='textcolor-387f38'>}</span> 
+<a id='x4-30011r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>makeidx<span class='textcolor-387f38'>}</span> 
+<a id='x4-30013r3'></a><span class='textcolor-2838af'>\makeindex</span> 
+<a id='x4-30015r4'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x4-30017r5'></a>Hello<span class='textcolor-2838af'>\index</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}</span> world<span class='textcolor-2838af'>\index</span><span class='textcolor-387f38'>{</span>world<span class='textcolor-387f38'>}</span> 
+<a id='x4-30019r6'></a><span class='textcolor-2838af'>\printindex</span> 
+<a id='x4-30021r7'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
+
+</figure>
+<!-- l. 120 --><p class='indent'>   This file can be compiled using the following build file, <code class='texttt'>build.lua</code>:
+</p>   
+<figure class='luasource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb60'><a id='x4-30026r1'></a>Make<span class='textcolor-878787'>:</span>htlatex <span class='textcolor-878787'>{}</span> 
+<a id='x4-30028r2'></a>Make<span class='textcolor-878787'>:</span>makeindex <span class='textcolor-878787'>{}</span> 
+<a id='x4-30030r3'></a>Make<span class='textcolor-878787'>:</span>htlatex<span class='textcolor-878787'>{}</span></pre>
+
+</figure>
+<!-- l. 128 --><p class='indent'>   You can use <span class='obeylines-h'><code class='verb'>Make:xindex</code></span> or <span class='obeylines-h'><code class='verb'>Make:xindy</code></span> in place of <span class='obeylines-h'><code class='verb'>Make:makeindex</code></span>.
+</p><!-- l. 130 --><p class='indent'>   As there are no page numbers in XML and HTML, each <span class='textbf'><code class='texttt'>\index</code></span> command
+produces unique number, and destination to the backlink from the index.
+</p><!-- l. 134 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='bibliographies'><span class='titlemark'>3.6.2   </span> <a id='x4-310003.6.2'></a>Bibliographies</h4>
-<!-- l. 100 --><p class='noindent'>
+<!-- l. 135 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='r'><span class='titlemark'>3.6.3   </span> <a id='x4-320003.6.3'></a>R</h4>
-<!-- l. 101 --><p class='noindent'>
+                                                                  
+
+                                                                  
+<!-- l. 136 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='markdown'><span class='titlemark'>3.6.4   </span> <a id='x4-330003.6.4'></a>Markdown</h4>
-<!-- l. 102 --><p class='noindent'>
+<!-- l. 137 --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='pythontex'><span class='titlemark'>3.6.5   </span> <a id='x4-340003.6.5'></a>PythonTeX</h4>
                                                                   
