@@ -214,6 +214,7 @@ table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
 .hline hr, .cline hr{border:none;border-top:1px solid black;}
 .hline {border-top: 1px solid black;}
 .rotatebox{display: inline-block;}
+code.minted-inline{font-family:monospace,monospace;}
 pre.fancyvrb {white-space: pre-wrap; margin:0em;font-family:monospace,monospace;}
 .framedenv{border: 1px solid black;}
 .equation-star td{text-align:center; vertical-align:middle; }
@@ -222,8 +223,10 @@ mtd.align-odd{margin-left:2em; text-align:right;}
 mtd.align-even{margin-right:2em; text-align:left;}
 .boxed{border: 1px solid black; padding-left:2px; padding-right:2px;}
 table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+table.longtable{border-collapse: collapse; border-spacing: 0;}
 div.longtable{text-align:center;}
 table.longtable{margin-left:auto; margin-right: auto;}
+caption.longtable .id{font-weight:bold;}
 .supertabular {text-align:center}
 /* end css.sty */
 
