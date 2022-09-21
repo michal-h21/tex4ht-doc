@@ -373,6 +373,60 @@ $ make4ht filename.tex "myhtml5"
 
 % \subsection{Configure the hooks in output format configuration files}
 
+\section{Early Hooks in usepackage.4ht}
+
+Normal \file{.4ht} files are loaded once the document preamble was processed. 
+This is usually desirable, as there are packages that redefine other packages
+commands, and this way can prevent some possible clashes in such cases. 
+Hovewer, sometimes we need to fix package macros as soon as the package is loaded,
+in other cases, we need to block the package from loading completely. This can be 
+necessary when the package causes fatal error when used.
+
+For these cases, \texfourht\ uses a special file, \file{usepackage.4ht},
+where you can declare code that can be executed before the package is loaded.
+
+As it is loaded multiple times it is best to keep it short and place longer pieces
+of code to a separate file. Sample code that loads such code looks like this:
+
+\begin{texsource}
+\Configure{PackageHooks}{foo.sty}{foo-hooks.4ht}
+\end{texsource}
+
+The \file{<pkgname>-hooks.4ht} name is usually used to distinguish this early hooks file
+from the usual \file{.4ht} files. The general structure of the \file{<pkgname>-hooks.4ht} file 
+is following:
+
+\begin{texsource}
+code to be executed before package loading
+
+\:AtEndOfPackage{
+code to be executed after package loading
+}
+\end{texsource}
+
+There are two useful commands available:
+
+\DocCommand{:dontusepackage}\marg{package name} -- prevent package from loading. It can be used to 
+disable packages that cause fatal error with \texfourht.
+
+\DocCommand{:AtEndOfPackage}\marg{code to be executed} -- execute code after the package was loaded. 
+Useful for redefinition of commands that can be used in the document preamble.
+
+\subsection{Execute Code Directly in usepackage.4ht}
+
+You can also execute shorter pieces of code directly in \file{usepackage.4ht} thanks for the new 
+\LaTeX\ package hooks. For example, the following code fixes catcode issues with the \verb|^| character
+in the \package{doc} package:
+
+\begin{texsource}
+\AddToHook{package/doc/before}{\SUPOff}
+\AddToHook{package/doc/after}{\SUPOn}
+\end{texsource}
+
+The \texcommand{SUPOff} disables catcode changes to this character that \texfourht\ uses in order
+to insert markup for math superscripts, and \texcommand{SUPOn} enables it again once the package
+was processed.
+
 \section{\texfourht\ literate sources}
 
 To add a proper support for a new package, it is necessary to edit the 
