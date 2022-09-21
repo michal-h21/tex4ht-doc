@@ -165,6 +165,12 @@ $ make4ht -f html5-common_domfilters filename.tex
 
 You can find a list of extensions in \href{https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions}{\makefourht{} documentation}.
 
+\section{Debugging}
+
+% ToDO: make4ht -a debug
+% ToDo: make4ht -m clean
+% ToDo: \ifdefined\HCode
+
 \section{Configurations}
 \label{sec:tutorial-configurations}
 
@@ -176,12 +182,16 @@ While it is possible to insert these commands directly to your document, it is b
 to use a custom configuration file, as you would get a compilation error if you compiled 
 document containing \texfourht{} commands directly by \LaTeX.
 
+% ToDo: sample configuration file
+
 You can find more information about syntax and available commands in section \namerefpage{sec:private-configuration}.
 Here, we will show some simple examples.
 
 \subsection{The \cmd{Configure} command}
 
+% ToDo: describe \Configure
 
+\subsection{Configuring Environments}
 
 You may want to insert some custom HTML tags. It is a bit more complicated for
 \LaTeX commands, but it is easy for environments. You can configure the code that is 
@@ -202,6 +212,8 @@ and \texttt{after env} arguments.
 
 
 \section{Remains of the old tutorial}
+
+% ToDo: identify useful parts, improve them and add to the rest of the tutorial, remove the rest
 
 The following text was imported from the original \texfourht\ tutorial and needs to be
 rewritten. It still contains some useful information, but there are also some obsolete pieces.
