@@ -21,6 +21,8 @@
 
 
 
+
+
 <span class='chapterToc'>3 <a href='Howto.html#how-to'>How to</a></span>
 
 
@@ -51,11 +53,11 @@
 
 
 
+                                                                  
+
+                                                                  
 
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
-                                                                  
-
-                                                                  
 <span class='chapterToc'>6 <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
 
 
@@ -100,11 +102,11 @@
 <span class='subsectionToc'>7.17.5 <a href='#pstricks'>Pstricks</a></span>
 <span class='sectionToc'>7.18 <a href='#math1'>Math</a></span>
 <span class='subsectionToc'>7.18.1 <a href='#default-math-handling'>Default math handling</a></span>
-<span class='subsectionToc'>7.18.2 <a href='#mathml1'>MathML</a></span>
-<span class='subsectionToc'>7.18.3 <a href='#mathjax1'>MathJax</a></span>
                                                                   
 
                                                                   
+<span class='subsectionToc'>7.18.2 <a href='#mathml1'>MathML</a></span>
+<span class='subsectionToc'>7.18.3 <a href='#mathjax1'>MathJax</a></span>
 <span class='sectionToc'>7.19 <a href='#bibliographies1'>Bibliographies</a></span>
 <span class='sectionToc'>7.20 <a href='#indexing1'>Indexing</a></span>
 <span class='sectionToc'>7.21 <a href='#opendocument-format'>OpenDocument Format</a></span>
@@ -138,8 +140,8 @@
 </nav> 
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='texfourhtOptions.html'>prev</a>] [<a href='tex4ht-doc.html#Configurations.html'>up</a>] [<a href='Make4htBuildFiles.html'>next</a>] </nav> 
-<h2 class='chapterHead' id='configurations2'><span class='titlemark'>Chapter 7</span><br /><a id='x8-480007'></a>Configurations</h2>
-<h3 class='sectionHead' id='private-configuration-files'><span class='titlemark'>7.1   </span> <a id='x8-490007.1'></a>Private Configuration Files</h3>
+<h2 class='chapterHead' id='configurations2'><span class='titlemark'>Chapter 7</span><br /><a id='x8-500007'></a>Configurations</h2>
+<h3 class='sectionHead' id='private-configuration-files'><span class='titlemark'>7.1   </span> <a id='x8-510007.1'></a>Private Configuration Files</h3>
 <!--  l. 3  --><p class='noindent'>It is highly recommended to leave source LaTeX and TeX files intact, and not
 introduce <code class='texttt'>TeX4ht</code> configurations there. The configurations should be introduced
 indirectly in private configuration files. Source files containing just native LaTeX and
@@ -155,23 +157,23 @@ available resources before committing to work on private features.
                                                                   
 </p><!--  l. 15  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='requesting-private-configuration-files'><span class='titlemark'>7.1.1   </span> <a id='x8-500007.1.1'></a>Requesting Private Configuration Files</h4>
+<h4 class='subsectionHead' id='requesting-private-configuration-files'><span class='titlemark'>7.1.1   </span> <a id='x8-520007.1.1'></a>Requesting Private Configuration Files</h4>
 <!--  l. 17  --><p class='noindent'>Private configuration files can be requested by passing the <code class='texttt'>-c</code> option to
 <code class='texttt'>make4ht</code>:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb77'><a id='x8-50003r1'></a>make4ht -c mycfg.cfg myfile</pre>
+<pre class='fancyvrb' id='fancyvrb77'><a id='x8-52003r1'></a>make4ht -c mycfg.cfg myfile</pre>
 
 </figure>
 <!--  l. 25  --><p class='indent'>   A configuration file should take the following form for LaTeX files:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb78'><a id='x8-50011r1'></a>...early definitions... 
-<a id='x8-50013r2'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml,options<span class='textcolor-387f38'>}</span> 
-<a id='x8-50015r3'></a>...definitions... 
-<a id='x8-50017r4'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x8-50019r5'></a>...insertions into the header of the html file... 
-<a id='x8-50021r6'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb78'><a id='x8-52011r1'></a>...early definitions... 
+<a id='x8-52013r2'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml,options<span class='textcolor-387f38'>}</span> 
+<a id='x8-52015r3'></a>...definitions... 
+<a id='x8-52017r4'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x8-52019r5'></a>...insertions into the header of the html file... 
+<a id='x8-52021r6'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
 <!--  l. 36  --><p class='indent'>   The <span class='textbf'><code class='texttt'>\Preamble</code></span> command should always use <span class='emph'>xhtml</span> as the first option. Otherwise,
@@ -180,13 +182,13 @@ available resources before committing to work on private features.
 options, see the <a href='texfourhtOptions.html#list-of-options'>List of options<!--  tex4ht:ref: sec:texfouhtoptions   --></a> section (<a href='texfourhtOptions.html#list-of-options'>6.1<!--  tex4ht:ref: sec:texfouhtoptions   --></a> ).
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb79'><a id='x8-50027r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
-<a id='x8-50029r2'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x8-50031r3'></a>  <span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>body <span class='textcolor-387f38'>{</span> color : red; <span class='textcolor-387f38'>}}</span> 
-<a id='x8-50033r4'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb79'><a id='x8-52027r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
+<a id='x8-52029r2'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x8-52031r3'></a>  <span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>body <span class='textcolor-387f38'>{</span> color : red; <span class='textcolor-387f38'>}}</span> 
+<a id='x8-52033r4'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
-<!--  l. 49  --><p class='noindent'><span class='paragraphHead' id='notes'><a id='x8-51000'></a><span class='ec-lmbx-10'>Notes</span></span>
+<!--  l. 49  --><p class='noindent'><span class='paragraphHead' id='notes'><a id='x8-53000'></a><span class='ec-lmbx-10'>Notes</span></span>
 </p>     
 <ul class='itemize1'>
 <li class='itemize'>Notice that for a LaTeX file the <code class='texttt'>\begin{document}</code> instruction should be
@@ -203,16 +205,16 @@ within a configuration file provided for the following LaTeX source:</p></li></u
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb80'><a id='x8-51007r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span> 
-<a id='x8-51009r2'></a><span class='textcolor-2838af'>\newcommand\mycommand</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span> 
-<a id='x8-51011r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x8-51013r4'></a>Use <span class='textcolor-2838af'>\mycommand</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span> 
-<a id='x8-51015r5'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb80'><a id='x8-53007r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span> 
+<a id='x8-53009r2'></a><span class='textcolor-2838af'>\newcommand\mycommand</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span> 
+<a id='x8-53011r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x8-53013r4'></a>Use <span class='textcolor-2838af'>\mycommand</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span> 
+<a id='x8-53015r5'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 73  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='configuration-file-management'><span class='titlemark'>7.1.2   </span> <a id='x8-520007.1.2'></a>Configuration file management</h4>
+<h4 class='subsectionHead' id='configuration-file-management'><span class='titlemark'>7.1.2   </span> <a id='x8-540007.1.2'></a>Configuration file management</h4>
 <!--  l. 75  --><p class='noindent'>It is possible to reuse common <code class='texttt'>TeX4ht</code> configurations used in several configuration
 files. They can be inserted in a custom LaTeX package, but there is one
 important thing to be aware of. The configuration hooks are inserted to the
@@ -223,32 +225,32 @@ command.
 </p><!--  l. 83  --><p class='indent'>   Sample package, <code class='texttt'>commonconfigurations.sty</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb81'><a id='x8-52008r1'></a><span class='textcolor-2838af'>\ProvidesPackage</span><span class='textcolor-387f38'>{</span>commonconfigurations<span class='textcolor-387f38'>}</span> 
-<a id='x8-52010r2'></a><span class='textcolor-2838af'>\AtBeginDocument</span><span class='textcolor-387f38'>{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-52012r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@HEAD<span class='textcolor-387f38'>}</span> 
-<a id='x8-52014r4'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;meta name="test" content="test"/&gt;<span class='textcolor-2838af'>\Hnewline</span><span class='textcolor-387f38'>}}</span> 
-<a id='x8-52016r5'></a><span class='textcolor-387f38'>}</span> 
-<a id='x8-52018r6'></a><span class='textcolor-2838af'>\endinput</span></pre>
+<pre class='fancyvrb' id='fancyvrb81'><a id='x8-54008r1'></a><span class='textcolor-2838af'>\ProvidesPackage</span><span class='textcolor-387f38'>{</span>commonconfigurations<span class='textcolor-387f38'>}</span> 
+<a id='x8-54010r2'></a><span class='textcolor-2838af'>\AtBeginDocument</span><span class='textcolor-387f38'>{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-54012r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@HEAD<span class='textcolor-387f38'>}</span> 
+<a id='x8-54014r4'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;meta name="test" content="test"/&gt;<span class='textcolor-2838af'>\Hnewline</span><span class='textcolor-387f38'>}}</span> 
+<a id='x8-54016r5'></a><span class='textcolor-387f38'>}</span> 
+<a id='x8-54018r6'></a><span class='textcolor-2838af'>\endinput</span></pre>
 
 </figure>
 <!--  l. 94  --><p class='indent'>   It can be requested in a configuration file using <span class='textbf'><code class='texttt'>\RequirePackage</code></span> command.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb82'><a id='x8-52024r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
-<a id='x8-52026r2'></a><span class='textcolor-2838af'>\RequirePackage</span><span class='textcolor-387f38'>{</span>commonconfigurations<span class='textcolor-387f38'>}</span> 
-<a id='x8-52028r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x8-52030r4'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb82'><a id='x8-54024r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
+<a id='x8-54026r2'></a><span class='textcolor-2838af'>\RequirePackage</span><span class='textcolor-387f38'>{</span>commonconfigurations<span class='textcolor-387f38'>}</span> 
+<a id='x8-54028r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x8-54030r4'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
 <!--  l. 103  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='custom-output-formats'><span class='titlemark'>7.2   </span> <a id='x8-530007.2'></a>Custom output formats</h3>
+<h3 class='sectionHead' id='custom-output-formats'><span class='titlemark'>7.2   </span> <a id='x8-550007.2'></a>Custom output formats</h3>
 <!--  l. 1  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='texht-commands'><span class='titlemark'>7.3   </span> <a id='x8-540007.3'></a>tex4ht Commands</h3>
+<h3 class='sectionHead' id='texht-commands'><span class='titlemark'>7.3   </span> <a id='x8-560007.3'></a>tex4ht Commands</h3>
 <!--  l. 4  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='lowlevel-texht-commands'><span class='titlemark'>7.3.1   </span> <a id='x8-550007.3.1'></a>Low-level <code class='texttt'>TeX4ht</code> Commands</h4>
+<h4 class='subsectionHead' id='lowlevel-texht-commands'><span class='titlemark'>7.3.1   </span> <a id='x8-570007.3.1'></a>Low-level <code class='texttt'>TeX4ht</code> Commands</h4>
 <!--  l. 6  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span></code>{<span class='textit'>name</span>}{<span class='textit'>arg 1</span>}…{<span class='textit'>arg n</span>}
                                                                   
 
@@ -265,10 +267,10 @@ requesting line breaks, and the command <code class='texttt'>\#</code> may be us
 ‘#’.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb83'><a id='x8-55006r1'></a>First line<span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;br /&gt;<span class='textcolor-387f38'>}</span> 
-<a id='x8-55008r2'></a>second line 
-<a id='x8-55010r3'></a> 
-<a id='x8-55012r4'></a>You don't want to include tags directly into the document '&lt;br&gt;'.</pre>
+<pre class='fancyvrb' id='fancyvrb83'><a id='x8-57006r1'></a>First line<span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;br /&gt;<span class='textcolor-387f38'>}</span> 
+<a id='x8-57008r2'></a>second line 
+<a id='x8-57010r3'></a> 
+<a id='x8-57012r4'></a>You don't want to include tags directly into the document '&lt;br&gt;'.</pre>
 
 </figure>
 <!--  l. 30  --><p class='noindent'><code class='texttt'><span class='textbf'>\Tg</span></code><span class='obeylines-h'><code class='verb'>&lt;markup&gt;</code></span> is a variation of the <span class='textbf'><code class='texttt'>\HCode</code></span> command that don’t require braces, and it
@@ -278,7 +280,7 @@ does some additional processing.
 option was used
 </p><!--  l. 36  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='hyperlinks'><span class='titlemark'>7.3.2   </span> <a id='x8-560007.3.2'></a>Hyperlinks</h4>
+<h4 class='subsectionHead' id='hyperlinks'><span class='titlemark'>7.3.2   </span> <a id='x8-580007.3.2'></a>Hyperlinks</h4>
 <!--  l. 38  --><p class='noindent'><code class='texttt'><span class='textbf'>\Link</span></code><code class='texttt'>[target-file arguments]</code>{<span class='textit'>target-loc</span>}{<span class='textit'>cur-loc</span>} text inside link<span class='textbf'><code class='texttt'>\EndLink</code></span>
 </p><!--  l. 40  --><p class='indent'>   This command requests an anchor that links to <span class='obeylines-h'><code class='verb'>target-file#target-loc</code></span>, and
 marks the current location with the name <span class='obeylines-h'><code class='verb'>‘cur-loc’</code></span>.
@@ -290,29 +292,29 @@ parameters:
 </p><!--  l. 48  --><p class='indent'>     
 </p>
 <ol class='enumerate1'>
-<li class='enumerate' id='x8-56002x1'>tag name
+<li class='enumerate' id='x8-58002x1'>tag name
                                                                   
 
                                                                   
 </li>
-<li class='enumerate' id='x8-56004x2'>href-like attribute
+<li class='enumerate' id='x8-58004x2'>href-like attribute
 </li>
-<li class='enumerate' id='x8-56006x3'>name-like attribute
+<li class='enumerate' id='x8-58006x3'>name-like attribute
 </li>
-<li class='enumerate' id='x8-56008x4'>insertion
+<li class='enumerate' id='x8-58008x4'>insertion
 </li>
-<li class='enumerate' id='x8-56010x5'>/, if empty element
+<li class='enumerate' id='x8-58010x5'>/, if empty element
 </li>
-<li class='enumerate' id='x8-56012x6'>replacement for <code class='texttt'>#</code> character (ignored if absent)</li></ol>
+<li class='enumerate' id='x8-58012x6'>replacement for <code class='texttt'>#</code> character (ignored if absent)</li></ol>
 <!--  l. 57  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb84'><a id='x8-56020r1'></a><span class='textcolor-2838af'>\LinkCommand\JSLink</span><span class='textcolor-387f38'>{</span>a,<span class='textcolor-2838af'>\noexpand\jsref</span>,name<span class='textcolor-387f38'>}</span> 
-<a id='x8-56022r2'></a><span class='textcolor-2838af'>\def\jsref</span>="#1"<span class='textcolor-387f38'>{</span>href="javascript:window.open('#1')"<span class='textcolor-387f38'>}</span> 
-<a id='x8-56024r3'></a> 
-<a id='x8-56026r4'></a><span class='textcolor-878787'><span class='textit'>% example of use of the defined command:</span></span> 
-<a id='x8-56028r5'></a><span class='textcolor-2838af'>\JSLink</span><span class='textcolor-387f38'>{</span>a<span class='textcolor-387f38'>}{}</span>xx<span class='textcolor-2838af'>\EndJSLink </span><span class='textcolor-878787'><span class='textit'>% link to a destination</span></span> 
-<a id='x8-56030r6'></a><span class='textcolor-2838af'>\Link</span><span class='textcolor-387f38'>{}{</span>a<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\EndLink       </span><span class='textcolor-878787'><span class='textit'>% set link destination (or by \JSLink{}{a}\EndJSLink)</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb84'><a id='x8-58020r1'></a><span class='textcolor-2838af'>\LinkCommand\JSLink</span><span class='textcolor-387f38'>{</span>a,<span class='textcolor-2838af'>\noexpand\jsref</span>,name<span class='textcolor-387f38'>}</span> 
+<a id='x8-58022r2'></a><span class='textcolor-2838af'>\def\jsref</span>="#1"<span class='textcolor-387f38'>{</span>href="javascript:window.open('#1')"<span class='textcolor-387f38'>}</span> 
+<a id='x8-58024r3'></a> 
+<a id='x8-58026r4'></a><span class='textcolor-878787'><span class='textit'>% example of use of the defined command:</span></span> 
+<a id='x8-58028r5'></a><span class='textcolor-2838af'>\JSLink</span><span class='textcolor-387f38'>{</span>a<span class='textcolor-387f38'>}{}</span>xx<span class='textcolor-2838af'>\EndJSLink </span><span class='textcolor-878787'><span class='textit'>% link to a destination</span></span> 
+<a id='x8-58030r6'></a><span class='textcolor-2838af'>\Link</span><span class='textcolor-387f38'>{}{</span>a<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\EndLink       </span><span class='textcolor-878787'><span class='textit'>% set link destination (or by \JSLink{}{a}\EndJSLink)</span></span></pre>
 
 </figure>
 <!--  l. 68  --><p class='noindent'><code class='texttt'><span class='textbf'>\Tag</span></code>{<span class='textit'>label</span>}{<span class='textit'>content</span>}
@@ -329,7 +331,7 @@ mainly used in <span class='textbf'><code class='texttt'>\Link</code></span> and
                                                                   
 </p><!--  l. 83  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='cross-references'><span class='titlemark'>7.3.3   </span> <a id='x8-570007.3.3'></a>Cross references</h4>
+<h4 class='subsectionHead' id='cross-references'><span class='titlemark'>7.3.3   </span> <a id='x8-590007.3.3'></a>Cross references</h4>
 <!--  l. 85  --><p class='noindent'>For correct support of cross-references, you need to place link destinations for labels.
 <code class='texttt'>TeX4ht</code> handles labels defined by the <span class='textbf'><code class='texttt'>\refstepcounter</code></span> command, but links for
 labels that use a direct setting of the <span class='textbf'><code class='texttt'>\@currentlabel</code></span> command needs to be inserted
@@ -341,7 +343,7 @@ label. It should be placed after change of <span class='textbf'><code class='tex
 </p><!--  l. 96  --><p class='noindent'><code class='texttt'><span class='textbf'>\ShowRefstepAnchor</span></code> show anchor for the next <span class='textbf'><code class='texttt'>\refstepcounter</code></span>.
 </p><!--  l. 98  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='paragraph-handling'><span class='titlemark'>7.3.4   </span> <a id='x8-580007.3.4'></a>Paragraph Handling</h4>
+<h4 class='subsectionHead' id='paragraph-handling'><span class='titlemark'>7.3.4   </span> <a id='x8-600007.3.4'></a>Paragraph Handling</h4>
 <!--  l. 101  --><p class='noindent'>Paragraph handling is one of the more complicated areas in <code class='texttt'>TeX4ht</code>. You must handle
 insertion of tags for paragraph opening and closing, to prevent wrong nesting of
 XML tags. Mismatch of tags leads to issues with LuaXML post-processing of
@@ -370,12 +372,12 @@ after the inserted <code class='texttt'>&lt;div&gt;</code> tag. It is necessary 
 sometimes.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb85'><a id='x8-58008r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@BODY<span class='textcolor-387f38'>}</span> 
-<a id='x8-58010r2'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ifvmode\IgnorePar\fi\EndP</span> 
-<a id='x8-58012r3'></a> <span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;div&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\par\ShowPar</span><span class='textcolor-387f38'>}</span> 
-<a id='x8-58014r4'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@/BODY<span class='textcolor-387f38'>}</span> 
-<a id='x8-58016r5'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ifvmode\IgnorePar\fi\EndP</span> 
-<a id='x8-58018r6'></a> <span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/div&gt;<span class='textcolor-387f38'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb85'><a id='x8-60008r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@BODY<span class='textcolor-387f38'>}</span> 
+<a id='x8-60010r2'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ifvmode\IgnorePar\fi\EndP</span> 
+<a id='x8-60012r3'></a> <span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;div&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\par\ShowPar</span><span class='textcolor-387f38'>}</span> 
+<a id='x8-60014r4'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@/BODY<span class='textcolor-387f38'>}</span> 
+<a id='x8-60016r5'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ifvmode\IgnorePar\fi\EndP</span> 
+<a id='x8-60018r6'></a> <span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/div&gt;<span class='textcolor-387f38'>}}</span></pre>
 
 </figure>
 <!--  l. 145  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>HtmlPar</span>}{content at the start non-indented paragraphs}
@@ -385,16 +387,16 @@ indented paragraphs}</code>
 </p><!--  l. 147  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb86'><a id='x8-58025r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>HtmlPar<span class='textcolor-387f38'>}</span> 
-<a id='x8-58027r2'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\EndP\HCode</span><span class='textcolor-387f38'>{</span>&lt;p class="indent"&gt;<span class='textcolor-387f38'>}}</span> 
-<a id='x8-58029r3'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\EndP\HCode</span><span class='textcolor-387f38'>{</span>&lt;p class="noindent"&gt;<span class='textcolor-387f38'>}}</span> 
-<a id='x8-58031r4'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/p&gt;<span class='textcolor-387f38'>}}</span> 
-<a id='x8-58033r5'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/p&gt;<span class='textcolor-387f38'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb86'><a id='x8-60025r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>HtmlPar<span class='textcolor-387f38'>}</span> 
+<a id='x8-60027r2'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\EndP\HCode</span><span class='textcolor-387f38'>{</span>&lt;p class="indent"&gt;<span class='textcolor-387f38'>}}</span> 
+<a id='x8-60029r3'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\EndP\HCode</span><span class='textcolor-387f38'>{</span>&lt;p class="noindent"&gt;<span class='textcolor-387f38'>}}</span> 
+<a id='x8-60031r4'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/p&gt;<span class='textcolor-387f38'>}}</span> 
+<a id='x8-60033r5'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/p&gt;<span class='textcolor-387f38'>}}</span></pre>
 
 </figure>
 <!--  l. 160  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='logical-document-structure-commands'><span class='titlemark'>7.3.5   </span> <a id='x8-590007.3.5'></a>Logical Document Structure Commands</h4>
+<h4 class='subsectionHead' id='logical-document-structure-commands'><span class='titlemark'>7.3.5   </span> <a id='x8-610007.3.5'></a>Logical Document Structure Commands</h4>
 <!--  l. 161  --><p class='noindent'>I’ve created an alternative commands to <span class='textbf'><code class='texttt'>\HCode</code></span> or <span class='textbf'><code class='texttt'>\Tg</code></span>. The idea is to define
 semantic names for logical blocks of the document, such as titles, authors, sections
 etc. HTML elements and attributes can be assigned to these logical blocks. There are
@@ -425,34 +427,34 @@ building blocks.
 </p><!--  l. 192  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb87'><a id='x8-59025r1'></a><span class='textcolor-2838af'>\NewLogicalBlock</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}</span> 
-<a id='x8-59027r2'></a><span class='textcolor-2838af'>\SetBlockProperty</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}{</span>class<span class='textcolor-387f38'>}{</span>textit<span class='textcolor-387f38'>}</span> 
-<a id='x8-59029r3'></a> 
-<a id='x8-59031r4'></a><span class='textcolor-2838af'>\NewLogicalBlock</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}</span> 
-<a id='x8-59033r5'></a><span class='textcolor-2838af'>\SetTag</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}{</span>header<span class='textcolor-387f38'>}</span> 
-<a id='x8-59035r6'></a> 
-<a id='x8-59037r7'></a><span class='textcolor-2838af'>\NewLogicalBlock</span><span class='textcolor-387f38'>{</span>titlehead<span class='textcolor-387f38'>}</span> 
-<a id='x8-59039r8'></a><span class='textcolor-2838af'>\SetTag</span><span class='textcolor-387f38'>{</span>titlehead<span class='textcolor-387f38'>}{</span>h1<span class='textcolor-387f38'>}</span> 
-<a id='x8-59041r9'></a><span class='textcolor-2838af'>\SetBlockProperty</span><span class='textcolor-387f38'>{</span>titlehead<span class='textcolor-387f38'>}{</span>class<span class='textcolor-387f38'>}{</span>titleHead<span class='textcolor-387f38'>}</span> 
-<a id='x8-59043r10'></a> 
-<a id='x8-59045r11'></a><span class='textcolor-878787'><span class='textit'>% configure \textit using inline level elements</span></span> 
-<a id='x8-59047r12'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}</span> 
-<a id='x8-59049r13'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\NoFonts\InlineElementStart</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}{}}</span> 
-<a id='x8-59051r14'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\InlineElementEnd</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\EndNoFonts</span><span class='textcolor-387f38'>}</span> 
-<a id='x8-59053r15'></a> 
-<a id='x8-59055r16'></a><span class='textcolor-878787'><span class='textit'>% configure \maketitle using block level elements</span></span> 
-<a id='x8-59057r17'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-59059r18'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}{}{}{}{}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-59061r19'></a><span class='textcolor-2838af'>\Tag</span><span class='textcolor-387f38'>{</span>TITLE+<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\@</span>title<span class='textcolor-387f38'>}}</span> 
-<a id='x8-59063r20'></a><span class='textcolor-2838af'>\BlockElementStart</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}{}}</span> 
-<a id='x8-59065r21'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\BlockElementEnd</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}}</span> 
-<a id='x8-59067r22'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\NoFonts\BlockElementStart</span><span class='textcolor-387f38'>{</span>titlehead<span class='textcolor-387f38'>}{}}</span> 
-<a id='x8-59069r23'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\BlockElementEnd</span><span class='textcolor-387f38'>{</span>titlehead<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\EndNoFonts</span><span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb87'><a id='x8-61025r1'></a><span class='textcolor-2838af'>\NewLogicalBlock</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}</span> 
+<a id='x8-61027r2'></a><span class='textcolor-2838af'>\SetBlockProperty</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}{</span>class<span class='textcolor-387f38'>}{</span>textit<span class='textcolor-387f38'>}</span> 
+<a id='x8-61029r3'></a> 
+<a id='x8-61031r4'></a><span class='textcolor-2838af'>\NewLogicalBlock</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}</span> 
+<a id='x8-61033r5'></a><span class='textcolor-2838af'>\SetTag</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}{</span>header<span class='textcolor-387f38'>}</span> 
+<a id='x8-61035r6'></a> 
+<a id='x8-61037r7'></a><span class='textcolor-2838af'>\NewLogicalBlock</span><span class='textcolor-387f38'>{</span>titlehead<span class='textcolor-387f38'>}</span> 
+<a id='x8-61039r8'></a><span class='textcolor-2838af'>\SetTag</span><span class='textcolor-387f38'>{</span>titlehead<span class='textcolor-387f38'>}{</span>h1<span class='textcolor-387f38'>}</span> 
+<a id='x8-61041r9'></a><span class='textcolor-2838af'>\SetBlockProperty</span><span class='textcolor-387f38'>{</span>titlehead<span class='textcolor-387f38'>}{</span>class<span class='textcolor-387f38'>}{</span>titleHead<span class='textcolor-387f38'>}</span> 
+<a id='x8-61043r10'></a> 
+<a id='x8-61045r11'></a><span class='textcolor-878787'><span class='textit'>% configure \textit using inline level elements</span></span> 
+<a id='x8-61047r12'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}</span> 
+<a id='x8-61049r13'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\NoFonts\InlineElementStart</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}{}}</span> 
+<a id='x8-61051r14'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\InlineElementEnd</span><span class='textcolor-387f38'>{</span>textit<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\EndNoFonts</span><span class='textcolor-387f38'>}</span> 
+<a id='x8-61053r15'></a> 
+<a id='x8-61055r16'></a><span class='textcolor-878787'><span class='textit'>% configure \maketitle using block level elements</span></span> 
+<a id='x8-61057r17'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-61059r18'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}{}{}{}{}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-61061r19'></a><span class='textcolor-2838af'>\Tag</span><span class='textcolor-387f38'>{</span>TITLE+<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\@</span>title<span class='textcolor-387f38'>}}</span> 
+<a id='x8-61063r20'></a><span class='textcolor-2838af'>\BlockElementStart</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}{}}</span> 
+<a id='x8-61065r21'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\BlockElementEnd</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}}</span> 
+<a id='x8-61067r22'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\NoFonts\BlockElementStart</span><span class='textcolor-387f38'>{</span>titlehead<span class='textcolor-387f38'>}{}}</span> 
+<a id='x8-61069r23'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\BlockElementEnd</span><span class='textcolor-387f38'>{</span>titlehead<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\EndNoFonts</span><span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 1  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='document-styling-using-css'><span class='titlemark'>7.4   </span> <a id='x8-600007.4'></a>Document Styling Using CSS</h3>
+<h3 class='sectionHead' id='document-styling-using-css'><span class='titlemark'>7.4   </span> <a id='x8-620007.4'></a>Document Styling Using CSS</h3>
 <!--  l. 4  --><p class='noindent'><code class='texttt'>TeX4ht</code> provides several commands that can be used for changing of the document
 appearance using Cascading Style Sheets (<code class='texttt'>CSS</code>). Only basic styling for the
 document is provided by default. Additional styles are added by configurations
@@ -465,10 +467,10 @@ configurations.
 </p><!--  l. 17  --><p class='indent'>   Add local CSS file.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb88'><a id='x8-60006r1'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>body<span class='textcolor-387f38'>{</span>max-width:70ch;margin: 1rem auto;<span class='textcolor-387f38'>}}</span> 
-<a id='x8-60008r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>AddCss<span class='textcolor-387f38'>}{</span>custom.css<span class='textcolor-387f38'>}</span> 
-<a id='x8-60010r3'></a><span class='textcolor-878787'><span class='textit'>% link to a CSS on some web:</span></span> 
-<a id='x8-60012r4'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@HEAD<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;link type="text/css" rel="stylesheet" href="https://example.com/style.css" /&gt;<span class='textcolor-387f38'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb88'><a id='x8-62006r1'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>body<span class='textcolor-387f38'>{</span>max-width:70ch;margin: 1rem auto;<span class='textcolor-387f38'>}}</span> 
+<a id='x8-62008r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>AddCss<span class='textcolor-387f38'>}{</span>custom.css<span class='textcolor-387f38'>}</span> 
+<a id='x8-62010r3'></a><span class='textcolor-878787'><span class='textit'>% link to a CSS on some web:</span></span> 
+<a id='x8-62012r4'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@HEAD<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;link type="text/css" rel="stylesheet" href="https://example.com/style.css" /&gt;<span class='textcolor-387f38'>}}</span></pre>
 
 </figure>
 <!--  l. 26  --><p class='indent'>   <code class='texttt'>\CssFile[list-of-css-files]content\EndCssFile</code>
@@ -483,15 +485,15 @@ The alternative file consists of the code loaded from listed files, and of the c
 explicitly specified in its body.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb89'><a id='x8-60023r1'></a><span class='textcolor-2838af'>\ConfigureList</span><span class='textcolor-387f38'>{</span>mylist<span class='textcolor-387f38'>}</span> 
-<a id='x8-60025r2'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;div class="mylist"&gt;<span class='textcolor-387f38'>}} </span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/div&gt;<span class='textcolor-387f38'>}} </span><span class='textcolor-387f38'>{</span>* <span class='textcolor-387f38'>}{}</span> 
-<a id='x8-60027r3'></a> 
-<a id='x8-60029r4'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x8-60031r5'></a> 
-<a id='x8-60033r6'></a><span class='textcolor-2838af'>\CssFile</span> 
-<a id='x8-60035r7'></a>/* css.sty */ 
-<a id='x8-60037r8'></a>.mylist <span class='textcolor-387f38'>{</span> color : red; <span class='textcolor-387f38'>}</span> 
-<a id='x8-60039r9'></a><span class='textcolor-2838af'>\EndCssFile</span></pre>
+<pre class='fancyvrb' id='fancyvrb89'><a id='x8-62023r1'></a><span class='textcolor-2838af'>\ConfigureList</span><span class='textcolor-387f38'>{</span>mylist<span class='textcolor-387f38'>}</span> 
+<a id='x8-62025r2'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;div class="mylist"&gt;<span class='textcolor-387f38'>}} </span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/div&gt;<span class='textcolor-387f38'>}} </span><span class='textcolor-387f38'>{</span>* <span class='textcolor-387f38'>}{}</span> 
+<a id='x8-62027r3'></a> 
+<a id='x8-62029r4'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x8-62031r5'></a> 
+<a id='x8-62033r6'></a><span class='textcolor-2838af'>\CssFile</span> 
+<a id='x8-62035r7'></a>/* css.sty */ 
+<a id='x8-62037r8'></a>.mylist <span class='textcolor-387f38'>{</span> color : red; <span class='textcolor-387f38'>}</span> 
+<a id='x8-62039r9'></a><span class='textcolor-2838af'>\EndCssFile</span></pre>
 
 </figure>
 <!--  l. 48  --><p class='indent'>   The names in the list of files should be separated by commas, and the rectangular
@@ -501,7 +503,7 @@ one such line is included, the content of the <code class='texttt'>\Css{...}</co
 occurrence of this line. Arbitrary many space characters may appear around the
 substrings ‘/*’ and ‘*/’.
 </p>   
-<h3 class='sectionHead' id='webfonts'><span class='titlemark'>7.5   </span> <a id='x8-610007.5'></a>Webfonts</h3>
+<h3 class='sectionHead' id='webfonts'><span class='titlemark'>7.5   </span> <a id='x8-630007.5'></a>Webfonts</h3>
 <!--  l. 5  --><p class='noindent'>The declared font family is not used automatically, it is necessary to select it using
 the <span class='emph'>font-family</span> Css property.
 </p><!--  l. 8  --><p class='indent'>   The default font family name which should be used in the Css <span class='emph'>font-family</span>
@@ -511,7 +513,7 @@ the viewer’s system.
 </p><!--  l. 14  --><p class='indent'>   Change default CSS font family name. Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb90'><a id='x8-61003r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>FontFamily<span class='textcolor-387f38'>}{</span>rmfamily<span class='textcolor-387f38'>}{</span>Latin Modern<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb90'><a id='x8-63003r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>FontFamily<span class='textcolor-387f38'>}{</span>rmfamily<span class='textcolor-387f38'>}{</span>Latin Modern<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 20  --><p class='indent'>   The font shapes can be configure using <span class='textbf'><code class='texttt'>\Configure</code></span>{<span class='textit'>NormalFont</span>},
@@ -521,23 +523,23 @@ or <span class='textit'>otf</span>.
 </p><!--  l. 25  --><p class='indent'>   Full example of font CSS configurations:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb91'><a id='x8-61016r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>NormalFont<span class='textcolor-387f38'>}{</span>normal-font-file.otf<span class='textcolor-387f38'>}</span> 
-<a id='x8-61018r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>BoldFont<span class='textcolor-387f38'>}{</span>bold-font-file.otf<span class='textcolor-387f38'>}</span> 
-<a id='x8-61020r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>BoldItalicFont<span class='textcolor-387f38'>}{</span>bold-italic-font-file.otf<span class='textcolor-387f38'>}</span> 
-<a id='x8-61022r4'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>ItalicFont<span class='textcolor-387f38'>}{</span>italic-font-file.otf<span class='textcolor-387f38'>}</span> 
-<a id='x8-61024r5'></a><span class='textcolor-878787'><span class='textit'>% Add another font family</span></span> 
-<a id='x8-61026r6'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>FontFamily<span class='textcolor-387f38'>}{</span>hello<span class='textcolor-387f38'>}{</span>Linux Libertine O<span class='textcolor-387f38'>}</span> 
-<a id='x8-61028r7'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>NormalFont<span class='textcolor-387f38'>}{</span>hello-font-file.otf<span class='textcolor-387f38'>}</span> 
-<a id='x8-61030r8'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>body<span class='textcolor-387f38'>{</span> 
-<a id='x8-61032r9'></a>  font-family: rmfamily, "AnotherFontFamilyName", serif; 
-<a id='x8-61034r10'></a><span class='textcolor-387f38'>}}</span> 
-<a id='x8-61036r11'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>span.hello<span class='textcolor-387f38'>{</span>font-family: hello, sans-serif;<span class='textcolor-387f38'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb91'><a id='x8-63016r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>NormalFont<span class='textcolor-387f38'>}{</span>normal-font-file.otf<span class='textcolor-387f38'>}</span> 
+<a id='x8-63018r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>BoldFont<span class='textcolor-387f38'>}{</span>bold-font-file.otf<span class='textcolor-387f38'>}</span> 
+<a id='x8-63020r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>BoldItalicFont<span class='textcolor-387f38'>}{</span>bold-italic-font-file.otf<span class='textcolor-387f38'>}</span> 
+<a id='x8-63022r4'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>ItalicFont<span class='textcolor-387f38'>}{</span>italic-font-file.otf<span class='textcolor-387f38'>}</span> 
+<a id='x8-63024r5'></a><span class='textcolor-878787'><span class='textit'>% Add another font family</span></span> 
+<a id='x8-63026r6'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>FontFamily<span class='textcolor-387f38'>}{</span>hello<span class='textcolor-387f38'>}{</span>Linux Libertine O<span class='textcolor-387f38'>}</span> 
+<a id='x8-63028r7'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>NormalFont<span class='textcolor-387f38'>}{</span>hello-font-file.otf<span class='textcolor-387f38'>}</span> 
+<a id='x8-63030r8'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>body<span class='textcolor-387f38'>{</span> 
+<a id='x8-63032r9'></a>  font-family: rmfamily, "AnotherFontFamilyName", serif; 
+<a id='x8-63034r10'></a><span class='textcolor-387f38'>}}</span> 
+<a id='x8-63036r11'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>span.hello<span class='textcolor-387f38'>{</span>font-family: hello, sans-serif;<span class='textcolor-387f38'>}}</span></pre>
 
 </figure>
                                                                   
 
                                                                   
-<h3 class='sectionHead' id='use-javascript'><span class='titlemark'>7.6   </span> <a id='x8-620007.6'></a>Use JavaScript</h3>
+<h3 class='sectionHead' id='use-javascript'><span class='titlemark'>7.6   </span> <a id='x8-640007.6'></a>Use JavaScript</h3>
 <!--  l. 4  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>AddJs</span>}{filename of JS file to be included}</code>
 </p><!--  l. 6  --><p class='indent'>   This configuration inserts link to a local JavaScript file.
 </p><!--  l. 8  --><p class='noindent'><code class='texttt'><span class='textbf'>\JavaScript</span></code> ... <span class='textbf'><code class='texttt'>\EndJavaScript</code></span> insert JS code in the verbatim mode. This
@@ -547,28 +549,28 @@ directly to the document. If used in the configuration file, it should be placed
 </p><!--  l. 13  --><p class='indent'>   Full example of configuration file that use both of these methods:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb92'><a id='x8-62010r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml,javascript<span class='textcolor-387f38'>}</span> 
-<a id='x8-62012r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>AddJs<span class='textcolor-387f38'>}{</span>sample.js<span class='textcolor-387f38'>}</span> 
-<a id='x8-62014r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x8-62016r4'></a><span class='textcolor-2838af'>\JavaScript</span> 
-<a id='x8-62018r5'></a>console.log("Hello JS"); 
-<a id='x8-62020r6'></a><span class='textcolor-2838af'>\EndJavaScript</span> 
-<a id='x8-62022r7'></a><span class='textcolor-2838af'>\EndPreamble</span> 
-<a id='x8-62024r8'></a></pre>
+<pre class='fancyvrb' id='fancyvrb92'><a id='x8-64010r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml,javascript<span class='textcolor-387f38'>}</span> 
+<a id='x8-64012r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>AddJs<span class='textcolor-387f38'>}{</span>sample.js<span class='textcolor-387f38'>}</span> 
+<a id='x8-64014r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x8-64016r4'></a><span class='textcolor-2838af'>\JavaScript</span> 
+<a id='x8-64018r5'></a>console.log("Hello JS"); 
+<a id='x8-64020r6'></a><span class='textcolor-2838af'>\EndJavaScript</span> 
+<a id='x8-64022r7'></a><span class='textcolor-2838af'>\EndPreamble</span> 
+<a id='x8-64024r8'></a></pre>
 
 </figure>
 <!--  l. 1  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='basic-document-structure-and-metadata'><span class='titlemark'>7.7   </span> <a id='x8-630007.7'></a>Basic document structure and metadata</h3>
+<h3 class='sectionHead' id='basic-document-structure-and-metadata'><span class='titlemark'>7.7   </span> <a id='x8-650007.7'></a>Basic document structure and metadata</h3>
 <!--  l. 4  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='file-extension'><span class='titlemark'>7.7.1   </span> <a id='x8-640007.7.1'></a>File extension</h4>
+<h4 class='subsectionHead' id='file-extension'><span class='titlemark'>7.7.1   </span> <a id='x8-660007.7.1'></a>File extension</h4>
 <!--  l. 6  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>ext</span>}{default extension name for target files (recorded in
 <span class='textbf'><code class='texttt'>\:html</code></span>)}</code>
 </p><!--  l. 8  --><p class='indent'>   It can also be requested through a command line option <code class='texttt'>ext=...</code>.
 </p><!--  l. 10  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='html-header'><span class='titlemark'>7.7.2   </span> <a id='x8-650007.7.2'></a>HTML header</h4>
+<h4 class='subsectionHead' id='html-header'><span class='titlemark'>7.7.2   </span> <a id='x8-670007.7.2'></a>HTML header</h4>
 <!--  l. 11  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>PROLOG</span>}{Comma separated list of hooks to appear before HTML}
 </code>
 </p><!--  l. 13  --><p class='indent'>   Each hook E is declared to be configurable by an instruction of the form
@@ -576,8 +578,8 @@ directly to the document. If used in the configuration file, it should be placed
 </p><!--  l. 16  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb93'><a id='x8-65004r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>PROLOG<span class='textcolor-387f38'>}{</span>VERSION,DOCTYPE,*XML-STYLESHEET<span class='textcolor-387f38'>}</span> 
-<a id='x8-65006r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>VERSION<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;?xml version="1.0"?&gt;<span class='textcolor-387f38'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb93'><a id='x8-67004r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>PROLOG<span class='textcolor-387f38'>}{</span>VERSION,DOCTYPE,*XML-STYLESHEET<span class='textcolor-387f38'>}</span> 
+<a id='x8-67006r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>VERSION<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;?xml version="1.0"?&gt;<span class='textcolor-387f38'>}}</span></pre>
                                                                   
 
                                                                   
@@ -586,7 +588,7 @@ directly to the document. If used in the configuration file, it should be placed
 <!--  l. 23  --><p class='indent'>   A star ’*’ prefix calls for accumulative configurations
 </p><!--  l. 25  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='document-structure'><span class='titlemark'>7.7.3   </span> <a id='x8-660007.7.3'></a>Document structure</h4>
+<h4 class='subsectionHead' id='document-structure'><span class='titlemark'>7.7.3   </span> <a id='x8-680007.7.3'></a>Document structure</h4>
 <!--  l. 27  --><p class='noindent'>The following configurations are used to declare tags for basic structure of generated
 documents.
 </p><!--  l. 30  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>DOCTYPE</span>}{doctype definition}</code>
@@ -603,10 +605,10 @@ contributions.
 </p><!--  l. 45  --><p class='indent'>   For instance,
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb94'><a id='x8-66006r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@HEAD<span class='textcolor-387f38'>}{</span>A<span class='textcolor-387f38'>}</span> 
-<a id='x8-66008r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@HEAD<span class='textcolor-387f38'>}{}</span> 
-<a id='x8-66010r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@HEAD<span class='textcolor-387f38'>}{</span>B<span class='textcolor-387f38'>}</span> 
-<a id='x8-66012r4'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@HEAD<span class='textcolor-387f38'>}{</span>C<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb94'><a id='x8-68006r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@HEAD<span class='textcolor-387f38'>}{</span>A<span class='textcolor-387f38'>}</span> 
+<a id='x8-68008r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@HEAD<span class='textcolor-387f38'>}{}</span> 
+<a id='x8-68010r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@HEAD<span class='textcolor-387f38'>}{</span>B<span class='textcolor-387f38'>}</span> 
+<a id='x8-68012r4'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>@HEAD<span class='textcolor-387f38'>}{</span>C<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 54  --><p class='indent'>   contributes ‘BC’.
@@ -617,21 +619,21 @@ contributions.
 </p><!--  l. 64  --><p class='indent'>   The document structure hooks are placed in the following sequence:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb95'><a id='x8-66029r1'></a>&lt;DOCTYPE&gt; 
-<a id='x8-66031r2'></a>&lt;HTML 1&gt; 
-<a id='x8-66033r3'></a>  &lt;HEAD 1&gt; 
-<a id='x8-66035r4'></a>     &lt;TITLE 1&gt; 
-<a id='x8-66037r5'></a>        &lt;@TITLE&gt; 
-<a id='x8-66039r6'></a>        &lt;TITLE+&gt; 
-<a id='x8-66041r7'></a>     &lt;TITLE 2&gt; 
-<a id='x8-66043r8'></a>     &lt;@HEAD&gt; 
-<a id='x8-66045r9'></a>  &lt;HEAD 2&gt; 
-<a id='x8-66047r10'></a>  &lt;BODY 1&gt; 
-<a id='x8-66049r11'></a>  &lt;@BODY&gt; 
-<a id='x8-66051r12'></a>  ...... 
-<a id='x8-66053r13'></a>  &lt;@/BODY&gt; 
-<a id='x8-66055r14'></a>  &lt;BODY 2&gt; 
-<a id='x8-66057r15'></a>&lt;HTML 2&gt;</pre>
+<pre class='fancyvrb' id='fancyvrb95'><a id='x8-68029r1'></a>&lt;DOCTYPE&gt; 
+<a id='x8-68031r2'></a>&lt;HTML 1&gt; 
+<a id='x8-68033r3'></a>  &lt;HEAD 1&gt; 
+<a id='x8-68035r4'></a>     &lt;TITLE 1&gt; 
+<a id='x8-68037r5'></a>        &lt;@TITLE&gt; 
+<a id='x8-68039r6'></a>        &lt;TITLE+&gt; 
+<a id='x8-68041r7'></a>     &lt;TITLE 2&gt; 
+<a id='x8-68043r8'></a>     &lt;@HEAD&gt; 
+<a id='x8-68045r9'></a>  &lt;HEAD 2&gt; 
+<a id='x8-68047r10'></a>  &lt;BODY 1&gt; 
+<a id='x8-68049r11'></a>  &lt;@BODY&gt; 
+<a id='x8-68051r12'></a>  ...... 
+<a id='x8-68053r13'></a>  &lt;@/BODY&gt; 
+<a id='x8-68055r14'></a>  &lt;BODY 2&gt; 
+<a id='x8-68057r15'></a>&lt;HTML 2&gt;</pre>
 
 </figure>
                                                                   
@@ -639,16 +641,16 @@ contributions.
                                                                   
 <!--  l. 86  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='titles'><span class='titlemark'>7.7.4   </span> <a id='x8-670007.7.4'></a>Titles</h4>
+<h4 class='subsectionHead' id='titles'><span class='titlemark'>7.7.4   </span> <a id='x8-690007.7.4'></a>Titles</h4>
 <!--  l. 88  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>TITLE+</span>}{Title contents}</code>
 </p><!--  l. 90  --><p class='indent'>   Set contents of the <code class='texttt'>&lt;title&gt;</code> element.
 </p><!--  l. 92  --><p class='indent'>   There are also similar configurations for pages split on sectioning commands. For
 example, for document that is split on chapters, use:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb96'><a id='x8-67005r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>TITLE+<span class='textcolor-387f38'>}{</span>My web site |<span class='textcolor-2838af'>\@</span>title<span class='textcolor-387f38'>}</span> 
-<a id='x8-67007r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>chapterTITLE+<span class='textcolor-387f38'>}{</span>My web site | <span class='textcolor-2838af'>\thechapter\space</span>#1<span class='textcolor-387f38'>}</span> 
-<a id='x8-67009r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>likechapterTITLE+<span class='textcolor-387f38'>}{</span>My web site | #1<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb96'><a id='x8-69005r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>TITLE+<span class='textcolor-387f38'>}{</span>My web site |<span class='textcolor-2838af'>\@</span>title<span class='textcolor-387f38'>}</span> 
+<a id='x8-69007r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>chapterTITLE+<span class='textcolor-387f38'>}{</span>My web site | <span class='textcolor-2838af'>\thechapter\space</span>#1<span class='textcolor-387f38'>}</span> 
+<a id='x8-69009r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>likechapterTITLE+<span class='textcolor-387f38'>}{</span>My web site | #1<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 101  --><p class='indent'>   <code class='texttt'>likechapter</code> prefix is used for <code class='texttt'>\chapter*</code> command. The text of sectioning
@@ -665,7 +667,7 @@ additive.
 </p><!--  l. 113  --><p class='indent'>   If <code class='texttt'>#1</code> is a one parametric macro, it gets the title content for an argument.
 </p><!--  l. 1  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='page-breaks'><span class='titlemark'>7.8   </span> <a id='x8-680007.8'></a>Page Breaks</h3>
+<h3 class='sectionHead' id='page-breaks'><span class='titlemark'>7.8   </span> <a id='x8-700007.8'></a>Page Breaks</h3>
 <!--  l. 3  --><p class='noindent'><code class='texttt'>TeX4ht</code> can break the generated document to separate files, each containing contents
 of sectioning unit. The ‘1’, ‘2’, …,‘8’ options asks for a tree-structured
 set of files, reflecting on the sectioning of the document to the specified
@@ -693,18 +695,18 @@ the hypertext pages; e.g., ‘<span class='textbf'><code class='texttt'>\CutAt</
 made known with instructions of the form <span class='textbf'><code class='texttt'>\Configure</code></span>{<span class='textit'>endunit</span>}{<span class='textit'>unit,unit,...</span>}.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb97'><a id='x8-68006r1'></a><span class='textcolor-2838af'>\CutAt</span><span class='textcolor-387f38'>{</span>section,chapter<span class='textcolor-387f38'>}</span> 
-<a id='x8-68008r2'></a><span class='textcolor-2838af'>\tableofcontents</span> 
-<a id='x8-68010r3'></a><span class='textcolor-2838af'>\chapter</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span>  ......  <span class='textcolor-2838af'>\section</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span>  ......  <span class='textcolor-2838af'>\section</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span>  ...... 
-<a id='x8-68012r4'></a><span class='textcolor-2838af'>\chapter</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span>  ......  <span class='textcolor-2838af'>\section</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span>  ......</pre>
+<pre class='fancyvrb' id='fancyvrb97'><a id='x8-70006r1'></a><span class='textcolor-2838af'>\CutAt</span><span class='textcolor-387f38'>{</span>section,chapter<span class='textcolor-387f38'>}</span> 
+<a id='x8-70008r2'></a><span class='textcolor-2838af'>\tableofcontents</span> 
+<a id='x8-70010r3'></a><span class='textcolor-2838af'>\chapter</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span>  ......  <span class='textcolor-2838af'>\section</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span>  ......  <span class='textcolor-2838af'>\section</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span>  ...... 
+<a id='x8-70012r4'></a><span class='textcolor-2838af'>\chapter</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span>  ......  <span class='textcolor-2838af'>\section</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span>  ......</pre>
 
 </figure>
 <!--  l. 42  --><p class='indent'>   Cut points at arbitrary points can be introduced by introducing section-like
 commands in a manner similar to
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb98'><a id='x8-68016r1'></a><span class='textcolor-2838af'>\NewSection\mysection</span><span class='textcolor-387f38'>{}</span> 
-<a id='x8-68018r2'></a><span class='textcolor-2838af'>\CutAt</span><span class='textcolor-387f38'>{</span>mysection<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb98'><a id='x8-70016r1'></a><span class='textcolor-2838af'>\NewSection\mysection</span><span class='textcolor-387f38'>{}</span> 
+<a id='x8-70018r2'></a><span class='textcolor-2838af'>\CutAt</span><span class='textcolor-387f38'>{</span>mysection<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 50  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>CutAt</span>}{unit}{before-button}{after-button}</code>
@@ -714,7 +716,7 @@ type
 </p><!--  l. 60  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb99'><a id='x8-68021r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>+CutAt<span class='textcolor-387f38'>}{</span>mysection<span class='textcolor-387f38'>}{</span>[<span class='textcolor-387f38'>}{</span>]<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb99'><a id='x8-70021r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>+CutAt<span class='textcolor-387f38'>}{</span>mysection<span class='textcolor-387f38'>}{</span>[<span class='textcolor-387f38'>}{</span>]<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 66  --><p class='noindent'><code class='texttt'><span class='textbf'>\PauseCutAt</span></code>{<span class='textit'>section type</span>}
@@ -729,15 +731,15 @@ need to use:
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb100'><a id='x8-68025r1'></a><span class='textcolor-2838af'>\PauseCutAt</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}</span> 
-<a id='x8-68027r2'></a><span class='textcolor-2838af'>\PauseCutAt</span><span class='textcolor-387f38'>{</span>subsection<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb100'><a id='x8-70025r1'></a><span class='textcolor-2838af'>\PauseCutAt</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}</span> 
+<a id='x8-70027r2'></a><span class='textcolor-2838af'>\PauseCutAt</span><span class='textcolor-387f38'>{</span>subsection<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 80  --><p class='indent'>   To resume breaking, use:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb101'><a id='x8-68031r1'></a><span class='textcolor-2838af'>\ContCutAt</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}</span> 
-<a id='x8-68033r2'></a><span class='textcolor-2838af'>\ContCutAt</span><span class='textcolor-387f38'>{</span>subsection<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb101'><a id='x8-70031r1'></a><span class='textcolor-2838af'>\ContCutAt</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}</span> 
+<a id='x8-70033r2'></a><span class='textcolor-2838af'>\ContCutAt</span><span class='textcolor-387f38'>{</span>subsection<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 87  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>CutAt-filename</span>}{filename for the next cut file}</code>
@@ -746,12 +748,12 @@ available through #1. The section title is accessible through #2.
 </p><!--  l. 93  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb102'><a id='x8-68036r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>CutAt-filename<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\NextFile</span><span class='textcolor-387f38'>{</span>#1-#2.html<span class='textcolor-387f38'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb102'><a id='x8-70036r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>CutAt-filename<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\NextFile</span><span class='textcolor-387f38'>{</span>#1-#2.html<span class='textcolor-387f38'>}}</span></pre>
 
 </figure>
 <!--  l. 1  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='crosslinks'><span class='titlemark'>7.9   </span> <a id='x8-690007.9'></a>Cross-links</h3>
+<h3 class='sectionHead' id='crosslinks'><span class='titlemark'>7.9   </span> <a id='x8-710007.9'></a>Cross-links</h3>
 <!--  l. 4  --><p class='noindent'>Cross-links provide navigation between HTML pages broken into multiple files from a
 single source document.
 </p><!--  l. 6  --><p class='indent'>   The following configurations modify behaviour of cross-links between pages in a
@@ -762,10 +764,10 @@ multi page document.
 pages obtained for sectioning commands.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb103'><a id='x8-69006r1'></a> <span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>crosslinks<span class='textcolor-387f38'>}</span> 
-<a id='x8-69008r2'></a>   <span class='textcolor-387f38'>{}{}{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\scriptstyle\Rightarrow</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span> 
-<a id='x8-69010r3'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\scriptstyle\Leftarrow</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span> 
-<a id='x8-69012r4'></a>   <span class='textcolor-387f38'>{}{}{}{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\scriptstyle\Uparrow</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb103'><a id='x8-71006r1'></a> <span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>crosslinks<span class='textcolor-387f38'>}</span> 
+<a id='x8-71008r2'></a>   <span class='textcolor-387f38'>{}{}{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\scriptstyle\Rightarrow</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span> 
+<a id='x8-71010r3'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\scriptstyle\Leftarrow</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span> 
+<a id='x8-71012r4'></a>   <span class='textcolor-387f38'>{}{}{}{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\scriptstyle\Uparrow</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 19  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>crosslinks*</span>}{1--7 arguments}</code>
@@ -777,10 +779,10 @@ pages obtained for sectioning commands.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb104'><a id='x8-69018r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>crosslinks*<span class='textcolor-387f38'>}{</span>next<span class='textcolor-387f38'>}</span> 
-<a id='x8-69020r2'></a>   <span class='textcolor-387f38'>{</span>prev<span class='textcolor-387f38'>}{</span>prevtail<span class='textcolor-387f38'>}</span> 
-<a id='x8-69022r3'></a>   <span class='textcolor-387f38'>{</span>tail<span class='textcolor-387f38'>}{</span>front<span class='textcolor-387f38'>}</span> 
-<a id='x8-69024r4'></a>   <span class='textcolor-387f38'>{</span>up<span class='textcolor-387f38'>}{}</span></pre>
+<pre class='fancyvrb' id='fancyvrb104'><a id='x8-71018r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>crosslinks*<span class='textcolor-387f38'>}{</span>next<span class='textcolor-387f38'>}</span> 
+<a id='x8-71020r2'></a>   <span class='textcolor-387f38'>{</span>prev<span class='textcolor-387f38'>}{</span>prevtail<span class='textcolor-387f38'>}</span> 
+<a id='x8-71022r3'></a>   <span class='textcolor-387f38'>{</span>tail<span class='textcolor-387f38'>}{</span>front<span class='textcolor-387f38'>}</span> 
+<a id='x8-71024r4'></a>   <span class='textcolor-387f38'>{</span>up<span class='textcolor-387f38'>}{}</span></pre>
 
 </figure>
 <!--  l. 34  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>crosslinks+</span>}{before-top-links}{after-top-links}
@@ -828,15 +830,15 @@ hooks}</code>
 </p><!--  l. 67  --><p class='indent'>   Examples:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb105'><a id='x8-69032r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>crosslinks-<span class='textcolor-387f38'>}{}{}</span> 
-<a id='x8-69034r2'></a> 
-<a id='x8-69036r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>crosslinks-<span class='textcolor-387f38'>}</span> 
-<a id='x8-69038r4'></a>    <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;span class="hidden"&gt;<span class='textcolor-387f38'>}</span>[<span class='textcolor-387f38'>}</span> 
-<a id='x8-69040r5'></a>    <span class='textcolor-387f38'>{</span>]<span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/span&gt;<span class='textcolor-387f38'>} </span><span class='textcolor-387f38'>}</span> 
-<a id='x8-69042r6'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>span.hidden <span class='textcolor-387f38'>{</span>visibility:hidden;<span class='textcolor-387f38'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb105'><a id='x8-71032r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>crosslinks-<span class='textcolor-387f38'>}{}{}</span> 
+<a id='x8-71034r2'></a> 
+<a id='x8-71036r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>crosslinks-<span class='textcolor-387f38'>}</span> 
+<a id='x8-71038r4'></a>    <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;span class="hidden"&gt;<span class='textcolor-387f38'>}</span>[<span class='textcolor-387f38'>}</span> 
+<a id='x8-71040r5'></a>    <span class='textcolor-387f38'>{</span>]<span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/span&gt;<span class='textcolor-387f38'>} </span><span class='textcolor-387f38'>}</span> 
+<a id='x8-71042r6'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>span.hidden <span class='textcolor-387f38'>{</span>visibility:hidden;<span class='textcolor-387f38'>}}</span></pre>
 
 </figure>   
-<h3 class='sectionHead' id='tables-of-contents'><span class='titlemark'>7.10   </span> <a id='x8-700007.10'></a>Tables of Contents</h3>
+<h3 class='sectionHead' id='tables-of-contents'><span class='titlemark'>7.10   </span> <a id='x8-720007.10'></a>Tables of Contents</h3>
 <!--  l. 3  --><p class='noindent'><code class='texttt'>TeX4ht</code> supports tables of contents created using the <span class='textbf'><code class='texttt'>\tableofcontents</code></span> command in
 the converted document. In addition, it can add local tables of contents to
 the
@@ -868,7 +870,7 @@ similar to <code class='texttt'>\Configure{writetoc}{\let\\\space}</code>.
                                                                   
 </p><!--  l. 41  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='local-tables-of-contents'><span class='titlemark'>7.10.1   </span> <a id='x8-710007.10.1'></a>Local tables of contents</h4>
+<h4 class='subsectionHead' id='local-tables-of-contents'><span class='titlemark'>7.10.1   </span> <a id='x8-730007.10.1'></a>Local tables of contents</h4>
 <!--  l. 43  --><p class='noindent'>The following commands and configurations can produce tables of contents for
 chapters or sections.
 </p><!--  l. 46  --><p class='noindent'><code class='texttt'><span class='textbf'>\ConfigureToc</span></code>{<span class='textit'>unit-name</span>}{<span class='textit'>before unit number</span>}{<span class='textit'>before content</span>}{<span class='textit'>before page
@@ -883,18 +885,18 @@ number</span>}{<span class='textit'>at end</span>}
 <!--  l. 60  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb106'><a id='x8-71007r1'></a><span class='textcolor-2838af'>\ConfigureToc</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}</span> 
-<a id='x8-71009r2'></a>   <span class='textcolor-387f38'>{}</span> 
-<a id='x8-71011r3'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Picture</span><span class='textcolor-387f38'>[*]{</span>pic.jpg width="13"  height="13"<span class='textcolor-387f38'>}</span>~<span class='textcolor-387f38'>}</span> 
-<a id='x8-71013r4'></a>   <span class='textcolor-387f38'>{}</span> 
-<a id='x8-71015r5'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;br /&gt;<span class='textcolor-387f38'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb106'><a id='x8-73007r1'></a><span class='textcolor-2838af'>\ConfigureToc</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}</span> 
+<a id='x8-73009r2'></a>   <span class='textcolor-387f38'>{}</span> 
+<a id='x8-73011r3'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Picture</span><span class='textcolor-387f38'>[*]{</span>pic.jpg width="13"  height="13"<span class='textcolor-387f38'>}</span>~<span class='textcolor-387f38'>}</span> 
+<a id='x8-73013r4'></a>   <span class='textcolor-387f38'>{}</span> 
+<a id='x8-73015r5'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;br /&gt;<span class='textcolor-387f38'>}}</span></pre>
 
 </figure>
 <!--  l. 70  --><p class='indent'>   As an alternative to <span class='textbf'><code class='texttt'>\ConfigureToc</code></span>, you can also use the following alternative:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb107'><a id='x8-71019r1'></a><span class='textcolor-2838af'>\def\toc</span>&lt;unit-name&gt;#1#2#3<span class='textcolor-387f38'>{</span>&lt;before unit number&gt;#1&lt;before content&gt;#2<span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-71021r2'></a>    &lt;before page number&gt;#3&lt;at end&gt;<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb107'><a id='x8-73019r1'></a><span class='textcolor-2838af'>\def\toc</span>&lt;unit-name&gt;#1#2#3<span class='textcolor-387f38'>{</span>&lt;before unit number&gt;#1&lt;before content&gt;#2<span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-73021r2'></a>    &lt;before page number&gt;#3&lt;at end&gt;<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 80  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>TocLink</span>}{<span class='textbf'><code class='texttt'>\Link</code></span> like command}</code>
@@ -902,7 +904,7 @@ number</span>}{<span class='textit'>at end</span>}
 </p><!--  l. 84  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb108'><a id='x8-71024r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>TocLink<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\Link</span><span class='textcolor-387f38'>{</span>#2<span class='textcolor-387f38'>}{</span>#3<span class='textcolor-387f38'>}</span>#4<span class='textcolor-2838af'>\EndLink</span><span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb108'><a id='x8-73024r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>TocLink<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\Link</span><span class='textcolor-387f38'>{</span>#2<span class='textcolor-387f38'>}{</span>#3<span class='textcolor-387f38'>}</span>#4<span class='textcolor-2838af'>\EndLink</span><span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 90  --><p class='noindent'><code class='texttt'><span class='textbf'>\TocAt</span></code>{<span class='textit'>#1,#2,#3,…</span>}
@@ -938,9 +940,9 @@ local tables.
 </p><!--  l. 114  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb109'><a id='x8-71029r1'></a><span class='textcolor-2838af'>\TocAt</span><span class='textcolor-387f38'>{</span>mychapter,mysection,mysubsection,/myappendix,/mypart<span class='textcolor-387f38'>}</span> 
-<a id='x8-71031r2'></a><span class='textcolor-2838af'>\TocAt</span>-<span class='textcolor-387f38'>{</span>mysection,mysubsection,/mylikesection<span class='textcolor-387f38'>}</span> 
-<a id='x8-71033r3'></a><span class='textcolor-2838af'>\section</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span>...<span class='textcolor-2838af'>\Tocmysection</span></pre>
+<pre class='fancyvrb' id='fancyvrb109'><a id='x8-73029r1'></a><span class='textcolor-2838af'>\TocAt</span><span class='textcolor-387f38'>{</span>mychapter,mysection,mysubsection,/myappendix,/mypart<span class='textcolor-387f38'>}</span> 
+<a id='x8-73031r2'></a><span class='textcolor-2838af'>\TocAt</span>-<span class='textcolor-387f38'>{</span>mysection,mysubsection,/mylikesection<span class='textcolor-387f38'>}</span> 
+<a id='x8-73033r3'></a><span class='textcolor-2838af'>\section</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span>...<span class='textcolor-2838af'>\Tocmysection</span></pre>
 
 </figure>
 <!--  l. 122  --><p class='indent'>   The definition of the local table of contents can be redefined within <code class='texttt'>\csname
@@ -948,29 +950,29 @@ Toc#1\endcsname</code>.
 </p><!--  l. 125  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb110'><a id='x8-71047r1'></a><span class='textcolor-2838af'>\TocAt</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}</span> 
-<a id='x8-71049r2'></a><span class='textcolor-2838af'>\def\Tocsection</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\TableOfContents</span><span class='textcolor-387f38'>[section]}</span> 
-<a id='x8-71051r3'></a> 
-<a id='x8-71053r4'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>div.sectionTOCS <span class='textcolor-387f38'>{</span> 
-<a id='x8-71055r5'></a>                    width : 30<span class='textcolor-2838af'>\%</span>; 
-<a id='x8-71057r6'></a>                    float : right; 
-<a id='x8-71059r7'></a>               text-align : left; 
-<a id='x8-71061r8'></a>           vertical-align : top; 
-<a id='x8-71063r9'></a>              margin-left : 1em; 
-<a id='x8-71065r10'></a>                font-size : 85<span class='textcolor-2838af'>\%</span>; 
-<a id='x8-71067r11'></a>         background-color : <span class='textcolor-2838af'>\#</span>DDDDDD; 
-<a id='x8-71069r12'></a>    <span class='textcolor-387f38'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb110'><a id='x8-73047r1'></a><span class='textcolor-2838af'>\TocAt</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}</span> 
+<a id='x8-73049r2'></a><span class='textcolor-2838af'>\def\Tocsection</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\TableOfContents</span><span class='textcolor-387f38'>[section]}</span> 
+<a id='x8-73051r3'></a> 
+<a id='x8-73053r4'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>div.sectionTOCS <span class='textcolor-387f38'>{</span> 
+<a id='x8-73055r5'></a>                    width : 30<span class='textcolor-2838af'>\%</span>; 
+<a id='x8-73057r6'></a>                    float : right; 
+<a id='x8-73059r7'></a>               text-align : left; 
+<a id='x8-73061r8'></a>           vertical-align : top; 
+<a id='x8-73063r9'></a>              margin-left : 1em; 
+<a id='x8-73065r10'></a>                font-size : 85<span class='textcolor-2838af'>\%</span>; 
+<a id='x8-73067r11'></a>         background-color : <span class='textcolor-2838af'>\#</span>DDDDDD; 
+<a id='x8-73069r12'></a>    <span class='textcolor-387f38'>}}</span></pre>
 
 </figure>
 <!--  l. 142  --><p class='indent'>   Example: Table of content before the section title.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb111'><a id='x8-71077r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}{}{}</span> 
-<a id='x8-71079r2'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Tocsection </span><span class='textcolor-2838af'>\let\saveTocsection</span>=<span class='textcolor-2838af'>\Tocsection</span> 
-<a id='x8-71081r3'></a>    <span class='textcolor-2838af'>\def\Tocsection</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\let\Tocsection</span>=<span class='textcolor-2838af'>\saveTocsection</span><span class='textcolor-387f38'>}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-71083r4'></a>    <span class='textcolor-2838af'>\ifvmode </span><span class='textcolor-2838af'>\IgnorePar\fi </span><span class='textcolor-2838af'>\EndP\IgnorePar</span> 
-<a id='x8-71085r5'></a>    <span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;h3 class="sectionHead"&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\TitleMark\space\HtmlParOff</span><span class='textcolor-387f38'>}</span> 
-<a id='x8-71087r6'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/h3&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\HtmlParOn\ShowPar </span><span class='textcolor-2838af'>\IgnoreIndent </span><span class='textcolor-2838af'>\par</span><span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb111'><a id='x8-73077r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}{}{}</span> 
+<a id='x8-73079r2'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Tocsection </span><span class='textcolor-2838af'>\let\saveTocsection</span>=<span class='textcolor-2838af'>\Tocsection</span> 
+<a id='x8-73081r3'></a>    <span class='textcolor-2838af'>\def\Tocsection</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\let\Tocsection</span>=<span class='textcolor-2838af'>\saveTocsection</span><span class='textcolor-387f38'>}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-73083r4'></a>    <span class='textcolor-2838af'>\ifvmode </span><span class='textcolor-2838af'>\IgnorePar\fi </span><span class='textcolor-2838af'>\EndP\IgnorePar</span> 
+<a id='x8-73085r5'></a>    <span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;h3 class="sectionHead"&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\TitleMark\space\HtmlParOff</span><span class='textcolor-387f38'>}</span> 
+<a id='x8-73087r6'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/h3&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\HtmlParOn\ShowPar </span><span class='textcolor-2838af'>\IgnoreIndent </span><span class='textcolor-2838af'>\par</span><span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 153  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>TocAt</span>}{before the tables of contents}{after the tables of
@@ -993,15 +995,15 @@ types should be referenced with the ‘like’ prefix.
 </p><!--  l. 173  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb112'><a id='x8-71091r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>tableofcontents*<span class='textcolor-387f38'>}{</span>part,likepart,<span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-71093r2'></a>           section,likesection,subsection,likesubsection<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb112'><a id='x8-73091r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>tableofcontents*<span class='textcolor-387f38'>}{</span>part,likepart,<span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-73093r2'></a>           section,likesection,subsection,likesubsection<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 180  --><p class='noindent'><code class='texttt'><span class='textbf'>\contentsname</span></code> A LaTeX macro stating the title for a table of contents
 division.
 </p><!--  l. 1  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='sectioning-commands'><span class='titlemark'>7.11   </span> <a id='x8-720007.11'></a>Sectioning commands</h3>
+<h3 class='sectionHead' id='sectioning-commands'><span class='titlemark'>7.11   </span> <a id='x8-740007.11'></a>Sectioning commands</h3>
 <!--  l. 6  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>unit-name</span>}{start}{end}{before title}{after title}
 </code>
 </p><!--  l. 8  --><p class='indent'>   This command determines the content to be inserted at the mentioned locations
@@ -1009,11 +1011,11 @@ of the specified units.
 </p><!--  l. 10  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb113'><a id='x8-72007r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>chapter<span class='textcolor-387f38'>}</span> 
-<a id='x8-72009r2'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;section class="chapter"&gt;<span class='textcolor-387f38'>}}  </span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/section&gt;<span class='textcolor-387f38'>}}</span> 
-<a id='x8-72011r3'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;h2 class="chapterHead"&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\chaptername</span> ~<span class='textcolor-2838af'>\TitleMark</span> 
-<a id='x8-72013r4'></a><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;br /&gt;<span class='textcolor-387f38'>}}</span> 
-<a id='x8-72015r5'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/h2&gt;<span class='textcolor-387f38'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb113'><a id='x8-74007r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>chapter<span class='textcolor-387f38'>}</span> 
+<a id='x8-74009r2'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;section class="chapter"&gt;<span class='textcolor-387f38'>}}  </span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/section&gt;<span class='textcolor-387f38'>}}</span> 
+<a id='x8-74011r3'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;h2 class="chapterHead"&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\chaptername</span> ~<span class='textcolor-2838af'>\TitleMark</span> 
+<a id='x8-74013r4'></a><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;br /&gt;<span class='textcolor-387f38'>}}</span> 
+<a id='x8-74015r5'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/h2&gt;<span class='textcolor-387f38'>}}</span></pre>
 
 </figure>
 <!--  l. 22  --><p class='noindent'><code class='texttt'><span class='textbf'>\ConfigureMark</span></code>{<span class='textit'>unit-name</span>}{<span class='textit'>print section number</span>}
@@ -1029,10 +1031,10 @@ between the title mark and its content.
 </p><!--  l. 33  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb114'><a id='x8-72021r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}</span> 
-<a id='x8-72023r2'></a>   <span class='textcolor-387f38'>{}{}</span> 
-<a id='x8-72025r3'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;h3&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\TitleMark\space</span><span class='textcolor-387f38'>}    </span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/h3&gt;<span class='textcolor-387f38'>}}</span> 
-<a id='x8-72027r4'></a><span class='textcolor-2838af'>\ConfigureMark</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\thesection</span><span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb114'><a id='x8-74021r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}</span> 
+<a id='x8-74023r2'></a>   <span class='textcolor-387f38'>{}{}</span> 
+<a id='x8-74025r3'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;h3&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\TitleMark\space</span><span class='textcolor-387f38'>}    </span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/h3&gt;<span class='textcolor-387f38'>}}</span> 
+<a id='x8-74027r4'></a><span class='textcolor-2838af'>\ConfigureMark</span><span class='textcolor-387f38'>{</span>section<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\thesection</span><span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 43  --><p class='noindent'><code class='texttt'><span class='textbf'>\NewSection</span></code><span class='textbf'><code class='texttt'>\unit</code></span> {<span class='textit'>mark-for-toc</span>}
@@ -1040,18 +1042,18 @@ between the title mark and its content.
 <span class='textit'>mark-for-toc</span> to the tables of contents.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb115'><a id='x8-72036r1'></a><span class='textcolor-2838af'>\newcounter</span><span class='textcolor-387f38'>{</span>c<span class='textcolor-387f38'>}</span> 
-<a id='x8-72038r2'></a><span class='textcolor-2838af'>\NewSection\X </span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\thec</span><span class='textcolor-387f38'>}</span> 
-<a id='x8-72040r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>X<span class='textcolor-387f38'>}</span> 
-<a id='x8-72042r4'></a><span class='textcolor-387f38'>{}{}</span> 
-<a id='x8-72044r5'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\refstepcounter</span><span class='textcolor-387f38'>{</span>c<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span class='textcolor-387f38'>{</span>&lt;h2&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\TitleMark\space</span><span class='textcolor-387f38'>}</span> 
-<a id='x8-72046r6'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/h2&gt;<span class='textcolor-387f38'>}}</span> 
-<a id='x8-72048r7'></a><span class='textcolor-2838af'>\ConfigureMark</span><span class='textcolor-387f38'>{</span>X<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\arabic</span><span class='textcolor-387f38'>{</span>c<span class='textcolor-387f38'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb115'><a id='x8-74036r1'></a><span class='textcolor-2838af'>\newcounter</span><span class='textcolor-387f38'>{</span>c<span class='textcolor-387f38'>}</span> 
+<a id='x8-74038r2'></a><span class='textcolor-2838af'>\NewSection\X </span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\thec</span><span class='textcolor-387f38'>}</span> 
+<a id='x8-74040r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>X<span class='textcolor-387f38'>}</span> 
+<a id='x8-74042r4'></a><span class='textcolor-387f38'>{}{}</span> 
+<a id='x8-74044r5'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\refstepcounter</span><span class='textcolor-387f38'>{</span>c<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span class='textcolor-387f38'>{</span>&lt;h2&gt;<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\TitleMark\space</span><span class='textcolor-387f38'>}</span> 
+<a id='x8-74046r6'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/h2&gt;<span class='textcolor-387f38'>}}</span> 
+<a id='x8-74048r7'></a><span class='textcolor-2838af'>\ConfigureMark</span><span class='textcolor-387f38'>{</span>X<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\arabic</span><span class='textcolor-387f38'>{</span>c<span class='textcolor-387f38'>}}</span></pre>
 
 </figure>
 <!--  l. 58  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='links-to-and-from-toc'><span class='titlemark'>7.11.1   </span> <a id='x8-730007.11.1'></a>Links to and from TOC</h4>
+<h4 class='subsectionHead' id='links-to-and-from-toc'><span class='titlemark'>7.11.1   </span> <a id='x8-750007.11.1'></a>Links to and from TOC</h4>
 <!--  l. 59  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>toTocLink</span>}{start link}{end link}</code>
 </p><!--  l. 61  --><p class='indent'>   Each unit title contains a <span class='textbf'><code class='texttt'>\Link</code></span>{<span class='textit'>…</span>}{<span class='textit'>…</span>}…<span class='textbf'><code class='texttt'>\EndLink</code></span> command. The first argument
 of <span class='textbf'><code class='texttt'>\Link</code></span> points to the first table of contents referencing the title. The second
@@ -1067,15 +1069,15 @@ argument.
 </p><!--  l. 76  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb116'><a id='x8-73011r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>toTocLink<span class='textcolor-387f38'>}</span> 
-<a id='x8-73013r2'></a>     <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Link</span><span class='textcolor-387f38'>}</span> 
-<a id='x8-73015r3'></a>     <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ifx </span><span class='textcolor-2838af'>\TitleMark\sectionHMark</span> 
-<a id='x8-73017r4'></a>        <span class='textcolor-2838af'>\Picture</span><span class='textcolor-387f38'>[\up]{</span>haut.jpg align="right"<span class='textcolor-387f38'>}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-73019r5'></a>        <span class='textcolor-2838af'>\EndLink</span> 
-<a id='x8-73021r6'></a>        <span class='textcolor-2838af'>\TitleMark\space</span> 
-<a id='x8-73023r7'></a>      <span class='textcolor-2838af'>\else </span><span class='textcolor-2838af'>\EndLink </span><span class='textcolor-2838af'>\fi</span> 
-<a id='x8-73025r8'></a>     <span class='textcolor-387f38'>}</span> 
-<a id='x8-73027r9'></a>  <span class='textcolor-2838af'>\def\up</span><span class='textcolor-387f38'>{</span>[up]<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb116'><a id='x8-75011r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>toTocLink<span class='textcolor-387f38'>}</span> 
+<a id='x8-75013r2'></a>     <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Link</span><span class='textcolor-387f38'>}</span> 
+<a id='x8-75015r3'></a>     <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ifx </span><span class='textcolor-2838af'>\TitleMark\sectionHMark</span> 
+<a id='x8-75017r4'></a>        <span class='textcolor-2838af'>\Picture</span><span class='textcolor-387f38'>[\up]{</span>haut.jpg align="right"<span class='textcolor-387f38'>}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-75019r5'></a>        <span class='textcolor-2838af'>\EndLink</span> 
+<a id='x8-75021r6'></a>        <span class='textcolor-2838af'>\TitleMark\space</span> 
+<a id='x8-75023r7'></a>      <span class='textcolor-2838af'>\else </span><span class='textcolor-2838af'>\EndLink </span><span class='textcolor-2838af'>\fi</span> 
+<a id='x8-75025r8'></a>     <span class='textcolor-387f38'>}</span> 
+<a id='x8-75027r9'></a>  <span class='textcolor-2838af'>\def\up</span><span class='textcolor-387f38'>{</span>[up]<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 92  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>toToc</span>}{unit type}{desired contents type (if empty, ‘unit
@@ -1108,16 +1110,16 @@ type’ is assumed)}</code>
 </dt><dd class='description'>   
 <!--  l. 99  --><p class='noindent'>resume mode in effect before the last stop</p></dd></dl>
 <!--  l. 102  --><p class='indent'>   Example: </p> <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb117'><a id='x8-73030r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>toToc<span class='textcolor-387f38'>}{</span>chapter<span class='textcolor-387f38'>}{</span>likechapter<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb117'><a id='x8-75030r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>toToc<span class='textcolor-387f38'>}{</span>chapter<span class='textcolor-387f38'>}{</span>likechapter<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 107  --><p class='indent'>   Introduces chapter as likechapter into TOC.
 </p><!--  l. 109  --><p class='indent'>   Example that temporarily suppresses inclusion of chapter to TOC:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb118'><a id='x8-73035r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>toToc<span class='textcolor-387f38'>}{}{</span>chapter<span class='textcolor-387f38'>}</span> 
-<a id='x8-73037r2'></a><span class='textcolor-2838af'>\chapter</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span> 
-<a id='x8-73039r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>toToc<span class='textcolor-387f38'>}{</span>@<span class='textcolor-387f38'>}{</span>chapter<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb118'><a id='x8-75035r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>toToc<span class='textcolor-387f38'>}{}{</span>chapter<span class='textcolor-387f38'>}</span> 
+<a id='x8-75037r2'></a><span class='textcolor-2838af'>\chapter</span><span class='textcolor-387f38'>{</span>...<span class='textcolor-387f38'>}</span> 
+<a id='x8-75039r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>toToc<span class='textcolor-387f38'>}{</span>@<span class='textcolor-387f38'>}{</span>chapter<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 117  --><p class='noindent'><code class='texttt'><span class='textbf'>\NoLink</span></code>{<span class='textit'>section name</span>}
@@ -1126,37 +1128,37 @@ type’ is assumed)}</code>
 </p><!--  l. 124  --><p class='indent'>   Insertions around the parameters of sectioning commands, applied when the
 parameters are not used to create titles for the divisions.
 </p>   
-<h3 class='sectionHead' id='lists'><span class='titlemark'>7.12   </span> <a id='x8-740007.12'></a>Lists</h3>
+<h3 class='sectionHead' id='lists'><span class='titlemark'>7.12   </span> <a id='x8-760007.12'></a>Lists</h3>
 <!--  l. 157  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='tables'><span class='titlemark'>7.13   </span> <a id='x8-750007.13'></a>Tables</h3>
+<h3 class='sectionHead' id='tables'><span class='titlemark'>7.13   </span> <a id='x8-770007.13'></a>Tables</h3>
                                                                   
 
                                                                   
 <!--  l. 159  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='fonts'><span class='titlemark'>7.14   </span> <a id='x8-760007.14'></a>Fonts</h3>
+<h3 class='sectionHead' id='fonts'><span class='titlemark'>7.14   </span> <a id='x8-780007.14'></a>Fonts</h3>
 <!--  l. 160  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='basic-font-commands'><span class='titlemark'>7.14.1   </span> <a id='x8-770007.14.1'></a>Basic font commands</h4>
+<h4 class='subsectionHead' id='basic-font-commands'><span class='titlemark'>7.14.1   </span> <a id='x8-790007.14.1'></a>Basic font commands</h4>
 <!--  l. 162  --><p class='noindent'>Information about the <span class='emph'>fonts</span> option and <span class='emph'>MathML</span> issues. Example configuration:
 <a class='url' href='https://tex.stackexchange.com/a/416613/2891'><span class='rm-lmtt-10'>https://tex.stackexchange.com/a/416613/2891</span></a>
 </p><!--  l. 1  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='multilingual-support'><span class='titlemark'>7.15   </span> <a id='x8-780007.15'></a>Multi-lingual support</h3>
+<h3 class='sectionHead' id='multilingual-support'><span class='titlemark'>7.15   </span> <a id='x8-800007.15'></a>Multi-lingual support</h3>
 <!--  l. 3  --><p class='noindent'>RTL support in the ODT output: <a class='url' href='https://tex.stackexchange.com/a/470434/2891'><span class='rm-lmtt-10'>https://tex.stackexchange.com/a/470434/2891</span></a>.
 </p><!--  l. 5  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='righttoleft-text'><span class='titlemark'>7.15.1   </span> <a id='x8-790007.15.1'></a>Right-to-left text</h4>
+<h4 class='subsectionHead' id='righttoleft-text'><span class='titlemark'>7.15.1   </span> <a id='x8-810007.15.1'></a>Right-to-left text</h4>
 <!--  l. 7  --><p class='noindent'>There is a difference in the RTL support for HTML and ODT output formats. In
 HTML, RTL can be requested using:
 </p><!--  l. 9  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>LRdir</span>}{ value for the dir attribute}</code>
 </p><!--  l. 11  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb119'><a id='x8-79005r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>arab<span class='textcolor-387f38'>}</span> 
-<a id='x8-79007r2'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>LRdir<span class='textcolor-387f38'>}{</span> dir="rtl"<span class='textcolor-387f38'>}}</span> 
-<a id='x8-79009r3'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>LRdir<span class='textcolor-387f38'>}{}}{}{}</span></pre>
+<pre class='fancyvrb' id='fancyvrb119'><a id='x8-81005r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>arab<span class='textcolor-387f38'>}</span> 
+<a id='x8-81007r2'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>LRdir<span class='textcolor-387f38'>}{</span> dir="rtl"<span class='textcolor-387f38'>}}</span> 
+<a id='x8-81009r3'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>LRdir<span class='textcolor-387f38'>}{}}{}{}</span></pre>
 
 </figure>
 <!--  l. 19  --><p class='indent'>   This configuration sets the direction to <span class='emph'>rtl</span> inside the <span class='emph'>arab</span> environment and resets
@@ -1164,13 +1166,13 @@ it after the environment end.
 </p><!--  l. 21  --><p class='indent'>   In the ODT output, different mechanism is used:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb120'><a id='x8-79012r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>arab<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\@</span>rltrue<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\@</span>rlfalse<span class='textcolor-387f38'>}{}{}</span></pre>
+<pre class='fancyvrb' id='fancyvrb120'><a id='x8-81012r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>arab<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\@</span>rltrue<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\@</span>rlfalse<span class='textcolor-387f38'>}{}{}</span></pre>
 
 </figure>
                                                                   
 
                                                                   
-<h4 class='subsectionHead' id='unicode'><span class='titlemark'>7.15.2   </span> <a id='x8-800007.15.2'></a>Unicode</h4>
+<h4 class='subsectionHead' id='unicode'><span class='titlemark'>7.15.2   </span> <a id='x8-820007.15.2'></a>Unicode</h4>
 <!--  l. 4  --><p class='noindent'>Generally speaking, <code class='texttt'>TeX4ht</code> supports <span class='emph'>Unicode</span>, but there are some issues to be aware
 of. Most complete support exists for LuaLaTeX, thanks to special Lua script which is
 automatically loaded during the compilation. No additional packages are
@@ -1179,12 +1181,12 @@ necessary.
 <code class='texttt'>inputenc</code> and <code class='texttt'>fontenc</code> packages:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb121'><a id='x8-80008r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>article<span class='textcolor-387f38'>}</span> 
-<a id='x8-80010r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[utf8]{</span>inputenc<span class='textcolor-387f38'>}</span> 
-<a id='x8-80012r3'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[T1]{</span>fontenc<span class='textcolor-387f38'>}</span> 
-<a id='x8-80014r4'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x8-80016r5'></a>Unicode text 
-<a id='x8-80018r6'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb121'><a id='x8-82008r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>article<span class='textcolor-387f38'>}</span> 
+<a id='x8-82010r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[utf8]{</span>inputenc<span class='textcolor-387f38'>}</span> 
+<a id='x8-82012r3'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[T1]{</span>fontenc<span class='textcolor-387f38'>}</span> 
+<a id='x8-82014r4'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x8-82016r5'></a>Unicode text 
+<a id='x8-82018r6'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 21  --><p class='indent'>   XeLaTeX is an Unicode format, similarly to LuaLaTeX. The supporting
@@ -1196,14 +1198,14 @@ exists.
 the <code class='texttt'>Script</code> option.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb122'><a id='x8-80021r1'></a><span class='textcolor-2838af'>\newfontfamily\greekfont</span><span class='textcolor-387f38'>{</span>Linux Libertine O<span class='textcolor-387f38'>}</span>[Script=Greek]</pre>
+<pre class='fancyvrb' id='fancyvrb122'><a id='x8-82021r1'></a><span class='textcolor-2838af'>\newfontfamily\greekfont</span><span class='textcolor-387f38'>{</span>Linux Libertine O<span class='textcolor-387f38'>}</span>[Script=Greek]</pre>
 
 </figure>
 <!--  l. 34  --><p class='indent'>   The second option is to declare load support for a script in the custom config file
 using the <code class='texttt'>\xeuniuseblock</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb123'><a id='x8-80024r1'></a><span class='textcolor-2838af'>\xeuniuseblock</span><span class='textcolor-387f38'>{</span>Greek<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb123'><a id='x8-82024r1'></a><span class='textcolor-2838af'>\xeuniuseblock</span><span class='textcolor-387f38'>{</span>Greek<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 42  --><p class='indent'>   The block names are based on <a href='https://en.wikipedia.org/wiki/Unicode_block'>Unicode blocks</a>.
@@ -1212,7 +1214,7 @@ using the <code class='texttt'>\xeuniuseblock</code>:
 be declared.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb124'><a id='x8-80027r1'></a><span class='textcolor-2838af'>\xeuniregisterblockhex</span><span class='textcolor-387f38'>{</span>0100<span class='textcolor-387f38'>}{</span>017F<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb124'><a id='x8-82027r1'></a><span class='textcolor-2838af'>\xeuniregisterblockhex</span><span class='textcolor-387f38'>{</span>0100<span class='textcolor-387f38'>}{</span>017F<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 52  --><p class='indent'>   Individual character can be declared using the <code class='texttt'>\xeuniregisterchar</code>
@@ -1222,7 +1224,7 @@ command:
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb125'><a id='x8-80030r1'></a><span class='textcolor-2838af'>\xeuniregisterchar</span><span class='textcolor-387f38'>{</span>"1F00<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb125'><a id='x8-82030r1'></a><span class='textcolor-2838af'>\xeuniregisterchar</span><span class='textcolor-387f38'>{</span>"1F00<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 58  --><p class='indent'>   In contrast to <code class='texttt'>\xeuniregisterblockhex</code>, it uses decimal numbers by
@@ -1233,12 +1235,12 @@ number.
 Unicode support works. Common problem is filename support, for example in
 included graphics. In general, it is better to avoid such filenames. If it is not possible,
 try to use the <code class='texttt'>\detokenize</code> command.  <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb126'><a id='x8-80033r1'></a>  <span class='textcolor-2838af'>\includegraphics</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\detokenize</span><span class='textcolor-387f38'>{</span>háček.jpg<span class='textcolor-387f38'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb126'><a id='x8-82033r1'></a>  <span class='textcolor-2838af'>\includegraphics</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\detokenize</span><span class='textcolor-387f38'>{</span>háček.jpg<span class='textcolor-387f38'>}}</span></pre>
 
 </figure></section>
 <!--  l. 169  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='colors'><span class='titlemark'>7.16   </span> <a id='x8-810007.16'></a>Colors</h3>
+<h3 class='sectionHead' id='colors'><span class='titlemark'>7.16   </span> <a id='x8-830007.16'></a>Colors</h3>
 <!--  l. 171  --><p class='noindent'>Information about the <code class='texttt'>\color</code> command: <a class='url' href='https://tex.stackexchange.com/a/195677/2891'><span class='rm-lmtt-10'>https://tex.stackexchange.com/a/195677/2891</span></a>.
 Example of possible configuration for the <code class='texttt'>\color</code> command:
 <a class='url' href='https://tex.stackexchange.com/q/470179/2891'><span class='rm-lmtt-10'>https://tex.stackexchange.com/q/470179/2891</span></a>.
@@ -1247,10 +1249,10 @@ support: <a class='url' href='https://tex.stackexchange.com/a/422281/2891'><span
 information to the HTML attributes: <a class='url' href='https://tex.stackexchange.com/a/390151/2891'><span class='rm-lmtt-10'>https://tex.stackexchange.com/a/390151/2891</span></a>.
 </p><!--  l. 182  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='graphics-and-pictures'><span class='titlemark'>7.17   </span> <a id='x8-820007.17'></a>Graphics and Pictures</h3>
+<h3 class='sectionHead' id='graphics-and-pictures'><span class='titlemark'>7.17   </span> <a id='x8-840007.17'></a>Graphics and Pictures</h3>
 <!--  l. 1  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='low-level-features'><span class='titlemark'>7.17.1   </span> <a id='x8-830007.17.1'></a>Low level features</h4>
+<h4 class='subsectionHead' id='low-level-features'><span class='titlemark'>7.17.1   </span> <a id='x8-850007.17.1'></a>Low level features</h4>
 <!--  l. 3  --><p class='noindent'>The next command imports external pictures, and the two commands that
 follow request pictorial representations for local content. The attributes, and
 the replacement parameters with their enclosing rectangular brackets, are
@@ -1262,7 +1264,7 @@ optional.
                                                                   
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb127'><a id='x8-83003r1'></a><span class='textcolor-2838af'>\Picture</span><span class='textcolor-387f38'>[picture description]{</span>foo.png class="picture"<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb127'><a id='x8-85003r1'></a><span class='textcolor-2838af'>\Picture</span><span class='textcolor-387f38'>[picture description]{</span>foo.png class="picture"<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 15  --><p class='noindent'><code class='texttt'><span class='textbf'>\Picture+</span></code>[<span class='textit'>replacement-for-text-browsers</span>]{<span class='textit'>file-name attributes</span>} content <span class='textbf'><code class='texttt'>\EndPicture</code></span>
@@ -1278,9 +1280,9 @@ be omitted. If no name is provided for the file, the system assigns a name of it
 own.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb128'><a id='x8-83008r1'></a><span class='textcolor-2838af'>\Picture</span>+<span class='textcolor-387f38'>{</span> align="right"<span class='textcolor-387f38'>}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-83010r2'></a>Text within a picture. 
-<a id='x8-83012r3'></a><span class='textcolor-2838af'>\EndPicture</span></pre>
+<pre class='fancyvrb' id='fancyvrb128'><a id='x8-85008r1'></a><span class='textcolor-2838af'>\Picture</span>+<span class='textcolor-387f38'>{</span> align="right"<span class='textcolor-387f38'>}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-85010r2'></a>Text within a picture. 
+<a id='x8-85012r3'></a><span class='textcolor-2838af'>\EndPicture</span></pre>
 
 </figure>
 <!--  l. 36  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>Picture</span>}{Extension name pictures generated by DVI
@@ -1288,7 +1290,7 @@ conversion, stored in <span class='textbf'><code class='texttt'>\PictExt</code><
 </p><!--  l. 38  --><p class='indent'>   Default:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb129'><a id='x8-83015r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>Picture<span class='textcolor-387f38'>}{</span>.png<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb129'><a id='x8-85015r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>Picture<span class='textcolor-387f38'>}{</span>.png<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 44  --><p class='indent'>   The extension names of bitmap files of glyphs of htf fonts may be determined
@@ -1319,12 +1321,12 @@ delimiter}</code>
 </p><!--  l. 72  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb130'><a id='x8-83023r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>IMG<span class='textcolor-387f38'>}</span> 
-<a id='x8-83025r2'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht</span>:special<span class='textcolor-387f38'>{</span>t4ht=&lt;img src="<span class='textcolor-387f38'>}}</span> 
-<a id='x8-83027r3'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht</span>:special<span class='textcolor-387f38'>{</span>t4ht=" alt="<span class='textcolor-387f38'>}}</span> 
-<a id='x8-83029r4'></a>  <span class='textcolor-387f38'>{</span>" <span class='textcolor-387f38'>}</span> 
-<a id='x8-83031r5'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht</span>:special<span class='textcolor-387f38'>{</span>t4ht=" <span class='textcolor-387f38'>}}</span> 
-<a id='x8-83033r6'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht</span>:special<span class='textcolor-387f38'>{</span>t4ht=/&gt;<span class='textcolor-387f38'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb130'><a id='x8-85023r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>IMG<span class='textcolor-387f38'>}</span> 
+<a id='x8-85025r2'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht</span>:special<span class='textcolor-387f38'>{</span>t4ht=&lt;img src="<span class='textcolor-387f38'>}}</span> 
+<a id='x8-85027r3'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht</span>:special<span class='textcolor-387f38'>{</span>t4ht=" alt="<span class='textcolor-387f38'>}}</span> 
+<a id='x8-85029r4'></a>  <span class='textcolor-387f38'>{</span>" <span class='textcolor-387f38'>}</span> 
+<a id='x8-85031r5'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht</span>:special<span class='textcolor-387f38'>{</span>t4ht=" <span class='textcolor-387f38'>}}</span> 
+<a id='x8-85033r6'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht</span>:special<span class='textcolor-387f38'>{</span>t4ht=/&gt;<span class='textcolor-387f38'>}}</span></pre>
 
 </figure>
 <!--  l. 83  --><p class='noindent'><code class='texttt'><span class='textbf'>\NextPictureFile</span></code>{<span class='textit'>filename</span>}
@@ -1333,14 +1335,14 @@ delimiter}</code>
 </p><!--  l. 89  --><p class='indent'>   Records the filename of the most recent created picture.
 </p><!--  l. 91  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='configurations-for-the-graphics-package-bundle'><span class='titlemark'>7.17.2   </span> <a id='x8-840007.17.2'></a>Configurations for the <code class='texttt'>Graphics</code> package bundle</h4>
+<h4 class='subsectionHead' id='configurations-for-the-graphics-package-bundle'><span class='titlemark'>7.17.2   </span> <a id='x8-860007.17.2'></a>Configurations for the <code class='texttt'>Graphics</code> package bundle</h4>
 <!--  l. 93  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>graphics</span>}{before graphics}{after graphics}</code>
 </p><!--  l. 96  --><p class='indent'>   Examples:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb131'><a id='x8-84005r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>graphics<span class='textcolor-387f38'>}</span> 
-<a id='x8-84007r2'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Picture</span>+[PIC]<span class='textcolor-387f38'>{</span> class="graphics"<span class='textcolor-387f38'>}}</span> 
-<a id='x8-84009r3'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\EndPicture </span><span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb131'><a id='x8-86005r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>graphics<span class='textcolor-387f38'>}</span> 
+<a id='x8-86007r2'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Picture</span>+[PIC]<span class='textcolor-387f38'>{</span> class="graphics"<span class='textcolor-387f38'>}}</span> 
+<a id='x8-86009r3'></a>   <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\EndPicture </span><span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 107  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>graphics*</span>}{extension name}{insertion}</code>
@@ -1358,53 +1360,53 @@ bounding box is unknown)
 </p><!--  l. 121  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb132'><a id='x8-84034r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>graphics*<span class='textcolor-387f38'>}</span> 
-<a id='x8-84036r2'></a><span class='textcolor-387f38'>{</span>jpg<span class='textcolor-387f38'>}</span> 
-<a id='x8-84038r3'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Picture</span><span class='textcolor-387f38'>[pict]{</span><span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname</span>.jpg<span class='textcolor-387f38'>}}</span> 
-<a id='x8-84040r4'></a> 
-<a id='x8-84042r5'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>graphics*<span class='textcolor-387f38'>}</span> 
-<a id='x8-84044r6'></a><span class='textcolor-387f38'>{</span>wmf<span class='textcolor-387f38'>}</span> 
-<a id='x8-84046r7'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Needs</span><span class='textcolor-387f38'>{</span>"convert <span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname</span>.wmf 
-<a id='x8-84048r8'></a> <span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname</span>.gif"<span class='textcolor-387f38'>}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-84050r9'></a> <span class='textcolor-2838af'>\Picture</span><span class='textcolor-387f38'>[pict]{</span><span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname</span>.gif 
-<a id='x8-84052r10'></a> width="<span class='textcolor-2838af'>\expandafter\the\csname</span> Gin@req@width<span class='textcolor-2838af'>\endcsname</span>" 
-<a id='x8-84054r11'></a> height="<span class='textcolor-2838af'>\expandafter\the\csname</span> Gin@req@height<span class='textcolor-2838af'>\endcsname</span>"<span class='textcolor-387f38'>}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-84056r12'></a><span class='textcolor-387f38'>}</span> 
-<a id='x8-84058r13'></a> 
-<a id='x8-84060r14'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>graphics*<span class='textcolor-387f38'>}</span> 
-<a id='x8-84062r15'></a><span class='textcolor-387f38'>{</span>eps<span class='textcolor-387f38'>}</span> 
-<a id='x8-84064r16'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\openin</span>15=<span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname\PictExt\relax</span> 
-<a id='x8-84066r17'></a> <span class='textcolor-2838af'>\ifeof</span>15 <span class='textcolor-878787'><span class='textit'>% test if the converted file already exists</span></span> 
-<a id='x8-84068r18'></a> <span class='textcolor-2838af'>\Needs</span><span class='textcolor-387f38'>{</span>"convert <span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname</span>.eps 
-<a id='x8-84070r19'></a> <span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname\PictExt</span>"<span class='textcolor-387f38'>}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-84072r20'></a> <span class='textcolor-2838af'>\fi</span> 
-<a id='x8-84074r21'></a> <span class='textcolor-2838af'>\closein</span>15 
-<a id='x8-84076r22'></a> <span class='textcolor-2838af'>\Picture</span><span class='textcolor-387f38'>[pict]{</span><span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname\PictExt</span><span class='textcolor-387f38'>}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-84078r23'></a><span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb132'><a id='x8-86034r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>graphics*<span class='textcolor-387f38'>}</span> 
+<a id='x8-86036r2'></a><span class='textcolor-387f38'>{</span>jpg<span class='textcolor-387f38'>}</span> 
+<a id='x8-86038r3'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Picture</span><span class='textcolor-387f38'>[pict]{</span><span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname</span>.jpg<span class='textcolor-387f38'>}}</span> 
+<a id='x8-86040r4'></a> 
+<a id='x8-86042r5'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>graphics*<span class='textcolor-387f38'>}</span> 
+<a id='x8-86044r6'></a><span class='textcolor-387f38'>{</span>wmf<span class='textcolor-387f38'>}</span> 
+<a id='x8-86046r7'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Needs</span><span class='textcolor-387f38'>{</span>"convert <span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname</span>.wmf 
+<a id='x8-86048r8'></a> <span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname</span>.gif"<span class='textcolor-387f38'>}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-86050r9'></a> <span class='textcolor-2838af'>\Picture</span><span class='textcolor-387f38'>[pict]{</span><span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname</span>.gif 
+<a id='x8-86052r10'></a> width="<span class='textcolor-2838af'>\expandafter\the\csname</span> Gin@req@width<span class='textcolor-2838af'>\endcsname</span>" 
+<a id='x8-86054r11'></a> height="<span class='textcolor-2838af'>\expandafter\the\csname</span> Gin@req@height<span class='textcolor-2838af'>\endcsname</span>"<span class='textcolor-387f38'>}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-86056r12'></a><span class='textcolor-387f38'>}</span> 
+<a id='x8-86058r13'></a> 
+<a id='x8-86060r14'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>graphics*<span class='textcolor-387f38'>}</span> 
+<a id='x8-86062r15'></a><span class='textcolor-387f38'>{</span>eps<span class='textcolor-387f38'>}</span> 
+<a id='x8-86064r16'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\openin</span>15=<span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname\PictExt\relax</span> 
+<a id='x8-86066r17'></a> <span class='textcolor-2838af'>\ifeof</span>15 <span class='textcolor-878787'><span class='textit'>% test if the converted file already exists</span></span> 
+<a id='x8-86068r18'></a> <span class='textcolor-2838af'>\Needs</span><span class='textcolor-387f38'>{</span>"convert <span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname</span>.eps 
+<a id='x8-86070r19'></a> <span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname\PictExt</span>"<span class='textcolor-387f38'>}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-86072r20'></a> <span class='textcolor-2838af'>\fi</span> 
+<a id='x8-86074r21'></a> <span class='textcolor-2838af'>\closein</span>15 
+<a id='x8-86076r22'></a> <span class='textcolor-2838af'>\Picture</span><span class='textcolor-387f38'>[pict]{</span><span class='textcolor-2838af'>\csname</span> Gin@base<span class='textcolor-2838af'>\endcsname\PictExt</span><span class='textcolor-387f38'>}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-86078r23'></a><span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 149  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='pdf-support'><span class='titlemark'>7.17.3   </span> <a id='x8-850007.17.3'></a>PDF support</h4>
+<h4 class='subsectionHead' id='pdf-support'><span class='titlemark'>7.17.3   </span> <a id='x8-870007.17.3'></a>PDF support</h4>
 <!--  l. 150  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>PdfConvert</span>}{}{}</code>
 </p><!--  l. 151  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>Ghostscript</span>}{name of the executable for GhostScript}
 </code>
 </p><!--  l. 153  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='tikz-'><span class='titlemark'>7.17.4   </span> <a id='x8-860007.17.4'></a>TikZ </h4>
+<h4 class='subsectionHead' id='tikz-'><span class='titlemark'>7.17.4   </span> <a id='x8-880007.17.4'></a>TikZ </h4>
 <!--  l. 155  --><p class='noindent'>Animations using Animate package: <a class='url' href='https://tex.stackexchange.com/a/404600/2891'><span class='rm-lmtt-10'>https://tex.stackexchange.com/a/404600/2891</span></a>
 </p><!--  l. 157  --><p class='indent'>   Issues with drivers: <a class='url' href='https://tex.stackexchange.com/a/471460/2891'><span class='rm-lmtt-10'>https://tex.stackexchange.com/a/471460/2891</span></a>.
 </p>   
-<h4 class='subsectionHead' id='pstricks'><span class='titlemark'>7.17.5   </span> <a id='x8-870007.17.5'></a>Pstricks</h4>
+<h4 class='subsectionHead' id='pstricks'><span class='titlemark'>7.17.5   </span> <a id='x8-890007.17.5'></a>Pstricks</h4>
 <!--  l. 1  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='math1'><span class='titlemark'>7.18   </span> <a id='x8-880007.18'></a>Math</h3>
+<h3 class='sectionHead' id='math1'><span class='titlemark'>7.18   </span> <a id='x8-900007.18'></a>Math</h3>
                                                                   
 
                                                                   
 <!--  l. 2  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='default-math-handling'><span class='titlemark'>7.18.1   </span> <a id='x8-890007.18.1'></a>Default math handling</h4>
+<h4 class='subsectionHead' id='default-math-handling'><span class='titlemark'>7.18.1   </span> <a id='x8-910007.18.1'></a>Default math handling</h4>
 <!--  l. 4  --><p class='noindent'>Default method for displaying math in the HTML output is a mixture of
 HTML elements and pictures. Pictures are used for display math and elements
 that are hard to display using HTML and CSS only, like fractions or square
@@ -1417,7 +1419,7 @@ similar options for requiring pictures for equations and various math environmen
 See the chapter <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code>Options<!--  tex4ht:ref: chap:options   --></a>.
 </p><!--  l. 13  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='mathml1'><span class='titlemark'>7.18.2   </span> <a id='x8-900007.18.2'></a>MathML</h4>
+<h4 class='subsectionHead' id='mathml1'><span class='titlemark'>7.18.2   </span> <a id='x8-920007.18.2'></a>MathML</h4>
 <!--  l. 15  --><p class='noindent'><code class='texttt'>MathML</code> is a XML markup for the math encoding. It is supported in many aplications
 including OpenOffice Writer or Firefox web browser. In the HTML output, you can
 enable <code class='texttt'>MathML</code> using the <span class='emph'>mathml</span> option. In other output formats, for example ODT,
@@ -1430,16 +1432,16 @@ engine. Fortunatelly, the support can be added using JavaScript. Popular option 
 use MathJax:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb133'><a id='x8-90003r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'> make</span><span class='textcolor-444444'>4</span><span class='textcolor-387f38'>ht filename.tex "mathml,mathjax"</span></pre>
+<pre class='fancyvrb' id='fancyvrb133'><a id='x8-92003r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'> make</span><span class='textcolor-444444'>4</span><span class='textcolor-387f38'>ht filename.tex "mathml,mathjax"</span></pre>
 
 </figure>
-<!--  l. 31  --><p class='noindent'><span class='paragraphHead' id='-mathml-troupbleshooting'><a id='x8-91000'></a><code class='texttt'>MathML</code> <span class='ec-lmbx-10'>troupbleshooting</span></span>
+<!--  l. 31  --><p class='noindent'><span class='paragraphHead' id='-mathml-troupbleshooting'><a id='x8-93000'></a><code class='texttt'>MathML</code> <span class='ec-lmbx-10'>troupbleshooting</span></span>
 The <code class='texttt'>MathML</code> code produced by <code class='texttt'>TeX4ht</code> may contain some issues. For
 example, one common issue may happen when the math contain unmatched
 delimiters:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb134'><a id='x8-91003r1'></a> Mail address: <span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\lparen</span><span class='textcolor-b73838'>$</span>hello@world.com<span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\rparen</span><span class='textcolor-b73838'>$</span></pre>
+<pre class='fancyvrb' id='fancyvrb134'><a id='x8-93003r1'></a> Mail address: <span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\lparen</span><span class='textcolor-b73838'>$</span>hello@world.com<span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\rparen</span><span class='textcolor-b73838'>$</span></pre>
 
 </figure>
 <!--  l. 40  --><p class='indent'>   In such cases, the <span class='emph'>matml-</span> may help.
@@ -1450,12 +1452,12 @@ delimiters:
 <span class='emph'>make4ht</span> extensions), fixes some common <code class='texttt'>MathML</code> errors that cannot be easily fixed on
 the TeX level.
 </p>
-<!--  l. 47  --><p class='noindent'><span class='paragraphHead' id='additional-information'><a id='x8-92000'></a><span class='ec-lmbx-10'>Additional information</span></span>
+<!--  l. 47  --><p class='noindent'><span class='paragraphHead' id='additional-information'><a id='x8-94000'></a><span class='ec-lmbx-10'>Additional information</span></span>
 If you want to add original LaTeX source as an annotation to your MathML
 formulas, you can try a configuration from <a href='https://tex.stackexchange.com/a/637910/2891'>this answer</a>.
 </p><!--  l. 52  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='mathjax1'><span class='titlemark'>7.18.3   </span> <a id='x8-930007.18.3'></a>MathJax</h4>
+<h4 class='subsectionHead' id='mathjax1'><span class='titlemark'>7.18.3   </span> <a id='x8-950007.18.3'></a>MathJax</h4>
 <!--  l. 53  --><p class='noindent'><code class='texttt'>TeX4ht</code> supports MathJax, library for math rendering in HTML documents. It
 supports two modes – LaTeX math and <code class='texttt'>MathML</code>.
 </p><!--  l. 56  --><p class='indent'>   The <span class='emph'>MathJax</span> processing can be required using the <span class='emph'>mathjax</span> option.
@@ -1464,11 +1466,11 @@ in the <code class='texttt'>MathjaxSource</code> configuration. Default value of
 is:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb135'><a id='x8-93004r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathjaxSource<span class='textcolor-387f38'>}</span> 
-<a id='x8-93006r2'></a><span class='textcolor-387f38'>{</span>https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb135'><a id='x8-95004r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathjaxSource<span class='textcolor-387f38'>}</span> 
+<a id='x8-95006r2'></a><span class='textcolor-387f38'>{</span>https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
-<!--  l. 66  --><p class='noindent'><span class='paragraphHead' id='latex-mode'><a id='x8-94000'></a><span class='ec-lmbx-10'>LaTeX mode</span></span>
+<!--  l. 66  --><p class='noindent'><span class='paragraphHead' id='latex-mode'><a id='x8-96000'></a><span class='ec-lmbx-10'>LaTeX mode</span></span>
 In the LaTeXmath mode, TeX macros used in the math mode are preserved in
 the output HTML document. They are parsed and rendered by MathJax when the
 document is displayed by a web browser. The downside of this mode is that
@@ -1483,21 +1485,21 @@ configuration. The following example provides support for some custom LaTeX
 macros.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb136'><a id='x8-94017r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
-<a id='x8-94019r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathJaxConfig<span class='textcolor-387f38'>}{{</span> 
-<a id='x8-94021r3'></a>    tex: <span class='textcolor-387f38'>{</span> 
-<a id='x8-94023r4'></a>      tags: "ams", 
-<a id='x8-94025r5'></a>      <span class='textcolor-2838af'>\detokenize</span><span class='textcolor-387f38'>{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-94027r6'></a>      macros: <span class='textcolor-387f38'>{</span> 
-<a id='x8-94029r7'></a>        sc: "<span class='textcolor-2838af'>\\</span>small<span class='textcolor-2838af'>\\</span>rm", 
-<a id='x8-94031r8'></a>        sl: "<span class='textcolor-2838af'>\\</span>it", 
-<a id='x8-94033r9'></a>      <span class='textcolor-387f38'>}</span> 
-<a id='x8-94035r10'></a>  <span class='textcolor-387f38'>}</span> 
-<a id='x8-94037r11'></a><span class='textcolor-387f38'>}</span> 
-<a id='x8-94039r12'></a><span class='textcolor-387f38'>}}</span> 
-<a id='x8-94041r13'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x8-94043r14'></a><span class='textcolor-2838af'>\EndPreamble</span> 
-<a id='x8-94045r15'></a></pre>
+<pre class='fancyvrb' id='fancyvrb136'><a id='x8-96017r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
+<a id='x8-96019r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathJaxConfig<span class='textcolor-387f38'>}{{</span> 
+<a id='x8-96021r3'></a>    tex: <span class='textcolor-387f38'>{</span> 
+<a id='x8-96023r4'></a>      tags: "ams", 
+<a id='x8-96025r5'></a>      <span class='textcolor-2838af'>\detokenize</span><span class='textcolor-387f38'>{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-96027r6'></a>      macros: <span class='textcolor-387f38'>{</span> 
+<a id='x8-96029r7'></a>        sc: "<span class='textcolor-2838af'>\\</span>small<span class='textcolor-2838af'>\\</span>rm", 
+<a id='x8-96031r8'></a>        sl: "<span class='textcolor-2838af'>\\</span>it", 
+<a id='x8-96033r9'></a>      <span class='textcolor-387f38'>}</span> 
+<a id='x8-96035r10'></a>  <span class='textcolor-387f38'>}</span> 
+<a id='x8-96037r11'></a><span class='textcolor-387f38'>}</span> 
+<a id='x8-96039r12'></a><span class='textcolor-387f38'>}}</span> 
+<a id='x8-96041r13'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x8-96043r14'></a><span class='textcolor-2838af'>\EndPreamble</span> 
+<a id='x8-96045r15'></a></pre>
                                                                   
 
                                                                   
@@ -1514,26 +1516,26 @@ character, used for parameters. You need to change the catcode of this character
 letter before the <code class='texttt'>MathJaxConfig</code> configuration:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb137'><a id='x8-94067r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
-<a id='x8-94069r2'></a><span class='textcolor-878787'><span class='textit'>% change catcode of # to letter</span></span> 
-<a id='x8-94071r3'></a><span class='textcolor-878787'><span class='textit'>% in order to support #1 in custom</span></span> 
-<a id='x8-94073r4'></a><span class='textcolor-878787'><span class='textit'>% MathJax macros</span></span> 
-<a id='x8-94075r5'></a><span class='textcolor-2838af'>\catcode</span>`<span class='textcolor-2838af'>\#</span>=11 
-<a id='x8-94077r6'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathJaxConfig<span class='textcolor-387f38'>}{{</span> 
-<a id='x8-94079r7'></a>    tex: <span class='textcolor-387f38'>{</span> 
-<a id='x8-94081r8'></a>      <span class='textcolor-2838af'>\detokenize</span><span class='textcolor-387f38'>{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-94083r9'></a>      macros: <span class='textcolor-387f38'>{</span> 
-<a id='x8-94085r10'></a>        <span class='textcolor-878787'><span class='textit'>% our sample macro takes a parameter</span></span> 
-<a id='x8-94087r11'></a>        hello: ["<span class='textcolor-2838af'>\\</span>sqrt<span class='textcolor-387f38'>{</span>#1<span class='textcolor-387f38'>}</span>",1], 
-<a id='x8-94089r12'></a>      <span class='textcolor-387f38'>}</span> 
-<a id='x8-94091r13'></a>  <span class='textcolor-387f38'>}</span> 
-<a id='x8-94093r14'></a><span class='textcolor-387f38'>}</span> 
-<a id='x8-94095r15'></a><span class='textcolor-387f38'>}}</span> 
-<a id='x8-94097r16'></a><span class='textcolor-878787'><span class='textit'>% don't forget to change the catcode</span></span> 
-<a id='x8-94099r17'></a><span class='textcolor-878787'><span class='textit'>% back to the original value</span></span> 
-<a id='x8-94101r18'></a><span class='textcolor-2838af'>\catcode</span>`<span class='textcolor-2838af'>\#</span>=6 
-<a id='x8-94103r19'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x8-94105r20'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb137'><a id='x8-96067r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
+<a id='x8-96069r2'></a><span class='textcolor-878787'><span class='textit'>% change catcode of # to letter</span></span> 
+<a id='x8-96071r3'></a><span class='textcolor-878787'><span class='textit'>% in order to support #1 in custom</span></span> 
+<a id='x8-96073r4'></a><span class='textcolor-878787'><span class='textit'>% MathJax macros</span></span> 
+<a id='x8-96075r5'></a><span class='textcolor-2838af'>\catcode</span>`<span class='textcolor-2838af'>\#</span>=11 
+<a id='x8-96077r6'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathJaxConfig<span class='textcolor-387f38'>}{{</span> 
+<a id='x8-96079r7'></a>    tex: <span class='textcolor-387f38'>{</span> 
+<a id='x8-96081r8'></a>      <span class='textcolor-2838af'>\detokenize</span><span class='textcolor-387f38'>{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-96083r9'></a>      macros: <span class='textcolor-387f38'>{</span> 
+<a id='x8-96085r10'></a>        <span class='textcolor-878787'><span class='textit'>% our sample macro takes a parameter</span></span> 
+<a id='x8-96087r11'></a>        hello: ["<span class='textcolor-2838af'>\\</span>sqrt<span class='textcolor-387f38'>{</span>#1<span class='textcolor-387f38'>}</span>",1], 
+<a id='x8-96089r12'></a>      <span class='textcolor-387f38'>}</span> 
+<a id='x8-96091r13'></a>  <span class='textcolor-387f38'>}</span> 
+<a id='x8-96093r14'></a><span class='textcolor-387f38'>}</span> 
+<a id='x8-96095r15'></a><span class='textcolor-387f38'>}}</span> 
+<a id='x8-96097r16'></a><span class='textcolor-878787'><span class='textit'>% don't forget to change the catcode</span></span> 
+<a id='x8-96099r17'></a><span class='textcolor-878787'><span class='textit'>% back to the original value</span></span> 
+<a id='x8-96101r18'></a><span class='textcolor-2838af'>\catcode</span>`<span class='textcolor-2838af'>\#</span>=6 
+<a id='x8-96103r19'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x8-96105r20'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
 <!--  l. 137  --><p class='indent'>   Note that number of opening and closing brackets is important, they need to be
@@ -1545,58 +1547,58 @@ way, LaTeX will see the correct number of brackets, but JavaScript will ignore t
 extra ones:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb138'><a id='x8-94119r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
-<a id='x8-94121r2'></a><span class='textcolor-2838af'>\catcode</span>`<span class='textcolor-2838af'>\#</span>=11 
-<a id='x8-94123r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathJaxConfig<span class='textcolor-387f38'>}{{</span> 
-<a id='x8-94125r4'></a>    tex: <span class='textcolor-387f38'>{</span> 
-<a id='x8-94127r5'></a>      macros: <span class='textcolor-387f38'>{</span> 
-<a id='x8-94129r6'></a>      leftbracket: ["<span class='textcolor-2838af'>\\</span>left<span class='textcolor-2838af'>\\</span><span class='textcolor-387f38'>{</span>#1<span class='textcolor-2838af'>\\</span>right.",1], /*<span class='textcolor-387f38'>}</span> */ 
-<a id='x8-94131r7'></a>    <span class='textcolor-387f38'>}</span> 
-<a id='x8-94133r8'></a>  <span class='textcolor-387f38'>}</span> 
-<a id='x8-94135r9'></a><span class='textcolor-387f38'>}}</span> 
-<a id='x8-94137r10'></a><span class='textcolor-2838af'>\catcode</span>`<span class='textcolor-2838af'>\#</span>=6 
-<a id='x8-94139r11'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x8-94141r12'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb138'><a id='x8-96119r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
+<a id='x8-96121r2'></a><span class='textcolor-2838af'>\catcode</span>`<span class='textcolor-2838af'>\#</span>=11 
+<a id='x8-96123r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathJaxConfig<span class='textcolor-387f38'>}{{</span> 
+<a id='x8-96125r4'></a>    tex: <span class='textcolor-387f38'>{</span> 
+<a id='x8-96127r5'></a>      macros: <span class='textcolor-387f38'>{</span> 
+<a id='x8-96129r6'></a>      leftbracket: ["<span class='textcolor-2838af'>\\</span>left<span class='textcolor-2838af'>\\</span><span class='textcolor-387f38'>{</span>#1<span class='textcolor-2838af'>\\</span>right.",1], /*<span class='textcolor-387f38'>}</span> */ 
+<a id='x8-96131r7'></a>    <span class='textcolor-387f38'>}</span> 
+<a id='x8-96133r8'></a>  <span class='textcolor-387f38'>}</span> 
+<a id='x8-96135r9'></a><span class='textcolor-387f38'>}}</span> 
+<a id='x8-96137r10'></a><span class='textcolor-2838af'>\catcode</span>`<span class='textcolor-2838af'>\#</span>=6 
+<a id='x8-96139r11'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x8-96141r12'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
-<!--  l. 159  --><p class='noindent'><span class='paragraphHead' id='custom-environments-in-mathjax'><a id='x8-95000'></a><span class='ec-lmbx-10'>Custom environments in MathJax.</span></span>
-<a id='x8-95000doc'></a>   
+<!--  l. 159  --><p class='noindent'><span class='paragraphHead' id='custom-environments-in-mathjax'><a id='x8-97000'></a><span class='ec-lmbx-10'>Custom environments in MathJax.</span></span>
+<a id='x8-97000doc'></a>   
 If you want to add support for a new environment, you can use the <span class='obeylines-h'><code class='verb'>\VerbMath</code></span>
 command, and you will also need to pass suitable configuration to MathJax. For
 example for the following TeX file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb139'><a id='x8-95013r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>[12pt]{</span>book<span class='textcolor-387f38'>}</span> 
-<a id='x8-95015r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>amsmath<span class='textcolor-387f38'>}</span> 
-<a id='x8-95017r3'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>breqn<span class='textcolor-387f38'>}</span> 
-<a id='x8-95019r4'></a> 
-<a id='x8-95021r5'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x8-95023r6'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>dgroup*<span class='textcolor-387f38'>}</span> 
-<a id='x8-95025r7'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>dmath*<span class='textcolor-387f38'>}</span> 
-<a id='x8-95027r8'></a>     A = B 
-<a id='x8-95029r9'></a>   <span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>dmath*<span class='textcolor-387f38'>}     </span><span class='textcolor-878787'><span class='textit'>%error is around here</span></span> 
-<a id='x8-95031r10'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>dgroup*<span class='textcolor-387f38'>}</span> 
-<a id='x8-95033r11'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb139'><a id='x8-97013r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>[12pt]{</span>book<span class='textcolor-387f38'>}</span> 
+<a id='x8-97015r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>amsmath<span class='textcolor-387f38'>}</span> 
+<a id='x8-97017r3'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>breqn<span class='textcolor-387f38'>}</span> 
+<a id='x8-97019r4'></a> 
+<a id='x8-97021r5'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x8-97023r6'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>dgroup*<span class='textcolor-387f38'>}</span> 
+<a id='x8-97025r7'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>dmath*<span class='textcolor-387f38'>}</span> 
+<a id='x8-97027r8'></a>     A = B 
+<a id='x8-97029r9'></a>   <span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>dmath*<span class='textcolor-387f38'>}     </span><span class='textcolor-878787'><span class='textit'>%error is around here</span></span> 
+<a id='x8-97031r10'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>dgroup*<span class='textcolor-387f38'>}</span> 
+<a id='x8-97033r11'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 178  --><p class='indent'>   Can be configured using this configuration file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb140'><a id='x8-95050r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
-<a id='x8-95052r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathJaxConfig<span class='textcolor-387f38'>}{{</span> 
-<a id='x8-95054r3'></a>    tex: <span class='textcolor-387f38'>{</span> 
-<a id='x8-95056r4'></a>      tags: "ams", 
-<a id='x8-95058r5'></a>      <span class='textcolor-2838af'>\detokenize</span><span class='textcolor-387f38'>{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-95060r6'></a>        environments: <span class='textcolor-387f38'>{</span> 
-<a id='x8-95062r7'></a>          "dgroup*": ["", ""], 
-<a id='x8-95064r8'></a>          "dmath*": ["", ""], 
-<a id='x8-95066r9'></a>        <span class='textcolor-387f38'>}</span> 
-<a id='x8-95068r10'></a>      <span class='textcolor-387f38'>}</span> 
-<a id='x8-95070r11'></a>    <span class='textcolor-387f38'>}</span> 
-<a id='x8-95072r12'></a><span class='textcolor-387f38'>}}</span> 
-<a id='x8-95074r13'></a><span class='textcolor-2838af'>\VerbMath</span><span class='textcolor-387f38'>{</span>dgroup*<span class='textcolor-387f38'>}</span> 
-<a id='x8-95076r14'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x8-95078r15'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb140'><a id='x8-97050r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
+<a id='x8-97052r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathJaxConfig<span class='textcolor-387f38'>}{{</span> 
+<a id='x8-97054r3'></a>    tex: <span class='textcolor-387f38'>{</span> 
+<a id='x8-97056r4'></a>      tags: "ams", 
+<a id='x8-97058r5'></a>      <span class='textcolor-2838af'>\detokenize</span><span class='textcolor-387f38'>{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x8-97060r6'></a>        environments: <span class='textcolor-387f38'>{</span> 
+<a id='x8-97062r7'></a>          "dgroup*": ["", ""], 
+<a id='x8-97064r8'></a>          "dmath*": ["", ""], 
+<a id='x8-97066r9'></a>        <span class='textcolor-387f38'>}</span> 
+<a id='x8-97068r10'></a>      <span class='textcolor-387f38'>}</span> 
+<a id='x8-97070r11'></a>    <span class='textcolor-387f38'>}</span> 
+<a id='x8-97072r12'></a><span class='textcolor-387f38'>}}</span> 
+<a id='x8-97074r13'></a><span class='textcolor-2838af'>\VerbMath</span><span class='textcolor-387f38'>{</span>dgroup*<span class='textcolor-387f38'>}</span> 
+<a id='x8-97076r14'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x8-97078r15'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
                                                                   
 
                                                                   
@@ -1607,30 +1609,30 @@ pass the whole contents, including the <span class='obeylines-h'><code class='ve
 you will need to provide MathJax configuration for both of these environments, as
 they are not supported by default.
 </p>
-<!--  l. 204  --><p class='noindent'><span class='paragraphHead' id='mathjaxs-mathml-mode'><a id='x8-96000'></a><span class='ec-lmbx-10'>MathJax’s </span><code class='texttt'>MathML</code> <span class='ec-lmbx-10'>mode</span></span>
+<!--  l. 204  --><p class='noindent'><span class='paragraphHead' id='mathjaxs-mathml-mode'><a id='x8-98000'></a><span class='ec-lmbx-10'>MathJax’s </span><code class='texttt'>MathML</code> <span class='ec-lmbx-10'>mode</span></span>
 Math is converted to <code class='texttt'>MathML</code> by <code class='texttt'>TeX4ht</code>, MathJax then renders it. Custom
 commands and cross-references work in this mode.
 </p><!--  l. 209  --><p class='indent'>   The <code class='texttt'>MathML</code> MathJax mode can be required using the <span class='emph'>mathml,mathjax</span>
 option.
 </p>
-<!--  l. 211  --><p class='noindent'><span class='paragraphHead' id='table-of-contents-issues'><a id='x8-97000'></a><span class='ec-lmbx-10'>Table of contents issues</span></span>
+<!--  l. 211  --><p class='noindent'><span class='paragraphHead' id='table-of-contents-issues'><a id='x8-99000'></a><span class='ec-lmbx-10'>Table of contents issues</span></span>
 Some math commands may cause issues when they are used in section
 titles in the MathJax mode. This can be fixed using the <code class='texttt'>\fixmathjaxtoc</code>
 command:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb141'><a id='x8-97003r1'></a><span class='textcolor-2838af'>\fixmathjaxtoc\int</span></pre>
+<pre class='fancyvrb' id='fancyvrb141'><a id='x8-99003r1'></a><span class='textcolor-2838af'>\fixmathjaxtoc\int</span></pre>
 
 </figure>
 <!--  l. 188  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='bibliographies1'><span class='titlemark'>7.19   </span> <a id='x8-980007.19'></a>Bibliographies</h3>
+<h3 class='sectionHead' id='bibliographies1'><span class='titlemark'>7.19   </span> <a id='x8-1000007.19'></a>Bibliographies</h3>
 <!--  l. 189  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='indexing1'><span class='titlemark'>7.20   </span> <a id='x8-990007.20'></a>Indexing</h3>
+<h3 class='sectionHead' id='indexing1'><span class='titlemark'>7.20   </span> <a id='x8-1010007.20'></a>Indexing</h3>
 <!--  l. 191  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='opendocument-format'><span class='titlemark'>7.21   </span> <a id='x8-1000007.21'></a>OpenDocument Format</h3>
+<h3 class='sectionHead' id='opendocument-format'><span class='titlemark'>7.21   </span> <a id='x8-1020007.21'></a>OpenDocument Format</h3>
 <!--  l. 1  --><p class='noindent'>The OpenDocument Format uses XML configuration file for document styling. To
 declare new document style, <code class='texttt'>TeX4ht</code> provides command <code class='texttt'>\NewConfigureOO</code>. The
 declared style then needs to be configured using command <code class='texttt'>\ConfigureOO</code>.
@@ -1640,15 +1642,15 @@ declared style then needs to be configured using command <code class='texttt'>\C
 </p><!--  l. 5  --><p class='indent'>   Usage of these commands can be illustrated by the following example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb142'><a id='x8-100011r1'></a>  <span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>SectionTitleTest<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span class='textcolor-387f38'>{</span>&lt;text:p text:style-name="section-title"&gt;<span class='textcolor-387f38'>}}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/text:p&gt;<span class='textcolor-387f38'>}}</span> 
-<a id='x8-100013r2'></a> 
-<a id='x8-100015r3'></a><span class='textcolor-2838af'>\NewConfigureOO</span><span class='textcolor-387f38'>{</span>section-title<span class='textcolor-387f38'>}</span> 
-<a id='x8-100017r4'></a><span class='textcolor-2838af'>\ConfigureOO</span><span class='textcolor-387f38'>{</span>section-title<span class='textcolor-387f38'>}{</span>&lt;style:style style:name="section-title" style:family="paragraph" style:class="text"&gt; 
-<a id='x8-100019r5'></a>      &lt;style:text-properties style:text-underline-style="solid" 
-<a id='x8-100021r6'></a>       style:text-underline-width="auto" 
-<a id='x8-100023r7'></a>       style:text-underline-color="font-color" 
-<a id='x8-100025r8'></a>       /&gt; 
-<a id='x8-100027r9'></a>&lt;/style:style&gt;<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb142'><a id='x8-102011r1'></a>  <span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>SectionTitleTest<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span class='textcolor-387f38'>{</span>&lt;text:p text:style-name="section-title"&gt;<span class='textcolor-387f38'>}}{</span><span class='textcolor-2838af'>\HCode</span><span class='textcolor-387f38'>{</span>&lt;/text:p&gt;<span class='textcolor-387f38'>}}</span> 
+<a id='x8-102013r2'></a> 
+<a id='x8-102015r3'></a><span class='textcolor-2838af'>\NewConfigureOO</span><span class='textcolor-387f38'>{</span>section-title<span class='textcolor-387f38'>}</span> 
+<a id='x8-102017r4'></a><span class='textcolor-2838af'>\ConfigureOO</span><span class='textcolor-387f38'>{</span>section-title<span class='textcolor-387f38'>}{</span>&lt;style:style style:name="section-title" style:family="paragraph" style:class="text"&gt; 
+<a id='x8-102019r5'></a>      &lt;style:text-properties style:text-underline-style="solid" 
+<a id='x8-102021r6'></a>       style:text-underline-width="auto" 
+<a id='x8-102023r7'></a>       style:text-underline-color="font-color" 
+<a id='x8-102025r8'></a>       /&gt; 
+<a id='x8-102027r9'></a>&lt;/style:style&gt;<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 19  --><p class='indent'>   Document style <span class='emph'>section-title</span> had been declared in this example. The <code class='texttt'>XML</code> code for
@@ -1658,11 +1660,11 @@ corresponds to attribute <span class='obeylines-h'><code class='verb'>  style:na
 configuration.
 </p><!--  l. 30  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='extra-configurations-for-opendocument-format'><span class='titlemark'>7.21.1   </span> <a id='x8-1010007.21.1'></a>Extra Configurations for OpenDocument Format</h4>
+<h4 class='subsectionHead' id='extra-configurations-for-opendocument-format'><span class='titlemark'>7.21.1   </span> <a id='x8-1030007.21.1'></a>Extra Configurations for OpenDocument Format</h4>
 <!--  l. 33  --><p class='noindent'>To use default ODF styles for sectioning commands, use the following configurations: </p>
 <figure class='texsource' role='doc-example'>   
-<pre class='fancyvrb' id='fancyvrb143'><a id='x8-101004r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>Heading-2<span class='textcolor-387f38'>}{</span>Heading 1<span class='textcolor-387f38'>}</span> 
-<a id='x8-101006r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>Heading-3<span class='textcolor-387f38'>}{</span>Heading 2<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb143'><a id='x8-103004r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>Heading-2<span class='textcolor-387f38'>}{</span>Heading 1<span class='textcolor-387f38'>}</span> 
+<a id='x8-103006r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>Heading-3<span class='textcolor-387f38'>}{</span>Heading 2<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
                                                                   
