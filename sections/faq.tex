@@ -100,6 +100,18 @@ thanks to this configuration.
 Redefinitions that happen in \term{writetoc} are active only when stuff is written to the auxilary
 files, so you don't need to worry that it will break normal handling of environments.
 
+Last tip for dealing with errors that involve auxilary files is to delete temporary files if the 
+error is fatal. In that case the temporary file will not be overwritten with a fixed version, 
+resulting in fatal error even if you fixed the original issue. It is recommended to remove at least 
+the \file{.aux} and \file{.xref} files, but you may need to remove also \file{.4tc} and \file{.4ct} files.
+To simplify this process, you can use the \texttt{clean} mode of \makefourht:
+
+\begin{shellcommand}
+$ make4ht -m clean filename.tex
+\end{shellcommand}
+
+It will remove all temporary files, but also generated HTML files and images.
+
 \end{issue}
 
 \section{DOM Processing Errors}
