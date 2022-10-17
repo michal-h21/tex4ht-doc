@@ -111,6 +111,8 @@
 
 
 
+
+
 <span class='chapterToc'>8 <a href='#makeht-build-files'>Make4ht Build Files</a></span>
 <span class='sectionToc'>8.1 <a href='#commands-execution'>Commands execution</a></span>
 <span class='sectionToc'>8.2 <a href='#filters'>Filters</a></span>
@@ -150,7 +152,10 @@ LaTeX compilations may be necessary to ger correct hyperlinks. The script will
 execute LaTeX again, until checksums don’t change.
 </p>   
 <figure class='luasource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb144'><a id='x9-105046r1'></a><span class='textcolor-2838af'><span class='textit'>local</span></span> htlatex <span class='textcolor-656565'>= </span><span class='textcolor-387f38'>require </span><span class='textcolor-b73838'>"make4ht-htlatex"</span> 
+                                                                  
+
+                                                                  
+<pre class='fancyvrb' id='fancyvrb147'><a id='x9-105046r1'></a><span class='textcolor-2838af'><span class='textit'>local</span></span> htlatex <span class='textcolor-656565'>= </span><span class='textcolor-387f38'>require </span><span class='textcolor-b73838'>"make4ht-htlatex"</span> 
 <a id='x9-105048r2'></a> 
 <a id='x9-105050r3'></a><span class='textcolor-2838af'><span class='textit'>local</span></span> <span class='textcolor-2838af'>function </span><span class='textcolor-77593f'>get_checksum</span><span class='textcolor-878787'>(</span>main_file<span class='textcolor-878787'>,</span> extensions<span class='textcolor-878787'>)</span> 
 <a id='x9-105052r4'></a>  <span class='textcolor-878787'><span class='textit'>-- make checksum for temporary files</span></span> 
@@ -194,9 +199,6 @@ execute LaTeX again, until checksums don’t change.
 <a id='x9-105128r42'></a>  <span class='textcolor-2838af'>return</span> status 
 <a id='x9-105130r43'></a><span class='textcolor-2838af'>end</span><span class='textcolor-878787'>)</span> 
 <a id='x9-105132r44'></a>Make<span class='textcolor-878787'>:</span>myhtlatex <span class='textcolor-878787'>{}</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!--  l. 61  --><p class='noindent'>

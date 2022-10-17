@@ -111,6 +111,8 @@
 
 
 
+
+
 <span class='chapterToc'>8 <a href='Make4htBuildFiles.html#makeht-build-files'>Make4ht Build Files</a></span>
 
 
@@ -148,10 +150,10 @@ best-supported conversion targets.
 </p><!--  l. 11  --><p class='indent'>   <code class='texttt'>TeX4ht</code> allows authors to convert LaTeX input to several output formats, like
 <code class='texttt'>HTML</code> (for web pages) or <code class='texttt'>ePub</code> (for ebooks and other applications).
 </p><!--  l. 16  --><p class='indent'>   <a id='basic-usage'></a>
-</p>
                                                                   
 
                                                                   
+</p>   
 <h3 class='sectionHead'><span class='titlemark'>2.2   </span> <a id='x3-50002.2'></a>Basic Usage</h3>
 <!--  l. 18  --><p class='noindent'>Conversion is invoked using the <code class='texttt'>make4ht</code> command:
 </p>   
@@ -195,13 +197,13 @@ is equal to the following:
 
 </figure>
 <!--  l. 52  --><p class='indent'>   What do these options mean?
+                                                                  
+
+                                                                  
 </p><!--  l. 54  --><p class='indent'>   The option <code class='texttt'>--lua</code> tells <code class='texttt'>make4ht</code> to use LuaLaTeX as a compilation engine. There
 is also an option <code class='texttt'>-x</code> (or <code class='texttt'>--xetex</code>) that allows the use of XeLaTeX for the
 compilation. If neither of these options is used, the file will be converted with the
 default PDFLaTeX engine.
-                                                                  
-
-                                                                  
 </p><!--  l. 59  --><p class='indent'>   For example, if we compile the sample file without the <code class='texttt'>-l</code> option, we would get a
 different result:
 </p>   
@@ -238,10 +240,10 @@ options. They can be passed as a first positional argument after filename to
 <code class='texttt'>make4ht</code>:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb9'><a id='x3-7003r1'></a>$ make4ht filename.tex <span class='textcolor-b73838'>"option1,option2"</span></pre>
                                                                   
 
                                                                   
+<pre class='fancyvrb' id='fancyvrb9'><a id='x3-7003r1'></a>$ make4ht filename.tex <span class='textcolor-b73838'>"option1,option2"</span></pre>
 
 </figure>
 <!--  l. 106  --><p class='indent'>   For example, <code class='texttt'>TeX4ht</code> produces one HTML file for a document, but each footnote
@@ -286,10 +288,10 @@ to use vector SVG format instead, as it should produce better quality of
 pictures:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb13'><a id='x3-7015r1'></a>$ make4ht filename.tex <span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
                                                                   
 
                                                                   
+<pre class='fancyvrb' id='fancyvrb13'><a id='x3-7015r1'></a>$ make4ht filename.tex <span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
 <!--  l. 137  --><p class='indent'>   For more information on options, see chapter <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code>Options<!--  tex4ht:ref: chap:options   --></a>.
