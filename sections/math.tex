@@ -63,145 +63,23 @@ specified in the \configuration{MathjaxSource} configuration. Default value of t
 {https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js}
 \end{texsource}
 
-\paragraph{\LaTeX\ mode}
+\subsection{MathJax's \LaTeX\ mode}
+
+
 
 In the \LaTeX math mode, \TeX\ macros used in the math mode are preserved in
-the output HTML document. They are parsed and rendered by MathJax when the
-document is displayed by a web browser. The downside of this mode is that
-commands unknown to MathJax must be configured in a special configuration for
-MathJax. Cross-references to equations and other numbered math environments
-don't work out of the box. You can try the Lua scripts proposed in 
-\href{https://tex.stackexchange.com/a/597913/2891}{this post on TeX.sx} as
-a workaround.
+the output HTML document. 
+By default, inline and display math, as well as math environments should work.
+They are parsed and rendered by MathJax when the
+document is displayed by a web browser.
 
-By default, inline and display math, as well as math environments, are kept as
-raw LaTeX code in the \HTML\ output. 
-
-The additional configuration for \term{MathJax} can be provided in the
-\configuration{MathJaxConfig} configuration.
-The following example provides support for some custom \LaTeX\ macros.
-
-\begin{texsource}
-\Preamble{xhtml}
-\Configure{MathJaxConfig}{{
-    tex: {
-      tags: "ams",
-      \detokenize{%
-      macros: {
-        sc: "\\small\\rm",
-        sl: "\\it",
-      }
-  }
-}
-}}
-\begin{document}
-\EndPreamble
-
-\end{texsource}
+The downside of this mode is that commands unknown to MathJax must be configured in a special configuration for
+MathJax. See the how-to~\namerefpage{sec:howto-mathjax} for the examples 
+on how to configure MathJax for custom commands, new environments, cross-references
+and other issues.
 
 
-The configuration needs to be passed as a JavaScript object, this means that
-you need to use extra \verb|{}| brackets.
-The \texcommand{\detokenize} macro is used to avoid possible issues with catcodes
-in the configuration. Backslashes must be doubled in the
-JavaScript strings, so they need to be written twice for all custom macros.
-Contents of this configuration is already enclosed in the
-\texcommand{\HCode} command, so you cannot use this command in the configuration.
-
-If you want to define macros with parameters, you may run to issues with the \# character, used for parameters.
-You need to change the catcode of this character to letter before the \configuration{MathJaxConfig} configuration:
-
-\begin{texsource}
-\Preamble{xhtml}
-% change catcode of # to letter
-% in order to support #1 in custom
-% MathJax macros
-\catcode`\#=11
-\Configure{MathJaxConfig}{{
-    tex: {
-      \detokenize{%
-      macros: { 
-        % our sample macro takes a parameter
-        hello: ["\\sqrt{#1}",1],
-      }
-  }
-}
-}}
-% don't forget to change the catcode 
-% back to the original value
-\catcode`\#=6
-\begin{document}
-\EndPreamble
-\end{texsource}
-
-Note that number of opening and closing brackets is important, they need to be balanced. 
-For example, if you use \verb|\left\\{|, you need to add special closing bracket for \verb|\\{|. 
-The problem is that this closing bracket can cause syntax error in the generated JavaScript, 
-as the opening bracket was contents of the string. You can fix that by enclosing the closing bracket
-in JavaScript comment string (\verb|/* } */|. In this way, \LaTeX\ will see the correct number of brackets,
-but JavaScript will ignore the extra ones:
-
-\begin{texsource}
-\Preamble{xhtml}
-\catcode`\#=11
-\Configure{MathJaxConfig}{{
-    tex: {
-      macros: {
-      leftbracket: ["\\left\\{#1\\right.",1], /*} */
-    }
-  }
-}}
-\catcode`\#=6
-\begin{document}
-\EndPreamble
-\end{texsource}
-
-\paragraph{Custom environments in MathJax.}\label{sec:mathjax_env}
-
-If you want to add support for a new environment, you can use the \verb|\VerbMath| command, and you will
-also need to pass suitable configuration to MathJax. For example for the following TeX file:
-
-\begin{texsource}
-\documentclass[12pt]{book}    
-\usepackage{amsmath} 
-\usepackage{breqn}
-
-\begin{document}    
-\begin{dgroup*}
-\begin{dmath*}
-     A = B
-   \end{dmath*}     %error is around here           
-\end{dgroup*}
-\end{document}
-\end{texsource}
-
-Can be configured using this configuration file:
-
-\begin{texsource}
-\Preamble{xhtml} 
-\Configure{MathJaxConfig}{{ 
-    tex: { 
-      tags: "ams", 
-      \detokenize{% 
-        environments: {
-          "dgroup*": ["", ""],
-          "dmath*": ["", ""],
-        } 
-      } 
-    } 
-}} 
-\VerbMath{dgroup*}
-\begin{document} 
-\EndPreamble
-\end{texsource}
-
-The \verb|\VerbMath| command can be used just for the \verb|dgroup*| environment, as it will pass the
-whole contents, including the \verb|dgroup*| environment, to the HTML file. But you will need to 
-provide MathJax configuration for both of these environments, as they are not supported by default.
-
-
-
-\paragraph{MathJax's \mathml\ mode}
+\subsection{MathJax's \mathml\ mode}
 
 Math is converted to \mathml\ by \texfourht, MathJax then renders it. Custom
 commands and cross-references work in this mode.
