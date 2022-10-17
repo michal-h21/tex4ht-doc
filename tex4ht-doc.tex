@@ -76,6 +76,7 @@ for the EB Garamond font.
 
 \subsection{MathJax}
 
+\input{howto/mathjax}
 
 \subsection{MathML}
 \subsection{Subscripts and superscripts}
@@ -132,7 +133,39 @@ number, and destination to the backlink from the index.
 
 
 \subsection{Bibliographies}
+
+You can use either \verb|Make:bibtex| or \verb|Make:biber| in a build file to compile
+your bibliography. The following build file is meant for use with Bib\LaTeX. 
+
+\begin{luasource}
+if mode=="draft" then
+  Make:htlatex {}
+else
+  Make:htlatex {}
+  Make:biber {}
+  Make:htlatex{}
+  Make:htlatex{}
+end
+\end{luasource}
+
+This build file also supports the \verb|draft| mode for faster compilation. Use this
+command when you add a new citation:
+
+\begin{shellcommand}
+$ make4ht filename.tex
+\end{shellcommand}
+
+In other cases, when you just added normal text, you can compile the file faster using
+the draft mode:
+
+\begin{shellcommand}
+$ make4ht -m draft filename.tex
+\end{shellcommand}
+
 \subsection{R}
+
+The \verb|preprocess_input| \makefourht\ extension supports  
+
 \subsection{Markdown}
 \subsection{PythonTeX}
 
