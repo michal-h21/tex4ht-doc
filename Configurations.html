@@ -1485,26 +1485,27 @@ configured in a special configuration for MathJax. See the how-to <a href='Howto
 mode<!--  tex4ht:ref: sec:howto-mathjax   --></a> for the examples on how to configure MathJax for custom commands, new
 environments, cross-references and other issues.
 </p><!--  l. 82  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>MathJaxConfig</span>}{JavaScript object}</code>
-</p><!--  l. 87  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>MathJaxMacros</span>}{path to file with macro definitions}
+</p><!--  l. 84  --><p class='indent'>   See the <a href='https://docs.mathjax.org/en/latest/options/index.html'>MathJax documentation</a> for the possible configuration options.
+</p><!--  l. 89  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>MathJaxMacros</span>}{path to file with macro definitions}
 </code>
                                                                   
 
                                                                   
-</p><!--  l. 89  --><p class='indent'>   Load file with declarations of custom commands, so they can be recognized by
+</p><!--  l. 91  --><p class='indent'>   Load file with declarations of custom commands, so they can be recognized by
 MathJax. Note that you need to escape characters that could cause issues in the
 HTML post-processing, namely <span class='obeylines-h'><code class='verb'>&lt;</code></span>, <span class='obeylines-h'><code class='verb'>&gt;</code></span> and <span class='obeylines-h'><code class='verb'>&amp;</code></span>. Use HTML entities instead.
-</p><!--  l. 94  --><p class='noindent'><code class='texttt'><span class='textbf'>\VerbMath</span></code>{<span class='textit'>environment name</span>}
-</p><!--  l. 96  --><p class='indent'>   Pass contents of the environment verbatim to the output HTML file. You may
+</p><!--  l. 96  --><p class='noindent'><code class='texttt'><span class='textbf'>\VerbMath</span></code>{<span class='textit'>environment name</span>}
+</p><!--  l. 98  --><p class='indent'>   Pass contents of the environment verbatim to the output HTML file. You may
 need to configure MathJax to recognize it.
-</p><!--  l. 101  --><p class='noindent'>
+</p><!--  l. 103  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='mathjaxs-mathml-mode'><span class='titlemark'>7.18.5   </span> <a id='x8-990007.18.5'></a>MathJax’s <code class='texttt'>MathML</code> mode</h4>
-<!--  l. 103  --><p class='noindent'>Math is converted to <code class='texttt'>MathML</code> by <code class='texttt'>TeX4ht</code>, MathJax then renders it. Custom
+<!--  l. 105  --><p class='noindent'>Math is converted to <code class='texttt'>MathML</code> by <code class='texttt'>TeX4ht</code>, MathJax then renders it. Custom
 commands and cross-references work in this mode.
-</p><!--  l. 106  --><p class='indent'>   The <code class='texttt'>MathML</code> MathJax mode can be required using the <span class='emph'>mathml,mathjax</span>
+</p><!--  l. 108  --><p class='indent'>   The <code class='texttt'>MathML</code> MathJax mode can be required using the <span class='emph'>mathml,mathjax</span>
 option.
 </p>
-<!--  l. 108  --><p class='noindent'><span class='paragraphHead' id='table-of-contents-issues'><a id='x8-100000'></a><span class='ec-lmbx-10'>Table of contents issues</span></span>
+<!--  l. 110  --><p class='noindent'><span class='paragraphHead' id='table-of-contents-issues'><a id='x8-100000'></a><span class='ec-lmbx-10'>Table of contents issues</span></span>
 Some math commands may cause issues when they are used in section
 titles in the MathJax mode. This can be fixed using the <code class='texttt'>\fixmathjaxtoc</code>
 command:
