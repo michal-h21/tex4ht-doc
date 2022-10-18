@@ -46,16 +46,17 @@
 
 
 
+
 <span class='chapterToc'>4 <a href='CallingCommands.html#calling-commands'>Calling Commands</a></span>
 
 
 
 
 
-
                                                                   
 
                                                                   
+
 
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
 <span class='chapterToc'>6 <a href='#-texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
@@ -101,10 +102,10 @@
 
 
 
-
                                                                   
 
                                                                   
+
 
 
 
@@ -142,7 +143,7 @@
 </nav> 
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='OutputFormats.html'>prev</a>] [<a href='tex4ht-doc.html#texfourhtOptions.html'>up</a>] [<a href='Configurations.html'>next</a>] </nav> 
-<h2 class='chapterHead' id='-texht-options1'><span class='titlemark'>Chapter 6</span><br /><a id='x7-480006'></a><code class='texttt'>TeX4ht</code> Options</h2>
+<h2 class='chapterHead' id='-texht-options1'><span class='titlemark'>Chapter 6</span><br /><a id='x7-490006'></a><code class='texttt'>TeX4ht</code> Options</h2>
 Following is an incomplete list of options that can be passed to the <code class='texttt'>tex4ht.sty</code>
 package. These options can be used to modify the compilation process, for example
 to select a <span class='emph'>SVG</span> format for generated images, to request math environments to be
@@ -153,14 +154,14 @@ work only in the <code class='texttt'>HTML</code> output.
 </p><!--  l. 18  --><p class='indent'>   There are several ways how to pass the options to <code class='texttt'>TeX4ht</code>. The non-recommended
 way is to pass them as options to <code class='texttt'>tex4ht.sty</code> using <code class='texttt'>\usepackage</code> command in the
 TeX file.
-</p>   
-<figure class='texsource' role='doc-example'>
+</p>
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb82'><a id='x7-48005r1'></a>... 
-<a id='x7-48007r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[xhtml,option1,option2]{</span>tex4ht<span class='textcolor-387f38'>}</span> 
-<a id='x7-48009r3'></a>...</pre>
+<figure class='texsource' role='doc-example'>   
+<pre class='fancyvrb' id='fancyvrb85'><a id='x7-49005r1'></a>... 
+<a id='x7-49007r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[xhtml,option1,option2]{</span>tex4ht<span class='textcolor-387f38'>}</span> 
+<a id='x7-49009r3'></a>...</pre>
 
 </figure>
 <!--  l. 28  --><p class='indent'>   Recommended solutions don’t require modifications of the TeX files.
@@ -168,7 +169,7 @@ TeX file.
 the filename:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb83'><a id='x7-48012r1'></a>make4ht filename.tex <span class='textcolor-b73838'>"fn-in"</span></pre>
+<pre class='fancyvrb' id='fancyvrb86'><a id='x7-49012r1'></a>make4ht filename.tex <span class='textcolor-b73838'>"fn-in"</span></pre>
 
 </figure>
 <!--  l. 40  --><p class='indent'>   For more information on calling scripts see the section <a href='CallingCommands.html#calling-commands'>4<!--  tex4ht:ref: sec:calling-commands   --></a> .
@@ -177,16 +178,16 @@ configuration file</span>. Note that first option in the <code class='texttt'>\P
 <span class='emph'>xhtml</span>.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb84'><a id='x7-48018r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml,fn-in<span class='textcolor-387f38'>}</span> 
-<a id='x7-48020r2'></a>... 
-<a id='x7-48022r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
-<a id='x7-48024r4'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb87'><a id='x7-49018r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml,fn-in<span class='textcolor-387f38'>}</span> 
+<a id='x7-49020r2'></a>... 
+<a id='x7-49022r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x7-49024r4'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
 <!--  l. 52  --><p class='indent'>   See the section <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!--  tex4ht:ref: sec:private-configuration   --></a> for more details on configuration
 files.
 </p>   
-<h3 class='sectionHead' id='list-of-options'><span class='titlemark'>6.1   </span> <a id='x7-490006.1'></a>List of options</h3>
+<h3 class='sectionHead' id='list-of-options'><span class='titlemark'>6.1   </span> <a id='x7-500006.1'></a>List of options</h3>
 <dl class='description'><dt class='description'>     
 <!--  l. 70  --><p class='noindent'>
 <span class='ec-lmbx-10'>-css</span> 
@@ -1100,7 +1101,7 @@ can be used to fine tune encoding.
 </dd></dl>
 <!--  l. 433  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='options-for-the-odt-output'><span class='titlemark'>6.2   </span> <a id='x7-500006.2'></a>Options for the ODT output</h3>
+<h3 class='sectionHead' id='options-for-the-odt-output'><span class='titlemark'>6.2   </span> <a id='x7-510006.2'></a>Options for the ODT output</h3>
 <dl class='description'><dt class='description'>     
 <!--  l. 436  --><p class='noindent'>
 <span class='ec-lmbx-10'>bib-</span> 
