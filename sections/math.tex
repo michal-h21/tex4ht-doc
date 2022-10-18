@@ -55,8 +55,9 @@ you can try a configuration from \href{https://tex.stackexchange.com/a/637910/28
 
 The \term{MathJax} processing can be required using the \option{mathjax} option.
 
-The address of the \term{MathJax} script and its configuration string can be
-specified in the \configuration{MathjaxSource} configuration. Default value of this configuration is:
+\DocConfigure{MathJaxSource} {MathJax URL}\EndDoc
+
+The address of the \term{MathJax} script and its configuration string. Default value of this configuration is:
 
 \begin{texsource}
 \Configure{MathJaxSource}
@@ -77,6 +78,24 @@ The downside of this mode is that commands unknown to MathJax must be configured
 MathJax. See the how-to~\namerefpage{sec:howto-mathjax} for the examples 
 on how to configure MathJax for custom commands, new environments, cross-references
 and other issues.
+
+\DocConfigure{MathJaxConfig} {JavaScript object}\EndDoc
+
+
+
+
+\DocConfigure{MathJaxMacros} {path to file with macro definitions}\EndDoc
+
+Load file with declarations of custom commands, so they can be recognized 
+by MathJax. Note that you need to escape characters that could cause issues
+in the HTML post-processing, namely \verb|<|, \verb|>| and \verb|&|. Use 
+HTML entities instead.
+
+\DocCommand{VerbMath}\marg{environment name}
+
+Pass contents of the environment verbatim to the output HTML file.
+You may need to configure MathJax to recognize it.
+
 
 
 \subsection{MathJax's \mathml\ mode}

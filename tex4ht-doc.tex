@@ -73,6 +73,42 @@ for the EB Garamond font.
 
 
 \section{Math}
+\label{sec:howto-math}
+
+\texfourht\ supports multiple methods for the math conversion in the
+HTML output. Simple formatting and pictures for more complex elements
+is used by default, but you can request other methods, which usually 
+produce output that is better looking and also better for the accessibility.
+
+Note that in other output formats than HTML, which are usually based on XML,
+\texfourht\ outputs math in MathML.
+
+\subsection{Picture math}
+\label{sec:howto-picm}
+
+By default, pictures are used only for display math. You can pass additional 
+options to \texfourht\ to request pictures also for inline math, equations
+and other environments. You can also require the SVG output, to get pictures
+in a better quality.
+
+For example, the following command should produce pictures in SVG:
+
+\begin{shellcommand}
+$ make4ht foo.tex "pic-m+,pic-equation,svg"
+\end{shellcommand}
+
+See the \namerefpage{chap:options} chapter for other \option{pic-\ldots} options. 
+
+If you have a large number of math content, the conversion to images can take
+a long time. You can use the \verb|dvisvgm_hashes| extension for \makefourht\ 
+to reuse the images that were already generated, and to use a parallel conversion:
+
+\begin{shellcommand}
+$ make4ht -f html5+dvisvgm_hashes foo.tex \
+"pic-m+,pic-equation,svg"
+\end{shellcommand}
+
+
 
 \subsection{MathJax \LaTeX{} mode}
 \label{sec:howto-mathjax}
