@@ -94,7 +94,7 @@ in a better quality.
 For example, the following command should produce pictures in SVG:
 
 \begin{shellcommand}
-$ make4ht foo.tex "pic-m+,pic-equation,svg"
+$ make4ht foo.tex "pic-m,pic-equation,svg"
 \end{shellcommand}
 
 See the \namerefpage{chap:options} chapter for other \option{pic-\ldots} options. 
@@ -105,7 +105,7 @@ to reuse the images that were already generated, and to use a parallel conversio
 
 \begin{shellcommand}
 $ make4ht -f html5+dvisvgm_hashes foo.tex \
-"pic-m+,pic-equation,svg"
+"pic-m,pic-equation,svg"
 \end{shellcommand}
 
 
