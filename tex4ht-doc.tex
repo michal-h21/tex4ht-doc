@@ -115,6 +115,20 @@ $ make4ht -f html5+dvisvgm_hashes foo.tex \
 \input{howto/mathjax}
 
 \subsection{MathML}
+\label{sec:howto-mathml}
+
+You can get the MathML output in HTML using the \option{mathml} option. In other
+formats, such as JATS, or ODT, MathML is used automatically. The support for MathML
+in web browsers is not great, so it usually better to load it together with MathJax,
+using the \option{mathml,mathjax} options:
+
+\begin{shellcommand}
+$ make4ht foo.tex "mathml,mathjax"
+\end{shellcommand}
+
+The advantage over MathJax's \LaTeX\ mode is that \texfourht\ expands custom commands
+in the MathML mode, also cross-referencing should work better.
+
 \subsection{Subscripts and superscripts}
 \input{howto/subscripts}
 \subsection{MathJax Node}

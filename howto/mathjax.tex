@@ -1,16 +1,30 @@
-The other method of 
+You can also pass math to the HTML output and rely on the \href{https://www.mathjax.org/}{MathJax
+library} for the rendering. 
+MathJax is widely used for this purpose and generaly produces great results
+from the accessibility and rendering views. 
+
+To require the MathJax output, use the \option{mathjax} option:
+
+
 \begin{shellcommand}
 $ make4ht foo.tex "mathjax"
 \end{shellcommand}
 
-Cross-references to equations should work other numbered math environments
-don't work out of the box. You can try the Lua scripts proposed in 
-\href{https://tex.stackexchange.com/a/597913/2891}{this post on TeX.sx} as
-a workaround.
+There are some limitations in MathJax though:
+
+\begin{itemize}
+  \item If you use custom commands, you need to configure MathJax to recognize them.
+
+  \item Cross-references to equations should work, but other numbered math environments
+    don't work out of the box. You can try the Lua scripts proposed in 
+    \href{https://tex.stackexchange.com/a/597913/2891}{this post on TeX.sx} as
+    a workaround.
+\end{itemize}
 
 The additional configuration for \term{MathJax} can be provided in the
 \configuration{MathJaxConfig} configuration.
-The following example provides support for some custom \LaTeX\ macros.
+
+The following example provides support for custom \LaTeX\ macros.
 
 \begin{texsource}
 \Preamble{xhtml}
@@ -27,7 +41,6 @@ The following example provides support for some custom \LaTeX\ macros.
 }}
 \begin{document}
 \EndPreamble
-
 \end{texsource}
 
 
@@ -86,6 +99,17 @@ but JavaScript will ignore the extra ones:
 \begin{document}
 \EndPreamble
 \end{texsource}
+
+\paragraph{Loading \LaTeX{} command definitions from a file.}
+
+MathJax has basic support for macro definition using 
+the \verb|\newcommand|  command. You can put these definitions inside a math
+environment in the HTML page, and MathJax should be able to recognize
+these commands subsequently. You can use the 
+
+
+
+
 
 \paragraph{Custom environments in MathJax.}\label{sec:mathjax_env}
 
