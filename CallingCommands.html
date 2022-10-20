@@ -143,14 +143,14 @@
 </nav> 
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='Howto.html'>prev</a>] [<a href='tex4ht-doc.html#CallingCommands.html'>up</a>] [<a href='OutputFormats.html'>next</a>] </nav> 
-<h2 class='chapterHead' id='calling-commands'><span class='titlemark'>Chapter 4</span><br /><a id='x5-400004'></a>Calling Commands</h2>
+<h2 class='chapterHead' id='calling-commands'><span class='titlemark'>Chapter 4</span><br /><a id='x5-410004'></a>Calling Commands</h2>
 The conversion process used by <code class='texttt'>TeX4ht</code> involves several tools (see section <a href='#overview-of-the-translation-process'>4.3<!--  tex4ht:ref: sec:overview   --></a> ,
 <a href='#overview-of-the-translation-process'>Overview of the Translation Process<!--  tex4ht:ref: sec:overview   --></a> for details).
 <!--  l. 8  --><p class='indent'>   We provide a build script, called <code class='texttt'>make4ht</code>, which simplifies the process. There is
 also a variant of <code class='texttt'>make4ht</code>, <code class='texttt'>tex4ebook</code> for e-book production. See the chapter <a href='OutputFormats.html#output-formats'>Output
 Formats<!--  tex4ht:ref: sec:output-formats   --></a> for more information on output formats.
 </p>   
-<h3 class='sectionHead' id='-makeht-build-system'><span class='titlemark'>4.1   </span> <a id='x5-410004.1'></a><code class='texttt'>make4ht</code> Build System</h3>
+<h3 class='sectionHead' id='-makeht-build-system'><span class='titlemark'>4.1   </span> <a id='x5-420004.1'></a><code class='texttt'>make4ht</code> Build System</h3>
 <!--  l. 17  --><p class='noindent'>The conversion command loads a script which takes on itself to invoke the different
 steps of the process, without user intervention. The command assumes the
                                                                   
@@ -159,7 +159,7 @@ steps of the process, without user intervention. The command assumes the
 form:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb72'><a id='x5-41003r1'></a>make4ht <span class='textcolor-656565'>[</span>make4ht options<span class='textcolor-656565'>]</span> filename.tex <span class='textcolor-b73838'>"options1" </span><span class='textcolor-b73838'>"option2" </span><span class='textcolor-b73838'>"options3" </span><span class='textcolor-b73838'>"options4"</span></pre>
+<pre class='fancyvrb' id='fancyvrb73'><a id='x5-42003r1'></a>make4ht <span class='textcolor-656565'>[</span>make4ht options<span class='textcolor-656565'>]</span> filename.tex <span class='textcolor-b73838'>"options1" </span><span class='textcolor-b73838'>"option2" </span><span class='textcolor-b73838'>"options3" </span><span class='textcolor-b73838'>"options4"</span></pre>
 
 </figure>
 <!--  l. 25  --><p class='indent'>   The first set of options is for the <code class='texttt'>tex4ht.sty</code> and *.4ht style files, the second set
@@ -169,14 +169,14 @@ one is for the LaTeX compiler.
 </p><!--  l. 31  --><p class='indent'>   The basic invokation of make4ht looks like this:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb73'><a id='x5-41006r1'></a>make4ht filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb74'><a id='x5-42006r1'></a>make4ht filename.tex</pre>
 
 </figure>
 <!--  l. 37  --><p class='indent'>   This command requests a translation according to the default conditions, which
 are set to produce HTML 5 document.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb74'><a id='x5-41009r1'></a>make4ht filename.tex <span class='textcolor-b73838'>"2,info"</span></pre>
+<pre class='fancyvrb' id='fancyvrb75'><a id='x5-42009r1'></a>make4ht filename.tex <span class='textcolor-b73838'>"2,info"</span></pre>
 
 </figure>
 <!--  l. 43  --><p class='indent'>   This command specifies some options for tex4ht.sty. The “2” option requests a
@@ -189,7 +189,7 @@ information.
 section.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb75'><a id='x5-41012r1'></a>make4ht -c foo.cfg filename <span class='textcolor-b73838'>"frames" </span><span class='textcolor-b73838'>"" </span><span class='textcolor-b73838'>"-p"</span></pre>
+<pre class='fancyvrb' id='fancyvrb76'><a id='x5-42012r1'></a>make4ht -c foo.cfg filename <span class='textcolor-b73838'>"frames" </span><span class='textcolor-b73838'>"" </span><span class='textcolor-b73838'>"-p"</span></pre>
 
 </figure>
 <!--  l. 58  --><p class='indent'>   This command requests LaTeX to load a <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!--  tex4ht:ref: sec:private-configuration   --></a>,
@@ -202,40 +202,40 @@ option.
                                                                   
 </p><!--  l. 63  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='-makeht-switches-and-options'><span class='titlemark'>4.2   </span> <a id='x5-420004.2'></a><code class='texttt'>make4ht</code> Switches and Options</h3>
+<h3 class='sectionHead' id='-makeht-switches-and-options'><span class='titlemark'>4.2   </span> <a id='x5-430004.2'></a><code class='texttt'>make4ht</code> Switches and Options</h3>
 <!--  l. 65  --><p class='noindent'><code class='texttt'>make4ht</code> accepts following command line switches and options:
 </p>   
 <figure class='textsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb76'><a id='x5-42018r1'></a>-a,--loglevel (default status) Set log level. 
-<a id='x5-42020r2'></a>possible values: debug, info, status, warning, error, fatal 
-<a id='x5-42022r3'></a>-b,--backend (default tex4ht) Backend used for xml generation. 
-<a id='x5-42024r4'></a>possible values: tex4ht or lua4ht 
-<a id='x5-42026r5'></a>-c,--config (default xhtml) Custom config file 
-<a id='x5-42028r6'></a>-d,--output-dir (default nil)  Output directory 
-<a id='x5-42030r7'></a>-e,--build-file (default nil)  If build file is different than `filename`.mk4 
-<a id='x5-42032r8'></a>-f,--format  (default html5)  Output file format 
-<a id='x5-42034r9'></a>-h,--help  Display this message 
-<a id='x5-42036r10'></a>-j,--jobname (default nil)  Set the jobname 
-<a id='x5-42038r11'></a>-l,--lua  Use lualatex for document compilation 
-<a id='x5-42040r12'></a>-m,--mode (default default) Switch which can be used in the makefile 
-<a id='x5-42042r13'></a>-n,--no-tex4ht Disable dvi file processing with the tex4ht command 
-<a id='x5-42044r14'></a>-s,--shell-escape Enables running external programs from LaTeX 
-<a id='x5-42046r15'></a>-v,--version  Display version number 
-<a id='x5-42048r16'></a>-x,--xetex Use xelatex for document compilation</pre>
+<pre class='fancyvrb' id='fancyvrb77'><a id='x5-43018r1'></a>-a,--loglevel (default status) Set log level. 
+<a id='x5-43020r2'></a>possible values: debug, info, status, warning, error, fatal 
+<a id='x5-43022r3'></a>-b,--backend (default tex4ht) Backend used for xml generation. 
+<a id='x5-43024r4'></a>possible values: tex4ht or lua4ht 
+<a id='x5-43026r5'></a>-c,--config (default xhtml) Custom config file 
+<a id='x5-43028r6'></a>-d,--output-dir (default nil)  Output directory 
+<a id='x5-43030r7'></a>-e,--build-file (default nil)  If build file is different than `filename`.mk4 
+<a id='x5-43032r8'></a>-f,--format  (default html5)  Output file format 
+<a id='x5-43034r9'></a>-h,--help  Display this message 
+<a id='x5-43036r10'></a>-j,--jobname (default nil)  Set the jobname 
+<a id='x5-43038r11'></a>-l,--lua  Use lualatex for document compilation 
+<a id='x5-43040r12'></a>-m,--mode (default default) Switch which can be used in the makefile 
+<a id='x5-43042r13'></a>-n,--no-tex4ht Disable dvi file processing with the tex4ht command 
+<a id='x5-43044r14'></a>-s,--shell-escape Enables running external programs from LaTeX 
+<a id='x5-43046r15'></a>-v,--version  Display version number 
+<a id='x5-43048r16'></a>-x,--xetex Use xelatex for document compilation</pre>
 
 </figure>
 <!--  l. 86  --><p class='indent'>   You can either use the long form <code class='texttt'>--mode</code>, or the short form <code class='texttt'>-m</code>. Short options can
 be chained:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb77'><a id='x5-42051r1'></a>$ make4ht -lsm draft filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb78'><a id='x5-43051r1'></a>$ make4ht -lsm draft filename.tex</pre>
 
 </figure>
 <!--  l. 93  --><p class='indent'>   The above command is equvalent to the following that uses the long
 names:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb78'><a id='x5-42054r1'></a>$ make4ht --lua --shell-escape --mode draft filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb79'><a id='x5-43054r1'></a>$ make4ht --lua --shell-escape --mode draft filename.tex</pre>
 
 </figure>
 <!--  l. 99  --><p class='indent'>   Some of these options are discussed in other chapters, see section <a href='Configurations.html#private-configuration-files'>Private
@@ -247,7 +247,7 @@ can be requested using the <code class='texttt'>-f</code> option. This option al
 feature has been shown in the section <a href='BasicTutorial.html#basic-usage'>Basic Usage<!--  tex4ht:ref: sec:tutorial-basic-usage   --></a> of the tutorial.
 </p><!--  l. 107  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='tex-engine'><span class='titlemark'>4.2.1   </span> <a id='x5-430004.2.1'></a>TeX engine</h4>
+<h4 class='subsectionHead' id='tex-engine'><span class='titlemark'>4.2.1   </span> <a id='x5-440004.2.1'></a>TeX engine</h4>
 <!--  l. 109  --><p class='noindent'><code class='texttt'>make4ht</code> uses TeX compiler to produce a DVI file. Normally, it uses PDFTeX engine,
 but you can also select LuaTeX or XeTeX, using the <code class='texttt'>-l</code> or <code class='texttt'>-x</code> switches.
 </p><!--  l. 112  --><p class='indent'>   The selected engine is important especially for handling of accented and
@@ -261,37 +261,37 @@ details.
                                                                   
 </p><!--  l. 118  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='terminal-output'><span class='titlemark'>4.2.2   </span> <a id='x5-440004.2.2'></a>Terminal Output</h4>
+<h4 class='subsectionHead' id='terminal-output'><span class='titlemark'>4.2.2   </span> <a id='x5-450004.2.2'></a>Terminal Output</h4>
 <!--  l. 120  --><p class='noindent'><code class='texttt'>make4ht</code> hides the terminal output by default. It shows only errors and warnings. It
 doesn’t always show the correct error context. In such cases, try the <code class='texttt'>-a debug</code>
 option. It is also recommended to use output of this option for TeX4ht bug
 reports.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb79'><a id='x5-44003r1'></a>$ make4ht -a debug -m draft buggy.tex</pre>
+<pre class='fancyvrb' id='fancyvrb80'><a id='x5-45003r1'></a>$ make4ht -a debug -m draft buggy.tex</pre>
 
 </figure>
 <!--  l. 129  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='output-directory'><span class='titlemark'>4.2.3   </span> <a id='x5-450004.2.3'></a>Output Directory</h4>
+<h4 class='subsectionHead' id='output-directory'><span class='titlemark'>4.2.3   </span> <a id='x5-460004.2.3'></a>Output Directory</h4>
 <!--  l. 131  --><p class='noindent'>To copy generated files to a different directoy, use the <code class='texttt'>-d path</code> option. The passed
 path can be absolute or relative to the current directory. It also doesn’t need to exist,
 <code class='texttt'>make4ht</code> will create it if necessary.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb80'><a id='x5-45003r1'></a>$ make4ht -d outdir filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb81'><a id='x5-46003r1'></a>$ make4ht -d outdir filename.tex</pre>
 
 </figure>
 <!--  l. 139  --><p class='indent'>   Note that this option doesn’t remove any files from the current directory. If you
 want to remove the temporary files, use the <code class='texttt'>-m clean</code> option:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb81'><a id='x5-45006r1'></a>$ make4ht -m clean filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb82'><a id='x5-46006r1'></a>$ make4ht -m clean filename.tex</pre>
 
 </figure>
 <!--  l. 146  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='-makeht-extensions1'><span class='titlemark'>4.2.4   </span> <a id='x5-460004.2.4'></a><code class='texttt'>make4ht</code> extensions</h4>
+<h4 class='subsectionHead' id='-makeht-extensions1'><span class='titlemark'>4.2.4   </span> <a id='x5-470004.2.4'></a><code class='texttt'>make4ht</code> extensions</h4>
 <!--  l. 148  --><p class='noindent'><code class='texttt'>make4ht</code> extensions can modify the build process – usually, they are used to
 post-process the generated files, to fix some issues that are hard to fix on the TeX
 level.
@@ -302,7 +302,7 @@ level.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb82'><a id='x5-46003r1'></a>$ make4ht -uf html5+tidy filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb83'><a id='x5-47003r1'></a>$ make4ht -uf html5+tidy filename.tex</pre>
 
 </figure>
 <!--  l. 158  --><p class='indent'>   Some of the available extensions:
@@ -334,7 +334,7 @@ Knith or Pandoc.
 <!--  l. 166  --><p class='indent'>   You can find full a list of extensions in <a href='https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions'><code class='texttt'>make4ht</code> documentation</a>.
 </p><!--  l. 169  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='overview-of-the-translation-process'><span class='titlemark'>4.3   </span> <a id='x5-470004.3'></a>Overview of the Translation Process</h3>
+<h3 class='sectionHead' id='overview-of-the-translation-process'><span class='titlemark'>4.3   </span> <a id='x5-480004.3'></a>Overview of the Translation Process</h3>
 <!--  l. 172  --><p class='noindent'>The translation of a LaTeX source file into HTML involves loading of the
 <code class='texttt'>tex4ht.sty</code> package. It watches loaded packages, and loads corresponding
 configuration files, named as <code class='texttt'>&lt;pkgname&gt;.4ht</code>. These configuration files patches
@@ -353,11 +353,11 @@ file, which is then used for pictures.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb83'><a id='x5-47007r1'></a>latex      x            <span class='textcolor-656565'>(</span>or ‘tex x’<span class='textcolor-656565'>)</span> 
-<a id='x5-47009r2'></a>latex      x 
-<a id='x5-47011r3'></a>latex      x 
-<a id='x5-47013r4'></a>tex4ht     x 
-<a id='x5-47015r5'></a>t4ht       x</pre>
+<pre class='fancyvrb' id='fancyvrb84'><a id='x5-48007r1'></a>latex      x            <span class='textcolor-656565'>(</span>or ‘tex x’<span class='textcolor-656565'>)</span> 
+<a id='x5-48009r2'></a>latex      x 
+<a id='x5-48011r3'></a>latex      x 
+<a id='x5-48013r4'></a>tex4ht     x 
+<a id='x5-48015r5'></a>t4ht       x</pre>
 
 </figure>
 <!--  l. 199  --><p class='indent'>   The three compilations with La(TeX) are needed to ensure proper links. The
@@ -368,13 +368,13 @@ approach is illustrated in the picture <a href='#-texht-process-overview'>4.1<!-
                                                                   
 
                                                                   
-<a id='x5-47016r1'></a>
+<a id='x5-48016r1'></a>
                                                                   
 
                                                                   
 <!--  l. 202  --><p class='noindent'><img alt='PIC' src='images/tex4ht_process/tex4ht_process.svg' style='width:100%' />
 </p>
-<figcaption class='caption'><span class='id'>Figure 4.1: </span><span class='content'><code class='texttt'>TeX4ht</code> process overview</span></figcaption><!--  tex4ht:label?: x5-47016r1   -->
+<figcaption class='caption'><span class='id'>Figure 4.1: </span><span class='content'><code class='texttt'>TeX4ht</code> process overview</span></figcaption><!--  tex4ht:label?: x5-48016r1   -->
                                                                   
 
                                                                   
