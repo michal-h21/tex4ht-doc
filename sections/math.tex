@@ -68,7 +68,7 @@ The address of the \term{MathJax} script and its configuration string. Default v
 
 
 
-In the \LaTeX math mode, \TeX\ macros used in the math mode are preserved in
+In the \LaTeX\ math mode, \TeX\ macros used in the math mode are preserved in
 the output HTML document. 
 By default, inline and display math, as well as math environments should work.
 They are parsed and rendered by MathJax when the
@@ -99,14 +99,6 @@ Redefine the given environment so it pass its contents verbatim to the output HT
 You may need to configure MathJax to recognize it.
 
 
-
-\subsection{MathJax's \mathml{} mode}
-
-Math is converted to \mathml\ by \texfourht, MathJax then renders it. Custom
-commands and cross-references work in this mode.
-
-The \mathml\ MathJax mode can be required using the \option{mathml,mathjax} option.
-
 \paragraph{Table of contents issues}
 
 Some math commands may cause issues when they are used in section titles in the MathJax mode. 
@@ -115,4 +107,12 @@ This can be fixed using the \texcommand{\fixmathjaxtoc} command:
 \begin{texsource}
 \fixmathjaxtoc\int
 \end{texsource}
+
+\subsection{MathJax's \mathml{} mode}
+
+Math is converted to \mathml\ by \texfourht, MathJax then renders it. Custom
+commands and cross-references work in this mode.
+
+The \mathml\ MathJax mode can be required using the \option{mathml,mathjax} option.
+
 

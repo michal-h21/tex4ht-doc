@@ -105,7 +105,39 @@ but JavaScript will ignore the extra ones:
 MathJax has basic support for macro definition using 
 the \verb|\newcommand|  command. You can put these definitions inside a math
 environment in the HTML page, and MathJax should be able to recognize
-these commands subsequently. You can use the 
+these commands subsequently. You can use the \cmd{Configure}\marg{@BODY} command
+to put it at the beginning of the document, but we provide an easier solution,
+\cmd{Configure}\marg{MathJaxMacros}. This command expects path to a file with
+macro definitions for MathJax. The file needs to contain only definitions using \cmd{newcommand},
+\cmd{def}, \cmd{newenvironment} and few others. It cannot contain other commands,
+so for example inclusion of \texttt{.sty} files will probably not work.
+
+Here is an example that reuses definitions in both PDF and MathJax modes:
+
+\begin{texsource}
+\documentclass{amsart}
+\input{mymacros}
+\begin{document}
+\begin{align*}
+ p_{i-1} &= -(p_{i})' - \theta p_i  \myspace \text{if} \hspace{10pt} i=n
+\end{align*}
+\end{document}
+\end{texsource}
+
+This file includes the \file{mymmacros.tex}, which contains a definition of the \cmd{myspace} command:
+
+\begin{texsource}
+\newcommand\myspace{\quad}
+\end{texsource}
+
+This file can be included for MathJax using this configuration file:
+
+\begin{texsource}
+\Preamble{xhtml}
+\Configure{MathJaxMacros}{mymacros.tex}
+\begin{document}
+\EndPreamble
+\end{texsource}
 
 
 
