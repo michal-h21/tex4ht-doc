@@ -321,20 +321,53 @@ extra ones:
 <!--  l. 103  --><p class='noindent'><span class='paragraphHead' id='loading-latex-command-definitions-from-a-file'><a id='x4-23000'></a><span class='ec-lmbx-10'>Loading LaTeX command definitions from a file.</span></span>
 MathJax has basic support for macro definition using the <span class='obeylines-h'><code class='verb'>\newcommand</code></span> command.
 You can put these definitions inside a math environment in the HTML page, and
-MathJax should be able to recognize these commands subsequently. You can use
-the
-</p>
-<!--  l. 114  --><p class='noindent'><span class='paragraphHead' id='custom-environments-in-mathjax'><a id='x4-24000'></a><span class='ec-lmbx-10'>Custom environments in MathJax.</span></span>
+MathJax should be able to recognize these commands subsequently. You can use the
+<span class='textbf'><code class='texttt'>\Configure</code></span>{<span class='textit'>@BODY</span>} command to put it at the beginning of the document, but we
+provide an easier solution, <span class='textbf'><code class='texttt'>\Configure</code></span>{<span class='textit'>MathJaxMacros</span>}. This command expects
+path to a file with macro definitions for MathJax. The file needs to contain only
+definitions using <span class='textbf'><code class='texttt'>\newcommand</code></span>, <span class='textbf'><code class='texttt'>\def</code></span>, <span class='textbf'><code class='texttt'>\newenvironment</code></span> and few others. It cannot
+contain other commands, so for example inclusion of <code class='texttt'>.sty</code> files will probably not
+work.
+</p><!--  l. 115  --><p class='indent'>   Here is an example that reuses definitions in both PDF and MathJax
+modes:
+</p>   
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb46'><a id='x4-23009r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>amsart<span class='textcolor-387f38'>}</span> 
+<a id='x4-23011r2'></a><span class='textcolor-2838af'>\input</span><span class='textcolor-387f38'>{</span>mymacros<span class='textcolor-387f38'>}</span> 
+<a id='x4-23013r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x4-23015r4'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>align*<span class='textcolor-387f38'>}</span> 
+<a id='x4-23017r5'></a> p<span class='textcolor-387f38'>_{</span>i-1<span class='textcolor-387f38'>} </span><span class='textcolor-387f38'>&amp;</span>= -(p<span class='textcolor-387f38'>_{</span>i<span class='textcolor-387f38'>}</span>)' - <span class='textcolor-2838af'>\theta</span> p<span class='textcolor-387f38'>_</span>i  <span class='textcolor-2838af'>\myspace </span><span class='textcolor-2838af'>\text</span><span class='textcolor-387f38'>{</span>if<span class='textcolor-387f38'>} </span><span class='textcolor-2838af'>\hspace</span><span class='textcolor-387f38'>{</span>10pt<span class='textcolor-387f38'>}</span> i=n 
+<a id='x4-23019r6'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>align*<span class='textcolor-387f38'>}</span> 
+<a id='x4-23021r7'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
+                                                                  
+
+                                                                  
+
+</figure>
+<!--  l. 127  --><p class='indent'>   This file includes the <code class='texttt'>mymmacros.tex</code>, which contains a definition of the <span class='textbf'><code class='texttt'>\myspace</code></span>
+command:
+</p>   
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb47'><a id='x4-23024r1'></a><span class='textcolor-2838af'>\newcommand\myspace</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\quad</span><span class='textcolor-387f38'>}</span></pre>
+
+</figure>
+<!--  l. 133  --><p class='indent'>   This file can be included for MathJax using this configuration file:
+</p>   
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb48'><a id='x4-23030r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
+<a id='x4-23032r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathJaxMacros<span class='textcolor-387f38'>}{</span>mymacros.tex<span class='textcolor-387f38'>}</span> 
+<a id='x4-23034r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x4-23036r4'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
+
+</figure>
+<!--  l. 146  --><p class='noindent'><span class='paragraphHead' id='custom-environments-in-mathjax'><a id='x4-24000'></a><span class='ec-lmbx-10'>Custom environments in MathJax.</span></span>
 <a id='x4-24000doc'></a>   
 If you want to add support for a new environment, you can use the <span class='obeylines-h'><code class='verb'>\VerbMath</code></span>
 command, and you will also need to pass suitable configuration to MathJax. For
 example for the following TeX file:
 </p>   
 <figure class='texsource' role='doc-example'>
-                                                                  
-
-                                                                  
-<pre class='fancyvrb' id='fancyvrb46'><a id='x4-24013r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>[12pt]{</span>book<span class='textcolor-387f38'>}</span> 
+<pre class='fancyvrb' id='fancyvrb49'><a id='x4-24013r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>[12pt]{</span>book<span class='textcolor-387f38'>}</span> 
 <a id='x4-24015r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>amsmath<span class='textcolor-387f38'>}</span> 
 <a id='x4-24017r3'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>breqn<span class='textcolor-387f38'>}</span> 
 <a id='x4-24019r4'></a> 
@@ -347,10 +380,10 @@ example for the following TeX file:
 <a id='x4-24033r11'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
-<!--  l. 133  --><p class='indent'>   Can be configured using this configuration file:
+<!--  l. 165  --><p class='indent'>   Can be configured using this configuration file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb47'><a id='x4-24050r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
+<pre class='fancyvrb' id='fancyvrb50'><a id='x4-24050r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
 <a id='x4-24052r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathJaxConfig<span class='textcolor-387f38'>}{{</span> 
 <a id='x4-24054r3'></a>    tex: <span class='textcolor-387f38'>{</span> 
 <a id='x4-24056r4'></a>      tags: "ams", 
@@ -367,7 +400,7 @@ example for the following TeX file:
 <a id='x4-24078r15'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
-<!--  l. 153  --><p class='indent'>   The <span class='obeylines-h'><code class='verb'>\VerbMath</code></span> command can be used just for the <span class='obeylines-h'><code class='verb'>dgroup*</code></span> environment, as it will
+<!--  l. 185  --><p class='indent'>   The <span class='obeylines-h'><code class='verb'>\VerbMath</code></span> command can be used just for the <span class='obeylines-h'><code class='verb'>dgroup*</code></span> environment, as it will
 pass the whole contents, including the <span class='obeylines-h'><code class='verb'>dgroup*</code></span> environment, to the HTML file. But
 you will need to provide MathJax configuration for both of these environments, as
 they are not supported by default.
@@ -378,9 +411,12 @@ they are not supported by default.
 formats, such as JATS, or ODT, MathML is used automatically. The support for
 MathML in web browsers is not great, so it usually better to load it together with
 MathJax, using the <span class='emph'>mathml,mathjax</span> options:
+                                                                  
+
+                                                                  
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb48'><a id='x4-25003r1'></a>$ make4ht foo.tex <span class='textcolor-b73838'>"mathml,mathjax"</span></pre>
+<pre class='fancyvrb' id='fancyvrb51'><a id='x4-25003r1'></a>$ make4ht foo.tex <span class='textcolor-b73838'>"mathml,mathjax"</span></pre>
 
 </figure>
 <!--  l. 129  --><p class='indent'>   The advantage over MathJax’s LaTeX mode is that <code class='texttt'>TeX4ht</code> expands
@@ -396,16 +432,13 @@ this is that you need to use a correct grouping for content that should be affec
 these operators. For example, instead of
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb49'><a id='x4-26003r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>A_</span><span class='textcolor-af3f3f'>\mathit</span><span class='textcolor-387f38'>{...}</span><span class='textcolor-b73838'>$</span></pre>
-                                                                  
-
-                                                                  
+<pre class='fancyvrb' id='fancyvrb52'><a id='x4-26003r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>A_</span><span class='textcolor-af3f3f'>\mathit</span><span class='textcolor-387f38'>{...}</span><span class='textcolor-b73838'>$</span></pre>
 
 </figure>
 <!--  l. 15  --><p class='indent'>   use the following, with added group around the <code class='texttt'>\mathit</code> command:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb50'><a id='x4-26006r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>A_{</span><span class='textcolor-af3f3f'>\mathit</span><span class='textcolor-387f38'>{...}}</span><span class='textcolor-b73838'>$</span></pre>
+<pre class='fancyvrb' id='fancyvrb53'><a id='x4-26006r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>A_{</span><span class='textcolor-af3f3f'>\mathit</span><span class='textcolor-387f38'>{...}}</span><span class='textcolor-b73838'>$</span></pre>
 
 </figure>
 <!--  l. 21  --><p class='indent'>   If you define custom commands in the document preamble, use <code class='texttt'>\sp</code> and <code class='texttt'>\sb</code>
@@ -413,13 +446,16 @@ instead of <code class='texttt'>^</code> and <code class='texttt'>_</code>.
 </p><!--  l. 24  --><p class='indent'>   For example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb51'><a id='x4-26009r1'></a><span class='textcolor-2838af'>\newcommand </span><span class='textcolor-2838af'>\coeffX</span> [4][X]<span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\mathbf</span><span class='textcolor-387f38'>{</span>#1<span class='textcolor-387f38'>}_{{</span>#2<span class='textcolor-387f38'>}</span>,<span class='textcolor-387f38'>{</span>#3<span class='textcolor-387f38'>}}</span>(#4)<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb54'><a id='x4-26009r1'></a><span class='textcolor-2838af'>\newcommand </span><span class='textcolor-2838af'>\coeffX</span> [4][X]<span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\mathbf</span><span class='textcolor-387f38'>{</span>#1<span class='textcolor-387f38'>}_{{</span>#2<span class='textcolor-387f38'>}</span>,<span class='textcolor-387f38'>{</span>#3<span class='textcolor-387f38'>}}</span>(#4)<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 30  --><p class='indent'>   should become:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb52'><a id='x4-26012r1'></a><span class='textcolor-2838af'>\newcommand\coeffX</span> [4][X]<span class='textcolor-387f38'>{{</span><span class='textcolor-2838af'>\mathbf</span><span class='textcolor-387f38'>{</span>#1<span class='textcolor-387f38'>}}</span><span class='textcolor-2838af'>\sb</span><span class='textcolor-387f38'>{</span>#2,#3<span class='textcolor-387f38'>}</span>(#4)<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb55'><a id='x4-26012r1'></a><span class='textcolor-2838af'>\newcommand\coeffX</span> [4][X]<span class='textcolor-387f38'>{{</span><span class='textcolor-2838af'>\mathbf</span><span class='textcolor-387f38'>{</span>#1<span class='textcolor-387f38'>}}</span><span class='textcolor-2838af'>\sb</span><span class='textcolor-387f38'>{</span>#2,#3<span class='textcolor-387f38'>}</span>(#4)<span class='textcolor-387f38'>}</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!--  l. 36  --><p class='indent'>   Sometimes, it is not possible to change the source files. In this situation, you can
@@ -428,20 +464,20 @@ and then pipes the modified output to <code class='texttt'>make4ht</code>.
 </p><!--  l. 40  --><p class='indent'>   For example, you may want to change this input:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb53'><a id='x4-26015r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>k'^</span><span class='textcolor-444444'>4</span><span class='textcolor-387f38'>_{i}</span><span class='textcolor-b73838'>$</span></pre>
+<pre class='fancyvrb' id='fancyvrb56'><a id='x4-26015r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>k'^</span><span class='textcolor-444444'>4</span><span class='textcolor-387f38'>_{i}</span><span class='textcolor-b73838'>$</span></pre>
 
 </figure>
 <!--  l. 46  --><p class='indent'>   to the correct form:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb54'><a id='x4-26018r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>k^{</span><span class='textcolor-af3f3f'>\prime</span><span class='textcolor-387f38'> </span><span class='textcolor-444444'>4</span><span class='textcolor-387f38'>}_{i}</span><span class='textcolor-b73838'>$</span></pre>
+<pre class='fancyvrb' id='fancyvrb57'><a id='x4-26018r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>k^{</span><span class='textcolor-af3f3f'>\prime</span><span class='textcolor-387f38'> </span><span class='textcolor-444444'>4</span><span class='textcolor-387f38'>}_{i}</span><span class='textcolor-b73838'>$</span></pre>
 
 </figure>
 <!--  l. 52  --><p class='indent'>   This, and other common issues, can be done using the following Lua
 script:
 </p>   
 <figure class='luasource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb55'><a id='x4-26033r1'></a><span class='textcolor-2838af'>for</span> line <span class='textcolor-2838af'>in </span><span class='textcolor-387f38'>io.lines</span><span class='textcolor-878787'>() </span><span class='textcolor-2838af'>do</span> 
+<pre class='fancyvrb' id='fancyvrb58'><a id='x4-26033r1'></a><span class='textcolor-2838af'>for</span> line <span class='textcolor-2838af'>in </span><span class='textcolor-387f38'>io.lines</span><span class='textcolor-878787'>() </span><span class='textcolor-2838af'>do</span> 
 <a id='x4-26035r2'></a>  <span class='textcolor-878787'><span class='textit'>-- fix primes</span></span> 
 <a id='x4-26037r3'></a>  line <span class='textcolor-656565'>=</span> line<span class='textcolor-878787'>:</span>gsub<span class='textcolor-878787'>(</span><span class='textcolor-b73838'>[[%'%^(.-)%_]]</span><span class='textcolor-878787'>, </span><span class='textcolor-b73838'>[[^{\prime %1}_]]</span><span class='textcolor-878787'>)</span> 
 <a id='x4-26039r4'></a>  <span class='textcolor-878787'><span class='textit'>-- fix \mathrm{hello}^2</span></span> 
@@ -454,16 +490,13 @@ script:
 <a id='x4-26053r11'></a>  line <span class='textcolor-656565'>=</span> line<span class='textcolor-878787'>:</span>gsub<span class='textcolor-878787'>(</span><span class='textcolor-b73838'>"{}([%_%^])"</span><span class='textcolor-878787'>, </span><span class='textcolor-b73838'>"{</span><span class='textcolor-708e30'>\\</span><span class='textcolor-b73838'>HCode{}}%1"</span><span class='textcolor-878787'>)</span> 
 <a id='x4-26055r12'></a>  <span class='textcolor-387f38'>print</span><span class='textcolor-878787'>(</span>line<span class='textcolor-878787'>)</span> 
 <a id='x4-26057r13'></a><span class='textcolor-2838af'>end</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!--  l. 70  --><p class='indent'>   It uses Lua version of regular expressions to find the code we want to fix. The
 command to execute it could be:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb56'><a id='x4-26060r1'></a>texlua filter.lua &lt; sample.tex <span class='textcolor-878787'>|</span> make4ht -j sample - <span class='textcolor-b73838'>"mathml,mathjax"</span></pre>
+<pre class='fancyvrb' id='fancyvrb59'><a id='x4-26060r1'></a>texlua filter.lua &lt; sample.tex <span class='textcolor-878787'>|</span> make4ht -j sample - <span class='textcolor-b73838'>"mathml,mathjax"</span></pre>
 
 </figure>
 <!--  l. 77  --><p class='indent'>   The <code class='texttt'>-j</code> option is used to name the output file, which is necessary because the
@@ -476,6 +509,9 @@ browsers.
 <!--  l. 137  --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='graphics'><span class='titlemark'>3.3   </span> <a id='x4-280003.3'></a>Graphics</h3>
+                                                                  
+
+                                                                  
 <!--  l. 138  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='include-graphics-svgpdf'><span class='titlemark'>3.3.1   </span> <a id='x4-290003.3.1'></a>Include graphics (svg,pdf)</h4>
@@ -494,10 +530,7 @@ Graphics uses a <span class='obeylines-h'><code class='verb'>.xbb</code></span> 
 command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-                                                                  
-
-                                                                  
-<pre class='fancyvrb' id='fancyvrb57'><a id='x4-30003r1'></a>ebb -x *.jpg</pre>
+<pre class='fancyvrb' id='fancyvrb60'><a id='x4-30003r1'></a>ebb -x *.jpg</pre>
 
 </figure>
 <!--  l. 15  --><p class='indent'>   Run analogous command for every other supported image format you
@@ -511,7 +544,7 @@ to the original page width. Thanks to the LaTeX 3 project, we can use the <code 
 package to calculate the image dimensions in percents.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb58'><a id='x4-31011r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
+<pre class='fancyvrb' id='fancyvrb61'><a id='x4-31011r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
 <a id='x4-31013r2'></a><span class='textcolor-2838af'>\makeatletter</span> 
 <a id='x4-31015r3'></a><span class='textcolor-2838af'>\ExplSyntaxOn</span> 
 <a id='x4-31017r4'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>Gin-dim<span class='textcolor-387f38'>}</span> 
@@ -528,23 +561,26 @@ correct percent value. The calculated value is used in the <span class='obeyline
 generated <span class='obeylines-h'><code class='verb'>&lt;img&gt;</code></span> element. The <code class='texttt'>l3fp</code> command <code class='texttt'>\fp_eval:n</code> is used for the calculation.
 LaTeX 3 is part of LaTeX kernel, so we don’t need to require packages that it
 provides.
+                                                                  
+
+                                                                  
 </p><!--  l. 43  --><p class='indent'>   The following example code:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb59'><a id='x4-31030r1'></a><span class='textcolor-2838af'>\includegraphics</span><span class='textcolor-387f38'>[width=0.5\textwidth]{</span>example-image.png<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb62'><a id='x4-31030r1'></a><span class='textcolor-2838af'>\includegraphics</span><span class='textcolor-387f38'>[width=0.5\textwidth]{</span>example-image.png<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 49  --><p class='indent'>   produces following HTML code:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb60'><a id='x4-31033r1'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>img </span><span class='textcolor-387f38'>style</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'width:50%' </span><span class='textcolor-387f38'>alt</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'PIC' </span><span class='textcolor-387f38'>src</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'example-image.png' </span><span class='textcolor-878787'>/&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb63'><a id='x4-31033r1'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>img </span><span class='textcolor-387f38'>style</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'width:50%' </span><span class='textcolor-387f38'>alt</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'PIC' </span><span class='textcolor-387f38'>src</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'example-image.png' </span><span class='textcolor-878787'>/&gt;</span></pre>
 
 </figure>
 <!--  l. 55  --><p class='indent'>   To disable setting of the image dimensions in HTML code completely use the
 following configuration:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb61'><a id='x4-31043r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
+<pre class='fancyvrb' id='fancyvrb64'><a id='x4-31043r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
 <a id='x4-31045r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>Gin-dim<span class='textcolor-387f38'>}{}</span> 
 <a id='x4-31047r3'></a><span class='textcolor-2838af'>\Css</span><span class='textcolor-387f38'>{</span>img <span class='textcolor-387f38'>{</span> 
 <a id='x4-31049r4'></a>    max-width: 100<span class='textcolor-2838af'>\%</span>; 
@@ -552,9 +588,6 @@ following configuration:
 <a id='x4-31053r6'></a><span class='textcolor-387f38'>}}</span> 
 <a id='x4-31055r7'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
 <a id='x4-31057r8'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!--  l. 69  --><p class='indent'>   This configuration uses CSS to set the maximum image dimension. This ensures
@@ -571,7 +604,7 @@ command. The attribute is named <code class='texttt'>alt</code>. Here is a sampl
 that:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb62'><a id='x4-32002r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>article</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb65'><a id='x4-32002r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>article</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x4-32004r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>graphicx</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x4-32006r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatletter</span></span> 
 <a id='x4-32008r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\define</span></span><span class='rm-lmtt-10'>@key</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>alt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{}</span></span> 
@@ -585,17 +618,20 @@ used by regular LaTeX. We need to redefine this key for <code class='texttt'>TeX
 configuration that can specify the image alternative text, <code class='texttt'>GraphicsAlt</code>.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb63'><a id='x4-32018r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb66'><a id='x4-32018r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x4-32020r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatletter</span></span> 
 <a id='x4-32022r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\define</span></span><span class='rm-lmtt-10'>@key</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>alt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>GraphicsAlt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>#1</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}</span></span> 
 <a id='x4-32024r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatother</span></span> 
 <a id='x4-32026r5'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x4-32028r6'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\EndPreamble</span></span></pre>
+                                                                  
+
+                                                                  
 </figure>
 <!--  l. 92  --><p class='indent'>   The resulting HTML file now contains image with the <code class='texttt'>alt</code> attribute:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb64'><a id='x4-32030r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--  l. 7  --&gt;</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>img</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>alt</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>alt tags, information</span><span class='ts1-lmtt10-'>'</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>src</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span> <span class='textcolor-878787'><span class='rm-lmtt-10'>/&gt;</span></span> 
+<pre class='fancyvrb' id='fancyvrb67'><a id='x4-32030r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--  l. 7  --&gt;</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>img</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>alt</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>alt tags, information</span><span class='ts1-lmtt10-'>'</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>src</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span> <span class='textcolor-878787'><span class='rm-lmtt-10'>/&gt;</span></span> 
 <a id='x4-32032r2'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></pre>
 </figure>
 <!--  l. 142  --><p class='noindent'>
@@ -606,10 +642,7 @@ provide configurations to get good markup for your custom commands. You will als
 need to add few commands to your source file:
 </p>   
 <figure class='texsource' role='doc-example'>
-                                                                  
-
-                                                                  
-<pre class='fancyvrb' id='fancyvrb65'><a id='x4-33007r1'></a><span class='textcolor-878787'><span class='textit'>%!TEX TS-program = tex</span></span> 
+<pre class='fancyvrb' id='fancyvrb68'><a id='x4-33007r1'></a><span class='textcolor-878787'><span class='textit'>%!TEX TS-program = tex</span></span> 
 <a id='x4-33009r2'></a><span class='textcolor-2838af'>\input</span> plain-4ht.tex 
 <a id='x4-33011r3'></a><span class='textcolor-2838af'>\document</span> 
 <a id='x4-33013r4'></a>Hello world 
@@ -623,7 +656,7 @@ commands are important, because they are crucial for correct execution of
 </p><!--  l. 17  --><p class='indent'>   They are declared in the <code class='texttt'>plain-4ht.tex</code> file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb66'><a id='x4-33022r1'></a><span class='textcolor-2838af'>\def\documentstyle</span>#1<span class='textcolor-387f38'>{}</span> 
+<pre class='fancyvrb' id='fancyvrb69'><a id='x4-33022r1'></a><span class='textcolor-2838af'>\def\documentstyle</span>#1<span class='textcolor-387f38'>{}</span> 
 <a id='x4-33024r2'></a><span class='textcolor-2838af'>\documentstyle</span><span class='textcolor-387f38'>{</span>tex4ht<span class='textcolor-387f38'>}</span> 
 <a id='x4-33026r3'></a><span class='textcolor-2838af'>\csname</span> tex4ht<span class='textcolor-2838af'>\endcsname</span> 
 <a id='x4-33028r4'></a><span class='textcolor-2838af'>\def\document</span><span class='textcolor-387f38'>{}</span> 
@@ -635,12 +668,15 @@ commands are important, because they are crucial for correct execution of
 </p><!--  l. 29  --><p class='indent'>   The document can be compiled using:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb67'><a id='x4-33033r1'></a>make4ht -f html5+detect_engine filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb70'><a id='x4-33033r1'></a>make4ht -f html5+detect_engine filename.tex</pre>
 
 </figure>
 <!--  l. 35  --><p class='indent'>   The <span class='obeylines-h'><code class='verb'>-f html5+detect_engine</code></span> requires the <span class='obeylines-h'><code class='verb'>detect_engine</code></span> extension, which uses
 the magic command in the source file to determine which TeX engine to use. It is
 necessary for the correct Plain TeX support.
+                                                                  
+
+                                                                  
 </p><!--  l. 146  --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='blogging'><span class='titlemark'>3.5   </span> <a id='x4-340003.5'></a>Blogging</h3>
@@ -655,13 +691,10 @@ use a build file that calls them explicitly. The intermediate file with indexing
 information uses special format with <code class='texttt'>TeX4ht</code>, so it is not possible to just call these
 commands from the command line. <code class='texttt'>make4ht</code> uses some pre-processing and
 post-processing to make the indexing work correctly.
-                                                                  
-
-                                                                  
 </p><!--  l. 159  --><p class='indent'>   Here is a simple example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb68'><a id='x4-36009r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>article<span class='textcolor-387f38'>}</span> 
+<pre class='fancyvrb' id='fancyvrb71'><a id='x4-36009r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>article<span class='textcolor-387f38'>}</span> 
 <a id='x4-36011r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>makeidx<span class='textcolor-387f38'>}</span> 
 <a id='x4-36013r3'></a><span class='textcolor-2838af'>\makeindex</span> 
 <a id='x4-36015r4'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
@@ -673,7 +706,7 @@ post-processing to make the indexing work correctly.
 <!--  l. 171  --><p class='indent'>   This file can be compiled using the following build file, <code class='texttt'>build.lua</code>:
 </p>   
 <figure class='luasource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb69'><a id='x4-36026r1'></a>Make<span class='textcolor-878787'>:</span>htlatex <span class='textcolor-878787'>{}</span> 
+<pre class='fancyvrb' id='fancyvrb72'><a id='x4-36026r1'></a>Make<span class='textcolor-878787'>:</span>htlatex <span class='textcolor-878787'>{}</span> 
 <a id='x4-36028r2'></a>Make<span class='textcolor-878787'>:</span>makeindex <span class='textcolor-878787'>{}</span> 
 <a id='x4-36030r3'></a>Make<span class='textcolor-878787'>:</span>htlatex<span class='textcolor-878787'>{}</span></pre>
 
@@ -688,7 +721,7 @@ produces unique number, and destination to the backlink from the index.
 bibliography. The following build file is meant for use with BibLaTeX.
 </p>   
 <figure class='luasource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb70'><a id='x4-37010r1'></a><span class='textcolor-2838af'>if</span> mode<span class='textcolor-656565'>==</span><span class='textcolor-b73838'>"draft" </span><span class='textcolor-2838af'>then</span> 
+<pre class='fancyvrb' id='fancyvrb73'><a id='x4-37010r1'></a><span class='textcolor-2838af'>if</span> mode<span class='textcolor-656565'>==</span><span class='textcolor-b73838'>"draft" </span><span class='textcolor-2838af'>then</span> 
 <a id='x4-37012r2'></a>  Make<span class='textcolor-878787'>:</span>htlatex <span class='textcolor-878787'>{}</span> 
 <a id='x4-37014r3'></a><span class='textcolor-2838af'>else</span> 
 <a id='x4-37016r4'></a>  Make<span class='textcolor-878787'>:</span>htlatex <span class='textcolor-878787'>{}</span> 
@@ -696,25 +729,25 @@ bibliography. The following build file is meant for use with BibLaTeX.
 <a id='x4-37020r6'></a>  Make<span class='textcolor-878787'>:</span>htlatex<span class='textcolor-878787'>{}</span> 
 <a id='x4-37022r7'></a>  Make<span class='textcolor-878787'>:</span>htlatex<span class='textcolor-878787'>{}</span> 
 <a id='x4-37024r8'></a><span class='textcolor-2838af'>end</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!--  l. 201  --><p class='indent'>   This build file also supports the <span class='obeylines-h'><code class='verb'>draft</code></span> mode for faster compilation. Use this
 command when you add a new citation:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb71'><a id='x4-37027r1'></a>$ make4ht filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb74'><a id='x4-37027r1'></a>$ make4ht filename.tex</pre>
 
 </figure>
 <!--  l. 208  --><p class='indent'>   In other cases, when you just added normal text, you can compile the file faster
 using the draft mode:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb72'><a id='x4-37030r1'></a>$ make4ht -m draft filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb75'><a id='x4-37030r1'></a>$ make4ht -m draft filename.tex</pre>
 
 </figure>
-                                                                  
-
-                                                                  
 <!--  l. 215  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='r'><span class='titlemark'>3.6.3   </span> <a id='x4-380003.6.3'></a>R</h4>
