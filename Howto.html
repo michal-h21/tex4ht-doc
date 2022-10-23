@@ -576,7 +576,8 @@ provides.
 <pre class='fancyvrb' id='fancyvrb63'><a id='x4-31033r1'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>img </span><span class='textcolor-387f38'>style</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'width:50%' </span><span class='textcolor-387f38'>alt</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'PIC' </span><span class='textcolor-387f38'>src</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'example-image.png' </span><span class='textcolor-878787'>/&gt;</span></pre>
 
 </figure>
-<!--  l. 55  --><p class='indent'>   To disable setting of the image dimensions in HTML code completely use the
+<!--  l. 55  --><p class='indent'>   You can also require the above method using the <span class='emph'>Gin-percent</span> option.
+</p><!--  l. 58  --><p class='indent'>   To disable setting of the image dimensions in HTML code completely use the
 following configuration:
 </p>   
 <figure class='texsource' role='doc-example'>
@@ -590,15 +591,15 @@ following configuration:
 <a id='x4-31057r8'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
-<!--  l. 69  --><p class='indent'>   This configuration uses CSS to set the maximum image dimension. This ensures
+<!--  l. 72  --><p class='indent'>   This configuration uses CSS to set the maximum image dimension. This ensures
 that the image is donwsized on devices smaller than is the actual image
 size.
-</p><!--  l. 73  --><p class='noindent'>
+</p><!--  l. 76  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='change-images-alternative-text'><span class='titlemark'>3.3.4   </span> <a id='x4-320003.3.4'></a>Change image’s alternative text</h4>
-<!--  l. 75  --><p class='noindent'>The <code class='texttt'>Graphicx</code> package recently added alternative text support, which can be used to
+<!--  l. 78  --><p class='noindent'>The <code class='texttt'>Graphicx</code> package recently added alternative text support, which can be used to
 describe the image. This is necessary for the accessibility purposes.
-</p><!--  l. 79  --><p class='indent'>   If you use an older system, without support for this attribute, you can use the
+</p><!--  l. 82  --><p class='indent'>   If you use an older system, without support for this attribute, you can use the
 following example to define it yourself, and use it with the <code class='texttt'>\includegraphics</code>
 command. The attribute is named <code class='texttt'>alt</code>. Here is a sample file that shows how to do
 that:
@@ -613,22 +614,22 @@ that:
 <a id='x4-32014r7'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\includegraphics</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>[alt={alt tags, information}]</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>example-image</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x4-32016r8'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\end</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span></pre>
 </figure>
-<!--  l. 86  --><p class='indent'>   The <code class='texttt'>\define@key{Gin}{alt}{}</code> command defines a dummy command that is
+<!--  l. 89  --><p class='indent'>   The <code class='texttt'>\define@key{Gin}{alt}{}</code> command defines a dummy command that is
 used by regular LaTeX. We need to redefine this key for <code class='texttt'>TeX4ht</code>, so it uses the
 configuration that can specify the image alternative text, <code class='texttt'>GraphicsAlt</code>.
 </p>   
 <figure class='texsource' role='doc-example'>
+                                                                  
+
+                                                                  
 <pre class='fancyvrb' id='fancyvrb66'><a id='x4-32018r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x4-32020r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatletter</span></span> 
 <a id='x4-32022r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\define</span></span><span class='rm-lmtt-10'>@key</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>alt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>GraphicsAlt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>#1</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}</span></span> 
 <a id='x4-32024r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatother</span></span> 
 <a id='x4-32026r5'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x4-32028r6'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\EndPreamble</span></span></pre>
-                                                                  
-
-                                                                  
 </figure>
-<!--  l. 92  --><p class='indent'>   The resulting HTML file now contains image with the <code class='texttt'>alt</code> attribute:
+<!--  l. 95  --><p class='indent'>   The resulting HTML file now contains image with the <code class='texttt'>alt</code> attribute:
 </p>   
 <figure class='htmlsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb67'><a id='x4-32030r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--  l. 7  --&gt;</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>img</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>alt</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>alt tags, information</span><span class='ts1-lmtt10-'>'</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>src</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span> <span class='textcolor-878787'><span class='rm-lmtt-10'>/&gt;</span></span> 
