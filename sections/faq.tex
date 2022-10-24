@@ -27,6 +27,15 @@ channels:
 \section{Compilation Errors}
 \label{faq:compilation_errors}
 
+In the case of error, always try to run \makefourht\ in the debugging mode. It will provide the full terminal output,
+and stop on errors:
+
+\begin{shellcommand}
+$ make4ht -a debug foo.tex
+\end{shellcommand}
+
+In many cases, fix of the first error can resolve the following errors.
+
 
 \begin{issue}{Packages that cause issues}
 \texfourht\ can sometimes clash with other packages. If you don't need features
