@@ -31,3 +31,35 @@ You can use \verb|Make:xindex| or \verb|Make:xindy| in place of \verb|Make:makei
 As there are no page numbers in XML and HTML, each \cmd{index} command produces unique
 number, and destination to the backlink from the index.
 
+
+For multiple indices, you can multiple calls to indexing commands. For example:
+
+\begin{texsource}
+\documentclass{book}
+\usepackage{imakeidx}
+\makeindex
+\makeindex[name=foo,title=Test]
+
+\begin{document}
+Test1\index{Test1}
+Test2\index[foo]{Test2}
+\newpage
+Test3\index{Test3}
+Test4\index[foo]{Test4}.
+And Test1\index{Test1} again.
+
+\printindex
+\printindex[foo]
+\end{document}
+\end{texsource}
+
+This example contains two indices. The \verb|foo| index needs an extra 
+indexing call:
+
+\begin{luasource}
+Make:htlatex {}
+Make:xindy {}
+Make:xindy {idxfile = "foo.idx"}
+Make:htlatex {}
+\end{luasource}
+
