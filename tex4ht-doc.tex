@@ -149,38 +149,7 @@ in the MathML mode, also cross-referencing should work better.
 \subsection{Indexing}
 \label{sec:indexing}
 
-\makefourht\ supports Makeindex, Xindy and Xindex indexing processors. 
-You need to use a build file that calls them explicitly. The intermediate
-file with indexing information uses special format with \texfourht, so 
-it is not possible to just call these commands from the command line.
-\makefourht\ uses some pre-processing and post-processing to make the indexing
-work correctly.
-
-Here is a simple example:
-
-\begin{texsource}
-\documentclass{article}
-\usepackage{makeidx}
-\makeindex
-\begin{document}
-Hello\index{hello} world\index{world}
-\printindex
-\end{document}
-\end{texsource}
-
-This file can be compiled using the following build file, \file{build.lua}:
-
-\begin{luasource}
-Make:htlatex {}
-Make:makeindex {}
-Make:htlatex{}
-\end{luasource}
-
-You can use \verb|Make:xindex| or \verb|Make:xindy| in place of \verb|Make:makeindex|.
-
-As there are no page numbers in XML and HTML, each \cmd{index} command produces unique
-number, and destination to the backlink from the index.
-
+\input{howto/indexing}
 
 \subsection{Bibliographies}
 
