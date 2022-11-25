@@ -687,12 +687,12 @@ necessary for the correct Plain TeX support.
 <!--  l. 149  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='indexing'><span class='titlemark'>3.6.1   </span> <a id='x4-360003.6.1'></a>Indexing</h4>
-<!--  l. 152  --><p class='noindent'><code class='texttt'>make4ht</code> supports Makeindex, Xindy and Xindex indexing processors. You need to
+<!--  l. 2  --><p class='noindent'><code class='texttt'>make4ht</code> supports Makeindex, Xindy and Xindex indexing processors. You need to
 use a build file that calls them explicitly. The intermediate file with indexing
 information uses special format with <code class='texttt'>TeX4ht</code>, so it is not possible to just call these
 commands from the command line. <code class='texttt'>make4ht</code> uses some pre-processing and
 post-processing to make the indexing work correctly.
-</p><!--  l. 159  --><p class='indent'>   Here is a simple example:
+</p><!--  l. 9  --><p class='indent'>   Here is a simple example:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb71'><a id='x4-36009r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>article<span class='textcolor-387f38'>}</span> 
@@ -704,7 +704,7 @@ post-processing to make the indexing work correctly.
 <a id='x4-36021r7'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
-<!--  l. 171  --><p class='indent'>   This file can be compiled using the following build file, <code class='texttt'>build.lua</code>:
+<!--  l. 21  --><p class='indent'>   This file can be compiled using the following build file, <code class='texttt'>build.lua</code>:
 </p>   
 <figure class='luasource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb72'><a id='x4-36026r1'></a>Make<span class='textcolor-878787'>:</span>htlatex <span class='textcolor-878787'>{}</span> 
@@ -712,17 +712,52 @@ post-processing to make the indexing work correctly.
 <a id='x4-36030r3'></a>Make<span class='textcolor-878787'>:</span>htlatex<span class='textcolor-878787'>{}</span></pre>
 
 </figure>
-<!--  l. 179  --><p class='indent'>   You can use <span class='obeylines-h'><code class='verb'>Make:xindex</code></span> or <span class='obeylines-h'><code class='verb'>Make:xindy</code></span> in place of <span class='obeylines-h'><code class='verb'>Make:makeindex</code></span>.
-</p><!--  l. 181  --><p class='indent'>   As there are no page numbers in XML and HTML, each <span class='textbf'><code class='texttt'>\index</code></span> command
+<!--  l. 29  --><p class='indent'>   You can use <span class='obeylines-h'><code class='verb'>Make:xindex</code></span> or <span class='obeylines-h'><code class='verb'>Make:xindy</code></span> in place of <span class='obeylines-h'><code class='verb'>Make:makeindex</code></span>.
+</p><!--  l. 31  --><p class='indent'>   As there are no page numbers in XML and HTML, each <span class='textbf'><code class='texttt'>\index</code></span> command
 produces unique number, and destination to the backlink from the index.
-</p><!--  l. 185  --><p class='noindent'>
+</p><!--  l. 35  --><p class='indent'>   For multiple indices, you can multiple calls to indexing commands. For
+example:
+</p>   
+<figure class='texsource' role='doc-example'>
+<pre class='fancyvrb' id='fancyvrb73'><a id='x4-36048r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>book<span class='textcolor-387f38'>}</span> 
+<a id='x4-36050r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>{</span>imakeidx<span class='textcolor-387f38'>}</span> 
+<a id='x4-36052r3'></a><span class='textcolor-2838af'>\makeindex</span> 
+<a id='x4-36054r4'></a><span class='textcolor-2838af'>\makeindex</span><span class='textcolor-387f38'>[name=foo,title=Test]</span> 
+<a id='x4-36056r5'></a> 
+<a id='x4-36058r6'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
+<a id='x4-36060r7'></a>Test1<span class='textcolor-2838af'>\index</span><span class='textcolor-387f38'>{</span>Test1<span class='textcolor-387f38'>}</span> 
+<a id='x4-36062r8'></a>Test2<span class='textcolor-2838af'>\index</span><span class='textcolor-387f38'>[foo]{</span>Test2<span class='textcolor-387f38'>}</span> 
+<a id='x4-36064r9'></a><span class='textcolor-2838af'>\newpage</span> 
+<a id='x4-36066r10'></a>Test3<span class='textcolor-2838af'>\index</span><span class='textcolor-387f38'>{</span>Test3<span class='textcolor-387f38'>}</span> 
+<a id='x4-36068r11'></a>Test4<span class='textcolor-2838af'>\index</span><span class='textcolor-387f38'>[foo]{</span>Test4<span class='textcolor-387f38'>}</span>. 
+<a id='x4-36070r12'></a>And Test1<span class='textcolor-2838af'>\index</span><span class='textcolor-387f38'>{</span>Test1<span class='textcolor-387f38'>}</span> again. 
+<a id='x4-36072r13'></a> 
+<a id='x4-36074r14'></a><span class='textcolor-2838af'>\printindex</span> 
+<a id='x4-36076r15'></a><span class='textcolor-2838af'>\printindex</span><span class='textcolor-387f38'>[foo]</span> 
+<a id='x4-36078r16'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
+
+</figure>
+<!--  l. 56  --><p class='indent'>   This example contains two indices. The <span class='obeylines-h'><code class='verb'>foo</code></span> index needs an extra indexing
+call:
+</p>   
+<figure class='luasource' role='doc-example'>
+                                                                  
+
+                                                                  
+<pre class='fancyvrb' id='fancyvrb74'><a id='x4-36084r1'></a>Make<span class='textcolor-878787'>:</span>htlatex <span class='textcolor-878787'>{}</span> 
+<a id='x4-36086r2'></a>Make<span class='textcolor-878787'>:</span>xindy <span class='textcolor-878787'>{}</span> 
+<a id='x4-36088r3'></a>Make<span class='textcolor-878787'>:</span>xindy <span class='textcolor-878787'>{</span>idxfile <span class='textcolor-656565'>= </span><span class='textcolor-b73838'>"foo.idx"</span><span class='textcolor-878787'>}</span> 
+<a id='x4-36090r4'></a>Make<span class='textcolor-878787'>:</span>htlatex <span class='textcolor-878787'>{}</span></pre>
+
+</figure>
+<!--  l. 154  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='bibliographies'><span class='titlemark'>3.6.2   </span> <a id='x4-370003.6.2'></a>Bibliographies</h4>
-<!--  l. 187  --><p class='noindent'>You can use either <span class='obeylines-h'><code class='verb'>Make:bibtex</code></span> or <span class='obeylines-h'><code class='verb'>Make:biber</code></span> in a build file to compile your
+<!--  l. 156  --><p class='noindent'>You can use either <span class='obeylines-h'><code class='verb'>Make:bibtex</code></span> or <span class='obeylines-h'><code class='verb'>Make:biber</code></span> in a build file to compile your
 bibliography. The following build file is meant for use with BibLaTeX.
 </p>   
 <figure class='luasource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb73'><a id='x4-37010r1'></a><span class='textcolor-2838af'>if</span> mode<span class='textcolor-656565'>==</span><span class='textcolor-b73838'>"draft" </span><span class='textcolor-2838af'>then</span> 
+<pre class='fancyvrb' id='fancyvrb75'><a id='x4-37010r1'></a><span class='textcolor-2838af'>if</span> mode<span class='textcolor-656565'>==</span><span class='textcolor-b73838'>"draft" </span><span class='textcolor-2838af'>then</span> 
 <a id='x4-37012r2'></a>  Make<span class='textcolor-878787'>:</span>htlatex <span class='textcolor-878787'>{}</span> 
 <a id='x4-37014r3'></a><span class='textcolor-2838af'>else</span> 
 <a id='x4-37016r4'></a>  Make<span class='textcolor-878787'>:</span>htlatex <span class='textcolor-878787'>{}</span> 
@@ -730,33 +765,30 @@ bibliography. The following build file is meant for use with BibLaTeX.
 <a id='x4-37020r6'></a>  Make<span class='textcolor-878787'>:</span>htlatex<span class='textcolor-878787'>{}</span> 
 <a id='x4-37022r7'></a>  Make<span class='textcolor-878787'>:</span>htlatex<span class='textcolor-878787'>{}</span> 
 <a id='x4-37024r8'></a><span class='textcolor-2838af'>end</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
-<!--  l. 201  --><p class='indent'>   This build file also supports the <span class='obeylines-h'><code class='verb'>draft</code></span> mode for faster compilation. Use this
+<!--  l. 170  --><p class='indent'>   This build file also supports the <span class='obeylines-h'><code class='verb'>draft</code></span> mode for faster compilation. Use this
 command when you add a new citation:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb74'><a id='x4-37027r1'></a>$ make4ht filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb76'><a id='x4-37027r1'></a>$ make4ht filename.tex</pre>
 
 </figure>
-<!--  l. 208  --><p class='indent'>   In other cases, when you just added normal text, you can compile the file faster
+<!--  l. 177  --><p class='indent'>   In other cases, when you just added normal text, you can compile the file faster
 using the draft mode:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb75'><a id='x4-37030r1'></a>$ make4ht -m draft filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb77'><a id='x4-37030r1'></a>$ make4ht -m draft filename.tex</pre>
 
 </figure>
-<!--  l. 215  --><p class='noindent'>
+<!--  l. 184  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='r'><span class='titlemark'>3.6.3   </span> <a id='x4-380003.6.3'></a>R</h4>
-<!--  l. 217  --><p class='noindent'>The <span class='obeylines-h'><code class='verb'>preprocess_input</code></span> <code class='texttt'>make4ht</code> extension supports
-</p><!--  l. 219  --><p class='noindent'>
+<!--  l. 186  --><p class='noindent'>The <span class='obeylines-h'><code class='verb'>preprocess_input</code></span> <code class='texttt'>make4ht</code> extension supports
+</p><!--  l. 188  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='markdown'><span class='titlemark'>3.6.4   </span> <a id='x4-390003.6.4'></a>Markdown</h4>
-<!--  l. 220  --><p class='noindent'>
+<!--  l. 189  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='pythontex'><span class='titlemark'>3.6.5   </span> <a id='x4-400003.6.5'></a>PythonTeX</h4>
                                                                   
