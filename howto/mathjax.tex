@@ -187,3 +187,19 @@ whole contents, including the \verb|dgroup*| environment, to the HTML file. But 
 provide MathJax configuration for both of these environments, as they are not supported by default.
 
 
+\paragraph{Math inside TikZ pictures}
+
+When you use math in pitcture environments, for example TikZ pictures, you need to restore the original
+meanings of math environments. This can be done using the \verb|\RestoreMathJaxEnvironments| command
+at the beginning of the environment. For example, to restore them for any environment that uses TikZ,
+use this configuration file:
+
+\begin{texsource}
+\Preamble{xhtml}
+\tikzset{every picture/.append code={\RestoreMathJaxEnvironments}}
+% you can also use LaTeX hooks:
+\AddToHook{env/foopicture/begin}{\RestoreMathJaxEnvironments}
+\begin{document}
+\EndPreamble
+\end{texsource}
+
