@@ -124,6 +124,8 @@
 
 
 
+
+
 <span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
 
 
@@ -151,14 +153,14 @@ convert as images or to split sections as separate HTML pages.
 <!--  l. 14  --><p class='indent'>   The options may be defined in the <code class='texttt'>.4ht</code> files and may depend on the output
 format, so it is not feasible to provide their full list. Most of the following options
 work only in the <code class='texttt'>HTML</code> output.
-</p><!--  l. 18  --><p class='indent'>   There are several ways how to pass the options to <code class='texttt'>TeX4ht</code>. The non-recommended
-way is to pass them as options to <code class='texttt'>tex4ht.sty</code> using <code class='texttt'>\usepackage</code> command in the
-TeX file.
-</p>
                                                                   
 
                                                                   
-<figure class='texsource' role='doc-example'>   
+</p><!--  l. 18  --><p class='indent'>   There are several ways how to pass the options to <code class='texttt'>TeX4ht</code>. The non-recommended
+way is to pass them as options to <code class='texttt'>tex4ht.sty</code> using <code class='texttt'>\usepackage</code> command in the
+TeX file.
+</p>   
+<figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb92'><a id='x7-51005r1'></a>... 
 <a id='x7-51007r2'></a><span class='textcolor-2838af'>\usepackage</span><span class='textcolor-387f38'>[xhtml,option1,option2]{</span>tex4ht<span class='textcolor-387f38'>}</span> 
 <a id='x7-51009r3'></a>...</pre>
@@ -203,6 +205,9 @@ files.
 </dt><dd class='description'>
 <!--  l. 72  --><p class='noindent'>to avoid <span class='obeylines-h'><code class='verb'>xtpipes</code></span> post-processing the output. This might be useful for
 Docbook <code class='texttt'>XML</code> or ODT output.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -212,9 +217,6 @@ Docbook <code class='texttt'>XML</code> or ODT output.
 </dt><dd class='description'>   
 <!--  l. 79  --><p class='noindent'>pagination shall be obtained through the option <span class='obeylines-h'><code class='verb'>0</code></span> or <span class='obeylines-h'><code class='verb'>1</code></span>, at locations marked
 with <span class='obeylines-h'><code class='verb'>\PageBreak</code></span>.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -274,6 +276,9 @@ subsubsections and 6 at paragraphs.
 </p>
 </dt><dd class='description'>
 <!--  l. 101  --><p class='noindent'>don’t use frames for text alignment environments in the ODT output.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -283,9 +288,6 @@ subsubsections and 6 at paragraphs.
 </dt><dd class='description'>
 <!--  l. 104  --><p class='noindent'>Option   to   choose   positioned   math.   Example:   <span class='obeylines-h'><code class='verb'>\def\({\PMath$}</code></span>;
 <span class='obeylines-h'><code class='verb'>\def\){$\EndPMath}</code></span>; <span class='obeylines-h'><code class='verb'>\def\[{\PMath$$}</code></span>; <span class='obeylines-h'><code class='verb'>\def\]{$$\EndPMath}</code></span>.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -316,7 +318,7 @@ subsubsections and 6 at paragraphs.
 <!--  l. 116  --><p class='noindent'>
 <span class='ec-lmbx-10'>_13</span> 
 </p>
-</dt><dd class='description'> 
+</dt><dd class='description'>
 <!--  l. 116  --><p class='noindent'>option for active subscript character.
 </p>     
 </dd>
@@ -343,6 +345,9 @@ pictures for some math accents.
 </p>
 </dt><dd class='description'>
 <!--  l. 126  --><p class='noindent'>Option <span class='obeylines-h'><code class='verb'>bibtex2</code></span> requires compilation of <span class='obeylines-h'><code class='verb'>\jobname j.aux</code></span> with bibtex.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -352,9 +357,6 @@ pictures for some math accents.
 </dt><dd class='description'>
 <!--  l. 131  --><p class='noindent'>for alternate character set, use the command line option <span class='obeylines-h'><code class='verb'>charset=...</code></span>
 (e.g., <span class='obeylines-h'><code class='verb'>charset=utf-8</code></span>).
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -416,6 +418,9 @@ truncating.
 </dt><dd class='description'>
 <!--  l. 164  --><p class='noindent'>for enumerated list elements that keep the list couter value. This will use
 the description list like <span class='obeylines-h'><code class='verb'>&lt;dt&gt;...&lt;/dt&gt;</code></span> for the list counter.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -423,9 +428,6 @@ the description list like <span class='obeylines-h'><code class='verb'>&lt;dt&gt
 <span class='ec-lmbx-10'>enumerate-</span> 
 </p>
 </dt><dd class='description'>
-                                                                  
-
-                                                                  
 <!--  l. 168  --><p class='noindent'>for  enumerated  list  element’s  <span class='obeylines-h'><code class='verb'>&lt;li&gt;</code></span>’s  with  value  attributes,  use  this
 command line option. This will be an ordered list with the value of list
 counter provided as an attribute namely, <span class='obeylines-h'><code class='verb'>value</code></span> of the <span class='obeylines-h'><code class='verb'>&lt;li&gt;</code></span> element.
@@ -486,6 +488,9 @@ font=-2).
 </p>
 </dt><dd class='description'>
 <!--  l. 188  --><p class='noindent'>for frames support. <span class='obeylines-h'><code class='verb'>frames</code></span> is also valid option for frames support.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -494,9 +499,6 @@ font=-2).
 </p>
 </dt><dd class='description'>
 <!--  l. 191  --><p class='noindent'>for content, <code class='texttt'>TOC</code> and footnotes in three frames.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -555,6 +557,9 @@ of pixels in the bitmaps (e.g., 110).
 </p>
 </dt><dd class='description'>
 <!--  l. 227  --><p class='noindent'>for <span class='obeylines-h'><code class='verb'>image-maps</code></span> support.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -563,9 +568,6 @@ of pixels in the bitmaps (e.g., 110).
 </p>
 </dt><dd class='description'>
 <!--  l. 229  --><p class='noindent'>for <span class='emph'>n</span>-column index, use the command line option, <span class='obeylines-h'><code class='verb'>index=n</code></span> (e.g., index=2).
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -623,6 +625,9 @@ option.
 </p>
 </dt><dd class='description'> 
 <!--  l. 249  --><p class='noindent'>for bitmaps of pictures in <span class='obeylines-h'><code class='verb'>.jpg</code></span> format, use this option.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -631,9 +636,6 @@ option.
 </p>
 </dt><dd class='description'>  
 <!--  l. 252  --><p class='noindent'>for enumerated list elements li’s with value attributes.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -691,6 +693,9 @@ option.
 </p>
 </dt><dd class='description'>
 <!--  l. 271  --><p class='noindent'>for pop ups on mouse over.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -699,9 +704,6 @@ option.
 </p>
 </dt><dd class='description'>
 <!--  l. 273  --><p class='noindent'>alternative configurations for accented characters.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -758,8 +760,11 @@ environment.
 <!--  l. 296  --><p class='noindent'>
 <span class='ec-lmbx-10'>no^</span> 
 </p>
-</dt><dd class='description'>
+</dt><dd class='description'> 
 <!--  l. 296  --><p class='noindent'>for non-active <span class='obeylines-h'><code class='verb'>^</code></span> (superscript), use the option <span class='obeylines-h'><code class='verb'>no^</code></span>.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -768,9 +773,6 @@ environment.
 </p>
 </dt><dd class='description'>
 <!--  l. 299  --><p class='noindent'>for non-active <span class='obeylines-h'><code class='verb'>_</code></span> (subscript command), use the command line option, <span class='obeylines-h'><code class='verb'>no_</code></span>.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -831,6 +833,9 @@ instructions are present in the sources.
 </p>
 </dt><dd class='description'>
 <!--  l. 324  --><p class='noindent'>for indented paragraphs, without blank spaces.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -839,9 +844,6 @@ instructions are present in the sources.
 </p>
 </dt><dd class='description'>
 <!--  l. 326  --><p class='noindent'>for pictorial RL.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -906,6 +908,9 @@ instructions are present in the sources.
 </p>
 </dt><dd class='description'>
 <!--  l. 342  --><p class='noindent'>for bitmap fameboxes.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -914,9 +919,6 @@ instructions are present in the sources.
 </p>
 </dt><dd class='description'>
 <!--  l. 344  --><p class='noindent'>for bitmapped longtable.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -976,6 +978,9 @@ recommended).
 </p>
 </dt><dd class='description'>
 <!--  l. 374  --><p class='noindent'>for links into captions, instead of flat heads, use this option.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -984,9 +989,6 @@ recommended).
 </p>
 </dt><dd class='description'>
 <!--  l. 377  --><p class='noindent'>to reverse the direction of Hebrew words, use this option.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -1044,6 +1046,9 @@ recommended).
 </p>
 </dt><dd class='description'>
 <!--  l. 397  --><p class='noindent'>for tab-based layout of equation environment, use this option.
+                                                                  
+
+                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -1053,9 +1058,6 @@ recommended).
 </dt><dd class='description'>
 <!--  l. 402  --><p class='noindent'>for  mouseover  tracing  of  compilation,  use  the  command  line  option,
 <span class='obeylines-h'><code class='verb'>trace-onmo</code></span>.
-                                                                  
-
-                                                                  
 </p>     
 </dd>
 <dt class='description'>
@@ -1107,6 +1109,9 @@ can be used to fine tune encoding.
 <!--  l. 430  --><p class='noindent'>See previous entry.
 </p>     
 </dd></dl>
+                                                                  
+
+                                                                  
 <!--  l. 436  --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='options-for-the-odt-output'><span class='titlemark'>6.2   </span> <a id='x7-530006.2'></a>Options for the ODT output</h3>
@@ -1115,9 +1120,6 @@ can be used to fine tune encoding.
 <span class='ec-lmbx-10'>bib-</span> 
 </p>
 </dt><dd class='description'>
-                                                                  
-
-                                                                  
 <!--  l. 439  --><p class='noindent'>produces degraded bibliography that should be friendlier for conversion to
 Word.
 </p>     
@@ -1176,6 +1178,9 @@ Word.
 </p>
 </dt><dd class='description'>
 <!--  l. 446  --><p class='noindent'>request links from table of contents.</p></dd></dl>
+                                                                  
+
+                                                                  
                                                                   
 
                                                                   

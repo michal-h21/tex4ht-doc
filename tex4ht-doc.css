@@ -214,9 +214,6 @@ table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
 .hline hr, .cline hr{border:none;border-top:1px solid black;}
 .hline {border-top: 1px solid black;}
 .rotatebox{display: inline-block;}
-code.minted-inline{font-family:monospace,monospace;}
-pre.fancyvrb {white-space: pre-wrap; margin:0em;font-family:monospace,monospace;}
-.framedenv{border: 1px solid black;}
 .equation-star td{text-align:center; vertical-align:middle; }
 table.equation-star { width:100%; } 
 mtd.align-odd{margin-left:2em; text-align:right;}
@@ -228,6 +225,9 @@ div.longtable{text-align:center;}
 table.longtable{margin-left:auto; margin-right: auto;}
 caption.longtable .id{font-weight:bold;}
 .supertabular {text-align:center}
+code.minted-inline{font-family:monospace,monospace;}
+pre.fancyvrb {white-space: pre-wrap; margin:0em;font-family:monospace,monospace;}
+.framedenv{border: 1px solid black;}
 /* end css.sty */
 
 .textcolor-2838af{color:rgb(40,56,175);}

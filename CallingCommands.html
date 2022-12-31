@@ -124,6 +124,8 @@
 
 
 
+
+
 <span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
 
 
@@ -149,13 +151,13 @@ The conversion process used by <code class='texttt'>TeX4ht</code> involves sever
 <!--  l. 8  --><p class='indent'>   We provide a build script, called <code class='texttt'>make4ht</code>, which simplifies the process. There is
 also a variant of <code class='texttt'>make4ht</code>, <code class='texttt'>tex4ebook</code> for e-book production. See the chapter <a href='OutputFormats.html#output-formats'>Output
 Formats<!--  tex4ht:ref: sec:output-formats   --></a> for more information on output formats.
-</p>   
-<h3 class='sectionHead' id='-makeht-build-system'><span class='titlemark'>4.1   </span> <a id='x5-430004.1'></a><code class='texttt'>make4ht</code> Build System</h3>
-<!--  l. 17  --><p class='noindent'>The conversion command loads a script which takes on itself to invoke the different
-steps of the process, without user intervention. The command assumes the
+</p>
                                                                   
 
                                                                   
+<h3 class='sectionHead' id='-makeht-build-system'><span class='titlemark'>4.1   </span> <a id='x5-430004.1'></a><code class='texttt'>make4ht</code> Build System</h3>
+<!--  l. 17  --><p class='noindent'>The conversion command loads a script which takes on itself to invoke the different
+steps of the process, without user intervention. The command assumes the
 form:
 </p>   
 <figure class='shellcommand' role='doc-example'>
@@ -341,7 +343,7 @@ configuration files, named as <code class='texttt'>&lt;pkgname&gt;.4ht</code>. T
 commands provided by the packages, and insert special hooks, which are later filled
 with XML code for the output format.
 </p><!--  l. 178  --><p class='indent'>   To ensure that all packages are processed, <code class='texttt'>tex4ht.sty</code> needs to be loaded early,
-ideally before <span class='textbf'><code class='texttt'>\documentclass</code></span>.
+ideally before <span class='textbf'><code class='texttt'>∖documentclass</code></span>.
 </p><!--  l. 181  --><p class='indent'>   Result of the LaTeX run is a DVI file that contain document text and special
 instructions with XML code, or with requests for pictures. This file is then processed
 by the <code class='texttt'>tex4ht</code> command. It generates the output XML or HTML files and the IDV
@@ -353,7 +355,7 @@ file, which is then used for pictures.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb90'><a id='x5-49007r1'></a>latex      x            <span class='textcolor-656565'>(</span>or ‘tex x’<span class='textcolor-656565'>)</span> 
+<pre class='fancyvrb' id='fancyvrb90'><a id='x5-49007r1'></a>latex      x            <span class='textcolor-656565'>(</span>or tex x<span class='textcolor-656565'>)</span> 
 <a id='x5-49009r2'></a>latex      x 
 <a id='x5-49011r3'></a>latex      x 
 <a id='x5-49013r4'></a>tex4ht     x 
@@ -435,7 +437,7 @@ in the html files.
 </p>
 <!--  l. 238  --><p class='noindent'>This is a log file listing the pictures of x.idv, the png files that should
 be created, CSS information, and user directives introduced through the
-‘<code class='texttt'>\Needs{...}</code>’ command.
+<code class='texttt'>\Needs{...}</code> command.
                                                                   
 
                                                                   

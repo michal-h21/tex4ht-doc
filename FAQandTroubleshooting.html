@@ -124,6 +124,8 @@
 <span class='sectionToc'>9.3 <a href='#dom-processing-errors'>DOM Processing Errors</a></span>
 <span class='sectionToc'>9.4 <a href='#math-issues'>Math Issues</a></span>
 <span class='subsectionToc'>9.4.1 <a href='#problems-with-mathml'>Problems With <span class='emph'><code class='texttt'>MathML</code></span></a></span>
+<span class='sectionToc'>9.5 <a href='#issues-with-packages'>Issues With Packages</a></span>
+<span class='subsectionToc'>9.5.1 <a href='#hyperref-issues'>Hyperref Issues</a></span>
 <span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
 
 
@@ -325,9 +327,9 @@ element:
 code:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb170'><a id='x10-114041r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 27--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"indent" </span><span class='textcolor-878787'>&gt;   </span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>div </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"test"</span><span class='textcolor-878787'>&gt; </span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
+<pre class='fancyvrb' id='fancyvrb170'><a id='x10-114041r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 27--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"indent" </span><span class='textcolor-878787'>&gt;    </span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>div </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"test"</span><span class='textcolor-878787'>&gt; </span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
 <a id='x10-114043r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"cmti-12"</span><span class='textcolor-878787'>&gt;</span>world<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
-<a id='x10-114045r3'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;<span class='textit'>&lt;!--l. 30--&gt;</span>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"indent" </span><span class='textcolor-878787'>&gt;   </span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
+<a id='x10-114045r3'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;<span class='textit'>&lt;!--l. 30--&gt;</span>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"indent" </span><span class='textcolor-878787'>&gt;    </span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
 <a id='x10-114047r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"cmti-12"</span><span class='textcolor-878787'>&gt;</span>more paragraphs<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
 <a id='x10-114049r5'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>div</span><span class='textcolor-878787'>&gt;</span> 
 <a id='x10-114051r6'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
@@ -353,8 +355,8 @@ correct:
 </p>   
 <figure class='htmlsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb172'><a id='x10-114063r1'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>div </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'test'</span><span class='textcolor-878787'>&gt;</span> 
-<a id='x10-114065r2'></a><span class='textcolor-878787'><span class='textit'>&lt;!-- l. 28 --&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'indent'</span><span class='textcolor-878787'>&gt;   </span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'cmti-12'</span><span class='textcolor-878787'>&gt;</span>world<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
-<a id='x10-114067r3'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;<span class='textit'>&lt;!-- l. 30 --&gt;</span>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'indent'</span><span class='textcolor-878787'>&gt;   </span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'cmti-12'</span><span class='textcolor-878787'>&gt;</span>more paragraphs<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
+<a id='x10-114065r2'></a><span class='textcolor-878787'><span class='textit'>&lt;!-- l. 28 --&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'indent'</span><span class='textcolor-878787'>&gt;    </span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'cmti-12'</span><span class='textcolor-878787'>&gt;</span>world<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
+<a id='x10-114067r3'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;<span class='textit'>&lt;!-- l. 30 --&gt;</span>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'indent'</span><span class='textcolor-878787'>&gt;    </span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'cmti-12'</span><span class='textcolor-878787'>&gt;</span>more paragraphs<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
 <a id='x10-114069r4'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;&lt;/</span><span class='textcolor-2838af'>div</span><span class='textcolor-878787'>&gt;</span></pre>
 
 </figure>
@@ -369,10 +371,10 @@ correct:
 <h4 class='subsectionHead' id='problems-with-mathml'><span class='titlemark'>9.4.1   </span> <a id='x10-1160009.4.1'></a>Problems With <span class='emph'><code class='texttt'>MathML</code></span></h4>
 <!--  l. 218  --><p class='noindent'><span class='textbf'>Single delimiters</span> Use of single delimiters like <code class='texttt'>$\langle$</code> may result in
 invalid <code class='texttt'>MathML</code> code. <code class='texttt'>TeX4ht</code> can try to fix that using the <span class='emph'>mathml-</span> option.
-</p><!--  l. 224  --><p class='noindent'><span class='textbf'>Use of <span class='textbf'><code class='texttt'>\hbox</code></span> in math environments</span>
-</p><!--  l. 226  --><p class='indent'>   Don’t use the <span class='textbf'><code class='texttt'>\hbox</code></span> command inside math environments. The following code
+</p><!--  l. 224  --><p class='noindent'><span class='textbf'>Use of <span class='textbf'><code class='texttt'>∖hbox</code></span> in math environments</span>
+</p><!--  l. 226  --><p class='indent'>   Don’t use the <span class='textbf'><code class='texttt'>∖hbox</code></span> command inside math environments. The following code
 results in DOM error and wrong rendering by MathML processors. You can fix this
-by using <span class='textbf'><code class='texttt'>\mbox</code></span> instead.
+by using <span class='textbf'><code class='texttt'>∖mbox</code></span> instead.
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb173'><a id='x10-116007r1'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>equation*<span class='textcolor-387f38'>}</span> 
@@ -380,6 +382,33 @@ by using <span class='textbf'><code class='texttt'>\mbox</code></span> instead.
 <a id='x10-116011r3'></a>      <span class='textcolor-2838af'>\frac</span><span class='textcolor-387f38'>{</span>k<span class='textcolor-387f38'>}{</span>2<span class='textcolor-387f38'>^{</span>n<span class='textcolor-387f38'>}}</span>, <span class='textcolor-387f38'>&amp; </span><span class='textcolor-2838af'>\hbox</span><span class='textcolor-387f38'>{</span> if <span class='textcolor-b73838'>\(</span><span class='textcolor-af3f3f'>\frac</span><span class='textcolor-387f38'>{k</span><span class='textcolor-656565'>-</span><span class='textcolor-444444'>1</span><span class='textcolor-387f38'>}{</span><span class='textcolor-444444'>2</span><span class='textcolor-387f38'>^{n}}</span><span class='textcolor-af3f3f'>\leq\tau</span><span class='textcolor-387f38'> &lt; </span><span class='textcolor-af3f3f'>\frac</span><span class='textcolor-387f38'>{k}{</span><span class='textcolor-444444'>2</span><span class='textcolor-387f38'>^{n}}</span><span class='textcolor-b73838'>\)</span>.<span class='textcolor-387f38'>}</span> 
 <a id='x10-116013r4'></a>  <span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>array<span class='textcolor-387f38'>}</span> 
 <a id='x10-116015r5'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>equation*<span class='textcolor-387f38'>}</span></pre>
+
+</figure>
+<!--  l. 239  --><p class='noindent'>
+</p>   
+<h3 class='sectionHead' id='issues-with-packages'><span class='titlemark'>9.5   </span> <a id='x10-1170009.5'></a>Issues With Packages</h3>
+<!--  l. 242  --><p class='noindent'>
+</p>   
+<h4 class='subsectionHead' id='hyperref-issues'><span class='titlemark'>9.5.1   </span> <a id='x10-1180009.5.1'></a>Hyperref Issues</h4>
+<!--  l. 244  --><p class='noindent'><span class='textbf'>Fragile commands in captions</span> The <code class='texttt'>hyperref</code> package loads automatically also
+the <code class='texttt'>nameref</code> package. It then saves contents of section titles or captions in the
+auxilary file, so they can be then retrieved using the <span class='textbf'><code class='texttt'>∖nameref</code></span> command. This leads
+to various problems with the <span class='textbf'><code class='texttt'>∖caption</code></span> command, where some commands, such as
+<span class='textbf'><code class='texttt'>∖index</code></span> or <span class='textbf'><code class='texttt'>∖label</code></span> could cause fatal errors.
+</p><!--  l. 251  --><p class='indent'>   We fixed these problematic commands, but it is possible that you will experience
+issues also with other commands. You can declare these commands to do nothing, or
+to be passed literaly to the auxilary file, using this configuration:
+</p>   
+<figure class='texsource' role='doc-example'>
+                                                                  
+
+                                                                  
+<pre class='fancyvrb' id='fancyvrb174'><a id='x10-118008r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>CaptionCommandsFix<span class='textcolor-387f38'>}{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x10-118010r2'></a><span class='textcolor-878787'><span class='textit'>% pass \left unexpanded to the aux file</span></span> 
+<a id='x10-118012r3'></a><span class='textcolor-2838af'>\DeclareRobustCommand\left</span><span class='textcolor-387f38'>{}</span> 
+<a id='x10-118014r4'></a><span class='textcolor-878787'><span class='textit'>% disable \index</span></span> 
+<a id='x10-118016r5'></a><span class='textcolor-2838af'>\let\index\@</span>gobble<span class='textcolor-878787'><span class='textit'>%</span></span> 
+<a id='x10-118018r6'></a><span class='textcolor-387f38'>}</span></pre>
 
 </figure>
                                                                   

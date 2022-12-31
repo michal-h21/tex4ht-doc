@@ -124,6 +124,8 @@
 
 
 
+
+
 <span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
 
 
@@ -148,11 +150,11 @@
 <!--  l. 44  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='basics'><span class='titlemark'>3.1.1   </span> <a id='x4-170003.1.1'></a>Basics</h4>
-<!--  l. 46  --><p class='noindent'>By default, <code class='texttt'>TeX4ht</code> separates paragraphs by space. If you want to use text indenting
-instead, try the <span class='emph'>p-indent</span> option.
                                                                   
 
                                                                   
+<!--  l. 46  --><p class='noindent'>By default, <code class='texttt'>TeX4ht</code> separates paragraphs by space. If you want to use text indenting
+instead, try the <span class='emph'>p-indent</span> option.
 </p><!--  l. 48  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='css'><span class='titlemark'>3.1.2   </span> <a id='x4-180003.1.2'></a>CSS</h4>
@@ -201,10 +203,10 @@ quality.
 </p><!--  l. 94  --><p class='indent'>   For example, the following command should produce pictures in SVG:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb40'><a id='x4-21003r1'></a>$ make4ht foo.tex <span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
                                                                   
 
                                                                   
+<pre class='fancyvrb' id='fancyvrb40'><a id='x4-21003r1'></a>$ make4ht foo.tex <span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
 <!--  l. 100  --><p class='indent'>   See the <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code> Options<!--  tex4ht:ref: chap:options   --></a> chapter for other <span class='emph'>pic-…</span> options.
@@ -243,6 +245,9 @@ configuration.
 </p><!--  l. 27  --><p class='indent'>   The following example provides support for custom LaTeX macros.
 </p>   
 <figure class='texsource' role='doc-example'>
+                                                                  
+
+                                                                  
 <pre class='fancyvrb' id='fancyvrb43'><a id='x4-22019r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
 <a id='x4-22021r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>MathJaxConfig<span class='textcolor-387f38'>}{{</span> 
 <a id='x4-22023r3'></a>    tex: <span class='textcolor-387f38'>{</span> 
@@ -257,9 +262,6 @@ configuration.
 <a id='x4-22041r12'></a><span class='textcolor-387f38'>}}</span> 
 <a id='x4-22043r13'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
 <a id='x4-22045r14'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!--  l. 47  --><p class='indent'>   The configuration needs to be passed as a JavaScript object, this means that you
@@ -322,16 +324,19 @@ extra ones:
 MathJax has basic support for macro definition using the <span class='obeylines-h'><code class='verb'>\newcommand</code></span> command.
 You can put these definitions inside a math environment in the HTML page, and
 MathJax should be able to recognize these commands subsequently. You can use the
-<span class='textbf'><code class='texttt'>\Configure</code></span>{<span class='textit'>@BODY</span>} command to put it at the beginning of the document, but we
-provide an easier solution, <span class='textbf'><code class='texttt'>\Configure</code></span>{<span class='textit'>MathJaxMacros</span>}. This command expects
+<span class='textbf'><code class='texttt'>∖Configure</code></span>{<span class='textit'>@BODY</span>} command to put it at the beginning of the document, but we
+provide an easier solution, <span class='textbf'><code class='texttt'>∖Configure</code></span>{<span class='textit'>MathJaxMacros</span>}. This command expects
 path to a file with macro definitions for MathJax. The file needs to contain only
-definitions using <span class='textbf'><code class='texttt'>\newcommand</code></span>, <span class='textbf'><code class='texttt'>\def</code></span>, <span class='textbf'><code class='texttt'>\newenvironment</code></span> and few others. It cannot
+definitions using <span class='textbf'><code class='texttt'>∖newcommand</code></span>, <span class='textbf'><code class='texttt'>∖def</code></span>, <span class='textbf'><code class='texttt'>∖newenvironment</code></span> and few others. It cannot
 contain other commands, so for example inclusion of <code class='texttt'>.sty</code> files will probably not
 work.
 </p><!--  l. 115  --><p class='indent'>   Here is an example that reuses definitions in both PDF and MathJax
 modes:
 </p>   
 <figure class='texsource' role='doc-example'>
+                                                                  
+
+                                                                  
 <pre class='fancyvrb' id='fancyvrb46'><a id='x4-23009r1'></a><span class='textcolor-2838af'>\documentclass</span><span class='textcolor-387f38'>{</span>amsart<span class='textcolor-387f38'>}</span> 
 <a id='x4-23011r2'></a><span class='textcolor-2838af'>\input</span><span class='textcolor-387f38'>{</span>mymacros<span class='textcolor-387f38'>}</span> 
 <a id='x4-23013r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
@@ -339,12 +344,9 @@ modes:
 <a id='x4-23017r5'></a> p<span class='textcolor-387f38'>_{</span>i-1<span class='textcolor-387f38'>} </span><span class='textcolor-387f38'>&amp;</span>= -(p<span class='textcolor-387f38'>_{</span>i<span class='textcolor-387f38'>}</span>)' - <span class='textcolor-2838af'>\theta</span> p<span class='textcolor-387f38'>_</span>i  <span class='textcolor-2838af'>\myspace </span><span class='textcolor-2838af'>\text</span><span class='textcolor-387f38'>{</span>if<span class='textcolor-387f38'>} </span><span class='textcolor-2838af'>\hspace</span><span class='textcolor-387f38'>{</span>10pt<span class='textcolor-387f38'>}</span> i=n 
 <a id='x4-23019r6'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>align*<span class='textcolor-387f38'>}</span> 
 <a id='x4-23021r7'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
-<!--  l. 127  --><p class='indent'>   This file includes the <code class='texttt'>mymmacros.tex</code>, which contains a definition of the <span class='textbf'><code class='texttt'>\myspace</code></span>
+<!--  l. 127  --><p class='indent'>   This file includes the <code class='texttt'>mymmacros.tex</code>, which contains a definition of the <span class='textbf'><code class='texttt'>∖myspace</code></span>
 command:
 </p>   
 <figure class='texsource' role='doc-example'>
@@ -406,14 +408,14 @@ you will need to provide MathJax configuration for both of these environments, a
 they are not supported by default.
 </p>
 <!--  l. 190  --><p class='noindent'><span class='paragraphHead' id='math-inside-tikz-pictures'><a id='x4-25000'></a><span class='ec-lmbx-10'>Math inside TikZ pictures</span></span>
+                                                                  
+
+                                                                  
 When you use math in pitcture environments, for example TikZ pictures, you
 need to restore the original meanings of math environments. This can be done using
 the <span class='obeylines-h'><code class='verb'>\RestoreMathJaxEnvironments</code></span> command at the beginning of the environment.
 For example, to restore them for any environment that uses TikZ, use this
 configuration file:
-                                                                  
-
-                                                                  
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb51'><a id='x4-25008r1'></a><span class='textcolor-2838af'>\Preamble</span><span class='textcolor-387f38'>{</span>xhtml<span class='textcolor-387f38'>}</span> 
@@ -455,10 +457,10 @@ these operators. For example, instead of
 <!--  l. 15  --><p class='indent'>   use the following, with added group around the <code class='texttt'>\mathit</code> command:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb54'><a id='x4-27006r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>A_{</span><span class='textcolor-af3f3f'>\mathit</span><span class='textcolor-387f38'>{...}}</span><span class='textcolor-b73838'>$</span></pre>
                                                                   
 
                                                                   
+<pre class='fancyvrb' id='fancyvrb54'><a id='x4-27006r1'></a><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>A_{</span><span class='textcolor-af3f3f'>\mathit</span><span class='textcolor-387f38'>{...}}</span><span class='textcolor-b73838'>$</span></pre>
 
 </figure>
 <!--  l. 21  --><p class='indent'>   If you define custom commands in the document preamble, use <code class='texttt'>\sp</code> and <code class='texttt'>\sb</code>
@@ -649,8 +651,8 @@ configuration that can specify the image alternative text, <code class='texttt'>
 <!--  l. 95  --><p class='indent'>   The resulting HTML file now contains image with the <code class='texttt'>alt</code> attribute:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb68'><a id='x4-33030r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--  l. 7  --&gt;</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>img</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>alt</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>alt tags, information</span><span class='ts1-lmtt10-'>'</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>src</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span> <span class='textcolor-878787'><span class='rm-lmtt-10'>/&gt;</span></span> 
-<a id='x4-33032r2'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb68'><a id='x4-33030r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--  l. 7  --&gt;</span></span><span class='textcolor-878787'><span class='cmmi-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='cmmi-10'>&gt;&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>img</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>alt</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>alt tags, information</span><span class='ts1-lmtt10-'>'</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>src</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span> <span class='textcolor-878787'><span class='rm-lmtt-10'>/</span><span class='cmmi-10'>&gt;</span></span> 
+<a id='x4-33032r2'></a><span class='textcolor-878787'><span class='cmmi-10'>&lt;</span><span class='rm-lmtt-10'>/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='cmmi-10'>&gt;</span></span></pre>
 </figure>
 <!--  l. 142  --><p class='noindent'>
 </p>   
@@ -733,7 +735,7 @@ post-processing to make the indexing work correctly.
 
 </figure>
 <!--  l. 29  --><p class='indent'>   You can use <span class='obeylines-h'><code class='verb'>Make:xindex</code></span> or <span class='obeylines-h'><code class='verb'>Make:xindy</code></span> in place of <span class='obeylines-h'><code class='verb'>Make:makeindex</code></span>.
-</p><!--  l. 31  --><p class='indent'>   As there are no page numbers in XML and HTML, each <span class='textbf'><code class='texttt'>\index</code></span> command
+</p><!--  l. 31  --><p class='indent'>   As there are no page numbers in XML and HTML, each <span class='textbf'><code class='texttt'>∖index</code></span> command
 produces unique number, and destination to the backlink from the index.
 </p><!--  l. 35  --><p class='indent'>   For multiple indices, you can multiple calls to indexing commands. For
 example:
