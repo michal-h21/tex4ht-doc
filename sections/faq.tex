@@ -236,4 +236,30 @@ DOM error and wrong rendering by MathML processors. You can fix this by using \c
   
 \end{issue}
 
+\section{Issues With Packages}
+\label{faq:packages}
+
+\subsection{Hyperref Issues}
+
+\begin{issue}{Fragile commands in captions}
+The \package{hyperref} package loads automatically also the \package{nameref}
+package. It then saves contents of section titles or captions in the auxilary file, 
+so they can be then retrieved using the \cmd{nameref} command. This leads to various
+problems with the \cmd{caption} command, where some commands, such as \cmd{index} or
+\cmd{label} could cause fatal errors. 
+
+We fixed these problematic commands, but it is possible that you will experience
+issues also with other commands. You can declare these commands to do nothing, or 
+to be passed literaly to the auxilary file, using this configuration:
+
+\begin{texsource}
+\Configure{CaptionCommandsFix}{%
+% pass \left unexpanded to the aux file
+\DeclareRobustCommand\left{}
+% disable \index
+\let\index\@gobble%
+}
+\end{texsource}
+\end{issue}
+
 
