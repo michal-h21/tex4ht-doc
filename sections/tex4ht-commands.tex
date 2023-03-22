@@ -40,7 +40,21 @@ This command can be used in the private configuration files to test if a custom 
 This command requests an anchor that links to \verb|target-file#target-loc|, and marks the current location with the name \verb|‘cur-loc’|.
 
 The component in square brackets \texttt{‘[...]’} is optional when it is empty, 
-and the target file need not be mentioned if it is created from the current source file.
+the target file does not need to be specified if it will be created as part of
+the source file compilation. 
+
+For example, if we are creating separate HTML
+files for each chapter, we can use \texcommand{\Link} in this form:
+
+\begin{texsource}
+\chapter{First}
+\Link{secondlink}{firstlink}Go to second chapter\EndLink
+\chapter{Second}
+\Link{firstlink}{secondlink}Go to first chapter\EndLink
+\end{texsource}
+
+The link from the first chapter will lead correctly to the second, even though they are each in a different file.
+
 
 
 \DocCommand{LinkCommand} creates a \cmd{Link}\textit{-like} command. It has variable number for parameters:
