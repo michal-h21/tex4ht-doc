@@ -26,7 +26,7 @@ use the \package{l3fp} package to calculate the image dimensions in percents.
 \makeatletter
 \ExplSyntaxOn
 \Configure{Gin-dim}
-{style="width:\fp_eval:n{round(\Gin@req@width/\textwidth*100,2)}\%"}
+{style="width:\fp_eval:n{round(\Gin@req@width/\textwidth*100,2)}\char_generate:nn { `\% } { 12 }"}
 \ExplSyntaxOff
 \makeatother
 \begin{document}
@@ -39,6 +39,8 @@ This portion is then multiplied and rounded to get the correct percent value.
 The calculated value is used in the \verb|style| attribute of the generated \verb|<img>| element.
 The \package{l3fp} command \texcommand{\fp_eval:n} is used for the calculation. 
 \LaTeX\ 3 is part of \LaTeX\ kernel, so we don't need to require packages that it provides.
+
+Instead of a configuration, you can require this method using the \option{Gin-percent} option.
 
 The following example code:
 
