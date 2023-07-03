@@ -51,7 +51,7 @@ body{
     display:grid;
     grid-template-columns: 15rem 1fr;
   }
-  main.main-content{max-width:40rem;}
+  main.main-content, div.footnotes{max-width:40rem; grid-column: 2}
   nav.TOC{
     grid-row:1;
     min-height:100vh;
@@ -105,7 +105,7 @@ nav.TOC a, nav.TOC a:visited{
 /* It seems that dark background is better to my eyes */
 body{background-color:#B8CDA3;} 
 
-main.main-content{
+main.main-content, div.footnotes{
   background-color:white;
 }
 
