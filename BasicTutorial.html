@@ -161,7 +161,7 @@ best-supported conversion targets.
 <!--  l. 18  --><p class='noindent'>Conversion is invoked using the <code class='texttt'>make4ht</code> command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb1'><a id='x3-5003r1'></a>$ make4ht filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb1'><a id='x3-5003r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 25  --><p class='indent'>   Let us start with conversion of a simple LaTeX file to HTML with the following
@@ -177,7 +177,7 @@ LaTeX file:
 <!--  l. 30  --><p class='indent'>   You can compile it using the following command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb3'><a id='x3-5016r1'></a>$ make4ht -lm draft filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb3'><a id='x3-5016r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-lm<span class='textcolor-a88e28'> </span>draft<span class='textcolor-a88e28'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 36  --><p class='indent'>   The resulting HTML file contains the following code:
@@ -190,13 +190,13 @@ LaTeX file:
 is equal to the following:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb5'><a id='x3-5023r1'></a>$ make4ht -l -m draft filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb5'><a id='x3-5023r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-l<span class='textcolor-a88e28'> </span>-m<span class='textcolor-a88e28'> </span>draft<span class='textcolor-a88e28'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 46  --><p class='indent'>   You can also use the long options:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb6'><a id='x3-5026r1'></a>$ make4ht --lua --mode draft filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb6'><a id='x3-5026r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>--lua<span class='textcolor-a88e28'> </span>--mode<span class='textcolor-a88e28'> </span>draft<span class='textcolor-a88e28'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 52  --><p class='indent'>   What do these options mean?
@@ -227,7 +227,7 @@ to other formats using the <code class='texttt'>-f</code> option. For example, t
 OpenDocument Format, use the following:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb8'><a id='x3-5033r1'></a>$ make4ht -f odt filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb8'><a id='x3-5033r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-f<span class='textcolor-a88e28'> </span>odt<span class='textcolor-a88e28'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 85  --><p class='noindent'>
@@ -246,7 +246,7 @@ options. They can be passed as a first positional argument after filename to
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb9'><a id='x3-7003r1'></a>$ make4ht filename.tex <span class='textcolor-b73838'>"option1,option2"</span></pre>
+<pre class='fancyvrb' id='fancyvrb9'><a id='x3-7003r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>filename.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"option1,option2"</span></pre>
 
 </figure>
 <!--  l. 106  --><p class='indent'>   For example, <code class='texttt'>TeX4ht</code> produces one HTML file for a document, but each footnote
@@ -255,7 +255,7 @@ separate page for each chapter, with a list of footnotes at the end of these cha
 You can use the following options:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb10'><a id='x3-7006r1'></a>$ make4ht filename.tex <span class='textcolor-b73838'>"3,sec-filename,fn-in"</span></pre>
+<pre class='fancyvrb' id='fancyvrb10'><a id='x3-7006r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>filename.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"3,sec-filename,fn-in"</span></pre>
 
 </figure>
 <!--  l. 115  --><p class='indent'>   There are other numeric options, each of them breaks document into separate
@@ -274,7 +274,7 @@ browsers do not support it yet. We can use MathJax to render math in these
 browsers.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb11'><a id='x3-7009r1'></a>$ make4ht filename.tex <span class='textcolor-b73838'>"mathml,mathjax"</span></pre>
+<pre class='fancyvrb' id='fancyvrb11'><a id='x3-7009r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>filename.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"mathml,mathjax"</span></pre>
 
 </figure>
 <!--  l. 125  --><p class='indent'>   On the other hand, if you want to use pictures for math exclusively, you can try
@@ -282,7 +282,7 @@ the <span class='emph'>pic-m</span> option, which requires pictures even for inl
 options for equations and other math environments.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb12'><a id='x3-7012r1'></a>$ make4ht filename.tex <span class='textcolor-b73838'>"pic-m,pic-equation"</span></pre>
+<pre class='fancyvrb' id='fancyvrb12'><a id='x3-7012r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>filename.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"pic-m,pic-equation"</span></pre>
 
 </figure>
 <!--  l. 131  --><p class='indent'>   The generated pictures are in the PNG format, which is raster and depends on
@@ -294,7 +294,7 @@ pictures:
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb13'><a id='x3-7015r1'></a>$ make4ht filename.tex <span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
+<pre class='fancyvrb' id='fancyvrb13'><a id='x3-7015r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>filename.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
 <!--  l. 137  --><p class='indent'>   For more information on options, see chapter <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code> Options<!--  tex4ht:ref: chap:options   --></a>.
@@ -316,7 +316,7 @@ document:
 <!--  l. 149  --><p class='indent'>   Compile it using the following command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb15'><a id='x3-8007r1'></a>$ make4ht -f html5+preprocess_input sample.Rmd</pre>
+<pre class='fancyvrb' id='fancyvrb15'><a id='x3-8007r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-f<span class='textcolor-a88e28'> </span>html5+preprocess_input<span class='textcolor-a88e28'> </span>sample.Rmd</pre>
 
 </figure>
 <!--  l. 155  --><p class='indent'>   It producess a following HTML file:
@@ -330,7 +330,7 @@ To make it faster, you can use the <span class='obeylines-h'><code class='verb'>
 images and creates them only for the changed math environments.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb17'><a id='x3-8014r1'></a>$ make4ht -f html5+dvisvgm_hashes filename.tex <span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
+<pre class='fancyvrb' id='fancyvrb17'><a id='x3-8014r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-f<span class='textcolor-a88e28'> </span>html5+dvisvgm_hashes<span class='textcolor-a88e28'> </span>filename.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
 <!--  l. 166  --><p class='indent'>   <code class='texttt'>make4ht</code> loads the <span class='obeylines-h'><code class='verb'>common_domfilters</code></span> extension automatically. It fixes common
@@ -341,7 +341,7 @@ from loading, use <span class='obeylines-h'><code class='verb'>-extension_name</
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb18'><a id='x3-8017r1'></a>$ make4ht -f html5-common_domfilters filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb18'><a id='x3-8017r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-f<span class='textcolor-a88e28'> </span>html5-common_domfilters<span class='textcolor-a88e28'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 174  --><p class='indent'>   You can find a list of extensions in <a href='https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions'><code class='texttt'>make4ht</code> documentation</a>.
@@ -428,13 +428,13 @@ current paragraph, but it may be not what you want.
 <!--  l. 268  --><p class='indent'>   and with <code class='texttt'>make4ht</code>
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb23'><a id='x3-12063r1'></a>make4ht sample1</pre>
+<pre class='fancyvrb' id='fancyvrb23'><a id='x3-12063r1'></a>make4ht<span class='textcolor-a88e28'> </span>sample1</pre>
 
 </figure>
 <!--  l. 274  --><p class='indent'>   lets look on text part generated by <code class='texttt'>htlatex</code>:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb24'><a id='x3-12069r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>P<span class='textcolor-708e30'>&amp;#x0159;</span>íli<span class='textcolor-708e30'>&amp;#353; </span><span class='textcolor-708e30'>&amp;#382;</span>lu<span class='textcolor-708e30'>&amp;#x0165;</span>ou<span class='textcolor-708e30'>&amp;#x010D;</span>k<span class='textcolor-708e30'>&amp;#x00FD;</span> k<span class='textcolor-708e30'>&amp;#x016F;&amp;#x0148;</span> úp<span class='textcolor-708e30'>&amp;#x011B;</span>l <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
+<pre class='fancyvrb' id='fancyvrb24'><a id='x3-12069r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>P<span class='textcolor-708e30'>&amp;#x0159;</span>íli<span class='textcolor-708e30'>&amp;#353; &amp;#382;</span>lu<span class='textcolor-708e30'>&amp;#x0165;</span>ou<span class='textcolor-708e30'>&amp;#x010D;</span>k<span class='textcolor-708e30'>&amp;#x00FD;</span> k<span class='textcolor-708e30'>&amp;#x016F;&amp;#x0148;</span> úp<span class='textcolor-708e30'>&amp;#x011B;</span>l <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
 <a id='x3-12071r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span><span class='textcolor-708e30'>&amp;#x010F;</span><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
 <a id='x3-12073r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
 <a id='x3-12075r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é <span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span>ódy. Some text in English</pre>
@@ -443,7 +443,7 @@ current paragraph, but it may be not what you want.
 <!--  l. 283  --><p class='indent'>   and by <code class='texttt'>make4ht</code>:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb25'><a id='x3-12082r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>P<span class='textcolor-708e30'>&amp;#x0159;</span>íli<span class='textcolor-708e30'>&amp;#353; </span><span class='textcolor-708e30'>&amp;#382;</span>lu<span class='textcolor-708e30'>&amp;#x0165;</span>ou<span class='textcolor-708e30'>&amp;#x010D;</span>k<span class='textcolor-708e30'>&amp;#x00FD;</span> k<span class='textcolor-708e30'>&amp;#x016F;&amp;#x0148;</span> úp<span class='textcolor-708e30'>&amp;#x011B;</span>l <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
+<pre class='fancyvrb' id='fancyvrb25'><a id='x3-12082r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>P<span class='textcolor-708e30'>&amp;#x0159;</span>íli<span class='textcolor-708e30'>&amp;#353; &amp;#382;</span>lu<span class='textcolor-708e30'>&amp;#x0165;</span>ou<span class='textcolor-708e30'>&amp;#x010D;</span>k<span class='textcolor-708e30'>&amp;#x00FD;</span> k<span class='textcolor-708e30'>&amp;#x016F;&amp;#x0148;</span> úp<span class='textcolor-708e30'>&amp;#x011B;</span>l <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
 <a id='x3-12084r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span><span class='textcolor-708e30'>&amp;#x010F;</span><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
 <a id='x3-12086r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
 <a id='x3-12088r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é <span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span>ódy. Some text in English 
@@ -465,14 +465,14 @@ output.
 command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb26'><a id='x3-12093r1'></a>htlatex sample1 xhtml</pre>
+<pre class='fancyvrb' id='fancyvrb26'><a id='x3-12093r1'></a>htlatex<span class='textcolor-a88e28'> </span>sample1<span class='textcolor-a88e28'> </span>xhtml</pre>
 
 </figure>
 <!--  l. 312  --><p class='indent'>   Now we should get rid of ugly entities which encode accented letters. This is
 somewhat ugly with <code class='texttt'>htlatex</code>:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb27'><a id='x3-12096r1'></a>htlatex sample1 <span class='textcolor-b73838'>"xhtml,charset=utf-8" </span><span class='textcolor-b73838'>" -cunihtf -utf8"</span></pre>
+<pre class='fancyvrb' id='fancyvrb27'><a id='x3-12096r1'></a>htlatex<span class='textcolor-a88e28'> </span>sample1<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"xhtml,charset=utf-8"</span><span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>" -cunihtf -utf8"</span></pre>
 
 </figure>
 <!--  l. 319  --><p class='indent'>   <code class='texttt'>charset=utf-8</code> produces meta element which declares document to be in
@@ -483,7 +483,7 @@ unicode.4hf. It is directed from <code class='texttt'>tex4ht.env</code> file.
 </p><!--  l. 326  --><p class='indent'>   With <code class='texttt'>make4ht</code>, situation is easier, as all we need to do is to add <code class='texttt'>-u</code> option:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb28'><a id='x3-12099r1'></a>make4ht -u sample1.tex</pre>
+<pre class='fancyvrb' id='fancyvrb28'><a id='x3-12099r1'></a>make4ht<span class='textcolor-a88e28'> </span>-u<span class='textcolor-a88e28'> </span>sample1.tex</pre>
 
 </figure>
 <!--  l. 333  --><p class='indent'>   resulting file:

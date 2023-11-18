@@ -206,7 +206,7 @@ quality.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb40'><a id='x4-21003r1'></a>$ make4ht foo.tex <span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
+<pre class='fancyvrb' id='fancyvrb40'><a id='x4-21003r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>foo.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
 <!--  l. 100  --><p class='indent'>   See the <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code> Options<!--  tex4ht:ref: chap:options   --></a> chapter for other <span class='emph'>pic-…</span> options.
@@ -215,7 +215,7 @@ long time. You can use the <span class='obeylines-h'><code class='verb'>dvisvgm_
 images that were already generated, and to use a parallel conversion:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb41'><a id='x4-21007r1'></a>$ make4ht -f html5+dvisvgm_hashes foo.tex <span class='textcolor-708e30'>\</span> 
+<pre class='fancyvrb' id='fancyvrb41'><a id='x4-21007r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-f<span class='textcolor-a88e28'> </span>html5+dvisvgm_hashes<span class='textcolor-a88e28'> </span>foo.tex<span class='textcolor-a88e28'> </span><span class='textcolor-708e30'>\</span> 
 <a id='x4-21009r2'></a><span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
@@ -228,7 +228,7 @@ results from the accessibility and rendering views.
 </p><!--  l. 6  --><p class='indent'>   To require the MathJax output, use the <span class='emph'>mathjax</span> option:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb42'><a id='x4-22003r1'></a>$ make4ht foo.tex <span class='textcolor-b73838'>"mathjax"</span></pre>
+<pre class='fancyvrb' id='fancyvrb42'><a id='x4-22003r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>foo.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"mathjax"</span></pre>
 
 </figure>
 <!--  l. 13  --><p class='indent'>   There are some limitations in MathJax though:
@@ -341,7 +341,7 @@ modes:
 <a id='x4-23011r2'></a><span class='textcolor-2838af'>\input</span><span class='textcolor-387f38'>{</span>mymacros<span class='textcolor-387f38'>}</span> 
 <a id='x4-23013r3'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
 <a id='x4-23015r4'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>align*<span class='textcolor-387f38'>}</span> 
-<a id='x4-23017r5'></a> p<span class='textcolor-387f38'>_{</span>i-1<span class='textcolor-387f38'>} </span><span class='textcolor-387f38'>&amp;</span>= -(p<span class='textcolor-387f38'>_{</span>i<span class='textcolor-387f38'>}</span>)' - <span class='textcolor-2838af'>\theta</span> p<span class='textcolor-387f38'>_</span>i  <span class='textcolor-2838af'>\myspace </span><span class='textcolor-2838af'>\text</span><span class='textcolor-387f38'>{</span>if<span class='textcolor-387f38'>} </span><span class='textcolor-2838af'>\hspace</span><span class='textcolor-387f38'>{</span>10pt<span class='textcolor-387f38'>}</span> i=n 
+<a id='x4-23017r5'></a> p<span class='textcolor-387f38'>_{</span>i-1<span class='textcolor-387f38'>} &amp;</span>= -(p<span class='textcolor-387f38'>_{</span>i<span class='textcolor-387f38'>}</span>)' - <span class='textcolor-2838af'>\theta</span> p<span class='textcolor-387f38'>_</span>i  <span class='textcolor-2838af'>\myspace \text</span><span class='textcolor-387f38'>{</span>if<span class='textcolor-387f38'>} </span><span class='textcolor-2838af'>\hspace</span><span class='textcolor-387f38'>{</span>10pt<span class='textcolor-387f38'>}</span> i=n 
 <a id='x4-23019r6'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>align*<span class='textcolor-387f38'>}</span> 
 <a id='x4-23021r7'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
 
@@ -435,7 +435,7 @@ MathML in web browsers is not great, so it usually better to load it together wi
 MathJax, using the <span class='emph'>mathml,mathjax</span> options:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb52'><a id='x4-26003r1'></a>$ make4ht foo.tex <span class='textcolor-b73838'>"mathml,mathjax"</span></pre>
+<pre class='fancyvrb' id='fancyvrb52'><a id='x4-26003r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>foo.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"mathml,mathjax"</span></pre>
 
 </figure>
 <!--  l. 129  --><p class='indent'>   The advantage over MathJax’s LaTeX mode is that <code class='texttt'>TeX4ht</code> expands
@@ -468,7 +468,7 @@ instead of <code class='texttt'>^</code> and <code class='texttt'>_</code>.
 </p><!--  l. 24  --><p class='indent'>   For example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb55'><a id='x4-27009r1'></a><span class='textcolor-2838af'>\newcommand </span><span class='textcolor-2838af'>\coeffX</span> [4][X]<span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\mathbf</span><span class='textcolor-387f38'>{</span>#1<span class='textcolor-387f38'>}_{{</span>#2<span class='textcolor-387f38'>}</span>,<span class='textcolor-387f38'>{</span>#3<span class='textcolor-387f38'>}}</span>(#4)<span class='textcolor-387f38'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb55'><a id='x4-27009r1'></a><span class='textcolor-2838af'>\newcommand \coeffX</span> [4][X]<span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\mathbf</span><span class='textcolor-387f38'>{</span>#1<span class='textcolor-387f38'>}_{{</span>#2<span class='textcolor-387f38'>}</span>,<span class='textcolor-387f38'>{</span>#3<span class='textcolor-387f38'>}}</span>(#4)<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 30  --><p class='indent'>   should become:
@@ -515,7 +515,7 @@ script:
 command to execute it could be:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb60'><a id='x4-27060r1'></a>texlua filter.lua &lt; sample.tex <span class='textcolor-878787'>|</span> make4ht -j sample - <span class='textcolor-b73838'>"mathml,mathjax"</span></pre>
+<pre class='fancyvrb' id='fancyvrb60'><a id='x4-27060r1'></a>texlua<span class='textcolor-a88e28'> </span>filter.lua<span class='textcolor-a88e28'> </span>&lt;<span class='textcolor-a88e28'> </span>sample.tex<span class='textcolor-a88e28'> </span><span class='textcolor-878787'>|</span><span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-j<span class='textcolor-a88e28'> </span>sample<span class='textcolor-a88e28'> </span>-<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"mathml,mathjax"</span></pre>
                                                                   
 
                                                                   
@@ -549,7 +549,7 @@ Graphics uses a <span class='obeylines-h'><code class='verb'>.xbb</code></span> 
 command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb61'><a id='x4-31003r1'></a>ebb -x *.jpg</pre>
+<pre class='fancyvrb' id='fancyvrb61'><a id='x4-31003r1'></a>ebb<span class='textcolor-a88e28'> </span>-x<span class='textcolor-a88e28'> </span>*.jpg</pre>
 
 </figure>
 <!--  l. 15  --><p class='indent'>   Run analogous command for every other supported image format you
@@ -570,7 +570,7 @@ package to calculate the image dimensions in percents.
 <a id='x4-32013r2'></a><span class='textcolor-2838af'>\makeatletter</span> 
 <a id='x4-32015r3'></a><span class='textcolor-2838af'>\ExplSyntaxOn</span> 
 <a id='x4-32017r4'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>Gin-dim<span class='textcolor-387f38'>}</span> 
-<a id='x4-32019r5'></a><span class='textcolor-387f38'>{</span>style="width:<span class='textcolor-2838af'>\fp</span><span class='textcolor-387f38'>_</span>eval:n<span class='textcolor-387f38'>{</span>round(<span class='textcolor-2838af'>\Gin</span>@req@width/<span class='textcolor-2838af'>\textwidth*</span>100,2)<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\char</span><span class='textcolor-387f38'>_</span>generate:nn <span class='textcolor-387f38'>{</span> `<span class='textcolor-2838af'>\% </span><span class='textcolor-387f38'>} </span><span class='textcolor-387f38'>{</span> 12 <span class='textcolor-387f38'>}</span>"<span class='textcolor-387f38'>}</span> 
+<a id='x4-32019r5'></a><span class='textcolor-387f38'>{</span>style="width:<span class='textcolor-2838af'>\fp</span><span class='textcolor-387f38'>_</span>eval:n<span class='textcolor-387f38'>{</span>round(<span class='textcolor-2838af'>\Gin</span>@req@width/<span class='textcolor-2838af'>\textwidth*</span>100,2)<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\char</span><span class='textcolor-387f38'>_</span>generate:nn <span class='textcolor-387f38'>{</span> `<span class='textcolor-2838af'>\% </span><span class='textcolor-387f38'>} {</span> 12 <span class='textcolor-387f38'>}</span>"<span class='textcolor-387f38'>}</span> 
 <a id='x4-32021r6'></a><span class='textcolor-2838af'>\ExplSyntaxOff</span> 
 <a id='x4-32023r7'></a><span class='textcolor-2838af'>\makeatother</span> 
 <a id='x4-32025r8'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
@@ -693,7 +693,7 @@ commands are important, because they are crucial for correct execution of
 </p><!--  l. 29  --><p class='indent'>   The document can be compiled using:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb71'><a id='x4-34033r1'></a>make4ht -f html5+detect_engine filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb71'><a id='x4-34033r1'></a>make4ht<span class='textcolor-a88e28'> </span>-f<span class='textcolor-a88e28'> </span>html5+detect_engine<span class='textcolor-a88e28'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 35  --><p class='indent'>   The <span class='obeylines-h'><code class='verb'>-f html5+detect_engine</code></span> requires the <span class='obeylines-h'><code class='verb'>detect_engine</code></span> extension, which uses
@@ -792,7 +792,7 @@ bibliography. The following build file is meant for use with BibLaTeX.
 command when you add a new citation:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb77'><a id='x4-38027r1'></a>$ make4ht filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb77'><a id='x4-38027r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>filename.tex</pre>
                                                                   
 
                                                                   
@@ -802,7 +802,7 @@ command when you add a new citation:
 using the draft mode:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb78'><a id='x4-38030r1'></a>$ make4ht -m draft filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb78'><a id='x4-38030r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-m<span class='textcolor-a88e28'> </span>draft<span class='textcolor-a88e28'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 184  --><p class='noindent'>
