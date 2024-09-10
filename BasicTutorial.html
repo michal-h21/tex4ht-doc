@@ -15,8 +15,8 @@
 <span class='sectionToc'>2.1 <a href='#what-is-texht'>What is TeX4ht?</a></span>
 <span class='sectionToc'>2.2 <a href='#basic-usage'>Basic Usage</a></span>
 <span class='subsectionToc'>2.2.1 <a href='#debugging'>Debugging</a></span>
-<span class='sectionToc'>2.3 <a href='#-texht-options'><code class='texttt'>TeX4ht</code> Options</a></span>
-<span class='sectionToc'>2.4 <a href='#-makeht-extensions'><code class='texttt'>make4ht</code> extensions</a></span>
+<span class='sectionToc'>2.3 <a href='#texht-options'><code class='texttt'>TeX4ht</code> Options</a></span>
+<span class='sectionToc'>2.4 <a href='#makeht-extensions'><code class='texttt'>make4ht</code> extensions</a></span>
 <span class='sectionToc'>2.5 <a href='#configurations'>Configurations</a></span>
 <span class='subsectionToc'>2.5.1 <a href='#the-configure-command'>The <span class='textbf'><code class='texttt'>\Configure</code></span> command</a></span>
 <span class='subsectionToc'>2.5.2 <a href='#configuring-environments'>Configuring Environments</a></span>
@@ -59,7 +59,7 @@
 
 
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
-<span class='chapterToc'>6 <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
+<span class='chapterToc'>6 <a href='texfourhtOptions.html#texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
 
 
 <span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
@@ -147,8 +147,8 @@
 <nav class='crosslinks-top'> [<a href='Introduction.html'>prev</a>] [<a href='tex4ht-doc.html#BasicTutorial.html'>up</a>] [<a href='Howto.html'>next</a>] </nav> 
 <h2 class='chapterHead' id='basic-tutorial'><span class='titlemark'>Chapter 2</span><br /><a id='x3-30002'></a>Basic Tutorial</h2>
 <h3 class='sectionHead' id='what-is-texht'><span class='titlemark'>2.1   </span> <a id='x3-40002.1'></a>What is TeX4ht?</h3>
-<!--  l. 3  --><p class='noindent'><a href='https://www.tug.org/tex4ht/'><code class='texttt'>TeX4ht</code></a> is a system that converts LaTeX to various output formats, including
-<code class='texttt'>HTML</code>, <a href='http://en.wikipedia.org/wiki/OpenDocument'><code class='texttt'>ODT</code></a>, <a href='http://en.wikipedia.org/wiki/DocBook'><code class='texttt'>DocBook</code></a> or <a href='http://en.wikipedia.org/wiki/Text_Encoding_Initiative'><code class='texttt'>TEI</code></a>. <code class='texttt'>HTML</code> and <code class='texttt'>ODT</code> formats are the most common and
+<!--  l. 3  --><p class='noindent'> <a href='https://www.tug.org/tex4ht/'><code class='texttt'>TeX4ht</code></a> is a system that converts LaTeX to various output formats, including <code class='texttt'>HTML</code>,
+<a href='http://en.wikipedia.org/wiki/OpenDocument'><code class='texttt'>ODT</code></a>,  <a href='http://en.wikipedia.org/wiki/DocBook'><code class='texttt'>DocBook</code></a> or  <a href='http://en.wikipedia.org/wiki/Text_Encoding_Initiative'><code class='texttt'>TEI</code></a>. <code class='texttt'>HTML</code> and <code class='texttt'>ODT</code> formats are the most common and
 best-supported conversion targets.
 </p><!--  l. 11  --><p class='indent'>   <code class='texttt'>TeX4ht</code> allows authors to convert LaTeX input to several output formats, like
 <code class='texttt'>HTML</code> (for web pages) or <code class='texttt'>ePub</code> (for ebooks and other applications).
@@ -234,10 +234,10 @@ OpenDocument Format, use the following:
 </p>   
 <h4 class='subsectionHead' id='debugging'><span class='titlemark'>2.2.1   </span> <a id='x3-60002.2.1'></a>Debugging</h4>
 <!--  l. 93  --><p class='noindent'>More information about <code class='texttt'>make4ht</code>and its command line options and other features can
-be found in section <a href='CallingCommands.html#-makeht-build-system'><code class='texttt'>make4ht</code> Build System<!--  tex4ht:ref: sec:make4ht-intro   --></a>.
+be found in section <a href='CallingCommands.html#makeht-build-system'><code class='texttt'>make4ht</code> Build System<!--  tex4ht:ref: sec:make4ht-intro   --></a>.
 </p><!--  l. 97  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='-texht-options'><span class='titlemark'>2.3   </span> <a id='x3-70002.3'></a><code class='texttt'>TeX4ht</code> Options</h3>
+<h3 class='sectionHead' id='texht-options'><span class='titlemark'>2.3   </span> <a id='x3-70002.3'></a><code class='texttt'>TeX4ht</code> Options</h3>
 <!--  l. 99  --><p class='noindent'>The simplest way to change some aspects of the design is to use <code class='texttt'>TeX4ht</code>
 options. They can be passed as a first positional argument after filename to
 <code class='texttt'>make4ht</code>:
@@ -297,10 +297,10 @@ pictures:
 <pre class='fancyvrb' id='fancyvrb13'><a id='x3-7015r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>filename.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
-<!--  l. 137  --><p class='indent'>   For more information on options, see chapter <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code> Options<!--  tex4ht:ref: chap:options   --></a>.
+<!--  l. 137  --><p class='indent'>   For more information on options, see chapter <a href='texfourhtOptions.html#texht-options1'><code class='texttt'>TeX4ht</code> Options<!--  tex4ht:ref: chap:options   --></a>.
 </p><!--  l. 139  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='-makeht-extensions'><span class='titlemark'>2.4   </span> <a id='x3-80002.4'></a><code class='texttt'>make4ht</code> extensions</h3>
+<h3 class='sectionHead' id='makeht-extensions'><span class='titlemark'>2.4   </span> <a id='x3-80002.4'></a><code class='texttt'>make4ht</code> extensions</h3>
 <!--  l. 141  --><p class='noindent'><code class='texttt'>make4ht</code> has an extension support. These extensions can modify various aspects of
 the conversion process, for example, post-process the generated files, cache images,
 or add support for Rmarkdown files. Extensions can be enabled using the
@@ -344,7 +344,7 @@ from loading, use <span class='obeylines-h'><code class='verb'>-extension_name</
 <pre class='fancyvrb' id='fancyvrb18'><a id='x3-8017r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-f<span class='textcolor-a88e28'> </span>html5-common_domfilters<span class='textcolor-a88e28'> </span>filename.tex</pre>
 
 </figure>
-<!--  l. 174  --><p class='indent'>   You can find a list of extensions in <a href='https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions'><code class='texttt'>make4ht</code> documentation</a>.
+<!--  l. 174  --><p class='indent'>   You can find a list of extensions in  <a href='https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions'><code class='texttt'>make4ht</code> documentation</a>.
 </p><!--  l. 177  --><p class='noindent'>
 </p>   
 <h3 class='sectionHead'><span class='titlemark'>2.5   </span> <a id='x3-90002.5'></a>Configurations</h3>
@@ -508,7 +508,7 @@ Yay!
 </p>   
 <h3 class='sectionHead' id='configurations1'><span class='titlemark'>2.7   </span> <a id='x3-130002.7'></a>Configurations</h3>
 <!--  l. 353  --><p class='noindent'>We already saw that we can use command line options to configure the output. For
-full list of options for <code class='texttt'>tex4ht.sty</code>, see an <a href='http://www.cvr.cc/?p=504'>article on CVR’s blog</a>. These options
+full list of options for <code class='texttt'>tex4ht.sty</code>, see an  <a href='http://www.cvr.cc/?p=504'>article on CVR’s blog</a>. These options
 mainly influence appearance or math, footnotes, tables, etc. Note that these options
 aren’t fixed set, anyone can add new options and not all options are supported in
 each output format supported by <code class='texttt'>tex4ht</code>. Generally these options work with <code class='texttt'>html</code>
@@ -557,11 +557,11 @@ beginning and at end of <code class='texttt'>∖hello</code> command:
 <a id='x3-13058r3'></a><span class='textcolor-878787'><span class='textit'>% we declare two hooks, to be inserted before and after the command</span></span> 
 <a id='x3-13060r4'></a><span class='textcolor-2838af'>\NewConfigure</span><span class='textcolor-387f38'>{</span>hello<span class='textcolor-387f38'>}{</span>2<span class='textcolor-387f38'>}</span> 
 <a id='x3-13062r5'></a><span class='textcolor-878787'><span class='textit'>% now we need to redefine \hello. save it to tmp command</span></span> 
-<a id='x3-13064r6'></a><span class='textcolor-2838af'>\let\tmp</span>:hello<span class='textcolor-2838af'>\hello</span> 
+<a id='x3-13064r6'></a><span class='textcolor-2838af'>\let\tmp:hello\hello</span> 
 <a id='x3-13066r7'></a><span class='textcolor-878787'><span class='textit'>% note that `:` can be part of command name in `.4ht` files.</span></span> 
 <a id='x3-13068r8'></a><span class='textcolor-878787'><span class='textit'>% now insert the hooks. they are named as \a:hook, \b:hook, ..., \h:hook</span></span> 
 <a id='x3-13070r9'></a><span class='textcolor-878787'><span class='textit'>% depending on how many hooks were declared</span></span> 
-<a id='x3-13072r10'></a><span class='textcolor-2838af'>\renewcommand\hello</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\a</span>:hello<span class='textcolor-2838af'>\tmp</span>:hello<span class='textcolor-2838af'>\b</span>:hello<span class='textcolor-387f38'>}</span></pre>
+<a id='x3-13072r10'></a><span class='textcolor-2838af'>\renewcommand\hello</span><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\a:hello\tmp:hello\b:hello</span><span class='textcolor-387f38'>}</span></pre>
 
 </figure>
 <!--  l. 418  --><p class='indent'>   because we want to surround contents produced by <code class='texttt'>∖hello</code> with tags, we need to
@@ -605,9 +605,9 @@ basic configurations for <code class='texttt'>∖textit</code> and <code class='
 <a id='x3-13120r7'></a><span class='textcolor-2838af'>\EndPreamble</span></pre>
 
 </figure>
-<!--  l. 462  --><p class='indent'>   For documentation of default configurations, see <a href='http://michal-h21.github.io/src4ht/tex4ht-info.html'>TeX4ht info</a>, most useful are
-<a href='http://michal-h21.github.io/src4ht/tex4ht-infose2.html'>LaTeX</a> and <a href='http://michal-h21.github.io/src4ht/tex4ht-infose1.html'>TeX4ht</a> sections. Documentation for basic font commands such as
-<code class='texttt'>∖textit</code> or <code class='texttt'>∖textbf</code> is provided in <a href='http://michal-h21.github.io/src4ht/tex4ht-infose2.html'>LaTeX</a> section. We can see that configuration
+<!--  l. 462  --><p class='indent'>   For documentation of default configurations, see  <a href='http://michal-h21.github.io/src4ht/tex4ht-info.html'>TeX4ht info</a>, most useful are
+<a href='http://michal-h21.github.io/src4ht/tex4ht-infose2.html'>LaTeX</a> and  <a href='http://michal-h21.github.io/src4ht/tex4ht-infose1.html'>TeX4ht</a> sections. Documentation for basic font commands such as
+<code class='texttt'>∖textit</code> or <code class='texttt'>∖textbf</code> is provided in  <a href='http://michal-h21.github.io/src4ht/tex4ht-infose2.html'>LaTeX</a> section. We can see that configuration
 takes two parameters, insertion before and after content. Same situation is with
 <code class='texttt'>hello</code> configuration we defined earlier, hooks are inserted before and after the
 content.

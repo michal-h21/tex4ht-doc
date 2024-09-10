@@ -59,7 +59,7 @@
 
 
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
-<span class='chapterToc'>6 <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
+<span class='chapterToc'>6 <a href='texfourhtOptions.html#texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
 
 
 <span class='chapterToc'>7 <a href='#configurations2'>Configurations</a></span>
@@ -461,7 +461,7 @@ building blocks.
 <a id='x8-65055r16'></a><span class='textcolor-878787'><span class='textit'>% configure \maketitle using block level elements</span></span> 
 <a id='x8-65057r17'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
 <a id='x8-65059r18'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}{}{}{}{}</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
-<a id='x8-65061r19'></a><span class='textcolor-2838af'>\Tag</span><span class='textcolor-387f38'>{</span>TITLE+<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\@</span>title<span class='textcolor-387f38'>}}</span> 
+<a id='x8-65061r19'></a><span class='textcolor-2838af'>\Tag</span><span class='textcolor-387f38'>{</span>TITLE+<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\@title</span><span class='textcolor-387f38'>}}</span> 
 <a id='x8-65063r20'></a><span class='textcolor-2838af'>\BlockElementStart</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}{}}</span> 
 <a id='x8-65065r21'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\BlockElementEnd</span><span class='textcolor-387f38'>{</span>maketitle<span class='textcolor-387f38'>}}</span> 
 <a id='x8-65067r22'></a><span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\NoFonts\BlockElementStart</span><span class='textcolor-387f38'>{</span>titlehead<span class='textcolor-387f38'>}{}}</span> 
@@ -664,7 +664,7 @@ contributions.
 example, for document that is split on chapters, use:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb115'><a id='x8-73005r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>TITLE+<span class='textcolor-387f38'>}{</span>My web site |<span class='textcolor-2838af'>\@</span>title<span class='textcolor-387f38'>}</span> 
+<pre class='fancyvrb' id='fancyvrb115'><a id='x8-73005r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>TITLE+<span class='textcolor-387f38'>}{</span>My web site |<span class='textcolor-2838af'>\@title</span><span class='textcolor-387f38'>}</span> 
 <a id='x8-73007r2'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>chapterTITLE+<span class='textcolor-387f38'>}{</span>My web site | <span class='textcolor-2838af'>\thechapter\space</span>#1<span class='textcolor-387f38'>}</span> 
 <a id='x8-73009r3'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>likechapterTITLE+<span class='textcolor-387f38'>}{</span>My web site | #1<span class='textcolor-387f38'>}</span></pre>
 
@@ -1170,7 +1170,7 @@ it after the environment end.
 </p><!--  l. 21  --><p class='indent'>   In the ODT output, different mechanism is used:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb139'><a id='x8-85012r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>arab<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\@</span>rltrue<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\@</span>rlfalse<span class='textcolor-387f38'>}{}{}</span></pre>
+<pre class='fancyvrb' id='fancyvrb139'><a id='x8-85012r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>arab<span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\@rltrue</span><span class='textcolor-387f38'>}{</span><span class='textcolor-2838af'>\@rlfalse</span><span class='textcolor-387f38'>}{}{}</span></pre>
 
 </figure>   
 <h4 class='subsectionHead' id='unicode'><span class='titlemark'>7.15.2   </span> <a id='x8-860007.15.2'></a>Unicode</h4>
@@ -1212,7 +1212,7 @@ using the <code class='texttt'>\xeuniuseblock</code>:
 <pre class='fancyvrb' id='fancyvrb142'><a id='x8-86024r1'></a><span class='textcolor-2838af'>\xeuniuseblock</span><span class='textcolor-387f38'>{</span>Greek<span class='textcolor-387f38'>}</span></pre>
 
 </figure>
-<!--  l. 42  --><p class='indent'>   The block names are based on <a href='https://en.wikipedia.org/wiki/Unicode_block'>Unicode blocks</a>.
+<!--  l. 42  --><p class='indent'>   The block names are based on  <a href='https://en.wikipedia.org/wiki/Unicode_block'>Unicode blocks</a>.
 </p><!--  l. 44  --><p class='indent'>   It is also possible to declare all characters in an Unicode range. The command
 <code class='texttt'>\xeuniregisterblockhex</code> takes two hexadecimal parameters with Unicode range to
 be declared.
@@ -1323,11 +1323,11 @@ delimiter}</code>
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb149'><a id='x8-89023r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>IMG<span class='textcolor-387f38'>}</span> 
-<a id='x8-89025r2'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht</span>:special<span class='textcolor-387f38'>{</span>t4ht=&lt;img src="<span class='textcolor-387f38'>}}</span> 
-<a id='x8-89027r3'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht</span>:special<span class='textcolor-387f38'>{</span>t4ht=" alt="<span class='textcolor-387f38'>}}</span> 
+<a id='x8-89025r2'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht:special</span><span class='textcolor-387f38'>{</span>t4ht=&lt;img src="<span class='textcolor-387f38'>}}</span> 
+<a id='x8-89027r3'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht:special</span><span class='textcolor-387f38'>{</span>t4ht=" alt="<span class='textcolor-387f38'>}}</span> 
 <a id='x8-89029r4'></a>  <span class='textcolor-387f38'>{</span>" <span class='textcolor-387f38'>}</span> 
-<a id='x8-89031r5'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht</span>:special<span class='textcolor-387f38'>{</span>t4ht=" <span class='textcolor-387f38'>}}</span> 
-<a id='x8-89033r6'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht</span>:special<span class='textcolor-387f38'>{</span>t4ht=/&gt;<span class='textcolor-387f38'>}}</span></pre>
+<a id='x8-89031r5'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht:special</span><span class='textcolor-387f38'>{</span>t4ht=" <span class='textcolor-387f38'>}}</span> 
+<a id='x8-89033r6'></a>  <span class='textcolor-387f38'>{</span><span class='textcolor-2838af'>\ht:special</span><span class='textcolor-387f38'>{</span>t4ht=/&gt;<span class='textcolor-387f38'>}}</span></pre>
 
 </figure>
 <!--  l. 83  --><p class='noindent'><code class='texttt'><span class='textbf'>∖NextPictureFile</span></code>{<span class='textit'>filename</span>}
@@ -1417,7 +1417,7 @@ baseline in inline math. Furthermore, by default, bitmap graphics is produced, w
 cannot be resized without losing of quality. To use vector SVG graphics instead, use
 the <span class='emph'>svg</span> option. To prevent mixing of HTML, use the <span class='emph'>pic-m</span> option. There are also
 similar options for requiring pictures for equations and various math environments.
-See the chapter <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code> Options<!--  tex4ht:ref: chap:options   --></a>.
+See the chapter <a href='texfourhtOptions.html#texht-options1'><code class='texttt'>TeX4ht</code> Options<!--  tex4ht:ref: chap:options   --></a>.
 </p><!--  l. 13  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='mathml1'><span class='titlemark'>7.18.2   </span> <a id='x8-960007.18.2'></a>MathML</h4>
@@ -1439,7 +1439,7 @@ use MathJax:
                                                                   
 
                                                                   
-<!--  l. 31  --><p class='noindent'><span class='paragraphHead' id='-mathml-troupbleshooting'><a id='x8-97000'></a><code class='texttt'>MathML</code> <span class='ec-lmbx-10'>troupbleshooting</span></span>
+<!--  l. 31  --><p class='noindent'><span class='paragraphHead' id='mathml-troupbleshooting'><a id='x8-97000'></a><code class='texttt'>MathML</code> <span class='ec-lmbx-10'>troupbleshooting</span></span>
 The <code class='texttt'>MathML</code> code produced by <code class='texttt'>TeX4ht</code> may contain some issues. For
 example, one common issue may happen when the math contain unmatched
 delimiters:
@@ -1449,13 +1449,13 @@ delimiters:
 
 </figure>
 <!--  l. 40  --><p class='indent'>   In such cases, the <span class='emph'>matml-</span> may help.
-</p><!--  l. 42  --><p class='indent'>   The <code class='texttt'>common_domfilters</code> extension (see section <a href='CallingCommands.html#-makeht-extensions1'>4.2.4<!--  tex4ht:ref: sec:make4ht-extensions   --></a> for more information about
+</p><!--  l. 42  --><p class='indent'>   The <code class='texttt'>common_domfilters</code> extension (see section <a href='CallingCommands.html#makeht-extensions1'>4.2.4<!--  tex4ht:ref: sec:make4ht-extensions   --></a> for more information about
 <span class='emph'>make4ht</span> extensions), fixes some common <code class='texttt'>MathML</code> errors that cannot be easily fixed on
 the TeX level.
 </p>
 <!--  l. 47  --><p class='noindent'><span class='paragraphHead' id='additional-information'><a id='x8-98000'></a><span class='ec-lmbx-10'>Additional information</span></span>
 If you want to add original LaTeX source as an annotation to your MathML
-formulas, you can try a configuration from <a href='https://tex.stackexchange.com/a/693839/2891'>this answer</a>.
+formulas, you can try a configuration from  <a href='https://tex.stackexchange.com/a/693839/2891'>this answer</a>.
 </p><!--  l. 52  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='mathjax'><span class='titlemark'>7.18.3   </span> <a id='x8-990007.18.3'></a>MathJax</h4>
@@ -1486,7 +1486,7 @@ configured in a special configuration for MathJax. See the how-to <a href='Howto
 mode<!--  tex4ht:ref: sec:howto-mathjax   --></a> for the examples on how to configure MathJax for custom commands, new
 environments, cross-references and other issues.
 </p><!--  l. 82  --><p class='noindent'><code class='texttt'><span class='textbf'>∖Configure</span>{<span class='textit'>MathJaxConfig</span>}{JavaScript object}</code>
-</p><!--  l. 84  --><p class='indent'>   See the <a href='https://docs.mathjax.org/en/latest/options/index.html'>MathJax documentation</a> for the possible configuration options.
+</p><!--  l. 84  --><p class='indent'>   See the  <a href='https://docs.mathjax.org/en/latest/options/index.html'>MathJax documentation</a> for the possible configuration options.
 </p><!--  l. 89  --><p class='noindent'><code class='texttt'><span class='textbf'>∖Configure</span>{<span class='textit'>MathJaxMacros</span>}{path to file with macro definitions}
 </code>
 </p><!--  l. 91  --><p class='indent'>   Load file with declarations of custom commands, so they can be recognized by

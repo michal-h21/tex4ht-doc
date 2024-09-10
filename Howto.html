@@ -59,7 +59,7 @@
 
 
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
-<span class='chapterToc'>6 <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
+<span class='chapterToc'>6 <a href='texfourhtOptions.html#texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
 
 
 <span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
@@ -209,7 +209,7 @@ quality.
 <pre class='fancyvrb' id='fancyvrb40'><a id='x4-21003r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>foo.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
-<!--  l. 100  --><p class='indent'>   See the <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code> Options<!--  tex4ht:ref: chap:options   --></a> chapter for other <span class='emph'>pic-…</span> options.
+<!--  l. 100  --><p class='indent'>   See the <a href='texfourhtOptions.html#texht-options1'><code class='texttt'>TeX4ht</code> Options<!--  tex4ht:ref: chap:options   --></a> chapter for other <span class='emph'>pic-…</span> options.
 </p><!--  l. 102  --><p class='indent'>   If you have a large number of math content, the conversion to images can take a
 long time. You can use the <span class='obeylines-h'><code class='verb'>dvisvgm_hashes</code></span> extension for <code class='texttt'>make4ht</code> to reuse the
 images that were already generated, and to use a parallel conversion:
@@ -222,8 +222,8 @@ images that were already generated, and to use a parallel conversion:
 <!--  l. 113  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='mathjax-latex-mode'><span class='titlemark'>3.2.2   </span> <a id='x4-220003.2.2'></a>MathJax LaTeX mode</h4>
-<!--  l. 1  --><p class='noindent'>You can also pass math to the HTML output and rely on the <a href='https://www.mathjax.org/'>MathJax library</a> for the
-rendering. MathJax is widely used for this purpose and generaly produces great
+<!--  l. 1  --><p class='noindent'>You can also pass math to the HTML output and rely on the  <a href='https://www.mathjax.org/'>MathJax library</a> for
+the rendering. MathJax is widely used for this purpose and generaly produces great
 results from the accessibility and rendering views.
 </p><!--  l. 6  --><p class='indent'>   To require the MathJax output, use the <span class='emph'>mathjax</span> option:
 </p>   
@@ -239,7 +239,7 @@ them.
 </li>
 <li class='itemize'>Cross-references  to  equations  should  work,  but  other  numbered  math
 environments don’t work out of the box. You can try the Lua scripts
-proposed in <a href='https://tex.stackexchange.com/a/597913/2891'>this post on TeX.sx</a> as a workaround.</li></ul>
+proposed in  <a href='https://tex.stackexchange.com/a/597913/2891'>this post on TeX.sx</a> as a workaround.</li></ul>
 <!--  l. 24  --><p class='indent'>   The additional configuration for <span class='emph'>MathJax</span> can be provided in the <code class='texttt'>MathJaxConfig</code>
 configuration.
 </p><!--  l. 27  --><p class='indent'>   The following example provides support for custom LaTeX macros.
@@ -570,7 +570,7 @@ package to calculate the image dimensions in percents.
 <a id='x4-32013r2'></a><span class='textcolor-2838af'>\makeatletter</span> 
 <a id='x4-32015r3'></a><span class='textcolor-2838af'>\ExplSyntaxOn</span> 
 <a id='x4-32017r4'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>Gin-dim<span class='textcolor-387f38'>}</span> 
-<a id='x4-32019r5'></a><span class='textcolor-387f38'>{</span>style="width:<span class='textcolor-2838af'>\fp</span><span class='textcolor-387f38'>_</span>eval:n<span class='textcolor-387f38'>{</span>round(<span class='textcolor-2838af'>\Gin</span>@req@width/<span class='textcolor-2838af'>\textwidth*</span>100,2)<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\char</span><span class='textcolor-387f38'>_</span>generate:nn <span class='textcolor-387f38'>{</span> `<span class='textcolor-2838af'>\% </span><span class='textcolor-387f38'>} {</span> 12 <span class='textcolor-387f38'>}</span>"<span class='textcolor-387f38'>}</span> 
+<a id='x4-32019r5'></a><span class='textcolor-387f38'>{</span>style="width:<span class='textcolor-2838af'>\fp_eval:n</span><span class='textcolor-387f38'>{</span>round(<span class='textcolor-2838af'>\Gin@req@width</span>/<span class='textcolor-2838af'>\textwidth*</span>100,2)<span class='textcolor-387f38'>}</span><span class='textcolor-2838af'>\char_generate:nn </span><span class='textcolor-387f38'>{</span> `<span class='textcolor-2838af'>\% </span><span class='textcolor-387f38'>} {</span> 12 <span class='textcolor-387f38'>}</span>"<span class='textcolor-387f38'>}</span> 
 <a id='x4-32021r6'></a><span class='textcolor-2838af'>\ExplSyntaxOff</span> 
 <a id='x4-32023r7'></a><span class='textcolor-2838af'>\makeatother</span> 
 <a id='x4-32025r8'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span> 
@@ -632,7 +632,7 @@ that:
 <pre class='fancyvrb' id='fancyvrb66'><a id='x4-33002r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\documentclass</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>article</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x4-33004r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\usepackage</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>graphicx</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x4-33006r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatletter</span></span> 
-<a id='x4-33008r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\define</span></span><span class='rm-lmtt-10'>@key</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>alt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{}</span></span> 
+<a id='x4-33008r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\define@key</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>alt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{}</span></span> 
 <a id='x4-33010r5'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatother</span></span> 
 <a id='x4-33012r6'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x4-33014r7'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\includegraphics</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>[alt={alt tags, information}]</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>example-image</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
@@ -645,7 +645,7 @@ configuration that can specify the image alternative text, <code class='texttt'>
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb67'><a id='x4-33018r1'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Preamble</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>xhtml</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x4-33020r2'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatletter</span></span> 
-<a id='x4-33022r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\define</span></span><span class='rm-lmtt-10'>@key</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>alt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>GraphicsAlt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>#1</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}</span></span> 
+<a id='x4-33022r3'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\define@key</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>alt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>\Configure</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>GraphicsAlt</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>#1</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}}</span></span> 
 <a id='x4-33024r4'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\makeatother</span></span> 
 <a id='x4-33026r5'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\begin</span></span><span class='textcolor-387f38'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span class='textcolor-387f38'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x4-33028r6'></a><span class='textcolor-2838af'><span class='rm-lmtt-10'>\EndPreamble</span></span></pre>

@@ -48,18 +48,18 @@
 
 
 <span class='chapterToc'>4 <a href='#calling-commands'>Calling Commands</a></span>
-<span class='sectionToc'>4.1 <a href='#-makeht-build-system'><code class='texttt'>make4ht</code> Build System</a></span>
-<span class='sectionToc'>4.2 <a href='#-makeht-switches-and-options'><code class='texttt'>make4ht</code> Switches and Options</a></span>
+<span class='sectionToc'>4.1 <a href='#makeht-build-system'><code class='texttt'>make4ht</code> Build System</a></span>
+<span class='sectionToc'>4.2 <a href='#makeht-switches-and-options'><code class='texttt'>make4ht</code> Switches and Options</a></span>
 <span class='subsectionToc'>4.2.1 <a href='#tex-engine'>TeX engine</a></span>
 <span class='subsectionToc'>4.2.2 <a href='#terminal-output'>Terminal Output</a></span>
 <span class='subsectionToc'>4.2.3 <a href='#output-directory'>Output Directory</a></span>
                                                                   
 
                                                                   
-<span class='subsectionToc'>4.2.4 <a href='#-makeht-extensions1'><code class='texttt'>make4ht</code> extensions</a></span>
+<span class='subsectionToc'>4.2.4 <a href='#makeht-extensions1'><code class='texttt'>make4ht</code> extensions</a></span>
 <span class='sectionToc'>4.3 <a href='#overview-of-the-translation-process'>Overview of the Translation Process</a></span>
 <span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
-<span class='chapterToc'>6 <a href='texfourhtOptions.html#-texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
+<span class='chapterToc'>6 <a href='texfourhtOptions.html#texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
 
 
 <span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
@@ -155,7 +155,7 @@ Formats<!--  tex4ht:ref: sec:output-formats   --></a> for more information on ou
                                                                   
 
                                                                   
-<h3 class='sectionHead' id='-makeht-build-system'><span class='titlemark'>4.1   </span> <a id='x5-430004.1'></a><code class='texttt'>make4ht</code> Build System</h3>
+<h3 class='sectionHead' id='makeht-build-system'><span class='titlemark'>4.1   </span> <a id='x5-430004.1'></a><code class='texttt'>make4ht</code> Build System</h3>
 <!--  l. 17  --><p class='noindent'>The conversion command loads a script which takes on itself to invoke the different
 steps of the process, without user intervention. The command assumes the
 form:
@@ -204,7 +204,7 @@ option.
                                                                   
 </p><!--  l. 63  --><p class='noindent'>
 </p>   
-<h3 class='sectionHead' id='-makeht-switches-and-options'><span class='titlemark'>4.2   </span> <a id='x5-440004.2'></a><code class='texttt'>make4ht</code> Switches and Options</h3>
+<h3 class='sectionHead' id='makeht-switches-and-options'><span class='titlemark'>4.2   </span> <a id='x5-440004.2'></a><code class='texttt'>make4ht</code> Switches and Options</h3>
 <!--  l. 65  --><p class='noindent'><code class='texttt'>make4ht</code> accepts following command line switches and options:
 </p>   
 <figure class='textsource' role='doc-example'>
@@ -293,7 +293,7 @@ want to remove the temporary files, use the <code class='texttt'>-m clean</code>
 </figure>
 <!--  l. 146  --><p class='noindent'>
 </p>   
-<h4 class='subsectionHead' id='-makeht-extensions1'><span class='titlemark'>4.2.4   </span> <a id='x5-480004.2.4'></a><code class='texttt'>make4ht</code> extensions</h4>
+<h4 class='subsectionHead' id='makeht-extensions1'><span class='titlemark'>4.2.4   </span> <a id='x5-480004.2.4'></a><code class='texttt'>make4ht</code> extensions</h4>
 <!--  l. 148  --><p class='noindent'><code class='texttt'>make4ht</code> extensions can modify the build process – usually, they are used to
 post-process the generated files, to fix some issues that are hard to fix on the TeX
 level.
@@ -327,7 +327,7 @@ Knith or Pandoc.
 <span class='ec-lmbx-10'>staticsite</span> 
 </dt><dd class='description'>
 <!--  l. 163  --><p class='noindent'>generate files suitable for static site generators, such as Jekyll or Hugo.</p></dd></dl>
-<!--  l. 166  --><p class='indent'>   You can find full a list of extensions in <a href='https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions'><code class='texttt'>make4ht</code> documentation</a>.
+<!--  l. 166  --><p class='indent'>   You can find full a list of extensions in  <a href='https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions'><code class='texttt'>make4ht</code> documentation</a>.
 </p><!--  l. 169  --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='overview-of-the-translation-process'><span class='titlemark'>4.3   </span> <a id='x5-490004.3'></a>Overview of the Translation Process</h3>
@@ -354,17 +354,17 @@ file, which is then used for pictures.
 
 </figure>
 <!--  l. 199  --><p class='indent'>   The three compilations with La(TeX) are needed to ensure proper links. The
-approach is illustrated in the picture <a href='#-texht-process-overview'>4.1<!--  tex4ht:ref: fig:process   --></a>.
+approach is illustrated in the picture <a href='#texht-process-overview'>4.1<!--  tex4ht:ref: fig:process   --></a>.
                                                                   
 
                                                                   
 </p>   
-<figure class='figure' id='-texht-process-overview'> 
+<figure class='figure' id='x5-49016r1'><span id='texht-process-overview'></span> 
 
                                                                   
 
                                                                   
-<a id='x5-49016r1'></a>
+
                                                                   
 
                                                                   
