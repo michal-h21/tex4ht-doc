@@ -1485,18 +1485,23 @@ document is displayed by a web browser.
 configured in a special configuration for MathJax. See the how-to <a href='Howto.html#mathjax-latex-mode'>MathJax LaTeX
 mode<!--  tex4ht:ref: sec:howto-mathjax   --></a> for the examples on how to configure MathJax for custom commands, new
 environments, cross-references and other issues.
-</p><!--  l. 82  --><p class='noindent'><code class='texttt'><span class='textbf'>∖Configure</span>{<span class='textit'>MathJaxConfig</span>}{JavaScript object}</code>
-</p><!--  l. 84  --><p class='indent'>   See the  <a href='https://docs.mathjax.org/en/latest/options/index.html'>MathJax documentation</a> for the possible configuration options.
-</p><!--  l. 89  --><p class='noindent'><code class='texttt'><span class='textbf'>∖Configure</span>{<span class='textit'>MathJaxMacros</span>}{path to file with macro definitions}
+</p><!--  l. 82  --><p class='noindent'><code class='texttt'><span class='textbf'>∖Configure</span>{<span class='textit'>MathJaxInline</span>}{before}{after}</code>
+</p><!--  l. 83  --><p class='noindent'><code class='texttt'><span class='textbf'>∖Configure</span>{<span class='textit'>MathJaxBlock</span>}{before}{after}</code>
+</p><!--  l. 84  --><p class='noindent'><code class='texttt'><span class='textbf'>∖Configure</span>{<span class='textit'>MathJaxEnv</span>}{before}{after}</code>
+</p><!--  l. 86  --><p class='indent'>   These configurations enclose MathJax math in HTML elements, so it is possible
+to select them using CSS or DOM filters.
+</p><!--  l. 90  --><p class='noindent'><code class='texttt'><span class='textbf'>∖Configure</span>{<span class='textit'>MathJaxConfig</span>}{JavaScript object}</code>
+</p><!--  l. 92  --><p class='indent'>   See the  <a href='https://docs.mathjax.org/en/latest/options/index.html'>MathJax documentation</a> for the possible configuration options.
+</p><!--  l. 97  --><p class='noindent'><code class='texttt'><span class='textbf'>∖Configure</span>{<span class='textit'>MathJaxMacros</span>}{path to file with macro definitions}
 </code>
-</p><!--  l. 91  --><p class='indent'>   Load file with declarations of custom commands, so they can be recognized by
+</p><!--  l. 99  --><p class='indent'>   Load file with declarations of custom commands, so they can be recognized by
 MathJax. Note that you need to escape characters that could cause issues in the
 HTML post-processing, namely <span class='obeylines-h'><code class='verb'>&lt;</code></span>, <span class='obeylines-h'><code class='verb'>&gt;</code></span> and <span class='obeylines-h'><code class='verb'>&amp;</code></span>. Use HTML entities instead.
-</p><!--  l. 96  --><p class='noindent'><code class='texttt'><span class='textbf'>∖VerbMath</span></code>{<span class='textit'>environment name</span>}
-</p><!--  l. 98  --><p class='indent'>   Redefine the given environment so it pass its contents verbatim to the output
+</p><!--  l. 104  --><p class='noindent'><code class='texttt'><span class='textbf'>∖VerbMath</span></code>{<span class='textit'>environment name</span>}
+</p><!--  l. 106  --><p class='indent'>   Redefine the given environment so it pass its contents verbatim to the output
 HTML file. You may need to configure MathJax to recognize it.
 </p>
-<!--  l. 102  --><p class='noindent'><span class='paragraphHead' id='table-of-contents-issues'><a id='x8-101000'></a><span class='ec-lmbx-10'>Table of contents issues</span></span>
+<!--  l. 110  --><p class='noindent'><span class='paragraphHead' id='table-of-contents-issues'><a id='x8-101000'></a><span class='ec-lmbx-10'>Table of contents issues</span></span>
 Some math commands may cause issues when they are used in section
 titles in the MathJax mode. This can be fixed using the <code class='texttt'>\fixmathjaxtoc</code>
 command:
@@ -1505,19 +1510,19 @@ command:
 <pre class='fancyvrb' id='fancyvrb155'><a id='x8-101003r1'></a><span class='textcolor-2838af'>\fixmathjaxtoc\int</span></pre>
 
 </figure>
-<!--  l. 111  --><p class='noindent'>
+<!--  l. 121  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='mathjaxs-mathml-mode'><span class='titlemark'>7.18.5   </span> <a id='x8-1020007.18.5'></a>MathJax’s <code class='texttt'>MathML</code> mode</h4>
-<!--  l. 113  --><p class='noindent'>Math is converted to <code class='texttt'>MathML</code> by <code class='texttt'>TeX4ht</code>, MathJax then renders it. Custom
+<!--  l. 123  --><p class='noindent'>Math is converted to <code class='texttt'>MathML</code> by <code class='texttt'>TeX4ht</code>, MathJax then renders it. Custom
 commands and cross-references work in this mode.
-</p><!--  l. 116  --><p class='indent'>   The <code class='texttt'>MathML</code> MathJax mode can be required using the <span class='emph'>mathml,mathjax</span>
+</p><!--  l. 126  --><p class='indent'>   The <code class='texttt'>MathML</code> MathJax mode can be required using the <span class='emph'>mathml,mathjax</span>
 option.
-</p><!--  l. 240  --><p class='noindent'>
-</p>   
-<h3 class='sectionHead' id='bibliographies1'><span class='titlemark'>7.19   </span> <a id='x8-1030007.19'></a>Bibliographies</h3>
                                                                   
 
                                                                   
+</p><!--  l. 240  --><p class='noindent'>
+</p>   
+<h3 class='sectionHead' id='bibliographies1'><span class='titlemark'>7.19   </span> <a id='x8-1030007.19'></a>Bibliographies</h3>
 <!--  l. 241  --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='indexing1'><span class='titlemark'>7.20   </span> <a id='x8-1040007.20'></a>Indexing</h3>
