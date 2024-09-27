@@ -79,6 +79,14 @@ MathJax. See the how-to~\namerefpage{sec:howto-mathjax} for the examples
 on how to configure MathJax for custom commands, new environments, cross-references
 and other issues.
 
+\DocConfigure{MathJaxInline}{before}{after}\EndDoc
+\DocConfigure{MathJaxBlock}{before}{after}\EndDoc
+\DocConfigure{MathJaxEnv}{before}{after}\EndDoc
+
+These configurations enclose MathJax math in HTML elements, so it is possible to select 
+them using CSS or DOM filters.
+
+
 \DocConfigure{MathJaxConfig} {JavaScript object}\EndDoc
 
 See the \href{https://docs.mathjax.org/en/latest/options/index.html}{MathJax documentation}
@@ -107,6 +115,8 @@ This can be fixed using the \texcommand{\fixmathjaxtoc} command:
 \begin{texsource}
 \fixmathjaxtoc\int
 \end{texsource}
+
+
 
 \subsection{MathJax's \mathml{} mode}
 
