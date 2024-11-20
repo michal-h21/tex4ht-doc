@@ -66,13 +66,22 @@ The address of the \term{MathJax} script and its configuration string. Default v
 
 \subsection{MathJax's \LaTeX\ mode}
 
-
-
 In the \LaTeX\ math mode, \TeX\ macros used in the math mode are preserved in
 the output HTML document. 
 By default, inline and display math, as well as math environments should work.
 They are parsed and rendered by MathJax when the
 document is displayed by a web browser.
+
+By default, \texfourht\ cleans the output to remove characters that might cause
+issues in the HTML output. However, this process can be resource-intensive when
+dealing with a large number of mathematical environments. If the compilation of
+your document takes too long, you can try using the \option{fastmathjax} option, which
+disables this cleaning process. The downside is that \makefourht\ might report
+errors during DOM processing. In most cases, however, the DOM filters can still
+run, so it is usually not a significant issue.
+
+
+
 
 The downside of this mode is that commands unknown to MathJax must be configured in a special configuration for
 MathJax. See the how-to~\namerefpage{sec:howto-mathjax} for the examples 
