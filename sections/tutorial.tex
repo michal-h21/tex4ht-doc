@@ -3,13 +3,13 @@
 \href{https://www.tug.org/tex4ht/}{\texttt{TeX4ht}} is a system that
 converts LaTeX to various output formats, including \texttt{HTML},
 \href{http://en.wikipedia.org/wiki/OpenDocument}{\texttt{ODT}},
-\href{http://en.wikipedia.org/wiki/DocBook}{\texttt{DocBook}} or
+\href{http://en.wikipedia.org/wiki/DocBook}{\texttt{DocBook}}, and
 \href{http://en.wikipedia.org/wiki/Text_Encoding_Initiative}{\texttt{TEI}}.
 \texttt{HTML} and \texttt{ODT} formats are the most common and best-supported
 conversion targets.
 
-\texttt{TeX4ht} allows authors to convert \LaTeX\ input to 
-several output formats, like \texttt{HTML} (for web pages) or
+\texttt{TeX4ht} allows authors to convert \LaTeX\ input into 
+several output formats, such as \texttt{HTML} (for web pages) or
 \texttt{ePub} (for ebooks and other applications).
 
 \hypertarget{basic-usage}{%
@@ -21,9 +21,8 @@ Conversion is invoked using the \makefourht\ command:
 $ make4ht filename.tex
 \end{shellcommand}
 
-
-Let us start with conversion of a simple \LaTeX\ file to HTML  
-with the following \LaTeX\ file:
+Let us start with the conversion of a simple \LaTeX\ file to HTML  
+using the following \LaTeX\ file:
 
 \texinput{examples/otherlang/babel.tex}
 
@@ -37,7 +36,7 @@ The resulting HTML file contains the following code:
 
 \htmlinput{examples/otherlang/babel-lua-body.html}
 
-As you can see, multiple options can be joined for \makefourht.  The above invocation is equal to the following:
+As you can see, multiple options can be combined with \makefourht. The above invocation is equivalent to the following:
 
 \begin{shellcommand}
 $ make4ht -l -m draft filename.tex
@@ -49,32 +48,21 @@ You can also use the long options:
 $ make4ht --lua --mode draft filename.tex
 \end{shellcommand}
 
-What do these options mean? 
+What do these options mean?
 
-The option \shellcmd{--lua} tells \makefourht\  to use Lua\LaTeX\ as a
+The \shellcmd{--lua} option tells \makefourht\ to use Lua\LaTeX\ as the
 compilation engine. There is also an option \shellcmd{-x} (or \shellcmd{--xetex})
-that allows the use of Xe\LaTeX\ for the compilation. If neither of these options
-is used, the file will be converted with the default PDF\LaTeX\ engine.
-
-For example, if we compile the sample file without the \shellcmd{-l} option, we would get
-a different result:
-
-\htmlinput{examples/otherlang/babel-body.html}
-
-Notice that the accents in the \textit{ť} and \textit{ď} letters are detached from the base letters.
-That is because \texfourht{} uses information about characters in the DVI file. Current \LaTeX{}
-supports basic accented characters out of the box, but sometimes, they don't work as expected.
+that allows the use of Xe\LaTeX\ for compilation. If neither of these options
+is used, the file will be compiled using the default PDF\LaTeX\ engine.
 
 
-The option \shellcmd{--mode} sets the compilation mode. \makefourht\  has one built-in mode,
+The \shellcmd{--mode} option sets the compilation mode. \makefourht\ has one built-in mode,
 named \texttt{draft}. 
-By default, \makefourht{}  compiles your \TeX{} file three times, to obtain the correct hyperlinks 
-and other features that depend on auxilary files. The \texttt{draft} mode uses
+By default, \makefourht{} compiles your \TeX{} file three times to ensure correct hyperlinks 
+and other features that depend on auxiliary files. The \texttt{draft} mode uses
 only one compilation run, so it is much faster.
 
-
-
-\makefourht\  converts \LaTeX\ file to a HTML 5 document. You can request
+\makefourht\ converts a \LaTeX\ file to an HTML 5 document. You can request
 conversion to other formats using the \texttt{-f} option. For example,
 to convert a document to the OpenDocument Format, use the following:
 
@@ -82,15 +70,92 @@ to convert a document to the OpenDocument Format, use the following:
 $ make4ht -f odt filename.tex
 \end{shellcommand}
 
-\subsection{Debugging}
 
 
 
-% ToDO: make4ht -a debug
+
+\section{Debugging \texfourht}\label{sec:debugging}
+
+When working with \texfourht, you may encounter issues with the conversion
+process, such as clashes between packages and \texfourht, formatting errors or missing content.
+Here are some tips and tools to help you debug these problems.
+
+\texfourht\ hides the output of the commands it uses for compilation. However,
+if it encounters an error, it will display it in the terminal output. For
+example, if it encounters an unknown command, it will output an error message
+similar to the following:
+
+\begin{shellcommand}
+$ test4ht -slm draft grr.tex 
+[STATUS]  make4ht: Conversion started
+[STATUS]  make4ht: Input file: grr.tex
+[ERROR]   htlatex: Compilation errors in the htlatex run
+[ERROR]   htlatex: Filename     Line    Message
+[ERROR]   htlatex: ./grr.tex    15       Undefined control sequence.
+[STATUS]  make4ht: Conversion finished
+\end{shellcommand}
+
+In this example, it says that there is an undefined control sequence used on 
+the line 15 in the \verb|grr.tex| file. In this case, it’s easy to locate the
+error, but that’s not always true. Some errors arise due to conflicts between
+certain packages and `\texfourht`, making it more challenging to identify the
+root cause.
+
+
+
+By default, only errors and warnings are shown. Using the \verb|-a debug| option,
+\LaTeX\ is run in interactive mode, where you can see all terminal output and
+also control the engine by entering commands if the compilation stops due to an
+error. This option also displays all internal messages from \texfourht, which
+can be helpful for debugging. 
+
+
+To invoke \makefourht\ with debug mode, use the following command:
+
+\begin{shellcommand}
+$ make4ht -a debug filename.tex
+\end{shellcommand}
+
+
+\subsection{Test with Minimal Example}
+If you are facing a persistent issue, try isolating the problematic section of
+your document. Create a minimal LaTeX file that reproduces the problem and use
+\makefourht\ to convert it. This method helps you identify whether the issue
+lies in the structure of your document or specific commands. 
+Try removing the used packages one by one until the error no longer occurs.
+
+To quickly fix an error, you can use the \verb|\ifdefined\HCode ... \else ... \fi| condition.
+For example, there are some packages that cause fatal errors with \texfourht, because 
+they redefine some commands to output some PDF instructions. As such instructions 
+are not useful in the HTML output anyway, you can safely exclude these packages with 
+\texfourht:
+
+\begin{texsource}
+\ifdefined\HCode\else 
+  \usepackage{insertpdfinstructions}
+\fi
+\end{texsource}
+
+You can fill a bug report to \texfourht\ maintainers anyway, because we try to 
+be able to run all \LaTeX\ source files without such modifications.
+
+
+Debugging \texfourht\ can sometimes involve trial and error, but with the
+right tools and careful analysis, most issues can be resolved efficiently.
+
+You can report errors in the \href{https://puszcza.gnu.org.ua/bugs/?group=tex4ht}{TeX4ht issue tracker}, on
+\href{https://tex.stackexchange.com/questions/tagged/tex4ht}{using the tex4ht tag}, 
+or on the \href{https://github.com/michal-h21/make4ht}{make4ht GitHub page}.
+
+
+
+
+
 % ToDo: make4ht -m clean
 % ToDo: \ifdefined\HCode
 
-More information about \makefourht and its command line options and other features can be found in
+You can find more info about troubleshooting in \namerefpage{faq:compilation_errors},
+and about \makefourht\ and its command line options and other features in
 section \namerefpage{sec:make4ht-intro}.
 
 
@@ -113,6 +178,8 @@ $ make4ht filename.tex "3,sec-filename,fn-in"
 
 
 There are other numeric options, each of them breaks document into separate HTML pages on a different sectioning level. Option 1 does not break pages at all, 2 at parts, 3 at chapters, 4 at sections, 5 at subsections, 6 at sub-subsections, and 7 at paragraphs. The \verb|sec-filename| option will produce HTML file names that are based on section titles, instead of their numbers. The \verb|fn-in| option prints footnotes at the end of each HTML page.
+
+\subsection{Math Options}
 
 There are also options that change the handling of math. Normally, HTML elements are used for simple math, and pictures are used for more complex features, such as fractions or square roots. This usually does not look good, so what are other options?
 
