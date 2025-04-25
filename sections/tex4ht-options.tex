@@ -196,6 +196,14 @@ configuration files.
 
 \item[frames] for \chfont{TOC}\ and content in two frames.
 
+\item[fulltoc] adds a full \chfont{TOC} to every generated page. This
+  \chfont{TOC} includes links to all sections in the document, making
+  navigation easier across separate HTML files. It is especially useful
+  in multi-page outputs where readers need consistent access to the document
+  structure. When combined with the \texttt{collapsetoc} DOM filter, the \chfont{TOC} can be
+  automatically collapsed to show only top-level sections and the subsections
+  relevant to the current page.
+
 %\item[fussy]
 
 \item[gif] for bitmaps of pictures in \verb=.gif= format, use this
@@ -392,6 +400,7 @@ configuration files.
   Slugification involves converting the title to lowercase, removing
   diacritics, replacing spaces with hyphens, and stripping out characters that
   are not alphanumeric or hyphens. This ensures clean, URL-friendly filenames. 
+  Works only with LuaLaTeX.
 
 \item[sections+] for back links to table of contents, use this option.
 
