@@ -387,6 +387,12 @@ configuration files.
 \item[sec-filename] for file names derived from section titles, use
   the command line option \verb=sec-filename=.
 
+\item[sec-slugname] create filenames for chapters and sections for the current cut levels,
+  derived from a slugified version of the section titles.
+  Slugification involves converting the title to lowercase, removing
+  diacritics, replacing spaces with hyphens, and stripping out characters that
+  are not alphanumeric or hyphens. This ensures clean, URL-friendly filenames. 
+
 \item[sections+] for back links to table of contents, use this option.
 
 % \item[sections-]
