@@ -8,153 +8,14 @@
 <meta content='tex4ht-doc.tex' name='src' /> 
 <link href='style.css' rel='stylesheet' type='text/css' /> 
 </head><body>
-<nav class='TOC'>   
-<span class='chapterToc'>1 <a href='Introduction.html#introduction'>Introduction</a></span>
-
-<span class='chapterToc'>2 <a href='BasicTutorial.html#basic-tutorial'>Basic Tutorial</a></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<span class='chapterToc'>3 <a href='Howto.html#how-to'>How to</a></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<span class='chapterToc'>4 <a href='CallingCommands.html#calling-commands'>Calling Commands</a></span>
-
-
-
-                                                                  
-
-                                                                  
-
-
-
-
-<span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
-<span class='chapterToc'>6 <a href='texfourhtOptions.html#texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
-
-
-<span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                  
-
-                                                                  
-
-
-
-
-
-
-
-
-
-
-
-<span class='chapterToc'>8 <a href='Make4htBuildFiles.html#makeht-build-files'>Make4ht Build Files</a></span>
-
-
-
-<span class='chapterToc'>9 <a href='#faq-and-troubleshooting'>FAQ and Troubleshooting</a></span>
-<span class='sectionToc'>9.1 <a href='#general-advice'>General Advice</a></span>
-<span class='sectionToc'>9.2 <a href='#compilation-errors'>Compilation Errors</a></span>
-<span class='sectionToc'>9.3 <a href='#dom-processing-errors'>DOM Processing Errors</a></span>
-<span class='sectionToc'>9.4 <a href='#math-issues'>Math Issues</a></span>
-<span class='subsectionToc'>9.4.1 <a href='#problems-with-mathml'>Problems With <span class='emph'><code class='texttt'>MathML</code></span></a></span>
-<span class='sectionToc'>9.5 <a href='#issues-with-packages'>Issues With Packages</a></span>
-<span class='subsectionToc'>9.5.1 <a href='#hyperref-issues'>Hyperref Issues</a></span>
-<span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
-
-
-
-
-
-
-
-
-
-<span class='chapterToc'>11 <a href='Glossary.html#glossary'>Glossary</a></span>
-<span class='chapterToc'>12 <a href='Bibliography.html#bibliography'>Bibliography</a></span>
-<span class='chapterToc'>13 <a href='Index.html#index'>Index</a></span>
-<span class='chapterToc'>14 <a href='Changes.html#changes'>Changes</a></span>
- 
-   
-</nav> 
 <main class='main-content'> 
-<nav class='crosslinks-top'> [<a href='Make4htBuildFiles.html'>prev</a>] [<a href='tex4ht-doc.html#FAQandTroubleshooting.html'>up</a>] [<a href='ForDevelopers.html'>next</a>] </nav> 
+<nav class='crosslinks-top'> [<a href='#_'>up</a>] </nav> 
 <h2 class='chapterHead' id='faq-and-troubleshooting'><span class='titlemark'>Chapter 9</span><br /><a id='x10-1130009'></a>FAQ and Troubleshooting</h2>
+   
 <h3 class='sectionHead' id='general-advice'><span class='titlemark'>9.1   </span> <a id='x10-1140009.1'></a>General Advice</h3>
 <!--  l. 4  --><p class='noindent'>In general, don’t postpone your conversion to the last moment. As you will most
 likely want to produce ebook or HTML versions of LaTeX documents these days, you
 should try the conversion of your document from the beginning.
-                                                                  
-
-                                                                  
 </p><!--  l. 8  --><p class='indent'>   It is much easier to fix errors as soon as they appear. Often, one issue
 can cause many issues that follows, and it can be really hard to find the
 culprit.
@@ -173,14 +34,16 @@ the following channels:
 <li class='itemize'> <a href='https://tug.org/mailman/listinfo/tex4ht'><code class='texttt'>TeX4ht</code> mailing list</a>
 </li>
 <li class='itemize'> <a href='https://tex.stackexchange.com/questions/tagged/tex4ht'>TeX.sx</a> – don’t forget to add the <code class='texttt'>tex4ht</code> tag</li></ul>
-<!--  l. 27  --><p class='noindent'>
-</p>   
+   
 <h3 class='sectionHead' id='compilation-errors'><span class='titlemark'>9.2   </span> <a id='x10-1150009.2'></a>Compilation Errors</h3>
 <!--  l. 30  --><p class='noindent'>In the case of error, always try to run <code class='texttt'>make4ht</code> in the debugging mode. It will provide
 the full terminal output, and stop on errors:
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb161'><a id='x10-115003r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-a<span class='textcolor-a88e28'> </span>debug<span class='textcolor-a88e28'> </span>foo.tex</pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!--  l. 37  --><p class='indent'>   In many cases, fix of the first error can resolve the following errors.
@@ -189,9 +52,6 @@ you don’t need features the problematic package provides (typically, they modi
 stuff that makes sense in the PDF output, but not in HTML, like page headers, fancy
 section titles, etc.), an easiest fix is to disable their loading when <code class='texttt'>TeX4ht</code> is
 active.
-                                                                  
-
-                                                                  
 </p><!--  l. 46  --><p class='indent'>   The easiest way to disable package from loading is to add the following condition
 to your document preamble:
 </p>   
@@ -242,6 +102,9 @@ debug.
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb166'><a id='x10-115066r1'></a><span class='textcolor-2838af'>\caption</span><span class='textcolor-387f38'>{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\begin</span><span class='textcolor-387f38'>{array}{c c} hello &amp; world</span><span class='textcolor-af3f3f'>\end</span><span class='textcolor-387f38'>{array}</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!--  l. 99  --><p class='indent'>   The issue is that some commands needs to be protected when used in parameters
@@ -250,9 +113,6 @@ of <code class='texttt'>\section</code> or <code class='texttt'>\caption</code> 
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb167'><a id='x10-115069r1'></a><span class='textcolor-2838af'>\caption</span><span class='textcolor-387f38'>{</span><span class='textcolor-b73838'>$</span><span class='textcolor-af3f3f'>\protect\begin</span><span class='textcolor-387f38'>{array}{c c} hello &amp; world</span><span class='textcolor-af3f3f'>\protect\end</span><span class='textcolor-387f38'>{array}</span><span class='textcolor-b73838'>$</span><span class='textcolor-387f38'>}</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!--  l. 107  --><p class='indent'>   Other fix is to use the <span class='emph'>writetoc</span> configuration:
@@ -282,7 +142,7 @@ mode of <code class='texttt'>make4ht</code>:
 </figure>
 <!--  l. 132  --><p class='indent'>   It will remove all temporary files, but also generated HTML files and
 images.
-</p><!--  l. 136  --><p class='noindent'>
+
 </p>   
 <h3 class='sectionHead' id='dom-processing-errors'><span class='titlemark'>9.3   </span> <a id='x10-1160009.3'></a>DOM Processing Errors</h3>
 <!--  l. 139  --><p class='noindent'><code class='texttt'>TeX4ht</code> post-process generated HTML and XML files using Lua filters. They fixes
@@ -291,6 +151,9 @@ features. For example, the <code class='texttt'>MathML</code> output relies on f
 code.
 </p><!--  l. 143  --><p class='indent'>   These filters use the LuaXML library for the processing. When the generated
 HTML or XML file is not well-formed, you may get the following warning:
+                                                                  
+
+                                                                  
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb170'><a id='x10-116005r1'></a><span class='textcolor-656565'>[</span>WARNING<span class='textcolor-656565'>]</span><span class='textcolor-a88e28'> </span>domfilter:<span class='textcolor-a88e28'> </span>DOM<span class='textcolor-a88e28'> </span>parsing<span class='textcolor-a88e28'> </span>of<span class='textcolor-a88e28'> </span>test.html<span class='textcolor-a88e28'> </span>failed: 
@@ -300,9 +163,6 @@ HTML or XML file is not well-formed, you may get the following warning:
 </figure>
 <!--  l. 153  --><p class='indent'>   This means that DOM parsing failed and filters cannot be applied. This will
 result in incorrect file.
-                                                                  
-
-                                                                  
 </p><!--  l. 155  --><p class='noindent'><span class='textbf'>Incorrect handling of paragraphs</span> Common cause of this issue is incorect
 handling of paragraphs in commands that produce block level elements such as <code class='texttt'>&lt;div&gt;</code>
 or <code class='texttt'>&lt;section&gt;</code> elements.
@@ -339,7 +199,7 @@ code:
 </figure>
 <!--  l. 188  --><p class='indent'>   The issue is that <code class='texttt'>&lt;p&gt;</code> elements are mismatched. It is necessary that closing <code class='texttt'>&lt;/p&gt;</code>
 tag is inserted before <code class='texttt'>&lt;div&gt;</code> tag. You can use commands introduced in section
-<a href='Configurations.html#paragraph-handling'>Paragraph Handling<!--  tex4ht:ref: sec:paragraph_handling   --></a> (<a href='Configurations.html#paragraph-handling'>7.3.4<!--  tex4ht:ref: sec:paragraph_handling   --></a>) for this task. The correct configuration can look like
+Paragraph Handling (7.3.4) for this task. The correct configuration can look like
 this:
 </p>   
 <figure class='texsource' role='doc-example'>
@@ -354,6 +214,9 @@ too early. But we want to start a new paragraph after <code class='texttt'>&lt;d
 explicit <code class='texttt'>\par</code> after <code class='texttt'>\HCode</code>. Similar paragraph treatment is needed also for the
 closing of the environment. The resulting HTML with this configuration is
 correct:
+                                                                  
+
+                                                                  
 </p>   
 <figure class='htmlsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb175'><a id='x10-116063r1'></a><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>div </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'test'</span><span class='textcolor-878787'>&gt;</span> 
@@ -361,15 +224,10 @@ correct:
 <a id='x10-116067r3'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;<span class='textit'>&lt;!-- l. 30 --&gt;</span>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'indent'</span><span class='textcolor-878787'>&gt;   &lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>'cmti-12'</span><span class='textcolor-878787'>&gt;</span>more paragraphs<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
 <a id='x10-116069r4'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;&lt;/</span><span class='textcolor-2838af'>div</span><span class='textcolor-878787'>&gt;</span></pre>
 
-</figure>
-                                                                  
+</figure>   
 
-                                                                  
-<!--  l. 215  --><p class='noindent'>
-</p>   
 <h3 class='sectionHead' id='math-issues'><span class='titlemark'>9.4   </span> <a id='x10-1170009.4'></a>Math Issues</h3>
-<!--  l. 216  --><p class='noindent'>
-</p>   
+   
 <h4 class='subsectionHead' id='problems-with-mathml'><span class='titlemark'>9.4.1   </span> <a id='x10-1180009.4.1'></a>Problems With <span class='emph'><code class='texttt'>MathML</code></span></h4>
 <!--  l. 218  --><p class='noindent'><span class='textbf'>Single delimiters</span> Use of single delimiters like <code class='texttt'>$\langle$</code> may result in
 invalid <code class='texttt'>MathML</code> code. <code class='texttt'>TeX4ht</code> can try to fix that using the <span class='emph'>mathml-</span> option.
@@ -385,26 +243,24 @@ by using <span class='textbf'><code class='texttt'>\mbox</code></span> instead.
 <a id='x10-118013r4'></a>  <span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>array<span class='textcolor-387f38'>}</span> 
 <a id='x10-118015r5'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>equation*<span class='textcolor-387f38'>}</span></pre>
 
-</figure>
-<!--  l. 239  --><p class='noindent'>
-</p>   
+</figure>   
+
 <h3 class='sectionHead' id='issues-with-packages'><span class='titlemark'>9.5   </span> <a id='x10-1190009.5'></a>Issues With Packages</h3>
-<!--  l. 242  --><p class='noindent'>
-</p>   
+   
 <h4 class='subsectionHead' id='hyperref-issues'><span class='titlemark'>9.5.1   </span> <a id='x10-1200009.5.1'></a>Hyperref Issues</h4>
 <!--  l. 244  --><p class='noindent'><span class='textbf'>Fragile commands in captions</span> The <code class='texttt'>hyperref</code> package loads automatically also
 the <code class='texttt'>nameref</code> package. It then saves contents of section titles or captions in the
 auxilary file, so they can be then retrieved using the <span class='textbf'><code class='texttt'>\nameref</code></span> command. This leads
 to various problems with the <span class='textbf'><code class='texttt'>\caption</code></span> command, where some commands, such as
 <span class='textbf'><code class='texttt'>\index</code></span> or <span class='textbf'><code class='texttt'>\label</code></span> could cause fatal errors.
+                                                                  
+
+                                                                  
 </p><!--  l. 251  --><p class='indent'>   We fixed these problematic commands, but it is possible that you will experience
 issues also with other commands. You can declare these commands to do nothing, or
 to be passed literaly to the auxilary file, using this configuration:
 </p>   
 <figure class='texsource' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb177'><a id='x10-120008r1'></a><span class='textcolor-2838af'>\Configure</span><span class='textcolor-387f38'>{</span>CaptionCommandsFix<span class='textcolor-387f38'>}{</span><span class='textcolor-878787'><span class='textit'>%</span></span> 
 <a id='x10-120010r2'></a><span class='textcolor-878787'><span class='textit'>% pass \left unexpanded to the aux file</span></span> 
 <a id='x10-120012r3'></a><span class='textcolor-2838af'>\DeclareRobustCommand\left</span><span class='textcolor-387f38'>{}</span> 
@@ -416,7 +272,7 @@ to be passed literaly to the auxilary file, using this configuration:
                                                                   
 
                                                                   
-<nav class='crosslinks-bottom'>[<a href='Make4htBuildFiles.html'>prev</a>] [<a href='tex4ht-doc.html#FAQandTroubleshooting.html'>up</a>] [<a href='ForDevelopers.html'>next</a>] </nav>   </main><p><script data-goatcounter='https://kodymirus.goatcounter.com/count' src='/js/libs/goatcounter.js'></script> 
+<nav class='crosslinks-bottom'>[<a href='#_'>up</a>] </nav>   </main><p><script data-goatcounter='https://kodymirus.goatcounter.com/count' src='/js/libs/goatcounter.js'></script> 
  
 </p></body> 
 </html>

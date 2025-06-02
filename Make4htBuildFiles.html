@@ -8,219 +8,78 @@
 <meta content='tex4ht-doc.tex' name='src' /> 
 <link href='style.css' rel='stylesheet' type='text/css' /> 
 </head><body>
-<nav class='TOC'>   
-<span class='chapterToc'>1 <a href='Introduction.html#introduction'>Introduction</a></span>
-
-<span class='chapterToc'>2 <a href='BasicTutorial.html#basic-tutorial'>Basic Tutorial</a></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<span class='chapterToc'>3 <a href='Howto.html#how-to'>How to</a></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<span class='chapterToc'>4 <a href='CallingCommands.html#calling-commands'>Calling Commands</a></span>
-
-
-
-                                                                  
-
-                                                                  
-
-
-
-
-<span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
-<span class='chapterToc'>6 <a href='texfourhtOptions.html#texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
-
-
-<span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                  
-
-                                                                  
-
-
-
-
-
-
-
-
-
-
-
-<span class='chapterToc'>8 <a href='#makeht-build-files'>Make4ht Build Files</a></span>
-<span class='sectionToc'>8.1 <a href='#commands-execution'>Commands execution</a></span>
-<span class='sectionToc'>8.2 <a href='#filters'>Filters</a></span>
-<span class='sectionToc'>8.3 <a href='#image-conversion'>Image conversion</a></span>
-<span class='chapterToc'>9 <a href='FAQandTroubleshooting.html#faq-and-troubleshooting'>FAQ and Troubleshooting</a></span>
-
-
-
-
-
-
-
-<span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
-
-
-
-
-
-
-
-
-
-<span class='chapterToc'>11 <a href='Glossary.html#glossary'>Glossary</a></span>
-<span class='chapterToc'>12 <a href='Bibliography.html#bibliography'>Bibliography</a></span>
-<span class='chapterToc'>13 <a href='Index.html#index'>Index</a></span>
-<span class='chapterToc'>14 <a href='Changes.html#changes'>Changes</a></span>
- 
-   
-</nav> 
 <main class='main-content'> 
-<nav class='crosslinks-top'> [<a href='Configurations.html'>prev</a>] [<a href='tex4ht-doc.html#Make4htBuildFiles.html'>up</a>] [<a href='FAQandTroubleshooting.html'>next</a>] </nav> 
+<nav class='crosslinks-top'> [<a href='#_'>up</a>] </nav> 
 <h2 class='chapterHead' id='makeht-build-files'><span class='titlemark'>Chapter 8</span><br /><a id='x9-1090008'></a>Make4ht Build Files</h2>
+   
 <h3 class='sectionHead' id='commands-execution'><span class='titlemark'>8.1   </span> <a id='x9-1100008.1'></a>Commands execution</h3>
 <!--  l. 5  --><p class='noindent'>The following example uses a custom command, <code class='texttt'>myhtlatex</code>, to determine if the
 document needs a recompilation. It makes MD5 checksum of temporary files used by
 <code class='texttt'>TeX4ht</code>, before and after the compilation.
-                                                                  
-
-                                                                  
 </p><!--  l. 9  --><p class='indent'>   It checksums differ, new sections or labels were added to the document, and more
 LaTeX compilations may be necessary to ger correct hyperlinks. The script will
 execute LaTeX again, until checksums don’t change.
 </p>   
 <figure class='luasource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb160'><a id='x9-110046r1'></a><span class='textcolor-2838af'><span class='textit'>local</span></span> htlatex <span class='textcolor-656565'>= </span><span class='textcolor-387f38'>require </span><span class='textcolor-b73838'>"make4ht-htlatex"</span> 
+<pre class='fancyvrb' id='fancyvrb160'><a id='x9-110046r1'></a><span class='textcolor-2838af'><span class='textit'>local</span></span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>htlatex</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>=</span><span class='textcolor-a88e28'> </span><span class='textcolor-387f38'>require</span><span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"make4ht-htlatex"</span> 
 <a id='x9-110048r2'></a> 
-<a id='x9-110050r3'></a><span class='textcolor-2838af'><span class='textit'>local</span></span> <span class='textcolor-2838af'>function </span><span class='textcolor-77593f'>get_checksum</span><span class='textcolor-878787'>(</span>main_file<span class='textcolor-878787'>,</span> extensions<span class='textcolor-878787'>)</span> 
-<a id='x9-110052r4'></a>  <span class='textcolor-878787'><span class='textit'>-- make checksum for temporary files</span></span> 
-<a id='x9-110054r5'></a>  <span class='textcolor-2838af'><span class='textit'>local</span></span> checksum <span class='textcolor-656565'>= </span><span class='textcolor-b73838'>""</span> 
-<a id='x9-110056r6'></a>  <span class='textcolor-2838af'><span class='textit'>local</span></span> extensions <span class='textcolor-656565'>=</span> extensions <span class='textcolor-a847a8'>or </span><span class='textcolor-878787'>{</span><span class='textcolor-b73838'>"aux"</span><span class='textcolor-878787'>, </span><span class='textcolor-b73838'>"4tc"</span><span class='textcolor-878787'>, </span><span class='textcolor-b73838'>"xref"</span><span class='textcolor-878787'>}</span> 
-<a id='x9-110058r7'></a>  <span class='textcolor-2838af'>for</span> _<span class='textcolor-878787'>,</span> ext <span class='textcolor-2838af'>in </span><span class='textcolor-387f38'>ipairs</span><span class='textcolor-878787'>(</span>extensions<span class='textcolor-878787'>) </span><span class='textcolor-2838af'>do</span> 
-<a id='x9-110060r8'></a>    <span class='textcolor-2838af'><span class='textit'>local</span></span> f <span class='textcolor-656565'>= </span><span class='textcolor-387f38'>io.open</span><span class='textcolor-878787'>(</span>main_file <span class='textcolor-656565'>.. </span><span class='textcolor-b73838'>"." </span><span class='textcolor-656565'>..</span> ext<span class='textcolor-878787'>, </span><span class='textcolor-b73838'>"r"</span><span class='textcolor-878787'>)</span> 
-<a id='x9-110062r9'></a>    <span class='textcolor-2838af'>if</span> f <span class='textcolor-2838af'>then</span> 
-<a id='x9-110064r10'></a>      <span class='textcolor-2838af'><span class='textit'>local</span></span> content <span class='textcolor-656565'>=</span> f<span class='textcolor-878787'>:</span>read<span class='textcolor-878787'>(</span><span class='textcolor-b73838'>"*all"</span><span class='textcolor-878787'>)</span> 
-<a id='x9-110066r11'></a>      f<span class='textcolor-878787'>:</span>close<span class='textcolor-878787'>()</span> 
-<a id='x9-110068r12'></a>      <span class='textcolor-878787'><span class='textit'>-- make checksum of the file and previous checksum</span></span> 
-<a id='x9-110070r13'></a>      <span class='textcolor-878787'><span class='textit'>-- this way, we will detect change in any file</span></span> 
-<a id='x9-110072r14'></a>      checksum <span class='textcolor-656565'>=</span> md5<span class='textcolor-878787'>.</span>sumhexa<span class='textcolor-878787'>(</span>checksum <span class='textcolor-656565'>..</span> content<span class='textcolor-878787'>)</span> 
-<a id='x9-110074r15'></a>    <span class='textcolor-2838af'>end</span> 
-<a id='x9-110076r16'></a>  <span class='textcolor-2838af'>end</span> 
-<a id='x9-110078r17'></a>  <span class='textcolor-2838af'>return</span> checksum 
+<a id='x9-110050r3'></a><span class='textcolor-2838af'><span class='textit'>local</span></span><span class='textcolor-a88e28'> </span><span class='textcolor-2838af'>function</span><span class='textcolor-a88e28'> </span><span class='textcolor-77593f'>get_checksum</span><span class='textcolor-878787'>(</span><span class='textcolor-af3f3f'>main_file</span><span class='textcolor-878787'>,</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>extensions</span><span class='textcolor-878787'>)</span> 
+<a id='x9-110052r4'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-878787'><span class='textit'>-- make checksum for temporary files</span></span> 
+<a id='x9-110054r5'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-2838af'><span class='textit'>local</span></span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>checksum</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>=</span><span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>""</span> 
+<a id='x9-110056r6'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-2838af'><span class='textit'>local</span></span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>extensions</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>=</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>extensions</span><span class='textcolor-a88e28'> </span><span class='textcolor-a847a8'>or</span><span class='textcolor-a88e28'> </span><span class='textcolor-878787'>{</span><span class='textcolor-b73838'>"aux"</span><span class='textcolor-878787'>,</span><span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"4tc"</span><span class='textcolor-878787'>,</span><span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"xref"</span><span class='textcolor-878787'>}</span> 
+<a id='x9-110058r7'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-2838af'>for</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>_</span><span class='textcolor-878787'>,</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>ext</span><span class='textcolor-a88e28'> </span><span class='textcolor-2838af'>in</span><span class='textcolor-a88e28'> </span><span class='textcolor-387f38'>ipairs</span><span class='textcolor-878787'>(</span><span class='textcolor-af3f3f'>extensions</span><span class='textcolor-878787'>)</span><span class='textcolor-a88e28'> </span><span class='textcolor-2838af'>do</span> 
+<a id='x9-110060r8'></a><span class='textcolor-a88e28'>    </span><span class='textcolor-2838af'><span class='textit'>local</span></span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>f</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>=</span><span class='textcolor-a88e28'> </span><span class='textcolor-387f38'>io.open</span><span class='textcolor-878787'>(</span><span class='textcolor-af3f3f'>main_file</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>..</span><span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"."</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>..</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>ext</span><span class='textcolor-878787'>,</span><span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"r"</span><span class='textcolor-878787'>)</span> 
+<a id='x9-110062r9'></a><span class='textcolor-a88e28'>    </span><span class='textcolor-2838af'>if</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>f</span><span class='textcolor-a88e28'> </span><span class='textcolor-2838af'>then</span> 
+<a id='x9-110064r10'></a><span class='textcolor-a88e28'>      </span><span class='textcolor-2838af'><span class='textit'>local</span></span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>content</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>=</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>f</span><span class='textcolor-878787'>:</span><span class='textcolor-77593f'>read</span><span class='textcolor-878787'>(</span><span class='textcolor-b73838'>"*all"</span><span class='textcolor-878787'>)</span> 
+<a id='x9-110066r11'></a><span class='textcolor-a88e28'>      </span><span class='textcolor-af3f3f'>f</span><span class='textcolor-878787'>:</span><span class='textcolor-77593f'>close</span><span class='textcolor-878787'>()</span> 
+<a id='x9-110068r12'></a><span class='textcolor-a88e28'>      </span><span class='textcolor-878787'><span class='textit'>-- make checksum of the file and previous checksum</span></span> 
+<a id='x9-110070r13'></a><span class='textcolor-a88e28'>      </span><span class='textcolor-878787'><span class='textit'>-- this way, we will detect change in any file</span></span> 
+<a id='x9-110072r14'></a><span class='textcolor-a88e28'>      </span><span class='textcolor-af3f3f'>checksum</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>=</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>md5</span><span class='textcolor-878787'>.</span><span class='textcolor-77593f'>sumhexa</span><span class='textcolor-878787'>(</span><span class='textcolor-af3f3f'>checksum</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>..</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>content</span><span class='textcolor-878787'>)</span> 
+<a id='x9-110074r15'></a><span class='textcolor-a88e28'>    </span><span class='textcolor-2838af'>end</span> 
+<a id='x9-110076r16'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-2838af'>end</span> 
+<a id='x9-110078r17'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-2838af'>return</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>checksum</span> 
 <a id='x9-110080r18'></a><span class='textcolor-2838af'>end</span> 
 <a id='x9-110082r19'></a> 
-<a id='x9-110084r20'></a>Make<span class='textcolor-878787'>:</span>add<span class='textcolor-878787'>(</span><span class='textcolor-b73838'>"myhtlatex"</span><span class='textcolor-878787'>, </span><span class='textcolor-2838af'>function</span><span class='textcolor-878787'>(</span>par<span class='textcolor-878787'>)</span> 
-<a id='x9-110086r21'></a>  <span class='textcolor-878787'><span class='textit'>-- get checksum of temp files before compilation</span></span> 
-<a id='x9-110088r22'></a>  <span class='textcolor-2838af'><span class='textit'>local</span></span> checksum <span class='textcolor-656565'>=</span> get_checksum<span class='textcolor-878787'>(</span>par<span class='textcolor-878787'>.</span>input<span class='textcolor-878787'>)</span> 
-<a id='x9-110090r23'></a>  <span class='textcolor-2838af'><span class='textit'>local</span></span> status <span class='textcolor-656565'>=</span> htlatex<span class='textcolor-878787'>.</span>htlatex<span class='textcolor-878787'>(</span>par<span class='textcolor-878787'>)</span> 
-<a id='x9-110092r24'></a>  <span class='textcolor-878787'><span class='textit'>-- stop processing on error</span></span> 
-<a id='x9-110094r25'></a>  <span class='textcolor-2838af'>if</span> status <span class='textcolor-656565'>~= </span><span class='textcolor-444444'>0 </span><span class='textcolor-2838af'>then return</span> status <span class='textcolor-2838af'>end</span> 
-<a id='x9-110096r26'></a>  <span class='textcolor-878787'><span class='textit'>-- get checksum after compilation</span></span> 
-<a id='x9-110098r27'></a>  <span class='textcolor-2838af'><span class='textit'>local</span></span> newchecksum <span class='textcolor-656565'>=</span> get_checksum<span class='textcolor-878787'>(</span>par<span class='textcolor-878787'>.</span>input<span class='textcolor-878787'>)</span> 
-<a id='x9-110100r28'></a>  <span class='textcolor-878787'><span class='textit'>-- this is needed to prevent possible infinite loops</span></span> 
-<a id='x9-110102r29'></a>  <span class='textcolor-2838af'><span class='textit'>local</span></span> compilation_count <span class='textcolor-656565'>= </span><span class='textcolor-444444'>1</span> 
-<a id='x9-110104r30'></a>  <span class='textcolor-2838af'><span class='textit'>local</span></span> max_compilations  <span class='textcolor-656565'>= </span><span class='textcolor-444444'>3 </span><span class='textcolor-878787'><span class='textit'>-- &lt;- change as you want</span></span> 
-<a id='x9-110106r31'></a>  <span class='textcolor-2838af'>while</span> checksum <span class='textcolor-656565'>~=</span> newchecksum <span class='textcolor-2838af'>do</span> 
-<a id='x9-110108r32'></a>    <span class='textcolor-878787'><span class='textit'>--</span></span> 
-<a id='x9-110110r33'></a>    <span class='textcolor-2838af'>if</span> compilation_count <span class='textcolor-656565'>&gt;</span> max_compilations <span class='textcolor-2838af'>then return</span> status <span class='textcolor-2838af'>end</span> 
-<a id='x9-110112r34'></a>    status <span class='textcolor-656565'>=</span> htlatex<span class='textcolor-878787'>.</span>htlatex<span class='textcolor-878787'>(</span>par<span class='textcolor-878787'>)</span> 
-<a id='x9-110114r35'></a>    <span class='textcolor-878787'><span class='textit'>-- stop processing on error</span></span> 
-<a id='x9-110116r36'></a>    <span class='textcolor-2838af'>if</span> status <span class='textcolor-656565'>~= </span><span class='textcolor-444444'>0 </span><span class='textcolor-2838af'>then return</span> status <span class='textcolor-2838af'>end</span> 
-<a id='x9-110118r37'></a>    checksum <span class='textcolor-656565'>=</span> newchecksum 
-<a id='x9-110120r38'></a>    <span class='textcolor-878787'><span class='textit'>-- get checksum after compilation</span></span> 
-<a id='x9-110122r39'></a>    newchecksum <span class='textcolor-656565'>=</span> get_checksum<span class='textcolor-878787'>(</span>par<span class='textcolor-878787'>.</span>input<span class='textcolor-878787'>)</span> 
-<a id='x9-110124r40'></a>    compilation_count <span class='textcolor-656565'>=</span> compilation_count <span class='textcolor-656565'>+ </span><span class='textcolor-444444'>1</span> 
-<a id='x9-110126r41'></a>  <span class='textcolor-2838af'>end</span> 
-<a id='x9-110128r42'></a>  <span class='textcolor-2838af'>return</span> status 
+<a id='x9-110084r20'></a><span class='textcolor-af3f3f'>Make</span><span class='textcolor-878787'>:</span><span class='textcolor-77593f'>add</span><span class='textcolor-878787'>(</span><span class='textcolor-b73838'>"myhtlatex"</span><span class='textcolor-878787'>,</span><span class='textcolor-a88e28'> </span><span class='textcolor-2838af'>function</span><span class='textcolor-878787'>(</span><span class='textcolor-af3f3f'>par</span><span class='textcolor-878787'>)</span> 
+<a id='x9-110086r21'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-878787'><span class='textit'>-- get checksum of temp files before compilation</span></span> 
+<a id='x9-110088r22'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-2838af'><span class='textit'>local</span></span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>checksum</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>=</span><span class='textcolor-a88e28'> </span><span class='textcolor-77593f'>get_checksum</span><span class='textcolor-878787'>(</span><span class='textcolor-af3f3f'>par</span><span class='textcolor-878787'>.</span>input<span class='textcolor-878787'>)</span> 
+<a id='x9-110090r23'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-2838af'><span class='textit'>local</span></span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>status</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>=</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>htlatex</span><span class='textcolor-878787'>.</span><span class='textcolor-77593f'>htlatex</span><span class='textcolor-878787'>(</span><span class='textcolor-af3f3f'>par</span><span class='textcolor-878787'>)</span> 
+<a id='x9-110092r24'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-878787'><span class='textit'>-- stop processing on error</span></span> 
+<a id='x9-110094r25'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-2838af'>if</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>status</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>~=</span><span class='textcolor-a88e28'> </span><span class='textcolor-444444'>0</span><span class='textcolor-a88e28'> </span><span class='textcolor-2838af'>then</span><span class='textcolor-a88e28'> </span><span class='textcolor-2838af'>return</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>status</span><span class='textcolor-a88e28'> </span><span class='textcolor-2838af'>end</span> 
+<a id='x9-110096r26'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-878787'><span class='textit'>-- get checksum after compilation</span></span> 
+<a id='x9-110098r27'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-2838af'><span class='textit'>local</span></span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>newchecksum</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>=</span><span class='textcolor-a88e28'> </span><span class='textcolor-77593f'>get_checksum</span><span class='textcolor-878787'>(</span><span class='textcolor-af3f3f'>par</span><span class='textcolor-878787'>.</span>input<span class='textcolor-878787'>)</span> 
+<a id='x9-110100r28'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-878787'><span class='textit'>-- this is needed to prevent possible infinite loops</span></span> 
+<a id='x9-110102r29'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-2838af'><span class='textit'>local</span></span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>compilation_count</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>=</span><span class='textcolor-a88e28'> </span><span class='textcolor-444444'>1</span> 
+<a id='x9-110104r30'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-2838af'><span class='textit'>local</span></span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>max_compilations</span><span class='textcolor-a88e28'>  </span><span class='textcolor-656565'>=</span><span class='textcolor-a88e28'> </span><span class='textcolor-444444'>3</span><span class='textcolor-a88e28'> </span><span class='textcolor-878787'><span class='textit'>-- &lt;- change as you want</span></span> 
+<a id='x9-110106r31'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-2838af'>while</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>checksum</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>~=</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>newchecksum</span><span class='textcolor-a88e28'> </span><span class='textcolor-2838af'>do</span> 
+<a id='x9-110108r32'></a><span class='textcolor-a88e28'>    </span><span class='textcolor-878787'><span class='textit'>--</span></span> 
+<a id='x9-110110r33'></a><span class='textcolor-a88e28'>    </span><span class='textcolor-2838af'>if</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>compilation_count</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>&gt;</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>max_compilations</span><span class='textcolor-a88e28'> </span><span class='textcolor-2838af'>then</span><span class='textcolor-a88e28'> </span><span class='textcolor-2838af'>return</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>status</span><span class='textcolor-a88e28'> </span><span class='textcolor-2838af'>end</span> 
+<a id='x9-110112r34'></a><span class='textcolor-a88e28'>    </span><span class='textcolor-af3f3f'>status</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>=</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>htlatex</span><span class='textcolor-878787'>.</span><span class='textcolor-77593f'>htlatex</span><span class='textcolor-878787'>(</span><span class='textcolor-af3f3f'>par</span><span class='textcolor-878787'>)</span> 
+<a id='x9-110114r35'></a><span class='textcolor-a88e28'>    </span><span class='textcolor-878787'><span class='textit'>-- stop processing on error</span></span> 
+<a id='x9-110116r36'></a><span class='textcolor-a88e28'>    </span><span class='textcolor-2838af'>if</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>status</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>~=</span><span class='textcolor-a88e28'> </span><span class='textcolor-444444'>0</span><span class='textcolor-a88e28'> </span><span class='textcolor-2838af'>then</span><span class='textcolor-a88e28'> </span><span class='textcolor-2838af'>return</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>status</span><span class='textcolor-a88e28'> </span><span class='textcolor-2838af'>end</span> 
+<a id='x9-110118r37'></a><span class='textcolor-a88e28'>    </span><span class='textcolor-af3f3f'>checksum</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>=</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>newchecksum</span> 
+<a id='x9-110120r38'></a><span class='textcolor-a88e28'>    </span><span class='textcolor-878787'><span class='textit'>-- get checksum after compilation</span></span> 
+<a id='x9-110122r39'></a><span class='textcolor-a88e28'>    </span><span class='textcolor-af3f3f'>newchecksum</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>=</span><span class='textcolor-a88e28'> </span><span class='textcolor-77593f'>get_checksum</span><span class='textcolor-878787'>(</span><span class='textcolor-af3f3f'>par</span><span class='textcolor-878787'>.</span>input<span class='textcolor-878787'>)</span> 
+<a id='x9-110124r40'></a><span class='textcolor-a88e28'>    </span><span class='textcolor-af3f3f'>compilation_count</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>=</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>compilation_count</span><span class='textcolor-a88e28'> </span><span class='textcolor-656565'>+</span><span class='textcolor-a88e28'> </span><span class='textcolor-444444'>1</span> 
+<a id='x9-110126r41'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-2838af'>end</span> 
+<a id='x9-110128r42'></a><span class='textcolor-a88e28'>  </span><span class='textcolor-2838af'>return</span><span class='textcolor-a88e28'> </span><span class='textcolor-af3f3f'>status</span> 
 <a id='x9-110130r43'></a><span class='textcolor-2838af'>end</span><span class='textcolor-878787'>)</span> 
-<a id='x9-110132r44'></a>Make<span class='textcolor-878787'>:</span>myhtlatex <span class='textcolor-878787'>{}</span></pre>
+<a id='x9-110132r44'></a><span class='textcolor-af3f3f'>Make</span><span class='textcolor-878787'>:</span>myhtlatex<span class='textcolor-a88e28'> </span><span class='textcolor-878787'>{}</span></pre>
 
-</figure>
-<!--  l. 61  --><p class='noindent'>
-</p>   
+</figure>   
+
 <h3 class='sectionHead' id='filters'><span class='titlemark'>8.2   </span> <a id='x9-1110008.2'></a>Filters</h3>
 <!--  l. 63  --><p class='noindent'>Some samples:
 </p>     
 <ul class='itemize1'>
 <li class='itemize'>Render      math      by      Mathjax      during      tex4ht      compilation
 <a class='url' href='https://tex.stackexchange.com/a/402159/2891'><span class='rm-lmtt-10'>https://tex.stackexchange.com/a/402159/2891</span></a></li></ul>
-<!--  l. 68  --><p class='noindent'>
-</p>   
+   
 <h3 class='sectionHead' id='image-conversion'><span class='titlemark'>8.3   </span> <a id='x9-1120008.3'></a>Image conversion</h3>
                                                                   
 
                                                                   
-<nav class='crosslinks-bottom'>[<a href='Configurations.html'>prev</a>] [<a href='tex4ht-doc.html#Make4htBuildFiles.html'>up</a>] [<a href='FAQandTroubleshooting.html'>next</a>] </nav>  </main><p><script data-goatcounter='https://kodymirus.goatcounter.com/count' src='/js/libs/goatcounter.js'></script> 
+<nav class='crosslinks-bottom'>[<a href='#_'>up</a>] </nav>  </main><p><script data-goatcounter='https://kodymirus.goatcounter.com/count' src='/js/libs/goatcounter.js'></script> 
  
 </p></body> 
 </html>

@@ -8,153 +8,14 @@
 <meta content='tex4ht-doc.tex' name='src' /> 
 <link href='style.css' rel='stylesheet' type='text/css' /> 
 </head><body>
-<nav class='TOC'>   
-<span class='chapterToc'>1 <a href='Introduction.html#introduction'>Introduction</a></span>
-
-<span class='chapterToc'>2 <a href='#basic-tutorial'>Basic Tutorial</a></span>
-<span class='sectionToc'>2.1 <a href='#what-is-texht'>What is TeX4ht?</a></span>
-<span class='sectionToc'>2.2 <a href='#basic-usage'>Basic Usage</a></span>
-<span class='sectionToc'>2.3 <a href='#debugging-texht'>Debugging <code class='texttt'>TeX4ht</code></a></span>
-<span class='subsectionToc'>2.3.1 <a href='#test-with-minimal-example'>Test with Minimal Example</a></span>
-<span class='sectionToc'>2.4 <a href='#texht-options'><code class='texttt'>TeX4ht</code> Options</a></span>
-<span class='subsectionToc'>2.4.1 <a href='#math-options'>Math Options</a></span>
-<span class='sectionToc'>2.5 <a href='#makeht-extensions'><code class='texttt'>make4ht</code> extensions</a></span>
-<span class='sectionToc'>2.6 <a href='#configurations'>Configurations</a></span>
-<span class='subsectionToc'>2.6.1 <a href='#the-configure-command'>The <span class='textbf'><code class='texttt'>\Configure</code></span> command</a></span>
-<span class='subsectionToc'>2.6.2 <a href='#configuring-environments'>Configuring Environments</a></span>
-<span class='sectionToc'>2.7 <a href='#remains-of-the-old-tutorial'>Remains of the old tutorial</a></span>
-<span class='sectionToc'>2.8 <a href='#configurations1'>Configurations</a></span>
-<span class='sectionToc'>2.9 <a href='#paragraphs'>Paragraphs</a></span>
-<span class='chapterToc'>3 <a href='Howto.html#how-to'>How to</a></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<span class='chapterToc'>4 <a href='CallingCommands.html#calling-commands'>Calling Commands</a></span>
-
-
-
-                                                                  
-
-                                                                  
-
-
-
-
-<span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
-<span class='chapterToc'>6 <a href='texfourhtOptions.html#texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
-
-
-<span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                  
-
-                                                                  
-
-
-
-
-
-
-
-
-
-
-
-<span class='chapterToc'>8 <a href='Make4htBuildFiles.html#makeht-build-files'>Make4ht Build Files</a></span>
-
-
-
-<span class='chapterToc'>9 <a href='FAQandTroubleshooting.html#faq-and-troubleshooting'>FAQ and Troubleshooting</a></span>
-
-
-
-
-
-
-
-<span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
-
-
-
-
-
-
-
-
-
-<span class='chapterToc'>11 <a href='Glossary.html#glossary'>Glossary</a></span>
-<span class='chapterToc'>12 <a href='Bibliography.html#bibliography'>Bibliography</a></span>
-<span class='chapterToc'>13 <a href='Index.html#index'>Index</a></span>
-<span class='chapterToc'>14 <a href='Changes.html#changes'>Changes</a></span>
- 
-   
-</nav> 
 <main class='main-content'> 
-<nav class='crosslinks-top'> [<a href='Introduction.html'>prev</a>] [<a href='tex4ht-doc.html#BasicTutorial.html'>up</a>] [<a href='Howto.html'>next</a>] </nav> 
+<nav class='crosslinks-top'> [<a href='#_'>up</a>] </nav> 
 <h2 class='chapterHead' id='basic-tutorial'><span class='titlemark'>Chapter 2</span><br /><a id='x3-30002'></a>Basic Tutorial</h2>
+   
 <h3 class='sectionHead' id='what-is-texht'><span class='titlemark'>2.1   </span> <a id='x3-40002.1'></a>What is TeX4ht?</h3>
 <!--  l. 3  --><p class='noindent'> <a href='https://www.tug.org/tex4ht/'><code class='texttt'>TeX4ht</code></a> is a system that converts LaTeX to various output formats, including <code class='texttt'>HTML</code>,
 <a href='http://en.wikipedia.org/wiki/OpenDocument'><code class='texttt'>ODT</code></a>,  <a href='http://en.wikipedia.org/wiki/DocBook'><code class='texttt'>DocBook</code></a>, and  <a href='http://en.wikipedia.org/wiki/Text_Encoding_Initiative'><code class='texttt'>TEI</code></a>. <code class='texttt'>HTML</code> and <code class='texttt'>ODT</code> formats are the most common and
 best-supported conversion targets.
-                                                                  
-
-                                                                  
 </p><!--  l. 11  --><p class='indent'>   <code class='texttt'>TeX4ht</code> allows authors to convert LaTeX input into several output formats, such
 as <code class='texttt'>HTML</code> (for web pages) or <code class='texttt'>ePub</code> (for ebooks and other applications).
 </p><!--  l. 16  --><p class='indent'>   <a id='basic-usage'></a>
@@ -186,12 +47,15 @@ following LaTeX file:
 </p>   
 <figure class='htmlsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb4'><a id='x3-5018r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--  l. 4  --&gt;</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>Příliš žluťoučký kůň úpěl ďábelské ódy.</span> 
-<a id='x3-5020r2'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></pre>
+<a id='x3-5020r2'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></pre>
 </figure>
 <!--  l. 39  --><p class='indent'>   As you can see, multiple options can be combined with <code class='texttt'>make4ht</code>. The above
 invocation is equivalent to the following:
 </p>   
 <figure class='shellcommand' role='doc-example'>
+                                                                  
+
+                                                                  
 <pre class='fancyvrb' id='fancyvrb5'><a id='x3-5023r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-l<span class='textcolor-a88e28'> </span>-m<span class='textcolor-a88e28'> </span>draft<span class='textcolor-a88e28'> </span>filename.tex</pre>
 
 </figure>
@@ -199,9 +63,6 @@ invocation is equivalent to the following:
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb6'><a id='x3-5026r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>--lua<span class='textcolor-a88e28'> </span>--mode<span class='textcolor-a88e28'> </span>draft<span class='textcolor-a88e28'> </span>filename.tex</pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!--  l. 51  --><p class='indent'>   What do these options mean?
@@ -220,9 +81,8 @@ to the OpenDocument Format, use the following:
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb7'><a id='x3-5029r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-f<span class='textcolor-a88e28'> </span>odt<span class='textcolor-a88e28'> </span>filename.tex</pre>
 
-</figure>
-<!--  l. 77  --><p class='noindent'>
-</p>   
+</figure>   
+
 <h3 class='sectionHead' id='debugging-texht'><span class='titlemark'>2.3   </span> <a id='x3-60002.3'></a>Debugging <code class='texttt'>TeX4ht</code></h3>
 <!--  l. 79  --><p class='noindent'>When working with <code class='texttt'>TeX4ht</code>, you may encounter issues with the conversion
 process, such as clashes between packages and <code class='texttt'>TeX4ht</code>, formatting errors
@@ -243,6 +103,9 @@ following:
 <a id='x3-6021r7'></a><span class='textcolor-656565'>[</span>STATUS<span class='textcolor-656565'>]</span><span class='textcolor-a88e28'>  </span>make4ht:<span class='textcolor-a88e28'> </span>Conversion<span class='textcolor-a88e28'> </span>finished</pre>
 
 </figure>
+                                                                  
+
+                                                                  
 <!--  l. 98  --><p class='indent'>   In this example, it says that there is an undefined control sequence used on the
 line 15 in the <span class='obeylines-h'><code class='verb'>grr.tex</code></span> file. In this case, it’s easy to locate the error, but that’s not
 always true. Some errors arise due to conflicts between certain packages and
@@ -252,17 +115,13 @@ LaTeX is run in interactive mode, where you can see all terminal output and also
 control the engine by entering commands if the compilation stops due to an error.
 This option also displays all internal messages from <code class='texttt'>TeX4ht</code>, which can be helpful for
 debugging.
-                                                                  
-
-                                                                  
 </p><!--  l. 113  --><p class='indent'>   To invoke <code class='texttt'>make4ht</code> with debug mode, use the following command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb9'><a id='x3-6024r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-a<span class='textcolor-a88e28'> </span>debug<span class='textcolor-a88e28'> </span>filename.tex</pre>
 
-</figure>
-<!--  l. 120  --><p class='noindent'>
-</p>   
+</figure>   
+
 <h4 class='subsectionHead' id='test-with-minimal-example'><span class='titlemark'>2.3.1   </span> <a id='x3-70002.3.1'></a>Test with Minimal Example</h4>
 <!--  l. 121  --><p class='noindent'>If you are facing a persistent issue, try isolating the problematic section of your
 document. Create a minimal LaTeX file that reproduces the problem and use
@@ -287,10 +146,13 @@ to run all LaTeX source files without such modifications.
 and careful analysis, most issues can be resolved efficiently.
 </p><!--  l. 146  --><p class='indent'>   You can report errors in the  <a href='https://puszcza.gnu.org.ua/bugs/?group=tex4ht'>TeX4ht issue tracker</a>, on  <a href='https://tex.stackexchange.com/questions/tagged/tex4ht'>using the tex4ht tag</a>, or on
 the  <a href='https://github.com/michal-h21/make4ht'>make4ht GitHub page</a>.
-</p><!--  l. 157  --><p class='indent'>   You can find more info about troubleshooting in <a href='FAQandTroubleshooting.html#compilation-errors'>Compilation Errors<!--  tex4ht:ref: faq:compilation_errors   --></a>, and about
-<code class='texttt'>make4ht</code> and its command line options and other features in section <a href='CallingCommands.html#makeht-build-system'><code class='texttt'>make4ht</code> Build
-System<!--  tex4ht:ref: sec:make4ht-intro   --></a>.
-</p><!--  l. 162  --><p class='noindent'>
+</p><!--  l. 157  --><p class='indent'>   You can find more info about troubleshooting in Compilation Errors, and about
+<code class='texttt'>make4ht</code> and its command line options and other features in section <code class='texttt'>make4ht</code> Build
+System.
+
+                                                                  
+
+                                                                  
 </p>   
 <h3 class='sectionHead' id='texht-options'><span class='titlemark'>2.4   </span> <a id='x3-80002.4'></a><code class='texttt'>TeX4ht</code> Options</h3>
 <!--  l. 164  --><p class='noindent'>The simplest way to change some aspects of the design is to use <code class='texttt'>TeX4ht</code>
@@ -298,9 +160,6 @@ options. They can be passed as a first positional argument after filename to
 <code class='texttt'>make4ht</code>:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb11'><a id='x3-8003r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>filename.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"option1,option2"</span></pre>
 
 </figure>
@@ -319,7 +178,7 @@ at parts, 3 at chapters, 4 at sections, 5 at subsections, 6 at sub-subsections, 
 paragraphs. The <span class='obeylines-h'><code class='verb'>sec-filename</code></span> option will produce HTML file names that are based
 on section titles, instead of their numbers. The <span class='obeylines-h'><code class='verb'>fn-in</code></span> option prints footnotes at the
 end of each HTML page.
-</p><!--  l. 182  --><p class='noindent'>
+
 </p>   
 <h4 class='subsectionHead' id='math-options'><span class='titlemark'>2.4.1   </span> <a id='x3-90002.4.1'></a>Math Options</h4>
 <!--  l. 184  --><p class='noindent'>There are also options that change the handling of math. Normally, HTML elements
@@ -335,6 +194,9 @@ browsers.
 <pre class='fancyvrb' id='fancyvrb13'><a id='x3-9003r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>filename.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"mathml,mathjax"</span></pre>
 
 </figure>
+                                                                  
+
+                                                                  
 <!--  l. 192  --><p class='indent'>   On the other hand, if you want to use pictures for math exclusively, you can try
 the <span class='emph'>pic-m</span> option, which requires pictures even for inline math. There are also similar
 options for equations and other math environments.
@@ -343,9 +205,6 @@ options for equations and other math environments.
 <pre class='fancyvrb' id='fancyvrb14'><a id='x3-9006r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>filename.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"pic-m,pic-equation"</span></pre>
 
 </figure>
-                                                                  
-
-                                                                  
 <!--  l. 198  --><p class='indent'>   The generated pictures are in the PNG format, which is raster and depends on
 the resolution on the device where the document is displayed. You may want
 to use vector SVG format instead, as it should produce better quality of
@@ -355,8 +214,8 @@ pictures:
 <pre class='fancyvrb' id='fancyvrb15'><a id='x3-9009r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>filename.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
-<!--  l. 204  --><p class='indent'>   For more information on options, see chapter <a href='texfourhtOptions.html#texht-options1'><code class='texttt'>TeX4ht</code> Options<!--  tex4ht:ref: chap:options   --></a>.
-</p><!--  l. 206  --><p class='noindent'>
+<!--  l. 204  --><p class='indent'>   For more information on options, see chapter <code class='texttt'>TeX4ht</code> Options.
+
 </p>   
 <h3 class='sectionHead' id='makeht-extensions'><span class='titlemark'>2.5   </span> <a id='x3-100002.5'></a><code class='texttt'>make4ht</code> extensions</h3>
 <!--  l. 208  --><p class='noindent'><code class='texttt'>make4ht</code> has an extension support. These extensions can modify various aspects of
@@ -380,17 +239,17 @@ document:
 <!--  l. 222  --><p class='indent'>   It producess a following HTML file:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb18'><a id='x3-10009r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--  l. 66  --&gt;</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>This is </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>span</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>ec-lmri-10</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>Rmarkdown </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>example. Today is 2022-03-24.</span> 
-<a id='x3-10011r2'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></pre>
+                                                                  
+
+                                                                  
+<pre class='fancyvrb' id='fancyvrb18'><a id='x3-10009r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--  l. 66  --&gt;</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>This is </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>span</span></span> <span class='textcolor-387f38'><span class='rm-lmtt-10'>class</span></span><span class='textcolor-656565'><span class='rm-lmtt-10'>=</span></span><span class='textcolor-b73838'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>ec-lmri-10</span><span class='ts1-lmtt10-'>'</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>Rmarkdown </span><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>span</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>example. Today is 2022-03-24.</span> 
+<a id='x3-10011r2'></a><span class='textcolor-878787'><span class='rm-lmtt-10'>&lt;</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>/</span></span><span class='textcolor-2838af'><span class='rm-lmtt-10'>p</span></span><span class='textcolor-878787'><span class='rm-lmtt-10'>&gt;</span></span></pre>
 </figure>
 <!--  l. 226  --><p class='indent'>   If your document produces many pictures, the compilation can take a long time.
 To make it faster, you can use the <span class='obeylines-h'><code class='verb'>dvisvgm_hashes</code></span> extension. It caches the SVG
 images and creates them only for the changed math environments.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb19'><a id='x3-10014r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-f<span class='textcolor-a88e28'> </span>html5+dvisvgm_hashes<span class='textcolor-a88e28'> </span>filename.tex<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
@@ -403,7 +262,7 @@ from loading, use <span class='obeylines-h'><code class='verb'>-extension_name</
 
 </figure>
 <!--  l. 241  --><p class='indent'>   You can find a list of extensions in  <a href='https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions'><code class='texttt'>make4ht</code> documentation</a>.
-</p><!--  l. 244  --><p class='noindent'>
+
 </p>   
 <h3 class='sectionHead'><span class='titlemark'>2.6   </span> <a id='x3-110002.6'></a>Configurations</h3>
 <!--  l. 247  --><p class='noindent'>Most of the markup produced by <code class='texttt'>TeX4ht</code> is configurable. Supported commands can
@@ -414,12 +273,14 @@ better to use a custom configuration file, as you would get a compilation
 error if you compiled document containing <code class='texttt'>TeX4ht</code> commands directly by
 LaTeX.
 </p><!--  l. 257  --><p class='indent'>   You can find more information about syntax and available commands in section
-<a href='Configurations.html#private-configuration-files'>Private Configuration Files<!--  tex4ht:ref: sec:private-configuration   --></a>. Here, we will show some simple examples.
-</p><!--  l. 260  --><p class='noindent'>
+Private Configuration Files. Here, we will show some simple examples.
+
 </p>   
 <h4 class='subsectionHead' id='the-configure-command'><span class='titlemark'>2.6.1   </span> <a id='x3-120002.6.1'></a>The <span class='textbf'><code class='texttt'>\Configure</code></span> command</h4>
-<!--  l. 264  --><p class='noindent'>
-</p>   
+
+                                                                  
+
+                                                                  
 <h4 class='subsectionHead' id='configuring-environments'><span class='titlemark'>2.6.2   </span> <a id='x3-130002.6.2'></a>Configuring Environments</h4>
 <!--  l. 266  --><p class='noindent'>You may want to insert some custom HTML tags. It is a bit more complicated for
 LaTeXcommands, but it is easy for environments. You can configure the code that is
@@ -429,16 +290,13 @@ following syntax:
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb21'><a id='x3-13004r1'></a><span class='textcolor-2838af'>\ConfigureEnv</span><span class='textcolor-387f38'>{</span>&lt;environment name&gt;<span class='textcolor-387f38'>}{</span>before env<span class='textcolor-387f38'>}{</span>after env<span class='textcolor-387f38'>}</span> 
 <a id='x3-13006r2'></a><span class='textcolor-387f38'>{</span>before-list<span class='textcolor-387f38'>}{</span>after-list<span class='textcolor-387f38'>}</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!--  l. 276  --><p class='indent'>   We can ignore the arguments <code class='texttt'>before-list</code> and <code class='texttt'>after-list</code>, as they
 are used only for list like environments, such as <code class='texttt'>itemize</code>. So we just need
 to to pass code that will be inserted in the <code class='texttt'>before env</code> and <code class='texttt'>after env</code>
 arguments.
-</p><!--  l. 284  --><p class='noindent'>
+
 </p>   
 <h3 class='sectionHead' id='remains-of-the-old-tutorial'><span class='titlemark'>2.7   </span> <a id='x3-140002.7'></a>Remains of the old tutorial</h3>
 <!--  l. 288  --><p class='noindent'>The following text was imported from the original <code class='texttt'>TeX4ht</code> tutorial and needs to be
@@ -481,6 +339,9 @@ current paragraph, but it may be not what you want.
 <a id='x3-14056r6'></a><span class='textcolor-2838af'>\begin</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span> 
 <a id='x3-14058r7'></a>But run it through several paragraphs 
 <a id='x3-14060r8'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>someenv<span class='textcolor-387f38'>}</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!--  l. 335  --><p class='indent'>   and with <code class='texttt'>make4ht</code>
@@ -492,9 +353,6 @@ current paragraph, but it may be not what you want.
 <!--  l. 341  --><p class='indent'>   lets look on text part generated by <code class='texttt'>htlatex</code>:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb26'><a id='x3-14069r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>P<span class='textcolor-708e30'>&amp;#x0159;</span>íli<span class='textcolor-708e30'>&amp;#353; &amp;#382;</span>lu<span class='textcolor-708e30'>&amp;#x0165;</span>ou<span class='textcolor-708e30'>&amp;#x010D;</span>k<span class='textcolor-708e30'>&amp;#x00FD;</span> k<span class='textcolor-708e30'>&amp;#x016F;&amp;#x0148;</span> úp<span class='textcolor-708e30'>&amp;#x011B;</span>l <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
 <a id='x3-14071r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span><span class='textcolor-708e30'>&amp;#x010F;</span><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
 <a id='x3-14073r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
@@ -536,6 +394,9 @@ somewhat ugly with <code class='texttt'>htlatex</code>:
 <!--  l. 386  --><p class='indent'>   <code class='texttt'>charset=utf-8</code> produces meta element which declares document to be in
 <code class='texttt'>utf-8</code> encoding. Important are two options for <code class='texttt'>tex4ht</code> command, <code class='texttt'>-c</code> and
 <code class='texttt'>-utf8</code>.
+                                                                  
+
+                                                                  
 </p><!--  l. 390  --><p class='indent'>   ToDo: add description of process of conversion from <code class='texttt'>htf</code> fonts to utf8 using
 unicode.4hf. It is directed from <code class='texttt'>tex4ht.env</code> file.
 </p><!--  l. 393  --><p class='indent'>   With <code class='texttt'>make4ht</code>, situation is easier, as all we need to do is to add <code class='texttt'>-u</code> option:
@@ -547,9 +408,6 @@ unicode.4hf. It is directed from <code class='texttt'>tex4ht.env</code> file.
 <!--  l. 400  --><p class='indent'>   resulting file:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb31'><a id='x3-14106r1'></a><span class='textcolor-878787'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>p </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"noindent" </span><span class='textcolor-878787'>&gt;</span>Příliš žluťoučký kůň úpěl <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span</span> 
 <a id='x3-14108r2'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ď<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
 <a id='x3-14110r3'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>ábelsk<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
@@ -595,6 +453,9 @@ variable number of arguments, in the simplest form it does have two arguments:
 macros are redefined and in the definitions special hooks are inserted. These hooks
 are declared with <code class='texttt'>\NewConfigure{configname}{number of hooks}</code> in special
 file named as redefined package name with suffix <code class='texttt'>.4ht</code>. These hooks are
+                                                                  
+
+                                                                  
 then seeded in configure files for particular output formats, or in the <code class='texttt'>.cfg</code>
 file.
 </p><!--  l. 459  --><p class='indent'>   To illustrate that, we can show some simple example. Lets say we have simple
@@ -610,9 +471,6 @@ package <code class='texttt'>hello.sty</code>:
 beginning and at end of <code class='texttt'>\hello</code> command:
 </p>   
 <figure class='texsource' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb34'><a id='x3-15054r1'></a><span class='textcolor-878787'><span class='textit'>% provide configure for \hello command. we can choose any name</span></span> 
 <a id='x3-15056r2'></a><span class='textcolor-878787'><span class='textit'>% but most convenient is to name hooks after redefined command</span></span> 
 <a id='x3-15058r3'></a><span class='textcolor-878787'><span class='textit'>% we declare two hooks, to be inserted before and after the command</span></span> 
@@ -669,6 +527,9 @@ basic configurations for <code class='texttt'>\textit</code> and <code class='te
 takes two parameters, insertion before and after content. Same situation is with
 <code class='texttt'>hello</code> configuration we defined earlier, hooks are inserted before and after the
 content.
+                                                                  
+
+                                                                  
 </p><!--  l. 543  --><p class='indent'>   To insert <code class='texttt'>html</code> tags, we need to use <code class='texttt'>\HCode</code> commands, special characters such as
 <code class='texttt'>&lt;</code>,<code class='texttt'>&gt;</code> or <code class='texttt'>&amp;</code> are escaped otherwise. In our example we insert <code class='texttt'>span</code> elements with
 some <code class='texttt'>class</code> attribute to distinguish them. Because these classes doesn’t
@@ -685,9 +546,6 @@ than initially:
 <a id='x3-15134r4'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecti-1000"</span><span class='textcolor-878787'>&gt;</span>é<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> ódy. Some text in English, <span class='textcolor-878787'>&lt;</span><span class='textcolor-2838af'>span </span><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"hello"</span><span class='textcolor-878787'>&gt;&lt;</span><span class='textcolor-2838af'>span</span> 
 <a id='x3-15136r5'></a><span class='textcolor-387f38'>class</span><span class='textcolor-656565'>=</span><span class='textcolor-b73838'>"ecbx-1000"</span><span class='textcolor-878787'>&gt;</span>hello world<span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;&lt;/</span><span class='textcolor-2838af'>span</span><span class='textcolor-878787'>&gt;</span> 
 <a id='x3-15138r6'></a><span class='textcolor-878787'>&lt;/</span><span class='textcolor-2838af'>p</span><span class='textcolor-878787'>&gt;</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!--  l. 565  --><p class='indent'>   our new tags were inserted, but unnecessary elements inserted by <code class='texttt'>tex4ht</code>
@@ -743,6 +601,9 @@ may hope, because we haven’t talked about one thing:
 <a id='x3-16050r16'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>otherlanguage<span class='textcolor-387f38'>}</span> 
 <a id='x3-16052r17'></a> 
 <a id='x3-16054r18'></a><span class='textcolor-2838af'>\end</span><span class='textcolor-387f38'>{</span>document<span class='textcolor-387f38'>}</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!--  l. 625  --><p class='indent'>   What if we want to insert elements with <code class='texttt'>lang</code> attribute to specify language of
@@ -754,7 +615,7 @@ source.
 
                                                                   
 </p>   
-<nav class='crosslinks-bottom'>[<a href='Introduction.html'>prev</a>] [<a href='tex4ht-doc.html#BasicTutorial.html'>up</a>] [<a href='Howto.html'>next</a>] </nav>  </main><p><script data-goatcounter='https://kodymirus.goatcounter.com/count' src='/js/libs/goatcounter.js'></script> 
+<nav class='crosslinks-bottom'>[<a href='#_'>up</a>] </nav>  </main><p><script data-goatcounter='https://kodymirus.goatcounter.com/count' src='/js/libs/goatcounter.js'></script> 
  
 </p></body> 
 </html>

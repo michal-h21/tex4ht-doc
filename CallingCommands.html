@@ -8,154 +8,15 @@
 <meta content='tex4ht-doc.tex' name='src' /> 
 <link href='style.css' rel='stylesheet' type='text/css' /> 
 </head><body>
-<nav class='TOC'>   
-<span class='chapterToc'>1 <a href='Introduction.html#introduction'>Introduction</a></span>
-
-<span class='chapterToc'>2 <a href='BasicTutorial.html#basic-tutorial'>Basic Tutorial</a></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<span class='chapterToc'>3 <a href='Howto.html#how-to'>How to</a></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<span class='chapterToc'>4 <a href='#calling-commands'>Calling Commands</a></span>
-<span class='sectionToc'>4.1 <a href='#makeht-build-system'><code class='texttt'>make4ht</code> Build System</a></span>
-<span class='sectionToc'>4.2 <a href='#makeht-switches-and-options'><code class='texttt'>make4ht</code> Switches and Options</a></span>
-<span class='subsectionToc'>4.2.1 <a href='#tex-engine'>TeX engine</a></span>
-                                                                  
-
-                                                                  
-<span class='subsectionToc'>4.2.2 <a href='#terminal-output'>Terminal Output</a></span>
-<span class='subsectionToc'>4.2.3 <a href='#output-directory'>Output Directory</a></span>
-<span class='subsectionToc'>4.2.4 <a href='#makeht-extensions1'><code class='texttt'>make4ht</code> extensions</a></span>
-<span class='sectionToc'>4.3 <a href='#overview-of-the-translation-process'>Overview of the Translation Process</a></span>
-<span class='chapterToc'>5 <a href='OutputFormats.html#output-formats'>Output Formats</a></span>
-<span class='chapterToc'>6 <a href='texfourhtOptions.html#texht-options1'><code class='texttt'>TeX4ht</code> Options</a></span>
-
-
-<span class='chapterToc'>7 <a href='Configurations.html#configurations2'>Configurations</a></span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                  
-
-                                                                  
-
-
-
-
-
-
-
-
-
-
-
-<span class='chapterToc'>8 <a href='Make4htBuildFiles.html#makeht-build-files'>Make4ht Build Files</a></span>
-
-
-
-<span class='chapterToc'>9 <a href='FAQandTroubleshooting.html#faq-and-troubleshooting'>FAQ and Troubleshooting</a></span>
-
-
-
-
-
-
-
-<span class='chapterToc'>10 <a href='ForDevelopers.html#for-developers'>For Developers</a></span>
-
-
-
-
-
-
-
-
-
-<span class='chapterToc'>11 <a href='Glossary.html#glossary'>Glossary</a></span>
-<span class='chapterToc'>12 <a href='Bibliography.html#bibliography'>Bibliography</a></span>
-<span class='chapterToc'>13 <a href='Index.html#index'>Index</a></span>
-<span class='chapterToc'>14 <a href='Changes.html#changes'>Changes</a></span>
- 
-   
-</nav> 
 <main class='main-content'> 
-<nav class='crosslinks-top'> [<a href='Howto.html'>prev</a>] [<a href='tex4ht-doc.html#CallingCommands.html'>up</a>] [<a href='OutputFormats.html'>next</a>] </nav> 
+<nav class='crosslinks-top'> [<a href='#_'>up</a>] </nav> 
 <h2 class='chapterHead' id='calling-commands'><span class='titlemark'>Chapter 4</span><br /><a id='x5-440004'></a>Calling Commands</h2>
-The conversion process used by <code class='texttt'>TeX4ht</code> involves several tools (see section <a href='#overview-of-the-translation-process'>4.3<!--  tex4ht:ref: sec:overview   --></a>,
-<a href='#overview-of-the-translation-process'>Overview of the Translation Process<!--  tex4ht:ref: sec:overview   --></a> for details).
+The conversion process used by <code class='texttt'>TeX4ht</code> involves several tools (see section 4.3,
+Overview of the Translation Process for details).
 <!--  l. 8  --><p class='indent'>   We provide a build script, called <code class='texttt'>make4ht</code>, which simplifies the process. There is
-also a variant of <code class='texttt'>make4ht</code>, <code class='texttt'>tex4ebook</code> for e-book production. See the chapter <a href='OutputFormats.html#output-formats'>Output
-Formats<!--  tex4ht:ref: sec:output-formats   --></a> for more information on output formats.
-                                                                  
+also a variant of <code class='texttt'>make4ht</code>, <code class='texttt'>tex4ebook</code> for e-book production. See the chapter Output
+Formats for more information on output formats.
 
-                                                                  
 </p>   
 <h3 class='sectionHead' id='makeht-build-system'><span class='titlemark'>4.1   </span> <a id='x5-450004.1'></a><code class='texttt'>make4ht</code> Build System</h3>
 <!--  l. 17  --><p class='noindent'>The conversion command loads a script which takes on itself to invoke the different
@@ -189,22 +50,22 @@ sectioning levels of the document.
 </p><!--  l. 47  --><p class='indent'>   The <code class='texttt'>info</code> option requests inclusion of documentation of basic configurations to
 the <code class='texttt'>filename.log</code> file. You can open this file using a text editor to read this
 information.
-</p><!--  l. 50  --><p class='indent'>   Information about additional options can be found in the <a href='texfourhtOptions.html#list-of-options'>List of options<!--  tex4ht:ref: sec:texfouhtoptions   --></a>
+</p><!--  l. 50  --><p class='indent'>   Information about additional options can be found in the List of options
 section.
 </p>   
 <figure class='shellcommand' role='doc-example'>
+                                                                  
+
+                                                                  
 <pre class='fancyvrb' id='fancyvrb84'><a id='x5-45012r1'></a>make4ht<span class='textcolor-a88e28'> </span>-c<span class='textcolor-a88e28'> </span>foo.cfg<span class='textcolor-a88e28'> </span>filename<span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"frames"</span><span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>""</span><span class='textcolor-a88e28'> </span><span class='textcolor-b73838'>"-p"</span></pre>
 
 </figure>
-<!--  l. 58  --><p class='indent'>   This command requests LaTeX to load a <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!--  tex4ht:ref: sec:private-configuration   --></a>,
+<!--  l. 58  --><p class='indent'>   This command requests LaTeX to load a Private Configuration Files,
 named foo.cfg, using the <code class='texttt'>-c</code> make4ht option. The <code class='texttt'>frames</code> option requires
 placing of the content and table of contents in separate frames. In addition, it
 asks the <code class='texttt'>t4ht</code> command not to produce bitmaps for pictures using the <code class='texttt'>-p</code>
 option.
-                                                                  
 
-                                                                  
-</p><!--  l. 63  --><p class='noindent'>
 </p>   
 <h3 class='sectionHead' id='makeht-switches-and-options'><span class='titlemark'>4.2   </span> <a id='x5-460004.2'></a><code class='texttt'>make4ht</code> Switches and Options</h3>
 <!--  l. 65  --><p class='noindent'><code class='texttt'>make4ht</code> accepts following command line switches and options:
@@ -242,14 +103,17 @@ names:
 <pre class='fancyvrb' id='fancyvrb87'><a id='x5-46054r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>--lua<span class='textcolor-a88e28'> </span>--shell-escape<span class='textcolor-a88e28'> </span>--mode<span class='textcolor-a88e28'> </span>draft<span class='textcolor-a88e28'> </span>filename.tex</pre>
 
 </figure>
-<!--  l. 99  --><p class='indent'>   Some of these options are discussed in other chapters, see section <a href='Configurations.html#private-configuration-files'>Private
-Configuration Files<!--  tex4ht:ref: sec:private-configuration   --></a> for details on configuration files requested using the <code class='texttt'>-c</code> option,
-and section <a href='Make4htBuildFiles.html#makeht-build-files'>Make4ht Build Files<!--  tex4ht:ref: sec:make4ht-build-files   --></a> for details on build files requested using the <code class='texttt'>-e</code>
+<!--  l. 99  --><p class='indent'>   Some of these options are discussed in other chapters, see section Private
+Configuration Files for details on configuration files requested using the <code class='texttt'>-c</code> option,
+and section Make4ht Build Files for details on build files requested using the <code class='texttt'>-e</code>
 option.
-</p><!--  l. 104  --><p class='indent'>   Supported output formats are described in the chapter <a href='OutputFormats.html#output-formats'>Output Formats<!--  tex4ht:ref: sec:output-formats   --></a>. They
+</p><!--  l. 104  --><p class='indent'>   Supported output formats are described in the chapter Output Formats. They
 can be requested using the <code class='texttt'>-f</code> option. This option also supports extensions. This
-feature has been shown in the section <a href='BasicTutorial.html#basic-usage'>Basic Usage<!--  tex4ht:ref: sec:tutorial-basic-usage   --></a> of the tutorial.
-</p><!--  l. 107  --><p class='noindent'>
+feature has been shown in the section Basic Usage of the tutorial.
+
+                                                                  
+
+                                                                  
 </p>   
 <h4 class='subsectionHead' id='tex-engine'><span class='titlemark'>4.2.1   </span> <a id='x5-470004.2.1'></a>TeX engine</h4>
 <!--  l. 109  --><p class='noindent'><code class='texttt'>make4ht</code> uses TeX compiler to produce a DVI file. Normally, it uses PDFTeX engine,
@@ -258,12 +122,9 @@ but you can also select LuaTeX or XeTeX, using the <code class='texttt'>-l</code
 non-Latin characters. While <code class='texttt'>TeX4ht</code> doesn’t support OpenType fonts, it can emulate
 the Fontspec package, so it supports documents that use it. With LuaTeX backend,
 <code class='texttt'>TeX4ht</code> should support all Unicode characters. With XeTeX, it needs special
-instructions to load non-Latin character support. See <a href='Configurations.html#unicode'>Unicode<!--  tex4ht:ref: sec:unicode   --></a> section for more
+instructions to load non-Latin character support. See Unicode section for more
 details.
-                                                                  
 
-                                                                  
-</p><!--  l. 118  --><p class='noindent'>
 </p>   
 <h4 class='subsectionHead' id='terminal-output'><span class='titlemark'>4.2.2   </span> <a id='x5-480004.2.2'></a>Terminal Output</h4>
 <!--  l. 120  --><p class='noindent'><code class='texttt'>make4ht</code> hides the terminal output by default. It shows only errors and warnings. It
@@ -274,9 +135,8 @@ reports.
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb88'><a id='x5-48003r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-a<span class='textcolor-a88e28'> </span>debug<span class='textcolor-a88e28'> </span>-m<span class='textcolor-a88e28'> </span>draft<span class='textcolor-a88e28'> </span>buggy.tex</pre>
 
-</figure>
-<!--  l. 129  --><p class='noindent'>
-</p>   
+</figure>   
+
 <h4 class='subsectionHead' id='output-directory'><span class='titlemark'>4.2.3   </span> <a id='x5-490004.2.3'></a>Output Directory</h4>
 <!--  l. 131  --><p class='noindent'>To copy generated files to a different directoy, use the <code class='texttt'>-d path</code> option. The passed
 path can be absolute or relative to the current directory. It also doesn’t need to exist,
@@ -292,9 +152,11 @@ want to remove the temporary files, use the <code class='texttt'>-m clean</code>
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb90'><a id='x5-49006r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-m<span class='textcolor-a88e28'> </span>clean<span class='textcolor-a88e28'> </span>filename.tex</pre>
 
-</figure>
-<!--  l. 146  --><p class='noindent'>
-</p>   
+</figure>   
+
+                                                                  
+
+                                                                  
 <h4 class='subsectionHead' id='makeht-extensions1'><span class='titlemark'>4.2.4   </span> <a id='x5-500004.2.4'></a><code class='texttt'>make4ht</code> extensions</h4>
 <!--  l. 148  --><p class='noindent'><code class='texttt'>make4ht</code> extensions can modify the build process – usually, they are used to
 post-process the generated files, to fix some issues that are hard to fix on the TeX
@@ -303,9 +165,6 @@ level.
 <code class='texttt'>-EXTENSION</code> after the output format name:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb91'><a id='x5-50003r1'></a>$<span class='textcolor-a88e28'> </span>make4ht<span class='textcolor-a88e28'> </span>-uf<span class='textcolor-a88e28'> </span>html5+tidy<span class='textcolor-a88e28'> </span>filename.tex</pre>
 
 </figure>
@@ -330,7 +189,7 @@ Knith or Pandoc.
 </dt><dd class='description'>
 <!--  l. 163  --><p class='noindent'>generate files suitable for static site generators, such as Jekyll or Hugo.</p></dd></dl>
 <!--  l. 166  --><p class='indent'>   You can find full a list of extensions in  <a href='https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions'><code class='texttt'>make4ht</code> documentation</a>.
-</p><!--  l. 169  --><p class='noindent'>
+
 </p>   
 <h3 class='sectionHead' id='overview-of-the-translation-process'><span class='titlemark'>4.3   </span> <a id='x5-510004.3'></a>Overview of the Translation Process</h3>
 <!--  l. 172  --><p class='noindent'>The translation of a LaTeX source file into HTML involves loading of the
@@ -344,6 +203,9 @@ ideally before <span class='textbf'><code class='texttt'>\documentclass</code></
 instructions with XML code, or with requests for pictures. This file is then processed
 by the <code class='texttt'>tex4ht</code> command. It generates the output XML or HTML files and the IDV
 file, which is then used for pictures.
+                                                                  
+
+                                                                  
 </p><!--  l. 187  --><p class='indent'>   The last command is <code class='texttt'>t4ht</code>. It generates pictures and CSS file.
 </p><!--  l. 189  --><p class='indent'>   Basic sequence of execution of these command is following:
 </p>   
@@ -356,21 +218,17 @@ file, which is then used for pictures.
 
 </figure>
 <!--  l. 199  --><p class='indent'>   The three compilations with La(TeX) are needed to ensure proper links. The
-approach is illustrated in the picture <a href='#texht-process-overview'>4.1<!--  tex4ht:ref: fig:process   --></a>.
-                                                                  
-
-                                                                  
+approach is illustrated in the picture 4.1.
 </p>   
-<figure class='figure' id='x5-51016r1'><span id='texht-process-overview'></span> 
+<figure class='figure'> 
 
                                                                   
 
                                                                   
-
                                                                   
 
                                                                   
-<!--  l. 202  --><p class='noindent'><img alt='PIC' src='images/tex4ht_process/tex4ht_process.svg' style='width:100\%' />
+<!--  l. 202  --><p class='noindent' id='texht-process-overview'><img alt='PIC' src='images/tex4ht_process/tex4ht_process.svg' style='width:100\%' /> <a id='x5-51016r1'></a>
 </p>
 <figcaption class='caption'><span class='id'>Figure 4.1: </span><span class='content'><code class='texttt'>TeX4ht</code> process overview</span></figcaption><!--  tex4ht:label?: x5-51016r1   -->
                                                                   
@@ -437,7 +295,7 @@ be created, CSS information, and user directives introduced through the
                                                                   
 
                                                                   
-<nav class='crosslinks-bottom'>[<a href='Howto.html'>prev</a>] [<a href='tex4ht-doc.html#CallingCommands.html'>up</a>] [<a href='OutputFormats.html'>next</a>] </nav>  </main><p><script data-goatcounter='https://kodymirus.goatcounter.com/count' src='/js/libs/goatcounter.js'></script> 
+<nav class='crosslinks-bottom'>[<a href='#_'>up</a>] </nav>  </main><p><script data-goatcounter='https://kodymirus.goatcounter.com/count' src='/js/libs/goatcounter.js'></script> 
  
 </p></body> 
 </html>
