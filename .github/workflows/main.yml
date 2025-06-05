@@ -9,7 +9,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: Run make4ht
       # uses: michal-h21/make4ht-action@master
-      uses: docker://ghcr.io/michal-h21/make4ht-action:latest 
+      # uses: docker://ghcr.io/michal-h21/make4ht-action:latest 
+      uses: xu-cheng/texlive-action/full@v1
       env:
         command: "make; make4ht -uslm final -a debug -c config -d out -f html5+common_domfilters -e build.mk4  tex4ht-doc.tex;cp domain/*.html out/"
     - name: Publish the web pages
