@@ -13,7 +13,7 @@ jobs:
       uses: xu-cheng/texlive-action/full@v1
       # env:
       with:
-        run: 
+        run: |
           make 
           make4ht -uslm final -a debug -c config -d out -f html5+common_domfilters -e build.mk4  tex4ht-doc.tex 
           cp domain/*.html out/
