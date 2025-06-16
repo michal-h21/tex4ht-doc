@@ -70,7 +70,7 @@ main.main-content{
 p.indent, p.noindent{text-indent:0}
 /* code{font-size:1.4rem;} */
 /* figure pre.listings{font-size: 1.4rem;} */
-figure.texsource, figure.shellcommand, figure.htmlsource, figure.luasource, figure.textsource{
+figure.texsource, figure.shellcommand, figure.htmlsource, figure.luasource, figure.textsource, figure.csssource{
   margin:0.5rem 0; 
   padding-left:0.5rem; 
   overflow:auto;
@@ -120,7 +120,7 @@ nav.TOC span:hover, nav.TOC span:hover *{
 
 
 
-figure.texsource, figure.shellcommand, figure.htmlsource, figure.luasource, figure.textsource{
+figure.texsource, figure.shellcommand, figure.htmlsource, figure.luasource, figure.textsource, figure.csssource{
   border:1px solid #cec1aa; 
   background-color:#d5e3c6;
 }

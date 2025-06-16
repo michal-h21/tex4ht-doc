@@ -23,7 +23,51 @@ Add local CSS file.
 \Configure{@HEAD}{\HCode{<link type="text/css" rel="stylesheet" href="https://example.com/style.css" />}}
 \end{texsource}
 
-\texcommand{\CssFile[list-of-css-files]content\EndCssFile}
+\DocConfigure{CssMediaQueryStart}{media type}{media query condition}\EndDoc
+\cmd{CssMediaQueryEnd}
+
+These two commands are used to define a CSS media query block within your
+document. Everything between \cmd{CssMediaQueryStart} and \cmd{CssMediaQueryEnd} is
+wrapped inside a media query and is included in the output CSS accordingly.
+
+\begin{description}
+  \item[media type] (optional) The media type, such as screen, print, all, etc. If empty, only the media condition is used.
+
+  \item[media query condition] The condition for the media query, e.g., \texttt{max-width: 600px}.
+  
+\end{description}
+
+
+Example:
+
+
+\begin{texsource}
+\CssMediaQueryStart{screen}{max-width: 600px}
+  \Css{body {background-color: lightblue;}}
+  \Css{h1 {color: navy;}}
+  \Css{p {font-size: 20px;}}
+\CssMediaQueryEnd
+\end{texsource}
+
+This will produce:
+
+\begin{csssource}
+@media screen and (max-width: 600px) {
+  body {background-color: lightblue;}
+  h1 {color: navy;}
+  p {font-size: 20px;}
+}
+\end{csssource}
+
+\begin{itemize}
+  \item Any number of \cmd{Css}\marg{...} commands can be placed between the start and end markers.
+
+  \item These commands are useful for responsive design, allowing conditional styling based on the screen size or output medium.
+
+\end{itemize}
+
+
+\cmd{CssFile}[list-of-css-files]content\cmd{EndCssFile}
 
 The CSS file \texfourht\ used by default initially consists just
 a single line,  \texcommand{/* css.sty */}. This line is later
