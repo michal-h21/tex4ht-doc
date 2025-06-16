@@ -180,7 +180,7 @@ the following channels:
 the full terminal output, and stop on errors:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb161'><a id='x10-115003r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-a<span style='color:rgb(168,142,40);'> </span>debug<span style='color:rgb(168,142,40);'> </span>foo.tex</pre>
+<pre class='fancyvrb' id='fancyvrb163'><a id='x10-115003r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-a<span style='color:rgb(168,142,40);'> </span>debug<span style='color:rgb(168,142,40);'> </span>foo.tex</pre>
 
 </figure>
 <!--  l. 37  --><p class='indent'>   In many cases, fix of the first error can resolve the following errors.
@@ -196,7 +196,7 @@ to your document preamble:
                                                                   
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb162'><a id='x10-115010r1'></a><span style='color:rgb(40,56,175);'>\ifdefined\HCode</span> 
+<pre class='fancyvrb' id='fancyvrb164'><a id='x10-115010r1'></a><span style='color:rgb(40,56,175);'>\ifdefined\HCode</span> 
 <a id='x10-115012r2'></a>... code for TeX4ht 
 <a id='x10-115014r3'></a><span style='color:rgb(40,56,175);'>\else</span> 
 <a id='x10-115016r4'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>{</span>foo<span style='color:rgb(56,127,56);'>}</span> 
@@ -210,7 +210,7 @@ debug.
 </p><!--  l. 63  --><p class='indent'>   Consider the following example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb163'><a id='x10-115024r1'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>figure<span style='color:rgb(56,127,56);'>}</span>[h] 
+<pre class='fancyvrb' id='fancyvrb165'><a id='x10-115024r1'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>figure<span style='color:rgb(56,127,56);'>}</span>[h] 
 <a id='x10-115026r2'></a><span style='color:rgb(40,56,175);'>\includegraphics</span><span style='color:rgb(56,127,56);'>{</span>example-image<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x10-115028r3'></a><span style='color:rgb(40,56,175);'>\caption</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(175,63,63);'>\begin</span><span style='color:rgb(56,127,56);'>{array}{c c} hello &amp; world</span><span style='color:rgb(175,63,63);'>\end</span><span style='color:rgb(56,127,56);'>{array}</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(56,127,56);'>}</span> 
 <a id='x10-115030r4'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>figure<span style='color:rgb(56,127,56);'>}</span></pre>
@@ -219,7 +219,7 @@ debug.
 <!--  l. 72  --><p class='indent'>   It produces a fatal error:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb164'><a id='x10-115039r1'></a><span style='color:rgb(101,101,101);'>[</span>ERROR<span style='color:rgb(101,101,101);'>]</span><span style='color:rgb(168,142,40);'>   </span>htlatex:<span style='color:rgb(168,142,40);'> </span>Compilation<span style='color:rgb(168,142,40);'> </span>errors<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(40,56,175);'>in</span><span style='color:rgb(168,142,40);'> </span>the<span style='color:rgb(168,142,40);'> </span>htlatex<span style='color:rgb(168,142,40);'> </span>run 
+<pre class='fancyvrb' id='fancyvrb166'><a id='x10-115039r1'></a><span style='color:rgb(101,101,101);'>[</span>ERROR<span style='color:rgb(101,101,101);'>]</span><span style='color:rgb(168,142,40);'>   </span>htlatex:<span style='color:rgb(168,142,40);'> </span>Compilation<span style='color:rgb(168,142,40);'> </span>errors<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(40,56,175);'>in</span><span style='color:rgb(168,142,40);'> </span>the<span style='color:rgb(168,142,40);'> </span>htlatex<span style='color:rgb(168,142,40);'> </span>run 
 <a id='x10-115041r2'></a><span style='color:rgb(101,101,101);'>[</span>ERROR<span style='color:rgb(101,101,101);'>]</span><span style='color:rgb(168,142,40);'>   </span>htlatex:<span style='color:rgb(168,142,40);'> </span>Filename<span style='color:rgb(168,142,40);'>     </span>Line<span style='color:rgb(168,142,40);'>    </span>Message 
 <a id='x10-115043r3'></a><span style='color:rgb(101,101,101);'>[</span>ERROR<span style='color:rgb(101,101,101);'>]</span><span style='color:rgb(168,142,40);'>   </span>htlatex:<span style='color:rgb(168,142,40);'> </span>./minimal.tex<span style='color:rgb(168,142,40);'>        </span><span style='color:rgb(68,68,68);'>7</span><span style='color:rgb(168,142,40);'>        </span>Argument<span style='color:rgb(168,142,40);'> </span>of<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(112,142,48);'>\i</span>m:g<span style='color:rgb(168,142,40);'> </span>has<span style='color:rgb(168,142,40);'> </span>an<span style='color:rgb(168,142,40);'> </span>extra<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(101,101,101);'>}</span>. 
 <a id='x10-115045r4'></a><span style='color:rgb(101,101,101);'>[</span>ERROR<span style='color:rgb(101,101,101);'>]</span><span style='color:rgb(168,142,40);'>   </span>htlatex:<span style='color:rgb(168,142,40);'> </span>./minimal.tex<span style='color:rgb(168,142,40);'>        </span><span style='color:rgb(68,68,68);'>7</span><span style='color:rgb(168,142,40);'>        </span>Paragraph<span style='color:rgb(168,142,40);'> </span>ended<span style='color:rgb(168,142,40);'> </span>before<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(112,142,48);'>\i</span>m:g<span style='color:rgb(168,142,40);'> </span>was<span style='color:rgb(168,142,40);'> </span>complete. 
@@ -232,7 +232,7 @@ debug.
 <code class='texttt'>make4ht</code>:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb165'><a id='x10-115057r1'></a>!<span style='color:rgb(168,142,40);'> </span>Argument<span style='color:rgb(168,142,40);'> </span>of<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(112,142,48);'>\i</span>m:g<span style='color:rgb(168,142,40);'> </span>has<span style='color:rgb(168,142,40);'> </span>an<span style='color:rgb(168,142,40);'> </span>extra<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(101,101,101);'>}</span>. 
+<pre class='fancyvrb' id='fancyvrb167'><a id='x10-115057r1'></a>!<span style='color:rgb(168,142,40);'> </span>Argument<span style='color:rgb(168,142,40);'> </span>of<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(112,142,48);'>\i</span>m:g<span style='color:rgb(168,142,40);'> </span>has<span style='color:rgb(168,142,40);'> </span>an<span style='color:rgb(168,142,40);'> </span>extra<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(101,101,101);'>}</span>. 
 <a id='x10-115059r2'></a>&lt;inserted<span style='color:rgb(168,142,40);'> </span>text&gt; 
 <a id='x10-115061r3'></a><span style='color:rgb(168,142,40);'>                </span><span style='color:rgb(112,142,48);'>\p</span>ar 
 <a id='x10-115063r4'></a>l.7<span style='color:rgb(168,142,40);'> </span>...egin<span style='color:rgb(101,101,101);'>{</span>array<span style='color:rgb(101,101,101);'>}{</span>c<span style='color:rgb(168,142,40);'> </span>c<span style='color:rgb(101,101,101);'>}</span><span style='color:rgb(168,142,40);'> </span>hello<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(135,135,135);'>&amp;</span><span style='color:rgb(168,142,40);'> </span>world<span style='color:rgb(112,142,48);'>\e</span>nd<span style='color:rgb(101,101,101);'>{</span>array<span style='color:rgb(101,101,101);'>}}</span></pre>
@@ -241,7 +241,7 @@ debug.
 <!--  l. 93  --><p class='indent'>   The error itself is pretty cryptic, but you can see that the cause is in
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb166'><a id='x10-115066r1'></a><span style='color:rgb(40,56,175);'>\caption</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(175,63,63);'>\begin</span><span style='color:rgb(56,127,56);'>{array}{c c} hello &amp; world</span><span style='color:rgb(175,63,63);'>\end</span><span style='color:rgb(56,127,56);'>{array}</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb168'><a id='x10-115066r1'></a><span style='color:rgb(40,56,175);'>\caption</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(175,63,63);'>\begin</span><span style='color:rgb(56,127,56);'>{array}{c c} hello &amp; world</span><span style='color:rgb(175,63,63);'>\end</span><span style='color:rgb(56,127,56);'>{array}</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(56,127,56);'>}</span></pre>
 
 </figure>
 <!--  l. 99  --><p class='indent'>   The issue is that some commands needs to be protected when used in parameters
@@ -249,7 +249,7 @@ of <code class='texttt'>\section</code> or <code class='texttt'>\caption</code> 
 <code class='texttt'>\protect</code> command:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb167'><a id='x10-115069r1'></a><span style='color:rgb(40,56,175);'>\caption</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(175,63,63);'>\protect\begin</span><span style='color:rgb(56,127,56);'>{array}{c c} hello &amp; world</span><span style='color:rgb(175,63,63);'>\protect\end</span><span style='color:rgb(56,127,56);'>{array}</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb169'><a id='x10-115069r1'></a><span style='color:rgb(40,56,175);'>\caption</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(175,63,63);'>\protect\begin</span><span style='color:rgb(56,127,56);'>{array}{c c} hello &amp; world</span><span style='color:rgb(175,63,63);'>\protect\end</span><span style='color:rgb(56,127,56);'>{array}</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(56,127,56);'>}</span></pre>
                                                                   
 
                                                                   
@@ -258,7 +258,7 @@ of <code class='texttt'>\section</code> or <code class='texttt'>\caption</code> 
 <!--  l. 107  --><p class='indent'>   Other fix is to use the <span class='emph'>writetoc</span> configuration:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb168'><a id='x10-115075r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>writetoc<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
+<pre class='fancyvrb' id='fancyvrb170'><a id='x10-115075r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>writetoc<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
 <a id='x10-115077r2'></a><span style='color:rgb(40,56,175);'>\def\begin</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\detokenize</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>}}</span> 
 <a id='x10-115079r3'></a><span style='color:rgb(40,56,175);'>\def\end</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\detokenize</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>}}</span> 
 <a id='x10-115081r4'></a><span style='color:rgb(56,127,56);'>}</span></pre>
@@ -277,7 +277,7 @@ remove also <code class='texttt'>.4tc</code> and <code class='texttt'>.4ct</code
 mode of <code class='texttt'>make4ht</code>:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb169'><a id='x10-115084r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-m<span style='color:rgb(168,142,40);'> </span>clean<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb171'><a id='x10-115084r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-m<span style='color:rgb(168,142,40);'> </span>clean<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 132  --><p class='indent'>   It will remove all temporary files, but also generated HTML files and
@@ -293,7 +293,7 @@ code.
 HTML or XML file is not well-formed, you may get the following warning:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb170'><a id='x10-116005r1'></a><span style='color:rgb(101,101,101);'>[</span>WARNING<span style='color:rgb(101,101,101);'>]</span><span style='color:rgb(168,142,40);'> </span>domfilter:<span style='color:rgb(168,142,40);'> </span>DOM<span style='color:rgb(168,142,40);'> </span>parsing<span style='color:rgb(168,142,40);'> </span>of<span style='color:rgb(168,142,40);'> </span>test.html<span style='color:rgb(168,142,40);'> </span>failed: 
+<pre class='fancyvrb' id='fancyvrb172'><a id='x10-116005r1'></a><span style='color:rgb(101,101,101);'>[</span>WARNING<span style='color:rgb(101,101,101);'>]</span><span style='color:rgb(168,142,40);'> </span>domfilter:<span style='color:rgb(168,142,40);'> </span>DOM<span style='color:rgb(168,142,40);'> </span>parsing<span style='color:rgb(168,142,40);'> </span>of<span style='color:rgb(168,142,40);'> </span>test.html<span style='color:rgb(168,142,40);'> </span>failed: 
 <a id='x10-116007r2'></a><span style='color:rgb(101,101,101);'>[</span>WARNING<span style='color:rgb(101,101,101);'>]</span><span style='color:rgb(168,142,40);'> </span>domfilter:<span style='color:rgb(168,142,40);'> </span>/home/michal/texmf/scripts/lua/LuaXML/ 
 <a id='x10-116009r3'></a>luaxml-mod-xml.lua:175:<span style='color:rgb(168,142,40);'> </span>Unbalanced<span style='color:rgb(168,142,40);'> </span>Tag<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(101,101,101);'>(</span>/p<span style='color:rgb(101,101,101);'>)</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(101,101,101);'>[</span><span style='color:rgb(175,63,63);'>char</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(68,68,68);'>1353</span><span style='color:rgb(101,101,101);'>]</span></pre>
 
@@ -309,7 +309,7 @@ or <code class='texttt'>&lt;section&gt;</code> elements.
 </p><!--  l. 159  --><p class='indent'>   Say that you have a following code in your document:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb171'><a id='x10-116018r1'></a><span style='color:rgb(40,56,175);'>\newenvironment</span><span style='color:rgb(56,127,56);'>{</span>test<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\itshape</span><span style='color:rgb(56,127,56);'>}{}</span> 
+<pre class='fancyvrb' id='fancyvrb173'><a id='x10-116018r1'></a><span style='color:rgb(40,56,175);'>\newenvironment</span><span style='color:rgb(56,127,56);'>{</span>test<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\itshape</span><span style='color:rgb(56,127,56);'>}{}</span> 
 <a id='x10-116020r2'></a> 
 <a id='x10-116022r3'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>test<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x10-116024r4'></a>world 
@@ -322,14 +322,14 @@ or <code class='texttt'>&lt;section&gt;</code> elements.
 element:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb172'><a id='x10-116033r1'></a><span style='color:rgb(40,56,175);'>\ConfigureEnv</span><span style='color:rgb(56,127,56);'>{</span>test<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;div class="test"&gt;<span style='color:rgb(56,127,56);'>}}{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/div&gt;<span style='color:rgb(56,127,56);'>}}{}{}</span></pre>
+<pre class='fancyvrb' id='fancyvrb174'><a id='x10-116033r1'></a><span style='color:rgb(40,56,175);'>\ConfigureEnv</span><span style='color:rgb(56,127,56);'>{</span>test<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;div class="test"&gt;<span style='color:rgb(56,127,56);'>}}{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/div&gt;<span style='color:rgb(56,127,56);'>}}{}{}</span></pre>
 
 </figure>
 <!--  l. 177  --><p class='indent'>   This configuration will break the LuaXML parsing, as it produces invalid HTML
 code:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb173'><a id='x10-116041r1'></a><span style='color:rgb(135,135,135);'><span class='textit'>&lt;!--l. 27--&gt;</span></span><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>p </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"indent" </span><span style='color:rgb(135,135,135);'>&gt;   &lt;</span><span style='color:rgb(40,56,175);'>div </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"test"</span><span style='color:rgb(135,135,135);'>&gt; &lt;</span><span style='color:rgb(40,56,175);'>span</span> 
+<pre class='fancyvrb' id='fancyvrb175'><a id='x10-116041r1'></a><span style='color:rgb(135,135,135);'><span class='textit'>&lt;!--l. 27--&gt;</span></span><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>p </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"indent" </span><span style='color:rgb(135,135,135);'>&gt;   &lt;</span><span style='color:rgb(40,56,175);'>div </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"test"</span><span style='color:rgb(135,135,135);'>&gt; &lt;</span><span style='color:rgb(40,56,175);'>span</span> 
 <a id='x10-116043r2'></a><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"cmti-12"</span><span style='color:rgb(135,135,135);'>&gt;</span>world<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;</span> 
 <a id='x10-116045r3'></a><span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>p</span><span style='color:rgb(135,135,135);'>&gt;<span class='textit'>&lt;!--l. 30--&gt;</span>&lt;</span><span style='color:rgb(40,56,175);'>p </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"indent" </span><span style='color:rgb(135,135,135);'>&gt;   &lt;</span><span style='color:rgb(40,56,175);'>span</span> 
 <a id='x10-116047r4'></a><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"cmti-12"</span><span style='color:rgb(135,135,135);'>&gt;</span>more paragraphs<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;</span> 
@@ -343,7 +343,7 @@ tag is inserted before <code class='texttt'>&lt;div&gt;</code> tag. You can use 
 this:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb174'><a id='x10-116055r1'></a><span style='color:rgb(40,56,175);'>\ConfigureEnv</span><span style='color:rgb(56,127,56);'>{</span>test<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;div class="test"&gt;<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\par</span><span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb176'><a id='x10-116055r1'></a><span style='color:rgb(40,56,175);'>\ConfigureEnv</span><span style='color:rgb(56,127,56);'>{</span>test<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;div class="test"&gt;<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\par</span><span style='color:rgb(56,127,56);'>}</span> 
 <a id='x10-116057r2'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/div&gt;<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\par</span><span style='color:rgb(56,127,56);'>}{}{}</span></pre>
 
 </figure>
@@ -356,7 +356,7 @@ closing of the environment. The resulting HTML with this configuration is
 correct:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb175'><a id='x10-116063r1'></a><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>div </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'test'</span><span style='color:rgb(135,135,135);'>&gt;</span> 
+<pre class='fancyvrb' id='fancyvrb177'><a id='x10-116063r1'></a><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>div </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'test'</span><span style='color:rgb(135,135,135);'>&gt;</span> 
 <a id='x10-116065r2'></a><span style='color:rgb(135,135,135);'><span class='textit'>&lt;!-- l. 28 --&gt;</span></span><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>p </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'indent'</span><span style='color:rgb(135,135,135);'>&gt;   &lt;</span><span style='color:rgb(40,56,175);'>span </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'cmti-12'</span><span style='color:rgb(135,135,135);'>&gt;</span>world<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;</span> 
 <a id='x10-116067r3'></a><span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>p</span><span style='color:rgb(135,135,135);'>&gt;<span class='textit'>&lt;!-- l. 30 --&gt;</span>&lt;</span><span style='color:rgb(40,56,175);'>p </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'indent'</span><span style='color:rgb(135,135,135);'>&gt;   &lt;</span><span style='color:rgb(40,56,175);'>span </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'cmti-12'</span><span style='color:rgb(135,135,135);'>&gt;</span>more paragraphs<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;</span> 
 <a id='x10-116069r4'></a><span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>p</span><span style='color:rgb(135,135,135);'>&gt;&lt;/</span><span style='color:rgb(40,56,175);'>div</span><span style='color:rgb(135,135,135);'>&gt;</span></pre>
@@ -377,7 +377,7 @@ results in DOM error and wrong rendering by MathML processors. You can fix this
 by using <span class='textbf'><code class='texttt'>\mbox</code></span> instead.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb176'><a id='x10-118007r1'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>equation*<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb178'><a id='x10-118007r1'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>equation*<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x10-118009r2'></a>  <span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>array<span style='color:rgb(56,127,56);'>}{</span>ll<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x10-118011r3'></a>      <span style='color:rgb(40,56,175);'>\frac</span><span style='color:rgb(56,127,56);'>{</span>k<span style='color:rgb(56,127,56);'>}{</span>2<span style='color:rgb(56,127,56);'>^{</span>n<span style='color:rgb(56,127,56);'>}}</span>, <span style='color:rgb(56,127,56);'>&amp; </span><span style='color:rgb(40,56,175);'>\hbox</span><span style='color:rgb(56,127,56);'>{</span> if <span style='color:rgb(183,56,56);'>\(</span><span style='color:rgb(175,63,63);'>\frac</span><span style='color:rgb(56,127,56);'>{k</span><span style='color:rgb(101,101,101);'>-</span><span style='color:rgb(68,68,68);'>1</span><span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(68,68,68);'>2</span><span style='color:rgb(56,127,56);'>^{n}}</span><span style='color:rgb(175,63,63);'>\leq\tau</span><span style='color:rgb(56,127,56);'> &lt; </span><span style='color:rgb(175,63,63);'>\frac</span><span style='color:rgb(56,127,56);'>{k}{</span><span style='color:rgb(68,68,68);'>2</span><span style='color:rgb(56,127,56);'>^{n}}</span><span style='color:rgb(183,56,56);'>\)</span>.<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x10-118013r4'></a>  <span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>array<span style='color:rgb(56,127,56);'>}</span> 
@@ -398,7 +398,7 @@ issues also with other commands. You can declare these commands to do nothing, o
 to be passed literaly to the auxilary file, using this configuration:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb177'><a id='x10-120008r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>CaptionCommandsFix<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
+<pre class='fancyvrb' id='fancyvrb179'><a id='x10-120008r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>CaptionCommandsFix<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
 <a id='x10-120010r2'></a><span style='color:rgb(135,135,135);'><span class='textit'>% pass \left unexpanded to the aux file</span></span> 
 <a id='x10-120012r3'></a><span style='color:rgb(40,56,175);'>\DeclareRobustCommand\left</span><span style='color:rgb(56,127,56);'>{}</span> 
 <a id='x10-120014r4'></a><span style='color:rgb(135,135,135);'><span class='textit'>% disable \index</span></span> 

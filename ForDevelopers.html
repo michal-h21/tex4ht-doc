@@ -167,7 +167,7 @@ the output format tags.
 </p><!--  l. 19  --><p class='indent'>   Let’s say that you have a custom package, called <code class='texttt'>mynote.sty</code>
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb178'><a id='x11-122006r1'></a><span style='color:rgb(40,56,175);'>\newcommand\notetitle</span><span style='color:rgb(56,127,56);'>{</span>Note:~<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb180'><a id='x11-122006r1'></a><span style='color:rgb(40,56,175);'>\newcommand\notetitle</span><span style='color:rgb(56,127,56);'>{</span>Note:~<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-122008r2'></a><span style='color:rgb(40,56,175);'>\newcommand\note</span><span style='color:rgb(56,127,56);'>[1]{</span><span style='color:rgb(40,56,175);'>\textbf</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\notetitle</span><span style='color:rgb(56,127,56);'>}</span>#1<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-122010r3'></a><span style='color:rgb(40,56,175);'>\newcommand\highlight</span><span style='color:rgb(56,127,56);'>[1]{</span><span style='color:rgb(40,56,175);'>\textbf</span><span style='color:rgb(56,127,56);'>{</span>#1<span style='color:rgb(56,127,56);'>}}</span> 
 <a id='x11-122012r4'></a><span style='color:rgb(40,56,175);'>\endinput</span></pre>
@@ -177,7 +177,7 @@ the output format tags.
 following way:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb179'><a id='x11-122021r1'></a><span style='color:rgb(40,56,175);'>\documentclass</span><span style='color:rgb(56,127,56);'>{</span>article<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb181'><a id='x11-122021r1'></a><span style='color:rgb(40,56,175);'>\documentclass</span><span style='color:rgb(56,127,56);'>{</span>article<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-122023r2'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>{</span>mynote<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-122025r3'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-122027r4'></a><span style='color:rgb(40,56,175);'>\note</span><span style='color:rgb(56,127,56);'>{</span>This is a note<span style='color:rgb(56,127,56);'>}</span> 
@@ -196,7 +196,7 @@ package, called <code class='texttt'>&lt;name&gt;.4ht</code>. For example, to se
 create file <code class='texttt'>mynote.4ht</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb180'><a id='x11-122047r1'></a><span style='color:rgb(40,56,175);'>\NewConfigure</span><span style='color:rgb(56,127,56);'>{</span>note<span style='color:rgb(56,127,56);'>}{</span>3<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb182'><a id='x11-122047r1'></a><span style='color:rgb(40,56,175);'>\NewConfigure</span><span style='color:rgb(56,127,56);'>{</span>note<span style='color:rgb(56,127,56);'>}{</span>3<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-122049r2'></a> 
 <a id='x11-122051r3'></a><span style='color:rgb(135,135,135);'><span class='textit'>% Use \HLet when you want to completely redefine a command</span></span> 
 <a id='x11-122053r4'></a><span style='color:rgb(40,56,175);'>\def\:tempa</span>#1<span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\a:note\notetitle\b:note</span>~#1<span style='color:rgb(40,56,175);'>\c:note</span><span style='color:rgb(56,127,56);'>}</span> 
@@ -230,7 +230,7 @@ can use the <span class='textbf'><code class='texttt'>\pend:defI</code></span> c
 LaTeX’s hook system:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb181'><a id='x11-122073r1'></a><span style='color:rgb(40,56,175);'>\AddToHook</span><span style='color:rgb(56,127,56);'>{</span>cmd/highlight/before<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\a:highlight</span><span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb183'><a id='x11-122073r1'></a><span style='color:rgb(40,56,175);'>\AddToHook</span><span style='color:rgb(56,127,56);'>{</span>cmd/highlight/before<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\a:highlight</span><span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-122075r2'></a><span style='color:rgb(40,56,175);'>\AddToHook</span><span style='color:rgb(56,127,56);'>{</span>cmd/highlight/after<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\b:highlight</span><span style='color:rgb(56,127,56);'>}</span></pre>
 
 </figure>
@@ -247,7 +247,7 @@ differently.
 </p><!--  l. 102  --><p class='indent'>   The configuration file for our hooks could look like this:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb182'><a id='x11-122088r1'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb184'><a id='x11-122088r1'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-122090r2'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>note<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-122092r3'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;div class="note"&gt;&lt;span class="notetitle"&gt;<span style='color:rgb(56,127,56);'>}}</span> 
 <a id='x11-122094r4'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/span&gt;&lt;span class="notebody"&gt;<span style='color:rgb(56,127,56);'>}}</span> 
@@ -267,7 +267,7 @@ this issue. More details about configuration files and configurations are in sec
 </p><!--  l. 123  --><p class='indent'>   The HTML code produced by our configuration looks like this:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb183'><a id='x11-122113r1'></a><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>div </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'note'</span><span style='color:rgb(135,135,135);'>&gt;&lt;</span><span style='color:rgb(40,56,175);'>span </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'notetitle'</span><span style='color:rgb(135,135,135);'>&gt;</span>Note: <span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;&lt;</span><span style='color:rgb(40,56,175);'>span </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'notebody'</span><span style='color:rgb(135,135,135);'>&gt;</span> This is a note<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;&lt;/</span><span style='color:rgb(40,56,175);'>div</span><span style='color:rgb(135,135,135);'>&gt;</span> 
+<pre class='fancyvrb' id='fancyvrb185'><a id='x11-122113r1'></a><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>div </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'note'</span><span style='color:rgb(135,135,135);'>&gt;&lt;</span><span style='color:rgb(40,56,175);'>span </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'notetitle'</span><span style='color:rgb(135,135,135);'>&gt;</span>Note: <span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;&lt;</span><span style='color:rgb(40,56,175);'>span </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'notebody'</span><span style='color:rgb(135,135,135);'>&gt;</span> This is a note<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;&lt;/</span><span style='color:rgb(40,56,175);'>div</span><span style='color:rgb(135,135,135);'>&gt;</span> 
 <a id='x11-122115r2'></a><span style='color:rgb(135,135,135);'><span class='textit'>&lt;!--  l. 6  --&gt;</span></span><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>p </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'indent'</span><span style='color:rgb(135,135,135);'>&gt;</span>   Try to highlight <span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>span </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'highlight'</span><span style='color:rgb(135,135,135);'>&gt;</span>something<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;</span>. 
 <a id='x11-122117r3'></a><span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>p</span><span style='color:rgb(135,135,135);'>&gt;</span></pre>
 
@@ -283,7 +283,7 @@ this issue. More details about configuration files and configurations are in sec
                                                                   
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb184'><a id='x11-123007r1'></a><span style='color:rgb(40,56,175);'>\NewConfigure</span><span style='color:rgb(56,127,56);'>{</span>try<span style='color:rgb(56,127,56);'>}{</span>2<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb186'><a id='x11-123007r1'></a><span style='color:rgb(40,56,175);'>\NewConfigure</span><span style='color:rgb(56,127,56);'>{</span>try<span style='color:rgb(56,127,56);'>}{</span>2<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-123009r2'></a><span style='color:rgb(40,56,175);'>\def\try</span>#1<span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\a:try</span>#1<span style='color:rgb(40,56,175);'>\b:try</span><span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-123011r3'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>try<span style='color:rgb(56,127,56);'>}{</span>* <span style='color:rgb(56,127,56);'>}{}</span> 
 <a id='x11-123013r4'></a><span style='color:rgb(40,56,175);'>\try</span><span style='color:rgb(56,127,56);'>{</span>ho<span style='color:rgb(56,127,56);'>}</span> 
@@ -296,7 +296,7 @@ prefixes, but it passes arguments of <span class='textbf'><code class='texttt'>\
 exampe:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb185'><a id='x11-123022r1'></a><span style='color:rgb(40,56,175);'>\NewConfigure</span><span style='color:rgb(56,127,56);'>{</span>try<span style='color:rgb(56,127,56);'>}</span>[2]<span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\def\hookI</span><span style='color:rgb(56,127,56);'>{</span>#1<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\def\hookII</span><span style='color:rgb(56,127,56);'>{</span>#2<span style='color:rgb(56,127,56);'>}}</span> 
+<pre class='fancyvrb' id='fancyvrb187'><a id='x11-123022r1'></a><span style='color:rgb(40,56,175);'>\NewConfigure</span><span style='color:rgb(56,127,56);'>{</span>try<span style='color:rgb(56,127,56);'>}</span>[2]<span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\def\hookI</span><span style='color:rgb(56,127,56);'>{</span>#1<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\def\hookII</span><span style='color:rgb(56,127,56);'>{</span>#2<span style='color:rgb(56,127,56);'>}}</span> 
 <a id='x11-123024r2'></a><span style='color:rgb(40,56,175);'>\def\try</span>#1<span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\hookI</span>#1<span style='color:rgb(40,56,175);'>\hookII</span><span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-123026r3'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>try<span style='color:rgb(56,127,56);'>}{</span>* <span style='color:rgb(56,127,56);'>}{}</span> 
 <a id='x11-123028r4'></a><span style='color:rgb(40,56,175);'>\try</span><span style='color:rgb(56,127,56);'>{</span>ho<span style='color:rgb(56,127,56);'>}</span> 
@@ -312,7 +312,7 @@ case, it will use the original command to produce correct visual result in the
 picture.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb186'><a id='x11-123038r1'></a><span style='color:rgb(40,56,175);'>\NewConfigure</span><span style='color:rgb(56,127,56);'>{</span>note<span style='color:rgb(56,127,56);'>}{</span>3<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb188'><a id='x11-123038r1'></a><span style='color:rgb(40,56,175);'>\NewConfigure</span><span style='color:rgb(56,127,56);'>{</span>note<span style='color:rgb(56,127,56);'>}{</span>3<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-123040r2'></a><span style='color:rgb(40,56,175);'>\def\:tempa</span>#1<span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\a:note</span> note:<span style='color:rgb(40,56,175);'>\b:note</span>~#1<span style='color:rgb(40,56,175);'>\c:note</span><span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-123042r3'></a><span style='color:rgb(40,56,175);'>\HLet\note\:tempa</span> 
 <a id='x11-123044r4'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>note<span style='color:rgb(56,127,56);'>}{</span>*<span style='color:rgb(56,127,56);'>}{</span>*<span style='color:rgb(56,127,56);'>}{</span>*<span style='color:rgb(56,127,56);'>}</span> 
@@ -331,7 +331,7 @@ the <span class='obeylines-h'><code class='verb'>&lt;X&gt;</code></span> placeho
 </p><!--  l. 192  --><p class='indent'>   Up to three parameters are supported.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb187'><a id='x11-123061r1'></a><span style='color:rgb(40,56,175);'>\newcommand\bar</span><span style='color:rgb(56,127,56);'>{</span>xxx<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb189'><a id='x11-123061r1'></a><span style='color:rgb(40,56,175);'>\newcommand\bar</span><span style='color:rgb(56,127,56);'>{</span>xxx<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-123063r2'></a><span style='color:rgb(40,56,175);'>\pend:def\bar</span><span style='color:rgb(56,127,56);'>{</span>*<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-123065r3'></a><span style='color:rgb(40,56,175);'>\append:def\bar</span><span style='color:rgb(56,127,56);'>{</span>*<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-123067r4'></a><span style='color:rgb(40,56,175);'>\bar</span> 
@@ -353,7 +353,7 @@ the <span class='obeylines-h'><code class='verb'>&lt;X&gt;</code></span> placeho
 active, and <span class='textbf'><code class='texttt'>\if:Option</code></span> conditional then run true or false branch.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb188'><a id='x11-123086r1'></a><span style='color:rgb(40,56,175);'>\:CheckOption</span><span style='color:rgb(56,127,56);'>{</span>info<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\if:Option</span> 
+<pre class='fancyvrb' id='fancyvrb190'><a id='x11-123086r1'></a><span style='color:rgb(40,56,175);'>\:CheckOption</span><span style='color:rgb(56,127,56);'>{</span>info<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\if:Option</span> 
 <a id='x11-123088r2'></a>... <span style='color:rgb(40,56,175);'>\else</span> ... 
 <a id='x11-123090r3'></a><span style='color:rgb(40,56,175);'>\fi</span></pre>
 
@@ -401,7 +401,7 @@ tree, for instance in <code class='texttt'>~/texmf/tex/latex/my4htfiles</code>.
 command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb189'><a id='x11-125003r1'></a>$<span style='color:rgb(168,142,40);'> </span>kpsewhich<span style='color:rgb(168,142,40);'> </span>-var-value<span style='color:rgb(168,142,40);'> </span>TEXMFHOME</pre>
+<pre class='fancyvrb' id='fancyvrb191'><a id='x11-125003r1'></a>$<span style='color:rgb(168,142,40);'> </span>kpsewhich<span style='color:rgb(168,142,40);'> </span>-var-value<span style='color:rgb(168,142,40);'> </span>TEXMFHOME</pre>
 
 </figure>   
 
@@ -409,14 +409,14 @@ command:
 <!--  l. 280  --><p class='noindent'>Let’s say that you have a custom package <code class='texttt'>mypackage.sty</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb190'><a id='x11-126004r1'></a><span style='color:rgb(40,56,175);'>\newcommand\mycommand</span><span style='color:rgb(56,127,56);'>[1]{</span>Hello #1<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb192'><a id='x11-126004r1'></a><span style='color:rgb(40,56,175);'>\newcommand\mycommand</span><span style='color:rgb(56,127,56);'>[1]{</span>Hello #1<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-126006r2'></a><span style='color:rgb(40,56,175);'>\endinput</span></pre>
 
 </figure>
 <!--  l. 287  --><p class='indent'>   This can be configured using the following configuration file, <code class='texttt'>mypackage.4ht</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb191'><a id='x11-126013r1'></a><span style='color:rgb(40,56,175);'>\NewConfigure</span><span style='color:rgb(56,127,56);'>{</span>mycommand<span style='color:rgb(56,127,56);'>}{</span>2<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb193'><a id='x11-126013r1'></a><span style='color:rgb(40,56,175);'>\NewConfigure</span><span style='color:rgb(56,127,56);'>{</span>mycommand<span style='color:rgb(56,127,56);'>}{</span>2<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-126015r2'></a><span style='color:rgb(40,56,175);'>\pend:defI\mycommand</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\a:mycommand</span><span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-126017r3'></a><span style='color:rgb(40,56,175);'>\append:defI\mycommand</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\b:mycommand</span><span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-126019r4'></a><span style='color:rgb(40,56,175);'>\Hinput</span><span style='color:rgb(56,127,56);'>{</span>mypackage<span style='color:rgb(56,127,56);'>}</span> 
@@ -429,7 +429,7 @@ format files.
 </p><!--  l. 300  --><p class='indent'>   Here is a custom output format file <code class='texttt'>sample.4ht</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb192'><a id='x11-126035r1'></a><span style='color:rgb(40,56,175);'>\exit:ifnot</span><span style='color:rgb(56,127,56);'>{</span>mypackage<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb194'><a id='x11-126035r1'></a><span style='color:rgb(40,56,175);'>\exit:ifnot</span><span style='color:rgb(56,127,56);'>{</span>mypackage<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-126037r2'></a> 
 <a id='x11-126039r3'></a><span style='color:rgb(135,135,135);'><span class='textit'>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span> 
 <a id='x11-126041r4'></a><span style='color:rgb(40,56,175);'>\ConfigureHinput</span><span style='color:rgb(56,127,56);'>{</span>mypackage<span style='color:rgb(56,127,56);'>}</span> 
@@ -456,7 +456,7 @@ is an example that adds a new option <span class='emph'>myhtml5</span>. It is ba
 option from <code class='texttt'>tex4ht.4ht</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb193'><a id='x11-126084r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>myhtml5<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
+<pre class='fancyvrb' id='fancyvrb195'><a id='x11-126084r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>myhtml5<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
 <a id='x11-126086r2'></a>   <span style='color:rgb(40,56,175);'>\:CheckOption</span><span style='color:rgb(56,127,56);'>{</span>info<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\if:Option</span> 
 <a id='x11-126088r3'></a>               <span style='color:rgb(40,56,175);'>\Hinclude</span><span style='color:rgb(56,127,56);'>[*]{</span>infoht4.4ht<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\fi</span> 
 <a id='x11-126090r4'></a>   <span style='color:rgb(40,56,175);'>\:CheckOption</span><span style='color:rgb(56,127,56);'>{</span>info<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\if:Option</span> 
@@ -489,7 +489,7 @@ Our custom output file <code class='texttt'>sample.4ht</code> is placed at the e
 </p><!--  l. 360  --><p class='indent'>   You can then require the custom output format using this command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb194'><a id='x11-126135r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>filename.tex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"myhtml5"</span></pre>
+<pre class='fancyvrb' id='fancyvrb196'><a id='x11-126135r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>filename.tex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"myhtml5"</span></pre>
 
 </figure>   
 
@@ -507,7 +507,7 @@ pieces of code to a separate file. Sample code that loads such code looks like
 this:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb195'><a id='x11-127003r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>PackageHooks<span style='color:rgb(56,127,56);'>}{</span>foo.sty<span style='color:rgb(56,127,56);'>}{</span>foo-hooks.4ht<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb197'><a id='x11-127003r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>PackageHooks<span style='color:rgb(56,127,56);'>}{</span>foo.sty<span style='color:rgb(56,127,56);'>}{</span>foo-hooks.4ht<span style='color:rgb(56,127,56);'>}</span></pre>
 
 </figure>
 <!--  l. 395  --><p class='indent'>   The <code class='texttt'>&lt;pkgname&gt;-hooks.4ht</code> name is usually used to distinguish this early hooks
@@ -515,7 +515,7 @@ file from the usual <code class='texttt'>.4ht</code> files. The general structur
 is following:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb196'><a id='x11-127010r1'></a>code to be executed before package loading 
+<pre class='fancyvrb' id='fancyvrb198'><a id='x11-127010r1'></a>code to be executed before package loading 
 <a id='x11-127012r2'></a> 
 <a id='x11-127014r3'></a><span style='color:rgb(40,56,175);'>\:AtEndOfPackage</span><span style='color:rgb(56,127,56);'>{</span> 
 <a id='x11-127016r4'></a>code to be executed after package loading 
@@ -539,7 +539,7 @@ the new LaTeX package hooks. For example, the following code fixes catcode issue
 with the <span class='obeylines-h'><code class='verb'>^</code></span> character in the <code class='texttt'>doc</code> package:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb197'><a id='x11-128004r1'></a><span style='color:rgb(40,56,175);'>\AddToHook</span><span style='color:rgb(56,127,56);'>{</span>package/doc/before<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\SUPOff</span><span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb199'><a id='x11-128004r1'></a><span style='color:rgb(40,56,175);'>\AddToHook</span><span style='color:rgb(56,127,56);'>{</span>package/doc/before<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\SUPOff</span><span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-128006r2'></a><span style='color:rgb(40,56,175);'>\AddToHook</span><span style='color:rgb(56,127,56);'>{</span>package/doc/after<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\SUPOn</span><span style='color:rgb(56,127,56);'>}</span></pre>
 
 </figure>
@@ -559,7 +559,7 @@ them.
 them using a SVN client.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb198'><a id='x11-129004r1'></a>$<span style='color:rgb(168,142,40);'> </span>svn<span style='color:rgb(168,142,40);'> </span>checkout<span style='color:rgb(168,142,40);'> </span>https://svn.gnu.org.ua/sources/tex4ht/ 
+<pre class='fancyvrb' id='fancyvrb200'><a id='x11-129004r1'></a>$<span style='color:rgb(168,142,40);'> </span>svn<span style='color:rgb(168,142,40);'> </span>checkout<span style='color:rgb(168,142,40);'> </span>https://svn.gnu.org.ua/sources/tex4ht/ 
 <a id='x11-129006r2'></a>$<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(56,127,56);'>cd</span><span style='color:rgb(168,142,40);'> </span>tex4ht/trunk/lit/</pre>
 
 </figure>
@@ -584,7 +584,7 @@ some of them, for example <code class='texttt'>tex4ht-4ht.tex</code>, needs to b
 <!--  l. 462  --><p class='noindent'>Given following package <code class='texttt'>sample.sty</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb199'><a id='x11-130005r1'></a><span style='color:rgb(40,56,175);'>\ProvidesPackage</span><span style='color:rgb(56,127,56);'>{</span>sample<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb201'><a id='x11-130005r1'></a><span style='color:rgb(40,56,175);'>\ProvidesPackage</span><span style='color:rgb(56,127,56);'>{</span>sample<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-130007r2'></a><span style='color:rgb(40,56,175);'>\newcommand\hello</span><span style='color:rgb(56,127,56);'>{</span>hello<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-130009r3'></a><span style='color:rgb(40,56,175);'>\endinput</span></pre>
 
@@ -596,7 +596,7 @@ printed by the command.
 </p><!--  l. 474  --><p class='indent'>   Basic template for <code class='texttt'>tex4ht-4ht.tex</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb200'><a id='x11-130021r1'></a><span style='color:rgb(40,56,175);'>\&lt;</span>sample.4ht<span style='color:rgb(40,56,175);'>\&gt;</span>&lt;&lt;&lt; 
+<pre class='fancyvrb' id='fancyvrb202'><a id='x11-130021r1'></a><span style='color:rgb(40,56,175);'>\&lt;</span>sample.4ht<span style='color:rgb(40,56,175);'>\&gt;</span>&lt;&lt;&lt; 
 <a id='x11-130023r2'></a><span style='color:rgb(135,135,135);'><span class='textit'>% sample.4ht (|version), generated from |jobname.tex</span></span> 
 <a id='x11-130025r3'></a><span style='color:rgb(135,135,135);'><span class='textit'>% Copyright 2017 TeX Users Group</span></span> 
 <a id='x11-130027r4'></a>|&lt;TeX4ht license text|&gt; 
@@ -629,13 +629,13 @@ beginning, respective at the end of the redefined command.
 is used in the generation of the
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb201'><a id='x11-130042r1'></a><span style='color:rgb(40,56,175);'>\AddFile</span><span style='color:rgb(56,127,56);'>{</span>9<span style='color:rgb(56,127,56);'>}{</span>sample<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb203'><a id='x11-130042r1'></a><span style='color:rgb(40,56,175);'>\AddFile</span><span style='color:rgb(56,127,56);'>{</span>9<span style='color:rgb(56,127,56);'>}{</span>sample<span style='color:rgb(56,127,56);'>}</span></pre>
 
 </figure>
 <!--  l. 510  --><p class='indent'>   You can place configuration for <code class='texttt'>HTML</code> to the <code class='texttt'>tex4ht-html4.tex</code> file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb202'><a id='x11-130048r1'></a><span style='color:rgb(40,56,175);'>\&lt;</span>configure html4 sample<span style='color:rgb(40,56,175);'>\&gt;</span>&lt;&lt;&lt; 
+<pre class='fancyvrb' id='fancyvrb204'><a id='x11-130048r1'></a><span style='color:rgb(40,56,175);'>\&lt;</span>configure html4 sample<span style='color:rgb(40,56,175);'>\&gt;</span>&lt;&lt;&lt; 
 <a id='x11-130050r2'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>hello<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;span class="hello"&gt;<span style='color:rgb(56,127,56);'>}}{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/span&gt;<span style='color:rgb(56,127,56);'>}}</span> 
 <a id='x11-130052r3'></a><span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>.hello<span style='color:rgb(56,127,56);'>{</span>color:red;<span style='color:rgb(56,127,56);'>}}</span> 
 <a id='x11-130054r4'></a>&gt;&gt;&gt;</pre>
@@ -648,7 +648,7 @@ package.
 </p><!--  l. 527  --><p class='indent'>   The following sample TeX file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb203'><a id='x11-130061r1'></a><span style='color:rgb(40,56,175);'>\documentclass</span><span style='color:rgb(56,127,56);'>{</span>article<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb205'><a id='x11-130061r1'></a><span style='color:rgb(40,56,175);'>\documentclass</span><span style='color:rgb(56,127,56);'>{</span>article<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-130063r2'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>{</span>sample<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-130065r3'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-130067r4'></a>  <span style='color:rgb(40,56,175);'>\hello\</span> world. 
@@ -658,7 +658,7 @@ package.
 <!--  l. 538  --><p class='indent'>   Produces a following <code class='texttt'>HTML</code> code:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb204'><a id='x11-130074r1'></a><span style='color:rgb(135,135,135);'><span class='textit'>&lt;!--l. 4--&gt;</span></span><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>p </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"noindent" </span><span style='color:rgb(135,135,135);'>&gt;</span> 
+<pre class='fancyvrb' id='fancyvrb206'><a id='x11-130074r1'></a><span style='color:rgb(135,135,135);'><span class='textit'>&lt;!--l. 4--&gt;</span></span><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>p </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"noindent" </span><span style='color:rgb(135,135,135);'>&gt;</span> 
 <a id='x11-130076r2'></a><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>span </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"hello"</span><span style='color:rgb(135,135,135);'>&gt;</span>hello<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;</span> world. 
 <a id='x11-130078r3'></a><span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>p</span><span style='color:rgb(135,135,135);'>&gt;</span></pre>
 
@@ -677,7 +677,7 @@ ProTeX.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb205'><a id='x11-131009r1'></a><span style='color:rgb(40,56,175);'>\input</span> ProTex.sty 
+<pre class='fancyvrb' id='fancyvrb207'><a id='x11-131009r1'></a><span style='color:rgb(40,56,175);'>\input</span> ProTex.sty 
 <a id='x11-131011r2'></a><span style='color:rgb(40,56,175);'>\AlProTex</span><span style='color:rgb(56,127,56);'>{</span>extension,&lt;&lt;&lt;&gt;&gt;&gt;,list,title,escape-character<span style='color:rgb(56,127,56);'>}</span> 
 <a id='x11-131013r3'></a><span style='color:rgb(40,56,175);'>\&lt;</span>title<span style='color:rgb(40,56,175);'>\&gt;</span>&lt;&lt;&lt; 
 <a id='x11-131015r4'></a>code fragment 
@@ -689,7 +689,7 @@ ProTeX.
 <!--  l. 575  --><p class='indent'>   Some explanation:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb206'><a id='x11-131025r1'></a><span style='color:rgb(40,56,175);'>\input</span> ProTex.sty 
+<pre class='fancyvrb' id='fancyvrb208'><a id='x11-131025r1'></a><span style='color:rgb(40,56,175);'>\input</span> ProTex.sty 
 <a id='x11-131027r2'></a><span style='color:rgb(40,56,175);'>\AlProTex</span><span style='color:rgb(56,127,56);'>{</span>extension,&lt;&lt;&lt;&gt;&gt;&gt;,list,title,escape-character<span style='color:rgb(56,127,56);'>}</span></pre>
 
 </figure>
@@ -697,7 +697,7 @@ ProTeX.
 <span class='obeylines-h'><code class='verb'>|</code></span>.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb207'><a id='x11-131033r1'></a><span style='color:rgb(40,56,175);'>\&lt;</span>title<span style='color:rgb(40,56,175);'>\&gt;</span>&lt;&lt;&lt; 
+<pre class='fancyvrb' id='fancyvrb209'><a id='x11-131033r1'></a><span style='color:rgb(40,56,175);'>\&lt;</span>title<span style='color:rgb(40,56,175);'>\&gt;</span>&lt;&lt;&lt; 
 <a id='x11-131035r2'></a>code fragment 
 <a id='x11-131037r3'></a>&gt;&gt;&gt; 
 <a id='x11-131039r4'></a></pre>
@@ -707,14 +707,14 @@ ProTeX.
 too large in size).
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb208'><a id='x11-131042r1'></a> |&lt;title|&gt;</pre>
+<pre class='fancyvrb' id='fancyvrb210'><a id='x11-131042r1'></a> |&lt;title|&gt;</pre>
 
 </figure>
 <!--  l. 598  --><p class='indent'>   This command acts as a place holder for the code segment associated to the title
 (<code class='texttt'>|</code> stands for the escape character).
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb209'><a id='x11-131045r1'></a>   <span style='color:rgb(40,56,175);'>\OutputCode\&lt;</span>...<span style='color:rgb(40,56,175);'>\&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb211'><a id='x11-131045r1'></a>   <span style='color:rgb(40,56,175);'>\OutputCode\&lt;</span>...<span style='color:rgb(40,56,175);'>\&gt;</span></pre>
 
 </figure>
 <!--  l. 604  --><p class='indent'>   This command creates a file for the code whose root node is specified.
