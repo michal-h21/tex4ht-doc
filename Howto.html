@@ -138,6 +138,10 @@
 
 
 
+
+
+
+
 <span class='chapterToc'>11 <a href='Glossary.html#glossary'>Glossary</a></span>
 <span class='chapterToc'>12 <a href='Bibliography.html#bibliography'>Bibliography</a></span>
 <span class='chapterToc'>13 <a href='Index.html#index'>Index</a></span>
@@ -148,12 +152,12 @@
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='BasicTutorial.html'>prev</a>] [<a href='tex4ht-doc.html#Howto.html'>up</a>] [<a href='CallingCommands.html'>next</a>] </nav> 
 <h2 class='chapterHead' id='how-to'><span class='titlemark'>Chapter 3</span><br /><a id='x4-170003'></a>How to</h2>
-   
+
+                                                                  
+
+                                                                  
 <h3 class='sectionHead' id='change-design'><span class='titlemark'>3.1   </span> <a id='x4-180003.1'></a>Change design</h3>
-
-                                                                  
-
-                                                                  
+   
 <h4 class='subsectionHead' id='basics'><span class='titlemark'>3.1.1   </span> <a id='x4-190003.1.1'></a>Basics</h4>
 <!--  l. 46  --><p class='noindent'>By default, <code class='texttt'>TeX4ht</code> separates paragraphs by space. If you want to use text indenting
 instead, try the <span class='emph'>p-indent</span> option.
@@ -198,14 +202,14 @@ and also better for the accessibility.
 <h4 class='subsectionHead' id='picture-math'><span class='titlemark'>3.2.1   </span> <a id='x4-230003.2.1'></a>Picture math</h4>
 <!--  l. 89  --><p class='noindent'>By default, pictures are used only for display math. You can pass additional
 options to <code class='texttt'>TeX4ht</code> to request pictures also for inline math, equations and other
+                                                                  
+
+                                                                  
 environments. You can also require the SVG output, to get pictures in a better
 quality.
 </p><!--  l. 94  --><p class='indent'>   For example, the following command should produce pictures in SVG:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb42'><a id='x4-23003r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>foo.tex<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
@@ -239,14 +243,14 @@ them.
 <li class='itemize'>Cross-references  to  equations  should  work,  but  other  numbered  math
 environments don’t work out of the box. You can try the Lua scripts
 proposed in <a href='https://tex.stackexchange.com/a/597913/2891'>this post on TeX.sx</a> as a workaround.</li></ul>
+                                                                  
+
+                                                                  
 <!--  l. 24  --><p class='indent'>   The additional configuration for <span class='emph'>MathJax</span> can be provided in the <code class='texttt'>MathJaxConfig</code>
 configuration.
 </p><!--  l. 27  --><p class='indent'>   The following example provides support for custom LaTeX macros.
 </p>   
 <figure class='texsource' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb45'><a id='x4-24019r1'></a><span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml<span style='color:#388038;'>}</span> 
 <a id='x4-24021r2'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>MathJaxConfig<span style='color:#388038;'>}{{</span> 
 <a id='x4-24023r3'></a>    tex: <span style='color:#388038;'>{</span> 
@@ -330,13 +334,13 @@ path to a file with macro definitions for MathJax. The file needs to contain onl
 definitions using <span class='textbf'><code class='texttt'>\newcommand</code></span>, <span class='textbf'><code class='texttt'>\def</code></span>, <span class='textbf'><code class='texttt'>\newenvironment</code></span> and few others. It cannot
 contain other commands, so for example inclusion of <code class='texttt'>.sty</code> files will probably not
 work.
+                                                                  
+
+                                                                  
 </p><!--  l. 115  --><p class='indent'>   Here is an example that reuses definitions in both PDF and MathJax
 modes:
 </p>   
 <figure class='texsource' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb48'><a id='x4-25009r1'></a><span style='color:#2938B0;'>\documentclass</span><span style='color:#388038;'>{</span>amsart<span style='color:#388038;'>}</span> 
 <a id='x4-25011r2'></a><span style='color:#2938B0;'>\input</span><span style='color:#388038;'>{</span>mymacros<span style='color:#388038;'>}</span> 
 <a id='x4-25013r3'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
@@ -408,11 +412,11 @@ pass the whole contents, including the <span class='obeylines-h'><code class='ve
 you will need to provide MathJax configuration for both of these environments, as
 they are not supported by default.
 
-</p>
-<!--  l. 190  --><p class='noindent'><span class='paragraphHead' id='math-inside-tikz-pictures'><a id='x4-27000'></a><span class='ec-lmbx-10'>Math inside TikZ pictures</span></span>
                                                                   
 
                                                                   
+</p>
+<!--  l. 190  --><p class='noindent'><span class='paragraphHead' id='math-inside-tikz-pictures'><a id='x4-27000'></a><span class='ec-lmbx-10'>Math inside TikZ pictures</span></span>
 When you use math in pitcture environments, for example TikZ pictures, you
 need to restore the original meanings of math environments. This can be done using
 the <span class='obeylines-h'><code class='verb'>\RestoreMathJaxEnvironments</code></span> command at the beginning of the environment.

@@ -138,6 +138,10 @@
 
 
 
+
+
+
+
 <span class='chapterToc'>11 <a href='Glossary.html#glossary'>Glossary</a></span>
 <span class='chapterToc'>12 <a href='Bibliography.html#bibliography'>Bibliography</a></span>
 <span class='chapterToc'>13 <a href='Index.html#index'>Index</a></span>
@@ -148,14 +152,14 @@
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='Introduction.html'>prev</a>] [<a href='tex4ht-doc.html#BasicTutorial.html'>up</a>] [<a href='Howto.html'>next</a>] </nav> 
 <h2 class='chapterHead' id='basic-tutorial'><span class='titlemark'>Chapter 2</span><br /><a id='x3-30002'></a>Basic Tutorial</h2>
-   
+
+                                                                  
+
+                                                                  
 <h3 class='sectionHead' id='what-is-texht'><span class='titlemark'>2.1   </span> <a id='x3-40002.1'></a>What is TeX4ht?</h3>
 <!--  l. 3  --><p class='noindent'><a href='https://www.tug.org/tex4ht/'><code class='texttt'>TeX4ht</code></a> is a system that converts LaTeX to various output formats, including <code class='texttt'>HTML</code>,
 <a href='http://en.wikipedia.org/wiki/OpenDocument'><code class='texttt'>ODT</code></a>, <a href='http://en.wikipedia.org/wiki/DocBook'><code class='texttt'>DocBook</code></a>, and <a href='http://en.wikipedia.org/wiki/Text_Encoding_Initiative'><code class='texttt'>TEI</code></a>. <code class='texttt'>HTML</code> and <code class='texttt'>ODT</code> formats are the most common and
 best-supported conversion targets.
-                                                                  
-
-                                                                  
 </p><!--  l. 11  --><p class='indent'>   <code class='texttt'>TeX4ht</code> allows authors to convert LaTeX input into several output formats, such
 as <code class='texttt'>HTML</code> (for web pages) or <code class='texttt'>ePub</code> (for ebooks and other applications).
 </p><!--  l. 16  --><p class='indent'>   <a id='basic-usage'></a>
@@ -194,15 +198,15 @@ invocation is equivalent to the following:
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb5'><a id='x3-5023r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-l<span style='color:#A88F29;'> </span>-m<span style='color:#A88F29;'> </span>draft<span style='color:#A88F29;'> </span>filename.tex</pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!--  l. 45  --><p class='indent'>   You can also use the long options:
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb6'><a id='x3-5026r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>--lua<span style='color:#A88F29;'> </span>--mode<span style='color:#A88F29;'> </span>draft<span style='color:#A88F29;'> </span>filename.tex</pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!--  l. 51  --><p class='indent'>   What do these options mean?
@@ -247,14 +251,14 @@ following:
 line 15 in the <span class='obeylines-h'><code class='verb'>grr.tex</code></span> file. In this case, it’s easy to locate the error, but that’s not
 always true. Some errors arise due to conflicts between certain packages and
 ‘<code class='texttt'>TeX4ht</code>‘, making it more challenging to identify the root cause.
+                                                                  
+
+                                                                  
 </p><!--  l. 106  --><p class='indent'>   By default, only errors and warnings are shown. Using the <span class='obeylines-h'><code class='verb'>-a debug</code></span> option,
 LaTeX is run in interactive mode, where you can see all terminal output and also
 control the engine by entering commands if the compilation stops due to an error.
 This option also displays all internal messages from <code class='texttt'>TeX4ht</code>, which can be helpful for
 debugging.
-                                                                  
-
-                                                                  
 </p><!--  l. 113  --><p class='indent'>   To invoke <code class='texttt'>make4ht</code> with debug mode, use the following command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
@@ -292,14 +296,14 @@ System<!--  tex4ht:ref: sec:make4ht-intro   --></a>.
 
 </p>   
 <h3 class='sectionHead' id='texht-options'><span class='titlemark'>2.4   </span> <a id='x3-80002.4'></a><code class='texttt'>TeX4ht</code> Options</h3>
+                                                                  
+
+                                                                  
 <!--  l. 164  --><p class='noindent'>The simplest way to change some aspects of the design is to use <code class='texttt'>TeX4ht</code>
 options. They can be passed as a first positional argument after filename to
 <code class='texttt'>make4ht</code>:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-                                                                  
-
-                                                                  
 <pre class='fancyvrb' id='fancyvrb11'><a id='x3-8003r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>filename.tex<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"option1,option2"</span></pre>
 
 </figure>
@@ -339,12 +343,12 @@ the <span class='emph'>pic-m</span> option, which requires pictures even for inl
 options for equations and other math environments.
 </p>   
 <figure class='shellcommand' role='doc-example'>
+                                                                  
+
+                                                                  
 <pre class='fancyvrb' id='fancyvrb14'><a id='x3-9006r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>filename.tex<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"pic-m,pic-equation"</span></pre>
 
 </figure>
-                                                                  
-
-                                                                  
 <!--  l. 198  --><p class='indent'>   The generated pictures are in the PNG format, which is raster and depends on
 the resolution on the device where the document is displayed. You may want
 to use vector SVG format instead, as it should produce better quality of
@@ -385,11 +389,11 @@ document:
 <!--  l. 226  --><p class='indent'>   If your document produces many pictures, the compilation can take a long time.
 To make it faster, you can use the <span class='obeylines-h'><code class='verb'>dvisvgm_hashes</code></span> extension. It caches the SVG
 images and creates them only for the changed math environments.
-</p>   
-<figure class='shellcommand' role='doc-example'>
                                                                   
 
                                                                   
+</p>   
+<figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb19'><a id='x3-10014r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-f<span style='color:#A88F29;'> </span>html5+dvisvgm_hashes<span style='color:#A88F29;'> </span>filename.tex<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
@@ -425,11 +429,11 @@ inserted before and after environment using the <code class='texttt'>\ConfigureE
 following syntax:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb21'><a id='x3-13004r1'></a><span style='color:#2938B0;'>\ConfigureEnv</span><span style='color:#388038;'>{</span>&lt;environment name&gt;<span style='color:#388038;'>}{</span>before env<span style='color:#388038;'>}{</span>after env<span style='color:#388038;'>}</span> 
-<a id='x3-13006r2'></a><span style='color:#388038;'>{</span>before-list<span style='color:#388038;'>}{</span>after-list<span style='color:#388038;'>}</span></pre>
                                                                   
 
                                                                   
+<pre class='fancyvrb' id='fancyvrb21'><a id='x3-13004r1'></a><span style='color:#2938B0;'>\ConfigureEnv</span><span style='color:#388038;'>{</span>&lt;environment name&gt;<span style='color:#388038;'>}{</span>before env<span style='color:#388038;'>}{</span>after env<span style='color:#388038;'>}</span> 
+<a id='x3-13006r2'></a><span style='color:#388038;'>{</span>before-list<span style='color:#388038;'>}{</span>after-list<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 276  --><p class='indent'>   We can ignore the arguments <code class='texttt'>before-list</code> and <code class='texttt'>after-list</code>, as they

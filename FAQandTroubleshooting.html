@@ -138,6 +138,10 @@
 
 
 
+
+
+
+
 <span class='chapterToc'>11 <a href='Glossary.html#glossary'>Glossary</a></span>
 <span class='chapterToc'>12 <a href='Bibliography.html#bibliography'>Bibliography</a></span>
 <span class='chapterToc'>13 <a href='Index.html#index'>Index</a></span>
@@ -148,14 +152,14 @@
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='Make4htBuildFiles.html'>prev</a>] [<a href='tex4ht-doc.html#FAQandTroubleshooting.html'>up</a>] [<a href='ForDevelopers.html'>next</a>] </nav> 
 <h2 class='chapterHead' id='faq-and-troubleshooting'><span class='titlemark'>Chapter 9</span><br /><a id='x10-1130009'></a>FAQ and Troubleshooting</h2>
-   
+
+                                                                  
+
+                                                                  
 <h3 class='sectionHead' id='general-advice'><span class='titlemark'>9.1   </span> <a id='x10-1140009.1'></a>General Advice</h3>
 <!--  l. 4  --><p class='noindent'>In general, don’t postpone your conversion to the last moment. As you will most
 likely want to produce ebook or HTML versions of LaTeX documents these days, you
 should try the conversion of your document from the beginning.
-                                                                  
-
-                                                                  
 </p><!--  l. 8  --><p class='indent'>   It is much easier to fix errors as soon as they appear. Often, one issue
 can cause many issues that follows, and it can be really hard to find the
 culprit.
@@ -184,6 +188,9 @@ the full terminal output, and stop on errors:
 
 </figure>
 <!--  l. 37  --><p class='indent'>   In many cases, fix of the first error can resolve the following errors.
+                                                                  
+
+                                                                  
 </p><!--  l. 40  --><p class='noindent'><span class='textbf'>Packages that cause issues</span> <code class='texttt'>TeX4ht</code> can sometimes clash with other packages. If
 you don’t need features the problematic package provides (typically, they modify
 stuff that makes sense in the PDF output, but not in HTML, like page headers, fancy
@@ -191,9 +198,6 @@ section titles, etc.), an easiest fix is to disable their loading when <code cla
 active.
 </p><!--  l. 46  --><p class='indent'>   The easiest way to disable package from loading is to add the following condition
 to your document preamble:
-                                                                  
-
-                                                                  
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb164'><a id='x10-115010r1'></a><span style='color:#2938B0;'>\ifdefined\HCode</span> 
@@ -242,6 +246,9 @@ debug.
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb168'><a id='x10-115066r1'></a><span style='color:#2938B0;'>\caption</span><span style='color:#388038;'>{</span><span style='color:#B83838;'>$</span><span style='color:#B04040;'>\begin</span><span style='color:#388038;'>{array}{c c} hello &amp; world</span><span style='color:#B04040;'>\end</span><span style='color:#388038;'>{array}</span><span style='color:#B83838;'>$</span><span style='color:#388038;'>}</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!--  l. 99  --><p class='indent'>   The issue is that some commands needs to be protected when used in parameters
@@ -250,9 +257,6 @@ of <code class='texttt'>\section</code> or <code class='texttt'>\caption</code> 
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb169'><a id='x10-115069r1'></a><span style='color:#2938B0;'>\caption</span><span style='color:#388038;'>{</span><span style='color:#B83838;'>$</span><span style='color:#B04040;'>\protect\begin</span><span style='color:#388038;'>{array}{c c} hello &amp; world</span><span style='color:#B04040;'>\protect\end</span><span style='color:#388038;'>{array}</span><span style='color:#B83838;'>$</span><span style='color:#388038;'>}</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!--  l. 107  --><p class='indent'>   Other fix is to use the <span class='emph'>writetoc</span> configuration:
@@ -291,6 +295,9 @@ features. For example, the <code class='texttt'>MathML</code> output relies on f
 code.
 </p><!--  l. 143  --><p class='indent'>   These filters use the LuaXML library for the processing. When the generated
 HTML or XML file is not well-formed, you may get the following warning:
+                                                                  
+
+                                                                  
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb172'><a id='x10-116005r1'></a><span style='color:#666666;'>[</span>WARNING<span style='color:#666666;'>]</span><span style='color:#A88F29;'> </span>domfilter:<span style='color:#A88F29;'> </span>DOM<span style='color:#A88F29;'> </span>parsing<span style='color:#A88F29;'> </span>of<span style='color:#A88F29;'> </span>test.html<span style='color:#A88F29;'> </span>failed: 
@@ -300,9 +307,6 @@ HTML or XML file is not well-formed, you may get the following warning:
 </figure>
 <!--  l. 153  --><p class='indent'>   This means that DOM parsing failed and filters cannot be applied. This will
 result in incorrect file.
-                                                                  
-
-                                                                  
 </p><!--  l. 155  --><p class='noindent'><span class='textbf'>Incorrect handling of paragraphs</span> Common cause of this issue is incorect
 handling of paragraphs in commands that produce block level elements such as <code class='texttt'>&lt;div&gt;</code>
 or <code class='texttt'>&lt;section&gt;</code> elements.
@@ -354,6 +358,9 @@ too early. But we want to start a new paragraph after <code class='texttt'>&lt;d
 explicit <code class='texttt'>\par</code> after <code class='texttt'>\HCode</code>. Similar paragraph treatment is needed also for the
 closing of the environment. The resulting HTML with this configuration is
 correct:
+                                                                  
+
+                                                                  
 </p>   
 <figure class='htmlsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb177'><a id='x10-116063r1'></a><span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>div </span><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>'test'</span><span style='color:#878787;'>&gt;</span> 
@@ -363,9 +370,6 @@ correct:
 
 </figure>   
 
-                                                                  
-
-                                                                  
 <h3 class='sectionHead' id='math-issues'><span class='titlemark'>9.4   </span> <a id='x10-1170009.4'></a>Math Issues</h3>
    
 <h4 class='subsectionHead' id='problems-with-mathml'><span class='titlemark'>9.4.1   </span> <a id='x10-1180009.4.1'></a>Problems With <span class='emph'><code class='texttt'>MathML</code></span></h4>
@@ -393,6 +397,9 @@ the <code class='texttt'>nameref</code> package. It then saves contents of secti
 auxilary file, so they can be then retrieved using the <span class='textbf'><code class='texttt'>\nameref</code></span> command. This leads
 to various problems with the <span class='textbf'><code class='texttt'>\caption</code></span> command, where some commands, such as
 <span class='textbf'><code class='texttt'>\index</code></span> or <span class='textbf'><code class='texttt'>\label</code></span> could cause fatal errors.
+                                                                  
+
+                                                                  
 </p><!--  l. 251  --><p class='indent'>   We fixed these problematic commands, but it is possible that you will experience
 issues also with other commands. You can declare these commands to do nothing, or
 to be passed literaly to the auxilary file, using this configuration:

@@ -138,6 +138,10 @@
 
 
 
+
+
+
+
 <span class='chapterToc'>11 <a href='Glossary.html#glossary'>Glossary</a></span>
 <span class='chapterToc'>12 <a href='Bibliography.html#bibliography'>Bibliography</a></span>
 <span class='chapterToc'>13 <a href='Index.html#index'>Index</a></span>
@@ -148,14 +152,14 @@
 <main class='main-content'> 
 <nav class='crosslinks-top'> [<a href='texfourhtOptions.html'>prev</a>] [<a href='tex4ht-doc.html#Configurations.html'>up</a>] [<a href='Make4htBuildFiles.html'>next</a>] </nav> 
 <h2 class='chapterHead' id='configurations2'><span class='titlemark'>Chapter 7</span><br /><a id='x8-560007'></a>Configurations</h2>
-   
+
+                                                                  
+
+                                                                  
 <h3 class='sectionHead' id='private-configuration-files'><span class='titlemark'>7.1   </span> <a id='x8-570007.1'></a>Private Configuration Files</h3>
 <!--  l. 3  --><p class='noindent'>It is highly recommended to leave source LaTeX and TeX files intact, and not
 introduce <code class='texttt'>TeX4ht</code> configurations there. The configurations should be introduced
 indirectly in private configuration files. Source files containing just native LaTeX and
-                                                                  
-
-                                                                  
 TeX code permit their compilation to different output formats, including PostScript
 and PDF, by <code class='texttt'>TeX4ht</code> and other tools.
 </p><!--  l. 9  --><p class='indent'>   Packages used by the general LaTeX community typically provide better support
@@ -198,13 +202,13 @@ options, see the <a href='texfourhtOptions.html#list-of-options'>List of options
 </figure>   
 
 <!--  l. 49  --><p class='noindent'><span class='paragraphHead' id='notes'><a id='x8-59000'></a><span class='ec-lmbx-10'>Notes</span></span>
-</p>     
-<ul class='itemize1'>
-<li class='itemize'>Notice that for a LaTeX file the <code class='texttt'>\begin{document}</code> instruction should be
-present both in the configuration file and the source file.
+</p>
                                                                   
 
                                                                   
+<ul class='itemize1'>     
+<li class='itemize'>Notice that for a LaTeX file the <code class='texttt'>\begin{document}</code> instruction should be
+present both in the configuration file and the source file.
 </li>
 <li class='itemize'>     
 <!--  l. 56  --><p class='noindent'>Instructions defined within a source file may be redefined in a configuration
@@ -252,12 +256,12 @@ command.
 </figure>   
 
 <h3 class='sectionHead' id='custom-output-formats'><span class='titlemark'>7.2   </span> <a id='x8-610007.2'></a>Custom output formats</h3>
-   
+
+                                                                  
+
+                                                                  
 <h3 class='sectionHead' id='texht-commands'><span class='titlemark'>7.3   </span> <a id='x8-620007.3'></a>tex4ht Commands</h3>
-
-                                                                  
-
-                                                                  
+   
 <h4 class='subsectionHead' id='lowlevel-texht-commands'><span class='titlemark'>7.3.1   </span> <a id='x8-630007.3.1'></a>Low-level <code class='texttt'>TeX4ht</code> Commands</h4>
 <!--  l. 6  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span></code>{<span class='textit'>name</span>}{<span class='textit'>arg 1</span>}…{<span class='textit'>arg n</span>}
 </p><!--  l. 8  --><p class='indent'>   The <span class='textbf'><code class='texttt'>\Configure</code></span> command declares code that is inserted into hooks related to the
@@ -292,6 +296,9 @@ marks the current location with the name <span class='obeylines-h'><code class='
 </p><!--  l. 42  --><p class='indent'>   The component in square brackets <code class='texttt'>‘[...]’</code> is optional when it is empty, the
 target file does not need to be specified if it will be created as part of the source file
 compilation.
+                                                                  
+
+                                                                  
 </p><!--  l. 46  --><p class='indent'>   For example, if we are creating separate HTML files for each chapter, we can use
 <code class='texttt'>\Link</code> in this form:
 </p>   
@@ -300,9 +307,6 @@ compilation.
 <a id='x8-64008r2'></a><span style='color:#2938B0;'>\Link</span><span style='color:#388038;'>{</span>secondlink<span style='color:#388038;'>}{</span>firstlink<span style='color:#388038;'>}</span>Go to second chapter<span style='color:#2938B0;'>\EndLink</span> 
 <a id='x8-64010r3'></a><span style='color:#2938B0;'>\chapter</span><span style='color:#388038;'>{</span>Second<span style='color:#388038;'>}</span> 
 <a id='x8-64012r4'></a><span style='color:#2938B0;'>\Link</span><span style='color:#388038;'>{</span>firstlink<span style='color:#388038;'>}{</span>secondlink<span style='color:#388038;'>}</span>Go to first chapter<span style='color:#2938B0;'>\EndLink</span></pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!--  l. 56  --><p class='indent'>   The link from the first chapter will lead correctly to the second, even though they
@@ -326,6 +330,9 @@ parameters:
 <!--  l. 71  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
+                                                                  
+
+                                                                  
 <pre class='fancyvrb' id='fancyvrb105'><a id='x8-64032r1'></a><span style='color:#2938B0;'>\LinkCommand\JSLink</span><span style='color:#388038;'>{</span>a,<span style='color:#2938B0;'>\noexpand\jsref</span>,name<span style='color:#388038;'>}</span> 
 <a id='x8-64034r2'></a><span style='color:#2938B0;'>\def\jsref</span>="#1"<span style='color:#388038;'>{</span>href="javascript:window.open('#1')"<span style='color:#388038;'>}</span> 
 <a id='x8-64036r3'></a> 
@@ -335,9 +342,6 @@ parameters:
 
 </figure>
 <!--  l. 82  --><p class='noindent'><code class='texttt'><span class='textbf'>\Tag</span></code>{<span class='textit'>label</span>}{<span class='textit'>content</span>}
-                                                                  
-
-                                                                  
 </p><!--  l. 83  --><p class='noindent'><code class='texttt'><span class='textbf'>\Ref</span></code>{<span class='textit'>label</span>}
 </p><!--  l. 84  --><p class='noindent'><code class='texttt'><span class='textbf'>\LikeRef</span></code>{<span class='textit'>label</span>}
 </p><!--  l. 86  --><p class='indent'>   <span class='textbf'><code class='texttt'>\Tag</code></span> and <span class='textbf'><code class='texttt'>\Ref</code></span> are commands introduced cross-referencing content through <code class='texttt'>.xref</code>
@@ -367,12 +371,12 @@ XML tags. Mismatch of tags leads to issues with LuaXML post-processing of
 the generated files, preventing many fixes that are necessary for correct
 conversion.
 </p><!--  l. 121  --><p class='noindent'><code class='texttt'><span class='textbf'>\HtmlParOff</span></code> turns off insertion of paragraph tags in the following text.
-</p><!--  l. 123  --><p class='noindent'><code class='texttt'><span class='textbf'>\HtmlParOn</span></code> enables insertion of paragraphs tags.
-</p><!--  l. 125  --><p class='noindent'><code class='texttt'><span class='textbf'>\IgnorePar</span></code> asks to ignore the next paragraph.
-</p><!--  l. 126  --><p class='noindent'><code class='texttt'><span class='textbf'>\ShowPar</span></code> asks to take into account the following paragraphs.
                                                                   
 
                                                                   
+</p><!--  l. 123  --><p class='noindent'><code class='texttt'><span class='textbf'>\HtmlParOn</span></code> enables insertion of paragraphs tags.
+</p><!--  l. 125  --><p class='noindent'><code class='texttt'><span class='textbf'>\IgnorePar</span></code> asks to ignore the next paragraph.
+</p><!--  l. 126  --><p class='noindent'><code class='texttt'><span class='textbf'>\ShowPar</span></code> asks to take into account the following paragraphs.
 </p><!--  l. 128  --><p class='noindent'><code class='texttt'><span class='textbf'>\IgnoreIndent</span></code> asks to ignore indentation in the next paragraph.
 </p><!--  l. 129  --><p class='noindent'><code class='texttt'><span class='textbf'>\ShowIndent</span></code> asks to check indentation in the following paragraphs.
 </p><!--  l. 131  --><p class='noindent'><code class='texttt'><span class='textbf'>\SaveEndP</span></code> saves the content of <span class='textbf'><code class='texttt'>\EndP</code></span>, and sets it to empty content.
@@ -412,15 +416,15 @@ indented paragraphs}</code>
 
 </figure>   
 
+                                                                  
+
+                                                                  
 <h4 class='subsectionHead' id='logical-document-structure-commands'><span class='titlemark'>7.3.5   </span> <a id='x8-670007.3.5'></a>Logical Document Structure Commands</h4>
 <!--  l. 175  --><p class='noindent'>I’ve created an alternative commands to <span class='textbf'><code class='texttt'>\HCode</code></span> or <span class='textbf'><code class='texttt'>\Tg</code></span>. The idea is to define
 semantic names for logical blocks of the document, such as titles, authors, sections
 etc. HTML elements and attributes can be assigned to these logical blocks. There are
 commands for inline and block level elements, eliminating need for constructs like
 <code class='texttt'>\ifvmode\IgnorePar\fi\EndP</code> etc.
-                                                                  
-
-                                                                  
 </p><!--  l. 182  --><p class='noindent'><code class='texttt'><span class='textbf'>\NewLogicalBlock</span></code>{<span class='textit'>name</span>} create a new logical block.
 </p><!--  l. 183  --><p class='noindent'><code class='texttt'><span class='textbf'>\SetBlockProperty</span></code>{<span class='textit'>name</span>}{<span class='textit'>attribute name</span>}{<span class='textit'>value</span>} set block attribute
 .
@@ -469,6 +473,9 @@ building blocks.
 
 </figure>   
 
+                                                                  
+
+                                                                  
 <h3 class='sectionHead' id='document-styling-using-css'><span class='titlemark'>7.4   </span> <a id='x8-680007.4'></a>Document Styling Using CSS</h3>
 <!--  l. 4  --><p class='noindent'><code class='texttt'>TeX4ht</code> provides several commands that can be used for changing of the document
 appearance using Cascading Style Sheets (<code class='texttt'>CSS</code>). Only basic styling for the
@@ -479,9 +486,6 @@ configurations.
 </p><!--  l. 11  --><p class='indent'>   <span class='textbf'><code class='texttt'>\Css</code></span>{<span class='textit'>content</span>}
 </p><!--  l. 13  --><p class='indent'>   This command sends its content to the CSS file of the document.
 </p><!--  l. 15  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>AddCss</span>}{CSS file name}</code>
-                                                                  
-
-                                                                  
 </p><!--  l. 17  --><p class='indent'>   Add local CSS file.
 </p>   
 <figure class='texsource' role='doc-example'>
@@ -523,6 +527,9 @@ the media condition is used.
 <!--  l. 52  --><p class='indent'>   This will produce:
 </p>   
 <figure class='csssource' role='doc-example'>
+                                                                  
+
+                                                                  
 <pre class='fancyvrb' id='fancyvrb111'><a id='x8-68036r1'></a><span style='color:#878787;'>@</span><span style='color:#2938B0;'>media</span><span style='color:#A88F29;'> </span><span style='color:#2938B0;'>screen</span><span style='color:#A88F29;'> </span><span style='color:#2938B0;'>and</span><span style='color:#A88F29;'> </span><span style='color:#666666;'>(</span><span style='color:#2938B0;'>max-width</span><span style='color:#666666;'>:</span><span style='color:#A88F29;'> </span><span style='color:#2938B0;'>600px</span><span style='color:#666666;'>)</span><span style='color:#A88F29;'> </span><span style='color:#878787;'>{</span> 
 <a id='x8-68038r2'></a><span style='color:#A88F29;'>  </span><span style='color:#2938B0;'>body</span><span style='color:#A88F29;'> </span><span style='color:#878787;'>{</span><span style='color:#2938B0;'>background-color</span><span style='color:#878787;'>:</span><span style='color:#A88F29;'> </span><span style='color:#454545;'><span class='textit'>lightblue</span></span><span style='color:#878787;'>;}</span> 
 <a id='x8-68040r3'></a><span style='color:#A88F29;'>  </span><span style='color:#2938B0;'>h1</span><span style='color:#A88F29;'> </span><span style='color:#878787;'>{</span><span style='color:#2938B0;'>color</span><span style='color:#878787;'>:</span><span style='color:#A88F29;'> </span><span style='color:#454545;'><span class='textit'>navy</span></span><span style='color:#878787;'>;}</span> 
@@ -533,9 +540,6 @@ the media condition is used.
 <ul class='itemize1'>
 <li class='itemize'>Any number of <span class='textbf'><code class='texttt'>\Css</code></span>{<span class='textit'>...</span>} commands can be placed between the start and
 end markers.
-                                                                  
-
-                                                                  
 </li>
 <li class='itemize'>These commands are useful for responsive design, allowing conditional
 styling based on the screen size or output medium.
@@ -574,15 +578,15 @@ the <span class='emph'>font-family</span> Css property.
 command for a declared font is <span class='emph'>rmfamily</span>. It use the Latin Modern font installed on
 the viewer’s system.
 </p><!--  l. 12  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>FontFamily</span>}{cssfamilyname}{LocalFontName}</code>
+                                                                  
+
+                                                                  
 </p><!--  l. 14  --><p class='indent'>   Change default CSS font family name. Example:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb113'><a id='x8-69003r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>FontFamily<span style='color:#388038;'>}{</span>rmfamily<span style='color:#388038;'>}{</span>Latin Modern<span style='color:#388038;'>}</span></pre>
 
 </figure>
-                                                                  
-
-                                                                  
 <!--  l. 20  --><p class='indent'>   The font shapes can be configure using <span class='textbf'><code class='texttt'>\Configure</code></span>{<span class='textit'>NormalFont</span>},
 <span class='textbf'><code class='texttt'>\Configure</code></span>{<span class='textit'>ItalicFont</span>}, <span class='textbf'><code class='texttt'>\Configure</code></span>{<span class='textit'>BoldItalicFont</span>} and <span class='textbf'><code class='texttt'>\Configure</code></span>{<span class='textit'>BoldFont</span>}.
 The argument should be font file in the format supported by browsers, such as <span class='textit'>woff</span>

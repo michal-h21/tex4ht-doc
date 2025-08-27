@@ -138,6 +138,10 @@
 
 
 
+
+
+
+
 <span class='chapterToc'>11 <a href='Glossary.html#glossary'>Glossary</a></span>
 <span class='chapterToc'>12 <a href='Bibliography.html#bibliography'>Bibliography</a></span>
 <span class='chapterToc'>13 <a href='Index.html#index'>Index</a></span>
@@ -150,13 +154,13 @@
 <h2 class='chapterHead' id='calling-commands'><span class='titlemark'>Chapter 4</span><br /><a id='x5-440004'></a>Calling Commands</h2>
 The conversion process used by <code class='texttt'>TeX4ht</code> involves several tools (see section <a href='#overview-of-the-translation-process'>4.3<!--  tex4ht:ref: sec:overview   --></a>,
 <a href='#overview-of-the-translation-process'>Overview of the Translation Process<!--  tex4ht:ref: sec:overview   --></a> for details).
+                                                                  
+
+                                                                  
 <!--  l. 8  --><p class='indent'>   We provide a build script, called <code class='texttt'>make4ht</code>, which simplifies the process. There is
 also a variant of <code class='texttt'>make4ht</code>, <code class='texttt'>tex4ebook</code> for e-book production. See the chapter <a href='OutputFormats.html#output-formats'>Output
 Formats<!--  tex4ht:ref: sec:output-formats   --></a> for more information on output formats.
 
-                                                                  
-
-                                                                  
 </p>   
 <h3 class='sectionHead' id='makeht-build-system'><span class='titlemark'>4.1   </span> <a id='x5-450004.1'></a><code class='texttt'>make4ht</code> Build System</h3>
 <!--  l. 17  --><p class='noindent'>The conversion command loads a script which takes on itself to invoke the different
@@ -195,6 +199,9 @@ section.
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb84'><a id='x5-45012r1'></a>make4ht<span style='color:#A88F29;'> </span>-c<span style='color:#A88F29;'> </span>foo.cfg<span style='color:#A88F29;'> </span>filename<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"frames"</span><span style='color:#A88F29;'> </span><span style='color:#B83838;'>""</span><span style='color:#A88F29;'> </span><span style='color:#B83838;'>"-p"</span></pre>
+                                                                  
+
+                                                                  
 
 </figure>
 <!--  l. 58  --><p class='indent'>   This command requests LaTeX to load a <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!--  tex4ht:ref: sec:private-configuration   --></a>,
@@ -203,9 +210,6 @@ placing of the content and table of contents in separate frames. In addition, it
 asks the <code class='texttt'>t4ht</code> command not to produce bitmaps for pictures using the <code class='texttt'>-p</code>
 option.
 
-                                                                  
-
-                                                                  
 </p>   
 <h3 class='sectionHead' id='makeht-switches-and-options'><span class='titlemark'>4.2   </span> <a id='x5-460004.2'></a><code class='texttt'>make4ht</code> Switches and Options</h3>
 <!--  l. 65  --><p class='noindent'><code class='texttt'>make4ht</code> accepts following command line switches and options:
@@ -253,6 +257,9 @@ feature has been shown in the section <a href='BasicTutorial.html#basic-usage'>B
 
 </p>   
 <h4 class='subsectionHead' id='tex-engine'><span class='titlemark'>4.2.1   </span> <a id='x5-470004.2.1'></a>TeX engine</h4>
+                                                                  
+
+                                                                  
 <!--  l. 109  --><p class='noindent'><code class='texttt'>make4ht</code> uses TeX compiler to produce a DVI file. Normally, it uses PDFTeX engine,
 but you can also select LuaTeX or XeTeX, using the <code class='texttt'>-l</code> or <code class='texttt'>-x</code> switches.
 </p><!--  l. 112  --><p class='indent'>   The selected engine is important especially for handling of accented and
@@ -262,9 +269,6 @@ the Fontspec package, so it supports documents that use it. With LuaTeX backend,
 instructions to load non-Latin character support. See <a href='Configurations.html#unicode'>Unicode<!--  tex4ht:ref: sec:unicode   --></a> section for more
 details.
 
-                                                                  
-
-                                                                  
 </p>   
 <h4 class='subsectionHead' id='terminal-output'><span class='titlemark'>4.2.2   </span> <a id='x5-480004.2.2'></a>Terminal Output</h4>
 <!--  l. 120  --><p class='noindent'><code class='texttt'>make4ht</code> hides the terminal output by default. It shows only errors and warnings. It
@@ -294,6 +298,9 @@ want to remove the temporary files, use the <code class='texttt'>-m clean</code>
 
 </figure>   
 
+                                                                  
+
+                                                                  
 <h4 class='subsectionHead' id='makeht-extensions1'><span class='titlemark'>4.2.4   </span> <a id='x5-500004.2.4'></a><code class='texttt'>make4ht</code> extensions</h4>
 <!--  l. 148  --><p class='noindent'><code class='texttt'>make4ht</code> extensions can modify the build process – usually, they are used to
 post-process the generated files, to fix some issues that are hard to fix on the TeX
@@ -303,9 +310,6 @@ level.
 </p>   
 <figure class='shellcommand' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb91'><a id='x5-50003r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-uf<span style='color:#A88F29;'> </span>html5+tidy<span style='color:#A88F29;'> </span>filename.tex</pre>
-                                                                  
-
-                                                                  
 
 </figure>
 <!--  l. 158  --><p class='indent'>   Some of the available extensions:
@@ -343,6 +347,9 @@ ideally before <span class='textbf'><code class='texttt'>\documentclass</code></
 instructions with XML code, or with requests for pictures. This file is then processed
 by the <code class='texttt'>tex4ht</code> command. It generates the output XML or HTML files and the IDV
 file, which is then used for pictures.
+                                                                  
+
+                                                                  
 </p><!--  l. 187  --><p class='indent'>   The last command is <code class='texttt'>t4ht</code>. It generates pictures and CSS file.
 </p><!--  l. 189  --><p class='indent'>   Basic sequence of execution of these command is following:
 </p>   
