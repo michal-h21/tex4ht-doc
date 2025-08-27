@@ -164,7 +164,7 @@ steps of the process, without user intervention. The command assumes the
 form:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb81'><a id='x5-45003r1'></a>make4ht<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(101,101,101);'>[</span>make4ht<span style='color:rgb(168,142,40);'> </span>options<span style='color:rgb(101,101,101);'>]</span><span style='color:rgb(168,142,40);'> </span>filename.tex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"options1"</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"option2"</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"options3"</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"options4"</span></pre>
+<pre class='fancyvrb' id='fancyvrb81'><a id='x5-45003r1'></a>make4ht<span style='color:#A88F29;'> </span><span style='color:#666666;'>[</span>make4ht<span style='color:#A88F29;'> </span>options<span style='color:#666666;'>]</span><span style='color:#A88F29;'> </span>filename.tex<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"options1"</span><span style='color:#A88F29;'> </span><span style='color:#B83838;'>"option2"</span><span style='color:#A88F29;'> </span><span style='color:#B83838;'>"options3"</span><span style='color:#A88F29;'> </span><span style='color:#B83838;'>"options4"</span></pre>
 
 </figure>
 <!--  l. 25  --><p class='indent'>   The first set of options is for the <code class='texttt'>tex4ht.sty</code> and *.4ht style files, the second set
@@ -174,14 +174,14 @@ one is for the LaTeX compiler.
 </p><!--  l. 31  --><p class='indent'>   The basic invokation of make4ht looks like this:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb82'><a id='x5-45006r1'></a>make4ht<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb82'><a id='x5-45006r1'></a>make4ht<span style='color:#A88F29;'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 37  --><p class='indent'>   This command requests a translation according to the default conditions, which
 are set to produce HTML 5 document.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb83'><a id='x5-45009r1'></a>make4ht<span style='color:rgb(168,142,40);'> </span>filename.tex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"2,info"</span></pre>
+<pre class='fancyvrb' id='fancyvrb83'><a id='x5-45009r1'></a>make4ht<span style='color:#A88F29;'> </span>filename.tex<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"2,info"</span></pre>
 
 </figure>
 <!--  l. 43  --><p class='indent'>   This command specifies some options for tex4ht.sty. The “2” option requests a
@@ -194,7 +194,7 @@ information.
 section.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb84'><a id='x5-45012r1'></a>make4ht<span style='color:rgb(168,142,40);'> </span>-c<span style='color:rgb(168,142,40);'> </span>foo.cfg<span style='color:rgb(168,142,40);'> </span>filename<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"frames"</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>""</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"-p"</span></pre>
+<pre class='fancyvrb' id='fancyvrb84'><a id='x5-45012r1'></a>make4ht<span style='color:#A88F29;'> </span>-c<span style='color:#A88F29;'> </span>foo.cfg<span style='color:#A88F29;'> </span>filename<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"frames"</span><span style='color:#A88F29;'> </span><span style='color:#B83838;'>""</span><span style='color:#A88F29;'> </span><span style='color:#B83838;'>"-p"</span></pre>
 
 </figure>
 <!--  l. 58  --><p class='indent'>   This command requests LaTeX to load a <a href='Configurations.html#private-configuration-files'>Private Configuration Files<!--  tex4ht:ref: sec:private-configuration   --></a>,
@@ -233,14 +233,14 @@ option.
 be chained:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb86'><a id='x5-46051r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-lsm<span style='color:rgb(168,142,40);'> </span>draft<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb86'><a id='x5-46051r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-lsm<span style='color:#A88F29;'> </span>draft<span style='color:#A88F29;'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 93  --><p class='indent'>   The above command is equvalent to the following that uses the long
 names:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb87'><a id='x5-46054r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>--lua<span style='color:rgb(168,142,40);'> </span>--shell-escape<span style='color:rgb(168,142,40);'> </span>--mode<span style='color:rgb(168,142,40);'> </span>draft<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb87'><a id='x5-46054r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>--lua<span style='color:#A88F29;'> </span>--shell-escape<span style='color:#A88F29;'> </span>--mode<span style='color:#A88F29;'> </span>draft<span style='color:#A88F29;'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 99  --><p class='indent'>   Some of these options are discussed in other chapters, see section <a href='Configurations.html#private-configuration-files'>Private
@@ -273,7 +273,7 @@ option. It is also recommended to use output of this option for TeX4ht bug
 reports.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb88'><a id='x5-48003r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-a<span style='color:rgb(168,142,40);'> </span>debug<span style='color:rgb(168,142,40);'> </span>-m<span style='color:rgb(168,142,40);'> </span>draft<span style='color:rgb(168,142,40);'> </span>buggy.tex</pre>
+<pre class='fancyvrb' id='fancyvrb88'><a id='x5-48003r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-a<span style='color:#A88F29;'> </span>debug<span style='color:#A88F29;'> </span>-m<span style='color:#A88F29;'> </span>draft<span style='color:#A88F29;'> </span>buggy.tex</pre>
 
 </figure>   
 
@@ -283,14 +283,14 @@ path can be absolute or relative to the current directory. It also doesn’t nee
 <code class='texttt'>make4ht</code> will create it if necessary.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb89'><a id='x5-49003r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-d<span style='color:rgb(168,142,40);'> </span>outdir<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb89'><a id='x5-49003r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-d<span style='color:#A88F29;'> </span>outdir<span style='color:#A88F29;'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 139  --><p class='indent'>   Note that this option doesn’t remove any files from the current directory. If you
 want to remove the temporary files, use the <code class='texttt'>-m clean</code> option:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb90'><a id='x5-49006r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-m<span style='color:rgb(168,142,40);'> </span>clean<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb90'><a id='x5-49006r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-m<span style='color:#A88F29;'> </span>clean<span style='color:#A88F29;'> </span>filename.tex</pre>
 
 </figure>   
 
@@ -302,7 +302,7 @@ level.
 <code class='texttt'>-EXTENSION</code> after the output format name:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb91'><a id='x5-50003r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-uf<span style='color:rgb(168,142,40);'> </span>html5+tidy<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb91'><a id='x5-50003r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-uf<span style='color:#A88F29;'> </span>html5+tidy<span style='color:#A88F29;'> </span>filename.tex</pre>
                                                                   
 
                                                                   
@@ -310,25 +310,25 @@ level.
 </figure>
 <!--  l. 158  --><p class='indent'>   Some of the available extensions:
 </p>     
-<dl class='description'><dt class='description'>
+<dl class='description'><dt class='description'><a id='x5-50004x4.2.4'></a>
 <span class='ec-lmbx-10'>detect_engine</span> 
 </dt><dd class='description'>
 <!--  l. 161  --><p class='noindent'>choose TeX engine and format necessary for the document compilation
 from the magic comments in the document.
 </p>     
 </dd>
-<dt class='description'>
+<dt class='description'><a id='x5-50005x4.2.4'></a>
 <span class='ec-lmbx-10'>preprocess_input</span> 
 </dt><dd class='description'>
 <!--  l. 162  --><p class='noindent'>add support for Rmarkdown, RTeX, and similar formats supported by
 Knith or Pandoc.
 </p>     
 </dd>
-<dt class='description'>
+<dt class='description'><a id='x5-50006x4.2.4'></a>
 <span class='ec-lmbx-10'>staticsite</span> 
 </dt><dd class='description'>
 <!--  l. 163  --><p class='noindent'>generate files suitable for static site generators, such as Jekyll or Hugo.</p></dd></dl>
-<!--  l. 166  --><p class='indent'>   You can find full a list of extensions in  <a href='https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions'><code class='texttt'>make4ht</code> documentation</a>.
+<!--  l. 166  --><p class='indent'>   You can find full a list of extensions in <a href='https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions'><code class='texttt'>make4ht</code> documentation</a>.
 
 </p>   
 <h3 class='sectionHead' id='overview-of-the-translation-process'><span class='titlemark'>4.3   </span> <a id='x5-510004.3'></a>Overview of the Translation Process</h3>
@@ -347,11 +347,11 @@ file, which is then used for pictures.
 </p><!--  l. 189  --><p class='indent'>   Basic sequence of execution of these command is following:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb92'><a id='x5-51007r1'></a>latex<span style='color:rgb(168,142,40);'>      </span>x<span style='color:rgb(168,142,40);'>            </span><span style='color:rgb(101,101,101);'>(</span>or<span style='color:rgb(168,142,40);'> </span>‘tex<span style='color:rgb(168,142,40);'> </span>x’<span style='color:rgb(101,101,101);'>)</span> 
-<a id='x5-51009r2'></a>latex<span style='color:rgb(168,142,40);'>      </span>x 
-<a id='x5-51011r3'></a>latex<span style='color:rgb(168,142,40);'>      </span>x 
-<a id='x5-51013r4'></a>tex4ht<span style='color:rgb(168,142,40);'>     </span>x 
-<a id='x5-51015r5'></a>t4ht<span style='color:rgb(168,142,40);'>       </span>x</pre>
+<pre class='fancyvrb' id='fancyvrb92'><a id='x5-51007r1'></a>latex<span style='color:#A88F29;'>      </span>x<span style='color:#A88F29;'>            </span><span style='color:#666666;'>(</span>or<span style='color:#A88F29;'> </span>‘tex<span style='color:#A88F29;'> </span>x’<span style='color:#666666;'>)</span> 
+<a id='x5-51009r2'></a>latex<span style='color:#A88F29;'>      </span>x 
+<a id='x5-51011r3'></a>latex<span style='color:#A88F29;'>      </span>x 
+<a id='x5-51013r4'></a>tex4ht<span style='color:#A88F29;'>     </span>x 
+<a id='x5-51015r5'></a>t4ht<span style='color:#A88F29;'>       </span>x</pre>
 
 </figure>
 <!--  l. 199  --><p class='indent'>   The three compilations with La(TeX) are needed to ensure proper links. The
@@ -373,7 +373,7 @@ approach is illustrated in the picture <a href='#texht-process-overview'>4.1<!--
 
                                                                   
 </figure>     
-<dl class='description'><dt class='description'>
+<dl class='description'><dt class='description'><a id='x5-51017x4.3'></a>
 <span class='ec-lmbx-10'>x.tex</span> 
 </dt><dd class='description'>
 <!--  l. 208  --><p class='noindent'>     
@@ -382,7 +382,7 @@ approach is illustrated in the picture <a href='#texht-process-overview'>4.1<!--
 tex4ht.sty and *.4ht. The style files define the features for the output.
 </p>     
 </dd>
-<dt class='description'>
+<dt class='description'><a id='x5-51018x4.3'></a>
 <span class='ec-lmbx-10'>tex4ht</span> 
 </dt><dd class='description'>
 <!--  l. 212  --><p class='noindent'>     
@@ -405,7 +405,7 @@ hypertext elements in it.
 understood by dvi processors other than those of TeX4ht.
 </p>     
 </dd>
-<dt class='description'>
+<dt class='description'><a id='x5-51019x4.3'></a>
 <span class='ec-lmbx-10'>x.idv</span> 
 </dt><dd class='description'>
 <!--  l. 231  --><p class='noindent'>     
@@ -414,7 +414,7 @@ understood by dvi processors other than those of TeX4ht.
 in the html files.
 </p>     
 </dd>
-<dt class='description'>
+<dt class='description'><a id='x5-51020x4.3'></a>
 <span class='ec-lmbx-10'>x.lg</span> 
 </dt><dd class='description'>
 <!--  l. 236  --><p class='noindent'>     
@@ -424,7 +424,7 @@ be created, CSS information, and user directives introduced through the
 ‘<code class='texttt'>\Needs{...}</code>’ command.
 </p>     
 </dd>
-<dt class='description'>
+<dt class='description'><a id='x5-51021x4.3'></a>
 <span class='ec-lmbx-10'>t4ht</span> 
 </dt><dd class='description'>
 <!--  l. 242  --><p class='noindent'>This is an interpreter for executing the requests made in the x.lg script.

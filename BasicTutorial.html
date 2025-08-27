@@ -150,8 +150,8 @@
 <h2 class='chapterHead' id='basic-tutorial'><span class='titlemark'>Chapter 2</span><br /><a id='x3-30002'></a>Basic Tutorial</h2>
    
 <h3 class='sectionHead' id='what-is-texht'><span class='titlemark'>2.1   </span> <a id='x3-40002.1'></a>What is TeX4ht?</h3>
-<!--  l. 3  --><p class='noindent'> <a href='https://www.tug.org/tex4ht/'><code class='texttt'>TeX4ht</code></a> is a system that converts LaTeX to various output formats, including <code class='texttt'>HTML</code>,
-<a href='http://en.wikipedia.org/wiki/OpenDocument'><code class='texttt'>ODT</code></a>,  <a href='http://en.wikipedia.org/wiki/DocBook'><code class='texttt'>DocBook</code></a>, and  <a href='http://en.wikipedia.org/wiki/Text_Encoding_Initiative'><code class='texttt'>TEI</code></a>. <code class='texttt'>HTML</code> and <code class='texttt'>ODT</code> formats are the most common and
+<!--  l. 3  --><p class='noindent'><a href='https://www.tug.org/tex4ht/'><code class='texttt'>TeX4ht</code></a> is a system that converts LaTeX to various output formats, including <code class='texttt'>HTML</code>,
+<a href='http://en.wikipedia.org/wiki/OpenDocument'><code class='texttt'>ODT</code></a>, <a href='http://en.wikipedia.org/wiki/DocBook'><code class='texttt'>DocBook</code></a>, and <a href='http://en.wikipedia.org/wiki/Text_Encoding_Initiative'><code class='texttt'>TEI</code></a>. <code class='texttt'>HTML</code> and <code class='texttt'>ODT</code> formats are the most common and
 best-supported conversion targets.
                                                                   
 
@@ -164,42 +164,42 @@ as <code class='texttt'>HTML</code> (for web pages) or <code class='texttt'>ePub
 <!--  l. 18  --><p class='noindent'>Conversion is invoked using the <code class='texttt'>make4ht</code> command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb1'><a id='x3-5003r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb1'><a id='x3-5003r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 24  --><p class='indent'>   Let us start with the conversion of a simple LaTeX file to HTML using the
 following LaTeX file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb2'><a id='x3-5005r1'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\documentclass</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>article</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}</span></span> 
-<a id='x3-5007r2'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\usepackage</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>[czech]</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>babel</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}</span></span> 
-<a id='x3-5009r3'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\begin</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}</span></span> 
+<pre class='fancyvrb' id='fancyvrb2'><a id='x3-5005r1'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\documentclass</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>article</span><span style='color:#388038;'><span class='rm-lmtt-10'>}</span></span> 
+<a id='x3-5007r2'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\usepackage</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>[czech]</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>babel</span><span style='color:#388038;'><span class='rm-lmtt-10'>}</span></span> 
+<a id='x3-5009r3'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\begin</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span style='color:#388038;'><span class='rm-lmtt-10'>}</span></span> 
 <a id='x3-5011r4'></a><span class='rm-lmtt-10'>Příliš žluťoučký kůň úpěl ďábelské ódy.</span> 
-<a id='x3-5013r5'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\end</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}</span></span></pre>
+<a id='x3-5013r5'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\end</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span style='color:#388038;'><span class='rm-lmtt-10'>}</span></span></pre>
 </figure>
 <!--  l. 29  --><p class='indent'>   You can compile it using the following command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb3'><a id='x3-5016r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-lm<span style='color:rgb(168,142,40);'> </span>draft<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb3'><a id='x3-5016r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-lm<span style='color:#A88F29;'> </span>draft<span style='color:#A88F29;'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 35  --><p class='indent'>   The resulting HTML file contains the following code:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb4'><a id='x3-5018r1'></a><span style='color:rgb(135,135,135);'><span class='textit'>&lt;!--  l. 4  --&gt;</span></span><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&lt;</span></span><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>p</span></span> <span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>class</span></span><span style='color:rgb(101,101,101);'><span class='rm-lmtt-10'>=</span></span><span style='color:rgb(183,56,56);'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>Příliš žluťoučký kůň úpěl ďábelské ódy.</span> 
-<a id='x3-5020r2'></a><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&lt;/</span></span><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>p</span></span><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&gt;</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb4'><a id='x3-5018r1'></a><span style='color:#878787;'><span class='textit'>&lt;!--  l. 4  --&gt;</span></span><span style='color:#878787;'><span class='rm-lmtt-10'>&lt;</span></span><span style='color:#2938B0;'><span class='rm-lmtt-10'>p</span></span> <span style='color:#388038;'><span class='rm-lmtt-10'>class</span></span><span style='color:#666666;'><span class='rm-lmtt-10'>=</span></span><span style='color:#B83838;'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span style='color:#878787;'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>Příliš žluťoučký kůň úpěl ďábelské ódy.</span> 
+<a id='x3-5020r2'></a><span style='color:#878787;'><span class='rm-lmtt-10'>&lt;/</span></span><span style='color:#2938B0;'><span class='rm-lmtt-10'>p</span></span><span style='color:#878787;'><span class='rm-lmtt-10'>&gt;</span></span></pre>
 </figure>
 <!--  l. 39  --><p class='indent'>   As you can see, multiple options can be combined with <code class='texttt'>make4ht</code>. The above
 invocation is equivalent to the following:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb5'><a id='x3-5023r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-l<span style='color:rgb(168,142,40);'> </span>-m<span style='color:rgb(168,142,40);'> </span>draft<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb5'><a id='x3-5023r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-l<span style='color:#A88F29;'> </span>-m<span style='color:#A88F29;'> </span>draft<span style='color:#A88F29;'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 45  --><p class='indent'>   You can also use the long options:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb6'><a id='x3-5026r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>--lua<span style='color:rgb(168,142,40);'> </span>--mode<span style='color:rgb(168,142,40);'> </span>draft<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb6'><a id='x3-5026r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>--lua<span style='color:#A88F29;'> </span>--mode<span style='color:#A88F29;'> </span>draft<span style='color:#A88F29;'> </span>filename.tex</pre>
                                                                   
 
                                                                   
@@ -219,7 +219,7 @@ conversion to other formats using the <code class='texttt'>-f</code> option. For
 to the OpenDocument Format, use the following:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb7'><a id='x3-5029r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-f<span style='color:rgb(168,142,40);'> </span>odt<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb7'><a id='x3-5029r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-f<span style='color:#A88F29;'> </span>odt<span style='color:#A88F29;'> </span>filename.tex</pre>
 
 </figure>   
 
@@ -234,13 +234,13 @@ encounters an unknown command, it will output an error message similar to the
 following:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb8'><a id='x3-6009r1'></a>$<span style='color:rgb(168,142,40);'> </span>test4ht<span style='color:rgb(168,142,40);'> </span>-slm<span style='color:rgb(168,142,40);'> </span>draft<span style='color:rgb(168,142,40);'> </span>grr.tex 
-<a id='x3-6011r2'></a><span style='color:rgb(101,101,101);'>[</span>STATUS<span style='color:rgb(101,101,101);'>]</span><span style='color:rgb(168,142,40);'>  </span>make4ht:<span style='color:rgb(168,142,40);'> </span>Conversion<span style='color:rgb(168,142,40);'> </span>started 
-<a id='x3-6013r3'></a><span style='color:rgb(101,101,101);'>[</span>STATUS<span style='color:rgb(101,101,101);'>]</span><span style='color:rgb(168,142,40);'>  </span>make4ht:<span style='color:rgb(168,142,40);'> </span>Input<span style='color:rgb(168,142,40);'> </span>file:<span style='color:rgb(168,142,40);'> </span>grr.tex 
-<a id='x3-6015r4'></a><span style='color:rgb(101,101,101);'>[</span>ERROR<span style='color:rgb(101,101,101);'>]</span><span style='color:rgb(168,142,40);'>   </span>htlatex:<span style='color:rgb(168,142,40);'> </span>Compilation<span style='color:rgb(168,142,40);'> </span>errors<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(40,56,175);'>in</span><span style='color:rgb(168,142,40);'> </span>the<span style='color:rgb(168,142,40);'> </span>htlatex<span style='color:rgb(168,142,40);'> </span>run 
-<a id='x3-6017r5'></a><span style='color:rgb(101,101,101);'>[</span>ERROR<span style='color:rgb(101,101,101);'>]</span><span style='color:rgb(168,142,40);'>   </span>htlatex:<span style='color:rgb(168,142,40);'> </span>Filename<span style='color:rgb(168,142,40);'>     </span>Line<span style='color:rgb(168,142,40);'>    </span>Message 
-<a id='x3-6019r6'></a><span style='color:rgb(101,101,101);'>[</span>ERROR<span style='color:rgb(101,101,101);'>]</span><span style='color:rgb(168,142,40);'>   </span>htlatex:<span style='color:rgb(168,142,40);'> </span>./grr.tex<span style='color:rgb(168,142,40);'>    </span><span style='color:rgb(68,68,68);'>15</span><span style='color:rgb(168,142,40);'>       </span>Undefined<span style='color:rgb(168,142,40);'> </span>control<span style='color:rgb(168,142,40);'> </span>sequence. 
-<a id='x3-6021r7'></a><span style='color:rgb(101,101,101);'>[</span>STATUS<span style='color:rgb(101,101,101);'>]</span><span style='color:rgb(168,142,40);'>  </span>make4ht:<span style='color:rgb(168,142,40);'> </span>Conversion<span style='color:rgb(168,142,40);'> </span>finished</pre>
+<pre class='fancyvrb' id='fancyvrb8'><a id='x3-6009r1'></a>$<span style='color:#A88F29;'> </span>test4ht<span style='color:#A88F29;'> </span>-slm<span style='color:#A88F29;'> </span>draft<span style='color:#A88F29;'> </span>grr.tex 
+<a id='x3-6011r2'></a><span style='color:#666666;'>[</span>STATUS<span style='color:#666666;'>]</span><span style='color:#A88F29;'>  </span>make4ht:<span style='color:#A88F29;'> </span>Conversion<span style='color:#A88F29;'> </span>started 
+<a id='x3-6013r3'></a><span style='color:#666666;'>[</span>STATUS<span style='color:#666666;'>]</span><span style='color:#A88F29;'>  </span>make4ht:<span style='color:#A88F29;'> </span>Input<span style='color:#A88F29;'> </span>file:<span style='color:#A88F29;'> </span>grr.tex 
+<a id='x3-6015r4'></a><span style='color:#666666;'>[</span>ERROR<span style='color:#666666;'>]</span><span style='color:#A88F29;'>   </span>htlatex:<span style='color:#A88F29;'> </span>Compilation<span style='color:#A88F29;'> </span>errors<span style='color:#A88F29;'> </span><span style='color:#2938B0;'>in</span><span style='color:#A88F29;'> </span>the<span style='color:#A88F29;'> </span>htlatex<span style='color:#A88F29;'> </span>run 
+<a id='x3-6017r5'></a><span style='color:#666666;'>[</span>ERROR<span style='color:#666666;'>]</span><span style='color:#A88F29;'>   </span>htlatex:<span style='color:#A88F29;'> </span>Filename<span style='color:#A88F29;'>     </span>Line<span style='color:#A88F29;'>    </span>Message 
+<a id='x3-6019r6'></a><span style='color:#666666;'>[</span>ERROR<span style='color:#666666;'>]</span><span style='color:#A88F29;'>   </span>htlatex:<span style='color:#A88F29;'> </span>./grr.tex<span style='color:#A88F29;'>    </span><span style='color:#454545;'>15</span><span style='color:#A88F29;'>       </span>Undefined<span style='color:#A88F29;'> </span>control<span style='color:#A88F29;'> </span>sequence. 
+<a id='x3-6021r7'></a><span style='color:#666666;'>[</span>STATUS<span style='color:#666666;'>]</span><span style='color:#A88F29;'>  </span>make4ht:<span style='color:#A88F29;'> </span>Conversion<span style='color:#A88F29;'> </span>finished</pre>
 
 </figure>
 <!--  l. 98  --><p class='indent'>   In this example, it says that there is an undefined control sequence used on the
@@ -258,7 +258,7 @@ debugging.
 </p><!--  l. 113  --><p class='indent'>   To invoke <code class='texttt'>make4ht</code> with debug mode, use the following command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb9'><a id='x3-6024r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-a<span style='color:rgb(168,142,40);'> </span>debug<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb9'><a id='x3-6024r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-a<span style='color:#A88F29;'> </span>debug<span style='color:#A88F29;'> </span>filename.tex</pre>
 
 </figure>   
 
@@ -275,17 +275,17 @@ instructions are not useful in the HTML output anyway, you can safely exclude th
 packages with <code class='texttt'>TeX4ht</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb10'><a id='x3-7005r1'></a><span style='color:rgb(40,56,175);'>\ifdefined\HCode\else</span> 
-<a id='x3-7007r2'></a>  <span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>{</span>insertpdfinstructions<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-7009r3'></a><span style='color:rgb(40,56,175);'>\fi</span></pre>
+<pre class='fancyvrb' id='fancyvrb10'><a id='x3-7005r1'></a><span style='color:#2938B0;'>\ifdefined\HCode\else</span> 
+<a id='x3-7007r2'></a>  <span style='color:#2938B0;'>\usepackage</span><span style='color:#388038;'>{</span>insertpdfinstructions<span style='color:#388038;'>}</span> 
+<a id='x3-7009r3'></a><span style='color:#2938B0;'>\fi</span></pre>
 
 </figure>
 <!--  l. 139  --><p class='indent'>   You can fill a bug report to <code class='texttt'>TeX4ht</code> maintainers anyway, because we try to be able
 to run all LaTeX source files without such modifications.
 </p><!--  l. 143  --><p class='indent'>   Debugging <code class='texttt'>TeX4ht</code> can sometimes involve trial and error, but with the right tools
 and careful analysis, most issues can be resolved efficiently.
-</p><!--  l. 146  --><p class='indent'>   You can report errors in the  <a href='https://puszcza.gnu.org.ua/bugs/?group=tex4ht'>TeX4ht issue tracker</a>, on  <a href='https://tex.stackexchange.com/questions/tagged/tex4ht'>using the tex4ht tag</a>, or on
-the  <a href='https://github.com/michal-h21/make4ht'>make4ht GitHub page</a>.
+</p><!--  l. 146  --><p class='indent'>   You can report errors in the <a href='https://puszcza.gnu.org.ua/bugs/?group=tex4ht'>TeX4ht issue tracker</a>, on <a href='https://tex.stackexchange.com/questions/tagged/tex4ht'>using the tex4ht tag</a>, or on
+the <a href='https://github.com/michal-h21/make4ht'>make4ht GitHub page</a>.
 </p><!--  l. 157  --><p class='indent'>   You can find more info about troubleshooting in <a href='FAQandTroubleshooting.html#compilation-errors'>Compilation Errors<!--  tex4ht:ref: faq:compilation_errors   --></a>, and about
 <code class='texttt'>make4ht</code> and its command line options and other features in section <a href='CallingCommands.html#makeht-build-system'><code class='texttt'>make4ht</code> Build
 System<!--  tex4ht:ref: sec:make4ht-intro   --></a>.
@@ -300,7 +300,7 @@ options. They can be passed as a first positional argument after filename to
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb11'><a id='x3-8003r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>filename.tex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"option1,option2"</span></pre>
+<pre class='fancyvrb' id='fancyvrb11'><a id='x3-8003r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>filename.tex<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"option1,option2"</span></pre>
 
 </figure>
 <!--  l. 171  --><p class='indent'>   For example, <code class='texttt'>TeX4ht</code> produces one HTML file for a document, but each footnote
@@ -309,7 +309,7 @@ separate page for each chapter, with a list of footnotes at the end of these cha
 You can use the following options:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb12'><a id='x3-8006r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>filename.tex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"3,sec-filename,fn-in"</span></pre>
+<pre class='fancyvrb' id='fancyvrb12'><a id='x3-8006r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>filename.tex<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"3,sec-filename,fn-in"</span></pre>
 
 </figure>
 <!--  l. 180  --><p class='indent'>   There are other numeric options, each of them breaks document into separate
@@ -331,7 +331,7 @@ browsers do not support it yet. We can use MathJax to render math in these
 browsers.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb13'><a id='x3-9003r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>filename.tex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"mathml,mathjax"</span></pre>
+<pre class='fancyvrb' id='fancyvrb13'><a id='x3-9003r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>filename.tex<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"mathml,mathjax"</span></pre>
 
 </figure>
 <!--  l. 192  --><p class='indent'>   On the other hand, if you want to use pictures for math exclusively, you can try
@@ -339,7 +339,7 @@ the <span class='emph'>pic-m</span> option, which requires pictures even for inl
 options for equations and other math environments.
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb14'><a id='x3-9006r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>filename.tex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"pic-m,pic-equation"</span></pre>
+<pre class='fancyvrb' id='fancyvrb14'><a id='x3-9006r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>filename.tex<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"pic-m,pic-equation"</span></pre>
 
 </figure>
                                                                   
@@ -351,7 +351,7 @@ to use vector SVG format instead, as it should produce better quality of
 pictures:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb15'><a id='x3-9009r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>filename.tex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"pic-m,pic-equation,svg"</span></pre>
+<pre class='fancyvrb' id='fancyvrb15'><a id='x3-9009r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>filename.tex<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
 <!--  l. 204  --><p class='indent'>   For more information on options, see chapter <a href='texfourhtOptions.html#texht-options1'><code class='texttt'>TeX4ht</code> Options<!--  tex4ht:ref: chap:options   --></a>.
@@ -373,14 +373,14 @@ document:
 <!--  l. 216  --><p class='indent'>   Compile it using the following command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb17'><a id='x3-10007r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-f<span style='color:rgb(168,142,40);'> </span>html5+preprocess_input<span style='color:rgb(168,142,40);'> </span>sample.Rmd</pre>
+<pre class='fancyvrb' id='fancyvrb17'><a id='x3-10007r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-f<span style='color:#A88F29;'> </span>html5+preprocess_input<span style='color:#A88F29;'> </span>sample.Rmd</pre>
 
 </figure>
 <!--  l. 222  --><p class='indent'>   It producess a following HTML file:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb18'><a id='x3-10009r1'></a><span style='color:rgb(135,135,135);'><span class='textit'>&lt;!--  l. 66  --&gt;</span></span><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&lt;</span></span><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>p</span></span> <span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>class</span></span><span style='color:rgb(101,101,101);'><span class='rm-lmtt-10'>=</span></span><span style='color:rgb(183,56,56);'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>This is </span><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&lt;</span></span><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>span</span></span> <span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>class</span></span><span style='color:rgb(101,101,101);'><span class='rm-lmtt-10'>=</span></span><span style='color:rgb(183,56,56);'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>ec-lmri-10</span><span class='ts1-lmtt10-'>'</span></span><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>Rmarkdown </span><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&lt;/</span></span><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>span</span></span><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>example. Today is 2022-03-24.</span> 
-<a id='x3-10011r2'></a><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&lt;/</span></span><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>p</span></span><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&gt;</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb18'><a id='x3-10009r1'></a><span style='color:#878787;'><span class='textit'>&lt;!--  l. 66  --&gt;</span></span><span style='color:#878787;'><span class='rm-lmtt-10'>&lt;</span></span><span style='color:#2938B0;'><span class='rm-lmtt-10'>p</span></span> <span style='color:#388038;'><span class='rm-lmtt-10'>class</span></span><span style='color:#666666;'><span class='rm-lmtt-10'>=</span></span><span style='color:#B83838;'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span style='color:#878787;'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>This is </span><span style='color:#878787;'><span class='rm-lmtt-10'>&lt;</span></span><span style='color:#2938B0;'><span class='rm-lmtt-10'>span</span></span> <span style='color:#388038;'><span class='rm-lmtt-10'>class</span></span><span style='color:#666666;'><span class='rm-lmtt-10'>=</span></span><span style='color:#B83838;'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>ec-lmri-10</span><span class='ts1-lmtt10-'>'</span></span><span style='color:#878787;'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>Rmarkdown </span><span style='color:#878787;'><span class='rm-lmtt-10'>&lt;/</span></span><span style='color:#2938B0;'><span class='rm-lmtt-10'>span</span></span><span style='color:#878787;'><span class='rm-lmtt-10'>&gt;</span></span><span class='rm-lmtt-10'>example. Today is 2022-03-24.</span> 
+<a id='x3-10011r2'></a><span style='color:#878787;'><span class='rm-lmtt-10'>&lt;/</span></span><span style='color:#2938B0;'><span class='rm-lmtt-10'>p</span></span><span style='color:#878787;'><span class='rm-lmtt-10'>&gt;</span></span></pre>
 </figure>
 <!--  l. 226  --><p class='indent'>   If your document produces many pictures, the compilation can take a long time.
 To make it faster, you can use the <span class='obeylines-h'><code class='verb'>dvisvgm_hashes</code></span> extension. It caches the SVG
@@ -390,7 +390,7 @@ images and creates them only for the changed math environments.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb19'><a id='x3-10014r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-f<span style='color:rgb(168,142,40);'> </span>html5+dvisvgm_hashes<span style='color:rgb(168,142,40);'> </span>filename.tex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"pic-m,pic-equation,svg"</span></pre>
+<pre class='fancyvrb' id='fancyvrb19'><a id='x3-10014r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-f<span style='color:#A88F29;'> </span>html5+dvisvgm_hashes<span style='color:#A88F29;'> </span>filename.tex<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
 <!--  l. 233  --><p class='indent'>   <code class='texttt'>make4ht</code> loads the <span class='obeylines-h'><code class='verb'>common_domfilters</code></span> extension automatically. It fixes common
@@ -398,10 +398,10 @@ issues in the generated HTML files using the LuaXML package. To disable extensio
 from loading, use <span class='obeylines-h'><code class='verb'>-extension_name</code></span> syntax:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb20'><a id='x3-10017r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-f<span style='color:rgb(168,142,40);'> </span>html5-common_domfilters<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb20'><a id='x3-10017r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-f<span style='color:#A88F29;'> </span>html5-common_domfilters<span style='color:#A88F29;'> </span>filename.tex</pre>
 
 </figure>
-<!--  l. 241  --><p class='indent'>   You can find a list of extensions in  <a href='https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions'><code class='texttt'>make4ht</code> documentation</a>.
+<!--  l. 241  --><p class='indent'>   You can find a list of extensions in <a href='https://www.kodymirus.cz/make4ht/make4ht-doc.html#extensions'><code class='texttt'>make4ht</code> documentation</a>.
 
 </p>   
 <h3 class='sectionHead'><span class='titlemark'>2.6   </span> <a id='x3-110002.6'></a>Configurations</h3>
@@ -425,8 +425,8 @@ inserted before and after environment using the <code class='texttt'>\ConfigureE
 following syntax:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb21'><a id='x3-13004r1'></a><span style='color:rgb(40,56,175);'>\ConfigureEnv</span><span style='color:rgb(56,127,56);'>{</span>&lt;environment name&gt;<span style='color:rgb(56,127,56);'>}{</span>before env<span style='color:rgb(56,127,56);'>}{</span>after env<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-13006r2'></a><span style='color:rgb(56,127,56);'>{</span>before-list<span style='color:rgb(56,127,56);'>}{</span>after-list<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb21'><a id='x3-13004r1'></a><span style='color:#2938B0;'>\ConfigureEnv</span><span style='color:#388038;'>{</span>&lt;environment name&gt;<span style='color:#388038;'>}{</span>before env<span style='color:#388038;'>}{</span>after env<span style='color:#388038;'>}</span> 
+<a id='x3-13006r2'></a><span style='color:#388038;'>{</span>before-list<span style='color:#388038;'>}{</span>after-list<span style='color:#388038;'>}</span></pre>
                                                                   
 
                                                                   
@@ -446,23 +446,23 @@ pieces.
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb22'><a id='x3-14008r1'></a>Hello world. 
-<a id='x3-14010r2'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>someenv<span style='color:rgb(56,127,56);'>}</span> 
+<a id='x3-14010r2'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>someenv<span style='color:#388038;'>}</span> 
 <a id='x3-14012r3'></a>Just start some environment. 
 <a id='x3-14014r4'></a> 
 <a id='x3-14016r5'></a>But run it through several paragraphs 
-<a id='x3-14018r6'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>someenv<span style='color:rgb(56,127,56);'>}</span></pre>
+<a id='x3-14018r6'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>someenv<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 303  --><p class='indent'>   say that we insert <code class='texttt'>&lt;div class="someenv"&gt;</code> and <code class='texttt'>&lt;/div&gt;</code> tags around the <code class='texttt'>someenv</code>
 environment. By default this may produce following structure:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb23'><a id='x3-14026r1'></a><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>p</span><span style='color:rgb(135,135,135);'>&gt;</span>Hello world. 
-<a id='x3-14028r2'></a><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>div </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"someenv"</span><span style='color:rgb(135,135,135);'>&gt;</span>Just start some environment. 
-<a id='x3-14030r3'></a><span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>p</span><span style='color:rgb(135,135,135);'>&gt;</span> 
+<pre class='fancyvrb' id='fancyvrb23'><a id='x3-14026r1'></a><span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>p</span><span style='color:#878787;'>&gt;</span>Hello world. 
+<a id='x3-14028r2'></a><span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>div </span><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"someenv"</span><span style='color:#878787;'>&gt;</span>Just start some environment. 
+<a id='x3-14030r3'></a><span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>p</span><span style='color:#878787;'>&gt;</span> 
 <a id='x3-14032r4'></a> 
-<a id='x3-14034r5'></a><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>p</span><span style='color:rgb(135,135,135);'>&gt;</span>But run it through several paragraphs 
-<a id='x3-14036r6'></a><span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>div</span><span style='color:rgb(135,135,135);'>&gt;&lt;/</span><span style='color:rgb(40,56,175);'>p</span><span style='color:rgb(135,135,135);'>&gt;</span></pre>
+<a id='x3-14034r5'></a><span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>p</span><span style='color:#878787;'>&gt;</span>But run it through several paragraphs 
+<a id='x3-14036r6'></a><span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>div</span><span style='color:#878787;'>&gt;&lt;/</span><span style='color:#2938B0;'>p</span><span style='color:#878787;'>&gt;</span></pre>
 
 </figure>
 <!--  l. 317  --><p class='indent'>   as you can see, generated html code is incorrect, as opening and closing <code class='texttt'>&lt;div&gt;</code>
@@ -472,19 +472,19 @@ current paragraph, but it may be not what you want.
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb24'><a id='x3-14046r1'></a>Hello world. 
-<a id='x3-14048r2'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>someenv<span style='color:rgb(56,127,56);'>}</span> 
+<a id='x3-14048r2'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>someenv<span style='color:#388038;'>}</span> 
 <a id='x3-14050r3'></a>Just start some environment. 
-<a id='x3-14052r4'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>someenv<span style='color:rgb(56,127,56);'>}</span> 
+<a id='x3-14052r4'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>someenv<span style='color:#388038;'>}</span> 
 <a id='x3-14054r5'></a> 
-<a id='x3-14056r6'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>someenv<span style='color:rgb(56,127,56);'>}</span> 
+<a id='x3-14056r6'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>someenv<span style='color:#388038;'>}</span> 
 <a id='x3-14058r7'></a>But run it through several paragraphs 
-<a id='x3-14060r8'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>someenv<span style='color:rgb(56,127,56);'>}</span></pre>
+<a id='x3-14060r8'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>someenv<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 335  --><p class='indent'>   and with <code class='texttt'>make4ht</code>
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb25'><a id='x3-14063r1'></a>make4ht<span style='color:rgb(168,142,40);'> </span>sample1</pre>
+<pre class='fancyvrb' id='fancyvrb25'><a id='x3-14063r1'></a>make4ht<span style='color:#A88F29;'> </span>sample1</pre>
 
 </figure>
 <!--  l. 341  --><p class='indent'>   lets look on text part generated by <code class='texttt'>htlatex</code>:
@@ -493,20 +493,20 @@ current paragraph, but it may be not what you want.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb26'><a id='x3-14069r1'></a><span style='color:rgb(135,135,135);'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>p </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"noindent" </span><span style='color:rgb(135,135,135);'>&gt;</span>P<span style='color:rgb(112,142,48);'>&amp;#x0159;</span>íli<span style='color:rgb(112,142,48);'>&amp;#353; &amp;#382;</span>lu<span style='color:rgb(112,142,48);'>&amp;#x0165;</span>ou<span style='color:rgb(112,142,48);'>&amp;#x010D;</span>k<span style='color:rgb(112,142,48);'>&amp;#x00FD;</span> k<span style='color:rgb(112,142,48);'>&amp;#x016F;&amp;#x0148;</span> úp<span style='color:rgb(112,142,48);'>&amp;#x011B;</span>l <span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>span</span> 
-<a id='x3-14071r2'></a><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"ecti-1000"</span><span style='color:rgb(135,135,135);'>&gt;</span><span style='color:rgb(112,142,48);'>&amp;#x010F;</span><span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;&lt;</span><span style='color:rgb(40,56,175);'>span</span> 
-<a id='x3-14073r3'></a><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"ecti-1000"</span><span style='color:rgb(135,135,135);'>&gt;</span>ábelsk<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;&lt;</span><span style='color:rgb(40,56,175);'>span</span> 
-<a id='x3-14075r4'></a><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"ecti-1000"</span><span style='color:rgb(135,135,135);'>&gt;</span>é <span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;</span>ódy. Some text in English</pre>
+<pre class='fancyvrb' id='fancyvrb26'><a id='x3-14069r1'></a><span style='color:#878787;'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>p </span><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"noindent" </span><span style='color:#878787;'>&gt;</span>P<span style='color:#708F30;'>&amp;#x0159;</span>íli<span style='color:#708F30;'>&amp;#353; &amp;#382;</span>lu<span style='color:#708F30;'>&amp;#x0165;</span>ou<span style='color:#708F30;'>&amp;#x010D;</span>k<span style='color:#708F30;'>&amp;#x00FD;</span> k<span style='color:#708F30;'>&amp;#x016F;&amp;#x0148;</span> úp<span style='color:#708F30;'>&amp;#x011B;</span>l <span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>span</span> 
+<a id='x3-14071r2'></a><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"ecti-1000"</span><span style='color:#878787;'>&gt;</span><span style='color:#708F30;'>&amp;#x010F;</span><span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;&lt;</span><span style='color:#2938B0;'>span</span> 
+<a id='x3-14073r3'></a><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"ecti-1000"</span><span style='color:#878787;'>&gt;</span>ábelsk<span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;&lt;</span><span style='color:#2938B0;'>span</span> 
+<a id='x3-14075r4'></a><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"ecti-1000"</span><span style='color:#878787;'>&gt;</span>é <span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;</span>ódy. Some text in English</pre>
 
 </figure>
 <!--  l. 350  --><p class='indent'>   and by <code class='texttt'>make4ht</code>:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb27'><a id='x3-14082r1'></a><span style='color:rgb(135,135,135);'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>p </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"noindent" </span><span style='color:rgb(135,135,135);'>&gt;</span>P<span style='color:rgb(112,142,48);'>&amp;#x0159;</span>íli<span style='color:rgb(112,142,48);'>&amp;#353; &amp;#382;</span>lu<span style='color:rgb(112,142,48);'>&amp;#x0165;</span>ou<span style='color:rgb(112,142,48);'>&amp;#x010D;</span>k<span style='color:rgb(112,142,48);'>&amp;#x00FD;</span> k<span style='color:rgb(112,142,48);'>&amp;#x016F;&amp;#x0148;</span> úp<span style='color:rgb(112,142,48);'>&amp;#x011B;</span>l <span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>span</span> 
-<a id='x3-14084r2'></a><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"ecti-1000"</span><span style='color:rgb(135,135,135);'>&gt;</span><span style='color:rgb(112,142,48);'>&amp;#x010F;</span><span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;&lt;</span><span style='color:rgb(40,56,175);'>span</span> 
-<a id='x3-14086r3'></a><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"ecti-1000"</span><span style='color:rgb(135,135,135);'>&gt;</span>ábelsk<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;&lt;</span><span style='color:rgb(40,56,175);'>span</span> 
-<a id='x3-14088r4'></a><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"ecti-1000"</span><span style='color:rgb(135,135,135);'>&gt;</span>é <span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;</span>ódy. Some text in English 
-<a id='x3-14090r5'></a><span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>p</span><span style='color:rgb(135,135,135);'>&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb27'><a id='x3-14082r1'></a><span style='color:#878787;'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>p </span><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"noindent" </span><span style='color:#878787;'>&gt;</span>P<span style='color:#708F30;'>&amp;#x0159;</span>íli<span style='color:#708F30;'>&amp;#353; &amp;#382;</span>lu<span style='color:#708F30;'>&amp;#x0165;</span>ou<span style='color:#708F30;'>&amp;#x010D;</span>k<span style='color:#708F30;'>&amp;#x00FD;</span> k<span style='color:#708F30;'>&amp;#x016F;&amp;#x0148;</span> úp<span style='color:#708F30;'>&amp;#x011B;</span>l <span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>span</span> 
+<a id='x3-14084r2'></a><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"ecti-1000"</span><span style='color:#878787;'>&gt;</span><span style='color:#708F30;'>&amp;#x010F;</span><span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;&lt;</span><span style='color:#2938B0;'>span</span> 
+<a id='x3-14086r3'></a><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"ecti-1000"</span><span style='color:#878787;'>&gt;</span>ábelsk<span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;&lt;</span><span style='color:#2938B0;'>span</span> 
+<a id='x3-14088r4'></a><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"ecti-1000"</span><span style='color:#878787;'>&gt;</span>é <span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;</span>ódy. Some text in English 
+<a id='x3-14090r5'></a><span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>p</span><span style='color:#878787;'>&gt;</span></pre>
 
 </figure>
 <!--  l. 360  --><p class='indent'>   only difference is missing <code class='texttt'>&lt;/p&gt;</code> tag in output of <code class='texttt'>htlatex</code>, because <code class='texttt'>html 4.01</code> is
@@ -521,14 +521,14 @@ output.
 command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb28'><a id='x3-14093r1'></a>htlatex<span style='color:rgb(168,142,40);'> </span>sample1<span style='color:rgb(168,142,40);'> </span>xhtml</pre>
+<pre class='fancyvrb' id='fancyvrb28'><a id='x3-14093r1'></a>htlatex<span style='color:#A88F29;'> </span>sample1<span style='color:#A88F29;'> </span>xhtml</pre>
 
 </figure>
 <!--  l. 379  --><p class='indent'>   Now we should get rid of ugly entities which encode accented letters. This is
 somewhat ugly with <code class='texttt'>htlatex</code>:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb29'><a id='x3-14096r1'></a>htlatex<span style='color:rgb(168,142,40);'> </span>sample1<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"xhtml,charset=utf-8"</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>" -cunihtf -utf8"</span></pre>
+<pre class='fancyvrb' id='fancyvrb29'><a id='x3-14096r1'></a>htlatex<span style='color:#A88F29;'> </span>sample1<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"xhtml,charset=utf-8"</span><span style='color:#A88F29;'> </span><span style='color:#B83838;'>" -cunihtf -utf8"</span></pre>
 
 </figure>
 <!--  l. 386  --><p class='indent'>   <code class='texttt'>charset=utf-8</code> produces meta element which declares document to be in
@@ -539,7 +539,7 @@ unicode.4hf. It is directed from <code class='texttt'>tex4ht.env</code> file.
 </p><!--  l. 393  --><p class='indent'>   With <code class='texttt'>make4ht</code>, situation is easier, as all we need to do is to add <code class='texttt'>-u</code> option:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb30'><a id='x3-14099r1'></a>make4ht<span style='color:rgb(168,142,40);'> </span>-u<span style='color:rgb(168,142,40);'> </span>sample1.tex</pre>
+<pre class='fancyvrb' id='fancyvrb30'><a id='x3-14099r1'></a>make4ht<span style='color:#A88F29;'> </span>-u<span style='color:#A88F29;'> </span>sample1.tex</pre>
 
 </figure>
 <!--  l. 400  --><p class='indent'>   resulting file:
@@ -548,11 +548,11 @@ unicode.4hf. It is directed from <code class='texttt'>tex4ht.env</code> file.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb31'><a id='x3-14106r1'></a><span style='color:rgb(135,135,135);'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>p </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"noindent" </span><span style='color:rgb(135,135,135);'>&gt;</span>Příliš žluťoučký kůň úpěl <span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>span</span> 
-<a id='x3-14108r2'></a><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"ecti-1000"</span><span style='color:rgb(135,135,135);'>&gt;</span>ď<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;&lt;</span><span style='color:rgb(40,56,175);'>span</span> 
-<a id='x3-14110r3'></a><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"ecti-1000"</span><span style='color:rgb(135,135,135);'>&gt;</span>ábelsk<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;&lt;</span><span style='color:rgb(40,56,175);'>span</span> 
-<a id='x3-14112r4'></a><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"ecti-1000"</span><span style='color:rgb(135,135,135);'>&gt;</span>é <span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;</span>ódy. Some text in English 
-<a id='x3-14114r5'></a><span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>p</span><span style='color:rgb(135,135,135);'>&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb31'><a id='x3-14106r1'></a><span style='color:#878787;'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>p </span><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"noindent" </span><span style='color:#878787;'>&gt;</span>Příliš žluťoučký kůň úpěl <span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>span</span> 
+<a id='x3-14108r2'></a><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"ecti-1000"</span><span style='color:#878787;'>&gt;</span>ď<span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;&lt;</span><span style='color:#2938B0;'>span</span> 
+<a id='x3-14110r3'></a><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"ecti-1000"</span><span style='color:#878787;'>&gt;</span>ábelsk<span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;&lt;</span><span style='color:#2938B0;'>span</span> 
+<a id='x3-14112r4'></a><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"ecti-1000"</span><span style='color:#878787;'>&gt;</span>é <span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;</span>ódy. Some text in English 
+<a id='x3-14114r5'></a><span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>p</span><span style='color:#878787;'>&gt;</span></pre>
 
 </figure>
 <!--  l. 410  --><p class='indent'>   Entities are gone, but other persists. What we see is caused by a bug in <code class='texttt'>tex4ht</code>
@@ -564,7 +564,7 @@ Yay!
 </p>   
 <h3 class='sectionHead' id='configurations1'><span class='titlemark'>2.8   </span> <a id='x3-150002.8'></a>Configurations</h3>
 <!--  l. 420  --><p class='noindent'>We already saw that we can use command line options to configure the output. For
-full list of options for <code class='texttt'>tex4ht.sty</code>, see an  <a href='http://www.cvr.cc/?p=504'>article on CVR’s blog</a>. These options
+full list of options for <code class='texttt'>tex4ht.sty</code>, see an <a href='http://www.cvr.cc/?p=504'>article on CVR’s blog</a>. These options
 mainly influence appearance or math, footnotes, tables, etc. Note that these options
 aren’t fixed set, anyone can add new options and not all options are supported in
 each output format supported by <code class='texttt'>tex4ht</code>. Generally these options work with <code class='texttt'>html</code>
@@ -575,15 +575,15 @@ structure:
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb32'><a id='x3-15013r1'></a> optional stuff like requiring LaTeX packages etc 
 <a id='x3-15015r2'></a> ... 
-<a id='x3-15017r3'></a> <span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml,tex4ht.sty options<span style='color:rgb(56,127,56);'>}</span> 
+<a id='x3-15017r3'></a> <span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml,tex4ht.sty options<span style='color:#388038;'>}</span> 
 <a id='x3-15019r4'></a> ... 
 <a id='x3-15021r5'></a> TeX4ht configurations 
 <a id='x3-15023r6'></a> ... 
-<a id='x3-15025r7'></a> <span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
+<a id='x3-15025r7'></a> <span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
 <a id='x3-15027r8'></a> ... 
 <a id='x3-15029r9'></a> more TeX4ht configurations 
 <a id='x3-15031r10'></a> ... 
-<a id='x3-15033r11'></a> <span style='color:rgb(40,56,175);'>\EndPreamble</span></pre>
+<a id='x3-15033r11'></a> <span style='color:#2938B0;'>\EndPreamble</span></pre>
 
 </figure>
 <!--  l. 446  --><p class='indent'>   Most important command for configuring is <code class='texttt'>\Configure</code>. This command has
@@ -599,9 +599,9 @@ file.
 package <code class='texttt'>hello.sty</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb33'><a id='x3-15038r1'></a><span style='color:rgb(40,56,175);'>\ProvidesPackage</span><span style='color:rgb(56,127,56);'>{</span>hello<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-15040r2'></a><span style='color:rgb(40,56,175);'>\newcommand\hello</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\textbf</span><span style='color:rgb(56,127,56);'>{</span>hello world<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x3-15042r3'></a><span style='color:rgb(40,56,175);'>\endinput</span></pre>
+<pre class='fancyvrb' id='fancyvrb33'><a id='x3-15038r1'></a><span style='color:#2938B0;'>\ProvidesPackage</span><span style='color:#388038;'>{</span>hello<span style='color:#388038;'>}</span> 
+<a id='x3-15040r2'></a><span style='color:#2938B0;'>\newcommand\hello</span><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\textbf</span><span style='color:#388038;'>{</span>hello world<span style='color:#388038;'>}}</span> 
+<a id='x3-15042r3'></a><span style='color:#2938B0;'>\endinput</span></pre>
 
 </figure>
 <!--  l. 468  --><p class='indent'>   we can provide hooks in file named <code class='texttt'>hello.4ht</code>. Say we just want to insert tags at
@@ -611,16 +611,16 @@ beginning and at end of <code class='texttt'>\hello</code> command:
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb34'><a id='x3-15054r1'></a><span style='color:rgb(135,135,135);'><span class='textit'>% provide configure for \hello command. we can choose any name</span></span> 
-<a id='x3-15056r2'></a><span style='color:rgb(135,135,135);'><span class='textit'>% but most convenient is to name hooks after redefined command</span></span> 
-<a id='x3-15058r3'></a><span style='color:rgb(135,135,135);'><span class='textit'>% we declare two hooks, to be inserted before and after the command</span></span> 
-<a id='x3-15060r4'></a><span style='color:rgb(40,56,175);'>\NewConfigure</span><span style='color:rgb(56,127,56);'>{</span>hello<span style='color:rgb(56,127,56);'>}{</span>2<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-15062r5'></a><span style='color:rgb(135,135,135);'><span class='textit'>% now we need to redefine \hello. save it to tmp command</span></span> 
-<a id='x3-15064r6'></a><span style='color:rgb(40,56,175);'>\let\tmp:hello\hello</span> 
-<a id='x3-15066r7'></a><span style='color:rgb(135,135,135);'><span class='textit'>% note that `:` can be part of command name in `.4ht` files.</span></span> 
-<a id='x3-15068r8'></a><span style='color:rgb(135,135,135);'><span class='textit'>% now insert the hooks. they are named as \a:hook, \b:hook, ..., \h:hook</span></span> 
-<a id='x3-15070r9'></a><span style='color:rgb(135,135,135);'><span class='textit'>% depending on how many hooks were declared</span></span> 
-<a id='x3-15072r10'></a><span style='color:rgb(40,56,175);'>\renewcommand\hello</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\a:hello\tmp:hello\b:hello</span><span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb34'><a id='x3-15054r1'></a><span style='color:#878787;'><span class='textit'>% provide configure for \hello command. we can choose any name</span></span> 
+<a id='x3-15056r2'></a><span style='color:#878787;'><span class='textit'>% but most convenient is to name hooks after redefined command</span></span> 
+<a id='x3-15058r3'></a><span style='color:#878787;'><span class='textit'>% we declare two hooks, to be inserted before and after the command</span></span> 
+<a id='x3-15060r4'></a><span style='color:#2938B0;'>\NewConfigure</span><span style='color:#388038;'>{</span>hello<span style='color:#388038;'>}{</span>2<span style='color:#388038;'>}</span> 
+<a id='x3-15062r5'></a><span style='color:#878787;'><span class='textit'>% now we need to redefine \hello. save it to tmp command</span></span> 
+<a id='x3-15064r6'></a><span style='color:#2938B0;'>\let\tmp:hello\hello</span> 
+<a id='x3-15066r7'></a><span style='color:#878787;'><span class='textit'>% note that `:` can be part of command name in `.4ht` files.</span></span> 
+<a id='x3-15068r8'></a><span style='color:#878787;'><span class='textit'>% now insert the hooks. they are named as \a:hook, \b:hook, ..., \h:hook</span></span> 
+<a id='x3-15070r9'></a><span style='color:#878787;'><span class='textit'>% depending on how many hooks were declared</span></span> 
+<a id='x3-15072r10'></a><span style='color:#2938B0;'>\renewcommand\hello</span><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\a:hello\tmp:hello\b:hello</span><span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 485  --><p class='indent'>   because we want to surround contents produced by <code class='texttt'>\hello</code> with tags, we need to
@@ -631,15 +631,15 @@ macro.
 </p><!--  l. 492  --><p class='indent'>   Now we can change our sample to use <code class='texttt'>hello</code> package:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb35'><a id='x3-15083r1'></a><span style='color:rgb(40,56,175);'>\documentclass</span><span style='color:rgb(56,127,56);'>{</span>article<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-15085r2'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>[english,czech]{</span>babel<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-15087r3'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>[T1]{</span>fontenc<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-15089r4'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>[utf8]{</span>inputenc<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-15091r5'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>{</span>hello<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-15093r6'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> Příliš žluťoučký kůň úpěl <span style='color:rgb(40,56,175);'>\textit</span><span style='color:rgb(56,127,56);'>{</span>ďábelské<span style='color:rgb(56,127,56);'>}</span> ódy. 
-<a id='x3-15095r7'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>otherlanguage<span style='color:rgb(56,127,56);'>}{</span>english<span style='color:rgb(56,127,56);'>}</span> Some text in English, <span style='color:rgb(40,56,175);'>\hello</span> 
-<a id='x3-15097r8'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>otherlanguage<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-15099r9'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb35'><a id='x3-15083r1'></a><span style='color:#2938B0;'>\documentclass</span><span style='color:#388038;'>{</span>article<span style='color:#388038;'>}</span> 
+<a id='x3-15085r2'></a><span style='color:#2938B0;'>\usepackage</span><span style='color:#388038;'>[english,czech]{</span>babel<span style='color:#388038;'>}</span> 
+<a id='x3-15087r3'></a><span style='color:#2938B0;'>\usepackage</span><span style='color:#388038;'>[T1]{</span>fontenc<span style='color:#388038;'>}</span> 
+<a id='x3-15089r4'></a><span style='color:#2938B0;'>\usepackage</span><span style='color:#388038;'>[utf8]{</span>inputenc<span style='color:#388038;'>}</span> 
+<a id='x3-15091r5'></a><span style='color:#2938B0;'>\usepackage</span><span style='color:#388038;'>{</span>hello<span style='color:#388038;'>}</span> 
+<a id='x3-15093r6'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> Příliš žluťoučký kůň úpěl <span style='color:#2938B0;'>\textit</span><span style='color:#388038;'>{</span>ďábelské<span style='color:#388038;'>}</span> ódy. 
+<a id='x3-15095r7'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>otherlanguage<span style='color:#388038;'>}{</span>english<span style='color:#388038;'>}</span> Some text in English, <span style='color:#2938B0;'>\hello</span> 
+<a id='x3-15097r8'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>otherlanguage<span style='color:#388038;'>}</span> 
+<a id='x3-15099r9'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 506  --><p class='indent'>   we haven’t provided any configurations for <code class='texttt'>hello</code> yet, but you can see that text
@@ -652,18 +652,18 @@ provide by default.
 basic configurations for <code class='texttt'>\textit</code> and <code class='texttt'>\hello</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb36'><a id='x3-15108r1'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-15110r2'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>textit<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;span class="textit"&gt;<span style='color:rgb(56,127,56);'>}}{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/span&gt;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x3-15112r3'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>hello<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;span class="hello"&gt;<span style='color:rgb(56,127,56);'>}}{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/span&gt;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x3-15114r4'></a><span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>.textit<span style='color:rgb(56,127,56);'>{</span>font-style:italic;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x3-15116r5'></a><span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>.hello<span style='color:rgb(56,127,56);'>{</span>font-weight:bold;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x3-15118r6'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-15120r7'></a><span style='color:rgb(40,56,175);'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb36'><a id='x3-15108r1'></a><span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml<span style='color:#388038;'>}</span> 
+<a id='x3-15110r2'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>textit<span style='color:#388038;'>}{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;span class="textit"&gt;<span style='color:#388038;'>}}{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;/span&gt;<span style='color:#388038;'>}}</span> 
+<a id='x3-15112r3'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>hello<span style='color:#388038;'>}{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;span class="hello"&gt;<span style='color:#388038;'>}}{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;/span&gt;<span style='color:#388038;'>}}</span> 
+<a id='x3-15114r4'></a><span style='color:#2938B0;'>\Css</span><span style='color:#388038;'>{</span>.textit<span style='color:#388038;'>{</span>font-style:italic;<span style='color:#388038;'>}}</span> 
+<a id='x3-15116r5'></a><span style='color:#2938B0;'>\Css</span><span style='color:#388038;'>{</span>.hello<span style='color:#388038;'>{</span>font-weight:bold;<span style='color:#388038;'>}}</span> 
+<a id='x3-15118r6'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x3-15120r7'></a><span style='color:#2938B0;'>\EndPreamble</span></pre>
 
 </figure>
-<!--  l. 529  --><p class='indent'>   For documentation of default configurations, see  <a href='http://michal-h21.github.io/src4ht/tex4ht-info.html'>TeX4ht info</a>, most useful are
-<a href='http://michal-h21.github.io/src4ht/tex4ht-infose2.html'>LaTeX</a> and  <a href='http://michal-h21.github.io/src4ht/tex4ht-infose1.html'>TeX4ht</a> sections. Documentation for basic font commands such as
-<code class='texttt'>\textit</code> or <code class='texttt'>\textbf</code> is provided in  <a href='http://michal-h21.github.io/src4ht/tex4ht-infose2.html'>LaTeX</a> section. We can see that configuration
+<!--  l. 529  --><p class='indent'>   For documentation of default configurations, see <a href='http://michal-h21.github.io/src4ht/tex4ht-info.html'>TeX4ht info</a>, most useful are
+<a href='http://michal-h21.github.io/src4ht/tex4ht-infose2.html'>LaTeX</a> and <a href='http://michal-h21.github.io/src4ht/tex4ht-infose1.html'>TeX4ht</a> sections. Documentation for basic font commands such as
+<code class='texttt'>\textit</code> or <code class='texttt'>\textbf</code> is provided in <a href='http://michal-h21.github.io/src4ht/tex4ht-infose2.html'>LaTeX</a> section. We can see that configuration
 takes two parameters, insertion before and after content. Same situation is with
 <code class='texttt'>hello</code> configuration we defined earlier, hooks are inserted before and after the
 content.
@@ -677,12 +677,12 @@ styling. Yes, you need to know both <code class='texttt'>html</code> and <code c
 than initially:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb37'><a id='x3-15128r1'></a><span style='color:rgb(135,135,135);'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>p </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"noindent" </span><span style='color:rgb(135,135,135);'>&gt;</span>Příliš žluťoučký kůň úpěl <span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>span </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"textit"</span><span style='color:rgb(135,135,135);'>&gt;&lt;</span><span style='color:rgb(40,56,175);'>span</span> 
-<a id='x3-15130r2'></a><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"ecti-1000"</span><span style='color:rgb(135,135,135);'>&gt;</span>ď<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;&lt;</span><span style='color:rgb(40,56,175);'>span</span> 
-<a id='x3-15132r3'></a><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"ecti-1000"</span><span style='color:rgb(135,135,135);'>&gt;</span>ábelsk<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;&lt;</span><span style='color:rgb(40,56,175);'>span</span> 
-<a id='x3-15134r4'></a><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"ecti-1000"</span><span style='color:rgb(135,135,135);'>&gt;</span>é<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;</span> ódy. Some text in English, <span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>span </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"hello"</span><span style='color:rgb(135,135,135);'>&gt;&lt;</span><span style='color:rgb(40,56,175);'>span</span> 
-<a id='x3-15136r5'></a><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"ecbx-1000"</span><span style='color:rgb(135,135,135);'>&gt;</span>hello world<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;</span> 
-<a id='x3-15138r6'></a><span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>p</span><span style='color:rgb(135,135,135);'>&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb37'><a id='x3-15128r1'></a><span style='color:#878787;'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>p </span><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"noindent" </span><span style='color:#878787;'>&gt;</span>Příliš žluťoučký kůň úpěl <span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>span </span><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"textit"</span><span style='color:#878787;'>&gt;&lt;</span><span style='color:#2938B0;'>span</span> 
+<a id='x3-15130r2'></a><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"ecti-1000"</span><span style='color:#878787;'>&gt;</span>ď<span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;&lt;</span><span style='color:#2938B0;'>span</span> 
+<a id='x3-15132r3'></a><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"ecti-1000"</span><span style='color:#878787;'>&gt;</span>ábelsk<span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;&lt;</span><span style='color:#2938B0;'>span</span> 
+<a id='x3-15134r4'></a><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"ecti-1000"</span><span style='color:#878787;'>&gt;</span>é<span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;</span> ódy. Some text in English, <span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>span </span><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"hello"</span><span style='color:#878787;'>&gt;&lt;</span><span style='color:#2938B0;'>span</span> 
+<a id='x3-15136r5'></a><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"ecbx-1000"</span><span style='color:#878787;'>&gt;</span>hello world<span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;</span> 
+<a id='x3-15138r6'></a><span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>p</span><span style='color:#878787;'>&gt;</span></pre>
                                                                   
 
                                                                   
@@ -697,22 +697,22 @@ effects.
 </p><!--  l. 574  --><p class='indent'>   Let’s take a look how would out configurations look with <code class='texttt'>\NoFonts</code> command:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb38'><a id='x3-15149r1'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-15151r2'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>textit<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;span class="textit"&gt;<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\NoFonts</span><span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-15153r3'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\EndNoFonts\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/span&gt;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x3-15155r4'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>hello<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;span class="hello"&gt;<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\NoFonts</span><span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-15157r5'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\EndNoFonts\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/span&gt;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x3-15159r6'></a><span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>.textit<span style='color:rgb(56,127,56);'>{</span>font-style:italic;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x3-15161r7'></a><span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>.hello<span style='color:rgb(56,127,56);'>{</span>font-weight:bold;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x3-15163r8'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-15165r9'></a><span style='color:rgb(40,56,175);'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb38'><a id='x3-15149r1'></a><span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml<span style='color:#388038;'>}</span> 
+<a id='x3-15151r2'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>textit<span style='color:#388038;'>}{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;span class="textit"&gt;<span style='color:#388038;'>}</span><span style='color:#2938B0;'>\NoFonts</span><span style='color:#388038;'>}</span> 
+<a id='x3-15153r3'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\EndNoFonts\HCode</span><span style='color:#388038;'>{</span>&lt;/span&gt;<span style='color:#388038;'>}}</span> 
+<a id='x3-15155r4'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>hello<span style='color:#388038;'>}{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;span class="hello"&gt;<span style='color:#388038;'>}</span><span style='color:#2938B0;'>\NoFonts</span><span style='color:#388038;'>}</span> 
+<a id='x3-15157r5'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\EndNoFonts\HCode</span><span style='color:#388038;'>{</span>&lt;/span&gt;<span style='color:#388038;'>}}</span> 
+<a id='x3-15159r6'></a><span style='color:#2938B0;'>\Css</span><span style='color:#388038;'>{</span>.textit<span style='color:#388038;'>{</span>font-style:italic;<span style='color:#388038;'>}}</span> 
+<a id='x3-15161r7'></a><span style='color:#2938B0;'>\Css</span><span style='color:#388038;'>{</span>.hello<span style='color:#388038;'>{</span>font-weight:bold;<span style='color:#388038;'>}}</span> 
+<a id='x3-15163r8'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x3-15165r9'></a><span style='color:#2938B0;'>\EndPreamble</span></pre>
 
 </figure>
 <!--  l. 589  --><p class='indent'>   the output now looks much better:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb39'><a id='x3-15169r1'></a><span style='color:rgb(135,135,135);'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>p </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"noindent" </span><span style='color:rgb(135,135,135);'>&gt;</span>Příliš žluťoučký kůň úpěl <span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>span </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"textit"</span><span style='color:rgb(135,135,135);'>&gt;</span>ďábelské<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;</span> ódy. Some text in English, <span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>span </span><span style='color:rgb(56,127,56);'>class</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>"hello"</span><span style='color:rgb(135,135,135);'>&gt;</span>hello world<span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>span</span><span style='color:rgb(135,135,135);'>&gt;</span> 
-<a id='x3-15171r2'></a><span style='color:rgb(135,135,135);'>&lt;/</span><span style='color:rgb(40,56,175);'>p</span><span style='color:rgb(135,135,135);'>&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb39'><a id='x3-15169r1'></a><span style='color:#878787;'><span class='textit'>&lt;!--l. 6--&gt;</span></span><span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>p </span><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"noindent" </span><span style='color:#878787;'>&gt;</span>Příliš žluťoučký kůň úpěl <span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>span </span><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"textit"</span><span style='color:#878787;'>&gt;</span>ďábelské<span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;</span> ódy. Some text in English, <span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>span </span><span style='color:#388038;'>class</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>"hello"</span><span style='color:#878787;'>&gt;</span>hello world<span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>span</span><span style='color:#878787;'>&gt;</span> 
+<a id='x3-15171r2'></a><span style='color:#878787;'>&lt;/</span><span style='color:#2938B0;'>p</span><span style='color:#878787;'>&gt;</span></pre>
 
 </figure>
 <!--  l. 596  --><p class='indent'>   It may seems that we can be happy at this point, but things aren’t as easy as we
@@ -723,24 +723,24 @@ may hope, because we haven’t talked about one thing:
 <!--  l. 602  --><p class='noindent'>What if we add some more paragraphs in English to our sample file?
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb40'><a id='x3-16020r1'></a><span style='color:rgb(40,56,175);'>\documentclass</span><span style='color:rgb(56,127,56);'>{</span>article<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-16022r2'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>[english,czech]{</span>babel<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-16024r3'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>[T1]{</span>fontenc<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-16026r4'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>[utf8]{</span>inputenc<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-16028r5'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>{</span>hello<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x3-16030r6'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> Příliš žluťoučký kůň úpěl <span style='color:rgb(40,56,175);'>\textit</span><span style='color:rgb(56,127,56);'>{</span>ďábelské<span style='color:rgb(56,127,56);'>}</span> ódy. 
-<a id='x3-16032r7'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>otherlanguage<span style='color:rgb(56,127,56);'>}{</span>english<span style='color:rgb(56,127,56);'>}</span> Some text in English, <span style='color:rgb(40,56,175);'>\hello</span> 
-<a id='x3-16034r8'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>otherlanguage<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb40'><a id='x3-16020r1'></a><span style='color:#2938B0;'>\documentclass</span><span style='color:#388038;'>{</span>article<span style='color:#388038;'>}</span> 
+<a id='x3-16022r2'></a><span style='color:#2938B0;'>\usepackage</span><span style='color:#388038;'>[english,czech]{</span>babel<span style='color:#388038;'>}</span> 
+<a id='x3-16024r3'></a><span style='color:#2938B0;'>\usepackage</span><span style='color:#388038;'>[T1]{</span>fontenc<span style='color:#388038;'>}</span> 
+<a id='x3-16026r4'></a><span style='color:#2938B0;'>\usepackage</span><span style='color:#388038;'>[utf8]{</span>inputenc<span style='color:#388038;'>}</span> 
+<a id='x3-16028r5'></a><span style='color:#2938B0;'>\usepackage</span><span style='color:#388038;'>{</span>hello<span style='color:#388038;'>}</span> 
+<a id='x3-16030r6'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> Příliš žluťoučký kůň úpěl <span style='color:#2938B0;'>\textit</span><span style='color:#388038;'>{</span>ďábelské<span style='color:#388038;'>}</span> ódy. 
+<a id='x3-16032r7'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>otherlanguage<span style='color:#388038;'>}{</span>english<span style='color:#388038;'>}</span> Some text in English, <span style='color:#2938B0;'>\hello</span> 
+<a id='x3-16034r8'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>otherlanguage<span style='color:#388038;'>}</span> 
 <a id='x3-16036r9'></a> 
-<a id='x3-16038r10'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>otherlanguage<span style='color:rgb(56,127,56);'>}{</span>english<span style='color:rgb(56,127,56);'>}</span> 
+<a id='x3-16038r10'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>otherlanguage<span style='color:#388038;'>}{</span>english<span style='color:#388038;'>}</span> 
 <a id='x3-16040r11'></a> 
-<a id='x3-16042r12'></a><span style='color:rgb(40,56,175);'>\textit</span><span style='color:rgb(56,127,56);'>{</span>What will do<span style='color:rgb(56,127,56);'>} </span><span style='color:rgb(40,56,175);'>\verb</span>|<span style='color:rgb(40,56,175);'>\textit</span>| at the beginning of paragraph? 
+<a id='x3-16042r12'></a><span style='color:#2938B0;'>\textit</span><span style='color:#388038;'>{</span>What will do<span style='color:#388038;'>} </span><span style='color:#2938B0;'>\verb</span>|<span style='color:#2938B0;'>\textit</span>| at the beginning of paragraph? 
 <a id='x3-16044r13'></a> 
-<a id='x3-16046r14'></a>And also, what about configuration for <span style='color:rgb(40,56,175);'>\verb</span>|otherlanguage| environment? 
+<a id='x3-16046r14'></a>And also, what about configuration for <span style='color:#2938B0;'>\verb</span>|otherlanguage| environment? 
 <a id='x3-16048r15'></a> 
-<a id='x3-16050r16'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>otherlanguage<span style='color:rgb(56,127,56);'>}</span> 
+<a id='x3-16050r16'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>otherlanguage<span style='color:#388038;'>}</span> 
 <a id='x3-16052r17'></a> 
-<a id='x3-16054r18'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span></pre>
+<a id='x3-16054r18'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 625  --><p class='indent'>   What if we want to insert elements with <code class='texttt'>lang</code> attribute to specify language of

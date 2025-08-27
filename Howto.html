@@ -168,21 +168,21 @@ configurations. This example shows how to use OTF files for the EB Garamond
 font.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb41'><a id='x4-21017r1'></a><span style='color:rgb(135,135,135);'><span class='textit'>% define font family. The first argument is family name</span></span> 
-<a id='x4-21019r2'></a><span style='color:rgb(135,135,135);'><span class='textit'>% that can be used in CSS font-family rule</span></span> 
-<a id='x4-21021r3'></a><span style='color:rgb(135,135,135);'><span class='textit'>% second argument is the family name declared by the font</span></span> 
-<a id='x4-21023r4'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>FontFamily<span style='color:rgb(56,127,56);'>}{</span>rmfamily<span style='color:rgb(56,127,56);'>}{</span>EB Garamond<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-21025r5'></a><span style='color:rgb(135,135,135);'><span class='textit'>% declare font filenames for particular font styles.</span></span> 
-<a id='x4-21027r6'></a><span style='color:rgb(135,135,135);'><span class='textit'>% the font files must be placed in the location that is</span></span> 
-<a id='x4-21029r7'></a><span style='color:rgb(135,135,135);'><span class='textit'>% declared.</span></span> 
-<a id='x4-21031r8'></a><span style='color:rgb(135,135,135);'><span class='textit'>% these four font styles are supported</span></span> 
-<a id='x4-21033r9'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>NormalFont<span style='color:rgb(56,127,56);'>}{</span>EBGaramond-Regular.otf<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-21035r10'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>ItalicFont<span style='color:rgb(56,127,56);'>}{</span>EBGaramond-Italic.otf<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-21037r11'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>BoldFont<span style='color:rgb(56,127,56);'>}{</span>EBGaramond-Bold.otf<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-21039r12'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>BoldItalicFont<span style='color:rgb(56,127,56);'>}{</span>EBGaramond-BoldItalic.otf<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-21041r13'></a><span style='color:rgb(135,135,135);'><span class='textit'>% use CSS to use the declared font family in the document</span></span> 
-<a id='x4-21043r14'></a><span style='color:rgb(135,135,135);'><span class='textit'>% serif is used as a fallback</span></span> 
-<a id='x4-21045r15'></a><span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>body<span style='color:rgb(56,127,56);'>{</span>font-family: "rmfamily", serif;<span style='color:rgb(56,127,56);'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb41'><a id='x4-21017r1'></a><span style='color:#878787;'><span class='textit'>% define font family. The first argument is family name</span></span> 
+<a id='x4-21019r2'></a><span style='color:#878787;'><span class='textit'>% that can be used in CSS font-family rule</span></span> 
+<a id='x4-21021r3'></a><span style='color:#878787;'><span class='textit'>% second argument is the family name declared by the font</span></span> 
+<a id='x4-21023r4'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>FontFamily<span style='color:#388038;'>}{</span>rmfamily<span style='color:#388038;'>}{</span>EB Garamond<span style='color:#388038;'>}</span> 
+<a id='x4-21025r5'></a><span style='color:#878787;'><span class='textit'>% declare font filenames for particular font styles.</span></span> 
+<a id='x4-21027r6'></a><span style='color:#878787;'><span class='textit'>% the font files must be placed in the location that is</span></span> 
+<a id='x4-21029r7'></a><span style='color:#878787;'><span class='textit'>% declared.</span></span> 
+<a id='x4-21031r8'></a><span style='color:#878787;'><span class='textit'>% these four font styles are supported</span></span> 
+<a id='x4-21033r9'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>NormalFont<span style='color:#388038;'>}{</span>EBGaramond-Regular.otf<span style='color:#388038;'>}</span> 
+<a id='x4-21035r10'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>ItalicFont<span style='color:#388038;'>}{</span>EBGaramond-Italic.otf<span style='color:#388038;'>}</span> 
+<a id='x4-21037r11'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>BoldFont<span style='color:#388038;'>}{</span>EBGaramond-Bold.otf<span style='color:#388038;'>}</span> 
+<a id='x4-21039r12'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>BoldItalicFont<span style='color:#388038;'>}{</span>EBGaramond-BoldItalic.otf<span style='color:#388038;'>}</span> 
+<a id='x4-21041r13'></a><span style='color:#878787;'><span class='textit'>% use CSS to use the declared font family in the document</span></span> 
+<a id='x4-21043r14'></a><span style='color:#878787;'><span class='textit'>% serif is used as a fallback</span></span> 
+<a id='x4-21045r15'></a><span style='color:#2938B0;'>\Css</span><span style='color:#388038;'>{</span>body<span style='color:#388038;'>{</span>font-family: "rmfamily", serif;<span style='color:#388038;'>}}</span></pre>
 
 </figure>   
 
@@ -206,7 +206,7 @@ quality.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb42'><a id='x4-23003r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>foo.tex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"pic-m,pic-equation,svg"</span></pre>
+<pre class='fancyvrb' id='fancyvrb42'><a id='x4-23003r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>foo.tex<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>
 <!--  l. 100  --><p class='indent'>   See the <a href='texfourhtOptions.html#texht-options1'><code class='texttt'>TeX4ht</code> Options<!--  tex4ht:ref: chap:options   --></a> chapter for other <span class='emph'>pic-…</span> options.
@@ -215,19 +215,19 @@ long time. You can use the <span class='obeylines-h'><code class='verb'>dvisvgm_
 images that were already generated, and to use a parallel conversion:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb43'><a id='x4-23007r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-f<span style='color:rgb(168,142,40);'> </span>html5+dvisvgm_hashes<span style='color:rgb(168,142,40);'> </span>foo.tex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(112,142,48);'>\</span> 
-<a id='x4-23009r2'></a><span style='color:rgb(183,56,56);'>"pic-m,pic-equation,svg"</span></pre>
+<pre class='fancyvrb' id='fancyvrb43'><a id='x4-23007r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-f<span style='color:#A88F29;'> </span>html5+dvisvgm_hashes<span style='color:#A88F29;'> </span>foo.tex<span style='color:#A88F29;'> </span><span style='color:#708F30;'>\</span> 
+<a id='x4-23009r2'></a><span style='color:#B83838;'>"pic-m,pic-equation,svg"</span></pre>
 
 </figure>   
 
 <h4 class='subsectionHead' id='mathjax-latex-mode'><span class='titlemark'>3.2.2   </span> <a id='x4-240003.2.2'></a>MathJax LaTeX mode</h4>
-<!--  l. 1  --><p class='noindent'>You can also pass math to the HTML output and rely on the  <a href='https://www.mathjax.org/'>MathJax library</a> for
-the rendering. MathJax is widely used for this purpose and generaly produces great
+<!--  l. 1  --><p class='noindent'>You can also pass math to the HTML output and rely on the <a href='https://www.mathjax.org/'>MathJax library</a> for the
+rendering. MathJax is widely used for this purpose and generaly produces great
 results from the accessibility and rendering views.
 </p><!--  l. 6  --><p class='indent'>   To require the MathJax output, use the <span class='emph'>mathjax</span> option:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb44'><a id='x4-24003r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>foo.tex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"mathjax"</span></pre>
+<pre class='fancyvrb' id='fancyvrb44'><a id='x4-24003r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>foo.tex<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"mathjax"</span></pre>
 
 </figure>
 <!--  l. 13  --><p class='indent'>   There are some limitations in MathJax though:
@@ -238,7 +238,7 @@ them.
 </li>
 <li class='itemize'>Cross-references  to  equations  should  work,  but  other  numbered  math
 environments don’t work out of the box. You can try the Lua scripts
-proposed in  <a href='https://tex.stackexchange.com/a/597913/2891'>this post on TeX.sx</a> as a workaround.</li></ul>
+proposed in <a href='https://tex.stackexchange.com/a/597913/2891'>this post on TeX.sx</a> as a workaround.</li></ul>
 <!--  l. 24  --><p class='indent'>   The additional configuration for <span class='emph'>MathJax</span> can be provided in the <code class='texttt'>MathJaxConfig</code>
 configuration.
 </p><!--  l. 27  --><p class='indent'>   The following example provides support for custom LaTeX macros.
@@ -247,20 +247,20 @@ configuration.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb45'><a id='x4-24019r1'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-24021r2'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>MathJaxConfig<span style='color:rgb(56,127,56);'>}{{</span> 
-<a id='x4-24023r3'></a>    tex: <span style='color:rgb(56,127,56);'>{</span> 
+<pre class='fancyvrb' id='fancyvrb45'><a id='x4-24019r1'></a><span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml<span style='color:#388038;'>}</span> 
+<a id='x4-24021r2'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>MathJaxConfig<span style='color:#388038;'>}{{</span> 
+<a id='x4-24023r3'></a>    tex: <span style='color:#388038;'>{</span> 
 <a id='x4-24025r4'></a>      tags: "ams", 
-<a id='x4-24027r5'></a>      <span style='color:rgb(40,56,175);'>\detokenize</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
-<a id='x4-24029r6'></a>      macros: <span style='color:rgb(56,127,56);'>{</span> 
-<a id='x4-24031r7'></a>        sc: "<span style='color:rgb(40,56,175);'>\\</span>small<span style='color:rgb(40,56,175);'>\\</span>rm", 
-<a id='x4-24033r8'></a>        sl: "<span style='color:rgb(40,56,175);'>\\</span>it", 
-<a id='x4-24035r9'></a>      <span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-24037r10'></a>  <span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-24039r11'></a><span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-24041r12'></a><span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x4-24043r13'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-24045r14'></a><span style='color:rgb(40,56,175);'>\EndPreamble</span></pre>
+<a id='x4-24027r5'></a>      <span style='color:#2938B0;'>\detokenize</span><span style='color:#388038;'>{</span><span style='color:#878787;'><span class='textit'>%</span></span> 
+<a id='x4-24029r6'></a>      macros: <span style='color:#388038;'>{</span> 
+<a id='x4-24031r7'></a>        sc: "<span style='color:#2938B0;'>\\</span>small<span style='color:#2938B0;'>\\</span>rm", 
+<a id='x4-24033r8'></a>        sl: "<span style='color:#2938B0;'>\\</span>it", 
+<a id='x4-24035r9'></a>      <span style='color:#388038;'>}</span> 
+<a id='x4-24037r10'></a>  <span style='color:#388038;'>}</span> 
+<a id='x4-24039r11'></a><span style='color:#388038;'>}</span> 
+<a id='x4-24041r12'></a><span style='color:#388038;'>}}</span> 
+<a id='x4-24043r13'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x4-24045r14'></a><span style='color:#2938B0;'>\EndPreamble</span></pre>
 
 </figure>
 <!--  l. 47  --><p class='indent'>   The configuration needs to be passed as a JavaScript object, this means that you
@@ -274,26 +274,26 @@ character, used for parameters. You need to change the catcode of this character
 letter before the <code class='texttt'>MathJaxConfig</code> configuration:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb46'><a id='x4-24067r1'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-24069r2'></a><span style='color:rgb(135,135,135);'><span class='textit'>% change catcode of # to letter</span></span> 
-<a id='x4-24071r3'></a><span style='color:rgb(135,135,135);'><span class='textit'>% in order to support #1 in custom</span></span> 
-<a id='x4-24073r4'></a><span style='color:rgb(135,135,135);'><span class='textit'>% MathJax macros</span></span> 
-<a id='x4-24075r5'></a><span style='color:rgb(40,56,175);'>\catcode</span>`<span style='color:rgb(40,56,175);'>\#</span>=11 
-<a id='x4-24077r6'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>MathJaxConfig<span style='color:rgb(56,127,56);'>}{{</span> 
-<a id='x4-24079r7'></a>    tex: <span style='color:rgb(56,127,56);'>{</span> 
-<a id='x4-24081r8'></a>      <span style='color:rgb(40,56,175);'>\detokenize</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
-<a id='x4-24083r9'></a>      macros: <span style='color:rgb(56,127,56);'>{</span> 
-<a id='x4-24085r10'></a>        <span style='color:rgb(135,135,135);'><span class='textit'>% our sample macro takes a parameter</span></span> 
-<a id='x4-24087r11'></a>        hello: ["<span style='color:rgb(40,56,175);'>\\</span>sqrt<span style='color:rgb(56,127,56);'>{</span>#1<span style='color:rgb(56,127,56);'>}</span>",1], 
-<a id='x4-24089r12'></a>      <span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-24091r13'></a>  <span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-24093r14'></a><span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-24095r15'></a><span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x4-24097r16'></a><span style='color:rgb(135,135,135);'><span class='textit'>% don't forget to change the catcode</span></span> 
-<a id='x4-24099r17'></a><span style='color:rgb(135,135,135);'><span class='textit'>% back to the original value</span></span> 
-<a id='x4-24101r18'></a><span style='color:rgb(40,56,175);'>\catcode</span>`<span style='color:rgb(40,56,175);'>\#</span>=6 
-<a id='x4-24103r19'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-24105r20'></a><span style='color:rgb(40,56,175);'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb46'><a id='x4-24067r1'></a><span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml<span style='color:#388038;'>}</span> 
+<a id='x4-24069r2'></a><span style='color:#878787;'><span class='textit'>% change catcode of # to letter</span></span> 
+<a id='x4-24071r3'></a><span style='color:#878787;'><span class='textit'>% in order to support #1 in custom</span></span> 
+<a id='x4-24073r4'></a><span style='color:#878787;'><span class='textit'>% MathJax macros</span></span> 
+<a id='x4-24075r5'></a><span style='color:#2938B0;'>\catcode</span>`<span style='color:#2938B0;'>\#</span>=11 
+<a id='x4-24077r6'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>MathJaxConfig<span style='color:#388038;'>}{{</span> 
+<a id='x4-24079r7'></a>    tex: <span style='color:#388038;'>{</span> 
+<a id='x4-24081r8'></a>      <span style='color:#2938B0;'>\detokenize</span><span style='color:#388038;'>{</span><span style='color:#878787;'><span class='textit'>%</span></span> 
+<a id='x4-24083r9'></a>      macros: <span style='color:#388038;'>{</span> 
+<a id='x4-24085r10'></a>        <span style='color:#878787;'><span class='textit'>% our sample macro takes a parameter</span></span> 
+<a id='x4-24087r11'></a>        hello: ["<span style='color:#2938B0;'>\\</span>sqrt<span style='color:#388038;'>{</span>#1<span style='color:#388038;'>}</span>",1], 
+<a id='x4-24089r12'></a>      <span style='color:#388038;'>}</span> 
+<a id='x4-24091r13'></a>  <span style='color:#388038;'>}</span> 
+<a id='x4-24093r14'></a><span style='color:#388038;'>}</span> 
+<a id='x4-24095r15'></a><span style='color:#388038;'>}}</span> 
+<a id='x4-24097r16'></a><span style='color:#878787;'><span class='textit'>% don't forget to change the catcode</span></span> 
+<a id='x4-24099r17'></a><span style='color:#878787;'><span class='textit'>% back to the original value</span></span> 
+<a id='x4-24101r18'></a><span style='color:#2938B0;'>\catcode</span>`<span style='color:#2938B0;'>\#</span>=6 
+<a id='x4-24103r19'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x4-24105r20'></a><span style='color:#2938B0;'>\EndPreamble</span></pre>
 
 </figure>
 <!--  l. 81  --><p class='indent'>   Note that number of opening and closing brackets is important, they need to be
@@ -305,18 +305,18 @@ way, LaTeX will see the correct number of brackets, but JavaScript will ignore t
 extra ones:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb47'><a id='x4-24119r1'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-24121r2'></a><span style='color:rgb(40,56,175);'>\catcode</span>`<span style='color:rgb(40,56,175);'>\#</span>=11 
-<a id='x4-24123r3'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>MathJaxConfig<span style='color:rgb(56,127,56);'>}{{</span> 
-<a id='x4-24125r4'></a>    tex: <span style='color:rgb(56,127,56);'>{</span> 
-<a id='x4-24127r5'></a>      macros: <span style='color:rgb(56,127,56);'>{</span> 
-<a id='x4-24129r6'></a>      leftbracket: ["<span style='color:rgb(40,56,175);'>\\</span>left<span style='color:rgb(40,56,175);'>\\</span><span style='color:rgb(56,127,56);'>{</span>#1<span style='color:rgb(40,56,175);'>\\</span>right.",1], /*<span style='color:rgb(56,127,56);'>}</span> */ 
-<a id='x4-24131r7'></a>    <span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-24133r8'></a>  <span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-24135r9'></a><span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x4-24137r10'></a><span style='color:rgb(40,56,175);'>\catcode</span>`<span style='color:rgb(40,56,175);'>\#</span>=6 
-<a id='x4-24139r11'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-24141r12'></a><span style='color:rgb(40,56,175);'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb47'><a id='x4-24119r1'></a><span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml<span style='color:#388038;'>}</span> 
+<a id='x4-24121r2'></a><span style='color:#2938B0;'>\catcode</span>`<span style='color:#2938B0;'>\#</span>=11 
+<a id='x4-24123r3'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>MathJaxConfig<span style='color:#388038;'>}{{</span> 
+<a id='x4-24125r4'></a>    tex: <span style='color:#388038;'>{</span> 
+<a id='x4-24127r5'></a>      macros: <span style='color:#388038;'>{</span> 
+<a id='x4-24129r6'></a>      leftbracket: ["<span style='color:#2938B0;'>\\</span>left<span style='color:#2938B0;'>\\</span><span style='color:#388038;'>{</span>#1<span style='color:#2938B0;'>\\</span>right.",1], /*<span style='color:#388038;'>}</span> */ 
+<a id='x4-24131r7'></a>    <span style='color:#388038;'>}</span> 
+<a id='x4-24133r8'></a>  <span style='color:#388038;'>}</span> 
+<a id='x4-24135r9'></a><span style='color:#388038;'>}}</span> 
+<a id='x4-24137r10'></a><span style='color:#2938B0;'>\catcode</span>`<span style='color:#2938B0;'>\#</span>=6 
+<a id='x4-24139r11'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x4-24141r12'></a><span style='color:#2938B0;'>\EndPreamble</span></pre>
 
 </figure>   
 
@@ -337,29 +337,29 @@ modes:
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb48'><a id='x4-25009r1'></a><span style='color:rgb(40,56,175);'>\documentclass</span><span style='color:rgb(56,127,56);'>{</span>amsart<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-25011r2'></a><span style='color:rgb(40,56,175);'>\input</span><span style='color:rgb(56,127,56);'>{</span>mymacros<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-25013r3'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-25015r4'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>align*<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-25017r5'></a> p<span style='color:rgb(56,127,56);'>_{</span>i-1<span style='color:rgb(56,127,56);'>} &amp;</span>= -(p<span style='color:rgb(56,127,56);'>_{</span>i<span style='color:rgb(56,127,56);'>}</span>)' - <span style='color:rgb(40,56,175);'>\theta</span> p<span style='color:rgb(56,127,56);'>_</span>i  <span style='color:rgb(40,56,175);'>\myspace \text</span><span style='color:rgb(56,127,56);'>{</span>if<span style='color:rgb(56,127,56);'>} </span><span style='color:rgb(40,56,175);'>\hspace</span><span style='color:rgb(56,127,56);'>{</span>10pt<span style='color:rgb(56,127,56);'>}</span> i=n 
-<a id='x4-25019r6'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>align*<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-25021r7'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb48'><a id='x4-25009r1'></a><span style='color:#2938B0;'>\documentclass</span><span style='color:#388038;'>{</span>amsart<span style='color:#388038;'>}</span> 
+<a id='x4-25011r2'></a><span style='color:#2938B0;'>\input</span><span style='color:#388038;'>{</span>mymacros<span style='color:#388038;'>}</span> 
+<a id='x4-25013r3'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x4-25015r4'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>align*<span style='color:#388038;'>}</span> 
+<a id='x4-25017r5'></a> p<span style='color:#388038;'>_{</span>i-1<span style='color:#388038;'>} &amp;</span>= -(p<span style='color:#388038;'>_{</span>i<span style='color:#388038;'>}</span>)' - <span style='color:#2938B0;'>\theta</span> p<span style='color:#388038;'>_</span>i  <span style='color:#2938B0;'>\myspace \text</span><span style='color:#388038;'>{</span>if<span style='color:#388038;'>} </span><span style='color:#2938B0;'>\hspace</span><span style='color:#388038;'>{</span>10pt<span style='color:#388038;'>}</span> i=n 
+<a id='x4-25019r6'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>align*<span style='color:#388038;'>}</span> 
+<a id='x4-25021r7'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 127  --><p class='indent'>   This file includes the <code class='texttt'>mymmacros.tex</code>, which contains a definition of the <span class='textbf'><code class='texttt'>\myspace</code></span>
 command:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb49'><a id='x4-25024r1'></a><span style='color:rgb(40,56,175);'>\newcommand\myspace</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\quad</span><span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb49'><a id='x4-25024r1'></a><span style='color:#2938B0;'>\newcommand\myspace</span><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\quad</span><span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 133  --><p class='indent'>   This file can be included for MathJax using this configuration file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb50'><a id='x4-25030r1'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-25032r2'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>MathJaxMacros<span style='color:rgb(56,127,56);'>}{</span>mymacros.tex<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-25034r3'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-25036r4'></a><span style='color:rgb(40,56,175);'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb50'><a id='x4-25030r1'></a><span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml<span style='color:#388038;'>}</span> 
+<a id='x4-25032r2'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>MathJaxMacros<span style='color:#388038;'>}{</span>mymacros.tex<span style='color:#388038;'>}</span> 
+<a id='x4-25034r3'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x4-25036r4'></a><span style='color:#2938B0;'>\EndPreamble</span></pre>
 
 </figure>   
 
@@ -370,37 +370,37 @@ command, and you will also need to pass suitable configuration to MathJax. For
 example for the following TeX file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb51'><a id='x4-26013r1'></a><span style='color:rgb(40,56,175);'>\documentclass</span><span style='color:rgb(56,127,56);'>[12pt]{</span>book<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-26015r2'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>{</span>amsmath<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-26017r3'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>{</span>breqn<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb51'><a id='x4-26013r1'></a><span style='color:#2938B0;'>\documentclass</span><span style='color:#388038;'>[12pt]{</span>book<span style='color:#388038;'>}</span> 
+<a id='x4-26015r2'></a><span style='color:#2938B0;'>\usepackage</span><span style='color:#388038;'>{</span>amsmath<span style='color:#388038;'>}</span> 
+<a id='x4-26017r3'></a><span style='color:#2938B0;'>\usepackage</span><span style='color:#388038;'>{</span>breqn<span style='color:#388038;'>}</span> 
 <a id='x4-26019r4'></a> 
-<a id='x4-26021r5'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-26023r6'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>dgroup*<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-26025r7'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>dmath*<span style='color:rgb(56,127,56);'>}</span> 
+<a id='x4-26021r5'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x4-26023r6'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>dgroup*<span style='color:#388038;'>}</span> 
+<a id='x4-26025r7'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>dmath*<span style='color:#388038;'>}</span> 
 <a id='x4-26027r8'></a>     A = B 
-<a id='x4-26029r9'></a>   <span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>dmath*<span style='color:rgb(56,127,56);'>}     </span><span style='color:rgb(135,135,135);'><span class='textit'>%error is around here</span></span> 
-<a id='x4-26031r10'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>dgroup*<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-26033r11'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span></pre>
+<a id='x4-26029r9'></a>   <span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>dmath*<span style='color:#388038;'>}     </span><span style='color:#878787;'><span class='textit'>%error is around here</span></span> 
+<a id='x4-26031r10'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>dgroup*<span style='color:#388038;'>}</span> 
+<a id='x4-26033r11'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 165  --><p class='indent'>   Can be configured using this configuration file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb52'><a id='x4-26050r1'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-26052r2'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>MathJaxConfig<span style='color:rgb(56,127,56);'>}{{</span> 
-<a id='x4-26054r3'></a>    tex: <span style='color:rgb(56,127,56);'>{</span> 
+<pre class='fancyvrb' id='fancyvrb52'><a id='x4-26050r1'></a><span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml<span style='color:#388038;'>}</span> 
+<a id='x4-26052r2'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>MathJaxConfig<span style='color:#388038;'>}{{</span> 
+<a id='x4-26054r3'></a>    tex: <span style='color:#388038;'>{</span> 
 <a id='x4-26056r4'></a>      tags: "ams", 
-<a id='x4-26058r5'></a>      <span style='color:rgb(40,56,175);'>\detokenize</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
-<a id='x4-26060r6'></a>        environments: <span style='color:rgb(56,127,56);'>{</span> 
+<a id='x4-26058r5'></a>      <span style='color:#2938B0;'>\detokenize</span><span style='color:#388038;'>{</span><span style='color:#878787;'><span class='textit'>%</span></span> 
+<a id='x4-26060r6'></a>        environments: <span style='color:#388038;'>{</span> 
 <a id='x4-26062r7'></a>          "dgroup*": ["", ""], 
 <a id='x4-26064r8'></a>          "dmath*": ["", ""], 
-<a id='x4-26066r9'></a>        <span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-26068r10'></a>      <span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-26070r11'></a>    <span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-26072r12'></a><span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x4-26074r13'></a><span style='color:rgb(40,56,175);'>\VerbMath</span><span style='color:rgb(56,127,56);'>{</span>dgroup*<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-26076r14'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-26078r15'></a><span style='color:rgb(40,56,175);'>\EndPreamble</span></pre>
+<a id='x4-26066r9'></a>        <span style='color:#388038;'>}</span> 
+<a id='x4-26068r10'></a>      <span style='color:#388038;'>}</span> 
+<a id='x4-26070r11'></a>    <span style='color:#388038;'>}</span> 
+<a id='x4-26072r12'></a><span style='color:#388038;'>}}</span> 
+<a id='x4-26074r13'></a><span style='color:#2938B0;'>\VerbMath</span><span style='color:#388038;'>{</span>dgroup*<span style='color:#388038;'>}</span> 
+<a id='x4-26076r14'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x4-26078r15'></a><span style='color:#2938B0;'>\EndPreamble</span></pre>
 
 </figure>
 <!--  l. 185  --><p class='indent'>   The <span class='obeylines-h'><code class='verb'>\VerbMath</code></span> command can be used just for the <span class='obeylines-h'><code class='verb'>dgroup*</code></span> environment, as it will
@@ -420,12 +420,12 @@ For example, to restore them for any environment that uses TikZ, use this
 configuration file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb53'><a id='x4-27008r1'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-27010r2'></a><span style='color:rgb(40,56,175);'>\tikzset</span><span style='color:rgb(56,127,56);'>{</span>every picture/.append code=<span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\RestoreMathJaxEnvironments</span><span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x4-27012r3'></a><span style='color:rgb(135,135,135);'><span class='textit'>% you can also use LaTeX hooks:</span></span> 
-<a id='x4-27014r4'></a><span style='color:rgb(40,56,175);'>\AddToHook</span><span style='color:rgb(56,127,56);'>{</span>env/foopicture/begin<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\RestoreMathJaxEnvironments</span><span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-27016r5'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-27018r6'></a><span style='color:rgb(40,56,175);'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb53'><a id='x4-27008r1'></a><span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml<span style='color:#388038;'>}</span> 
+<a id='x4-27010r2'></a><span style='color:#2938B0;'>\tikzset</span><span style='color:#388038;'>{</span>every picture/.append code=<span style='color:#388038;'>{</span><span style='color:#2938B0;'>\RestoreMathJaxEnvironments</span><span style='color:#388038;'>}}</span> 
+<a id='x4-27012r3'></a><span style='color:#878787;'><span class='textit'>% you can also use LaTeX hooks:</span></span> 
+<a id='x4-27014r4'></a><span style='color:#2938B0;'>\AddToHook</span><span style='color:#388038;'>{</span>env/foopicture/begin<span style='color:#388038;'>}{</span><span style='color:#2938B0;'>\RestoreMathJaxEnvironments</span><span style='color:#388038;'>}</span> 
+<a id='x4-27016r5'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x4-27018r6'></a><span style='color:#2938B0;'>\EndPreamble</span></pre>
 
 </figure>   
 
@@ -436,7 +436,7 @@ MathML in web browsers is not great, so it usually better to load it together wi
 MathJax, using the <span class='emph'>mathml,mathjax</span> options:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb54'><a id='x4-28003r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>foo.tex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"mathml,mathjax"</span></pre>
+<pre class='fancyvrb' id='fancyvrb54'><a id='x4-28003r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>foo.tex<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"mathml,mathjax"</span></pre>
 
 </figure>
 <!--  l. 129  --><p class='indent'>   The advantage over MathJax’s LaTeX mode is that <code class='texttt'>TeX4ht</code> expands
@@ -452,7 +452,7 @@ this is that you need to use a correct grouping for content that should be affec
 these operators. For example, instead of
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb55'><a id='x4-29003r1'></a><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(56,127,56);'>A_</span><span style='color:rgb(175,63,63);'>\mathit</span><span style='color:rgb(56,127,56);'>{...}</span><span style='color:rgb(183,56,56);'>$</span></pre>
+<pre class='fancyvrb' id='fancyvrb55'><a id='x4-29003r1'></a><span style='color:#B83838;'>$</span><span style='color:#388038;'>A_</span><span style='color:#B04040;'>\mathit</span><span style='color:#388038;'>{...}</span><span style='color:#B83838;'>$</span></pre>
 
 </figure>
 <!--  l. 15  --><p class='indent'>   use the following, with added group around the <code class='texttt'>\mathit</code> command:
@@ -461,7 +461,7 @@ these operators. For example, instead of
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb56'><a id='x4-29006r1'></a><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(56,127,56);'>A_{</span><span style='color:rgb(175,63,63);'>\mathit</span><span style='color:rgb(56,127,56);'>{...}}</span><span style='color:rgb(183,56,56);'>$</span></pre>
+<pre class='fancyvrb' id='fancyvrb56'><a id='x4-29006r1'></a><span style='color:#B83838;'>$</span><span style='color:#388038;'>A_{</span><span style='color:#B04040;'>\mathit</span><span style='color:#388038;'>{...}}</span><span style='color:#B83838;'>$</span></pre>
 
 </figure>
 <!--  l. 21  --><p class='indent'>   If you define custom commands in the document preamble, use <code class='texttt'>\sp</code> and <code class='texttt'>\sb</code>
@@ -469,13 +469,13 @@ instead of <code class='texttt'>^</code> and <code class='texttt'>_</code>.
 </p><!--  l. 24  --><p class='indent'>   For example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb57'><a id='x4-29009r1'></a><span style='color:rgb(40,56,175);'>\newcommand \coeffX</span> [4][X]<span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\mathbf</span><span style='color:rgb(56,127,56);'>{</span>#1<span style='color:rgb(56,127,56);'>}_{{</span>#2<span style='color:rgb(56,127,56);'>}</span>,<span style='color:rgb(56,127,56);'>{</span>#3<span style='color:rgb(56,127,56);'>}}</span>(#4)<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb57'><a id='x4-29009r1'></a><span style='color:#2938B0;'>\newcommand \coeffX</span> [4][X]<span style='color:#388038;'>{</span><span style='color:#2938B0;'>\mathbf</span><span style='color:#388038;'>{</span>#1<span style='color:#388038;'>}_{{</span>#2<span style='color:#388038;'>}</span>,<span style='color:#388038;'>{</span>#3<span style='color:#388038;'>}}</span>(#4)<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 30  --><p class='indent'>   should become:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb58'><a id='x4-29012r1'></a><span style='color:rgb(40,56,175);'>\newcommand\coeffX</span> [4][X]<span style='color:rgb(56,127,56);'>{{</span><span style='color:rgb(40,56,175);'>\mathbf</span><span style='color:rgb(56,127,56);'>{</span>#1<span style='color:rgb(56,127,56);'>}}</span><span style='color:rgb(40,56,175);'>\sb</span><span style='color:rgb(56,127,56);'>{</span>#2,#3<span style='color:rgb(56,127,56);'>}</span>(#4)<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb58'><a id='x4-29012r1'></a><span style='color:#2938B0;'>\newcommand\coeffX</span> [4][X]<span style='color:#388038;'>{{</span><span style='color:#2938B0;'>\mathbf</span><span style='color:#388038;'>{</span>#1<span style='color:#388038;'>}}</span><span style='color:#2938B0;'>\sb</span><span style='color:#388038;'>{</span>#2,#3<span style='color:#388038;'>}</span>(#4)<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 36  --><p class='indent'>   Sometimes, it is not possible to change the source files. In this situation, you can
@@ -484,39 +484,39 @@ and then pipes the modified output to <code class='texttt'>make4ht</code>.
 </p><!--  l. 40  --><p class='indent'>   For example, you may want to change this input:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb59'><a id='x4-29015r1'></a><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(56,127,56);'>k'^</span><span style='color:rgb(68,68,68);'>4</span><span style='color:rgb(56,127,56);'>_{i}</span><span style='color:rgb(183,56,56);'>$</span></pre>
+<pre class='fancyvrb' id='fancyvrb59'><a id='x4-29015r1'></a><span style='color:#B83838;'>$</span><span style='color:#388038;'>k'^</span><span style='color:#454545;'>4</span><span style='color:#388038;'>_{i}</span><span style='color:#B83838;'>$</span></pre>
 
 </figure>
 <!--  l. 46  --><p class='indent'>   to the correct form:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb60'><a id='x4-29018r1'></a><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(56,127,56);'>k^{</span><span style='color:rgb(175,63,63);'>\prime</span><span style='color:rgb(56,127,56);'> </span><span style='color:rgb(68,68,68);'>4</span><span style='color:rgb(56,127,56);'>}_{i}</span><span style='color:rgb(183,56,56);'>$</span></pre>
+<pre class='fancyvrb' id='fancyvrb60'><a id='x4-29018r1'></a><span style='color:#B83838;'>$</span><span style='color:#388038;'>k^{</span><span style='color:#B04040;'>\prime</span><span style='color:#388038;'> </span><span style='color:#454545;'>4</span><span style='color:#388038;'>}_{i}</span><span style='color:#B83838;'>$</span></pre>
 
 </figure>
 <!--  l. 52  --><p class='indent'>   This, and other common issues, can be done using the following Lua
 script:
 </p>   
 <figure class='luasource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb61'><a id='x4-29033r1'></a><span style='color:rgb(40,56,175);'>for</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(175,63,63);'>line</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(40,56,175);'>in</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(56,127,56);'>io.lines</span><span style='color:rgb(135,135,135);'>()</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(40,56,175);'>do</span> 
-<a id='x4-29035r2'></a><span style='color:rgb(168,142,40);'>  </span><span style='color:rgb(135,135,135);'><span class='textit'>-- fix primes</span></span> 
-<a id='x4-29037r3'></a><span style='color:rgb(168,142,40);'>  </span><span style='color:rgb(175,63,63);'>line</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(175,63,63);'>line</span><span style='color:rgb(135,135,135);'>:</span><span style='color:rgb(119,89,63);'>gsub</span><span style='color:rgb(135,135,135);'>([[</span><span style='color:rgb(101,101,101);'>%</span><span style='color:rgb(183,56,56);'>'%^(.-)%_]], [[^{</span><span class='colorbox' id='colorbox1'>\</span><span style='color:rgb(183,56,56);'>prime %1}_]])</span> 
-<a id='x4-29039r4'></a><span style='color:rgb(183,56,56);'>  -- fix </span><span class='colorbox' id='colorbox2'>\</span><span style='color:rgb(183,56,56);'>mathrm{hello}^2</span> 
-<a id='x4-29041r5'></a><span style='color:rgb(183,56,56);'>  line = line:gsub([[(</span><span class='colorbox' id='colorbox3'>\</span><span style='color:rgb(183,56,56);'>[a-zA-Z]-)(%b{})([%^%_])]], [[{%1%2}%3]])</span> 
-<a id='x4-29043r6'></a><span style='color:rgb(183,56,56);'>  -- fix x_</span><span class='colorbox' id='colorbox4'>\</span><span style='color:rgb(183,56,56);'>mathrm{hello}</span> 
-<a id='x4-29045r7'></a><span style='color:rgb(183,56,56);'>  line = line:gsub([[([%_%^])(</span><span class='colorbox' id='colorbox5'>\</span><span style='color:rgb(183,56,56);'>[a-zA-Z]-)(%b{})]], "%1{%2%3}")</span> 
-<a id='x4-29047r8'></a><span style='color:rgb(183,56,56);'>  -- fix 10^2</span> 
-<a id='x4-29049r9'></a><span style='color:rgb(183,56,56);'>  line = line:gsub("([%d])([%_%^])", "{%1}%2")</span> 
-<a id='x4-29051r10'></a><span style='color:rgb(183,56,56);'>  -- fix {}_x</span> 
-<a id='x4-29053r11'></a><span style='color:rgb(183,56,56);'>  line = line:gsub("{}([%_%^])", "{</span><span style='color:rgb(112,142,48);'>\\</span><span style='color:rgb(183,56,56);'>HCode{}}%1")</span> 
-<a id='x4-29055r12'></a><span style='color:rgb(183,56,56);'>  print(line)</span> 
-<a id='x4-29057r13'></a><span style='color:rgb(183,56,56);'>end</span></pre>
+<pre class='fancyvrb' id='fancyvrb61'><a id='x4-29033r1'></a><span style='color:#2938B0;'>for</span><span style='color:#A88F29;'> </span><span style='color:#B04040;'>line</span><span style='color:#A88F29;'> </span><span style='color:#2938B0;'>in</span><span style='color:#A88F29;'> </span><span style='color:#388038;'>io.lines</span><span style='color:#878787;'>()</span><span style='color:#A88F29;'> </span><span style='color:#2938B0;'>do</span> 
+<a id='x4-29035r2'></a><span style='color:#A88F29;'>  </span><span style='color:#878787;'><span class='textit'>-- fix primes</span></span> 
+<a id='x4-29037r3'></a><span style='color:#A88F29;'>  </span><span style='color:#B04040;'>line</span><span style='color:#A88F29;'> </span><span style='color:#666666;'>=</span><span style='color:#A88F29;'> </span><span style='color:#B04040;'>line</span><span style='color:#878787;'>:</span><span style='color:#785940;'>gsub</span><span style='color:#878787;'>([[</span><span style='color:#666666;'>%</span><span style='color:#B83838;'>'%^(.-)%_]], [[^{</span><span class='colorbox' id='colorbox1'>\</span><span style='color:#B83838;'>prime %1}_]])</span> 
+<a id='x4-29039r4'></a><span style='color:#B83838;'>  -- fix </span><span class='colorbox' id='colorbox2'>\</span><span style='color:#B83838;'>mathrm{hello}^2</span> 
+<a id='x4-29041r5'></a><span style='color:#B83838;'>  line = line:gsub([[(</span><span class='colorbox' id='colorbox3'>\</span><span style='color:#B83838;'>[a-zA-Z]-)(%b{})([%^%_])]], [[{%1%2}%3]])</span> 
+<a id='x4-29043r6'></a><span style='color:#B83838;'>  -- fix x_</span><span class='colorbox' id='colorbox4'>\</span><span style='color:#B83838;'>mathrm{hello}</span> 
+<a id='x4-29045r7'></a><span style='color:#B83838;'>  line = line:gsub([[([%_%^])(</span><span class='colorbox' id='colorbox5'>\</span><span style='color:#B83838;'>[a-zA-Z]-)(%b{})]], "%1{%2%3}")</span> 
+<a id='x4-29047r8'></a><span style='color:#B83838;'>  -- fix 10^2</span> 
+<a id='x4-29049r9'></a><span style='color:#B83838;'>  line = line:gsub("([%d])([%_%^])", "{%1}%2")</span> 
+<a id='x4-29051r10'></a><span style='color:#B83838;'>  -- fix {}_x</span> 
+<a id='x4-29053r11'></a><span style='color:#B83838;'>  line = line:gsub("{}([%_%^])", "{</span><span style='color:#708F30;'>\\</span><span style='color:#B83838;'>HCode{}}%1")</span> 
+<a id='x4-29055r12'></a><span style='color:#B83838;'>  print(line)</span> 
+<a id='x4-29057r13'></a><span style='color:#B83838;'>end</span></pre>
 
 </figure>
 <!--  l. 70  --><p class='indent'>   It uses Lua version of regular expressions to find the code we want to fix. The
 command to execute it could be:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb62'><a id='x4-29060r1'></a>texlua<span style='color:rgb(168,142,40);'> </span>filter.lua<span style='color:rgb(168,142,40);'> </span>&lt;<span style='color:rgb(168,142,40);'> </span>sample.tex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(135,135,135);'>|</span><span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-j<span style='color:rgb(168,142,40);'> </span>sample<span style='color:rgb(168,142,40);'> </span>-<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"mathml,mathjax"</span></pre>
+<pre class='fancyvrb' id='fancyvrb62'><a id='x4-29060r1'></a>texlua<span style='color:#A88F29;'> </span>filter.lua<span style='color:#A88F29;'> </span>&lt;<span style='color:#A88F29;'> </span>sample.tex<span style='color:#A88F29;'> </span><span style='color:#878787;'>|</span><span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-j<span style='color:#A88F29;'> </span>sample<span style='color:#A88F29;'> </span>-<span style='color:#A88F29;'> </span><span style='color:#B83838;'>"mathml,mathjax"</span></pre>
                                                                   
 
                                                                   
@@ -547,7 +547,7 @@ Graphics uses a <span class='obeylines-h'><code class='verb'>.xbb</code></span> 
 command:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb63'><a id='x4-33003r1'></a>ebb<span style='color:rgb(168,142,40);'> </span>-x<span style='color:rgb(168,142,40);'> </span>*.jpg</pre>
+<pre class='fancyvrb' id='fancyvrb63'><a id='x4-33003r1'></a>ebb<span style='color:#A88F29;'> </span>-x<span style='color:#A88F29;'> </span>*.jpg</pre>
 
 </figure>
 <!--  l. 15  --><p class='indent'>   Run analogous command for every other supported image format you
@@ -564,15 +564,15 @@ to the original page width. Thanks to the LaTeX 3 project, we can use the <code 
 package to calculate the image dimensions in percents.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb64'><a id='x4-34011r1'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-34013r2'></a><span style='color:rgb(40,56,175);'>\makeatletter</span> 
-<a id='x4-34015r3'></a><span style='color:rgb(40,56,175);'>\ExplSyntaxOn</span> 
-<a id='x4-34017r4'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>Gin-dim<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-34019r5'></a><span style='color:rgb(56,127,56);'>{</span>style="width:<span style='color:rgb(40,56,175);'>\fp_eval:n</span><span style='color:rgb(56,127,56);'>{</span>round(<span style='color:rgb(40,56,175);'>\Gin@req@width</span>/<span style='color:rgb(40,56,175);'>\textwidth*</span>100,2)<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\char_generate:nn </span><span style='color:rgb(56,127,56);'>{</span> `<span style='color:rgb(40,56,175);'>\% </span><span style='color:rgb(56,127,56);'>} {</span> 12 <span style='color:rgb(56,127,56);'>}</span>"<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-34021r6'></a><span style='color:rgb(40,56,175);'>\ExplSyntaxOff</span> 
-<a id='x4-34023r7'></a><span style='color:rgb(40,56,175);'>\makeatother</span> 
-<a id='x4-34025r8'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-34027r9'></a><span style='color:rgb(40,56,175);'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb64'><a id='x4-34011r1'></a><span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml<span style='color:#388038;'>}</span> 
+<a id='x4-34013r2'></a><span style='color:#2938B0;'>\makeatletter</span> 
+<a id='x4-34015r3'></a><span style='color:#2938B0;'>\ExplSyntaxOn</span> 
+<a id='x4-34017r4'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>Gin-dim<span style='color:#388038;'>}</span> 
+<a id='x4-34019r5'></a><span style='color:#388038;'>{</span>style="width:<span style='color:#2938B0;'>\fp_eval:n</span><span style='color:#388038;'>{</span>round(<span style='color:#2938B0;'>\Gin@req@width</span>/<span style='color:#2938B0;'>\textwidth*</span>100,2)<span style='color:#388038;'>}</span><span style='color:#2938B0;'>\char_generate:nn </span><span style='color:#388038;'>{</span> `<span style='color:#2938B0;'>\% </span><span style='color:#388038;'>} {</span> 12 <span style='color:#388038;'>}</span>"<span style='color:#388038;'>}</span> 
+<a id='x4-34021r6'></a><span style='color:#2938B0;'>\ExplSyntaxOff</span> 
+<a id='x4-34023r7'></a><span style='color:#2938B0;'>\makeatother</span> 
+<a id='x4-34025r8'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x4-34027r9'></a><span style='color:#2938B0;'>\EndPreamble</span></pre>
 
 </figure>
 <!--  l. 36  --><p class='indent'>   In this configuration, we divide the image width passed to <code class='texttt'>\includegraphics</code> by
@@ -586,13 +586,13 @@ option.
 </p><!--  l. 45  --><p class='indent'>   The following example code:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb65'><a id='x4-34030r1'></a><span style='color:rgb(40,56,175);'>\includegraphics</span><span style='color:rgb(56,127,56);'>[width=0.5\textwidth]{</span>example-image.png<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb65'><a id='x4-34030r1'></a><span style='color:#2938B0;'>\includegraphics</span><span style='color:#388038;'>[width=0.5\textwidth]{</span>example-image.png<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 51  --><p class='indent'>   produces following HTML code:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb66'><a id='x4-34033r1'></a><span style='color:rgb(135,135,135);'>&lt;</span><span style='color:rgb(40,56,175);'>img </span><span style='color:rgb(56,127,56);'>style</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'width:50%' </span><span style='color:rgb(56,127,56);'>alt</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'PIC' </span><span style='color:rgb(56,127,56);'>src</span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(183,56,56);'>'example-image.png' </span><span style='color:rgb(135,135,135);'>/&gt;</span></pre>
+<pre class='fancyvrb' id='fancyvrb66'><a id='x4-34033r1'></a><span style='color:#878787;'>&lt;</span><span style='color:#2938B0;'>img </span><span style='color:#388038;'>style</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>'width:50%' </span><span style='color:#388038;'>alt</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>'PIC' </span><span style='color:#388038;'>src</span><span style='color:#666666;'>=</span><span style='color:#B83838;'>'example-image.png' </span><span style='color:#878787;'>/&gt;</span></pre>
 
 </figure>
 <!--  l. 57  --><p class='indent'>   You can also require the above method using the <span class='emph'>Gin-percent</span> option.
@@ -600,14 +600,14 @@ option.
 following configuration:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb67'><a id='x4-34043r1'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-34045r2'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>Gin-dim<span style='color:rgb(56,127,56);'>}{}</span> 
-<a id='x4-34047r3'></a><span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>img <span style='color:rgb(56,127,56);'>{</span> 
-<a id='x4-34049r4'></a>    max-width: 100<span style='color:rgb(40,56,175);'>\%</span>; 
+<pre class='fancyvrb' id='fancyvrb67'><a id='x4-34043r1'></a><span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml<span style='color:#388038;'>}</span> 
+<a id='x4-34045r2'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>Gin-dim<span style='color:#388038;'>}{}</span> 
+<a id='x4-34047r3'></a><span style='color:#2938B0;'>\Css</span><span style='color:#388038;'>{</span>img <span style='color:#388038;'>{</span> 
+<a id='x4-34049r4'></a>    max-width: 100<span style='color:#2938B0;'>\%</span>; 
 <a id='x4-34051r5'></a>    height: auto; 
-<a id='x4-34053r6'></a><span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x4-34055r7'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-34057r8'></a><span style='color:rgb(40,56,175);'>\EndPreamble</span></pre>
+<a id='x4-34053r6'></a><span style='color:#388038;'>}}</span> 
+<a id='x4-34055r7'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x4-34057r8'></a><span style='color:#2938B0;'>\EndPreamble</span></pre>
 
 </figure>
 <!--  l. 74  --><p class='indent'>   This configuration uses CSS to set the maximum image dimension. This ensures
@@ -627,32 +627,32 @@ command. The attribute is named <code class='texttt'>alt</code>. Here is a sampl
 that:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb68'><a id='x4-35002r1'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\documentclass</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>article</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}</span></span> 
-<a id='x4-35004r2'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\usepackage</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>graphicx</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}</span></span> 
-<a id='x4-35006r3'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\makeatletter</span></span> 
-<a id='x4-35008r4'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\define@key</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>alt</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}{}</span></span> 
-<a id='x4-35010r5'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\makeatother</span></span> 
-<a id='x4-35012r6'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\begin</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}</span></span> 
-<a id='x4-35014r7'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\includegraphics</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>[alt={alt tags, information}]</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>example-image</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}</span></span> 
-<a id='x4-35016r8'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\end</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb68'><a id='x4-35002r1'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\documentclass</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>article</span><span style='color:#388038;'><span class='rm-lmtt-10'>}</span></span> 
+<a id='x4-35004r2'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\usepackage</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>graphicx</span><span style='color:#388038;'><span class='rm-lmtt-10'>}</span></span> 
+<a id='x4-35006r3'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\makeatletter</span></span> 
+<a id='x4-35008r4'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\define@key</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin</span><span style='color:#388038;'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>alt</span><span style='color:#388038;'><span class='rm-lmtt-10'>}{}</span></span> 
+<a id='x4-35010r5'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\makeatother</span></span> 
+<a id='x4-35012r6'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\begin</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span style='color:#388038;'><span class='rm-lmtt-10'>}</span></span> 
+<a id='x4-35014r7'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\includegraphics</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>[alt={alt tags, information}]</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>example-image</span><span style='color:#388038;'><span class='rm-lmtt-10'>}</span></span> 
+<a id='x4-35016r8'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\end</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span style='color:#388038;'><span class='rm-lmtt-10'>}</span></span></pre>
 </figure>
 <!--  l. 91  --><p class='indent'>   The <code class='texttt'>\define@key{Gin}{alt}{}</code> command defines a dummy command that is
 used by regular LaTeX. We need to redefine this key for <code class='texttt'>TeX4ht</code>, so it uses the
 configuration that can specify the image alternative text, <code class='texttt'>GraphicsAlt</code>.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb69'><a id='x4-35018r1'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\Preamble</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>xhtml</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}</span></span> 
-<a id='x4-35020r2'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\makeatletter</span></span> 
-<a id='x4-35022r3'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\define@key</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>alt</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}{</span></span><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\Configure</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>GraphicsAlt</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>#1</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}}</span></span> 
-<a id='x4-35024r4'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\makeatother</span></span> 
-<a id='x4-35026r5'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\begin</span></span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>}</span></span> 
-<a id='x4-35028r6'></a><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>\EndPreamble</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb69'><a id='x4-35018r1'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\Preamble</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>xhtml</span><span style='color:#388038;'><span class='rm-lmtt-10'>}</span></span> 
+<a id='x4-35020r2'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\makeatletter</span></span> 
+<a id='x4-35022r3'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\define@key</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>Gin</span><span style='color:#388038;'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>alt</span><span style='color:#388038;'><span class='rm-lmtt-10'>}{</span></span><span style='color:#2938B0;'><span class='rm-lmtt-10'>\Configure</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>GraphicsAlt</span><span style='color:#388038;'><span class='rm-lmtt-10'>}{</span></span><span class='rm-lmtt-10'>#1</span><span style='color:#388038;'><span class='rm-lmtt-10'>}}</span></span> 
+<a id='x4-35024r4'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\makeatother</span></span> 
+<a id='x4-35026r5'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\begin</span></span><span style='color:#388038;'><span class='rm-lmtt-10'>{</span></span><span class='rm-lmtt-10'>document</span><span style='color:#388038;'><span class='rm-lmtt-10'>}</span></span> 
+<a id='x4-35028r6'></a><span style='color:#2938B0;'><span class='rm-lmtt-10'>\EndPreamble</span></span></pre>
 </figure>
 <!--  l. 97  --><p class='indent'>   The resulting HTML file now contains image with the <code class='texttt'>alt</code> attribute:
 </p>   
 <figure class='htmlsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb70'><a id='x4-35030r1'></a><span style='color:rgb(135,135,135);'><span class='textit'>&lt;!--  l. 7  --&gt;</span></span><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&lt;</span></span><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>p</span></span> <span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>class</span></span><span style='color:rgb(101,101,101);'><span class='rm-lmtt-10'>=</span></span><span style='color:rgb(183,56,56);'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&gt;&lt;</span></span><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>img</span></span> <span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>alt</span></span><span style='color:rgb(101,101,101);'><span class='rm-lmtt-10'>=</span></span><span style='color:rgb(183,56,56);'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>alt tags, information</span><span class='ts1-lmtt10-'>'</span></span> <span style='color:rgb(56,127,56);'><span class='rm-lmtt-10'>src</span></span><span style='color:rgb(101,101,101);'><span class='rm-lmtt-10'>=</span></span><span style='color:rgb(183,56,56);'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span> <span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>/&gt;</span></span> 
-<a id='x4-35032r2'></a><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&lt;/</span></span><span style='color:rgb(40,56,175);'><span class='rm-lmtt-10'>p</span></span><span style='color:rgb(135,135,135);'><span class='rm-lmtt-10'>&gt;</span></span></pre>
+<pre class='fancyvrb' id='fancyvrb70'><a id='x4-35030r1'></a><span style='color:#878787;'><span class='textit'>&lt;!--  l. 7  --&gt;</span></span><span style='color:#878787;'><span class='rm-lmtt-10'>&lt;</span></span><span style='color:#2938B0;'><span class='rm-lmtt-10'>p</span></span> <span style='color:#388038;'><span class='rm-lmtt-10'>class</span></span><span style='color:#666666;'><span class='rm-lmtt-10'>=</span></span><span style='color:#B83838;'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>noindent</span><span class='ts1-lmtt10-'>'</span></span><span style='color:#878787;'><span class='rm-lmtt-10'>&gt;&lt;</span></span><span style='color:#2938B0;'><span class='rm-lmtt-10'>img</span></span> <span style='color:#388038;'><span class='rm-lmtt-10'>alt</span></span><span style='color:#666666;'><span class='rm-lmtt-10'>=</span></span><span style='color:#B83838;'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>alt tags, information</span><span class='ts1-lmtt10-'>'</span></span> <span style='color:#388038;'><span class='rm-lmtt-10'>src</span></span><span style='color:#666666;'><span class='rm-lmtt-10'>=</span></span><span style='color:#B83838;'><span class='ts1-lmtt10-'>'</span><span class='rm-lmtt-10'>example-image.png</span><span class='ts1-lmtt10-'>'</span></span> <span style='color:#878787;'><span class='rm-lmtt-10'>/&gt;</span></span> 
+<a id='x4-35032r2'></a><span style='color:#878787;'><span class='rm-lmtt-10'>&lt;/</span></span><span style='color:#2938B0;'><span class='rm-lmtt-10'>p</span></span><span style='color:#878787;'><span class='rm-lmtt-10'>&gt;</span></span></pre>
 </figure>   
 
 <h3 class='sectionHead' id='plain-tex'><span class='titlemark'>3.4   </span> <a id='x4-360003.4'></a>Plain TeX</h3>
@@ -661,11 +661,11 @@ provide configurations to get good markup for your custom commands. You will als
 need to add few commands to your source file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb71'><a id='x4-36007r1'></a><span style='color:rgb(135,135,135);'><span class='textit'>%!TEX TS-program = tex</span></span> 
-<a id='x4-36009r2'></a><span style='color:rgb(40,56,175);'>\input</span> plain-4ht.tex 
-<a id='x4-36011r3'></a><span style='color:rgb(40,56,175);'>\document</span> 
+<pre class='fancyvrb' id='fancyvrb71'><a id='x4-36007r1'></a><span style='color:#878787;'><span class='textit'>%!TEX TS-program = tex</span></span> 
+<a id='x4-36009r2'></a><span style='color:#2938B0;'>\input</span> plain-4ht.tex 
+<a id='x4-36011r3'></a><span style='color:#2938B0;'>\document</span> 
 <a id='x4-36013r4'></a>Hello world 
-<a id='x4-36015r5'></a><span style='color:rgb(40,56,175);'>\enddocument</span></pre>
+<a id='x4-36015r5'></a><span style='color:#2938B0;'>\enddocument</span></pre>
 
 </figure>
 <!--  l. 13  --><p class='indent'>   The first line contains magic comment that tells <code class='texttt'>make4ht</code> to use Plain
@@ -678,11 +678,11 @@ commands are important, because they are crucial for correct execution of
 </p><!--  l. 17  --><p class='indent'>   They are declared in the <code class='texttt'>plain-4ht.tex</code> file:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb72'><a id='x4-36022r1'></a><span style='color:rgb(40,56,175);'>\def\documentstyle</span>#1<span style='color:rgb(56,127,56);'>{}</span> 
-<a id='x4-36024r2'></a><span style='color:rgb(40,56,175);'>\documentstyle</span><span style='color:rgb(56,127,56);'>{</span>tex4ht<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-36026r3'></a><span style='color:rgb(40,56,175);'>\csname</span> tex4ht<span style='color:rgb(40,56,175);'>\endcsname</span> 
-<a id='x4-36028r4'></a><span style='color:rgb(40,56,175);'>\def\document</span><span style='color:rgb(56,127,56);'>{}</span> 
-<a id='x4-36030r5'></a><span style='color:rgb(40,56,175);'>\def\enddocument</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\csname</span> bye<span style='color:rgb(40,56,175);'>\endcsname</span><span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb72'><a id='x4-36022r1'></a><span style='color:#2938B0;'>\def\documentstyle</span>#1<span style='color:#388038;'>{}</span> 
+<a id='x4-36024r2'></a><span style='color:#2938B0;'>\documentstyle</span><span style='color:#388038;'>{</span>tex4ht<span style='color:#388038;'>}</span> 
+<a id='x4-36026r3'></a><span style='color:#2938B0;'>\csname</span> tex4ht<span style='color:#2938B0;'>\endcsname</span> 
+<a id='x4-36028r4'></a><span style='color:#2938B0;'>\def\document</span><span style='color:#388038;'>{}</span> 
+<a id='x4-36030r5'></a><span style='color:#2938B0;'>\def\enddocument</span><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\csname</span> bye<span style='color:#2938B0;'>\endcsname</span><span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 27  --><p class='indent'>   In the PDF mode, these commands will do nothing, except for execution of the
@@ -690,7 +690,7 @@ commands are important, because they are crucial for correct execution of
 </p><!--  l. 29  --><p class='indent'>   The document can be compiled using:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb73'><a id='x4-36033r1'></a>make4ht<span style='color:rgb(168,142,40);'> </span>-f<span style='color:rgb(168,142,40);'> </span>html5+detect_engine<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb73'><a id='x4-36033r1'></a>make4ht<span style='color:#A88F29;'> </span>-f<span style='color:#A88F29;'> </span>html5+detect_engine<span style='color:#A88F29;'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 35  --><p class='indent'>   The <span class='obeylines-h'><code class='verb'>-f html5+detect_engine</code></span> requires the <span class='obeylines-h'><code class='verb'>detect_engine</code></span> extension, which uses
@@ -711,13 +711,13 @@ post-processing to make the indexing work correctly.
 </p><!--  l. 9  --><p class='indent'>   Here is a simple example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb74'><a id='x4-39009r1'></a><span style='color:rgb(40,56,175);'>\documentclass</span><span style='color:rgb(56,127,56);'>{</span>article<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-39011r2'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>{</span>makeidx<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-39013r3'></a><span style='color:rgb(40,56,175);'>\makeindex</span> 
-<a id='x4-39015r4'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-39017r5'></a>Hello<span style='color:rgb(40,56,175);'>\index</span><span style='color:rgb(56,127,56);'>{</span>hello<span style='color:rgb(56,127,56);'>}</span> world<span style='color:rgb(40,56,175);'>\index</span><span style='color:rgb(56,127,56);'>{</span>world<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-39019r6'></a><span style='color:rgb(40,56,175);'>\printindex</span> 
-<a id='x4-39021r7'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb74'><a id='x4-39009r1'></a><span style='color:#2938B0;'>\documentclass</span><span style='color:#388038;'>{</span>article<span style='color:#388038;'>}</span> 
+<a id='x4-39011r2'></a><span style='color:#2938B0;'>\usepackage</span><span style='color:#388038;'>{</span>makeidx<span style='color:#388038;'>}</span> 
+<a id='x4-39013r3'></a><span style='color:#2938B0;'>\makeindex</span> 
+<a id='x4-39015r4'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x4-39017r5'></a>Hello<span style='color:#2938B0;'>\index</span><span style='color:#388038;'>{</span>hello<span style='color:#388038;'>}</span> world<span style='color:#2938B0;'>\index</span><span style='color:#388038;'>{</span>world<span style='color:#388038;'>}</span> 
+<a id='x4-39019r6'></a><span style='color:#2938B0;'>\printindex</span> 
+<a id='x4-39021r7'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 21  --><p class='indent'>   This file can be compiled using the following build file, <code class='texttt'>build.lua</code>:
@@ -726,9 +726,9 @@ post-processing to make the indexing work correctly.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb75'><a id='x4-39026r1'></a><span style='color:rgb(175,63,63);'>Make</span><span style='color:rgb(135,135,135);'>:</span>htlatex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(135,135,135);'>{}</span> 
-<a id='x4-39028r2'></a><span style='color:rgb(175,63,63);'>Make</span><span style='color:rgb(135,135,135);'>:</span>makeindex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(135,135,135);'>{}</span> 
-<a id='x4-39030r3'></a><span style='color:rgb(175,63,63);'>Make</span><span style='color:rgb(135,135,135);'>:</span>htlatex<span style='color:rgb(135,135,135);'>{}</span></pre>
+<pre class='fancyvrb' id='fancyvrb75'><a id='x4-39026r1'></a><span style='color:#B04040;'>Make</span><span style='color:#878787;'>:</span>htlatex<span style='color:#A88F29;'> </span><span style='color:#878787;'>{}</span> 
+<a id='x4-39028r2'></a><span style='color:#B04040;'>Make</span><span style='color:#878787;'>:</span>makeindex<span style='color:#A88F29;'> </span><span style='color:#878787;'>{}</span> 
+<a id='x4-39030r3'></a><span style='color:#B04040;'>Make</span><span style='color:#878787;'>:</span>htlatex<span style='color:#878787;'>{}</span></pre>
 
 </figure>
 <!--  l. 29  --><p class='indent'>   You can use <span class='obeylines-h'><code class='verb'>Make:xindex</code></span> or <span class='obeylines-h'><code class='verb'>Make:xindy</code></span> in place of <span class='obeylines-h'><code class='verb'>Make:makeindex</code></span>.
@@ -738,32 +738,32 @@ produces unique number, and destination to the backlink from the index.
 example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb76'><a id='x4-39048r1'></a><span style='color:rgb(40,56,175);'>\documentclass</span><span style='color:rgb(56,127,56);'>{</span>book<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-39050r2'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>{</span>imakeidx<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-39052r3'></a><span style='color:rgb(40,56,175);'>\makeindex</span> 
-<a id='x4-39054r4'></a><span style='color:rgb(40,56,175);'>\makeindex</span><span style='color:rgb(56,127,56);'>[name=foo,title=Test]</span> 
+<pre class='fancyvrb' id='fancyvrb76'><a id='x4-39048r1'></a><span style='color:#2938B0;'>\documentclass</span><span style='color:#388038;'>{</span>book<span style='color:#388038;'>}</span> 
+<a id='x4-39050r2'></a><span style='color:#2938B0;'>\usepackage</span><span style='color:#388038;'>{</span>imakeidx<span style='color:#388038;'>}</span> 
+<a id='x4-39052r3'></a><span style='color:#2938B0;'>\makeindex</span> 
+<a id='x4-39054r4'></a><span style='color:#2938B0;'>\makeindex</span><span style='color:#388038;'>[name=foo,title=Test]</span> 
 <a id='x4-39056r5'></a> 
-<a id='x4-39058r6'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-39060r7'></a>Test1<span style='color:rgb(40,56,175);'>\index</span><span style='color:rgb(56,127,56);'>{</span>Test1<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-39062r8'></a>Test2<span style='color:rgb(40,56,175);'>\index</span><span style='color:rgb(56,127,56);'>[foo]{</span>Test2<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-39064r9'></a><span style='color:rgb(40,56,175);'>\newpage</span> 
-<a id='x4-39066r10'></a>Test3<span style='color:rgb(40,56,175);'>\index</span><span style='color:rgb(56,127,56);'>{</span>Test3<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x4-39068r11'></a>Test4<span style='color:rgb(40,56,175);'>\index</span><span style='color:rgb(56,127,56);'>[foo]{</span>Test4<span style='color:rgb(56,127,56);'>}</span>. 
-<a id='x4-39070r12'></a>And Test1<span style='color:rgb(40,56,175);'>\index</span><span style='color:rgb(56,127,56);'>{</span>Test1<span style='color:rgb(56,127,56);'>}</span> again. 
+<a id='x4-39058r6'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x4-39060r7'></a>Test1<span style='color:#2938B0;'>\index</span><span style='color:#388038;'>{</span>Test1<span style='color:#388038;'>}</span> 
+<a id='x4-39062r8'></a>Test2<span style='color:#2938B0;'>\index</span><span style='color:#388038;'>[foo]{</span>Test2<span style='color:#388038;'>}</span> 
+<a id='x4-39064r9'></a><span style='color:#2938B0;'>\newpage</span> 
+<a id='x4-39066r10'></a>Test3<span style='color:#2938B0;'>\index</span><span style='color:#388038;'>{</span>Test3<span style='color:#388038;'>}</span> 
+<a id='x4-39068r11'></a>Test4<span style='color:#2938B0;'>\index</span><span style='color:#388038;'>[foo]{</span>Test4<span style='color:#388038;'>}</span>. 
+<a id='x4-39070r12'></a>And Test1<span style='color:#2938B0;'>\index</span><span style='color:#388038;'>{</span>Test1<span style='color:#388038;'>}</span> again. 
 <a id='x4-39072r13'></a> 
-<a id='x4-39074r14'></a><span style='color:rgb(40,56,175);'>\printindex</span> 
-<a id='x4-39076r15'></a><span style='color:rgb(40,56,175);'>\printindex</span><span style='color:rgb(56,127,56);'>[foo]</span> 
-<a id='x4-39078r16'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span></pre>
+<a id='x4-39074r14'></a><span style='color:#2938B0;'>\printindex</span> 
+<a id='x4-39076r15'></a><span style='color:#2938B0;'>\printindex</span><span style='color:#388038;'>[foo]</span> 
+<a id='x4-39078r16'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 56  --><p class='indent'>   This example contains two indices. The <span class='obeylines-h'><code class='verb'>foo</code></span> index needs an extra indexing
 call:
 </p>   
 <figure class='luasource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb77'><a id='x4-39084r1'></a><span style='color:rgb(175,63,63);'>Make</span><span style='color:rgb(135,135,135);'>:</span>htlatex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(135,135,135);'>{}</span> 
-<a id='x4-39086r2'></a><span style='color:rgb(175,63,63);'>Make</span><span style='color:rgb(135,135,135);'>:</span>xindy<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(135,135,135);'>{}</span> 
-<a id='x4-39088r3'></a><span style='color:rgb(175,63,63);'>Make</span><span style='color:rgb(135,135,135);'>:</span>xindy<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(135,135,135);'>{</span><span style='color:rgb(175,63,63);'>idxfile</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(101,101,101);'>=</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(183,56,56);'>"foo.idx"</span><span style='color:rgb(135,135,135);'>}</span> 
-<a id='x4-39090r4'></a><span style='color:rgb(175,63,63);'>Make</span><span style='color:rgb(135,135,135);'>:</span>htlatex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(135,135,135);'>{}</span></pre>
+<pre class='fancyvrb' id='fancyvrb77'><a id='x4-39084r1'></a><span style='color:#B04040;'>Make</span><span style='color:#878787;'>:</span>htlatex<span style='color:#A88F29;'> </span><span style='color:#878787;'>{}</span> 
+<a id='x4-39086r2'></a><span style='color:#B04040;'>Make</span><span style='color:#878787;'>:</span>xindy<span style='color:#A88F29;'> </span><span style='color:#878787;'>{}</span> 
+<a id='x4-39088r3'></a><span style='color:#B04040;'>Make</span><span style='color:#878787;'>:</span>xindy<span style='color:#A88F29;'> </span><span style='color:#878787;'>{</span><span style='color:#B04040;'>idxfile</span><span style='color:#A88F29;'> </span><span style='color:#666666;'>=</span><span style='color:#A88F29;'> </span><span style='color:#B83838;'>"foo.idx"</span><span style='color:#878787;'>}</span> 
+<a id='x4-39090r4'></a><span style='color:#B04040;'>Make</span><span style='color:#878787;'>:</span>htlatex<span style='color:#A88F29;'> </span><span style='color:#878787;'>{}</span></pre>
 
 </figure>   
 
@@ -772,28 +772,28 @@ call:
 bibliography. The following build file is meant for use with BibLaTeX.
 </p>   
 <figure class='luasource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb78'><a id='x4-40010r1'></a><span style='color:rgb(40,56,175);'>if</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(175,63,63);'>mode</span><span style='color:rgb(101,101,101);'>==</span><span style='color:rgb(183,56,56);'>"draft"</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(40,56,175);'>then</span> 
-<a id='x4-40012r2'></a><span style='color:rgb(168,142,40);'>  </span><span style='color:rgb(175,63,63);'>Make</span><span style='color:rgb(135,135,135);'>:</span>htlatex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(135,135,135);'>{}</span> 
-<a id='x4-40014r3'></a><span style='color:rgb(40,56,175);'>else</span> 
-<a id='x4-40016r4'></a><span style='color:rgb(168,142,40);'>  </span><span style='color:rgb(175,63,63);'>Make</span><span style='color:rgb(135,135,135);'>:</span>htlatex<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(135,135,135);'>{}</span> 
-<a id='x4-40018r5'></a><span style='color:rgb(168,142,40);'>  </span><span style='color:rgb(175,63,63);'>Make</span><span style='color:rgb(135,135,135);'>:</span>biber<span style='color:rgb(168,142,40);'> </span><span style='color:rgb(135,135,135);'>{}</span> 
-<a id='x4-40020r6'></a><span style='color:rgb(168,142,40);'>  </span><span style='color:rgb(175,63,63);'>Make</span><span style='color:rgb(135,135,135);'>:</span>htlatex<span style='color:rgb(135,135,135);'>{}</span> 
-<a id='x4-40022r7'></a><span style='color:rgb(168,142,40);'>  </span><span style='color:rgb(175,63,63);'>Make</span><span style='color:rgb(135,135,135);'>:</span>htlatex<span style='color:rgb(135,135,135);'>{}</span> 
-<a id='x4-40024r8'></a><span style='color:rgb(40,56,175);'>end</span></pre>
+<pre class='fancyvrb' id='fancyvrb78'><a id='x4-40010r1'></a><span style='color:#2938B0;'>if</span><span style='color:#A88F29;'> </span><span style='color:#B04040;'>mode</span><span style='color:#666666;'>==</span><span style='color:#B83838;'>"draft"</span><span style='color:#A88F29;'> </span><span style='color:#2938B0;'>then</span> 
+<a id='x4-40012r2'></a><span style='color:#A88F29;'>  </span><span style='color:#B04040;'>Make</span><span style='color:#878787;'>:</span>htlatex<span style='color:#A88F29;'> </span><span style='color:#878787;'>{}</span> 
+<a id='x4-40014r3'></a><span style='color:#2938B0;'>else</span> 
+<a id='x4-40016r4'></a><span style='color:#A88F29;'>  </span><span style='color:#B04040;'>Make</span><span style='color:#878787;'>:</span>htlatex<span style='color:#A88F29;'> </span><span style='color:#878787;'>{}</span> 
+<a id='x4-40018r5'></a><span style='color:#A88F29;'>  </span><span style='color:#B04040;'>Make</span><span style='color:#878787;'>:</span>biber<span style='color:#A88F29;'> </span><span style='color:#878787;'>{}</span> 
+<a id='x4-40020r6'></a><span style='color:#A88F29;'>  </span><span style='color:#B04040;'>Make</span><span style='color:#878787;'>:</span>htlatex<span style='color:#878787;'>{}</span> 
+<a id='x4-40022r7'></a><span style='color:#A88F29;'>  </span><span style='color:#B04040;'>Make</span><span style='color:#878787;'>:</span>htlatex<span style='color:#878787;'>{}</span> 
+<a id='x4-40024r8'></a><span style='color:#2938B0;'>end</span></pre>
 
 </figure>
 <!--  l. 170  --><p class='indent'>   This build file also supports the <span class='obeylines-h'><code class='verb'>draft</code></span> mode for faster compilation. Use this
 command when you add a new citation:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb79'><a id='x4-40027r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb79'><a id='x4-40027r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>filename.tex</pre>
 
 </figure>
 <!--  l. 177  --><p class='indent'>   In other cases, when you just added normal text, you can compile the file faster
 using the draft mode:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb80'><a id='x4-40030r1'></a>$<span style='color:rgb(168,142,40);'> </span>make4ht<span style='color:rgb(168,142,40);'> </span>-m<span style='color:rgb(168,142,40);'> </span>draft<span style='color:rgb(168,142,40);'> </span>filename.tex</pre>
+<pre class='fancyvrb' id='fancyvrb80'><a id='x4-40030r1'></a>$<span style='color:#A88F29;'> </span>make4ht<span style='color:#A88F29;'> </span>-m<span style='color:#A88F29;'> </span>draft<span style='color:#A88F29;'> </span>filename.tex</pre>
 
 </figure>   
 

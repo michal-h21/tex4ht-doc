@@ -170,18 +170,18 @@ available resources before committing to work on private features.
 <code class='texttt'>make4ht</code>:
 </p>   
 <figure class='shellcommand' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb97'><a id='x8-58003r1'></a>make4ht<span style='color:rgb(168,142,40);'> </span>-c<span style='color:rgb(168,142,40);'> </span>mycfg.cfg<span style='color:rgb(168,142,40);'> </span>myfile</pre>
+<pre class='fancyvrb' id='fancyvrb97'><a id='x8-58003r1'></a>make4ht<span style='color:#A88F29;'> </span>-c<span style='color:#A88F29;'> </span>mycfg.cfg<span style='color:#A88F29;'> </span>myfile</pre>
 
 </figure>
 <!--  l. 25  --><p class='indent'>   A configuration file should take the following form for LaTeX files:
 </p>   
 <figure class='texsource' role='doc-example'>
 <pre class='fancyvrb' id='fancyvrb98'><a id='x8-58011r1'></a>...early definitions... 
-<a id='x8-58013r2'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml,options<span style='color:rgb(56,127,56);'>}</span> 
+<a id='x8-58013r2'></a><span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml,options<span style='color:#388038;'>}</span> 
 <a id='x8-58015r3'></a>...definitions... 
-<a id='x8-58017r4'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
+<a id='x8-58017r4'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
 <a id='x8-58019r5'></a>...insertions into the header of the html file... 
-<a id='x8-58021r6'></a><span style='color:rgb(40,56,175);'>\EndPreamble</span></pre>
+<a id='x8-58021r6'></a><span style='color:#2938B0;'>\EndPreamble</span></pre>
 
 </figure>
 <!--  l. 36  --><p class='indent'>   The <span class='textbf'><code class='texttt'>\Preamble</code></span> command should always use <span class='emph'>xhtml</span> as the first option. Otherwise,
@@ -190,10 +190,10 @@ available resources before committing to work on private features.
 options, see the <a href='texfourhtOptions.html#list-of-options'>List of options<!--  tex4ht:ref: sec:texfouhtoptions   --></a> section (<a href='texfourhtOptions.html#list-of-options'>6.1<!--  tex4ht:ref: sec:texfouhtoptions   --></a>).
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb99'><a id='x8-58027r1'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-58029r2'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-58031r3'></a>  <span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>body <span style='color:rgb(56,127,56);'>{</span> color : red; <span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-58033r4'></a><span style='color:rgb(40,56,175);'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb99'><a id='x8-58027r1'></a><span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml<span style='color:#388038;'>}</span> 
+<a id='x8-58029r2'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x8-58031r3'></a>  <span style='color:#2938B0;'>\Css</span><span style='color:#388038;'>{</span>body <span style='color:#388038;'>{</span> color : red; <span style='color:#388038;'>}}</span> 
+<a id='x8-58033r4'></a><span style='color:#2938B0;'>\EndPreamble</span></pre>
 
 </figure>   
 
@@ -214,11 +214,11 @@ different formats by different tools.
 <!--  l. 60  --><p class='noindent'>For instance, a definition of the form <code class='texttt'>\renewcommand\mycommand{...}</code>
 within a configuration file provided for the following LaTeX source:</p></li></ul>
 <figure class='texsource' role='doc-example'>   
-<pre class='fancyvrb' id='fancyvrb100'><a id='x8-59007r1'></a><span style='color:rgb(40,56,175);'>\documentclass</span><span style='color:rgb(56,127,56);'>{</span>...<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-59009r2'></a><span style='color:rgb(40,56,175);'>\newcommand\mycommand</span><span style='color:rgb(56,127,56);'>{</span>...<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-59011r3'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-59013r4'></a>Use <span style='color:rgb(40,56,175);'>\mycommand</span><span style='color:rgb(56,127,56);'>{</span>...<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-59015r5'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb100'><a id='x8-59007r1'></a><span style='color:#2938B0;'>\documentclass</span><span style='color:#388038;'>{</span>...<span style='color:#388038;'>}</span> 
+<a id='x8-59009r2'></a><span style='color:#2938B0;'>\newcommand\mycommand</span><span style='color:#388038;'>{</span>...<span style='color:#388038;'>}</span> 
+<a id='x8-59011r3'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x8-59013r4'></a>Use <span style='color:#2938B0;'>\mycommand</span><span style='color:#388038;'>{</span>...<span style='color:#388038;'>}</span> 
+<a id='x8-59015r5'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span></pre>
 
 </figure>   
 
@@ -233,21 +233,21 @@ command.
 </p><!--  l. 83  --><p class='indent'>   Sample package, <code class='texttt'>commonconfigurations.sty</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb101'><a id='x8-60008r1'></a><span style='color:rgb(40,56,175);'>\ProvidesPackage</span><span style='color:rgb(56,127,56);'>{</span>commonconfigurations<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-60010r2'></a><span style='color:rgb(40,56,175);'>\AtBeginDocument</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
-<a id='x8-60012r3'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>@HEAD<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-60014r4'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;meta name="test" content="test"/&gt;<span style='color:rgb(40,56,175);'>\Hnewline</span><span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-60016r5'></a><span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-60018r6'></a><span style='color:rgb(40,56,175);'>\endinput</span></pre>
+<pre class='fancyvrb' id='fancyvrb101'><a id='x8-60008r1'></a><span style='color:#2938B0;'>\ProvidesPackage</span><span style='color:#388038;'>{</span>commonconfigurations<span style='color:#388038;'>}</span> 
+<a id='x8-60010r2'></a><span style='color:#2938B0;'>\AtBeginDocument</span><span style='color:#388038;'>{</span><span style='color:#878787;'><span class='textit'>%</span></span> 
+<a id='x8-60012r3'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>@HEAD<span style='color:#388038;'>}</span> 
+<a id='x8-60014r4'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;meta name="test" content="test"/&gt;<span style='color:#2938B0;'>\Hnewline</span><span style='color:#388038;'>}}</span> 
+<a id='x8-60016r5'></a><span style='color:#388038;'>}</span> 
+<a id='x8-60018r6'></a><span style='color:#2938B0;'>\endinput</span></pre>
 
 </figure>
 <!--  l. 94  --><p class='indent'>   It can be requested in a configuration file using <span class='textbf'><code class='texttt'>\RequirePackage</code></span> command.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb102'><a id='x8-60024r1'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-60026r2'></a><span style='color:rgb(40,56,175);'>\RequirePackage</span><span style='color:rgb(56,127,56);'>{</span>commonconfigurations<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-60028r3'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-60030r4'></a><span style='color:rgb(40,56,175);'>\EndPreamble</span></pre>
+<pre class='fancyvrb' id='fancyvrb102'><a id='x8-60024r1'></a><span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml<span style='color:#388038;'>}</span> 
+<a id='x8-60026r2'></a><span style='color:#2938B0;'>\RequirePackage</span><span style='color:#388038;'>{</span>commonconfigurations<span style='color:#388038;'>}</span> 
+<a id='x8-60028r3'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x8-60030r4'></a><span style='color:#2938B0;'>\EndPreamble</span></pre>
 
 </figure>   
 
@@ -272,7 +272,7 @@ requesting line breaks, and the command <code class='texttt'>\#</code> may be us
 ‘#’.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb103'><a id='x8-63006r1'></a>First line<span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;br /&gt;<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb103'><a id='x8-63006r1'></a>First line<span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;br /&gt;<span style='color:#388038;'>}</span> 
 <a id='x8-63008r2'></a>second line 
 <a id='x8-63010r3'></a> 
 <a id='x8-63012r4'></a>You don't want to include tags directly into the document '&lt;br&gt;'.</pre>
@@ -296,10 +296,10 @@ compilation.
 <code class='texttt'>\Link</code> in this form:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb104'><a id='x8-64006r1'></a><span style='color:rgb(40,56,175);'>\chapter</span><span style='color:rgb(56,127,56);'>{</span>First<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-64008r2'></a><span style='color:rgb(40,56,175);'>\Link</span><span style='color:rgb(56,127,56);'>{</span>secondlink<span style='color:rgb(56,127,56);'>}{</span>firstlink<span style='color:rgb(56,127,56);'>}</span>Go to second chapter<span style='color:rgb(40,56,175);'>\EndLink</span> 
-<a id='x8-64010r3'></a><span style='color:rgb(40,56,175);'>\chapter</span><span style='color:rgb(56,127,56);'>{</span>Second<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-64012r4'></a><span style='color:rgb(40,56,175);'>\Link</span><span style='color:rgb(56,127,56);'>{</span>firstlink<span style='color:rgb(56,127,56);'>}{</span>secondlink<span style='color:rgb(56,127,56);'>}</span>Go to first chapter<span style='color:rgb(40,56,175);'>\EndLink</span></pre>
+<pre class='fancyvrb' id='fancyvrb104'><a id='x8-64006r1'></a><span style='color:#2938B0;'>\chapter</span><span style='color:#388038;'>{</span>First<span style='color:#388038;'>}</span> 
+<a id='x8-64008r2'></a><span style='color:#2938B0;'>\Link</span><span style='color:#388038;'>{</span>secondlink<span style='color:#388038;'>}{</span>firstlink<span style='color:#388038;'>}</span>Go to second chapter<span style='color:#2938B0;'>\EndLink</span> 
+<a id='x8-64010r3'></a><span style='color:#2938B0;'>\chapter</span><span style='color:#388038;'>{</span>Second<span style='color:#388038;'>}</span> 
+<a id='x8-64012r4'></a><span style='color:#2938B0;'>\Link</span><span style='color:#388038;'>{</span>firstlink<span style='color:#388038;'>}{</span>secondlink<span style='color:#388038;'>}</span>Go to first chapter<span style='color:#2938B0;'>\EndLink</span></pre>
                                                                   
 
                                                                   
@@ -326,12 +326,12 @@ parameters:
 <!--  l. 71  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb105'><a id='x8-64032r1'></a><span style='color:rgb(40,56,175);'>\LinkCommand\JSLink</span><span style='color:rgb(56,127,56);'>{</span>a,<span style='color:rgb(40,56,175);'>\noexpand\jsref</span>,name<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-64034r2'></a><span style='color:rgb(40,56,175);'>\def\jsref</span>="#1"<span style='color:rgb(56,127,56);'>{</span>href="javascript:window.open('#1')"<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb105'><a id='x8-64032r1'></a><span style='color:#2938B0;'>\LinkCommand\JSLink</span><span style='color:#388038;'>{</span>a,<span style='color:#2938B0;'>\noexpand\jsref</span>,name<span style='color:#388038;'>}</span> 
+<a id='x8-64034r2'></a><span style='color:#2938B0;'>\def\jsref</span>="#1"<span style='color:#388038;'>{</span>href="javascript:window.open('#1')"<span style='color:#388038;'>}</span> 
 <a id='x8-64036r3'></a> 
-<a id='x8-64038r4'></a><span style='color:rgb(135,135,135);'><span class='textit'>% example of use of the defined command:</span></span> 
-<a id='x8-64040r5'></a><span style='color:rgb(40,56,175);'>\JSLink</span><span style='color:rgb(56,127,56);'>{</span>a<span style='color:rgb(56,127,56);'>}{}</span>xx<span style='color:rgb(40,56,175);'>\EndJSLink </span><span style='color:rgb(135,135,135);'><span class='textit'>% link to a destination</span></span> 
-<a id='x8-64042r6'></a><span style='color:rgb(40,56,175);'>\Link</span><span style='color:rgb(56,127,56);'>{}{</span>a<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\EndLink       </span><span style='color:rgb(135,135,135);'><span class='textit'>% set link destination (or by \JSLink{}{a}\EndJSLink)</span></span></pre>
+<a id='x8-64038r4'></a><span style='color:#878787;'><span class='textit'>% example of use of the defined command:</span></span> 
+<a id='x8-64040r5'></a><span style='color:#2938B0;'>\JSLink</span><span style='color:#388038;'>{</span>a<span style='color:#388038;'>}{}</span>xx<span style='color:#2938B0;'>\EndJSLink </span><span style='color:#878787;'><span class='textit'>% link to a destination</span></span> 
+<a id='x8-64042r6'></a><span style='color:#2938B0;'>\Link</span><span style='color:#388038;'>{}{</span>a<span style='color:#388038;'>}</span><span style='color:#2938B0;'>\EndLink       </span><span style='color:#878787;'><span class='textit'>% set link destination (or by \JSLink{}{a}\EndJSLink)</span></span></pre>
 
 </figure>
 <!--  l. 82  --><p class='noindent'><code class='texttt'><span class='textbf'>\Tag</span></code>{<span class='textit'>label</span>}{<span class='textit'>content</span>}
@@ -389,12 +389,12 @@ after the inserted <code class='texttt'>&lt;div&gt;</code> tag. It is necessary 
 sometimes.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb106'><a id='x8-66008r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>@BODY<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-66010r2'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\ifvmode\IgnorePar\fi\EndP</span> 
-<a id='x8-66012r3'></a> <span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;div&gt;<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\par\ShowPar</span><span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-66014r4'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>@/BODY<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-66016r5'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\ifvmode\IgnorePar\fi\EndP</span> 
-<a id='x8-66018r6'></a> <span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/div&gt;<span style='color:rgb(56,127,56);'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb106'><a id='x8-66008r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>@BODY<span style='color:#388038;'>}</span> 
+<a id='x8-66010r2'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\ifvmode\IgnorePar\fi\EndP</span> 
+<a id='x8-66012r3'></a> <span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;div&gt;<span style='color:#388038;'>}</span><span style='color:#2938B0;'>\par\ShowPar</span><span style='color:#388038;'>}</span> 
+<a id='x8-66014r4'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>@/BODY<span style='color:#388038;'>}</span> 
+<a id='x8-66016r5'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\ifvmode\IgnorePar\fi\EndP</span> 
+<a id='x8-66018r6'></a> <span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;/div&gt;<span style='color:#388038;'>}}</span></pre>
 
 </figure>
 <!--  l. 159  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>HtmlPar</span>}{content at the start non-indented paragraphs}
@@ -404,11 +404,11 @@ indented paragraphs}</code>
 </p><!--  l. 161  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb107'><a id='x8-66025r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>HtmlPar<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-66027r2'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\EndP\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;p class="indent"&gt;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-66029r3'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\EndP\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;p class="noindent"&gt;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-66031r4'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/p&gt;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-66033r5'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/p&gt;<span style='color:rgb(56,127,56);'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb107'><a id='x8-66025r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>HtmlPar<span style='color:#388038;'>}</span> 
+<a id='x8-66027r2'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\EndP\HCode</span><span style='color:#388038;'>{</span>&lt;p class="indent"&gt;<span style='color:#388038;'>}}</span> 
+<a id='x8-66029r3'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\EndP\HCode</span><span style='color:#388038;'>{</span>&lt;p class="noindent"&gt;<span style='color:#388038;'>}}</span> 
+<a id='x8-66031r4'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;/p&gt;<span style='color:#388038;'>}}</span> 
+<a id='x8-66033r5'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;/p&gt;<span style='color:#388038;'>}}</span></pre>
 
 </figure>   
 
@@ -443,29 +443,29 @@ building blocks.
 </p><!--  l. 206  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb108'><a id='x8-67025r1'></a><span style='color:rgb(40,56,175);'>\NewLogicalBlock</span><span style='color:rgb(56,127,56);'>{</span>textit<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-67027r2'></a><span style='color:rgb(40,56,175);'>\SetBlockProperty</span><span style='color:rgb(56,127,56);'>{</span>textit<span style='color:rgb(56,127,56);'>}{</span>class<span style='color:rgb(56,127,56);'>}{</span>textit<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb108'><a id='x8-67025r1'></a><span style='color:#2938B0;'>\NewLogicalBlock</span><span style='color:#388038;'>{</span>textit<span style='color:#388038;'>}</span> 
+<a id='x8-67027r2'></a><span style='color:#2938B0;'>\SetBlockProperty</span><span style='color:#388038;'>{</span>textit<span style='color:#388038;'>}{</span>class<span style='color:#388038;'>}{</span>textit<span style='color:#388038;'>}</span> 
 <a id='x8-67029r3'></a> 
-<a id='x8-67031r4'></a><span style='color:rgb(40,56,175);'>\NewLogicalBlock</span><span style='color:rgb(56,127,56);'>{</span>maketitle<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-67033r5'></a><span style='color:rgb(40,56,175);'>\SetTag</span><span style='color:rgb(56,127,56);'>{</span>maketitle<span style='color:rgb(56,127,56);'>}{</span>header<span style='color:rgb(56,127,56);'>}</span> 
+<a id='x8-67031r4'></a><span style='color:#2938B0;'>\NewLogicalBlock</span><span style='color:#388038;'>{</span>maketitle<span style='color:#388038;'>}</span> 
+<a id='x8-67033r5'></a><span style='color:#2938B0;'>\SetTag</span><span style='color:#388038;'>{</span>maketitle<span style='color:#388038;'>}{</span>header<span style='color:#388038;'>}</span> 
 <a id='x8-67035r6'></a> 
-<a id='x8-67037r7'></a><span style='color:rgb(40,56,175);'>\NewLogicalBlock</span><span style='color:rgb(56,127,56);'>{</span>titlehead<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-67039r8'></a><span style='color:rgb(40,56,175);'>\SetTag</span><span style='color:rgb(56,127,56);'>{</span>titlehead<span style='color:rgb(56,127,56);'>}{</span>h1<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-67041r9'></a><span style='color:rgb(40,56,175);'>\SetBlockProperty</span><span style='color:rgb(56,127,56);'>{</span>titlehead<span style='color:rgb(56,127,56);'>}{</span>class<span style='color:rgb(56,127,56);'>}{</span>titleHead<span style='color:rgb(56,127,56);'>}</span> 
+<a id='x8-67037r7'></a><span style='color:#2938B0;'>\NewLogicalBlock</span><span style='color:#388038;'>{</span>titlehead<span style='color:#388038;'>}</span> 
+<a id='x8-67039r8'></a><span style='color:#2938B0;'>\SetTag</span><span style='color:#388038;'>{</span>titlehead<span style='color:#388038;'>}{</span>h1<span style='color:#388038;'>}</span> 
+<a id='x8-67041r9'></a><span style='color:#2938B0;'>\SetBlockProperty</span><span style='color:#388038;'>{</span>titlehead<span style='color:#388038;'>}{</span>class<span style='color:#388038;'>}{</span>titleHead<span style='color:#388038;'>}</span> 
 <a id='x8-67043r10'></a> 
-<a id='x8-67045r11'></a><span style='color:rgb(135,135,135);'><span class='textit'>% configure \textit using inline level elements</span></span> 
-<a id='x8-67047r12'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>textit<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-67049r13'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\NoFonts\InlineElementStart</span><span style='color:rgb(56,127,56);'>{</span>textit<span style='color:rgb(56,127,56);'>}{}}</span> 
-<a id='x8-67051r14'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\InlineElementEnd</span><span style='color:rgb(56,127,56);'>{</span>textit<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\EndNoFonts</span><span style='color:rgb(56,127,56);'>}</span> 
+<a id='x8-67045r11'></a><span style='color:#878787;'><span class='textit'>% configure \textit using inline level elements</span></span> 
+<a id='x8-67047r12'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>textit<span style='color:#388038;'>}</span> 
+<a id='x8-67049r13'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\NoFonts\InlineElementStart</span><span style='color:#388038;'>{</span>textit<span style='color:#388038;'>}{}}</span> 
+<a id='x8-67051r14'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\InlineElementEnd</span><span style='color:#388038;'>{</span>textit<span style='color:#388038;'>}</span><span style='color:#2938B0;'>\EndNoFonts</span><span style='color:#388038;'>}</span> 
 <a id='x8-67053r15'></a> 
-<a id='x8-67055r16'></a><span style='color:rgb(135,135,135);'><span class='textit'>% configure \maketitle using block level elements</span></span> 
-<a id='x8-67057r17'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>maketitle<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
-<a id='x8-67059r18'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>maketitle<span style='color:rgb(56,127,56);'>}{}{}{}{}</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
-<a id='x8-67061r19'></a><span style='color:rgb(40,56,175);'>\Tag</span><span style='color:rgb(56,127,56);'>{</span>TITLE+<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\@title</span><span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-67063r20'></a><span style='color:rgb(40,56,175);'>\BlockElementStart</span><span style='color:rgb(56,127,56);'>{</span>maketitle<span style='color:rgb(56,127,56);'>}{}}</span> 
-<a id='x8-67065r21'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\BlockElementEnd</span><span style='color:rgb(56,127,56);'>{</span>maketitle<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-67067r22'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\NoFonts\BlockElementStart</span><span style='color:rgb(56,127,56);'>{</span>titlehead<span style='color:rgb(56,127,56);'>}{}}</span> 
-<a id='x8-67069r23'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\BlockElementEnd</span><span style='color:rgb(56,127,56);'>{</span>titlehead<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\EndNoFonts</span><span style='color:rgb(56,127,56);'>}</span></pre>
+<a id='x8-67055r16'></a><span style='color:#878787;'><span class='textit'>% configure \maketitle using block level elements</span></span> 
+<a id='x8-67057r17'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>maketitle<span style='color:#388038;'>}{</span><span style='color:#878787;'><span class='textit'>%</span></span> 
+<a id='x8-67059r18'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>maketitle<span style='color:#388038;'>}{}{}{}{}</span><span style='color:#878787;'><span class='textit'>%</span></span> 
+<a id='x8-67061r19'></a><span style='color:#2938B0;'>\Tag</span><span style='color:#388038;'>{</span>TITLE+<span style='color:#388038;'>}{</span><span style='color:#2938B0;'>\@title</span><span style='color:#388038;'>}}</span> 
+<a id='x8-67063r20'></a><span style='color:#2938B0;'>\BlockElementStart</span><span style='color:#388038;'>{</span>maketitle<span style='color:#388038;'>}{}}</span> 
+<a id='x8-67065r21'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\BlockElementEnd</span><span style='color:#388038;'>{</span>maketitle<span style='color:#388038;'>}}</span> 
+<a id='x8-67067r22'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\NoFonts\BlockElementStart</span><span style='color:#388038;'>{</span>titlehead<span style='color:#388038;'>}{}}</span> 
+<a id='x8-67069r23'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\BlockElementEnd</span><span style='color:#388038;'>{</span>titlehead<span style='color:#388038;'>}</span><span style='color:#2938B0;'>\EndNoFonts</span><span style='color:#388038;'>}</span></pre>
 
 </figure>   
 
@@ -485,10 +485,10 @@ configurations.
 </p><!--  l. 17  --><p class='indent'>   Add local CSS file.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb109'><a id='x8-68006r1'></a><span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>body<span style='color:rgb(56,127,56);'>{</span>max-width:70ch;margin: 1rem auto;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-68008r2'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>AddCss<span style='color:rgb(56,127,56);'>}{</span>custom.css<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-68010r3'></a><span style='color:rgb(135,135,135);'><span class='textit'>% link to a CSS on some web:</span></span> 
-<a id='x8-68012r4'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>@HEAD<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;link type="text/css" rel="stylesheet" href="https://example.com/style.css" /&gt;<span style='color:rgb(56,127,56);'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb109'><a id='x8-68006r1'></a><span style='color:#2938B0;'>\Css</span><span style='color:#388038;'>{</span>body<span style='color:#388038;'>{</span>max-width:70ch;margin: 1rem auto;<span style='color:#388038;'>}}</span> 
+<a id='x8-68008r2'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>AddCss<span style='color:#388038;'>}{</span>custom.css<span style='color:#388038;'>}</span> 
+<a id='x8-68010r3'></a><span style='color:#878787;'><span class='textit'>% link to a CSS on some web:</span></span> 
+<a id='x8-68012r4'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>@HEAD<span style='color:#388038;'>}{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;link type="text/css" rel="stylesheet" href="https://example.com/style.css" /&gt;<span style='color:#388038;'>}}</span></pre>
 
 </figure>
 <!--  l. 26  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>CssMediaQueryStart</span>}{media type}{media query condition}
@@ -497,14 +497,14 @@ configurations.
 document. Everything between <span class='textbf'><code class='texttt'>\CssMediaQueryStart</code></span> and <span class='textbf'><code class='texttt'>\CssMediaQueryEnd</code></span> is
 wrapped inside a media query and is included in the output CSS accordingly.
 </p>     
-<dl class='description'><dt class='description'>
+<dl class='description'><dt class='description'><a id='x8-68013x7.4'></a>
 <span class='ec-lmbx-10'>media type</span> 
 </dt><dd class='description'>
 <!--  l. 34  --><p class='noindent'>(optional) The media type, such as screen, print, all, etc. If empty, only
 the media condition is used.
 </p>     
 </dd>
-<dt class='description'>
+<dt class='description'><a id='x8-68014x7.4'></a>
 <span class='ec-lmbx-10'>media query condition</span> 
 </dt><dd class='description'>
 <!--  l. 36  --><p class='noindent'>The condition for the media query, e.g., <code class='texttt'>max-width: 600px</code>.
@@ -513,21 +513,21 @@ the media condition is used.
 <!--  l. 41  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb110'><a id='x8-68019r1'></a><span style='color:rgb(40,56,175);'>\CssMediaQueryStart</span><span style='color:rgb(56,127,56);'>{</span>screen<span style='color:rgb(56,127,56);'>}{</span>max-width: 600px<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-68021r2'></a>  <span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>body <span style='color:rgb(56,127,56);'>{</span>background-color: lightblue;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-68023r3'></a>  <span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>h1 <span style='color:rgb(56,127,56);'>{</span>color: navy;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-68025r4'></a>  <span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>p <span style='color:rgb(56,127,56);'>{</span>font-size: 20px;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-68027r5'></a><span style='color:rgb(40,56,175);'>\CssMediaQueryEnd</span></pre>
+<pre class='fancyvrb' id='fancyvrb110'><a id='x8-68021r1'></a><span style='color:#2938B0;'>\CssMediaQueryStart</span><span style='color:#388038;'>{</span>screen<span style='color:#388038;'>}{</span>max-width: 600px<span style='color:#388038;'>}</span> 
+<a id='x8-68023r2'></a>  <span style='color:#2938B0;'>\Css</span><span style='color:#388038;'>{</span>body <span style='color:#388038;'>{</span>background-color: lightblue;<span style='color:#388038;'>}}</span> 
+<a id='x8-68025r3'></a>  <span style='color:#2938B0;'>\Css</span><span style='color:#388038;'>{</span>h1 <span style='color:#388038;'>{</span>color: navy;<span style='color:#388038;'>}}</span> 
+<a id='x8-68027r4'></a>  <span style='color:#2938B0;'>\Css</span><span style='color:#388038;'>{</span>p <span style='color:#388038;'>{</span>font-size: 20px;<span style='color:#388038;'>}}</span> 
+<a id='x8-68029r5'></a><span style='color:#2938B0;'>\CssMediaQueryEnd</span></pre>
 
 </figure>
 <!--  l. 52  --><p class='indent'>   This will produce:
 </p>   
 <figure class='csssource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb111'><a id='x8-68034r1'></a><span style='color:rgb(135,135,135);'>@</span><span style='color:rgb(40,56,175);'>media</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(40,56,175);'>screen</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(40,56,175);'>and</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(101,101,101);'>(</span><span style='color:rgb(40,56,175);'>max-width</span><span style='color:rgb(101,101,101);'>:</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(40,56,175);'>600px</span><span style='color:rgb(101,101,101);'>)</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(135,135,135);'>{</span> 
-<a id='x8-68036r2'></a><span style='color:rgb(168,142,40);'>  </span><span style='color:rgb(40,56,175);'>body</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(135,135,135);'>{</span><span style='color:rgb(40,56,175);'>background-color</span><span style='color:rgb(135,135,135);'>:</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(68,68,68);'><span class='textit'>lightblue</span></span><span style='color:rgb(135,135,135);'>;}</span> 
-<a id='x8-68038r3'></a><span style='color:rgb(168,142,40);'>  </span><span style='color:rgb(40,56,175);'>h1</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(135,135,135);'>{</span><span style='color:rgb(40,56,175);'>color</span><span style='color:rgb(135,135,135);'>:</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(68,68,68);'><span class='textit'>navy</span></span><span style='color:rgb(135,135,135);'>;}</span> 
-<a id='x8-68040r4'></a><span style='color:rgb(168,142,40);'>  </span><span style='color:rgb(40,56,175);'>p</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(135,135,135);'>{</span><span style='color:rgb(40,56,175);'>font-size</span><span style='color:rgb(135,135,135);'>:</span><span style='color:rgb(168,142,40);'> </span><span style='color:rgb(68,68,68);'>20</span><span style='color:rgb(40,56,175);'><span class='textit'>px</span></span><span style='color:rgb(135,135,135);'>;}</span> 
-<a id='x8-68042r5'></a><span style='color:rgb(135,135,135);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb111'><a id='x8-68036r1'></a><span style='color:#878787;'>@</span><span style='color:#2938B0;'>media</span><span style='color:#A88F29;'> </span><span style='color:#2938B0;'>screen</span><span style='color:#A88F29;'> </span><span style='color:#2938B0;'>and</span><span style='color:#A88F29;'> </span><span style='color:#666666;'>(</span><span style='color:#2938B0;'>max-width</span><span style='color:#666666;'>:</span><span style='color:#A88F29;'> </span><span style='color:#2938B0;'>600px</span><span style='color:#666666;'>)</span><span style='color:#A88F29;'> </span><span style='color:#878787;'>{</span> 
+<a id='x8-68038r2'></a><span style='color:#A88F29;'>  </span><span style='color:#2938B0;'>body</span><span style='color:#A88F29;'> </span><span style='color:#878787;'>{</span><span style='color:#2938B0;'>background-color</span><span style='color:#878787;'>:</span><span style='color:#A88F29;'> </span><span style='color:#454545;'><span class='textit'>lightblue</span></span><span style='color:#878787;'>;}</span> 
+<a id='x8-68040r3'></a><span style='color:#A88F29;'>  </span><span style='color:#2938B0;'>h1</span><span style='color:#A88F29;'> </span><span style='color:#878787;'>{</span><span style='color:#2938B0;'>color</span><span style='color:#878787;'>:</span><span style='color:#A88F29;'> </span><span style='color:#454545;'><span class='textit'>navy</span></span><span style='color:#878787;'>;}</span> 
+<a id='x8-68042r4'></a><span style='color:#A88F29;'>  </span><span style='color:#2938B0;'>p</span><span style='color:#A88F29;'> </span><span style='color:#878787;'>{</span><span style='color:#2938B0;'>font-size</span><span style='color:#878787;'>:</span><span style='color:#A88F29;'> </span><span style='color:#454545;'>20</span><span style='color:#2938B0;'><span class='textit'>px</span></span><span style='color:#878787;'>;}</span> 
+<a id='x8-68044r5'></a><span style='color:#878787;'>}</span></pre>
 
 </figure>     
 <ul class='itemize1'>
@@ -549,15 +549,15 @@ The alternative file consists of the code loaded from listed files, and of the c
 explicitly specified in its body.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb112'><a id='x8-68053r1'></a><span style='color:rgb(40,56,175);'>\ConfigureList</span><span style='color:rgb(56,127,56);'>{</span>mylist<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-68055r2'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;div class="mylist"&gt;<span style='color:rgb(56,127,56);'>}} {</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/div&gt;<span style='color:rgb(56,127,56);'>}} {</span>* <span style='color:rgb(56,127,56);'>}{}</span> 
-<a id='x8-68057r3'></a> 
-<a id='x8-68059r4'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-68061r5'></a> 
-<a id='x8-68063r6'></a><span style='color:rgb(40,56,175);'>\CssFile</span> 
-<a id='x8-68065r7'></a>/* css.sty */ 
-<a id='x8-68067r8'></a>.mylist <span style='color:rgb(56,127,56);'>{</span> color : red; <span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-68069r9'></a><span style='color:rgb(40,56,175);'>\EndCssFile</span></pre>
+<pre class='fancyvrb' id='fancyvrb112'><a id='x8-68055r1'></a><span style='color:#2938B0;'>\ConfigureList</span><span style='color:#388038;'>{</span>mylist<span style='color:#388038;'>}</span> 
+<a id='x8-68057r2'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;div class="mylist"&gt;<span style='color:#388038;'>}} {</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;/div&gt;<span style='color:#388038;'>}} {</span>* <span style='color:#388038;'>}{}</span> 
+<a id='x8-68059r3'></a> 
+<a id='x8-68061r4'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x8-68063r5'></a> 
+<a id='x8-68065r6'></a><span style='color:#2938B0;'>\CssFile</span> 
+<a id='x8-68067r7'></a>/* css.sty */ 
+<a id='x8-68069r8'></a>.mylist <span style='color:#388038;'>{</span> color : red; <span style='color:#388038;'>}</span> 
+<a id='x8-68071r9'></a><span style='color:#2938B0;'>\EndCssFile</span></pre>
 
 </figure>
 <!--  l. 92  --><p class='indent'>   The names in the list of files should be separated by commas, and the rectangular
@@ -577,7 +577,7 @@ the viewer’s system.
 </p><!--  l. 14  --><p class='indent'>   Change default CSS font family name. Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb113'><a id='x8-69003r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>FontFamily<span style='color:rgb(56,127,56);'>}{</span>rmfamily<span style='color:rgb(56,127,56);'>}{</span>Latin Modern<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb113'><a id='x8-69003r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>FontFamily<span style='color:#388038;'>}{</span>rmfamily<span style='color:#388038;'>}{</span>Latin Modern<span style='color:#388038;'>}</span></pre>
 
 </figure>
                                                                   
@@ -590,17 +590,17 @@ or <span class='textit'>otf</span>.
 </p><!--  l. 25  --><p class='indent'>   Full example of font CSS configurations:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb114'><a id='x8-69016r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>NormalFont<span style='color:rgb(56,127,56);'>}{</span>normal-font-file.otf<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-69018r2'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>BoldFont<span style='color:rgb(56,127,56);'>}{</span>bold-font-file.otf<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-69020r3'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>BoldItalicFont<span style='color:rgb(56,127,56);'>}{</span>bold-italic-font-file.otf<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-69022r4'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>ItalicFont<span style='color:rgb(56,127,56);'>}{</span>italic-font-file.otf<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-69024r5'></a><span style='color:rgb(135,135,135);'><span class='textit'>% Add another font family</span></span> 
-<a id='x8-69026r6'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>FontFamily<span style='color:rgb(56,127,56);'>}{</span>hello<span style='color:rgb(56,127,56);'>}{</span>Linux Libertine O<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-69028r7'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>NormalFont<span style='color:rgb(56,127,56);'>}{</span>hello-font-file.otf<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-69030r8'></a><span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>body<span style='color:rgb(56,127,56);'>{</span> 
+<pre class='fancyvrb' id='fancyvrb114'><a id='x8-69016r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>NormalFont<span style='color:#388038;'>}{</span>normal-font-file.otf<span style='color:#388038;'>}</span> 
+<a id='x8-69018r2'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>BoldFont<span style='color:#388038;'>}{</span>bold-font-file.otf<span style='color:#388038;'>}</span> 
+<a id='x8-69020r3'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>BoldItalicFont<span style='color:#388038;'>}{</span>bold-italic-font-file.otf<span style='color:#388038;'>}</span> 
+<a id='x8-69022r4'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>ItalicFont<span style='color:#388038;'>}{</span>italic-font-file.otf<span style='color:#388038;'>}</span> 
+<a id='x8-69024r5'></a><span style='color:#878787;'><span class='textit'>% Add another font family</span></span> 
+<a id='x8-69026r6'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>FontFamily<span style='color:#388038;'>}{</span>hello<span style='color:#388038;'>}{</span>Linux Libertine O<span style='color:#388038;'>}</span> 
+<a id='x8-69028r7'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>NormalFont<span style='color:#388038;'>}{</span>hello-font-file.otf<span style='color:#388038;'>}</span> 
+<a id='x8-69030r8'></a><span style='color:#2938B0;'>\Css</span><span style='color:#388038;'>{</span>body<span style='color:#388038;'>{</span> 
 <a id='x8-69032r9'></a>  font-family: rmfamily, "AnotherFontFamilyName", serif; 
-<a id='x8-69034r10'></a><span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-69036r11'></a><span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>span.hello<span style='color:rgb(56,127,56);'>{</span>font-family: hello, sans-serif;<span style='color:rgb(56,127,56);'>}}</span></pre>
+<a id='x8-69034r10'></a><span style='color:#388038;'>}}</span> 
+<a id='x8-69036r11'></a><span style='color:#2938B0;'>\Css</span><span style='color:#388038;'>{</span>span.hello<span style='color:#388038;'>{</span>font-family: hello, sans-serif;<span style='color:#388038;'>}}</span></pre>
 
 </figure>   
 <h3 class='sectionHead' id='use-javascript'><span class='titlemark'>7.6   </span> <a id='x8-700007.6'></a>Use JavaScript</h3>
@@ -613,13 +613,13 @@ directly to the document. If used in the configuration file, it should be placed
 </p><!--  l. 13  --><p class='indent'>   Full example of configuration file that use both of these methods:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb115'><a id='x8-70010r1'></a><span style='color:rgb(40,56,175);'>\Preamble</span><span style='color:rgb(56,127,56);'>{</span>xhtml,javascript<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-70012r2'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>AddJs<span style='color:rgb(56,127,56);'>}{</span>sample.js<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-70014r3'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-70016r4'></a><span style='color:rgb(40,56,175);'>\JavaScript</span> 
+<pre class='fancyvrb' id='fancyvrb115'><a id='x8-70010r1'></a><span style='color:#2938B0;'>\Preamble</span><span style='color:#388038;'>{</span>xhtml,javascript<span style='color:#388038;'>}</span> 
+<a id='x8-70012r2'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>AddJs<span style='color:#388038;'>}{</span>sample.js<span style='color:#388038;'>}</span> 
+<a id='x8-70014r3'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
+<a id='x8-70016r4'></a><span style='color:#2938B0;'>\JavaScript</span> 
 <a id='x8-70018r5'></a>console.log("Hello JS"); 
-<a id='x8-70020r6'></a><span style='color:rgb(40,56,175);'>\EndJavaScript</span> 
-<a id='x8-70022r7'></a><span style='color:rgb(40,56,175);'>\EndPreamble</span> 
+<a id='x8-70020r6'></a><span style='color:#2938B0;'>\EndJavaScript</span> 
+<a id='x8-70022r7'></a><span style='color:#2938B0;'>\EndPreamble</span> 
 <a id='x8-70024r8'></a></pre>
 
 </figure>   
@@ -643,8 +643,8 @@ directly to the document. If used in the configuration file, it should be placed
 </p><!--  l. 16  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb116'><a id='x8-73004r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>PROLOG<span style='color:rgb(56,127,56);'>}{</span>VERSION,DOCTYPE,*XML-STYLESHEET<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-73006r2'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>VERSION<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;?xml version="1.0"?&gt;<span style='color:rgb(56,127,56);'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb116'><a id='x8-73004r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>PROLOG<span style='color:#388038;'>}{</span>VERSION,DOCTYPE,*XML-STYLESHEET<span style='color:#388038;'>}</span> 
+<a id='x8-73006r2'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>VERSION<span style='color:#388038;'>}{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;?xml version="1.0"?&gt;<span style='color:#388038;'>}}</span></pre>
 
 </figure>
 <!--  l. 23  --><p class='indent'>   A star ’*’ prefix calls for accumulative configurations
@@ -667,10 +667,10 @@ contributions.
 </p><!--  l. 45  --><p class='indent'>   For instance,
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb117'><a id='x8-74006r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>@HEAD<span style='color:rgb(56,127,56);'>}{</span>A<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-74008r2'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>@HEAD<span style='color:rgb(56,127,56);'>}{}</span> 
-<a id='x8-74010r3'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>@HEAD<span style='color:rgb(56,127,56);'>}{</span>B<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-74012r4'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>@HEAD<span style='color:rgb(56,127,56);'>}{</span>C<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb117'><a id='x8-74006r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>@HEAD<span style='color:#388038;'>}{</span>A<span style='color:#388038;'>}</span> 
+<a id='x8-74008r2'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>@HEAD<span style='color:#388038;'>}{}</span> 
+<a id='x8-74010r3'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>@HEAD<span style='color:#388038;'>}{</span>B<span style='color:#388038;'>}</span> 
+<a id='x8-74012r4'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>@HEAD<span style='color:#388038;'>}{</span>C<span style='color:#388038;'>}</span></pre>
                                                                   
 
                                                                   
@@ -709,9 +709,9 @@ contributions.
 example, for document that is split on chapters, use:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb119'><a id='x8-75005r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>TITLE+<span style='color:rgb(56,127,56);'>}{</span>My web site |<span style='color:rgb(40,56,175);'>\@title</span><span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-75007r2'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>chapterTITLE+<span style='color:rgb(56,127,56);'>}{</span>My web site | <span style='color:rgb(40,56,175);'>\thechapter\space</span>#1<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-75009r3'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>likechapterTITLE+<span style='color:rgb(56,127,56);'>}{</span>My web site | #1<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb119'><a id='x8-75005r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>TITLE+<span style='color:#388038;'>}{</span>My web site |<span style='color:#2938B0;'>\@title</span><span style='color:#388038;'>}</span> 
+<a id='x8-75007r2'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>chapterTITLE+<span style='color:#388038;'>}{</span>My web site | <span style='color:#2938B0;'>\thechapter\space</span>#1<span style='color:#388038;'>}</span> 
+<a id='x8-75009r3'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>likechapterTITLE+<span style='color:#388038;'>}{</span>My web site | #1<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 101  --><p class='indent'>   <code class='texttt'>likechapter</code> prefix is used for <code class='texttt'>\chapter*</code> command. The text of sectioning
@@ -756,18 +756,18 @@ the hypertext pages; e.g., ‘<span class='textbf'><code class='texttt'>\CutAt</
 made known with instructions of the form <span class='textbf'><code class='texttt'>\Configure</code></span>{<span class='textit'>endunit</span>}{<span class='textit'>unit,unit,...</span>}.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb120'><a id='x8-76006r1'></a><span style='color:rgb(40,56,175);'>\CutAt</span><span style='color:rgb(56,127,56);'>{</span>section,chapter<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-76008r2'></a><span style='color:rgb(40,56,175);'>\tableofcontents</span> 
-<a id='x8-76010r3'></a><span style='color:rgb(40,56,175);'>\chapter</span><span style='color:rgb(56,127,56);'>{</span>...<span style='color:rgb(56,127,56);'>}</span>  ......  <span style='color:rgb(40,56,175);'>\section</span><span style='color:rgb(56,127,56);'>{</span>...<span style='color:rgb(56,127,56);'>}</span>  ......  <span style='color:rgb(40,56,175);'>\section</span><span style='color:rgb(56,127,56);'>{</span>...<span style='color:rgb(56,127,56);'>}</span>  ...... 
-<a id='x8-76012r4'></a><span style='color:rgb(40,56,175);'>\chapter</span><span style='color:rgb(56,127,56);'>{</span>...<span style='color:rgb(56,127,56);'>}</span>  ......  <span style='color:rgb(40,56,175);'>\section</span><span style='color:rgb(56,127,56);'>{</span>...<span style='color:rgb(56,127,56);'>}</span>  ......</pre>
+<pre class='fancyvrb' id='fancyvrb120'><a id='x8-76006r1'></a><span style='color:#2938B0;'>\CutAt</span><span style='color:#388038;'>{</span>section,chapter<span style='color:#388038;'>}</span> 
+<a id='x8-76008r2'></a><span style='color:#2938B0;'>\tableofcontents</span> 
+<a id='x8-76010r3'></a><span style='color:#2938B0;'>\chapter</span><span style='color:#388038;'>{</span>...<span style='color:#388038;'>}</span>  ......  <span style='color:#2938B0;'>\section</span><span style='color:#388038;'>{</span>...<span style='color:#388038;'>}</span>  ......  <span style='color:#2938B0;'>\section</span><span style='color:#388038;'>{</span>...<span style='color:#388038;'>}</span>  ...... 
+<a id='x8-76012r4'></a><span style='color:#2938B0;'>\chapter</span><span style='color:#388038;'>{</span>...<span style='color:#388038;'>}</span>  ......  <span style='color:#2938B0;'>\section</span><span style='color:#388038;'>{</span>...<span style='color:#388038;'>}</span>  ......</pre>
 
 </figure>
 <!--  l. 42  --><p class='indent'>   Cut points at arbitrary points can be introduced by introducing section-like
 commands in a manner similar to
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb121'><a id='x8-76016r1'></a><span style='color:rgb(40,56,175);'>\NewSection\mysection</span><span style='color:rgb(56,127,56);'>{}</span> 
-<a id='x8-76018r2'></a><span style='color:rgb(40,56,175);'>\CutAt</span><span style='color:rgb(56,127,56);'>{</span>mysection<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb121'><a id='x8-76016r1'></a><span style='color:#2938B0;'>\NewSection\mysection</span><span style='color:#388038;'>{}</span> 
+<a id='x8-76018r2'></a><span style='color:#2938B0;'>\CutAt</span><span style='color:#388038;'>{</span>mysection<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 50  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>CutAt</span>}{unit}{before-button}{after-button}</code>
@@ -780,7 +780,7 @@ type
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb122'><a id='x8-76021r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>+CutAt<span style='color:rgb(56,127,56);'>}{</span>mysection<span style='color:rgb(56,127,56);'>}{</span>[<span style='color:rgb(56,127,56);'>}{</span>]<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb122'><a id='x8-76021r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>+CutAt<span style='color:#388038;'>}{</span>mysection<span style='color:#388038;'>}{</span>[<span style='color:#388038;'>}{</span>]<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 66  --><p class='noindent'><code class='texttt'><span class='textbf'>\PauseCutAt</span></code>{<span class='textit'>section type</span>}
@@ -792,15 +792,15 @@ breaks pages up to the subsection level, and you want to stop breaking sections,
 need to use:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb123'><a id='x8-76025r1'></a><span style='color:rgb(40,56,175);'>\PauseCutAt</span><span style='color:rgb(56,127,56);'>{</span>section<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-76027r2'></a><span style='color:rgb(40,56,175);'>\PauseCutAt</span><span style='color:rgb(56,127,56);'>{</span>subsection<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb123'><a id='x8-76025r1'></a><span style='color:#2938B0;'>\PauseCutAt</span><span style='color:#388038;'>{</span>section<span style='color:#388038;'>}</span> 
+<a id='x8-76027r2'></a><span style='color:#2938B0;'>\PauseCutAt</span><span style='color:#388038;'>{</span>subsection<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 80  --><p class='indent'>   To resume breaking, use:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb124'><a id='x8-76031r1'></a><span style='color:rgb(40,56,175);'>\ContCutAt</span><span style='color:rgb(56,127,56);'>{</span>section<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-76033r2'></a><span style='color:rgb(40,56,175);'>\ContCutAt</span><span style='color:rgb(56,127,56);'>{</span>subsection<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb124'><a id='x8-76031r1'></a><span style='color:#2938B0;'>\ContCutAt</span><span style='color:#388038;'>{</span>section<span style='color:#388038;'>}</span> 
+<a id='x8-76033r2'></a><span style='color:#2938B0;'>\ContCutAt</span><span style='color:#388038;'>{</span>subsection<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 87  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>CutAt-filename</span>}{filename for the next cut file}</code>
@@ -809,7 +809,7 @@ available through #1. The section title is accessible through #2.
 </p><!--  l. 93  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb125'><a id='x8-76036r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>CutAt-filename<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\NextFile</span><span style='color:rgb(56,127,56);'>{</span>#1-#2.html<span style='color:rgb(56,127,56);'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb125'><a id='x8-76036r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>CutAt-filename<span style='color:#388038;'>}{</span><span style='color:#2938B0;'>\NextFile</span><span style='color:#388038;'>{</span>#1-#2.html<span style='color:#388038;'>}}</span></pre>
 
 </figure>   
 
@@ -827,10 +827,10 @@ multi page document.
 pages obtained for sectioning commands.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb126'><a id='x8-77006r1'></a> <span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>crosslinks<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-77008r2'></a>   <span style='color:rgb(56,127,56);'>{}{}{</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(175,63,63);'>\scriptstyle\Rightarrow</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-77010r3'></a>   <span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(175,63,63);'>\scriptstyle\Leftarrow</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-77012r4'></a>   <span style='color:rgb(56,127,56);'>{}{}{}{</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(175,63,63);'>\scriptstyle\Uparrow</span><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb126'><a id='x8-77006r1'></a> <span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>crosslinks<span style='color:#388038;'>}</span> 
+<a id='x8-77008r2'></a>   <span style='color:#388038;'>{}{}{</span><span style='color:#B83838;'>$</span><span style='color:#B04040;'>\scriptstyle\Rightarrow</span><span style='color:#B83838;'>$</span><span style='color:#388038;'>}</span> 
+<a id='x8-77010r3'></a>   <span style='color:#388038;'>{</span><span style='color:#B83838;'>$</span><span style='color:#B04040;'>\scriptstyle\Leftarrow</span><span style='color:#B83838;'>$</span><span style='color:#388038;'>}</span> 
+<a id='x8-77012r4'></a>   <span style='color:#388038;'>{}{}{}{</span><span style='color:#B83838;'>$</span><span style='color:#B04040;'>\scriptstyle\Uparrow</span><span style='color:#B83838;'>$</span><span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 19  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>crosslinks*</span>}{1--7 arguments}</code>
@@ -839,10 +839,10 @@ pages obtained for sectioning commands.
 </p><!--  l. 25  --><p class='indent'>   Default values:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb127'><a id='x8-77018r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>crosslinks*<span style='color:rgb(56,127,56);'>}{</span>next<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-77020r2'></a>   <span style='color:rgb(56,127,56);'>{</span>prev<span style='color:rgb(56,127,56);'>}{</span>prevtail<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-77022r3'></a>   <span style='color:rgb(56,127,56);'>{</span>tail<span style='color:rgb(56,127,56);'>}{</span>front<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-77024r4'></a>   <span style='color:rgb(56,127,56);'>{</span>up<span style='color:rgb(56,127,56);'>}{}</span></pre>
+<pre class='fancyvrb' id='fancyvrb127'><a id='x8-77018r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>crosslinks*<span style='color:#388038;'>}{</span>next<span style='color:#388038;'>}</span> 
+<a id='x8-77020r2'></a>   <span style='color:#388038;'>{</span>prev<span style='color:#388038;'>}{</span>prevtail<span style='color:#388038;'>}</span> 
+<a id='x8-77022r3'></a>   <span style='color:#388038;'>{</span>tail<span style='color:#388038;'>}{</span>front<span style='color:#388038;'>}</span> 
+<a id='x8-77024r4'></a>   <span style='color:#388038;'>{</span>up<span style='color:#388038;'>}{}</span></pre>
 
 </figure>
 <!--  l. 34  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>crosslinks+</span>}{before-top-links}{after-top-links}
@@ -854,13 +854,13 @@ links are omitted, if both <span class='obeylines-h'><code class='verb'>#3</code
 </p><!--  l. 41  --><p class='indent'>   Default: The value provided in <code class='texttt'>\Configure{crosslinks}</code>
 </p><!--  l. 43  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>next+</span>}{before}{after}</code>
 </p>     
-<dl class='description'><dt class='description'>
+<dl class='description'><dt class='description'><a id='x8-77025x7.9'></a>
 <span class='ec-lmbx-10'>#1</span> 
 </dt><dd class='description'> 
 <!--  l. 46  --><p class='noindent'>before the next button of the front page, when the ‘next’ option is active.
 </p>     
 </dd>
-<dt class='description'>
+<dt class='description'><a id='x8-77026x7.9'></a>
 <span class='ec-lmbx-10'>#2</span> 
 </dt><dd class='description'> 
 <!--  l. 48  --><p class='noindent'>after the button</p></dd></dl>
@@ -886,12 +886,12 @@ hooks}</code>
 </p><!--  l. 67  --><p class='indent'>   Examples:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb128'><a id='x8-77032r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>crosslinks-<span style='color:rgb(56,127,56);'>}{}{}</span> 
-<a id='x8-77034r2'></a> 
-<a id='x8-77036r3'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>crosslinks-<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-77038r4'></a>    <span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;span class="hidden"&gt;<span style='color:rgb(56,127,56);'>}</span>[<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-77040r5'></a>    <span style='color:rgb(56,127,56);'>{</span>]<span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/span&gt;<span style='color:rgb(56,127,56);'>} }</span> 
-<a id='x8-77042r6'></a><span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>span.hidden <span style='color:rgb(56,127,56);'>{</span>visibility:hidden;<span style='color:rgb(56,127,56);'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb128'><a id='x8-77034r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>crosslinks-<span style='color:#388038;'>}{}{}</span> 
+<a id='x8-77036r2'></a> 
+<a id='x8-77038r3'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>crosslinks-<span style='color:#388038;'>}</span> 
+<a id='x8-77040r4'></a>    <span style='color:#388038;'>{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;span class="hidden"&gt;<span style='color:#388038;'>}</span>[<span style='color:#388038;'>}</span> 
+<a id='x8-77042r5'></a>    <span style='color:#388038;'>{</span>]<span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;/span&gt;<span style='color:#388038;'>} }</span> 
+<a id='x8-77044r6'></a><span style='color:#2938B0;'>\Css</span><span style='color:#388038;'>{</span>span.hidden <span style='color:#388038;'>{</span>visibility:hidden;<span style='color:#388038;'>}}</span></pre>
 
 </figure>   
 <h3 class='sectionHead' id='tables-of-contents'><span class='titlemark'>7.10   </span> <a id='x8-780007.10'></a>Tables of Contents</h3>
@@ -941,18 +941,18 @@ number</span>}{<span class='textit'>at end</span>}
 <!--  l. 60  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb129'><a id='x8-79007r1'></a><span style='color:rgb(40,56,175);'>\ConfigureToc</span><span style='color:rgb(56,127,56);'>{</span>section<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-79009r2'></a>   <span style='color:rgb(56,127,56);'>{}</span> 
-<a id='x8-79011r3'></a>   <span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\Picture</span><span style='color:rgb(56,127,56);'>[*]{</span>pic.jpg width="13"  height="13"<span style='color:rgb(56,127,56);'>}</span>~<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-79013r4'></a>   <span style='color:rgb(56,127,56);'>{}</span> 
-<a id='x8-79015r5'></a>   <span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;br /&gt;<span style='color:rgb(56,127,56);'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb129'><a id='x8-79007r1'></a><span style='color:#2938B0;'>\ConfigureToc</span><span style='color:#388038;'>{</span>section<span style='color:#388038;'>}</span> 
+<a id='x8-79009r2'></a>   <span style='color:#388038;'>{}</span> 
+<a id='x8-79011r3'></a>   <span style='color:#388038;'>{</span><span style='color:#2938B0;'>\Picture</span><span style='color:#388038;'>[*]{</span>pic.jpg width="13"  height="13"<span style='color:#388038;'>}</span>~<span style='color:#388038;'>}</span> 
+<a id='x8-79013r4'></a>   <span style='color:#388038;'>{}</span> 
+<a id='x8-79015r5'></a>   <span style='color:#388038;'>{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;br /&gt;<span style='color:#388038;'>}}</span></pre>
 
 </figure>
 <!--  l. 70  --><p class='indent'>   As an alternative to <span class='textbf'><code class='texttt'>\ConfigureToc</code></span>, you can also use the following alternative:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb130'><a id='x8-79019r1'></a><span style='color:rgb(40,56,175);'>\def\toc</span>&lt;unit-name&gt;#1#2#3<span style='color:rgb(56,127,56);'>{</span>&lt;before unit number&gt;#1&lt;before content&gt;#2<span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
-<a id='x8-79021r2'></a>    &lt;before page number&gt;#3&lt;at end&gt;<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb130'><a id='x8-79019r1'></a><span style='color:#2938B0;'>\def\toc</span>&lt;unit-name&gt;#1#2#3<span style='color:#388038;'>{</span>&lt;before unit number&gt;#1&lt;before content&gt;#2<span style='color:#878787;'><span class='textit'>%</span></span> 
+<a id='x8-79021r2'></a>    &lt;before page number&gt;#3&lt;at end&gt;<span style='color:#388038;'>}</span></pre>
                                                                   
 
                                                                   
@@ -963,18 +963,18 @@ number</span>}{<span class='textit'>at end</span>}
 </p><!--  l. 84  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb131'><a id='x8-79024r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>TocLink<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\Link</span><span style='color:rgb(56,127,56);'>{</span>#2<span style='color:rgb(56,127,56);'>}{</span>#3<span style='color:rgb(56,127,56);'>}</span>#4<span style='color:rgb(40,56,175);'>\EndLink</span><span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb131'><a id='x8-79024r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>TocLink<span style='color:#388038;'>}{</span><span style='color:#2938B0;'>\Link</span><span style='color:#388038;'>{</span>#2<span style='color:#388038;'>}{</span>#3<span style='color:#388038;'>}</span>#4<span style='color:#2938B0;'>\EndLink</span><span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 90  --><p class='noindent'><code class='texttt'><span class='textbf'>\TocAt</span></code>{<span class='textit'>#1,#2,#3,…</span>}
 </p>     
-<dl class='description'><dt class='description'>
+<dl class='description'><dt class='description'><a id='x8-79025x7.10.1'></a>
 <span class='ec-lmbx-10'>#1</span> 
 </dt><dd class='description'> 
 <!--  l. 93  --><p class='noindent'>section type for which local tables of contents <span class='textbf'><code class='texttt'>\Toc#1</code></span> are requested
 </p>     
 </dd>
-<dt class='description'>
+<dt class='description'><a id='x8-79026x7.10.1'></a>
 <span class='ec-lmbx-10'>#2,#3,…</span> 
 </dt><dd class='description'>
 <!--  l. 95  --><p class='noindent'>sectioning types to be included in the tables of contents</p></dd></dl>
@@ -992,9 +992,9 @@ local tables.
 </p><!--  l. 114  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb132'><a id='x8-79029r1'></a><span style='color:rgb(40,56,175);'>\TocAt</span><span style='color:rgb(56,127,56);'>{</span>mychapter,mysection,mysubsection,/myappendix,/mypart<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-79031r2'></a><span style='color:rgb(40,56,175);'>\TocAt</span>-<span style='color:rgb(56,127,56);'>{</span>mysection,mysubsection,/mylikesection<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-79033r3'></a><span style='color:rgb(40,56,175);'>\section</span><span style='color:rgb(56,127,56);'>{</span>...<span style='color:rgb(56,127,56);'>}</span>...<span style='color:rgb(40,56,175);'>\Tocmysection</span></pre>
+<pre class='fancyvrb' id='fancyvrb132'><a id='x8-79031r1'></a><span style='color:#2938B0;'>\TocAt</span><span style='color:#388038;'>{</span>mychapter,mysection,mysubsection,/myappendix,/mypart<span style='color:#388038;'>}</span> 
+<a id='x8-79033r2'></a><span style='color:#2938B0;'>\TocAt</span>-<span style='color:#388038;'>{</span>mysection,mysubsection,/mylikesection<span style='color:#388038;'>}</span> 
+<a id='x8-79035r3'></a><span style='color:#2938B0;'>\section</span><span style='color:#388038;'>{</span>...<span style='color:#388038;'>}</span>...<span style='color:#2938B0;'>\Tocmysection</span></pre>
 
 </figure>
 <!--  l. 122  --><p class='indent'>   The definition of the local table of contents can be redefined within <code class='texttt'>\csname
@@ -1002,18 +1002,18 @@ Toc#1\endcsname</code>.
 </p><!--  l. 125  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb133'><a id='x8-79047r1'></a><span style='color:rgb(40,56,175);'>\TocAt</span><span style='color:rgb(56,127,56);'>{</span>section<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-79049r2'></a><span style='color:rgb(40,56,175);'>\def\Tocsection</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\TableOfContents</span><span style='color:rgb(56,127,56);'>[section]}</span> 
-<a id='x8-79051r3'></a> 
-<a id='x8-79053r4'></a><span style='color:rgb(40,56,175);'>\Css</span><span style='color:rgb(56,127,56);'>{</span>div.sectionTOCS <span style='color:rgb(56,127,56);'>{</span> 
-<a id='x8-79055r5'></a>                    width : 30<span style='color:rgb(40,56,175);'>\%</span>; 
-<a id='x8-79057r6'></a>                    float : right; 
-<a id='x8-79059r7'></a>               text-align : left; 
-<a id='x8-79061r8'></a>           vertical-align : top; 
-<a id='x8-79063r9'></a>              margin-left : 1em; 
-<a id='x8-79065r10'></a>                font-size : 85<span style='color:rgb(40,56,175);'>\%</span>; 
-<a id='x8-79067r11'></a>         background-color : <span style='color:rgb(40,56,175);'>\#</span>DDDDDD; 
-<a id='x8-79069r12'></a>    <span style='color:rgb(56,127,56);'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb133'><a id='x8-79049r1'></a><span style='color:#2938B0;'>\TocAt</span><span style='color:#388038;'>{</span>section<span style='color:#388038;'>}</span> 
+<a id='x8-79051r2'></a><span style='color:#2938B0;'>\def\Tocsection</span><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\TableOfContents</span><span style='color:#388038;'>[section]}</span> 
+<a id='x8-79053r3'></a> 
+<a id='x8-79055r4'></a><span style='color:#2938B0;'>\Css</span><span style='color:#388038;'>{</span>div.sectionTOCS <span style='color:#388038;'>{</span> 
+<a id='x8-79057r5'></a>                    width : 30<span style='color:#2938B0;'>\%</span>; 
+<a id='x8-79059r6'></a>                    float : right; 
+<a id='x8-79061r7'></a>               text-align : left; 
+<a id='x8-79063r8'></a>           vertical-align : top; 
+<a id='x8-79065r9'></a>              margin-left : 1em; 
+<a id='x8-79067r10'></a>                font-size : 85<span style='color:#2938B0;'>\%</span>; 
+<a id='x8-79069r11'></a>         background-color : <span style='color:#2938B0;'>\#</span>DDDDDD; 
+<a id='x8-79071r12'></a>    <span style='color:#388038;'>}}</span></pre>
                                                                   
 
                                                                   
@@ -1022,12 +1022,12 @@ Toc#1\endcsname</code>.
 <!--  l. 142  --><p class='indent'>   Example: Table of content before the section title.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb134'><a id='x8-79077r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>section<span style='color:rgb(56,127,56);'>}{}{}</span> 
-<a id='x8-79079r2'></a>   <span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\Tocsection \let\saveTocsection</span>=<span style='color:rgb(40,56,175);'>\Tocsection</span> 
-<a id='x8-79081r3'></a>    <span style='color:rgb(40,56,175);'>\def\Tocsection</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\let\Tocsection</span>=<span style='color:rgb(40,56,175);'>\saveTocsection</span><span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
-<a id='x8-79083r4'></a>    <span style='color:rgb(40,56,175);'>\ifvmode \IgnorePar\fi \EndP\IgnorePar</span> 
-<a id='x8-79085r5'></a>    <span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;h3 class="sectionHead"&gt;<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\TitleMark\space\HtmlParOff</span><span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-79087r6'></a>   <span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/h3&gt;<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\HtmlParOn\ShowPar \IgnoreIndent \par</span><span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb134'><a id='x8-79079r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>section<span style='color:#388038;'>}{}{}</span> 
+<a id='x8-79081r2'></a>   <span style='color:#388038;'>{</span><span style='color:#2938B0;'>\Tocsection \let\saveTocsection</span>=<span style='color:#2938B0;'>\Tocsection</span> 
+<a id='x8-79083r3'></a>    <span style='color:#2938B0;'>\def\Tocsection</span><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\let\Tocsection</span>=<span style='color:#2938B0;'>\saveTocsection</span><span style='color:#388038;'>}</span><span style='color:#878787;'><span class='textit'>%</span></span> 
+<a id='x8-79085r4'></a>    <span style='color:#2938B0;'>\ifvmode \IgnorePar\fi \EndP\IgnorePar</span> 
+<a id='x8-79087r5'></a>    <span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;h3 class="sectionHead"&gt;<span style='color:#388038;'>}</span><span style='color:#2938B0;'>\TitleMark\space\HtmlParOff</span><span style='color:#388038;'>}</span> 
+<a id='x8-79089r6'></a>   <span style='color:#388038;'>{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;/h3&gt;<span style='color:#388038;'>}</span><span style='color:#2938B0;'>\HtmlParOn\ShowPar \IgnoreIndent \par</span><span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 153  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>TocAt</span>}{before the tables of contents}{after the tables of
@@ -1047,8 +1047,8 @@ types should be referenced with the ‘like’ prefix.
 </p><!--  l. 173  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb135'><a id='x8-79091r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>tableofcontents*<span style='color:rgb(56,127,56);'>}{</span>part,likepart,<span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
-<a id='x8-79093r2'></a>           section,likesection,subsection,likesubsection<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb135'><a id='x8-79093r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>tableofcontents*<span style='color:#388038;'>}{</span>part,likepart,<span style='color:#878787;'><span class='textit'>%</span></span> 
+<a id='x8-79095r2'></a>           section,likesection,subsection,likesubsection<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 180  --><p class='noindent'><code class='texttt'><span class='textbf'>\contentsname</span></code> A LaTeX macro stating the title for a table of contents
@@ -1066,11 +1066,11 @@ of the specified units.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb136'><a id='x8-80007r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>chapter<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-80009r2'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;section class="chapter"&gt;<span style='color:rgb(56,127,56);'>}}  {</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/section&gt;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-80011r3'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;h2 class="chapterHead"&gt;<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\chaptername</span> ~<span style='color:rgb(40,56,175);'>\TitleMark</span> 
-<a id='x8-80013r4'></a><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;br /&gt;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-80015r5'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/h2&gt;<span style='color:rgb(56,127,56);'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb136'><a id='x8-80007r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>chapter<span style='color:#388038;'>}</span> 
+<a id='x8-80009r2'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;section class="chapter"&gt;<span style='color:#388038;'>}}  {</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;/section&gt;<span style='color:#388038;'>}}</span> 
+<a id='x8-80011r3'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;h2 class="chapterHead"&gt;<span style='color:#388038;'>}</span><span style='color:#2938B0;'>\chaptername</span> ~<span style='color:#2938B0;'>\TitleMark</span> 
+<a id='x8-80013r4'></a><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;br /&gt;<span style='color:#388038;'>}}</span> 
+<a id='x8-80015r5'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;/h2&gt;<span style='color:#388038;'>}}</span></pre>
 
 </figure>
 <!--  l. 22  --><p class='noindent'><code class='texttt'><span class='textbf'>\ConfigureMark</span></code>{<span class='textit'>unit-name</span>}{<span class='textit'>print section number</span>}
@@ -1083,10 +1083,10 @@ between the title mark and its content.
 </p><!--  l. 33  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb137'><a id='x8-80021r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>section<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-80023r2'></a>   <span style='color:rgb(56,127,56);'>{}{}</span> 
-<a id='x8-80025r3'></a>   <span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;h3&gt;<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\TitleMark\space</span><span style='color:rgb(56,127,56);'>}    {</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/h3&gt;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-80027r4'></a><span style='color:rgb(40,56,175);'>\ConfigureMark</span><span style='color:rgb(56,127,56);'>{</span>section<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\thesection</span><span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb137'><a id='x8-80021r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>section<span style='color:#388038;'>}</span> 
+<a id='x8-80023r2'></a>   <span style='color:#388038;'>{}{}</span> 
+<a id='x8-80025r3'></a>   <span style='color:#388038;'>{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;h3&gt;<span style='color:#388038;'>}</span><span style='color:#2938B0;'>\TitleMark\space</span><span style='color:#388038;'>}    {</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;/h3&gt;<span style='color:#388038;'>}}</span> 
+<a id='x8-80027r4'></a><span style='color:#2938B0;'>\ConfigureMark</span><span style='color:#388038;'>{</span>section<span style='color:#388038;'>}{</span><span style='color:#2938B0;'>\thesection</span><span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 43  --><p class='noindent'><code class='texttt'><span class='textbf'>\NewSection</span></code><span class='textbf'><code class='texttt'>\unit</code></span> {<span class='textit'>mark-for-toc</span>}
@@ -1094,13 +1094,13 @@ between the title mark and its content.
 <span class='textit'>mark-for-toc</span> to the tables of contents.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb138'><a id='x8-80036r1'></a><span style='color:rgb(40,56,175);'>\newcounter</span><span style='color:rgb(56,127,56);'>{</span>c<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-80038r2'></a><span style='color:rgb(40,56,175);'>\NewSection\X </span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\thec</span><span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-80040r3'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>X<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-80042r4'></a><span style='color:rgb(56,127,56);'>{}{}</span> 
-<a id='x8-80044r5'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\refstepcounter</span><span style='color:rgb(56,127,56);'>{</span>c<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;h2&gt;<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(40,56,175);'>\TitleMark\space</span><span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-80046r6'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/h2&gt;<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-80048r7'></a><span style='color:rgb(40,56,175);'>\ConfigureMark</span><span style='color:rgb(56,127,56);'>{</span>X<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\arabic</span><span style='color:rgb(56,127,56);'>{</span>c<span style='color:rgb(56,127,56);'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb138'><a id='x8-80036r1'></a><span style='color:#2938B0;'>\newcounter</span><span style='color:#388038;'>{</span>c<span style='color:#388038;'>}</span> 
+<a id='x8-80038r2'></a><span style='color:#2938B0;'>\NewSection\X </span><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\thec</span><span style='color:#388038;'>}</span> 
+<a id='x8-80040r3'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>X<span style='color:#388038;'>}</span> 
+<a id='x8-80042r4'></a><span style='color:#388038;'>{}{}</span> 
+<a id='x8-80044r5'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\refstepcounter</span><span style='color:#388038;'>{</span>c<span style='color:#388038;'>}</span><span style='color:#2938B0;'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span style='color:#388038;'>{</span>&lt;h2&gt;<span style='color:#388038;'>}</span><span style='color:#2938B0;'>\TitleMark\space</span><span style='color:#388038;'>}</span> 
+<a id='x8-80046r6'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;/h2&gt;<span style='color:#388038;'>}}</span> 
+<a id='x8-80048r7'></a><span style='color:#2938B0;'>\ConfigureMark</span><span style='color:#388038;'>{</span>X<span style='color:#388038;'>}{</span><span style='color:#2938B0;'>\arabic</span><span style='color:#388038;'>{</span>c<span style='color:#388038;'>}}</span></pre>
 
 </figure>   
 
@@ -1123,48 +1123,48 @@ argument.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb139'><a id='x8-81011r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>toTocLink<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-81013r2'></a>     <span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\Link</span><span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-81015r3'></a>     <span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\ifx \TitleMark\sectionHMark</span> 
-<a id='x8-81017r4'></a>        <span style='color:rgb(40,56,175);'>\Picture</span><span style='color:rgb(56,127,56);'>[\up]{</span>haut.jpg align="right"<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
-<a id='x8-81019r5'></a>        <span style='color:rgb(40,56,175);'>\EndLink</span> 
-<a id='x8-81021r6'></a>        <span style='color:rgb(40,56,175);'>\TitleMark\space</span> 
-<a id='x8-81023r7'></a>      <span style='color:rgb(40,56,175);'>\else \EndLink \fi</span> 
-<a id='x8-81025r8'></a>     <span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-81027r9'></a>  <span style='color:rgb(40,56,175);'>\def\up</span><span style='color:rgb(56,127,56);'>{</span>[up]<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb139'><a id='x8-81011r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>toTocLink<span style='color:#388038;'>}</span> 
+<a id='x8-81013r2'></a>     <span style='color:#388038;'>{</span><span style='color:#2938B0;'>\Link</span><span style='color:#388038;'>}</span> 
+<a id='x8-81015r3'></a>     <span style='color:#388038;'>{</span><span style='color:#2938B0;'>\ifx \TitleMark\sectionHMark</span> 
+<a id='x8-81017r4'></a>        <span style='color:#2938B0;'>\Picture</span><span style='color:#388038;'>[\up]{</span>haut.jpg align="right"<span style='color:#388038;'>}</span><span style='color:#878787;'><span class='textit'>%</span></span> 
+<a id='x8-81019r5'></a>        <span style='color:#2938B0;'>\EndLink</span> 
+<a id='x8-81021r6'></a>        <span style='color:#2938B0;'>\TitleMark\space</span> 
+<a id='x8-81023r7'></a>      <span style='color:#2938B0;'>\else \EndLink \fi</span> 
+<a id='x8-81025r8'></a>     <span style='color:#388038;'>}</span> 
+<a id='x8-81027r9'></a>  <span style='color:#2938B0;'>\def\up</span><span style='color:#388038;'>{</span>[up]<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 92  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>toToc</span>}{unit type}{desired contents type (if empty, ‘unit
 type’ is assumed)}</code>
 </p><!--  l. 94  --><p class='indent'>   You can also pass special values to <span class='textit'>unit type</span>:
 </p>     
-<dl class='description'><dt class='description'>
+<dl class='description'><dt class='description'><a id='x8-81028x7.11.1'></a>
 <span class='ec-lmbx-10'>empty</span> 
 </dt><dd class='description'>
 <!--  l. 97  --><p class='noindent'>stop adding entries of ‘unit type’ to toc
 </p>     
 </dd>
-<dt class='description'>
+<dt class='description'><a id='x8-81029x7.11.1'></a>
 <span class='ec-lmbx-10'>@</span> 
 </dt><dd class='description'>  
 <!--  l. 98  --><p class='noindent'>add entries of ‘unit type’ to toc
 </p>     
 </dd>
-<dt class='description'>
+<dt class='description'><a id='x8-81030x7.11.1'></a>
 <span class='ec-lmbx-10'>?</span> 
 </dt><dd class='description'>   
 <!--  l. 99  --><p class='noindent'>resume mode in effect before the last stop</p></dd></dl>
 <!--  l. 102  --><p class='indent'>   Example: </p> <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb140'><a id='x8-81030r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>toToc<span style='color:rgb(56,127,56);'>}{</span>chapter<span style='color:rgb(56,127,56);'>}{</span>likechapter<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb140'><a id='x8-81033r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>toToc<span style='color:#388038;'>}{</span>chapter<span style='color:#388038;'>}{</span>likechapter<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 107  --><p class='indent'>   Introduces chapter as likechapter into TOC.
 </p><!--  l. 109  --><p class='indent'>   Example that temporarily suppresses inclusion of chapter to TOC:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb141'><a id='x8-81035r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>toToc<span style='color:rgb(56,127,56);'>}{}{</span>chapter<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-81037r2'></a><span style='color:rgb(40,56,175);'>\chapter</span><span style='color:rgb(56,127,56);'>{</span>...<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-81039r3'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>toToc<span style='color:rgb(56,127,56);'>}{</span>@<span style='color:rgb(56,127,56);'>}{</span>chapter<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb141'><a id='x8-81038r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>toToc<span style='color:#388038;'>}{}{</span>chapter<span style='color:#388038;'>}</span> 
+<a id='x8-81040r2'></a><span style='color:#2938B0;'>\chapter</span><span style='color:#388038;'>{</span>...<span style='color:#388038;'>}</span> 
+<a id='x8-81042r3'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>toToc<span style='color:#388038;'>}{</span>@<span style='color:#388038;'>}{</span>chapter<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 117  --><p class='noindent'><code class='texttt'><span class='textbf'>\NoLink</span></code>{<span class='textit'>section name</span>}
@@ -1198,9 +1198,9 @@ HTML, RTL can be requested using:
 </p><!--  l. 11  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb142'><a id='x8-87005r1'></a><span style='color:rgb(40,56,175);'>\ConfigureEnv</span><span style='color:rgb(56,127,56);'>{</span>arab<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-87007r2'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>LRdir<span style='color:rgb(56,127,56);'>}{</span> dir="rtl"<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-87009r3'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>LRdir<span style='color:rgb(56,127,56);'>}{}}{}{}</span></pre>
+<pre class='fancyvrb' id='fancyvrb142'><a id='x8-87005r1'></a><span style='color:#2938B0;'>\ConfigureEnv</span><span style='color:#388038;'>{</span>arab<span style='color:#388038;'>}</span> 
+<a id='x8-87007r2'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>LRdir<span style='color:#388038;'>}{</span> dir="rtl"<span style='color:#388038;'>}}</span> 
+<a id='x8-87009r3'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>LRdir<span style='color:#388038;'>}{}}{}{}</span></pre>
 
 </figure>
 <!--  l. 19  --><p class='indent'>   This configuration sets the direction to <span class='emph'>rtl</span> inside the <span class='emph'>arab</span> environment and resets
@@ -1208,7 +1208,7 @@ it after the environment end.
 </p><!--  l. 21  --><p class='indent'>   In the ODT output, different mechanism is used:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb143'><a id='x8-87012r1'></a><span style='color:rgb(40,56,175);'>\ConfigureEnv</span><span style='color:rgb(56,127,56);'>{</span>arab<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\@rltrue</span><span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\@rlfalse</span><span style='color:rgb(56,127,56);'>}{}{}</span></pre>
+<pre class='fancyvrb' id='fancyvrb143'><a id='x8-87012r1'></a><span style='color:#2938B0;'>\ConfigureEnv</span><span style='color:#388038;'>{</span>arab<span style='color:#388038;'>}{</span><span style='color:#2938B0;'>\@rltrue</span><span style='color:#388038;'>}{</span><span style='color:#2938B0;'>\@rlfalse</span><span style='color:#388038;'>}{}{}</span></pre>
 
 </figure>
                                                                   
@@ -1223,12 +1223,12 @@ necessary.
 <code class='texttt'>inputenc</code> and <code class='texttt'>fontenc</code> packages:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb144'><a id='x8-88008r1'></a><span style='color:rgb(40,56,175);'>\documentclass</span><span style='color:rgb(56,127,56);'>{</span>article<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-88010r2'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>[utf8]{</span>inputenc<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-88012r3'></a><span style='color:rgb(40,56,175);'>\usepackage</span><span style='color:rgb(56,127,56);'>[T1]{</span>fontenc<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-88014r4'></a><span style='color:rgb(40,56,175);'>\begin</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span> 
+<pre class='fancyvrb' id='fancyvrb144'><a id='x8-88008r1'></a><span style='color:#2938B0;'>\documentclass</span><span style='color:#388038;'>{</span>article<span style='color:#388038;'>}</span> 
+<a id='x8-88010r2'></a><span style='color:#2938B0;'>\usepackage</span><span style='color:#388038;'>[utf8]{</span>inputenc<span style='color:#388038;'>}</span> 
+<a id='x8-88012r3'></a><span style='color:#2938B0;'>\usepackage</span><span style='color:#388038;'>[T1]{</span>fontenc<span style='color:#388038;'>}</span> 
+<a id='x8-88014r4'></a><span style='color:#2938B0;'>\begin</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span> 
 <a id='x8-88016r5'></a>Unicode text 
-<a id='x8-88018r6'></a><span style='color:rgb(40,56,175);'>\end</span><span style='color:rgb(56,127,56);'>{</span>document<span style='color:rgb(56,127,56);'>}</span></pre>
+<a id='x8-88018r6'></a><span style='color:#2938B0;'>\end</span><span style='color:#388038;'>{</span>document<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 21  --><p class='indent'>   XeLaTeX is an Unicode format, similarly to LuaLaTeX. The supporting
@@ -1240,23 +1240,23 @@ exists.
 the <code class='texttt'>Script</code> option.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb145'><a id='x8-88021r1'></a><span style='color:rgb(40,56,175);'>\newfontfamily\greekfont</span><span style='color:rgb(56,127,56);'>{</span>Linux Libertine O<span style='color:rgb(56,127,56);'>}</span>[Script=Greek]</pre>
+<pre class='fancyvrb' id='fancyvrb145'><a id='x8-88021r1'></a><span style='color:#2938B0;'>\newfontfamily\greekfont</span><span style='color:#388038;'>{</span>Linux Libertine O<span style='color:#388038;'>}</span>[Script=Greek]</pre>
 
 </figure>
 <!--  l. 34  --><p class='indent'>   The second option is to declare load support for a script in the custom config file
 using the <code class='texttt'>\xeuniuseblock</code>:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb146'><a id='x8-88024r1'></a><span style='color:rgb(40,56,175);'>\xeuniuseblock</span><span style='color:rgb(56,127,56);'>{</span>Greek<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb146'><a id='x8-88024r1'></a><span style='color:#2938B0;'>\xeuniuseblock</span><span style='color:#388038;'>{</span>Greek<span style='color:#388038;'>}</span></pre>
 
 </figure>
-<!--  l. 42  --><p class='indent'>   The block names are based on  <a href='https://en.wikipedia.org/wiki/Unicode_block'>Unicode blocks</a>.
+<!--  l. 42  --><p class='indent'>   The block names are based on <a href='https://en.wikipedia.org/wiki/Unicode_block'>Unicode blocks</a>.
 </p><!--  l. 44  --><p class='indent'>   It is also possible to declare all characters in an Unicode range. The command
 <code class='texttt'>\xeuniregisterblockhex</code> takes two hexadecimal parameters with Unicode range to
 be declared.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb147'><a id='x8-88027r1'></a><span style='color:rgb(40,56,175);'>\xeuniregisterblockhex</span><span style='color:rgb(56,127,56);'>{</span>0100<span style='color:rgb(56,127,56);'>}{</span>017F<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb147'><a id='x8-88027r1'></a><span style='color:#2938B0;'>\xeuniregisterblockhex</span><span style='color:#388038;'>{</span>0100<span style='color:#388038;'>}{</span>017F<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 52  --><p class='indent'>   Individual character can be declared using the <code class='texttt'>\xeuniregisterchar</code>
@@ -1266,7 +1266,7 @@ command:
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb148'><a id='x8-88030r1'></a><span style='color:rgb(40,56,175);'>\xeuniregisterchar</span><span style='color:rgb(56,127,56);'>{</span>"1F00<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb148'><a id='x8-88030r1'></a><span style='color:#2938B0;'>\xeuniregisterchar</span><span style='color:#388038;'>{</span>"1F00<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 58  --><p class='indent'>   In contrast to <code class='texttt'>\xeuniregisterblockhex</code>, it uses decimal numbers by
@@ -1277,7 +1277,7 @@ number.
 Unicode support works. Common problem is filename support, for example in
 included graphics. In general, it is better to avoid such filenames. If it is not possible,
 try to use the <code class='texttt'>\detokenize</code> command.  <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb149'><a id='x8-88033r1'></a>  <span style='color:rgb(40,56,175);'>\includegraphics</span><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\detokenize</span><span style='color:rgb(56,127,56);'>{</span>háček.jpg<span style='color:rgb(56,127,56);'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb149'><a id='x8-88033r1'></a>  <span style='color:#2938B0;'>\includegraphics</span><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\detokenize</span><span style='color:#388038;'>{</span>háček.jpg<span style='color:#388038;'>}}</span></pre>
 
 </figure></section>   
 
@@ -1304,7 +1304,7 @@ optional.
                                                                   
 
                                                                   
-<pre class='fancyvrb' id='fancyvrb150'><a id='x8-91003r1'></a><span style='color:rgb(40,56,175);'>\Picture</span><span style='color:rgb(56,127,56);'>[picture description]{</span>foo.png class="picture"<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb150'><a id='x8-91003r1'></a><span style='color:#2938B0;'>\Picture</span><span style='color:#388038;'>[picture description]{</span>foo.png class="picture"<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 15  --><p class='noindent'><code class='texttt'><span class='textbf'>\Picture+</span></code>[<span class='textit'>replacement-for-text-browsers</span>]{<span class='textit'>file-name attributes</span>} content <span class='textbf'><code class='texttt'>\EndPicture</code></span>
@@ -1320,9 +1320,9 @@ be omitted. If no name is provided for the file, the system assigns a name of it
 own.
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb151'><a id='x8-91008r1'></a><span style='color:rgb(40,56,175);'>\Picture</span>+<span style='color:rgb(56,127,56);'>{</span> align="right"<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
+<pre class='fancyvrb' id='fancyvrb151'><a id='x8-91008r1'></a><span style='color:#2938B0;'>\Picture</span>+<span style='color:#388038;'>{</span> align="right"<span style='color:#388038;'>}</span><span style='color:#878787;'><span class='textit'>%</span></span> 
 <a id='x8-91010r2'></a>Text within a picture. 
-<a id='x8-91012r3'></a><span style='color:rgb(40,56,175);'>\EndPicture</span></pre>
+<a id='x8-91012r3'></a><span style='color:#2938B0;'>\EndPicture</span></pre>
 
 </figure>
 <!--  l. 36  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>Picture</span>}{Extension name pictures generated by DVI
@@ -1330,7 +1330,7 @@ conversion, stored in <span class='textbf'><code class='texttt'>\PictExt</code><
 </p><!--  l. 38  --><p class='indent'>   Default:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb152'><a id='x8-91015r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>Picture<span style='color:rgb(56,127,56);'>}{</span>.png<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb152'><a id='x8-91015r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>Picture<span style='color:#388038;'>}{</span>.png<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 44  --><p class='indent'>   The extension names of bitmap files of glyphs of htf fonts may be determined
@@ -1361,12 +1361,12 @@ delimiter}</code>
 </p><!--  l. 72  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb153'><a id='x8-91023r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>IMG<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-91025r2'></a>  <span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\ht:special</span><span style='color:rgb(56,127,56);'>{</span>t4ht=&lt;img src="<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-91027r3'></a>  <span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\ht:special</span><span style='color:rgb(56,127,56);'>{</span>t4ht=" alt="<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-91029r4'></a>  <span style='color:rgb(56,127,56);'>{</span>" <span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-91031r5'></a>  <span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\ht:special</span><span style='color:rgb(56,127,56);'>{</span>t4ht=" <span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-91033r6'></a>  <span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\ht:special</span><span style='color:rgb(56,127,56);'>{</span>t4ht=/&gt;<span style='color:rgb(56,127,56);'>}}</span></pre>
+<pre class='fancyvrb' id='fancyvrb153'><a id='x8-91023r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>IMG<span style='color:#388038;'>}</span> 
+<a id='x8-91025r2'></a>  <span style='color:#388038;'>{</span><span style='color:#2938B0;'>\ht:special</span><span style='color:#388038;'>{</span>t4ht=&lt;img src="<span style='color:#388038;'>}}</span> 
+<a id='x8-91027r3'></a>  <span style='color:#388038;'>{</span><span style='color:#2938B0;'>\ht:special</span><span style='color:#388038;'>{</span>t4ht=" alt="<span style='color:#388038;'>}}</span> 
+<a id='x8-91029r4'></a>  <span style='color:#388038;'>{</span>" <span style='color:#388038;'>}</span> 
+<a id='x8-91031r5'></a>  <span style='color:#388038;'>{</span><span style='color:#2938B0;'>\ht:special</span><span style='color:#388038;'>{</span>t4ht=" <span style='color:#388038;'>}}</span> 
+<a id='x8-91033r6'></a>  <span style='color:#388038;'>{</span><span style='color:#2938B0;'>\ht:special</span><span style='color:#388038;'>{</span>t4ht=/&gt;<span style='color:#388038;'>}}</span></pre>
 
 </figure>
 <!--  l. 83  --><p class='noindent'><code class='texttt'><span class='textbf'>\NextPictureFile</span></code>{<span class='textit'>filename</span>}
@@ -1380,9 +1380,9 @@ delimiter}</code>
 </p><!--  l. 96  --><p class='indent'>   Examples:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb154'><a id='x8-92005r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>graphics<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-92007r2'></a>   <span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\Picture</span>+[PIC]<span style='color:rgb(56,127,56);'>{</span> class="graphics"<span style='color:rgb(56,127,56);'>}}</span> 
-<a id='x8-92009r3'></a>   <span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\EndPicture </span><span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb154'><a id='x8-92005r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>graphics<span style='color:#388038;'>}</span> 
+<a id='x8-92007r2'></a>   <span style='color:#388038;'>{</span><span style='color:#2938B0;'>\Picture</span>+[PIC]<span style='color:#388038;'>{</span> class="graphics"<span style='color:#388038;'>}}</span> 
+<a id='x8-92009r3'></a>   <span style='color:#388038;'>{</span><span style='color:#2938B0;'>\EndPicture </span><span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 107  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>graphics*</span>}{extension name}{insertion}</code>
@@ -1400,29 +1400,29 @@ bounding box is unknown)
 </p><!--  l. 121  --><p class='indent'>   Example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb155'><a id='x8-92034r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>graphics*<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-92036r2'></a><span style='color:rgb(56,127,56);'>{</span>jpg<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-92038r3'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\Picture</span><span style='color:rgb(56,127,56);'>[pict]{</span><span style='color:rgb(40,56,175);'>\csname</span> Gin@base<span style='color:rgb(40,56,175);'>\endcsname</span>.jpg<span style='color:rgb(56,127,56);'>}}</span> 
+<pre class='fancyvrb' id='fancyvrb155'><a id='x8-92034r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>graphics*<span style='color:#388038;'>}</span> 
+<a id='x8-92036r2'></a><span style='color:#388038;'>{</span>jpg<span style='color:#388038;'>}</span> 
+<a id='x8-92038r3'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\Picture</span><span style='color:#388038;'>[pict]{</span><span style='color:#2938B0;'>\csname</span> Gin@base<span style='color:#2938B0;'>\endcsname</span>.jpg<span style='color:#388038;'>}}</span> 
 <a id='x8-92040r4'></a> 
-<a id='x8-92042r5'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>graphics*<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-92044r6'></a><span style='color:rgb(56,127,56);'>{</span>wmf<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-92046r7'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\Needs</span><span style='color:rgb(56,127,56);'>{</span>"convert <span style='color:rgb(40,56,175);'>\csname</span> Gin@base<span style='color:rgb(40,56,175);'>\endcsname</span>.wmf 
-<a id='x8-92048r8'></a> <span style='color:rgb(40,56,175);'>\csname</span> Gin@base<span style='color:rgb(40,56,175);'>\endcsname</span>.gif"<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
-<a id='x8-92050r9'></a> <span style='color:rgb(40,56,175);'>\Picture</span><span style='color:rgb(56,127,56);'>[pict]{</span><span style='color:rgb(40,56,175);'>\csname</span> Gin@base<span style='color:rgb(40,56,175);'>\endcsname</span>.gif 
-<a id='x8-92052r10'></a> width="<span style='color:rgb(40,56,175);'>\expandafter\the\csname</span> Gin@req@width<span style='color:rgb(40,56,175);'>\endcsname</span>" 
-<a id='x8-92054r11'></a> height="<span style='color:rgb(40,56,175);'>\expandafter\the\csname</span> Gin@req@height<span style='color:rgb(40,56,175);'>\endcsname</span>"<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
-<a id='x8-92056r12'></a><span style='color:rgb(56,127,56);'>}</span> 
+<a id='x8-92042r5'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>graphics*<span style='color:#388038;'>}</span> 
+<a id='x8-92044r6'></a><span style='color:#388038;'>{</span>wmf<span style='color:#388038;'>}</span> 
+<a id='x8-92046r7'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\Needs</span><span style='color:#388038;'>{</span>"convert <span style='color:#2938B0;'>\csname</span> Gin@base<span style='color:#2938B0;'>\endcsname</span>.wmf 
+<a id='x8-92048r8'></a> <span style='color:#2938B0;'>\csname</span> Gin@base<span style='color:#2938B0;'>\endcsname</span>.gif"<span style='color:#388038;'>}</span><span style='color:#878787;'><span class='textit'>%</span></span> 
+<a id='x8-92050r9'></a> <span style='color:#2938B0;'>\Picture</span><span style='color:#388038;'>[pict]{</span><span style='color:#2938B0;'>\csname</span> Gin@base<span style='color:#2938B0;'>\endcsname</span>.gif 
+<a id='x8-92052r10'></a> width="<span style='color:#2938B0;'>\expandafter\the\csname</span> Gin@req@width<span style='color:#2938B0;'>\endcsname</span>" 
+<a id='x8-92054r11'></a> height="<span style='color:#2938B0;'>\expandafter\the\csname</span> Gin@req@height<span style='color:#2938B0;'>\endcsname</span>"<span style='color:#388038;'>}</span><span style='color:#878787;'><span class='textit'>%</span></span> 
+<a id='x8-92056r12'></a><span style='color:#388038;'>}</span> 
 <a id='x8-92058r13'></a> 
-<a id='x8-92060r14'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>graphics*<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-92062r15'></a><span style='color:rgb(56,127,56);'>{</span>eps<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-92064r16'></a><span style='color:rgb(56,127,56);'>{</span><span style='color:rgb(40,56,175);'>\openin</span>15=<span style='color:rgb(40,56,175);'>\csname</span> Gin@base<span style='color:rgb(40,56,175);'>\endcsname\PictExt\relax</span> 
-<a id='x8-92066r17'></a> <span style='color:rgb(40,56,175);'>\ifeof</span>15 <span style='color:rgb(135,135,135);'><span class='textit'>% test if the converted file already exists</span></span> 
-<a id='x8-92068r18'></a> <span style='color:rgb(40,56,175);'>\Needs</span><span style='color:rgb(56,127,56);'>{</span>"convert <span style='color:rgb(40,56,175);'>\csname</span> Gin@base<span style='color:rgb(40,56,175);'>\endcsname</span>.eps 
-<a id='x8-92070r19'></a> <span style='color:rgb(40,56,175);'>\csname</span> Gin@base<span style='color:rgb(40,56,175);'>\endcsname\PictExt</span>"<span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
-<a id='x8-92072r20'></a> <span style='color:rgb(40,56,175);'>\fi</span> 
-<a id='x8-92074r21'></a> <span style='color:rgb(40,56,175);'>\closein</span>15 
-<a id='x8-92076r22'></a> <span style='color:rgb(40,56,175);'>\Picture</span><span style='color:rgb(56,127,56);'>[pict]{</span><span style='color:rgb(40,56,175);'>\csname</span> Gin@base<span style='color:rgb(40,56,175);'>\endcsname\PictExt</span><span style='color:rgb(56,127,56);'>}</span><span style='color:rgb(135,135,135);'><span class='textit'>%</span></span> 
-<a id='x8-92078r23'></a><span style='color:rgb(56,127,56);'>}</span></pre>
+<a id='x8-92060r14'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>graphics*<span style='color:#388038;'>}</span> 
+<a id='x8-92062r15'></a><span style='color:#388038;'>{</span>eps<span style='color:#388038;'>}</span> 
+<a id='x8-92064r16'></a><span style='color:#388038;'>{</span><span style='color:#2938B0;'>\openin</span>15=<span style='color:#2938B0;'>\csname</span> Gin@base<span style='color:#2938B0;'>\endcsname\PictExt\relax</span> 
+<a id='x8-92066r17'></a> <span style='color:#2938B0;'>\ifeof</span>15 <span style='color:#878787;'><span class='textit'>% test if the converted file already exists</span></span> 
+<a id='x8-92068r18'></a> <span style='color:#2938B0;'>\Needs</span><span style='color:#388038;'>{</span>"convert <span style='color:#2938B0;'>\csname</span> Gin@base<span style='color:#2938B0;'>\endcsname</span>.eps 
+<a id='x8-92070r19'></a> <span style='color:#2938B0;'>\csname</span> Gin@base<span style='color:#2938B0;'>\endcsname\PictExt</span>"<span style='color:#388038;'>}</span><span style='color:#878787;'><span class='textit'>%</span></span> 
+<a id='x8-92072r20'></a> <span style='color:#2938B0;'>\fi</span> 
+<a id='x8-92074r21'></a> <span style='color:#2938B0;'>\closein</span>15 
+<a id='x8-92076r22'></a> <span style='color:#2938B0;'>\Picture</span><span style='color:#388038;'>[pict]{</span><span style='color:#2938B0;'>\csname</span> Gin@base<span style='color:#2938B0;'>\endcsname\PictExt</span><span style='color:#388038;'>}</span><span style='color:#878787;'><span class='textit'>%</span></span> 
+<a id='x8-92078r23'></a><span style='color:#388038;'>}</span></pre>
 
 </figure>   
 
@@ -1469,7 +1469,7 @@ engine. Fortunatelly, the support can be added using JavaScript. Popular option 
 use MathJax:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb156'><a id='x8-98003r1'></a><span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(56,127,56);'> make</span><span style='color:rgb(68,68,68);'>4</span><span style='color:rgb(56,127,56);'>ht filename.tex "mathml,mathjax"</span></pre>
+<pre class='fancyvrb' id='fancyvrb156'><a id='x8-98003r1'></a><span style='color:#B83838;'>$</span><span style='color:#388038;'> make</span><span style='color:#454545;'>4</span><span style='color:#388038;'>ht filename.tex "mathml,mathjax"</span></pre>
 
 </figure>   
 
@@ -1479,7 +1479,7 @@ example, one common issue may happen when the math contain unmatched
 delimiters:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb157'><a id='x8-99003r1'></a> Mail address: <span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(175,63,63);'>\lparen</span><span style='color:rgb(183,56,56);'>$</span>hello@world.com<span style='color:rgb(183,56,56);'>$</span><span style='color:rgb(175,63,63);'>\rparen</span><span style='color:rgb(183,56,56);'>$</span></pre>
+<pre class='fancyvrb' id='fancyvrb157'><a id='x8-99003r1'></a> Mail address: <span style='color:#B83838;'>$</span><span style='color:#B04040;'>\lparen</span><span style='color:#B83838;'>$</span>hello@world.com<span style='color:#B83838;'>$</span><span style='color:#B04040;'>\rparen</span><span style='color:#B83838;'>$</span></pre>
 
 </figure>
 <!--  l. 40  --><p class='indent'>   In such cases, the <span class='emph'>matml-</span> may help.
@@ -1493,7 +1493,7 @@ the TeX level.
 </p>
 <!--  l. 47  --><p class='noindent'><span class='paragraphHead' id='additional-information'><a id='x8-100000'></a><span class='ec-lmbx-10'>Additional information</span></span>
 If you want to add original LaTeX source as an annotation to your MathML
-formulas, you can try a configuration from  <a href='https://tex.stackexchange.com/a/693839/2891'>this answer</a>.
+formulas, you can try a configuration from <a href='https://tex.stackexchange.com/a/693839/2891'>this answer</a>.
 
 </p>   
 <h4 class='subsectionHead' id='mathjax'><span class='titlemark'>7.18.3   </span> <a id='x8-1010007.18.3'></a>MathJax</h4>
@@ -1505,8 +1505,8 @@ supports two modes – LaTeX math and <code class='texttt'>MathML</code>.
 this configuration is:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb158'><a id='x8-101004r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>MathJaxSource<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-101006r2'></a><span style='color:rgb(56,127,56);'>{</span>https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb158'><a id='x8-101004r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>MathJaxSource<span style='color:#388038;'>}</span> 
+<a id='x8-101006r2'></a><span style='color:#388038;'>{</span>https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js<span style='color:#388038;'>}</span></pre>
 
 </figure>   
 
@@ -1535,7 +1535,7 @@ environments, cross-references and other issues.
 </p><!--  l. 95  --><p class='indent'>   These configurations enclose MathJax math in HTML elements, so it is possible
 to select them using CSS or DOM filters.
 </p><!--  l. 99  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>MathJaxConfig</span>}{JavaScript object}</code>
-</p><!--  l. 101  --><p class='indent'>   See the  <a href='https://docs.mathjax.org/en/latest/options/index.html'>MathJax documentation</a> for the possible configuration options.
+</p><!--  l. 101  --><p class='indent'>   See the <a href='https://docs.mathjax.org/en/latest/options/index.html'>MathJax documentation</a> for the possible configuration options.
 </p><!--  l. 106  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>MathJaxMacros</span>}{path to file with macro definitions}
 </code>
 </p><!--  l. 108  --><p class='indent'>   Load file with declarations of custom commands, so they can be recognized by
@@ -1552,7 +1552,7 @@ titles in the MathJax mode. This can be fixed using the <code class='texttt'>\fi
 command:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb159'><a id='x8-103003r1'></a><span style='color:rgb(40,56,175);'>\fixmathjaxtoc\int</span></pre>
+<pre class='fancyvrb' id='fancyvrb159'><a id='x8-103003r1'></a><span style='color:#2938B0;'>\fixmathjaxtoc\int</span></pre>
 
 </figure>   
 
@@ -1577,15 +1577,15 @@ declared style then needs to be configured using command <code class='texttt'>\C
 </p><!--  l. 5  --><p class='indent'>   Usage of these commands can be illustrated by the following example:
 </p>   
 <figure class='texsource' role='doc-example'>
-<pre class='fancyvrb' id='fancyvrb160'><a id='x8-107011r1'></a>  <span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>SectionTitleTest<span style='color:rgb(56,127,56);'>}{</span><span style='color:rgb(40,56,175);'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;text:p text:style-name="section-title"&gt;<span style='color:rgb(56,127,56);'>}}{</span><span style='color:rgb(40,56,175);'>\HCode</span><span style='color:rgb(56,127,56);'>{</span>&lt;/text:p&gt;<span style='color:rgb(56,127,56);'>}}</span> 
+<pre class='fancyvrb' id='fancyvrb160'><a id='x8-107011r1'></a>  <span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>SectionTitleTest<span style='color:#388038;'>}{</span><span style='color:#2938B0;'>\ifvmode\IgnorePar\fi\EndP\HCode</span><span style='color:#388038;'>{</span>&lt;text:p text:style-name="section-title"&gt;<span style='color:#388038;'>}}{</span><span style='color:#2938B0;'>\HCode</span><span style='color:#388038;'>{</span>&lt;/text:p&gt;<span style='color:#388038;'>}}</span> 
 <a id='x8-107013r2'></a> 
-<a id='x8-107015r3'></a><span style='color:rgb(40,56,175);'>\NewConfigureOO</span><span style='color:rgb(56,127,56);'>{</span>section-title<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-107017r4'></a><span style='color:rgb(40,56,175);'>\ConfigureOO</span><span style='color:rgb(56,127,56);'>{</span>section-title<span style='color:rgb(56,127,56);'>}{</span>&lt;style:style style:name="section-title" style:family="paragraph" style:class="text"&gt; 
+<a id='x8-107015r3'></a><span style='color:#2938B0;'>\NewConfigureOO</span><span style='color:#388038;'>{</span>section-title<span style='color:#388038;'>}</span> 
+<a id='x8-107017r4'></a><span style='color:#2938B0;'>\ConfigureOO</span><span style='color:#388038;'>{</span>section-title<span style='color:#388038;'>}{</span>&lt;style:style style:name="section-title" style:family="paragraph" style:class="text"&gt; 
 <a id='x8-107019r5'></a>      &lt;style:text-properties style:text-underline-style="solid" 
 <a id='x8-107021r6'></a>       style:text-underline-width="auto" 
 <a id='x8-107023r7'></a>       style:text-underline-color="font-color" 
 <a id='x8-107025r8'></a>       /&gt; 
-<a id='x8-107027r9'></a>&lt;/style:style&gt;<span style='color:rgb(56,127,56);'>}</span></pre>
+<a id='x8-107027r9'></a>&lt;/style:style&gt;<span style='color:#388038;'>}</span></pre>
 
 </figure>
 <!--  l. 19  --><p class='indent'>   Document style <span class='emph'>section-title</span> had been declared in this example. The <code class='texttt'>XML</code> code for
@@ -1598,8 +1598,8 @@ configuration.
 <h4 class='subsectionHead' id='extra-configurations-for-opendocument-format'><span class='titlemark'>7.21.1   </span> <a id='x8-1080007.21.1'></a>Extra Configurations for OpenDocument Format</h4>
 <!--  l. 33  --><p class='noindent'>To use default ODF styles for sectioning commands, use the following configurations: </p>
 <figure class='texsource' role='doc-example'>   
-<pre class='fancyvrb' id='fancyvrb161'><a id='x8-108004r1'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>Heading-2<span style='color:rgb(56,127,56);'>}{</span>Heading 1<span style='color:rgb(56,127,56);'>}</span> 
-<a id='x8-108006r2'></a><span style='color:rgb(40,56,175);'>\Configure</span><span style='color:rgb(56,127,56);'>{</span>Heading-3<span style='color:rgb(56,127,56);'>}{</span>Heading 2<span style='color:rgb(56,127,56);'>}</span></pre>
+<pre class='fancyvrb' id='fancyvrb161'><a id='x8-108004r1'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>Heading-2<span style='color:#388038;'>}{</span>Heading 1<span style='color:#388038;'>}</span> 
+<a id='x8-108006r2'></a><span style='color:#2938B0;'>\Configure</span><span style='color:#388038;'>{</span>Heading-3<span style='color:#388038;'>}{</span>Heading 2<span style='color:#388038;'>}</span></pre>
 
 </figure>
                                                                   
