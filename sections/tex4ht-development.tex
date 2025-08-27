@@ -128,6 +128,99 @@ The HTML code produced by our configuration looks like this:
 </p>
 \end{htmlsource}
 
+\section{Tutorial: How to Redefine Package Commands Used in the Document Preamble}
+
+The usual \file{.4ht} files are loaded only after the \verb|\begin{document}|
+command. This means that they cannot influence macros that are initialized in
+package options or in other code executed in the document preamble. For these
+cases, \TeX4ht provides a special configuration file \file{usepackage.4ht},
+which is read at the moment when packages are being loaded. This allows you to
+insert hooks that block, replace, or extend package definitions much earlier
+than would otherwise be possible.
+
+\subsection{Blocking a Package from Loading}
+
+Sometimes it is necessary to completely prevent a package from being loaded,
+because its behavior is incompatible with \TeX4ht. The following example shows
+how to block the \texttt{unicode-math} package:
+
+\begin{texsource}
+% block unicode-math package
+\:dontusepackage{unicode-math}
+% provide dummy definition for \setmathfont command
+\DeclareDocumentCommand \setmathfont { O{} m O{} }{}
+\end{texsource}
+
+This directive ensures that the package is skipped during the loading process.
+
+\subsection{Executing Code After a Package is Loaded}
+
+In other cases we want the package to load, but we need to restore or adjust
+definitions it has changed. For instance, the \texttt{titlesec} package
+redefines all sectioning commands. If we want to restore the original \LaTeX{}
+definitions after \texttt{titlesec} is fully loaded, we can save the old
+definitions beforehand and then restore them using
+\cmd{:AtEndOfPackage}:
+
+\begin{texsource}
+\let\ttl:@makechapterhead\@makechapterhead
+\let\ttl:@makeschapterhead\@makeschapterhead
+\let\ttl:chapter\chapter
+\let\ttl:section\section
+\let\ttl:subsection\subsection
+\let\ttl:subsubsection\subsubsection
+\let\ttl:paragraph\paragraph
+\let\ttl:subparagraph\subparagraph
+\:AtEndOfPackage{
+  \let\chapter\ttl:chapter
+  \let\section\ttl:section
+  \let\subsection\ttl:subsection
+  \let\subsubsection\ttl:subsubsection
+  \let\paragraph\ttl:paragraph
+  \let\subparagraph\ttl:subparagraph
+  \let\@makechapterhead\ttl:@makechapterhead
+  \let\@makeschapterhead\ttl:@makeschapterhead
+}
+\end{texsource}
+
+\subsection{Available Commands}
+
+Two special commands are provided for these early hooks:
+
+\begin{itemize}
+  \item \DocCommand{:dontusepackage}\marg{package name} – prevents the named
+    package from loading.
+  \item \DocCommand{:AtEndOfPackage}\marg{code} – executes the given code after
+    the package has been fully loaded.
+\end{itemize}
+
+These hooks are inserted at the correct place during package processing, so
+they can safely modify or restore definitions without requiring manual patching
+in the document.
+
+\subsection{Using \LaTeX{} Hooks Directly}
+
+It is also possible to use \LaTeX{}'s native hook management system from within
+\file{usepackage.4ht}. For example, to disable footnote superscripts only in
+the \texttt{doc} package documentation, one can use:
+
+\begin{texsource}
+\AddToHook{package/doc/before}{\SUPOff}
+\AddToHook{package/doc/after}{\SUPOn}
+\end{texsource}
+
+This approach is especially useful for packages that provide their own
+well-defined hooks.
+
+\subsection{Local Modifications with usepackage-user.4ht}
+
+Another possibility for loading local definitions before a package is processed
+is to use the file \file{usepackage-user.4ht}. This file works in the same way
+as \file{usepackage.4ht}, but it is intended specifically for user-level
+customizations. By placing your own hooks or redefinitions there, you can
+adapt the behavior of packages locally, without modifying the official
+configuration files distributed with \texfourht.
+
 
 \section{Commands Usable in the \file{.4ht} files}
 
@@ -365,67 +458,12 @@ $ make4ht filename.tex "myhtml5"
 
 
 
-
-
 % \subsection{Inserting configurable hooks for packages}
 
 
 
 % \subsection{Configure the hooks in output format configuration files}
 
-\section{Early Hooks in usepackage.4ht}
-
-Normal \file{.4ht} files are loaded once the document preamble was processed. 
-This is usually desirable, as there are packages that redefine other packages
-commands, and this way can prevent some possible clashes in such cases. 
-Hovewer, sometimes we need to fix package macros as soon as the package is loaded,
-in other cases, we need to block the package from loading completely. This can be 
-necessary when the package causes fatal error when used.
-
-For these cases, \texfourht\ uses a special file, \file{usepackage.4ht},
-where you can declare code that can be executed before the package is loaded.
-
-As it is loaded multiple times it is best to keep it short and place longer pieces
-of code to a separate file. Sample code that loads such code looks like this:
-
-\begin{texsource}
-\Configure{PackageHooks}{foo.sty}{foo-hooks.4ht}
-\end{texsource}
-
-The \file{<pkgname>-hooks.4ht} name is usually used to distinguish this early hooks file
-from the usual \file{.4ht} files. The general structure of the \file{<pkgname>-hooks.4ht} file 
-is following:
-
-\begin{texsource}
-code to be executed before package loading
-
-\:AtEndOfPackage{
-code to be executed after package loading
-}
-\end{texsource}
-
-There are two useful commands available:
-
-\DocCommand{:dontusepackage}\marg{package name} -- prevent package from loading. It can be used to 
-disable packages that cause fatal error with \texfourht.
-
-\DocCommand{:AtEndOfPackage}\marg{code to be executed} -- execute code after the package was loaded. 
-Useful for redefinition of commands that can be used in the document preamble.
-
-\subsection{Execute Code Directly in usepackage.4ht}
-
-You can also execute shorter pieces of code directly in \file{usepackage.4ht} thanks for the new 
-\LaTeX\ package hooks. For example, the following code fixes catcode issues with the \verb|^| character
-in the \package{doc} package:
-
-\begin{texsource}
-\AddToHook{package/doc/before}{\SUPOff}
-\AddToHook{package/doc/after}{\SUPOn}
-\end{texsource}
-
-The \texcommand{SUPOff} disables catcode changes to this character that \texfourht\ uses in order
-to insert markup for math superscripts, and \texcommand{SUPOn} enables it again once the package
-was processed.
 
 \section{\texfourht\ literate sources}
 
