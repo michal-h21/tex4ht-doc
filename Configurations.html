@@ -1437,21 +1437,28 @@ bounding box is unknown)
 
 </p>   
 <h4 class='subsectionHead' id='tikz-'><span class='titlemark'>7.17.4   </span> <a id='x8-940007.17.4'></a>TikZ </h4>
-<!--  l. 155  --><p class='noindent'>Animations using Animate package: <a class='url' href='https://tex.stackexchange.com/a/404600/2891'><span class='rm-lmtt-10'>https://tex.stackexchange.com/a/404600/2891</span></a>
-</p><!--  l. 157  --><p class='indent'>   Issues with drivers: <a class='url' href='https://tex.stackexchange.com/a/471460/2891'><span class='rm-lmtt-10'>https://tex.stackexchange.com/a/471460/2891</span></a>.
+<!--  l. 155  --><p class='noindent'><code class='texttt'>TeX4ht</code> creates SVG images by default for TikZ pictures. It uses a special TikZ driver
+which is set up automatically, so you do not need to load any special packages or
+drivers in your document.
+</p><!--  l. 158  --><p class='indent'>   If you want to use the TikZ externalization library to speed up the compilation,
+you need to compile your document using normal LaTeX compiler first, to create
+PDF images for the TikZ pictures, and then run <code class='texttt'>TeX4ht</code> to convert the document to
+HTML. It will convert the PDF images to SVG automatically.
+</p><!--  l. 164  --><p class='indent'>   Animations using Animate package: <a class='url' href='https://tex.stackexchange.com/a/404600/2891'><span class='rm-lmtt-10'>https://tex.stackexchange.com/a/404600/2891</span></a>
+</p><!--  l. 166  --><p class='indent'>   Issues with drivers: <a class='url' href='https://tex.stackexchange.com/a/471460/2891'><span class='rm-lmtt-10'>https://tex.stackexchange.com/a/471460/2891</span></a>.
 </p>   
 <h4 class='subsectionHead' id='pstricks'><span class='titlemark'>7.17.5   </span> <a id='x8-950007.17.5'></a>Pstricks</h4>
    
 <h3 class='sectionHead' id='math1'><span class='titlemark'>7.18   </span> <a id='x8-960007.18'></a>Math</h3>
-   
+
+                                                                  
+
+                                                                  
 <h4 class='subsectionHead' id='default-math-handling'><span class='titlemark'>7.18.1   </span> <a id='x8-970007.18.1'></a>Default math handling</h4>
 <!--  l. 4  --><p class='noindent'>Default method for displaying math in the HTML output is a mixture of
 HTML elements and pictures. Pictures are used for display math and elements
 that are hard to display using HTML and CSS only, like fractions or square
 roots.
-                                                                  
-
-                                                                  
 </p><!--  l. 7  --><p class='indent'>   The downside of this method is that pictures may not align properly to the text
 baseline in inline math. Furthermore, by default, bitmap graphics is produced, which
 cannot be resized without losing of quality. To use vector SVG graphics instead, use
@@ -1487,13 +1494,13 @@ delimiters:
 
 </figure>
 <!--  l. 40  --><p class='indent'>   In such cases, the <span class='emph'>matml-</span> may help.
+                                                                  
+
+                                                                  
 </p><!--  l. 42  --><p class='indent'>   The <code class='texttt'>common_domfilters</code> extension (see section <a href='CallingCommands.html#makeht-extensions1'>4.2.4<!--  tex4ht:ref: sec:make4ht-extensions   --></a> for more information about
 <span class='emph'>make4ht</span> extensions), fixes some common <code class='texttt'>MathML</code> errors that cannot be easily fixed on
 the TeX level.
 
-                                                                  
-
-                                                                  
 </p>
 <!--  l. 47  --><p class='noindent'><span class='paragraphHead' id='additional-information'><a id='x8-100000'></a><span class='ec-lmbx-10'>Additional information</span></span>
 If you want to add original LaTeX source as an annotation to your MathML
@@ -1530,11 +1537,11 @@ is usually not a significant issue.
 configured in a special configuration for MathJax. See the how-to <a href='Howto.html#mathjax-latex-mode'>MathJax LaTeX
 mode<!--  tex4ht:ref: sec:howto-mathjax   --></a> for the examples on how to configure MathJax for custom commands, new
 environments, cross-references and other issues.
-</p><!--  l. 91  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>MathJaxInline</span>}{before}{after}</code>
-</p><!--  l. 92  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>MathJaxBlock</span>}{before}{after}</code>
                                                                   
 
                                                                   
+</p><!--  l. 91  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>MathJaxInline</span>}{before}{after}</code>
+</p><!--  l. 92  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>MathJaxBlock</span>}{before}{after}</code>
 </p><!--  l. 93  --><p class='noindent'><code class='texttt'><span class='textbf'>\Configure</span>{<span class='textit'>MathJaxEnv</span>}{before}{after}</code>
 </p><!--  l. 95  --><p class='indent'>   These configurations enclose MathJax math in HTML elements, so it is possible
 to select them using CSS or DOM filters.
