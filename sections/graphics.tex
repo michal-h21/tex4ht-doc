@@ -152,6 +152,15 @@ You can utilise the macros that contain information about the image, for example
 
 \subsection{TikZ }
 
+\texfourht\ creates SVG images by default for TikZ pictures. It uses a special TikZ driver
+which is set up automatically, so you do not need to load any special packages or drivers in your document.
+
+If you want to use the TikZ externalization library to speed up the compilation, 
+you need to compile your document using normal \LaTeX\ compiler first, to create
+PDF images for the TikZ pictures, and then run \texfourht\ to convert the document to HTML.
+It will convert the PDF images to SVG automatically.
+
+
 Animations using Animate package: \url{https://tex.stackexchange.com/a/404600/2891}
 
 Issues with drivers: \url{https://tex.stackexchange.com/a/471460/2891}.
